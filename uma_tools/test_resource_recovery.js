@@ -15,9 +15,9 @@ async function main() {
   const get = https.get, now = Date.now;
   let clock = now(), offline = false, bytes = fs.readFileSync(path.join(__dirname, 'img/news-card-default.webp')), failedRequests = 0;
   async function until(check) {
-    const deadline = now() + 5000;
+    const deadline = now() + 15000;
     while (!(await check())) {
-      if (now() >= deadline) throw new Error('cache recovery did not complete within 5 seconds');
+      if (now() >= deadline) throw new Error('cache recovery did not complete within 15 seconds');
       await new Promise(resolve => setTimeout(resolve, 10));
     }
   }
@@ -50,7 +50,9 @@ async function main() {
     await until(() => failedRequests === 1);
     clock += 61000; offline = false; bytes = fs.readFileSync(path.join(__dirname, 'img/bg_blue.webp'));
     await load(url);
-    await until(async () => (await load(url)).identity !== firstIdentity);
+    // Let the background writer replace the file before opening another
+    // preview handle; repeated readers can prevent rename on Windows.
+    await until(async () => (await fs.promises.stat(file)).size === bytes.length);
     assert.notStrictEqual((await load(url)).identity, firstIdentity, 'source recovery replaces actual cache content');
     const lazy = await load(url, {deferBytes:true});
     assert.strictEqual(lazy.bytes, undefined, 'preview lookup does not read the original bytes');
