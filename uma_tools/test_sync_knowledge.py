@@ -1,6 +1,7 @@
 """Exercise incremental publication, source failures and restart scheduling."""
 
 import copy
+import io
 import json
 import os
 from pathlib import Path
@@ -17,6 +18,63 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_breeding_records_match_existing_and_later_added_characters(self):
+        markup = '''<div class="data-1__inner"><div class="data-1__root"><a href="/horse/1/">母</a></div>
+        <div class="data-1__branch"><div class="data-1__item"><div><a href="/horse/2/">子</a></div><div>牡｜2025年｜<a href="/horse/3/">領銜</a></div></div></div>
+        <div class="data-1__branch"><div class="data-1__item"><div><a href="/horse/4/">子</a></div><div>牝｜2026年｜<a href="/horse/5/">未来馬</a></div></div></div></div>
+        <div class="data-1__inner"><div class="data-1__root"><a href="/horse/9/">別馬</a></div><div class="data-1__branch"><div class="data-1__item">unrelated</div></div></div>'''
+        url = 'https://www.jbis.or.jp/horse/1/broodmare/info/'
+        records = pedigree.parse_breeding_records(markup, url)
+        self.assertEqual([row['year'] for row in records], [2025, 2026])
+        mare = {'id':'mare', 'breeding_records':records, 'breeding_source_url':url}
+        source = {'nodes':[mare, {'id':'titleholder','ja':'領銜','sex':'male'}], 'character_mappings':{'titleholder':{'horse':'titleholder','kind':'horse'}}}
+        pedigree.reconcile_breeding_records(source)
+        self.assertEqual(mare['breeding_partners'][0]['records'], [{'year':2025,'outcome':'foal'}])
+        source['nodes'].append({'id':'future','ja':'未来馬','sex':'male'})
+        source['character_mappings']['future'] = {'horse':'future','kind':'horse'}
+        pedigree.reconcile_breeding_records(source)
+        pedigree.reconcile_breeding_records(source)
+        self.assertEqual(len(mare['breeding_partners']), 2)
+        self.assertEqual(mare['breeding_partners'][1]['records'], [{'year':2026,'outcome':'foal'}])
+
+    def test_portrait_versions_keep_transparency_and_coloured_circle_separate(self):
+        from PIL import Image
+        source = Image.new('RGBA', (680, 680), (0, 0, 0, 0))
+        source.paste((255, 255, 255, 255), (300, 100, 380, 600))
+        buffer = io.BytesIO(); source.save(buffer, 'PNG')
+        with tempfile.TemporaryDirectory() as folder, patch.object(characters, 'fetch', return_value=buffer.getvalue()):
+            card, avatar = Path(folder) / 'card.png', Path(folder) / 'avatar.png'
+            characters.save_art('https://example.test/list.png', card, (296, 389))
+            characters.save_art('https://example.test/top.png', avatar, (200, 200), background='#B9214A')
+            with Image.open(card) as image:
+                self.assertEqual(image.getpixel((0, 0))[3], 0)
+            with Image.open(avatar) as image:
+                self.assertEqual(image.size, (200, 200))
+                self.assertGreater(image.getpixel((30, 100))[3], 240)
+                self.assertEqual(image.getpixel((30, 100))[:3], (185, 33, 74))
+                self.assertLess(image.getpixel((0, 0))[3], 10)
+
+    def test_official_order_is_dom_order_and_local_entries_stay_stable(self):
+        values = [{'id': 1, 'name': 2, 'category': 3, 'cv': 4}, 'azuma', '吾妻', [5], 'CV', 'トレセン学園関係者',
+                  {'id': 7, 'name': 8, 'category': 9, 'cv': 4}, 'winmarilyn', 'ウインマリリン', [10], 'ウマ娘']
+        markup = '<a href="/character/winmarilyn"></a><a href="/character/azuma"></a><script id="__NUXT_DATA__">' + json.dumps(values) + '</script>'
+        categories = characters.official_character_ids(markup)
+        rows = [{'id': cid} for cid in ['local-a', 'azuma', 'local-b', 'winmarilyn']]
+        self.assertEqual([row['id'] for row in characters.order_characters(rows, categories)], ['winmarilyn','azuma','local-a','local-b'])
+        self.assertEqual(categories['azuma'], 'human')
+
+    def test_official_assets_use_list_and_bust_not_full_body_or_social_image(self):
+        values = [{'id':1,'list_thumb':2,'top_thumb':3},'new',{'url':4},{'url':5},'https://example.test/list.png','https://example.test/top.png','https://example.test/new_01.png','https://example.test/new_icon.png']
+        markup = '<script id="__NUXT_DATA__">' + json.dumps(values) + '</script>'
+        self.assertEqual(characters.official_card_assets(markup, 'new'), ('https://example.test/list.png','https://example.test/top.png'))
+
+    def test_automatic_pedigree_requires_localized_names_and_sourced_unknowns(self):
+        source = {'nodes':[{'id':'new','zh':'Running Heroine','ja':'ランニングヒロイン','sex':'female','born':1993}], 'character_mappings':{'new':{'horse':'new'}}}
+        missing = pedigree.incomplete_visualization(source,'new')
+        self.assertIn('new:Chinese name', missing)
+        self.assertIn('new:country', missing)
+        self.assertIn('new:en', missing)
+
     def test_automatic_translation_has_one_owner_for_each_data_domain(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'ROOT', Path(folder)), patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('event-localization', ['localize_events.js']), ('entity-localization', ['localize_entities.js'])]):
             for github in ('true', 'false'):

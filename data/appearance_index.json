@@ -183094,6 +183094,22 @@
       ],
       "performed_songs": []
     },
+    "winmarilyn": {
+      "events": [
+        {
+          "event_id": "paka-live-tv-prime-008",
+          "date": "2026-10-24",
+          "end_date": "2026-10-24",
+          "title": "PakaLive TV' #8",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "session_id": "paka-live-tv-prime-008-session-1",
+          "session_label": "本期节目"
+        }
+      ],
+      "songs": [],
+      "performed_songs": []
+    },
     "happymeek": {
       "events": [
         {
@@ -184172,6 +184188,517 @@
         }
       ]
     },
+    "azuma": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
+    "akasakamisato": {
+      "events": [
+        {
+          "event_id": "paka-live-tv-prime-006",
+          "date": "2026-08-22",
+          "end_date": "2026-08-22",
+          "title": "「赛马娘 Pretty Derby」PakaLive TV #6 5.5周年特别！",
+          "kind": "official_program",
+          "series_id": "paka-live-tv-prime",
+          "session_id": "paka-live-tv-prime-006-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-7th-event-2026-06-20",
+          "date": "2026-06-21",
+          "end_date": "2026-06-21",
+          "title": "赛马娘 Pretty Derby 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-7th-event-2026-06-20-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "paka-live-tv-062",
+          "date": "2026-02-22",
+          "end_date": "2026-02-22",
+          "title": "PakaLive TV Vol.62",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-062-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-056",
+          "date": "2025-08-22",
+          "end_date": "2025-08-22",
+          "title": "PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-056-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-050",
+          "date": "2025-02-22",
+          "end_date": "2025-02-22",
+          "title": "PakaLive TV Vol.50",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-050-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-048",
+          "date": "2024-12-25",
+          "end_date": "2024-12-25",
+          "title": "PakaLive TV Vol.48",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-048-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-044",
+          "date": "2024-08-23",
+          "end_date": "2024-08-23",
+          "title": "PakaLive TV Vol.44",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-044-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "official-special-paka-space-5th-event-new-gate",
+          "date": "2024-03-31",
+          "end_date": "2024-03-31",
+          "title": "Paka Space 第五次活动 -NEW GATE- 同步观看",
+          "kind": "official_program",
+          "series_id": "official-special",
+          "session_id": "official-special-paka-space-5th-event-new-gate-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "official-special-paka-space-5th-event-new-gate",
+          "date": "2024-03-30",
+          "end_date": "2024-03-30",
+          "title": "Paka Space 第五次活动 -NEW GATE- 同步观看",
+          "kind": "official_program",
+          "series_id": "official-special",
+          "session_id": "official-special-paka-space-5th-event-new-gate-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2024-03-22",
+          "date": "2024-03-23",
+          "end_date": "2024-03-23",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2024-03-22-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2024-03-22",
+          "date": "2024-03-22",
+          "end_date": "2024-03-22",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2024-03-22-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "paka-live-tv-038",
+          "date": "2024-02-22",
+          "end_date": "2024-02-22",
+          "title": "PakaLive TV Vol.38",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-038-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "official-special-paka-space-5th-event-yell",
+          "date": "2024-02-11",
+          "end_date": "2024-02-11",
+          "title": "Paka Space 第五次活动 -YELL- 同步观看",
+          "kind": "official_program",
+          "series_id": "official-special",
+          "session_id": "official-special-paka-space-5th-event-yell-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "official-special-paka-space-5th-event-yell",
+          "date": "2024-02-10",
+          "end_date": "2024-02-10",
+          "title": "Paka Space 第五次活动 -YELL- 同步观看",
+          "kind": "official_program",
+          "series_id": "official-special",
+          "session_id": "official-special-paka-space-5th-event-yell-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2024-02-03",
+          "date": "2024-02-04",
+          "end_date": "2024-02-04",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2024-02-03-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2024-02-03",
+          "date": "2024-02-03",
+          "end_date": "2024-02-03",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -YELL-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2024-02-03-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2023-09-16",
+          "date": "2023-09-17",
+          "end_date": "2023-09-17",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2023-09-16-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2023-09-16",
+          "date": "2023-09-16",
+          "end_date": "2023-09-16",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2023-09-16-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "paka-live-tv-032",
+          "date": "2023-08-22",
+          "end_date": "2023-08-22",
+          "title": "PakaLive TV Vol.32",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-032-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2023-07-15",
+          "date": "2023-07-16",
+          "end_date": "2023-07-16",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -WISH-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2023-07-15-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-5th-event-2023-07-15",
+          "date": "2023-07-15",
+          "end_date": "2023-07-15",
+          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -WISH-",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-5th-event-2023-07-15-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "eventernote-2023-04-09",
+          "date": "2023-04-09",
+          "end_date": "2023-04-09",
+          "title": "赛马娘 Pretty Derby 4th EVENT SPECIAL DREAMERS!! Blu-ray发售纪念活动",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "paka-live-tv-026",
+          "date": "2023-02-22",
+          "end_date": "2023-02-22",
+          "title": "PakaLive TV Vol.26",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-026-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-4th-event-extra-2022-11-05",
+          "date": "2022-11-06",
+          "end_date": "2022-11-06",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-extra-2022-11-05-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "eventernote-2022-11-06",
+          "date": "2022-11-06",
+          "end_date": "2022-11-06",
+          "title": "【出演者变更】赛马娘 Pretty Derby  4th EVENT SPECIAL DREAMERS!! EXTRA STAGE＜DAY2＞",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2022-11-06-session-1",
+          "session_label": "本场"
+        },
+        {
+          "event_id": "live-numbered-4th-event-extra-2022-11-05",
+          "date": "2022-11-05",
+          "end_date": "2022-11-05",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-extra-2022-11-05-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "eventernote-2022-11-05",
+          "date": "2022-11-05",
+          "end_date": "2022-11-05",
+          "title": "【出演者变更】赛马娘 Pretty Derby  4th EVENT SPECIAL DREAMERS!! EXTRA STAGE＜DAY1＞",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2022-11-05-session-1",
+          "session_label": "本场"
+        },
+        {
+          "event_id": "sokosoko-paka-live-tv-013",
+          "date": "2022-06-18",
+          "end_date": "2022-06-18",
+          "title": "SokoSoko PakaLive TV Vol.13",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-013-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-4th-event-2022-05-04",
+          "date": "2022-05-05",
+          "end_date": "2022-05-05",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-横滨公演",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-2022-05-04-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-4th-event-2022-05-04",
+          "date": "2022-05-04",
+          "end_date": "2022-05-04",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-横滨公演",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-2022-05-04-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "live-numbered-4th-event-2022-03-05",
+          "date": "2022-03-06",
+          "end_date": "2022-03-06",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-东京公演",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-2022-03-05-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-4th-event-2022-03-05",
+          "date": "2022-03-05",
+          "end_date": "2022-03-05",
+          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-东京公演",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-4th-event-2022-03-05-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "paka-live-tv-011",
+          "date": "2021-11-19",
+          "end_date": "2021-11-19",
+          "title": "PakaLive TV Vol.11",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-011-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-009",
+          "date": "2021-09-20",
+          "end_date": "2021-09-20",
+          "title": "PakaLive TV Vol.9",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-009-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-numbered-3rd-event-2021-08-28",
+          "date": "2021-08-29",
+          "end_date": "2021-08-29",
+          "title": "赛马娘 3rd EVENT「WINNING DREAM STAGE」",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
+          "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-numbered-3rd-event-2021-08-28",
+          "date": "2021-08-28",
+          "end_date": "2021-08-28",
+          "title": "赛马娘 3rd EVENT「WINNING DREAM STAGE」",
+          "kind": "concert",
+          "series_id": "numbered-live",
+          "session_id": "live-numbered-3rd-event-2021-08-28-session-1",
+          "session_label": "DAY1"
+        },
+        {
+          "event_id": "paka-live-tv-006",
+          "date": "2021-04-24",
+          "end_date": "2021-04-24",
+          "title": "PakaLive TV Vol.6",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-006-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "paka-live-tv-004",
+          "date": "2021-02-23",
+          "end_date": "2021-02-23",
+          "title": "PakaLive TV Vol.4",
+          "kind": "official_program",
+          "series_id": "paka-live-tv",
+          "session_id": "paka-live-tv-004-session-1",
+          "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "eventernote-2018-12-16",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes 2018 第2日闭幕舞台",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2018-12-16-session-1",
+          "session_label": "本场"
+        },
+        {
+          "event_id": "eventernote-2018-10-08",
+          "date": "2018-10-08",
+          "end_date": "2018-10-08",
+          "title": "Machiasobi Vol.21 CLIMAX RUN 3日 闭幕式",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2018-10-08-session-1",
+          "session_label": "本场"
+        }
+      ],
+      "songs": [
+        {
+          "song_id": "song-legend-changer-fcb0cca1c5",
+          "name": "Legend-Changer",
+          "album_ids": [
+            "album-laca-25151"
+          ],
+          "version_ids": [
+            "song-legend-changer-fcb0cca1c5-v-703d28023d"
+          ],
+          "releases": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "album_ids": [
+            "album-laca-15757",
+            "album-laca-25151",
+            "album-lzc-1975"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49",
+            "song-228f943b49-v-b373901aa7",
+            "song-228f943b49-v-7006bca4f7"
+          ],
+          "releases": 4
+        }
+      ],
+      "performed_songs": [
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05",
+            "live-numbered-3rd-event-2021-08-28"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 18
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-29e836f0da",
+          "name": "トレセン音頭",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16"
+          ],
+          "version_ids": [
+            "song-29e836f0da-v-29e836f0da"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 1
+        }
+      ]
+    },
+    "hosoejunko": {
+      "events": [],
+      "songs": [],
+      "performed_songs": []
+    },
     "bochuzoku": {
       "events": [
         {
@@ -184930,536 +185457,9 @@
       "events": [],
       "songs": [],
       "performed_songs": []
-    },
-    "akasakamisato": {
-      "events": [
-        {
-          "event_id": "paka-live-tv-prime-006",
-          "date": "2026-08-22",
-          "end_date": "2026-08-22",
-          "title": "「赛马娘 Pretty Derby」PakaLive TV #6 5.5周年特别！",
-          "kind": "official_program",
-          "series_id": "paka-live-tv-prime",
-          "session_id": "paka-live-tv-prime-006-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-7th-event-2026-06-20",
-          "date": "2026-06-21",
-          "end_date": "2026-06-21",
-          "title": "赛马娘 Pretty Derby 7th EVENT WORLD TOUR「THE STAGE」-TOKYO",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-7th-event-2026-06-20-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "paka-live-tv-062",
-          "date": "2026-02-22",
-          "end_date": "2026-02-22",
-          "title": "PakaLive TV Vol.62",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-062-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-056",
-          "date": "2025-08-22",
-          "end_date": "2025-08-22",
-          "title": "PakaLive TV Vol.56",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-056-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-050",
-          "date": "2025-02-22",
-          "end_date": "2025-02-22",
-          "title": "PakaLive TV Vol.50",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-050-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-048",
-          "date": "2024-12-25",
-          "end_date": "2024-12-25",
-          "title": "PakaLive TV Vol.48",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-048-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-044",
-          "date": "2024-08-23",
-          "end_date": "2024-08-23",
-          "title": "PakaLive TV Vol.44",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-044-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "official-special-paka-space-5th-event-new-gate",
-          "date": "2024-03-31",
-          "end_date": "2024-03-31",
-          "title": "Paka Space 第五次活动 -NEW GATE- 同步观看",
-          "kind": "official_program",
-          "series_id": "official-special",
-          "session_id": "official-special-paka-space-5th-event-new-gate-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "official-special-paka-space-5th-event-new-gate",
-          "date": "2024-03-30",
-          "end_date": "2024-03-30",
-          "title": "Paka Space 第五次活动 -NEW GATE- 同步观看",
-          "kind": "official_program",
-          "series_id": "official-special",
-          "session_id": "official-special-paka-space-5th-event-new-gate-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-03-22",
-          "date": "2024-03-23",
-          "end_date": "2024-03-23",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2024-03-22-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-03-22",
-          "date": "2024-03-22",
-          "end_date": "2024-03-22",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -NEW GATE-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2024-03-22-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "paka-live-tv-038",
-          "date": "2024-02-22",
-          "end_date": "2024-02-22",
-          "title": "PakaLive TV Vol.38",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-038-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "official-special-paka-space-5th-event-yell",
-          "date": "2024-02-11",
-          "end_date": "2024-02-11",
-          "title": "Paka Space 第五次活动 -YELL- 同步观看",
-          "kind": "official_program",
-          "series_id": "official-special",
-          "session_id": "official-special-paka-space-5th-event-yell-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "official-special-paka-space-5th-event-yell",
-          "date": "2024-02-10",
-          "end_date": "2024-02-10",
-          "title": "Paka Space 第五次活动 -YELL- 同步观看",
-          "kind": "official_program",
-          "series_id": "official-special",
-          "session_id": "official-special-paka-space-5th-event-yell-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-02-03",
-          "date": "2024-02-04",
-          "end_date": "2024-02-04",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -YELL-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2024-02-03-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2024-02-03",
-          "date": "2024-02-03",
-          "end_date": "2024-02-03",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -YELL-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2024-02-03-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2023-09-16",
-          "date": "2023-09-17",
-          "end_date": "2023-09-17",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2023-09-16-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2023-09-16",
-          "date": "2023-09-16",
-          "end_date": "2023-09-16",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -GAZE-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2023-09-16-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "paka-live-tv-032",
-          "date": "2023-08-22",
-          "end_date": "2023-08-22",
-          "title": "PakaLive TV Vol.32",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-032-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2023-07-15",
-          "date": "2023-07-16",
-          "end_date": "2023-07-16",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -WISH-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2023-07-15-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-5th-event-2023-07-15",
-          "date": "2023-07-15",
-          "end_date": "2023-07-15",
-          "title": "赛马娘 Pretty Derby 5th EVENT ARENA TOUR GO BEYOND -WISH-",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-5th-event-2023-07-15-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "eventernote-2023-04-09",
-          "date": "2023-04-09",
-          "end_date": "2023-04-09",
-          "title": "赛马娘 Pretty Derby 4th EVENT SPECIAL DREAMERS!! Blu-ray发售纪念活动",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "paka-live-tv-026",
-          "date": "2023-02-22",
-          "end_date": "2023-02-22",
-          "title": "PakaLive TV Vol.26",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-026-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-4th-event-extra-2022-11-05",
-          "date": "2022-11-06",
-          "end_date": "2022-11-06",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-extra-2022-11-05-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "eventernote-2022-11-06",
-          "date": "2022-11-06",
-          "end_date": "2022-11-06",
-          "title": "【出演者变更】赛马娘 Pretty Derby  4th EVENT SPECIAL DREAMERS!! EXTRA STAGE＜DAY2＞",
-          "kind": "onsite",
-          "series_id": "",
-          "session_id": "eventernote-2022-11-06-session-1",
-          "session_label": "本场"
-        },
-        {
-          "event_id": "live-numbered-4th-event-extra-2022-11-05",
-          "date": "2022-11-05",
-          "end_date": "2022-11-05",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-EXTRA STAGE",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-extra-2022-11-05-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "eventernote-2022-11-05",
-          "date": "2022-11-05",
-          "end_date": "2022-11-05",
-          "title": "【出演者变更】赛马娘 Pretty Derby  4th EVENT SPECIAL DREAMERS!! EXTRA STAGE＜DAY1＞",
-          "kind": "onsite",
-          "series_id": "",
-          "session_id": "eventernote-2022-11-05-session-1",
-          "session_label": "本场"
-        },
-        {
-          "event_id": "sokosoko-paka-live-tv-013",
-          "date": "2022-06-18",
-          "end_date": "2022-06-18",
-          "title": "SokoSoko PakaLive TV Vol.13",
-          "kind": "official_program",
-          "series_id": "sokosoko-paka-live-tv",
-          "session_id": "sokosoko-paka-live-tv-013-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-4th-event-2022-05-04",
-          "date": "2022-05-05",
-          "end_date": "2022-05-05",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-横滨公演",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-2022-05-04-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-4th-event-2022-05-04",
-          "date": "2022-05-04",
-          "end_date": "2022-05-04",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-横滨公演",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-2022-05-04-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "live-numbered-4th-event-2022-03-05",
-          "date": "2022-03-06",
-          "end_date": "2022-03-06",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-东京公演",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-2022-03-05-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-4th-event-2022-03-05",
-          "date": "2022-03-05",
-          "end_date": "2022-03-05",
-          "title": "赛马娘 4th EVENT「SPECIAL DREAMERS!!」-东京公演",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-4th-event-2022-03-05-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "paka-live-tv-011",
-          "date": "2021-11-19",
-          "end_date": "2021-11-19",
-          "title": "PakaLive TV Vol.11",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-011-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-009",
-          "date": "2021-09-20",
-          "end_date": "2021-09-20",
-          "title": "PakaLive TV Vol.9",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-009-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-numbered-3rd-event-2021-08-28",
-          "date": "2021-08-29",
-          "end_date": "2021-08-29",
-          "title": "赛马娘 3rd EVENT「WINNING DREAM STAGE」",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-3rd-event-2021-08-28-session-2",
-          "session_label": "DAY2"
-        },
-        {
-          "event_id": "live-numbered-3rd-event-2021-08-28",
-          "date": "2021-08-28",
-          "end_date": "2021-08-28",
-          "title": "赛马娘 3rd EVENT「WINNING DREAM STAGE」",
-          "kind": "concert",
-          "series_id": "numbered-live",
-          "session_id": "live-numbered-3rd-event-2021-08-28-session-1",
-          "session_label": "DAY1"
-        },
-        {
-          "event_id": "paka-live-tv-006",
-          "date": "2021-04-24",
-          "end_date": "2021-04-24",
-          "title": "PakaLive TV Vol.6",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-006-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "paka-live-tv-004",
-          "date": "2021-02-23",
-          "end_date": "2021-02-23",
-          "title": "PakaLive TV Vol.4",
-          "kind": "official_program",
-          "series_id": "paka-live-tv",
-          "session_id": "paka-live-tv-004-session-1",
-          "session_label": "本期节目"
-        },
-        {
-          "event_id": "live-other-source-2d0f3bde0354",
-          "date": "2018-12-16",
-          "end_date": "2018-12-16",
-          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-          "date": "2018-12-16",
-          "end_date": "2018-12-16",
-          "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
-          "kind": "onsite",
-          "series_id": ""
-        },
-        {
-          "event_id": "eventernote-2018-12-16",
-          "date": "2018-12-16",
-          "end_date": "2018-12-16",
-          "title": "CygamesFes 2018 第2日闭幕舞台",
-          "kind": "onsite",
-          "series_id": "",
-          "session_id": "eventernote-2018-12-16-session-1",
-          "session_label": "本场"
-        },
-        {
-          "event_id": "eventernote-2018-10-08",
-          "date": "2018-10-08",
-          "end_date": "2018-10-08",
-          "title": "Machiasobi Vol.21 CLIMAX RUN 3日 闭幕式",
-          "kind": "onsite",
-          "series_id": "",
-          "session_id": "eventernote-2018-10-08-session-1",
-          "session_label": "本场"
-        }
-      ],
-      "songs": [
-        {
-          "song_id": "song-legend-changer-fcb0cca1c5",
-          "name": "Legend-Changer",
-          "album_ids": [
-            "album-laca-25151"
-          ],
-          "version_ids": [
-            "song-legend-changer-fcb0cca1c5-v-703d28023d"
-          ],
-          "releases": 1
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "album_ids": [
-            "album-laca-15757",
-            "album-laca-25151",
-            "album-lzc-1975"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49",
-            "song-228f943b49-v-b373901aa7",
-            "song-228f943b49-v-7006bca4f7"
-          ],
-          "releases": 4
-        }
-      ],
-      "performed_songs": [
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-numbered-5th-event-2024-03-22",
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05",
-            "live-numbered-3rd-event-2021-08-28"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
-          ],
-          "performances": 18
-        },
-        {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 6
-        },
-        {
-          "song_id": "song-29e836f0da",
-          "name": "トレセン音頭",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16"
-          ],
-          "version_ids": [
-            "song-29e836f0da-v-29e836f0da"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        }
-      ]
-    },
-    "hosoejunko": {
-      "events": [],
-      "songs": [],
-      "performed_songs": []
-    },
-    "azuma": {
-      "events": [],
-      "songs": [],
-      "performed_songs": []
-    },
-    "winmarilyn": {
-      "events": [
-        {
-          "event_id": "paka-live-tv-prime-008",
-          "date": "2026-10-24",
-          "end_date": "2026-10-24",
-          "title": "PakaLive TV' #8",
-          "kind": "official_program",
-          "series_id": "paka-live-tv-prime",
-          "session_id": "paka-live-tv-prime-008-session-1",
-          "session_label": "本期节目"
-        }
-      ],
-      "songs": [],
-      "performed_songs": []
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-24T15:10:00+00:00",
-  "build_id": "a505c8b5dc55f1e9deed"
+  "generated_at": "2026-10-24T15:14:48+00:00",
+  "build_id": "c7fcc6ee77de8fc9b36c"
 }

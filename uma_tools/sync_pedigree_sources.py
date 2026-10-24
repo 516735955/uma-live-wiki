@@ -1,10 +1,12 @@
 """Resolve new prototype horses and cited parentage through exact public pages."""
 
 import argparse
+import copy
 import json
 import re
 import unicodedata
 import urllib.parse
+from bs4 import BeautifulSoup
 
 from knowledge_io import ROOT, fetch, fill_empty, read_json, read_window, write_json
 
@@ -18,6 +20,62 @@ def plain(value):
     value = re.sub(r'\[\[([^]|]+)\|([^]]+)\]\]', r'\2', value)
     value = re.sub(r'\[\[([^]]+)\]\]', r'\1', value)
     return re.sub(r'<[^>]+>|\{\{[^{}]*\}\}', '', value).strip()
+
+
+def parse_breeding_records(markup, source_url):
+    """Read only this mare's direct branches, excluding her siblings' offspring."""
+    soup = BeautifulSoup(markup, 'html.parser')
+    horse_path = urllib.parse.urlparse(source_url).path.split('/broodmare')[0].rstrip('/') + '/'
+    own = next((inner for inner in soup.select('.data-1__inner')
+                if any(a.get('href') == horse_path for a in inner.select(':scope > .data-1__root a[href]'))), None)
+    if own is None:
+        raise ValueError('JBIS broodmare tree was not recognized')
+    records = []
+    for branch in own.select(':scope > .data-1__branch'):
+        item = branch.select_one('.data-1__item')
+        if item is None:
+            raise ValueError('JBIS breeding branch was not recognized')
+        text = item.get_text(' ', strip=True)
+        year = re.search(r'(\d{4})年', text)
+        details = item.find_all('div', recursive=False)
+        sire = details[-1].select_one('a[href]') if details else None
+        if year is None or sire is None:
+            raise ValueError('JBIS breeding year or sire is missing')
+        offspring = details[0].select_one('a[href]') if details else None
+        if offspring is None and '産駒なし' not in text:
+            raise ValueError('JBIS offspring outcome is missing')
+        record = {'year': int(year[1]), 'outcome': 'foal' if offspring else 'no_foal',
+                  'partner_ja': re.sub(r'\([A-Z]{2,3}\)$', '', sire.get_text(strip=True)),
+                  'partner_url': urllib.parse.urljoin(source_url, sire['href'])}
+        if offspring:
+            record['foal_url'] = urllib.parse.urljoin(source_url, offspring['href'])
+        records.append(record)
+    return records
+
+
+def reconcile_breeding_records(source):
+    """Match recorded sires against current characters, including later additions."""
+    mapped = {row.get('horse') for row in source['character_mappings'].values() if row.get('kind') == 'horse'}
+    names = {}
+    for node in source['nodes']:
+        if node['id'] not in mapped or node.get('sex') != 'male':
+            continue
+        for key in ('zh', 'ja', 'en'):
+            if node.get(key): names.setdefault(normalized(node[key]), set()).add(node['id'])
+    for mare in source['nodes']:
+        if 'breeding_records' not in mare:
+            continue
+        partners = {row['horse_id']: row for row in mare.get('breeding_partners', [])}
+        for record in mare['breeding_records']:
+            matches = names.get(normalized(record['partner_ja']), set())
+            if len(matches) != 1:
+                continue
+            partner = next(iter(matches))
+            row = partners.setdefault(partner, {'horse_id': partner, 'records': [], 'source_url': mare['breeding_source_url']})
+            fact = {key: record[key] for key in ('year', 'outcome')}
+            if fact not in row['records']: row['records'].append(fact)
+            row['records'].sort(key=lambda fact: (fact['year'], fact['outcome']))
+        mare['breeding_partners'] = list(partners.values())
 
 
 def horse_page(name):
@@ -129,6 +187,38 @@ def add_horse(source, character, *, lookup=horse_page, generations=3):
     return horse
 
 
+def incomplete_visualization(source, cid):
+    by_id = {row['id']: row for row in source['nodes']}
+    root = (source['character_mappings'].get(cid) or {}).get('horse')
+    root_node = by_id.get(root, {})
+    pending, seen, missing = [(root, 0)], set(), []
+    if root_node.get('sex') == 'female' and (not root_node.get('breeding_source_url') or
+            ('breeding_partners' not in root_node and root_node.get('breeding_review_status') != 'unresolved')):
+        missing.append(str(root) + ':breeding review')
+    while pending:
+        hid, depth = pending.pop()
+        if not hid or hid in seen:
+            continue
+        seen.add(hid)
+        row = by_id.get(hid, {})
+        if row.get('alias_of'):
+            pending.append((row['alias_of'], depth)); continue
+        if not (row.get('metadata_source_url') or row.get('profile_url') or (row.get('parents') or {}).get('source_url')):
+            missing.append(hid + ':source URL')
+        for field in ('zh', 'ja', 'en', 'sex', 'born', 'country'):
+            if not row.get(field) and (row.get('field_status') or {}).get(field) not in ('unknown', 'not_published'):
+                missing.append(hid + ':' + field)
+        if re.search(r'[A-Za-z\u3040-\u30ff]', str(row.get('zh') or '')):
+            missing.append(hid + ':Chinese name')
+        if depth <= 3:
+            pair = row.get('parents') or {}
+            for role in ('sire', 'dam'):
+                if pair.get(role): pending.append((pair[role], depth + 1))
+                elif hid not in {'darleyarabian', 'godolphinbarb', 'byerleyturk'} and (row.get('parentage_status') or {}).get(role) not in ('unknown', 'not_published'):
+                    missing.append(hid + ':' + role)
+    return missing
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', action='store_true')
@@ -137,6 +227,8 @@ def main():
     source = read_json(path)
     source['sources'].setdefault('wikipedia', {'name': 'Wikipedia cited racehorse infobox', 'url': 'https://ja.wikipedia.org/'})
     characters = read_window(ROOT / 'data/character_index_data.js')
+    pending_path = ROOT / 'data/auto_update/pedigree_pending.json'
+    review = read_json(pending_path, {})
     resolved, failed = 0, []
     for character in characters:
         previous = source['character_mappings'].get(character['id'])
@@ -149,7 +241,31 @@ def main():
                     'en': character.get('en', ''), 'auto_source': True, 'metadata_source_url': character.get('page', '')})
             continue
         try:
-            resolved += bool(add_horse(source, character))
+            candidate = copy.deepcopy(source)
+            found = add_horse(candidate, character)
+            node = next((row for row in candidate['nodes'] if row['id'] == found), {})
+            if node.get('sex') == 'female' and 'breeding_records' not in node:
+                url = next((node.get(key, '') for key in ('metadata_source_url', 'profile_url')
+                            if re.match(r'https://www\.jbis\.(?:or\.jp|jp)/horse/\d+/', node.get(key, ''))), '')
+                if url:
+                    url = re.match(r'https://www\.jbis\.(?:or\.jp|jp)/horse/\d+/', url)[0] + 'broodmare/info/'
+                    node['breeding_records'] = parse_breeding_records(fetch(url), url)
+                    node['breeding_source_url'] = url
+                    reconcile_breeding_records(candidate)
+            missing = incomplete_visualization(candidate, character['id']) if found else []
+            if missing:
+                previous_ids = {row['id'] for row in source['nodes']}
+                review[character['id']] = {'missing': missing,
+                    'nodes': [row for row in candidate['nodes'] if row['id'] not in previous_ids or row['id'] == found],
+                    'mapping': candidate['character_mappings'].get(character['id'])}
+                source['character_mappings'].setdefault(character['id'], {'horse': None, 'kind': 'unknown', 'auto_source': True})
+                if character['id'] not in previous_ids:
+                    source['nodes'].append({'id': character['id'], 'zh': character.get('zh',''), 'ja': character.get('ja',''), 'en': character.get('en',''), 'auto_source': True})
+                print('prototype awaiting sourced names/facts:', character['id'], len(missing), flush=True)
+            else:
+                source = candidate
+                review.pop(character['id'], None)
+                resolved += bool(found)
         except Exception as error:
             source['character_mappings'].setdefault(character['id'], {'horse': None, 'kind': 'unknown', 'auto_source': True})
             failed.append(character['id'])
@@ -158,7 +274,9 @@ def main():
                 source['nodes'].append({'id': character['id'], 'zh': character.get('zh', ''), 'ja': character.get('ja', ''),
                     'en': character.get('en', ''), 'auto_source': True, 'metadata_source_url': character.get('page', '')})
     if not args.dry_run:
+        reconcile_breeding_records(source)
         write_json(path, source)
+        write_json(pending_path, review)
     print(f'prototype mappings: {resolved} added, {len(failed)} source failures; existing mappings preserved')
     return bool(failed)
 

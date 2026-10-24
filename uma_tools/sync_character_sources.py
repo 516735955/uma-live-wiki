@@ -6,14 +6,29 @@ import io
 import json
 import re
 import urllib.parse
+import urllib.error
+import urllib.request
 
 from bs4 import BeautifulSoup
 from PIL import Image
+from make_avatar import compose_avatar, hex2rgb
 
-from knowledge_io import ROOT, fetch, fill_empty, read_json, read_window, write_json, write_text, write_window
+from knowledge_io import ROOT, USER_AGENT, bounded_read, fetch, fill_empty, read_json, read_window, write_json, write_text, write_window
 
 OFFICIAL = 'https://umamusume.jp/character/'
 PROFILE_FIELDS = {'誕生日': 'birth', '身長': 'height', '体重': 'weight', 'スリーサイズ': 'sankak'}
+
+
+def fetch_official(url):
+    try:
+        return fetch(url)
+    except urllib.error.HTTPError as error:
+        if error.code != 404:
+            raise
+        # A proxy can cache a 404 from before an announced page was published.
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(urllib.request.Request(url, headers={'User-Agent': USER_AGENT}), timeout=25) as response:
+            return bounded_read(response).decode('utf-8', 'replace')
 
 
 def official_character_ids(markup):
@@ -32,7 +47,23 @@ def official_character_ids(markup):
             records[cid] = 'uma' if 'ウマ娘' in categories else 'human'
     if not records:
         raise ValueError('official listing returned no explicitly classified Uma characters')
-    return records
+    order = list(dict.fromkeys(re.findall(r'href="/character/([a-z0-9_]+)/?"', markup)))
+    return {cid: records[cid] for cid in order if cid in records} | {cid: kind for cid, kind in records.items() if cid not in order}
+
+
+def order_characters(characters, categories):
+    positions = {cid: index for index, cid in enumerate(categories)}
+    return sorted(characters, key=lambda row: positions.get(row['id'], len(positions)))
+
+
+def official_card_assets(markup, cid):
+    soup = BeautifulSoup(markup, 'html.parser')
+    payload = soup.select_one('#__NUXT_DATA__')
+    values = json.loads(payload.get_text()) if payload else []
+    for item in values:
+        if isinstance(item, dict) and {'id', 'list_thumb', 'top_thumb'} <= item.keys() and values[item['id']] == cid:
+            return tuple(values[values[item[key]]['url']] for key in ('list_thumb', 'top_thumb'))
+    return '', ''
 
 
 def parse_character(markup, cid):
@@ -52,18 +83,23 @@ def parse_character(markup, cid):
             record[key] = value.get_text(' ', strip=True)
             if key == 'height':
                 record[key] = re.sub(r'\s*cm$', '', record[key], flags=re.I)
-    urls = list(dict.fromkeys(html.unescape(url) for url in re.findall(r'https://images\.microcms-assets\.io[^"\s<>]+', markup)))
-    art = next((url for url in urls if urllib.parse.urlparse(url).path.rsplit('/', 1)[-1].startswith(cid + '_01.')), '')
-    avatar = next((url for url in urls if urllib.parse.urlparse(url).path.rsplit('/', 1)[-1].startswith(cid + '_icon.')), '')
+    art, avatar = official_card_assets(markup, cid)
     detail = {'zh': ja, 'ja': ja, 'en': record['en'], 'cv_zh': record['cv'],
               'html': '<div class="uma-description"><p>' + html.escape(text('.detail-text')).replace('\n', '<br>') + '</p></div>',
               'source_url': record['page'], 'language': 'ja'}
     return record, detail, art, avatar
 
 
-def save_art(url, path, size):
+def save_art(url, path, size, *, background=None):
     image = Image.open(io.BytesIO(fetch(url, binary=True))).convert('RGBA')
-    image.thumbnail(size, Image.Resampling.LANCZOS)
+    if size[0] == size[1]:
+        side = min(image.size)
+        left, top = (image.width - side) // 2, (image.height - side) // 2
+        image = image.crop((left, top, left + side, top + side))
+    if background:
+        image = compose_avatar(image, hex2rgb(background))
+    else:
+        image.thumbnail(size, Image.Resampling.LANCZOS)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')
     try:
@@ -91,6 +127,8 @@ def write_details(path, details):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--only', nargs='+', help='Refresh selected characters; reconcile the full catalogue order')
+    parser.add_argument('--refresh-assets', action='store_true', help='Replace selected card and portrait assets from the official list')
     args = parser.parse_args()
     index_path = ROOT / 'data/character_index_data.js'
     detail_path = ROOT / 'data/character_detail_data.js'
@@ -98,8 +136,12 @@ def main():
     existing = {row['id']: row for row in characters}
     profiles = read_json(ROOT / 'data/voice_actor_profiles.json', {'voice_actors': []})['voice_actors']
     names = {row['identity']['ja']: row['identity']['zh'] for row in profiles if row['identity'].get('ja')}
-    page = fetch(OFFICIAL)
+    page = fetch_official(OFFICIAL)
     categories = official_character_ids(page)
+    if not args.dry_run:
+        for cid, category in categories.items():
+            if cid in existing:
+                existing[cid]['role_type'] = category
     ids = list(categories)
     colors = {cid: (main.upper(), sub.upper()) for cid, main, sub in re.findall(
         r'href="/character/([a-z0-9_]+)/?"[^>]*style="[^\"]*--color-main:\s*(#[0-9a-fA-F]{6});\s*--color-sub:\s*(#[0-9a-fA-F]{6})', page)}
@@ -108,14 +150,16 @@ def main():
     state = read_json(state_path, {'ids': []})
     added, failed = 0, []
     for cid in ids:
+        if args.only and cid not in args.only:
+            continue
         old = existing.get(cid, {})
         fields = ('ja', 'cv', 'img', 'av') + (tuple(PROFILE_FIELDS.values()) if categories[cid] == 'uma' else ())
         assets_ok = all((not old.get(field)) or (ROOT / str(old[field]).lstrip('/')).exists()
                         for field in ('img', 'av'))
-        if old and all(old.get(field) for field in fields) and assets_ok and details.get(cid, {}).get('html'):
+        if not args.refresh_assets and old and all(old.get(field) for field in fields) and assets_ok and details.get(cid, {}).get('html'):
             continue
         try:
-            record, detail, art, avatar = parse_character(fetch(OFFICIAL + cid + '/'), cid)
+            record, detail, art, avatar = parse_character(fetch_official(OFFICIAL + cid + '/'), cid)
             record['role_type'] = categories[cid]
             record['zh'] = names.get(record['ja'], record['zh'])
             record['cv_zh'] = names.get(record['cv'], record['cv'])
@@ -124,13 +168,13 @@ def main():
             if not args.dry_run:
                 if art:
                     image_path = ROOT / 'uma_official' / (cid + '.png')
-                    if not image_path.exists():
-                        save_art(art, image_path, (720, 1056))
+                    if args.refresh_assets or not image_path.exists():
+                        save_art(art, image_path, (296, 389))
                     record['img'] = '/uma_official/' + cid + '.png'
                 if avatar:
                     image_path = ROOT / 'uma_avatars' / (cid + '.png')
-                    if not image_path.exists():
-                        save_art(avatar, image_path, (240, 240))
+                    if args.refresh_assets or not image_path.exists():
+                        save_art(avatar, image_path, (200, 200), background=record['main'])
                     record['av'] = '/uma_avatars/' + cid + '.png'
                     record.setdefault('img', record['av'])
             if cid not in existing:
@@ -140,13 +184,14 @@ def main():
                 added += 1
             else:
                 fill_empty(existing[cid], record)
+                existing[cid]['role_type'] = categories[cid]
             fill_empty(details.setdefault(cid, {}), detail)
         except Exception as error:
             failed.append(cid)
             print('character unavailable:', cid, type(error).__name__, flush=True)
     if not args.dry_run:
         write_details(detail_path, details)
-        write_window(index_path, 'CHAR_INDEX', characters)
+        write_window(index_path, 'CHAR_INDEX', order_characters(characters, categories))
         write_json(state_path, state)
         # The official member classification supersedes older exclusions of
         # that same named member; unrelated background-role exclusions remain.

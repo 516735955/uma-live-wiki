@@ -100,7 +100,7 @@
       sex: horseNode.sex || node.sex || '',
       born: horseNode.born || node.born || '',
       country: horseNode.country || node.country || '',
-      avatar: avatarUrl((character && character.img) || node.av || horseNode.av),
+      avatar: avatarUrl((character && character.av) || node.av || horseNode.av || (character && character.img)),
       roleColor: safeColor(character && character.main, '#3159d9'),
       roleSubColor: safeColor(character && character.sub, '#23418f'),
       roleInk: contrastColor(character && character.main),
