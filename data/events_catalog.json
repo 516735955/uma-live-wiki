@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T04:37:38+00:00",
+  "generated_at": "2026-10-24T04:49:10+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -254,15 +254,15 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
-      "summary": "开场 16:30 开演 17:30 结束 18:30；结束时间仅供参考。",
+      "summary": "開場 16:30 開演 17:30 終演 18:30",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント",
-      "summary_ja": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
+      "summary_ja": "開場 16:30 開演 17:30 終演 18:30",
       "title_zh": "『赛马娘 Pretty Derby』WINNING LIVE 36发售纪念活动",
-      "summary_zh": "开场 16:30 开演 17:30 结束 18:30；结束时间仅供参考。",
+      "summary_zh": "開場 16:30 開演 17:30 終演 18:30",
       "localization_state": "complete"
     },
     {
@@ -14323,7 +14323,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
+      "image": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
       "summary": "目白善信与跳舞城赢得空气曲棍球双打比赛冠军，一起举杯庆祝。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -157853,5 +157853,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "1a84130e697421f4702c"
+  "build_id": "788dc79291f0fbacdcfb"
 }
