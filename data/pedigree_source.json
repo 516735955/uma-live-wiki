@@ -33443,7 +33443,42 @@
         "source_url": "https://www.jbis.or.jp/horse/0001232347/"
       },
       "en": "Win Marilyn",
-      "country": "JPN"
+      "country": "JPN",
+      "breeding_records": [
+        {
+          "year": 2025,
+          "outcome": "foal",
+          "partner_ja": "タイトルホルダー",
+          "partner_url": "https://www.jbis.or.jp/horse/0001267543/",
+          "foal_url": "https://www.jbis.or.jp/horse/0001406533/"
+        },
+        {
+          "year": 2026,
+          "outcome": "foal",
+          "partner_ja": "イクイノックス",
+          "partner_url": "https://www.jbis.or.jp/horse/0001309176/",
+          "foal_url": "https://www.jbis.or.jp/horse/0001436407/"
+        }
+      ],
+      "breeding_source_url": "https://www.jbis.or.jp/horse/0001232347/broodmare/info/",
+      "breeding_review_status": "reviewed",
+      "family_review": {
+        "status": "reviewed_existing_characters",
+        "siblings_source_url": "https://www.jbis.or.jp/horse/0000901762/broodmare/info/",
+        "descendants_source_url": "https://www.jbis.or.jp/horse/0001232347/broodmare/info/"
+      },
+      "breeding_partners": [
+        {
+          "horse_id": "titleholder",
+          "records": [
+            {
+              "year": 2025,
+              "outcome": "foal"
+            }
+          ],
+          "source_url": "https://www.jbis.or.jp/horse/0001232347/broodmare/info/"
+        }
+      ]
     },
     {
       "id": "horse-auto-スクリーンヒーロー",
@@ -33620,7 +33655,9 @@
       "parentage_status": {
         "sire": "unknown"
       },
-      "auto_source": true
+      "auto_source": true,
+      "breeding_source_url": "https://ryoso-b.jp/wp-content/themes/chiba-thoroughbred/pdf/umanoayumi_vol2.pdf",
+      "breeding_review_status": "unresolved"
     },
     {
       "id": "takasago_azuma_dam",

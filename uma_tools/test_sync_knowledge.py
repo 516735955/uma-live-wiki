@@ -18,6 +18,25 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_breeding_records_match_existing_and_later_added_characters(self):
+        markup = '''<div class="data-1__inner"><div class="data-1__root"><a href="/horse/1/">母</a></div>
+        <div class="data-1__branch"><div class="data-1__item"><div><a href="/horse/2/">子</a></div><div>牡｜2025年｜<a href="/horse/3/">領銜</a></div></div></div>
+        <div class="data-1__branch"><div class="data-1__item"><div><a href="/horse/4/">子</a></div><div>牝｜2026年｜<a href="/horse/5/">未来馬</a></div></div></div></div>
+        <div class="data-1__inner"><div class="data-1__root"><a href="/horse/9/">別馬</a></div><div class="data-1__branch"><div class="data-1__item">unrelated</div></div></div>'''
+        url = 'https://www.jbis.or.jp/horse/1/broodmare/info/'
+        records = pedigree.parse_breeding_records(markup, url)
+        self.assertEqual([row['year'] for row in records], [2025, 2026])
+        mare = {'id':'mare', 'breeding_records':records, 'breeding_source_url':url}
+        source = {'nodes':[mare, {'id':'titleholder','ja':'領銜','sex':'male'}], 'character_mappings':{'titleholder':{'horse':'titleholder','kind':'horse'}}}
+        pedigree.reconcile_breeding_records(source)
+        self.assertEqual(mare['breeding_partners'][0]['records'], [{'year':2025,'outcome':'foal'}])
+        source['nodes'].append({'id':'future','ja':'未来馬','sex':'male'})
+        source['character_mappings']['future'] = {'horse':'future','kind':'horse'}
+        pedigree.reconcile_breeding_records(source)
+        pedigree.reconcile_breeding_records(source)
+        self.assertEqual(len(mare['breeding_partners']), 2)
+        self.assertEqual(mare['breeding_partners'][1]['records'], [{'year':2026,'outcome':'foal'}])
+
     def test_portrait_versions_keep_transparency_and_coloured_circle_separate(self):
         from PIL import Image
         source = Image.new('RGBA', (680, 680), (0, 0, 0, 0))

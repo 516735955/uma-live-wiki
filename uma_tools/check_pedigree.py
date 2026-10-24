@@ -60,8 +60,8 @@ def main():
         mare = by_id.get(mare_id) or {}
         if mare.get("sex") != "female":
             continue
-        if mare.get("auto_source") and "breeding_partners" not in mare:
-            # An unpublished breeding record is unknown, rather than no partners.
+        if mare.get("breeding_review_status") == "unresolved" and mare.get("breeding_source_url"):
+            # Historical evidence can confirm breeding without identifying partners.
             continue
         if not mare.get("breeding_source_url"):
             errors.append("mapped mare has no breeding source: %s" % mare_id)
