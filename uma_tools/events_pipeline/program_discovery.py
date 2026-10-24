@@ -15,6 +15,7 @@ IGNORED_PROGRAM_CANDIDATES = pipeline_common.DATA_DIR / "auto_update/event-refre
 METADATA_TTL_UPCOMING = 60 * 60
 METADATA_TTL_UNDATED = 24 * 60 * 60
 METADATA_TTL_PUBLISHED = 7 * 24 * 60 * 60
+METADATA_ERRORS: dict[str, str] = {}
 EXTERNAL_OFFICIAL_CHANNELS = (
     # The source is restricted to explicit Uma/collaboration titles below;
     # this is not a general-purpose partner-channel crawler.
@@ -94,11 +95,17 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -
     except (OSError, pipeline_common.json.JSONDecodeError, AttributeError):
         pass
     from public_video import yt_command
-    command = yt_command(["--skip-download", "--ignore-no-formats-error", "--extractor-args", "youtube:lang=ja", "--no-warnings", "--socket-timeout", "12", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"])
-    try:
-        result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=45)
-        metadata = pipeline_common.json.loads(result.stdout)
-        if usable(metadata):
+    reasons = []
+    from public_video import error_reason
+    for client in ('default', 'android'):
+        extractor = 'youtube:lang=ja' + (';player_client=android' if client == 'android' else '')
+        command = yt_command(["--skip-download", "--ignore-no-formats-error", "--extractor-args", extractor, "--no-warnings", "--socket-timeout", "12", "--dump-single-json", f"https://www.youtube.com/watch?v={video_id}"])
+        try:
+            result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=30)
+            metadata = pipeline_common.json.loads(result.stdout)
+            if not usable(metadata):
+                reasons.append(client + ': missing verified identity/channel/date')
+                continue
             try:
                 PROGRAM_METADATA_CACHE.mkdir(parents=True, exist_ok=True)
                 temporary = cache_file.with_suffix(".json.tmp")
@@ -106,15 +113,14 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -
                 temporary.replace(cache_file)
             except OSError:
                 pass
+            METADATA_ERRORS.pop(video_id, None)
             return metadata
-        if stale:
-            stale['_metadata_stale'] = True
-        return stale
-    except (OSError, pipeline_common.subprocess.SubprocessError, pipeline_common.json.JSONDecodeError):
-        if stale:
-            stale["_metadata_stale"] = True
-            return stale
-        return None
+        except (OSError, pipeline_common.subprocess.SubprocessError, pipeline_common.json.JSONDecodeError) as error:
+            reasons.append(client + ': ' + error_reason(error))
+    METADATA_ERRORS[video_id] = '; '.join(reasons)
+    if stale:
+        stale['_metadata_stale'] = True
+    return stale
 
 
 def discover_channel_feed(feed: str, limit: int) -> list[dict[str, pipeline_common.Any]]:
@@ -482,10 +488,10 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
                     metadata.get("channel_id") != source_row.get("source_channel_id")
                     and source_row["source_channel"] not in channel_url.lower()
                 ):
-                    source_errors.append('external video metadata unavailable or channel mismatch: ' + futures[future])
+                    source_errors.append('external video metadata unavailable or channel mismatch: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel'))
                     continue
             elif not metadata or metadata.get("channel_id") != pipeline_common.OFFICIAL_CHANNEL_ID:
-                source_errors.append('official video metadata unavailable: ' + futures[future])
+                source_errors.append('official video metadata unavailable: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel'))
                 continue
             if metadata.get("_metadata_stale"):
                 source_errors.append("stale metadata retained after refresh failure: " + futures[future])
