@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T04:49:10+00:00",
+  "generated_at": "2026-10-24T04:53:16+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -12,15 +12,15 @@
     }
   },
   "coverage": {
-    "events": 509,
+    "events": 511,
     "by_kind": {
       "concert": 81,
       "official_program": 250,
-      "onsite": 178
+      "onsite": 180
     },
     "by_mode": {
       "online": 250,
-      "onsite": 259
+      "onsite": 261
     },
     "official_programs": 250,
     "unresolved_cast_names": 0
@@ -369,15 +369,15 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/onsite.svg",
-      "summary": "开场 16:30 开演 17:00 结束 19:00；结束时间仅供参考。",
+      "summary": "開場 16:30 開演 17:00 終演 19:00",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント",
-      "summary_ja": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
+      "summary_ja": "開場 16:30 開演 17:00 終演 19:00",
       "title_zh": "赛马娘 Pretty Derby 6th EVENT The New Frontier Blu-ray 发售纪念上映活动",
-      "summary_zh": "开场 16:30 开演 17:00 结束 19:00；结束时间仅供参考。",
+      "summary_zh": "開場 16:30 開演 17:00 終演 19:00",
       "localization_state": "complete"
     },
     {
@@ -663,15 +663,15 @@
       ],
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
-      "summary": "开场 15:00 开演 16:00 结束 17:00；结束时间仅供参考。",
+      "summary": "開場 15:00 開演 16:00 終演 17:00",
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
-      "summary_ja": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
+      "summary_ja": "開場 15:00 開演 16:00 終演 17:00",
       "title_zh": "『赛马娘 Pretty Derby』WINNING LIVE 35发售纪念活动",
-      "summary_zh": "开场 15:00 开演 16:00 结束 17:00；结束时间仅供参考。",
+      "summary_zh": "開場 15:00 開演 16:00 終演 17:00",
       "localization_state": "complete"
     },
     {
@@ -145403,6 +145403,88 @@
       "localization_state": "complete"
     },
     {
+      "id": "eventernote-2018-07-01",
+      "title": "『STARTING GATE! －ウマ娘プリティーダービー―』③巻発売記念お渡し会",
+      "date": "2018-07-01",
+      "end_date": "2018-07-01",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "starting-gate-release",
+      "venue": "アニメイト新宿(旧店舗/移転済)",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0040",
+          "name": "和气杏未",
+          "character_id": "specialweek",
+          "role": "特别周",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/160220",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/160220"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0003",
+          "name": "Machico",
+          "character_id": "tokaiteio",
+          "role": "东海帝王",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/160220",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/160220"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0173",
+          "name": "青木瑠璃子",
+          "character_id": "airgroove",
+          "role": "气槽",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/160220",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/160220"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/160220"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/starting-gate.svg",
+      "summary": "開場 14:30 開演 15:00 終演 17:00",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "title_ja": "『STARTING GATE! －ウマ娘プリティーダービー―』③巻発売記念お渡し会",
+      "summary_ja": "開場 14:30 開演 15:00 終演 17:00",
+      "summary_zh": "開場 14:30 開演 15:00 終演 17:00",
+      "localization_state": "pending"
+    },
+    {
       "id": "official-special-abema-stakes-04",
       "title": "Abema Stakes 第4R",
       "date": "2018-06-20",
@@ -150090,6 +150172,72 @@
       "summary_ja": "",
       "title_zh": "HiBiKi Radio Station×Cygames公开录音祭·Paka Radio赛马娘宣传部与公主连结频道Re:Dive",
       "localization_state": "complete"
+    },
+    {
+      "id": "eventernote-2017-09-02",
+      "title": "サイコミ創刊&「STARTING GATE！－ウマ娘プリティーダービー－」1巻発売記念 トークショー&お渡し会",
+      "date": "2017-09-02",
+      "end_date": "2017-09-02",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "starting-gate-release",
+      "venue": "TSUTAYA三軒茶屋店",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0040",
+          "name": "和气杏未",
+          "character_id": "specialweek",
+          "role": "特别周",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/123710",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/123710"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0184",
+          "name": "高野麻里佳",
+          "character_id": "silencesuzuka",
+          "role": "无声铃鹿",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/123710",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/123710"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/123710"
+        }
+      ],
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/starting-gate.svg",
+      "summary": "開場 - 開演 16:00 終演 17:00",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "title_ja": "サイコミ創刊&「STARTING GATE！－ウマ娘プリティーダービー－」1巻発売記念 トークショー&お渡し会",
+      "summary_ja": "開場 - 開演 16:00 終演 17:00",
+      "summary_zh": "開場 - 開演 16:00 終演 17:00",
+      "localization_state": "pending"
     },
     {
       "id": "live-numbered-1st-event-2017-07-01",
@@ -157853,5 +158001,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "788dc79291f0fbacdcfb"
+  "build_id": "6cbe83c5c563007ea9eb"
 }
