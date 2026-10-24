@@ -10,6 +10,8 @@
 用法: python crawl_characters.py
 """
 import io, re, json, sys, os, time, urllib.request, urllib.parse, tempfile
+from pathlib import Path
+from sync_character_sources import official_card_assets, official_character_ids, save_art
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from PIL import Image, ImageDraw, ImageChops
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -116,6 +118,7 @@ def main():
 
     # ---- 阶段0: 官方站检测 ----
     off = get(OFFICIAL)
+    categories = official_character_ids(off)
     order = []
     for m in re.finditer(r'href="/character/([a-z0-9_]+)/?"', off):
         if m.group(1) not in order:
@@ -125,7 +128,12 @@ def main():
         for match in OFFICIAL_COLOR_RE.finditer(off)
     }
     color_updates = 0
+    category_updates = 0
     for character in chars:
+        category = categories.get(character['id'])
+        if category and character.get('role_type') != category:
+            character['role_type'] = category
+            category_updates += 1
         pair = official_colors.get(character['id'])
         if not pair:
             continue
@@ -139,12 +147,12 @@ def main():
         flush=True,
     )
     if not news_ids:
-        if color_updates:
-            pos = {character_id: index for index, character_id in enumerate(order)}
-            chars.sort(key=lambda character: pos.get(character['id'], 999))
+        pos = {character_id: index for index, character_id in enumerate(order)}
+        ordered = sorted(chars, key=lambda character: pos.get(character['id'], len(pos)))
+        if color_updates or category_updates or ordered != chars:
             write_text_atomic(
                 idx_path,
-                'window.CHAR_INDEX = ' + json.dumps(chars, ensure_ascii=False, separators=(',', ':')) + ';',
+                'window.CHAR_INDEX = ' + json.dumps(ordered, ensure_ascii=False, separators=(',', ':')) + ';',
             )
         print('无新角色，官方双色同步完成。', flush=True)
         return 0
@@ -202,9 +210,7 @@ def main():
 
     for cid, info in moe_pages.items():
         ph = get(OFFICIAL + cid)
-        urls = re.findall(r'https://images\.microcms-assets\.io[^"\'\s)]+', ph)
-        u_art = next((u for u in urls if u.rsplit('/', 1)[-1].startswith(cid + '_01.png')), None)
-        u_icon = next((u for u in urls if u.rsplit('/', 1)[-1].startswith(cid + '_icon.png')), None)
+        u_art, u_icon = official_card_assets(ph, cid)
 
         def shrink(src_im, dst, box_w=None, box_h=None, quality=None):
             w, hh = src_im.size
@@ -220,22 +226,9 @@ def main():
 
         tmp = os.path.join(ROOT, '_tmp_char.img')
         if u_art:
-            open(tmp, 'wb').write(get(u_art, binary=True))
-            im = Image.open(tmp).convert('RGBA')
-            w0, h0 = im.size
-            s0 = 389.0 / h0 if h0 > 389 else 1.0
-            im = im.resize((max(1,int(w0*s0)), max(1,int(h0*s0))), Image.LANCZOS)
-            bg = Image.new('RGB', im.size, (255, 255, 255))
-            bg.paste(im, mask=im.split()[-1])
-            bg.save(os.path.join(ROOT, 'uma_official', '%s.png' % cid), optimize=True)
+            save_art(u_art, Path(ROOT) / 'uma_official' / (cid + '.png'), (296, 389))
         if u_icon:
-            open(tmp, 'wb').write(get(u_icon, binary=True))
-            im = Image.open(tmp).convert('RGBA')
-            side = min(im.size)
-            im = im.crop(((im.size[0]-side)//2, (im.size[1]-side)//2,
-                          (im.size[0]-side)//2+side, (im.size[1]-side)//2+side))
-            im.thumbnail((200, 200), Image.LANCZOS)
-            im.save(os.path.join(ROOT, 'uma_avatars', '%s.png' % cid), optimize=True)
+            save_art(u_icon, Path(ROOT) / 'uma_avatars' / (cid + '.png'), (200, 200))
         os.path.exists(tmp) and os.remove(tmp)
 
         # uma_moe 透明立绘（副本操作，符合铁律）
@@ -267,6 +260,7 @@ def main():
         # CHAR_INDEX 条目
         official_main, official_sub = official_colors.get(cid, (info['color'] or '#8C83FF', '#FFFFFF'))
         chars.append({'id': cid, 'zh': info['zh'], 'ja': obj['ja'], 'en': obj['en'],
+                      'role_type': categories[cid],
                       'cv_zh': info['cv'], 'cv': info['cv'],
                       'img': '/uma_official/%s.png' % cid,
                       **({'av': '/uma_avatars/%s.png' % cid} if os.path.isfile(os.path.join(ROOT, 'uma_avatars', cid + '.png')) else {}),

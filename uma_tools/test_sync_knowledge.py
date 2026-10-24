@@ -17,6 +17,27 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_official_order_is_dom_order_and_local_entries_stay_stable(self):
+        values = [{'id': 1, 'name': 2, 'category': 3, 'cv': 4}, 'azuma', '吾妻', [5], 'CV', 'トレセン学園関係者',
+                  {'id': 7, 'name': 8, 'category': 9, 'cv': 4}, 'winmarilyn', 'ウインマリリン', [10], 'ウマ娘']
+        markup = '<a href="/character/winmarilyn"></a><a href="/character/azuma"></a><script id="__NUXT_DATA__">' + json.dumps(values) + '</script>'
+        categories = characters.official_character_ids(markup)
+        rows = [{'id': cid} for cid in ['local-a', 'azuma', 'local-b', 'winmarilyn']]
+        self.assertEqual([row['id'] for row in characters.order_characters(rows, categories)], ['winmarilyn','azuma','local-a','local-b'])
+        self.assertEqual(categories['azuma'], 'human')
+
+    def test_official_assets_use_list_and_bust_not_full_body_or_social_image(self):
+        values = [{'id':1,'list_thumb':2,'top_thumb':3},'new',{'url':4},{'url':5},'https://example.test/list.png','https://example.test/top.png','https://example.test/new_01.png','https://example.test/new_icon.png']
+        markup = '<script id="__NUXT_DATA__">' + json.dumps(values) + '</script>'
+        self.assertEqual(characters.official_card_assets(markup, 'new'), ('https://example.test/list.png','https://example.test/top.png'))
+
+    def test_automatic_pedigree_requires_localized_names_and_sourced_unknowns(self):
+        source = {'nodes':[{'id':'new','zh':'Running Heroine','ja':'ランニングヒロイン','sex':'female','born':1993}], 'character_mappings':{'new':{'horse':'new'}}}
+        missing = pedigree.incomplete_visualization(source,'new')
+        self.assertIn('new:Chinese name', missing)
+        self.assertIn('new:country', missing)
+        self.assertIn('new:en', missing)
+
     def test_automatic_translation_has_one_owner_for_each_data_domain(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'ROOT', Path(folder)), patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('event-localization', ['localize_events.js']), ('entity-localization', ['localize_entities.js'])]):
             for github in ('true', 'false'):

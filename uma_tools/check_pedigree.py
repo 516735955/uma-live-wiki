@@ -375,12 +375,8 @@ def main():
     han_text = re.compile(r"[\u3400-\u9fff]")
     for node_id in sorted(complete_scope):
         record = by_id.get(node_id) or {}
-        if record.get("auto_source"):
-            if not (record.get("metadata_source_url") or record.get("profile_url")):
-                errors.append("automatic horse has no source URL: %s" % node_id)
-            continue
         for field in ("zh", "ja", "en", "sex", "born", "country"):
-            if not record.get(field):
+            if not record.get(field) and (record.get("field_status") or {}).get(field) not in ("unknown", "not_published"):
                 errors.append("incomplete visualization horse %s: %s" % (
                     node_id, field
                 ))
@@ -397,7 +393,7 @@ def main():
             errors.append("visualization horse has no source URL: %s" % node_id)
         if node_id in visual_horses and node_id not in foundation_ids:
             pair = parents.get(node_id) or {}
-            if not pair.get("sire") or not pair.get("dam"):
+            if any(not pair.get(role) and (record.get("parentage_status") or {}).get(role) not in ("unknown", "not_published") for role in ("sire", "dam")):
                 errors.append("visualization horse has incomplete parents: %s" % node_id)
     for field in ("zh", "ja", "en"):
         labels = defaultdict(list)

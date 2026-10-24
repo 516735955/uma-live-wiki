@@ -299,6 +299,7 @@ export function createDomains(env) {
           "charHasPedigree",
           "loadPedigreeData",
           "loadPedigreeMeta",
+          "loadHorsesListData",
           "renderCharBlood",
         ],
         songs: ["expandedRelationSongId"],

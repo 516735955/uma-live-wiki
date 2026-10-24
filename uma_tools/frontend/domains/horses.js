@@ -23,6 +23,7 @@ export function createHorses(deps) {
   const otherSection = deps.ref("relationships");
 
   const horsesList = deps.ref([]);
+  const horseIndex = deps.ref(window.HORSES || []);
 
   const horsesTotal = deps.ref(0);
 
@@ -65,7 +66,7 @@ export function createHorses(deps) {
 
   function loadHorsesListData(params) {
     horsesListError.value = "";
-    const paged = deps.currentUrlPath().split("?")[0] === deps.routes.horses();
+    const paged = !(params && params.scope === "index") && deps.currentUrlPath().split("?")[0] === deps.routes.horses();
     if (
       !paged &&
       window.HORSES &&
@@ -73,6 +74,7 @@ export function createHorses(deps) {
       Date.now() - horseIndexUpdatedAt < 300000
     ) {
       horsesList.value = window.HORSES;
+      horseIndex.value = window.HORSES;
       return Promise.resolve();
     }
     const revision = ++horseListRevision;
@@ -106,6 +108,7 @@ export function createHorses(deps) {
         if (paged) horsePage.value = data.page;
         else {
           window.HORSES = data.items;
+          horseIndex.value = data.items;
           horseIndexUpdatedAt = Date.now();
         }
       })
@@ -441,11 +444,8 @@ export function createHorses(deps) {
 
   function horseForCharacter(characterId) {
     const normalized = String(characterId || "").toLowerCase();
-    let pool = window.HORSES && window.HORSES.length ? window.HORSES : [];
-    if (!pool.length && window.HORSES_DETAIL)
-      pool = Object.keys(window.HORSES_DETAIL).map(function (key) {
-        return window.HORSES_DETAIL[key];
-      });
+    const pool = horseIndex.value.concat(horsesList.value,
+      Object.values(window.HORSES_DETAIL || {}));
     for (let i = 0; i < pool.length; i++) {
       const horse = pool[i];
       if (String(horse.id || "").toLowerCase() === normalized) return horse;

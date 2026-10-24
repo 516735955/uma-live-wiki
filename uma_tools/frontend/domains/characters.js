@@ -145,6 +145,7 @@ export function createCharacters(deps) {
   }
 
   function openCharacter(id) {
+    deps.loadHorsesListData({scope: "index"}).catch(() => {});
     const isCurrent = deps.beginEntityNavigation();
     const show = function () {
       if (!isCurrent()) return;

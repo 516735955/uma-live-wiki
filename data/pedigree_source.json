@@ -780,8 +780,7 @@
     },
     "winmarilyn": {
       "horse": "winmarilyn",
-      "kind": "horse",
-      "auto_source": true
+      "kind": "horse"
     },
     "azuma": {
       "horse": "azuma",
@@ -33444,12 +33443,12 @@
         "source_url": "https://www.jbis.or.jp/horse/0001232347/"
       },
       "en": "Win Marilyn",
-      "country": "日本"
+      "country": "JPN"
     },
     {
       "id": "horse-auto-スクリーンヒーロー",
-      "zh": "スクリーンヒーロー",
-      "auto_source": true,
+      "zh": "银幕英雄",
+      "auto_source": false,
       "ja": "スクリーンヒーロー",
       "born": 2004,
       "sex": "male",
@@ -33460,12 +33459,15 @@
         "dam": "horse-auto-ランニングヒロイン",
         "source": "jbis",
         "source_url": "https://www.jbis.or.jp/horse/0000801447/"
-      }
+      },
+      "en": "Screen Hero",
+      "country": "JPN",
+      "name_zh_status": "established"
     },
     {
       "id": "horse-auto-ランニングヒロイン",
-      "zh": "ランニングヒロイン",
-      "auto_source": true,
+      "zh": "奔跑女杰",
+      "auto_source": false,
       "ja": "ランニングヒロイン",
       "born": 1993,
       "sex": "female",
@@ -33476,12 +33478,15 @@
         "dam": "dyna_actress",
         "source": "jbis",
         "source_url": "https://www.jbis.or.jp/horse/0000274839/"
-      }
+      },
+      "en": "Running Heroine",
+      "country": "JPN",
+      "name_zh_status": "site_translation"
     },
     {
       "id": "horse-auto-コスモチェーロ",
-      "zh": "コスモチェーロ",
-      "auto_source": true,
+      "zh": "宇宙苍穹",
+      "auto_source": false,
       "ja": "コスモチェーロ",
       "born": 2003,
       "sex": "female",
@@ -33492,13 +33497,16 @@
         "dam": "horse-auto-Shorwon",
         "source": "jbis",
         "source_url": "https://www.jbis.or.jp/horse/0000901762/"
-      }
+      },
+      "en": "Cosmo Cielo",
+      "country": "AUS",
+      "name_zh_status": "site_translation"
     },
     {
       "id": "horse-auto-Fusaichi Pegasus",
-      "zh": "Fusaichi Pegasus",
-      "auto_source": true,
-      "ja": "Fusaichi Pegasus",
+      "zh": "灵驹",
+      "auto_source": false,
+      "ja": "フサイチペガサス",
       "born": 1997,
       "sex": "male",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000621167/",
@@ -33508,23 +33516,36 @@
         "dam": "horse-auto-Angel Fever",
         "source": "jbis",
         "source_url": "https://www.jbis.or.jp/horse/0000621167/"
-      }
+      },
+      "en": "Fusaichi Pegasus",
+      "country": "USA",
+      "name_zh_status": "established"
     },
     {
       "id": "horse-auto-Angel Fever",
-      "zh": "Angel Fever",
-      "auto_source": true,
-      "ja": "Angel Fever",
+      "zh": "天使热情",
+      "auto_source": false,
+      "ja": "エンジェルフィーヴァー",
       "born": 1990,
       "sex": "female",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000621732/",
-      "profile_url": "https://www.jbis.or.jp/horse/0000621732/"
+      "profile_url": "https://www.jbis.or.jp/horse/0000621732/",
+      "en": "Angel Fever",
+      "country": "USA",
+      "parents": {
+        "sire": "danzig",
+        "dam": "horse-jbis-0000404769",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000621732/"
+      },
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
     },
     {
       "id": "horse-auto-Shorwon",
-      "zh": "Shorwon",
-      "auto_source": true,
-      "ja": "Shorwon",
+      "zh": "肖尔旺",
+      "auto_source": false,
+      "ja": "ショーウォン",
       "born": 1983,
       "sex": "female",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000442960/",
@@ -33534,27 +33555,51 @@
         "dam": "horse-auto-April Wonder",
         "source": "jbis",
         "source_url": "https://www.jbis.or.jp/horse/0000442960/"
-      }
+      },
+      "en": "Shorwon",
+      "country": "AUS",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
     },
     {
       "id": "horse-auto-Buena Shore",
-      "zh": "Buena Shore",
-      "auto_source": true,
-      "ja": "Buena Shore",
+      "zh": "美好海岸",
+      "auto_source": false,
+      "ja": "ブエナショア",
       "born": 1973,
       "sex": "male",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000344752/",
-      "profile_url": "https://www.jbis.or.jp/horse/0000344752/"
+      "profile_url": "https://www.jbis.or.jp/horse/0000344752/",
+      "en": "Buena Shore",
+      "country": "USA",
+      "parents": {
+        "sire": "horse-jbis-0000345012",
+        "dam": "horse-jbis-0000411541",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000344752/"
+      },
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
     },
     {
       "id": "horse-auto-April Wonder",
-      "zh": "April Wonder",
-      "auto_source": true,
-      "ja": "April Wonder",
+      "zh": "四月奇迹",
+      "auto_source": false,
+      "ja": "エイプリルワンダー",
       "born": 1959,
       "sex": "female",
       "metadata_source_url": "https://www.jbis.or.jp/horse/0000442961/",
-      "profile_url": "https://www.jbis.or.jp/horse/0000442961/"
+      "profile_url": "https://www.jbis.or.jp/horse/0000442961/",
+      "en": "April Wonder",
+      "country": "AUS",
+      "parents": {
+        "sire": "horse-jbis-0000334383",
+        "dam": "horse-jbis-0000442962",
+        "source": "jbis",
+        "source_url": "https://www.jbis.or.jp/horse/0000442961/"
+      },
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
     },
     {
       "id": "azuma",
@@ -33563,14 +33608,19 @@
       "en": "Azuma",
       "sex": "female",
       "born": 1870,
-      "country": "日本",
+      "country": "JPN",
       "metadata_source_url": "https://db.netkeiba.com/horse/000a01c145/",
       "profile_url": "https://db.netkeiba.com/horse/000a01c145/",
       "parents": {
         "sire": null,
         "dam": "takasago_azuma_dam",
-        "source": "tomisato_history"
-      }
+        "source": "tomisato_history",
+        "source_url": "https://db.netkeiba.com/horse/000a01c145/"
+      },
+      "parentage_status": {
+        "sire": "unknown"
+      },
+      "auto_source": true
     },
     {
       "id": "takasago_azuma_dam",
@@ -33578,7 +33628,83 @@
       "ja": "高砂",
       "en": "Takasago",
       "sex": "female",
-      "metadata_source_url": "https://ryoso-b.jp/wp-content/themes/chiba-thoroughbred/pdf/umanoayumi_vol2.pdf"
+      "metadata_source_url": "https://ryoso-b.jp/wp-content/themes/chiba-thoroughbred/pdf/umanoayumi_vol2.pdf",
+      "country": "FR",
+      "field_status": {
+        "born": "unknown"
+      },
+      "parentage_status": {
+        "sire": "unknown",
+        "dam": "unknown"
+      }
+    },
+    {
+      "id": "horse-jbis-0000404769",
+      "ja": "ロウディエンジェル",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000404769/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000404769/",
+      "en": "Rowdy Angel",
+      "country": "USA",
+      "born": 1979,
+      "sex": "female",
+      "zh": "狂野天使",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
+    },
+    {
+      "id": "horse-jbis-0000345012",
+      "ja": "ジョージルイス",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000345012/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000345012/",
+      "en": "George Lewis",
+      "country": "",
+      "born": 1967,
+      "sex": "male",
+      "zh": "乔治刘易斯",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration",
+      "field_status": {
+        "country": "unknown"
+      }
+    },
+    {
+      "id": "horse-jbis-0000411541",
+      "ja": "フルビュー",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000411541/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000411541/",
+      "en": "Full View",
+      "country": "USA",
+      "born": 1962,
+      "sex": "female",
+      "zh": "全景",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
+    },
+    {
+      "id": "horse-jbis-0000334383",
+      "ja": "ニュータウンワンダー",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000334383/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000334383/",
+      "en": "Newtown Wonder",
+      "country": "GB",
+      "born": 1942,
+      "sex": "male",
+      "zh": "新城奇迹",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
+    },
+    {
+      "id": "horse-jbis-0000442962",
+      "ja": "エイプリルフラワー",
+      "metadata_source_url": "https://www.jbis.or.jp/horse/0000442962/",
+      "profile_url": "https://www.jbis.or.jp/horse/0000442962/",
+      "en": "April Flower",
+      "country": "AUS",
+      "born": 1950,
+      "sex": "female",
+      "zh": "四月花",
+      "name_zh_status": "site_translation",
+      "name_ja_status": "site_transliteration"
     }
   ],
   "horse_pages": [
