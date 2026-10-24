@@ -2,19 +2,20 @@
  "_meta": {
   "source": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC(gal%E2%80%99up!)/22274/events",
   "actor": "ウマ娘 プリティーダービー(gal’up!)",
-  "count": 234,
-  "scraped_at": "2026-10-14"
+  "count": 249,
+  "scraped_at": "2026-10-24",
+  "source_failures": []
  },
  "events": [
   {
    "date": "2026-12-12",
-   "date_zh": "2026-12-12 (土)",
+   "date_zh": "2026-12-12 (土)",
    "title": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント",
    "link": "https://www.eventernote.com/events/494410",
    "img": "https://eventernote.s3.amazonaws.com/images/events/494410_s.jpg",
    "venue": "新宿住友ホール",
    "venue_link": "https://www.eventernote.com/places/6758",
-   "times": "開場 16:30 開演 17:30 終演 18:30",
+   "times": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
    "actors": [
     {
      "name": "ウマ娘 プリティーダービー(gal’up!)",
@@ -53,13 +54,13 @@
   },
   {
    "date": "2026-12-05",
-   "date_zh": "2026-12-05 (土)",
+   "date_zh": "2026-12-05 (土)",
    "title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント",
    "link": "https://www.eventernote.com/events/494412",
    "img": "https://eventernote.s3.amazonaws.com/images/events/494412_s.jpg",
    "venue": "ユナイテッド・シネマ アクアシティお台場",
    "venue_link": "https://www.eventernote.com/places/6561",
-   "times": "開場 16:30 開演 17:00 終演 19:00",
+   "times": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
    "actors": [
     {
      "name": "ウマ娘 プリティーダービー(gal’up!)",
@@ -90,13 +91,13 @@
   },
   {
    "date": "2026-11-21",
-   "date_zh": "2026-11-21 (土)",
+   "date_zh": "2026-11-21 (土)",
    "title": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
    "link": "https://www.eventernote.com/events/466254",
    "img": "https://eventernote.s3.amazonaws.com/images/events/466254_s.jpg",
    "venue": "横浜アリーナ",
    "venue_link": "https://www.eventernote.com/places/1",
-   "times": "開場 13:00 開演 14:30 終演 21:00",
+   "times": "開場 13:00 開演 14:30 終演 21:00 ※終演時間はあくまでも目安になります",
    "actors": [
     {
      "name": "藍井エイル",
@@ -151,8 +152,8 @@
      "url": "https://www.eventernote.com/actors/%E4%BC%8A%E8%97%A4%E7%BE%8E%E6%9D%A5/3823"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "小倉唯",
@@ -209,6 +210,10 @@
     {
      "name": "吉田尚記",
      "url": "https://www.eventernote.com/actors/%E5%90%89%E7%94%B0%E5%B0%9A%E8%A8%98/2991"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "鈴木絵理",
@@ -337,20 +342,52 @@
     {
      "name": "南條愛乃",
      "url": "https://www.eventernote.com/actors/%E5%8D%97%E6%A2%9D%E6%84%9B%E4%B9%83/1765"
+    },
+    {
+     "name": "Hearts2Hearts",
+     "url": "https://www.eventernote.com/actors/Hearts2Hearts/85376"
+    },
+    {
+     "name": "天空のシラバス",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A9%E7%A9%BA%E3%81%AE%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9/65749"
+    },
+    {
+     "name": "陽乃ほのか",
+     "url": "https://www.eventernote.com/actors/%E9%99%BD%E4%B9%83%E3%81%BB%E3%81%AE%E3%81%8B/46216"
+    },
+    {
+     "name": "貴野萌",
+     "url": "https://www.eventernote.com/actors/%E8%B2%B4%E9%87%8E%E8%90%8C/46208"
+    },
+    {
+     "name": "山根優佳",
+     "url": "https://www.eventernote.com/actors/%E5%B1%B1%E6%A0%B9%E5%84%AA%E4%BD%B3/62737"
+    },
+    {
+     "name": "善木南帆",
+     "url": "https://www.eventernote.com/actors/%E5%96%84%E6%9C%A8%E5%8D%97%E5%B8%86/46210"
+    },
+    {
+     "name": "天音ゆかり",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A9%E9%9F%B3%E3%82%86%E3%81%8B%E3%82%8A/81536"
     }
    ],
    "live": ""
   },
   {
    "date": "2026-11-07",
-   "date_zh": "2026-11-07 (土)",
+   "date_zh": "2026-11-07 (土)",
    "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
    "link": "https://www.eventernote.com/events/490155",
    "img": "https://eventernote.s3.amazonaws.com/images/events/490155_s.jpg",
    "venue": "NEW PIER HALL(ニューピアホール)",
    "venue_link": "https://www.eventernote.com/places/1286",
-   "times": "開場 15:00 開演 16:00 終演 17:00",
+   "times": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高田憂希",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E7%94%B0%E6%86%82%E5%B8%8C/11761"
@@ -551,6 +588,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "今泉りおな",
      "url": "https://www.eventernote.com/actors/%E4%BB%8A%E6%B3%89%E3%82%8A%E3%81%8A%E3%81%AA/43030"
     },
@@ -569,8 +610,12 @@
    "img": "https://eventernote.s3.amazonaws.com/images/events/487093_s.jpg",
    "venue": "帯広競馬場",
    "venue_link": "https://www.eventernote.com/places/2085",
-   "times": "開場 - 開演 13:30 終演 13:50",
+   "times": "開場 - 開演 13:30 終演 14:05",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "佐伯伊織(NU-KO)",
      "url": "https://www.eventernote.com/actors/%E4%BD%90%E4%BC%AF%E4%BC%8A%E7%B9%94%28NU-KO%29/33448"
@@ -602,8 +647,12 @@
    "img": "https://eventernote.s3.amazonaws.com/images/events/490156_s.jpg",
    "venue": "帯広競馬場",
    "venue_link": "https://www.eventernote.com/places/2085",
-   "times": "",
+   "times": "開場 - 開演 15:55 終演 16:20",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "佐伯伊織(NU-KO)",
      "url": "https://www.eventernote.com/actors/%E4%BD%90%E4%BC%AF%E4%BC%8A%E7%B9%94%28NU-KO%29/33448"
@@ -630,12 +679,12 @@
   {
    "date": "2026-09-19",
    "date_zh": "2026-09-19 (土)",
-   "title": "NAGANO ANIERA FESTA 2026 DAY1",
+   "title": "【出演者変更】NAGANO ANIERA FESTA 2026 DAY1",
    "link": "https://www.eventernote.com/events/453804",
    "img": "https://eventernote.s3.amazonaws.com/images/events/453804_s.jpg",
    "venue": "佐久市駒場公園",
    "venue_link": "https://www.eventernote.com/places/9643",
-   "times": "開場 - 開演 12:00 終演 20:00",
+   "times": "開場 10:00 開演 12:00 終演 20:00",
    "actors": [
     {
      "name": "愛美",
@@ -668,14 +717,6 @@
     {
      "name": "飯塚昌明",
      "url": "https://www.eventernote.com/actors/%E9%A3%AF%E5%A1%9A%E6%98%8C%E6%98%8E/3461"
-    },
-    {
-     "name": "スピラ・スピカ",
-     "url": "https://www.eventernote.com/actors/%E3%82%B9%E3%83%94%E3%83%A9%E3%83%BB%E3%82%B9%E3%83%94%E3%82%AB/36674"
-    },
-    {
-     "name": "幹葉",
-     "url": "https://www.eventernote.com/actors/%E5%B9%B9%E8%91%89/48416"
     },
     {
      "name": "茅原実里",
@@ -718,6 +759,10 @@
      "url": "https://www.eventernote.com/actors/%E3%83%AC%E3%83%88%E3%83%A9/72822"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -728,10 +773,6 @@
     {
      "name": "井上遥乃",
      "url": "https://www.eventernote.com/actors/%E4%BA%95%E4%B8%8A%E9%81%A5%E4%B9%83/35124"
-    },
-    {
-     "name": "日原あゆみ",
-     "url": "https://www.eventernote.com/actors/%E6%97%A5%E5%8E%9F%E3%81%82%E3%82%86%E3%81%BF/49456"
     },
     {
      "name": "田中有紀",
@@ -760,10 +801,6 @@
     {
      "name": "アリステティア・ランフィール",
      "url": "https://www.eventernote.com/actors/%E3%82%A2%E3%83%AA%E3%82%B9%E3%83%86%E3%83%86%E3%82%A3%E3%82%A2%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB/93381"
-    },
-    {
-     "name": "小江戸熒",
-     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E6%B1%9F%E6%88%B8%E7%86%92/93382"
     },
     {
      "name": "小坂井祐莉絵",
@@ -800,6 +837,22 @@
     {
      "name": "ヨノ",
      "url": "https://www.eventernote.com/actors/%E3%83%A8%E3%83%8E/84404"
+    },
+    {
+     "name": "スピラ・スピカ",
+     "url": "https://www.eventernote.com/actors/%E3%82%B9%E3%83%94%E3%83%A9%E3%83%BB%E3%82%B9%E3%83%94%E3%82%AB/36674"
+    },
+    {
+     "name": "幹葉",
+     "url": "https://www.eventernote.com/actors/%E5%B9%B9%E8%91%89/48416"
+    },
+    {
+     "name": "日原あゆみ",
+     "url": "https://www.eventernote.com/actors/%E6%97%A5%E5%8E%9F%E3%81%82%E3%82%86%E3%81%BF/49456"
+    },
+    {
+     "name": "小江戸熒",
+     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E6%B1%9F%E6%88%B8%E7%86%92/93382"
     }
    ],
    "live": "/zh-Hans/live/other/60"
@@ -814,6 +867,10 @@
    "venue_link": "https://www.eventernote.com/places/650",
    "times": "開場 16:00 開演 17:00 終演 18:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "橋本ちなみ",
      "url": "https://www.eventernote.com/actors/%E6%A9%8B%E6%9C%AC%E3%81%A1%E3%81%AA%E3%81%BF/8438"
@@ -852,6 +909,10 @@
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "大坪由佳",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%9D%AA%E7%94%B1%E4%BD%B3/2682"
     },
@@ -888,6 +949,10 @@
    "venue_link": "https://www.eventernote.com/places/12111",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "福原綾香",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%8E%9F%E7%B6%BE%E9%A6%99/2775"
@@ -1366,6 +1431,10 @@
      "url": "https://www.eventernote.com/actors/%E6%9F%8F%E6%9C%A8%E7%94%B1%E7%B4%80/3214"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "石原夏織",
      "url": "https://www.eventernote.com/actors/%E7%9F%B3%E5%8E%9F%E5%A4%8F%E7%B9%94/2603"
     },
@@ -1634,8 +1703,8 @@
      "url": "https://www.eventernote.com/actors/%E9%96%80%E6%9E%97%E6%9C%89%E7%BE%BD/44121"
     },
     {
-     "name": "竹内ななみ(スパガ)",
-     "url": "https://www.eventernote.com/actors/%E7%AB%B9%E5%86%85%E3%81%AA%E3%81%AA%E3%81%BF%28%E3%82%B9%E3%83%91%E3%82%AC%29/61589"
+     "name": "竹内ななみ(SUPER☆GiRLS)",
+     "url": "https://www.eventernote.com/actors/%E7%AB%B9%E5%86%85%E3%81%AA%E3%81%AA%E3%81%BF%28SUPER%E2%98%86GiRLS%29/61589"
     },
     {
      "name": "柏綾菜",
@@ -1646,8 +1715,8 @@
      "url": "https://www.eventernote.com/actors/%E6%B2%B3%E6%9D%91%E6%9E%9C%E6%AD%A9/70429"
     },
     {
-     "name": "櫻井陽夏",
-     "url": "https://www.eventernote.com/actors/%E6%AB%BB%E4%BA%95%E9%99%BD%E5%A4%8F/70430"
+     "name": "櫻井穂夏",
+     "url": "https://www.eventernote.com/actors/%E6%AB%BB%E4%BA%95%E7%A9%82%E5%A4%8F/70430"
     },
     {
      "name": "鎌田彩樺",
@@ -1660,10 +1729,6 @@
     {
      "name": "菅原さくら",
      "url": "https://www.eventernote.com/actors/%E8%8F%85%E5%8E%9F%E3%81%95%E3%81%8F%E3%82%89/82858"
-    },
-    {
-     "name": "夏目まどか",
-     "url": "https://www.eventernote.com/actors/%E5%A4%8F%E7%9B%AE%E3%81%BE%E3%81%A9%E3%81%8B/77901"
     },
     {
      "name": "塩澤みさき",
@@ -1688,6 +1753,10 @@
     {
      "name": "御伽りるむ",
      "url": "https://www.eventernote.com/actors/%E5%BE%A1%E4%BC%BD%E3%82%8A%E3%82%8B%E3%82%80/87102"
+    },
+    {
+     "name": "月野あのん",
+     "url": "https://www.eventernote.com/actors/%E6%9C%88%E9%87%8E%E3%81%82%E3%81%AE%E3%82%93/92587"
     },
     {
      "name": "結音ちゆ",
@@ -1788,6 +1857,22 @@
     {
      "name": "羽瀬ななこ",
      "url": "https://www.eventernote.com/actors/%E7%BE%BD%E7%80%AC%E3%81%AA%E3%81%AA%E3%81%93/82859"
+    },
+    {
+     "name": "夏目のどか",
+     "url": "https://www.eventernote.com/actors/%E5%A4%8F%E7%9B%AE%E3%81%AE%E3%81%A9%E3%81%8B/82855"
+    },
+    {
+     "name": "竹内ななみ(スパガ)",
+     "url": "https://www.eventernote.com/actors/%E7%AB%B9%E5%86%85%E3%81%AA%E3%81%AA%E3%81%BF%28%E3%82%B9%E3%83%91%E3%82%AC%29/61589"
+    },
+    {
+     "name": "櫻井陽夏",
+     "url": "https://www.eventernote.com/actors/%E6%AB%BB%E4%BA%95%E9%99%BD%E5%A4%8F/70430"
+    },
+    {
+     "name": "夏目まどか",
+     "url": "https://www.eventernote.com/actors/%E5%A4%8F%E7%9B%AE%E3%81%BE%E3%81%A9%E3%81%8B/77901"
     }
    ],
    "live": "/zh-Hans/live/other/59"
@@ -1807,12 +1892,20 @@
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%8E%9F%E7%9B%B4%E8%8B%B1/86147"
     },
     {
+     "name": "戸本一真",
+     "url": "https://www.eventernote.com/actors/%E6%88%B8%E6%9C%AC%E4%B8%80%E7%9C%9F/93325"
+    },
+    {
      "name": "吉岡茉祐",
      "url": "https://www.eventernote.com/actors/%E5%90%89%E5%B2%A1%E8%8C%89%E7%A5%90/3774"
     },
     {
      "name": "海弓シュリ",
      "url": "https://www.eventernote.com/actors/%E6%B5%B7%E5%BC%93%E3%82%B7%E3%83%A5%E3%83%AA/33783"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -1832,12 +1925,20 @@
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%8E%9F%E7%9B%B4%E8%8B%B1/86147"
     },
     {
+     "name": "戸本一真",
+     "url": "https://www.eventernote.com/actors/%E6%88%B8%E6%9C%AC%E4%B8%80%E7%9C%9F/93325"
+    },
+    {
      "name": "吉岡茉祐",
      "url": "https://www.eventernote.com/actors/%E5%90%89%E5%B2%A1%E8%8C%89%E7%A5%90/3774"
     },
     {
      "name": "海弓シュリ",
      "url": "https://www.eventernote.com/actors/%E6%B5%B7%E5%BC%93%E3%82%B7%E3%83%A5%E3%83%AA/33783"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -1855,6 +1956,10 @@
     {
      "name": "愛美",
      "url": "https://www.eventernote.com/actors/%E6%84%9B%E7%BE%8E/2806"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "亜咲花",
@@ -1881,8 +1986,8 @@
      "url": "https://www.eventernote.com/actors/%E6%B5%B7%E5%BC%93%E3%82%B7%E3%83%A5%E3%83%AA/33783"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "スフィア",
@@ -1999,6 +2104,10 @@
     {
      "name": "菊嶋亮一",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E5%B6%8B%E4%BA%AE%E4%B8%80/56256"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/58"
@@ -2013,6 +2122,10 @@
    "venue_link": "https://www.eventernote.com/places/11572",
    "times": "開場 15:30 開演 17:00 終演 20:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "上田瞳",
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E7%94%B0%E7%9E%B3/23280"
@@ -2139,6 +2252,10 @@
    "times": "開場 15:30 開演 17:05 終演 20:05",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
     },
@@ -2250,6 +2367,31 @@
    "live": "/zh-Hans/live/number_series_event/7th_EVENT"
   },
   {
+   "date": "2026-05-17",
+   "date_zh": "2026-05-17 (日)",
+   "title": "「ウマ娘シンデレラグレイ」Blu-ray発売記念イベント 第3レース「アニメイト杯」",
+   "link": "https://www.eventernote.com/events/448357",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/448357_s.jpg",
+   "venue": "アニメイト池袋本店 9F animate hall BLACK",
+   "venue_link": "https://www.eventernote.com/places/13860",
+   "times": "開場 13:00 開演 14:00 終演 16:00",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    },
+    {
+     "name": "優木かな",
+     "url": "https://www.eventernote.com/actors/%E5%84%AA%E6%9C%A8%E3%81%8B%E3%81%AA/7633"
+    }
+   ],
+   "live": ""
+  },
+  {
    "date": "2026-04-30",
    "date_zh": "2026-04-30 (木)",
    "title": "「サラブレッドホースショー ザ・セカンドキャリア」スペシャルトークショー 4.30",
@@ -2274,6 +2416,10 @@
     {
      "name": "紫月杏朱彩",
      "url": "https://www.eventernote.com/actors/%E7%B4%AB%E6%9C%88%E6%9D%8F%E6%9C%B1%E5%BD%A9/60477"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "嶋野花",
@@ -2309,8 +2455,41 @@
      "url": "https://www.eventernote.com/actors/%E7%B4%AB%E6%9C%88%E6%9D%8F%E6%9C%B1%E5%BD%A9/60477"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "佐藤榛夏",
      "url": "https://www.eventernote.com/actors/%E4%BD%90%E8%97%A4%E6%A6%9B%E5%A4%8F/76382"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2026-04-29",
+   "date_zh": "2026-04-29 (水)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』×笠松競馬場コラボイベント　トークショー",
+   "link": "https://www.eventernote.com/events/470371",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/no_image.png",
+   "venue": "笠松競馬場",
+   "venue_link": "https://www.eventernote.com/places/9707",
+   "times": "開場 - 開演 17:10 終演 17:50",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    },
+    {
+     "name": "石上静香",
+     "url": "https://www.eventernote.com/actors/%E7%9F%B3%E4%B8%8A%E9%9D%99%E9%A6%99/8893"
     }
    ],
    "live": ""
@@ -2332,6 +2511,10 @@
     {
      "name": "いぎなり東北産",
      "url": "https://www.eventernote.com/actors/%E3%81%84%E3%81%8E%E3%81%AA%E3%82%8A%E6%9D%B1%E5%8C%97%E7%94%A3/14719"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "STU48",
@@ -2479,6 +2662,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
     },
@@ -2504,6 +2691,10 @@
    "times": "開場 12:30 開演 13:00 終演 13:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
     },
@@ -2524,6 +2715,10 @@
    "venue_link": "https://www.eventernote.com/places/26701",
    "times": "開場 11:00 開演 11:30 終演 12:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
@@ -2546,6 +2741,10 @@
    "times": "開場 14:00 開演 14:30 終演 15:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
     },
@@ -2567,6 +2766,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "夏目妃菜",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E7%9B%AE%E5%A6%83%E8%8F%9C/50422"
     },
@@ -2586,6 +2789,48 @@
    "live": ""
   },
   {
+   "date": "2026-02-08",
+   "date_zh": "2026-02-08 (日)",
+   "title": "『ウマ娘 シンデレラグレイ EXHIBITION― 怪物の蹄跡展 ―』開催記念トークショー＆特別上映会 第2部",
+   "link": "https://www.eventernote.com/events/456634",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/456634_s.jpg",
+   "venue": "アニメイト池袋本店 B2F アニメイトシアター",
+   "venue_link": "https://www.eventernote.com/places/13857",
+   "times": "開場 15:30 開演 16:00 終演 17:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2026-02-08",
+   "date_zh": "2026-02-08 (日)",
+   "title": "『ウマ娘 シンデレラグレイ EXHIBITION― 怪物の蹄跡展 ―』開催記念トークショー＆特別上映会 第1部",
+   "link": "https://www.eventernote.com/events/456633",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/456633_s.jpg",
+   "venue": "アニメイト池袋本店 B2F アニメイトシアター",
+   "venue_link": "https://www.eventernote.com/places/13857",
+   "times": "開場 12:30 開演 13:00 終演 14:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    }
+   ],
+   "live": ""
+  },
+  {
    "date": "2026-01-31",
    "date_zh": "2026-01-31 (土)",
    "title": "『ウマ娘 プリティーダービー』WINNING LIVE 30発売記念イベント",
@@ -2595,6 +2840,10 @@
    "venue_link": "https://www.eventernote.com/places/1286",
    "times": "開場 15:00 開演 16:00 終演 17:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -2621,6 +2870,48 @@
     }
    ],
    "live": "/zh-Hans/live/cd/0/24"
+  },
+  {
+   "date": "2026-01-31",
+   "date_zh": "2026-01-31 (土)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : スペシャルトークイベント【2部】",
+   "link": "https://www.eventernote.com/events/447477",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/447477_s.jpg",
+   "venue": "アニメイト池袋本店 9F animate hall BLACK",
+   "venue_link": "https://www.eventernote.com/places/13860",
+   "times": "開場 - 開演 18:30 終演 19:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2026-01-31",
+   "date_zh": "2026-01-31 (土)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : スペシャルトークイベント【1部】",
+   "link": "https://www.eventernote.com/events/447476",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/447476_s.jpg",
+   "venue": "アニメイト池袋本店 9F animate hall BLACK",
+   "venue_link": "https://www.eventernote.com/places/13860",
+   "times": "開場 - 開演 16:00 終演 17:00",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    }
+   ],
+   "live": ""
   },
   {
    "date": "2025-12-31",
@@ -2691,6 +2982,10 @@
     {
      "name": "一之森大湖",
      "url": "https://www.eventernote.com/actors/%E4%B8%80%E4%B9%8B%E6%A3%AE%E5%A4%A7%E6%B9%96/82152"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "EBiDAN NEXT",
@@ -2998,6 +3293,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -3023,6 +3322,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "真野美月",
      "url": "https://www.eventernote.com/actors/%E7%9C%9F%E9%87%8E%E7%BE%8E%E6%9C%88/51396"
     },
@@ -3038,6 +3341,56 @@
    "live": ""
   },
   {
+   "date": "2025-12-06",
+   "date_zh": "2025-12-06 (土)",
+   "title": "「ウマ娘シンデレラグレイ」Blu-ray発売記念イベント 第2レース「ゲーマーズ杯」第2部",
+   "link": "https://www.eventernote.com/events/429066",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/429066_s.jpg",
+   "venue": "AKIHABARAゲーマーズ本店",
+   "venue_link": "https://www.eventernote.com/places/25518",
+   "times": "開場 16:00 開演 16:30 終演 17:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2025-12-06",
+   "date_zh": "2025-12-06 (土)",
+   "title": "「ウマ娘シンデレラグレイ」Blu-ray発売記念イベント 第2レース「ゲーマーズ杯」第1部",
+   "link": "https://www.eventernote.com/events/429065",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/429065_s.jpg",
+   "venue": "AKIHABARAゲーマーズ本店",
+   "venue_link": "https://www.eventernote.com/places/25518",
+   "times": "開場 14:00 開演 14:30 終演 15:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    }
+   ],
+   "live": ""
+  },
+  {
    "date": "2025-11-30",
    "date_zh": "2025-11-30 (日)",
    "title": "『佐賀競馬場presents ウマ娘 プリティーダービー×ゾンビランドサガ コラボイベント』トークショー①",
@@ -3047,6 +3400,10 @@
    "venue_link": "https://www.eventernote.com/places/9329",
    "times": "開場 - 開演 14:30 終演 14:50",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
@@ -3084,6 +3441,10 @@
    "venue_link": "https://www.eventernote.com/places/9329",
    "times": "開場 - 開演 17:00 終演 17:20",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
@@ -3134,12 +3495,16 @@
      "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%82%BF%E3%83%92%E3%83%A1%E3%83%89%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/72724"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "OxT",
      "url": "https://www.eventernote.com/actors/OxT/14236"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "Tom-H@ck",
@@ -3416,6 +3781,10 @@
     {
      "name": "キミとアイドルプリキュア♪",
      "url": "https://www.eventernote.com/actors/%E3%82%AD%E3%83%9F%E3%81%A8%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%97%E3%83%AA%E3%82%AD%E3%83%A5%E3%82%A2%E2%99%AA/86334"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/55"
@@ -3430,6 +3799,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 15:00 開演 16:00 終演 17:25",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高橋花林",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%A9%8B%E8%8A%B1%E6%9E%97/5054"
@@ -3468,6 +3841,10 @@
    "times": "開場 16:00 開演 17:00 終演 18:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "鈴木みのり",
      "url": "https://www.eventernote.com/actors/%E9%88%B4%E6%9C%A8%E3%81%BF%E3%81%AE%E3%82%8A/16080"
     },
@@ -3500,6 +3877,10 @@
    "venue_link": "https://www.eventernote.com/places/2",
    "times": "開場 15:30 開演 17:30 終演 20:50",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -3630,6 +4011,10 @@
    "times": "開場 15:30 開演 17:30 終演 20:55",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
     },
@@ -3746,6 +4131,10 @@
      "url": "https://www.eventernote.com/actors/%5BAlexandros%5D/3512"
     },
     {
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
+    },
+    {
      "name": "大石昌良(オーイシマサヨシ)",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
@@ -3762,6 +4151,10 @@
    "venue_link": "https://www.eventernote.com/places/9706",
    "times": "開場 - 開演 13:30 終演 13:50",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
@@ -3788,6 +4181,10 @@
    "times": "開場 - 開演 15:55 終演 16:15",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
     },
@@ -3803,6 +4200,56 @@
    "live": ""
   },
   {
+   "date": "2025-10-11",
+   "date_zh": "2025-10-11 (土)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』Blu-ray発売記念イベント 第1レース「楽天ブックス杯」第1部",
+   "link": "https://www.eventernote.com/events/429063",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/429063_s.jpg",
+   "venue": "ユナイテッド・シネマ アクアシティお台場",
+   "venue_link": "https://www.eventernote.com/places/6561",
+   "times": "開場 14:30 開演 15:00 終演 16:30",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "小西克幸",
+     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8/840"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2025-10-11",
+   "date_zh": "2025-10-11 (土)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』Blu-ray発売記念イベント 第1レース「楽天ブックス杯」第2部",
+   "link": "https://www.eventernote.com/events/429064",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/429064_s.jpg",
+   "venue": "ユナイテッド・シネマ アクアシティお台場",
+   "venue_link": "https://www.eventernote.com/places/6561",
+   "times": "開場 17:00 開演 17:30 終演 19:00",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "小西克幸",
+     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8/840"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    }
+   ],
+   "live": ""
+  },
+  {
    "date": "2025-09-28",
    "date_zh": "2025-09-28 (日)",
    "title": "ウマ娘 プリティーダービー×ウィナーズレディコラボ in 中山競馬場(2025年9月28日)",
@@ -3812,6 +4259,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "秋山実咲",
      "url": "https://www.eventernote.com/actors/%E7%A7%8B%E5%B1%B1%E5%AE%9F%E5%92%B2/77217"
@@ -3837,6 +4288,10 @@
    "venue_link": "https://www.eventernote.com/places/2085",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "上田瞳",
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E7%94%B0%E7%9E%B3/23280"
@@ -3867,6 +4322,10 @@
    "times": "開場 - 開演 13:30 終演 13:50",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "上田瞳",
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E7%94%B0%E7%9E%B3/23280"
     },
@@ -3895,6 +4354,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "篠原侑",
      "url": "https://www.eventernote.com/actors/%E7%AF%A0%E5%8E%9F%E4%BE%91/30345"
@@ -3932,6 +4395,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "田所あずさ",
      "url": "https://www.eventernote.com/actors/%E7%94%B0%E6%89%80%E3%81%82%E3%81%9A%E3%81%95/2832"
@@ -4406,8 +4873,8 @@
      "url": "https://www.eventernote.com/actors/%E3%81%82%E3%81%84%E3%81%AA%28%E3%82%AB%E3%83%A9%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%29/73537"
     },
     {
-     "name": "ゆいな(宇宙∞プラネクシア／みらくらんど)",
-     "url": "https://www.eventernote.com/actors/%E3%82%86%E3%81%84%E3%81%AA%28%E5%AE%87%E5%AE%99%E2%88%9E%E3%83%97%E3%83%A9%E3%83%8D%E3%82%AF%E3%82%B7%E3%82%A2%EF%BC%8F%E3%81%BF%E3%82%89%E3%81%8F%E3%82%89%E3%82%93%E3%81%A9%29/77213"
+     "name": "ゆいな(ex.ｍME)",
+     "url": "https://www.eventernote.com/actors/%E3%82%86%E3%81%84%E3%81%AA%28ex.%EF%BD%8DME%29/77213"
     },
     {
      "name": "もも(ex.mME)",
@@ -4422,8 +4889,8 @@
      "url": "https://www.eventernote.com/actors/%E3%81%B2%E3%81%AA%E3%81%AE%28ex.%EF%BD%8DME%29/77212"
     },
     {
-     "name": "さあや(宇宙∞プラネクシア／みらくらんど)",
-     "url": "https://www.eventernote.com/actors/%E3%81%95%E3%81%82%E3%82%84%28%E5%AE%87%E5%AE%99%E2%88%9E%E3%83%97%E3%83%A9%E3%83%8D%E3%82%AF%E3%82%B7%E3%82%A2%EF%BC%8F%E3%81%BF%E3%82%89%E3%81%8F%E3%82%89%E3%82%93%E3%81%A9%29/77214"
+     "name": "さあや(ex.ｍME)",
+     "url": "https://www.eventernote.com/actors/%E3%81%95%E3%81%82%E3%82%84%28ex.%EF%BD%8DME%29/77214"
     },
     {
      "name": "かのん(ex.ｍME)",
@@ -4496,6 +4963,10 @@
     {
      "name": "朝比奈麗桜",
      "url": "https://www.eventernote.com/actors/%E6%9C%9D%E6%AF%94%E5%A5%88%E9%BA%97%E6%A1%9C/84602"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "奥野香耶",
@@ -4936,6 +5407,14 @@
     {
      "name": "朝宮日向",
      "url": "https://www.eventernote.com/actors/%E6%9C%9D%E5%AE%AE%E6%97%A5%E5%90%91/81474"
+    },
+    {
+     "name": "ゆいな(宇宙∞プラネクシア／みらくらんど)",
+     "url": "https://www.eventernote.com/actors/%E3%82%86%E3%81%84%E3%81%AA%28%E5%AE%87%E5%AE%99%E2%88%9E%E3%83%97%E3%83%A9%E3%83%8D%E3%82%AF%E3%82%B7%E3%82%A2%EF%BC%8F%E3%81%BF%E3%82%89%E3%81%8F%E3%82%89%E3%82%93%E3%81%A9%29/77213"
+    },
+    {
+     "name": "さあや(宇宙∞プラネクシア／みらくらんど)",
+     "url": "https://www.eventernote.com/actors/%E3%81%95%E3%81%82%E3%82%84%28%E5%AE%87%E5%AE%99%E2%88%9E%E3%83%97%E3%83%A9%E3%83%8D%E3%82%AF%E3%82%B7%E3%82%A2%EF%BC%8F%E3%81%BF%E3%82%89%E3%81%8F%E3%82%89%E3%82%93%E3%81%A9%29/77214"
     }
    ],
    "live": "/zh-Hans/live/other/54"
@@ -5015,6 +5494,10 @@
     {
      "name": "福嶋晴菜",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/53"
@@ -5044,6 +5527,10 @@
     {
      "name": "福嶋晴菜",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -5073,6 +5560,10 @@
     {
      "name": "福嶋晴菜",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -5087,6 +5578,10 @@
    "venue_link": "https://www.eventernote.com/places/1286",
    "times": "開場 16:30 開演 17:30 終演 18:55",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "天海由梨奈",
      "url": "https://www.eventernote.com/actors/%E5%A4%A9%E6%B5%B7%E7%94%B1%E6%A2%A8%E5%A5%88/25355"
@@ -5125,6 +5620,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
     },
@@ -5157,6 +5656,10 @@
    "venue_link": "https://www.eventernote.com/places/2",
    "times": "開場 15:30 開演 17:30 終演 20:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -5287,6 +5790,10 @@
    "times": "開場 15:30 開演 17:30 終演 20:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -5410,6 +5917,93 @@
    "live": "/zh-Hans/live/number_series_event/6th_EVENT"
   },
   {
+   "date": "2025-04-29",
+   "date_zh": "2025-04-29 (火)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』×笠松競馬場コラボイベント トークショー",
+   "link": "https://www.eventernote.com/events/424004",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/424004_s.jpg",
+   "venue": "笠松競馬場",
+   "venue_link": "https://www.eventernote.com/places/9707",
+   "times": "開場 - 開演 17:40 終演 18:25",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "渋谷彩乃",
+     "url": "https://www.eventernote.com/actors/%E6%B8%8B%E8%B0%B7%E5%BD%A9%E4%B9%83/61445"
+    },
+    {
+     "name": "大空直美",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2025-03-30",
+   "date_zh": "2025-03-30 (日)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』先行上映会＆トークショー 第1部",
+   "link": "https://www.eventernote.com/events/419881",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/419881_s.jpg",
+   "venue": "ユナイテッド・シネマ アクアシティお台場",
+   "venue_link": "https://www.eventernote.com/places/6561",
+   "times": "開場 11:30 開演 12:00 終演 13:20",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "小西克幸",
+     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8/840"
+    },
+    {
+     "name": "伊瀬茉莉也",
+     "url": "https://www.eventernote.com/actors/%E4%BC%8A%E7%80%AC%E8%8C%89%E8%8E%89%E4%B9%9F/1785"
+    }
+   ],
+   "live": ""
+  },
+  {
+   "date": "2025-03-30",
+   "date_zh": "2025-03-30 (日)",
+   "title": "アニメ『ウマ娘 シンデレラグレイ』先行上映会＆トークショー 第2部",
+   "link": "https://www.eventernote.com/events/419882",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/419882_s.jpg",
+   "venue": "ユナイテッド・シネマ アクアシティお台場",
+   "venue_link": "https://www.eventernote.com/places/6561",
+   "times": "開場 13:50 開演 14:20 終演 15:40",
+   "actors": [
+    {
+     "name": "高柳知葉",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "瀬戸桃子",
+     "url": "https://www.eventernote.com/actors/%E7%80%AC%E6%88%B8%E6%A1%83%E5%AD%90/74035"
+    },
+    {
+     "name": "小西克幸",
+     "url": "https://www.eventernote.com/actors/%E5%B0%8F%E8%A5%BF%E5%85%8B%E5%B9%B8/840"
+    },
+    {
+     "name": "伊瀬茉莉也",
+     "url": "https://www.eventernote.com/actors/%E4%BC%8A%E7%80%AC%E8%8C%89%E8%8E%89%E4%B9%9F/1785"
+    }
+   ],
+   "live": ""
+  },
+  {
    "date": "2025-02-24",
    "date_zh": "2025-02-24 (月)",
    "title": "ウマ娘 プリティーダービー×浦和競馬場 コラボイベント スマートファルコン役大和田仁美さん来場イベント",
@@ -5419,6 +6013,10 @@
    "venue_link": "https://www.eventernote.com/places/9715",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "大和田仁美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E/9096"
@@ -5436,6 +6034,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "近藤唯",
      "url": "https://www.eventernote.com/actors/%E8%BF%91%E8%97%A4%E5%94%AF/3395"
@@ -5469,6 +6071,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "のぐちゆり",
      "url": "https://www.eventernote.com/actors/%E3%81%AE%E3%81%90%E3%81%A1%E3%82%86%E3%82%8A/7988"
@@ -5541,6 +6147,10 @@
     {
      "name": "=LOVE",
      "url": "https://www.eventernote.com/actors/%3DLOVE/30223"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "大江裕",
@@ -5968,6 +6578,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "福嶋晴菜",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
     },
@@ -5988,6 +6602,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -6010,6 +6628,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "宮下早紀",
      "url": "https://www.eventernote.com/actors/%E5%AE%AE%E4%B8%8B%E6%97%A9%E7%B4%80/35977"
     },
@@ -6030,6 +6652,10 @@
    "venue_link": "https://www.eventernote.com/places/7808",
    "times": "開場 11:00 開演 12:00 終演 14:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -6104,6 +6730,10 @@
    "times": "開場 16:00 開演 17:00 終演 19:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
     },
@@ -6177,6 +6807,10 @@
    "times": "開場 - 開演 17:00 終演 18:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -6213,6 +6847,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 13:30 開演 14:00 終演 16:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "髙橋ミナミ",
      "url": "https://www.eventernote.com/actors/%E9%AB%99%E6%A9%8B%E3%83%9F%E3%83%8A%E3%83%9F/4133"
@@ -6295,8 +6933,12 @@
      "url": "https://www.eventernote.com/actors/%E5%86%85%E7%94%B0%E9%9B%84%E9%A6%AC/8127"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "GARNiDELiA",
@@ -6565,6 +7207,10 @@
     {
      "name": "市川知子",
      "url": "https://www.eventernote.com/actors/%E5%B8%82%E5%B7%9D%E7%9F%A5%E5%AD%90/73124"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/50"
@@ -6579,6 +7225,10 @@
    "venue_link": "https://www.eventernote.com/places/923",
    "times": "開場 13:00 開演 14:00 終演 17:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "土師亜文",
      "url": "https://www.eventernote.com/actors/%E5%9C%9F%E5%B8%AB%E4%BA%9C%E6%96%87/3490"
@@ -6653,6 +7303,10 @@
    "times": "開場 15:00 開演 16:00 終演 19:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "土師亜文",
      "url": "https://www.eventernote.com/actors/%E5%9C%9F%E5%B8%AB%E4%BA%9C%E6%96%87/3490"
     },
@@ -6726,6 +7380,10 @@
    "times": "開場 17:30 開演 18:30 終演 19:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "大橋彩香",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E6%A9%8B%E5%BD%A9%E9%A6%99/2777"
     },
@@ -6762,6 +7420,10 @@
    "venue_link": "https://www.eventernote.com/places/101",
    "times": "開場 14:00 開演 15:00 終演 21:45",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "SKE48",
      "url": "https://www.eventernote.com/actors/SKE48/3115"
@@ -6868,6 +7530,10 @@
    "times": "開場 17:00 開演 18:00 終演 19:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "上田瞳",
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E7%94%B0%E7%9E%B3/23280"
     },
@@ -6900,6 +7566,10 @@
    "venue_link": "https://www.eventernote.com/places/42",
    "times": "開場 11:00 開演 12:00 終演 15:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "星谷美緒",
      "url": "https://www.eventernote.com/actors/%E6%98%9F%E8%B0%B7%E7%BE%8E%E7%B7%92/22813"
@@ -6974,6 +7644,10 @@
    "times": "開場 16:00 開演 17:00 終演 20:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "星谷美緒",
      "url": "https://www.eventernote.com/actors/%E6%98%9F%E8%B0%B7%E7%BE%8E%E7%B7%92/22813"
     },
@@ -7046,6 +7720,10 @@
    "venue_link": "https://www.eventernote.com/places/42",
    "times": "開場 15:00 開演 16:00 終演 19:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "星谷美緒",
      "url": "https://www.eventernote.com/actors/%E6%98%9F%E8%B0%B7%E7%BE%8E%E7%B7%92/22813"
@@ -7120,6 +7798,10 @@
    "times": "開場 - 開演 13:25 終演 13:45",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "石見舞菜香",
      "url": "https://www.eventernote.com/actors/%E7%9F%B3%E8%A6%8B%E8%88%9E%E8%8F%9C%E9%A6%99/28771"
     },
@@ -7145,6 +7827,10 @@
    "times": "開場 - 開演 15:55 終演 16:25",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "石見舞菜香",
      "url": "https://www.eventernote.com/actors/%E7%9F%B3%E8%A6%8B%E8%88%9E%E8%8F%9C%E9%A6%99/28771"
     },
@@ -7169,6 +7855,10 @@
    "venue_link": "https://www.eventernote.com/places/11059",
    "times": "開場 11:00 開演 12:00 終演 15:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -7239,6 +7929,10 @@
    "times": "開場 16:00 開演 17:00 終演 20:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -7308,6 +8002,10 @@
    "times": "開場 15:00 開演 16:00 終演 19:00",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -7376,6 +8074,10 @@
    "venue_link": "https://www.eventernote.com/places/1985",
    "times": "開場 10:30 開演 12:00 終演 19:20",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "西川貴教",
      "url": "https://www.eventernote.com/actors/%E8%A5%BF%E5%B7%9D%E8%B2%B4%E6%95%99/12036"
@@ -7510,6 +8212,10 @@
    "times": "開場 - 開演 13:30 終演 13:50",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "大空直美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
     },
@@ -7542,6 +8248,10 @@
    "venue_link": "https://www.eventernote.com/places/2085",
    "times": "開場 - 開演 15:40 終演 16:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "大空直美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%A9%BA%E7%9B%B4%E7%BE%8E/5744"
@@ -7624,6 +8334,10 @@
      "url": "https://www.eventernote.com/actors/%E5%B8%8C%E6%B0%B4%E3%81%97%E3%81%8A/9744"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "立花日菜",
      "url": "https://www.eventernote.com/actors/%E7%AB%8B%E8%8A%B1%E6%97%A5%E8%8F%9C/48419"
     },
@@ -7693,6 +8407,10 @@
      "url": "https://www.eventernote.com/actors/%E5%B8%8C%E6%B0%B4%E3%81%97%E3%81%8A/9744"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "立花日菜",
      "url": "https://www.eventernote.com/actors/%E7%AB%8B%E8%8A%B1%E6%97%A5%E8%8F%9C/48419"
     },
@@ -7713,6 +8431,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "福嶋晴菜",
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
@@ -8175,6 +8897,10 @@
      "url": "https://www.eventernote.com/actors/%E9%9D%92%E6%9F%B3%E9%80%8F/26380"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "TIF de Debut 2024 supported by Denonbu",
      "url": "https://www.eventernote.com/actors/TIF%20de%20Debut%202024%20supported%20by%20Denonbu/78974"
     },
@@ -8447,12 +9173,12 @@
      "url": "https://www.eventernote.com/actors/%E3%81%BF%E3%81%AA%E3%81%BF%28ex.%E3%82%AB%E3%83%A9%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%29/69206"
     },
     {
-     "name": "はるな(Lily Bloom Coffee)",
-     "url": "https://www.eventernote.com/actors/%E3%81%AF%E3%82%8B%E3%81%AA%28Lily%20Bloom%20Coffee%29/67355"
+     "name": "はるな(ex.ｍME)",
+     "url": "https://www.eventernote.com/actors/%E3%81%AF%E3%82%8B%E3%81%AA%28ex.%EF%BD%8DME%29/67355"
     },
     {
-     "name": "りさ(Lily Bloom Coffee)",
-     "url": "https://www.eventernote.com/actors/%E3%82%8A%E3%81%95%28Lily%20Bloom%20Coffee%29/62999"
+     "name": "りさ(ｍME)",
+     "url": "https://www.eventernote.com/actors/%E3%82%8A%E3%81%95%28%EF%BD%8DME%29/62999"
     },
     {
      "name": "あいり(ex.ｍME)",
@@ -8463,8 +9189,8 @@
      "url": "https://www.eventernote.com/actors/%E3%81%BB%E3%81%AE%E3%82%8A%28%E3%81%82%E3%81%8A%E3%81%9E%E3%82%89%E3%82%92%E3%82%AD%E3%83%9F%E3%81%AB%29/78202"
     },
     {
-     "name": "ふうか(あおぞらをキミに)",
-     "url": "https://www.eventernote.com/actors/%E3%81%B5%E3%81%86%E3%81%8B%28%E3%81%82%E3%81%8A%E3%81%9E%E3%82%89%E3%82%92%E3%82%AD%E3%83%9F%E3%81%AB%29/78203"
+     "name": "ふうか(ex.ｍME)",
+     "url": "https://www.eventernote.com/actors/%E3%81%B5%E3%81%86%E3%81%8B%28ex.%EF%BD%8DME%29/78203"
     },
     {
      "name": "青葉ひなり",
@@ -8509,6 +9235,18 @@
     {
      "name": "高橋あきほ",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%A9%8B%E3%81%82%E3%81%8D%E3%81%BB/49046"
+    },
+    {
+     "name": "はるな(Lily Bloom Coffee)",
+     "url": "https://www.eventernote.com/actors/%E3%81%AF%E3%82%8B%E3%81%AA%28Lily%20Bloom%20Coffee%29/67355"
+    },
+    {
+     "name": "りさ(Lily Bloom Coffee)",
+     "url": "https://www.eventernote.com/actors/%E3%82%8A%E3%81%95%28Lily%20Bloom%20Coffee%29/62999"
+    },
+    {
+     "name": "ふうか(あおぞらをキミに)",
+     "url": "https://www.eventernote.com/actors/%E3%81%B5%E3%81%86%E3%81%8B%28%E3%81%82%E3%81%8A%E3%81%9E%E3%82%89%E3%82%92%E3%82%AD%E3%83%9F%E3%81%AB%29/78203"
     }
    ],
    "live": "/zh-Hans/live/other/47"
@@ -8546,6 +9284,10 @@
     {
      "name": "根本優奈",
      "url": "https://www.eventernote.com/actors/%E6%A0%B9%E6%9C%AC%E5%84%AA%E5%A5%88/71176"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/0/13"
@@ -8560,6 +9302,10 @@
    "venue_link": "https://www.eventernote.com/places/9717",
    "times": "開場 - 開演 15:35 終演 15:55",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "大和田仁美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E/9096"
@@ -8586,6 +9332,10 @@
    "times": "開場 - 開演 17:15 終演 17:35",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "大和田仁美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E/9096"
     },
@@ -8610,6 +9360,10 @@
    "venue_link": "https://www.eventernote.com/places/4570",
    "times": "開場 - 開演 12:30 終演 15:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "藤本侑里",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C/75288"
@@ -8644,6 +9398,10 @@
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "夏吉ゆうこ",
      "url": "https://www.eventernote.com/actors/%E5%A4%8F%E5%90%89%E3%82%86%E3%81%86%E3%81%93/34614"
     },
@@ -8672,14 +9430,19 @@
   },
   {
    "date": "2024-06-20",
-   "date_zh": "2024-06-20 (木)",
+   "date_zh": "2024-06-20 (木)",
    "title": "『TIF2024事前PR番組』番組観覧 その１",
    "link": "https://www.eventernote.com/events/382814",
    "img": "https://eventernote.s3.amazonaws.com/images/events/382814_s.jpg",
    "venue": "!_東京都内某所",
    "venue_link": "https://www.eventernote.com/places/103",
-   "times": "開場 - 開演 12:00 終演 16:00",
-   "actors": [],
+   "times": "開場 - 開演 12:00 終演 16:00 ※終演時間はあくまでも目安になります",
+   "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    }
+   ],
    "live": ""
   },
   {
@@ -8692,6 +9455,10 @@
    "venue_link": "https://www.eventernote.com/places/893",
    "times": "開場 - 開演 13:00 終演 15:35",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "藤本侑里",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C/75288"
@@ -8714,6 +9481,10 @@
    "times": "開場 - 開演 16:30 終演 18:55",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "藤本侑里",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C/75288"
     },
@@ -8734,6 +9505,10 @@
    "venue_link": "https://www.eventernote.com/places/16019",
    "times": "開場 - 開演 11:45 終演 14:20",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "藤本侑里",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C/75288"
@@ -8768,6 +9543,10 @@
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "滝谷美夢",
      "url": "https://www.eventernote.com/actors/%E6%BB%9D%E8%B0%B7%E7%BE%8E%E5%A4%A2/79021"
     }
@@ -8784,6 +9563,10 @@
    "venue_link": "https://www.eventernote.com/places/13986",
    "times": "開場 16:00 開演 18:00 終演 22:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "藤本侑里",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E6%9C%AC%E4%BE%91%E9%87%8C/75288"
@@ -8856,6 +9639,10 @@
     {
      "name": "本泉莉奈",
      "url": "https://www.eventernote.com/actors/%E6%9C%AC%E6%B3%89%E8%8E%89%E5%A5%88/19983"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -8893,6 +9680,10 @@
     {
      "name": "春日さくら",
      "url": "https://www.eventernote.com/actors/%E6%98%A5%E6%97%A5%E3%81%95%E3%81%8F%E3%82%89/63283"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/0/11"
@@ -8924,6 +9715,10 @@
      "url": "https://www.eventernote.com/actors/%E7%A6%8F%E5%B6%8B%E6%99%B4%E8%8F%9C/68151"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "ジャングルポケット",
      "url": "https://www.eventernote.com/actors/%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88/19489"
     },
@@ -8953,6 +9748,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -8973,6 +9772,10 @@
    "venue_link": "https://www.eventernote.com/places/5",
    "times": "開場 15:00 開演 16:00 終演 19:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "渡部優衣",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E5%84%AA%E8%A1%A3/4214"
@@ -9102,6 +9905,10 @@
    "venue_link": "https://www.eventernote.com/places/5",
    "times": "開場 15:00 開演 16:00 終演 19:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -9268,6 +10075,10 @@
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E5%9D%82%E3%81%99%E3%81%BF%E3%82%8C/2772"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
     },
@@ -9357,6 +10168,10 @@
    "times": "開場 16:30 開演 17:30 終演 18:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "矢野妃菜喜",
      "url": "https://www.eventernote.com/actors/%E7%9F%A2%E9%87%8E%E5%A6%83%E8%8F%9C%E5%96%9C/14594"
     },
@@ -9393,6 +10208,10 @@
    "venue_link": "https://www.eventernote.com/places/11572",
    "times": "開場 15:30 開演 17:00 終演 21:05",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -9518,6 +10337,10 @@
    "venue_link": "https://www.eventernote.com/places/11572",
    "times": "開場 15:30 開演 17:00 終演 20:55",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -9690,6 +10513,10 @@
     {
      "name": "ukka(ex.桜エビ～ず)",
      "url": "https://www.eventernote.com/actors/ukka%28ex.%E6%A1%9C%E3%82%A8%E3%83%93%EF%BD%9E%E3%81%9A%29/14609"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "大仁田厚",
@@ -10057,6 +10884,10 @@
    "times": "開場 - 開演 14:25 終演 16:45",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "鈴木みのり",
      "url": "https://www.eventernote.com/actors/%E9%88%B4%E6%9C%A8%E3%81%BF%E3%81%AE%E3%82%8A/16080"
     },
@@ -10077,6 +10908,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "開場 - 開演 13:40 終演 16:45",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "春川芽生",
      "url": "https://www.eventernote.com/actors/%E6%98%A5%E5%B7%9D%E8%8A%BD%E7%94%9F/33191"
@@ -10105,6 +10940,10 @@
     {
      "name": "のぐちゆり",
      "url": "https://www.eventernote.com/actors/%E3%81%AE%E3%81%90%E3%81%A1%E3%82%86%E3%82%8A/7988"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10126,6 +10965,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10147,6 +10990,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10168,6 +11015,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10189,6 +11040,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10210,6 +11065,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10231,6 +11090,10 @@
     {
      "name": "菊池紗矢香",
      "url": "https://www.eventernote.com/actors/%E8%8F%8A%E6%B1%A0%E7%B4%97%E7%9F%A2%E9%A6%99/56416"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10264,6 +11127,10 @@
     {
      "name": "春川芽生",
      "url": "https://www.eventernote.com/actors/%E6%98%A5%E5%B7%9D%E8%8A%BD%E7%94%9F/33191"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10278,6 +11145,10 @@
    "venue_link": "https://www.eventernote.com/places/735",
    "times": "開場 - 開演 17:00 終演 17:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -10324,8 +11195,12 @@
      "url": "https://www.eventernote.com/actors/%E5%86%85%E7%94%B0%E9%9B%84%E9%A6%AC/8127"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "大橋彩香",
@@ -10526,6 +11401,10 @@
     {
      "name": "吉田尚記",
      "url": "https://www.eventernote.com/actors/%E5%90%89%E7%94%B0%E5%B0%9A%E8%A8%98/2991"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/40"
@@ -10559,6 +11438,10 @@
     {
      "name": "須藤叶希",
      "url": "https://www.eventernote.com/actors/%E9%A0%88%E8%97%A4%E5%8F%B6%E5%B8%8C/55368"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10596,6 +11479,10 @@
     {
      "name": "篠田みなみ",
      "url": "https://www.eventernote.com/actors/%E7%AF%A0%E7%94%B0%E3%81%BF%E3%81%AA%E3%81%BF/9972"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/0/10"
@@ -10621,6 +11508,10 @@
     {
      "name": "香坂さき",
      "url": "https://www.eventernote.com/actors/%E9%A6%99%E5%9D%82%E3%81%95%E3%81%8D/32707"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10646,6 +11537,10 @@
     {
      "name": "香坂さき",
      "url": "https://www.eventernote.com/actors/%E9%A6%99%E5%9D%82%E3%81%95%E3%81%8D/32707"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10660,6 +11555,10 @@
    "venue_link": "https://www.eventernote.com/places/2085",
    "times": "開場 - 開演 13:30 終演 14:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
@@ -10690,6 +11589,10 @@
    "times": "開場 - 開演 16:00 終演 16:30",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "徳井青空",
      "url": "https://www.eventernote.com/actors/%E5%BE%B3%E4%BA%95%E9%9D%92%E7%A9%BA/2679"
     },
@@ -10718,6 +11621,10 @@
    "venue_link": "https://www.eventernote.com/places/814",
    "times": "開場 14:00 開演 16:00 終演 20:05",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -10832,6 +11739,10 @@
    "times": "開場 14:30 開演 16:30 終演 19:50",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
     },
@@ -10941,6 +11852,10 @@
    "times": "開場 16:30 開演 17:30 終演 19:15",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "中村カンナ",
      "url": "https://www.eventernote.com/actors/%E4%B8%AD%E6%9D%91%E3%82%AB%E3%83%B3%E3%83%8A/65099"
     },
@@ -10976,6 +11891,10 @@
     {
      "name": "香坂さき",
      "url": "https://www.eventernote.com/actors/%E9%A6%99%E5%9D%82%E3%81%95%E3%81%8D/32707"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -10990,6 +11909,10 @@
    "venue_link": "https://www.eventernote.com/places/11340",
    "times": "開場 15:00 開演 17:00 終演 20:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -11103,6 +12026,10 @@
    "venue_link": "https://www.eventernote.com/places/11340",
    "times": "開場 15:00 開演 17:00 終演 20:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -11247,6 +12174,10 @@
     {
      "name": "春川芽生",
      "url": "https://www.eventernote.com/actors/%E6%98%A5%E5%B7%9D%E8%8A%BD%E7%94%9F/33191"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/0/9"
@@ -11268,6 +12199,10 @@
     {
      "name": "井上遥乃",
      "url": "https://www.eventernote.com/actors/%E4%BA%95%E4%B8%8A%E9%81%A5%E4%B9%83/35124"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -11282,6 +12217,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -11303,6 +12242,10 @@
    "venue_link": "https://www.eventernote.com/places/7213",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -11340,6 +12283,10 @@
    "venue_link": "https://www.eventernote.com/places/103",
    "times": "開場 - 開演 17:30 終演 19:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "のぐちゆり",
      "url": "https://www.eventernote.com/actors/%E3%81%AE%E3%81%90%E3%81%A1%E3%82%86%E3%82%8A/7988"
@@ -11512,6 +12459,10 @@
     {
      "name": "松岡美里",
      "url": "https://www.eventernote.com/actors/%E6%9D%BE%E5%B2%A1%E7%BE%8E%E9%87%8C/56553"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/39"
@@ -11526,6 +12477,10 @@
    "venue_link": "https://www.eventernote.com/places/103",
    "times": "開場 16:30 開演 17:30 終演 19:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -11568,6 +12523,10 @@
    "times": "開場 - 開演 13:00 終演 13:45",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "長谷川育美",
      "url": "https://www.eventernote.com/actors/%E9%95%B7%E8%B0%B7%E5%B7%9D%E8%82%B2%E7%BE%8E/35138"
     },
@@ -11603,6 +12562,10 @@
     {
      "name": "篠原侑",
      "url": "https://www.eventernote.com/actors/%E7%AF%A0%E5%8E%9F%E4%BE%91/30345"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -11624,6 +12587,10 @@
     {
      "name": "篠原侑",
      "url": "https://www.eventernote.com/actors/%E7%AF%A0%E5%8E%9F%E4%BE%91/30345"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -11713,6 +12680,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/6/0"
@@ -11802,6 +12773,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/5/0"
@@ -11891,6 +12866,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/3/0"
@@ -11980,6 +12959,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/4/0"
@@ -12069,6 +13052,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/2/0"
@@ -12158,6 +13145,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38"
@@ -12247,6 +13238,10 @@
     {
      "name": "稲村梓",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E6%9D%91%E6%A2%93/28448"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/38/1/0"
@@ -12310,8 +13305,12 @@
      "url": "https://www.eventernote.com/actors/ukka%28ex.%E6%A1%9C%E3%82%A8%E3%83%93%EF%BD%9E%E3%81%9A%29/14609"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "オテンキ",
@@ -12576,6 +13575,10 @@
     {
      "name": "伊達花彩",
      "url": "https://www.eventernote.com/actors/%E4%BC%8A%E9%81%94%E8%8A%B1%E5%BD%A9/40753"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/37"
@@ -12590,6 +13593,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -12616,6 +13623,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
     },
@@ -12641,6 +13652,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "中村カンナ",
      "url": "https://www.eventernote.com/actors/%E4%B8%AD%E6%9D%91%E3%82%AB%E3%83%B3%E3%83%8A/65099"
     }
@@ -12657,6 +13672,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "春川芽生",
      "url": "https://www.eventernote.com/actors/%E6%98%A5%E5%B7%9D%E8%8A%BD%E7%94%9F/33191"
@@ -12675,6 +13694,10 @@
    "times": "",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     }
@@ -12691,6 +13714,10 @@
    "venue_link": "https://www.eventernote.com/places/913",
    "times": "",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -12731,6 +13758,10 @@
     {
      "name": "稲垣好",
      "url": "https://www.eventernote.com/actors/%E7%A8%B2%E5%9E%A3%E5%A5%BD/56411"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/0/6"
@@ -12752,6 +13783,10 @@
     {
      "name": "大和田仁美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E/9096"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -12773,6 +13808,10 @@
     {
      "name": "大和田仁美",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E5%92%8C%E7%94%B0%E4%BB%81%E7%BE%8E/9096"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -12788,8 +13827,12 @@
    "times": "開場 10:00 開演 11:00 終演 14:15",
    "actors": [
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "鈴木このみ",
@@ -12934,6 +13977,10 @@
     {
      "name": "久保田未夢",
      "url": "https://www.eventernote.com/actors/%E4%B9%85%E4%BF%9D%E7%94%B0%E6%9C%AA%E5%A4%A2/5847"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/36"
@@ -12948,6 +13995,10 @@
    "venue_link": "https://www.eventernote.com/places/38",
    "times": "開場 14:00 開演 16:00 終演 20:25",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -13089,6 +14140,10 @@
    "venue_link": "https://www.eventernote.com/places/38",
    "times": "開場 14:00 開演 16:10 終演 20:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -13241,6 +14296,10 @@
     {
      "name": "草野仁",
      "url": "https://www.eventernote.com/actors/%E8%8D%89%E9%87%8E%E4%BB%81/68193"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -13266,6 +14325,10 @@
     {
      "name": "草野仁",
      "url": "https://www.eventernote.com/actors/%E8%8D%89%E9%87%8E%E4%BB%81/68193"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -13299,6 +14362,10 @@
     {
      "name": "伊藤美来",
      "url": "https://www.eventernote.com/actors/%E4%BC%8A%E8%97%A4%E7%BE%8E%E6%9D%A5/3823"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "大橋彩香",
@@ -13990,6 +15057,10 @@
      "url": "https://www.eventernote.com/actors/%E6%97%A5%E8%89%B2%E3%82%86%E3%81%A5/66409"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
     },
@@ -14489,6 +15560,10 @@
     {
      "name": "鷲崎健",
      "url": "https://www.eventernote.com/actors/%E9%B7%B2%E5%B4%8E%E5%81%A5/2810"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -14506,6 +15581,10 @@
     {
      "name": "内田真礼",
      "url": "https://www.eventernote.com/actors/%E5%86%85%E7%94%B0%E7%9C%9F%E7%A4%BC/2706"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "GRANRODEO",
@@ -14613,6 +15692,10 @@
    "venue_link": "https://www.eventernote.com/places/11340",
    "times": "開場 15:00 開演 16:30 終演 19:35",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -14730,6 +15813,10 @@
    "venue_link": "https://www.eventernote.com/places/11340",
    "times": "開場 15:00 開演 16:30 終演 19:40",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
@@ -15007,6 +16094,10 @@
     {
      "name": "大村秀章",
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E6%9D%91%E7%A7%80%E7%AB%A0/66079"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -15036,6 +16127,10 @@
     {
      "name": "熊崎晴香",
      "url": "https://www.eventernote.com/actors/%E7%86%8A%E5%B4%8E%E6%99%B4%E9%A6%99/18441"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -15050,6 +16145,10 @@
    "venue_link": "https://www.eventernote.com/places/8574",
    "times": "開場 15:00 開演 16:30 終演 19:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -15163,6 +16262,10 @@
    "venue_link": "https://www.eventernote.com/places/8574",
    "times": "開場 15:00 開演 16:30 終演 19:35",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -15279,6 +16382,10 @@
     {
      "name": "内田雄馬",
      "url": "https://www.eventernote.com/actors/%E5%86%85%E7%94%B0%E9%9B%84%E9%A6%AC/8127"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "衣川里佳",
@@ -15398,6 +16505,10 @@
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E5%9F%8E%E3%82%8C%E3%81%AB/13096"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "東京03",
      "url": "https://www.eventernote.com/actors/%E6%9D%B1%E4%BA%AC03/3612"
     },
@@ -15442,8 +16553,8 @@
      "url": "https://www.eventernote.com/actors/%E9%81%A0%E8%97%A4%E7%AB%A0%E9%80%A0%28%E3%82%B3%E3%82%B3%E3%83%AA%E3%82%B3%29/28107"
     },
     {
-     "name": "大石昌良(オーイシマサヨシ)",
-     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
+     "name": "オーイシマサヨシ(大石昌良)",
+     "url": "https://www.eventernote.com/actors/%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%28%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%29/11076"
     },
     {
      "name": "大友康平",
@@ -15640,6 +16751,10 @@
     {
      "name": "東京女子流",
      "url": "https://www.eventernote.com/actors/%E6%9D%B1%E4%BA%AC%E5%A5%B3%E5%AD%90%E6%B5%81/2843"
+    },
+    {
+     "name": "大石昌良(オーイシマサヨシ)",
+     "url": "https://www.eventernote.com/actors/%E5%A4%A7%E7%9F%B3%E6%98%8C%E8%89%AF%28%E3%82%AA%E3%83%BC%E3%82%A4%E3%82%B7%E3%83%9E%E3%82%B5%E3%83%A8%E3%82%B7%29/11076"
     }
    ],
    "live": "/zh-Hans/live/other/26"
@@ -15725,6 +16840,10 @@
     {
      "name": "吉田尚記",
      "url": "https://www.eventernote.com/actors/%E5%90%89%E7%94%B0%E5%B0%9A%E8%A8%98/2991"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "上田瞳",
@@ -15856,6 +16975,10 @@
    "times": "開場 15:30 開演 16:30 終演 19:10",
    "actors": [
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
     },
@@ -15956,6 +17079,10 @@
    "venue_link": "https://www.eventernote.com/places/11813",
    "times": "開場 15:30 開演 16:30 終演 19:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -16096,6 +17223,10 @@
     {
      "name": "星谷美緒",
      "url": "https://www.eventernote.com/actors/%E6%98%9F%E8%B0%B7%E7%BE%8E%E7%B7%92/22813"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/19"
@@ -16127,6 +17258,10 @@
    "venue_link": "https://www.eventernote.com/places/701",
    "times": "開場 18:00 開演 18:30 終演 20:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -16164,6 +17299,10 @@
    "venue_link": "https://www.eventernote.com/places/701",
    "times": "開場 15:00 開演 15:30 終演 17:30",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -16338,6 +17477,10 @@
      "url": "https://www.eventernote.com/actors/%E5%8E%9A%E6%9C%A8%E9%82%A3%E5%A5%88%E7%BE%8E/30283"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "木村千咲",
      "url": "https://www.eventernote.com/actors/%E6%9C%A8%E6%9D%91%E5%8D%83%E5%92%B2/23282"
     },
@@ -16429,6 +17572,10 @@
     {
      "name": "渡部優衣",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E5%84%AA%E8%A1%A3/4214"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/15/1/0"
@@ -16454,6 +17601,10 @@
     {
      "name": "市川美織",
      "url": "https://www.eventernote.com/actors/%E5%B8%82%E5%B7%9D%E7%BE%8E%E7%B9%94/27141"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "和氣あず未",
@@ -16581,6 +17732,10 @@
      "url": "https://www.eventernote.com/actors/%E4%B8%89%E6%BE%A4%E7%B4%97%E5%8D%83%E9%A6%99/2546"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "石原章弘",
      "url": "https://www.eventernote.com/actors/%E7%9F%B3%E5%8E%9F%E7%AB%A0%E5%BC%98/10239"
     }
@@ -16597,6 +17752,10 @@
    "venue_link": "https://www.eventernote.com/places/3499",
    "times": "開場 15:00 開演 16:00 終演 18:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -16661,6 +17820,10 @@
     {
      "name": "渡部優衣",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E5%84%AA%E8%A1%A3/4214"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -16702,6 +17865,10 @@
     {
      "name": "渡部優衣",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E5%84%AA%E8%A1%A3/4214"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -16793,6 +17960,10 @@
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E4%BA%95%E3%82%86%E3%81%8D%E3%82%88/2656"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "前田玲奈",
      "url": "https://www.eventernote.com/actors/%E5%89%8D%E7%94%B0%E7%8E%B2%E5%A5%88/9464"
     },
@@ -16836,6 +18007,10 @@
     {
      "name": "明坂聡美",
      "url": "https://www.eventernote.com/actors/%E6%98%8E%E5%9D%82%E8%81%A1%E7%BE%8E/1662"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/13"
@@ -16897,6 +18072,10 @@
     {
      "name": "江原裕理",
      "url": "https://www.eventernote.com/actors/%E6%B1%9F%E5%8E%9F%E8%A3%95%E7%90%86/9571"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "幹葉",
@@ -16970,6 +18149,10 @@
     {
      "name": "内田真礼",
      "url": "https://www.eventernote.com/actors/%E5%86%85%E7%94%B0%E7%9C%9F%E7%A4%BC/2706"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "和氣あず未",
@@ -17267,6 +18450,10 @@
     {
      "name": "渡部恵子",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E6%81%B5%E5%AD%90/2593"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/11"
@@ -17281,6 +18468,10 @@
    "venue_link": "https://www.eventernote.com/places/119",
    "times": "開場 16:00 開演 17:00 終演 19:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -17363,6 +18554,10 @@
      "url": "https://www.eventernote.com/actors/%E5%89%8D%E7%94%B0%E7%8E%B2%E5%A5%88/9464"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "木村千咲",
      "url": "https://www.eventernote.com/actors/%E6%9C%A8%E6%9D%91%E5%8D%83%E5%92%B2/23282"
     }
@@ -17414,6 +18609,10 @@
     {
      "name": "田中あいみ",
      "url": "https://www.eventernote.com/actors/%E7%94%B0%E4%B8%AD%E3%81%82%E3%81%84%E3%81%BF/7700"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/7"
@@ -17451,6 +18650,10 @@
     {
      "name": "沖野晃司",
      "url": "https://www.eventernote.com/actors/%E6%B2%96%E9%87%8E%E6%99%83%E5%8F%B8/11411"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/10"
@@ -17484,9 +18687,34 @@
     {
      "name": "上田瞳",
      "url": "https://www.eventernote.com/actors/%E4%B8%8A%E7%94%B0%E7%9E%B3/23280"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
+  },
+  {
+   "date": "2018-05-05",
+   "date_zh": "2018-05-05 (土)",
+   "title": "マチ★アソビ vol.20 2日目 アニメ『ウマ娘 プリティーダービー』トレーナー研修会in【マチ★アソビ】",
+   "link": "https://www.eventernote.com/events/156335",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/156335_s.jpg",
+   "venue": "ufotable CINEMA",
+   "venue_link": "https://www.eventernote.com/places/706",
+   "times": "開場 - 開演 18:30 終演 19:30",
+   "actors": [
+    {
+     "name": "沖野晃司",
+     "url": "https://www.eventernote.com/actors/%E6%B2%96%E9%87%8E%E6%99%83%E5%8F%B8/11411"
+    },
+    {
+     "name": "伊藤隼之介",
+     "url": "https://www.eventernote.com/actors/%E4%BC%8A%E8%97%A4%E9%9A%BC%E4%B9%8B%E4%BB%8B/23550"
+    }
+   ],
+   "live": "/zh-Hans/live/other/10"
   },
   {
    "date": "2018-03-31",
@@ -17509,6 +18737,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "石原章弘",
@@ -17538,6 +18770,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -17581,6 +18817,10 @@
      "url": "https://www.eventernote.com/actors/%E5%A4%A7%E8%A5%BF%E6%B2%99%E7%B9%94/8823"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "藤井ゆきよ",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E4%BA%95%E3%82%86%E3%81%8D%E3%82%88/2656"
     }
@@ -17608,6 +18848,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -17653,6 +18897,10 @@
     {
      "name": "沖野晃司",
      "url": "https://www.eventernote.com/actors/%E6%B2%96%E9%87%8E%E6%99%83%E5%8F%B8/11411"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -17704,11 +18952,44 @@
      "url": "https://www.eventernote.com/actors/%E5%84%AA%E6%9C%A8%E3%81%8B%E3%81%AA/7633"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "石原章弘",
      "url": "https://www.eventernote.com/actors/%E7%9F%B3%E5%8E%9F%E7%AB%A0%E5%BC%98/10239"
     }
    ],
    "live": "/zh-Hans/live/cd/1/6"
+  },
+  {
+   "date": "2018-02-25",
+   "date_zh": "2018-02-25 (日)",
+   "title": "「STARTING GATE！―ウマ娘プリティーダービー―」2巻発売記念 トークショー&お渡し会",
+   "link": "https://www.eventernote.com/events/140682",
+   "img": "https://eventernote.s3.amazonaws.com/images/events/140682_s.jpg",
+   "venue": "",
+   "venue_link": "",
+   "times": "開場 13:30 開演 14:00 終演 15:00",
+   "actors": [
+    {
+     "name": "S.濃すぎ(漫画家)",
+     "url": "https://www.eventernote.com/actors/S.%E6%BF%83%E3%81%99%E3%81%8E%28%E6%BC%AB%E7%94%BB%E5%AE%B6%29/30456"
+    },
+    {
+     "name": "和氣あず未",
+     "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
+    },
+    {
+     "name": "高野麻里佳",
+     "url": "https://www.eventernote.com/actors/%E9%AB%98%E9%87%8E%E9%BA%BB%E9%87%8C%E4%BD%B3/9170"
+    },
+    {
+     "name": "木村千咲",
+     "url": "https://www.eventernote.com/actors/%E6%9C%A8%E6%9D%91%E5%8D%83%E5%92%B2/23282"
+    }
+   ],
+   "live": ""
   },
   {
    "date": "2017-12-16",
@@ -17720,6 +19001,10 @@
    "venue_link": "https://www.eventernote.com/places/205",
    "times": "開場 17:00 開演 18:00 終演 20:45",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "和氣あず未",
      "url": "https://www.eventernote.com/actors/%E5%92%8C%E6%B0%A3%E3%81%82%E3%81%9A%E6%9C%AA/13204"
@@ -17816,6 +19101,10 @@
     {
      "name": "松井恵理子",
      "url": "https://www.eventernote.com/actors/%E6%9D%BE%E4%BA%95%E6%81%B5%E7%90%86%E5%AD%90/3998"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/8"
@@ -17853,6 +19142,10 @@
     {
      "name": "松井恵理子",
      "url": "https://www.eventernote.com/actors/%E6%9D%BE%E4%BA%95%E6%81%B5%E7%90%86%E5%AD%90/3998"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -17977,6 +19270,10 @@
      "url": "https://www.eventernote.com/actors/%E6%9D%BE%E4%BA%95%E6%81%B5%E7%90%86%E5%AD%90/3998"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "渡部恵子",
      "url": "https://www.eventernote.com/actors/%E6%B8%A1%E9%83%A8%E6%81%B5%E5%AD%90/2593"
     },
@@ -18028,6 +19325,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/5"
@@ -18065,6 +19366,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/5/1/0"
@@ -18098,6 +19403,10 @@
     {
      "name": "髙橋ミナミ",
      "url": "https://www.eventernote.com/actors/%E9%AB%99%E6%A9%8B%E3%83%9F%E3%83%8A%E3%83%9F/4133"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/6"
@@ -18131,6 +19440,10 @@
     {
      "name": "髙橋ミナミ",
      "url": "https://www.eventernote.com/actors/%E9%AB%99%E6%A9%8B%E3%83%9F%E3%83%8A%E3%83%9F/4133"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": ""
@@ -18160,6 +19473,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/4/1/0"
@@ -18189,6 +19506,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/4"
@@ -18226,6 +19547,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/3"
@@ -18263,6 +19588,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/3/1/0"
@@ -18296,6 +19625,10 @@
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "伊藤隼之介",
@@ -18345,6 +19678,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/2/1/0"
@@ -18378,6 +19715,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/cd/1/2"
@@ -18392,6 +19733,10 @@
    "venue_link": "https://www.eventernote.com/places/119",
    "times": "開場 15:00 開演 16:00 終演 17:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "Lynn",
      "url": "https://www.eventernote.com/actors/Lynn/9756"
@@ -18421,6 +19766,10 @@
    "venue_link": "https://www.eventernote.com/places/119",
    "times": "開場 18:00 開演 19:00 終演 20:00",
    "actors": [
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
     {
      "name": "高柳知葉",
      "url": "https://www.eventernote.com/actors/%E9%AB%98%E6%9F%B3%E7%9F%A5%E8%91%89/14624"
@@ -18463,6 +19812,10 @@
      "url": "https://www.eventernote.com/actors/Machico/7649"
     },
     {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
+    },
+    {
      "name": "藤井ゆきよ",
      "url": "https://www.eventernote.com/actors/%E8%97%A4%E4%BA%95%E3%82%86%E3%81%8D%E3%82%88/2656"
     }
@@ -18490,6 +19843,10 @@
     {
      "name": "Machico",
      "url": "https://www.eventernote.com/actors/Machico/7649"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     },
     {
      "name": "藤井ゆきよ",
@@ -18531,6 +19888,10 @@
     {
      "name": "木村千咲",
      "url": "https://www.eventernote.com/actors/%E6%9C%A8%E6%9D%91%E5%8D%83%E5%92%B2/23282"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/4"
@@ -18632,6 +19993,10 @@
     {
      "name": "木皿陽平",
      "url": "https://www.eventernote.com/actors/%E6%9C%A8%E7%9A%BF%E9%99%BD%E5%B9%B3/9161"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/3"
@@ -18657,6 +20022,10 @@
     {
      "name": "松井恵理子",
      "url": "https://www.eventernote.com/actors/%E6%9D%BE%E4%BA%95%E6%81%B5%E7%90%86%E5%AD%90/3998"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/2"
@@ -18702,6 +20071,10 @@
     {
      "name": "前田登(はりけ〜んず)",
      "url": "https://www.eventernote.com/actors/%E5%89%8D%E7%94%B0%E7%99%BB%28%E3%81%AF%E3%82%8A%E3%81%91%E3%80%9C%E3%82%93%E3%81%9A%29/3247"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/1"
@@ -18731,6 +20104,10 @@
     {
      "name": "天津飯大郎",
      "url": "https://www.eventernote.com/actors/%E5%A4%A9%E6%B4%A5%E9%A3%AF%E5%A4%A7%E9%83%8E/3508"
+    },
+    {
+     "name": "ウマ娘 プリティーダービー(gal’up!)",
+     "url": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC%28gal%E2%80%99up%21%29/22274"
     }
    ],
    "live": "/zh-Hans/live/other/0"

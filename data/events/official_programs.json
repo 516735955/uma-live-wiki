@@ -1,15 +1,19 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-14T11:11:22+00:00",
+  "refreshed_at": "2026-10-24T04:29:19+00:00",
   "coverage": {
-    "official_youtube_refresh": "tool_unavailable",
-    "expected_regular_episodes": 124,
-    "records": 227,
-    "source_verified_regular_episodes": 124,
+    "official_youtube_refresh": "verified",
+    "source_errors": [],
+    "expected_regular_episodes": 125,
+    "records": 250,
+    "source_verified_regular_episodes": 125,
     "metadata_pending_ids": [],
-    "pakatube_character_programs": 82,
-    "official_special_programs": 15
+    "metadata_candidate_count": 175,
+    "metadata_batch_count": 175,
+    "metadata_pending_video_ids": [],
+    "pakatube_character_programs": 89,
+    "official_special_programs": 30
   },
   "programs": [
     {
@@ -364,6 +368,31 @@
       ]
     },
     {
+      "id": "official-special-20210505-gw-tv-vol-564",
+      "series_id": "official-special",
+      "title": "【ゴルシちゃんのGW計画】「ウマ娘 プリティーダービー」ぱかライブTV Vol.564開催だぜ！　@ウマ娘",
+      "date": "2021-05-05",
+      "video_id": "402qxqFvifg",
+      "url": "https://www.youtube.com/watch?v=402qxqFvifg",
+      "thumbnail": "https://i.ytimg.com/vi/402qxqFvifg/maxresdefault.jpg",
+      "duration": 146,
+      "cast_status": "pending",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "公式（自称）生配信番組「ぱかライブTV Vol.564」を放送するぜ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=402qxqFvifg",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=402qxqFvifg"
+        }
+      ],
+      "media": []
+    },
+    {
       "id": "official-special-20221130-tv-extra-stage",
       "series_id": "official-special",
       "title": "そこそこぱかライブTV -EXTRA STAGE-",
@@ -559,7 +588,7 @@
           ]
         }
       ],
-      "summary": "2025年7月6日（日）、7月13日（日）深夜に放送のフジテレビ『「プレミアの巣窟」TIF2025大特集SP！』にウマ娘の出走が決定しました！8月2日（土）の「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」に出走するキャストから、紫月杏朱彩さん（ブラストワンピース役）、久保田未夢さん（ラヴズオンリーユー役）が出走します！番組概要■番組名「プレミアの巣窟」TIF2025大特集SP！■放送日時2025年7月6日（日）25:55 ～ 26:202025年7月13日（日）2",
+      "summary": "2025年7月6日（日）、7月13日（日）深夜に放送のフジテレビ『「プレミアの巣窟」TIF2025大特集SP！』にウマ娘の出走が決定しました！ 8月2日（土）の「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」に出走するキャストから、紫月杏朱彩さん（ブラストワンピース役）、久保田未夢さん（ラヴズオンリーユー役）が出走します！ 番組概要■番組名 「プレミアの巣窟」TIF2025大特集SP！ ■放送日時 2025年7月6日（日）25:55 ～ 26:20 2025年7月1",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=2638",
       "sources": [
@@ -569,7 +598,421 @@
           "url": "https://umamusume.jp/news/detail?id=2638"
         }
       ],
+      "media": [],
+      "summary_translation_status": "stale"
+    },
+    {
+      "id": "official-special-20251024-title-7233bfc605a9",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「ギャルウマ娘たちの電話」編",
+      "date": "2025-10-24",
+      "video_id": "1xXFvLOoaVQ",
+      "url": "https://www.youtube.com/watch?v=1xXFvLOoaVQ",
+      "thumbnail": "https://i.ytimg.com/vi/1xXFvLOoaVQ/maxresdefault.jpg",
+      "duration": 330,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "ハワイで撮影中のシチーに、ジョーダン、ヘリオス、パーマーが電話をかけてるみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=1xXFvLOoaVQ",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=1xXFvLOoaVQ"
+        }
+      ],
       "media": []
+    },
+    {
+      "id": "official-special-20251121-title-84cd62525392",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「先輩・トウカイテイオー」編",
+      "date": "2025-11-21",
+      "video_id": "y2KtHvrFV-8",
+      "url": "https://www.youtube.com/watch?v=y2KtHvrFV-8",
+      "thumbnail": "https://i.ytimg.com/vi/y2KtHvrFV-8/maxresdefault.jpg",
+      "duration": 359,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nテイオーとドゥラメンテが何やら話をしているぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=y2KtHvrFV-8",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=y2KtHvrFV-8"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20251219-title-2ce21c7638a2",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「同期のランチミーティング」編",
+      "date": "2025-12-19",
+      "video_id": "jhmvTVvm4hc",
+      "url": "https://www.youtube.com/watch?v=jhmvTVvm4hc",
+      "thumbnail": "https://i.ytimg.com/vi_webp/jhmvTVvm4hc/maxresdefault.webp",
+      "duration": 705,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nロブロイ、ユニヴァース、スティル、アルヴの同期4人が、ランチミーティングでクリスマスに向けた話をしているみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=jhmvTVvm4hc",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=jhmvTVvm4hc"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260101-title-7f8ce4632b5d",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「賑やかなお正月」編",
+      "date": "2026-01-01",
+      "video_id": "e4MmvPk7j7U",
+      "url": "https://www.youtube.com/watch?v=e4MmvPk7j7U",
+      "thumbnail": "https://i.ytimg.com/vi_webp/e4MmvPk7j7U/maxresdefault.webp",
+      "duration": 543,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！あけおめ！\nダート組の面々が、賑やかなお正月を過ごしているみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=e4MmvPk7j7U",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=e4MmvPk7j7U"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260217-title-d6b66ddf95eb",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「最強の格闘技」編",
+      "date": "2026-02-17",
+      "video_id": "NQnwmSFbudM",
+      "url": "https://www.youtube.com/watch?v=NQnwmSFbudM",
+      "thumbnail": "https://i.ytimg.com/vi_webp/NQnwmSFbudM/maxresdefault.webp",
+      "duration": 430,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nエル、アケボノ、カレン、バンブー、ヤエノ、アキュートさんの6人が「最強の格闘技」について話しているみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=NQnwmSFbudM",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=NQnwmSFbudM"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260302-title-418326f2a6f0",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「もうすぐ楽しい雛祭り」編",
+      "date": "2026-03-02",
+      "video_id": "EtrC13GWP9M",
+      "url": "https://www.youtube.com/watch?v=EtrC13GWP9M",
+      "thumbnail": "https://i.ytimg.com/vi_webp/EtrC13GWP9M/maxresdefault.webp",
+      "duration": 364,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nスイープ、カワカミ、クラフト、パンドラの4人が今度の雛祭りイベントに向けた話をしているみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=EtrC13GWP9M",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=EtrC13GWP9M"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260418-doubles",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「サイコーのDoubles」編",
+      "date": "2026-04-18",
+      "video_id": "RYLpUts_K74",
+      "url": "https://www.youtube.com/watch?v=RYLpUts_K74",
+      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
+      "duration": 352,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nパーマーとタップが、エアホッケー大会のダブルスで優勝して祝杯をあげてるみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=RYLpUts_K74",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=RYLpUts_K74"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260522-title-844e004f3003",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「アタシたちらしいランチ」編",
+      "date": "2026-05-22",
+      "video_id": "-vs_1Fz8Vgo",
+      "url": "https://www.youtube.com/watch?v=-vs_1Fz8Vgo",
+      "thumbnail": "https://i.ytimg.com/vi_webp/-vs_1Fz8Vgo/maxresdefault.webp",
+      "duration": 384,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nネイチャ、イクノ、タンホイザ、ロイスがランチしてるみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=-vs_1Fz8Vgo",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=-vs_1Fz8Vgo"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260619-title-c46c83f42650",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「週末はどこに行く？」編",
+      "date": "2026-06-19",
+      "video_id": "Z-Vw1QGh7qw",
+      "url": "https://www.youtube.com/watch?v=Z-Vw1QGh7qw",
+      "thumbnail": "https://i.ytimg.com/vi_webp/Z-Vw1QGh7qw/maxresdefault.webp",
+      "duration": 318,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nウオッカとスカーレットの2人が、週末にマーチャンとどこに遊びに行くのか、とーーっても仲良く和気あいあいと話し合ってるぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=Z-Vw1QGh7qw",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=Z-Vw1QGh7qw"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260720-title-d71ffe698f19",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「大富豪」編",
+      "date": "2026-07-20",
+      "video_id": "EWmCp_9MIj0",
+      "url": "https://www.youtube.com/watch?v=EWmCp_9MIj0",
+      "thumbnail": "https://i.ytimg.com/vi/EWmCp_9MIj0/maxresdefault.jpg",
+      "duration": 513,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nルーラー、ラヴズ、シャカール、テイオー、タイシンが大富豪をやってるみたいだぞ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=EWmCp_9MIj0",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=EWmCp_9MIj0"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260820-title-fdde93df2901",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「夏祭りの待ち合わせ」編",
+      "date": "2026-08-20",
+      "video_id": "f_U2Q9J5mwI",
+      "url": "https://www.youtube.com/watch?v=f_U2Q9J5mwI",
+      "thumbnail": "https://i.ytimg.com/vi_webp/f_U2Q9J5mwI/maxresdefault.webp",
+      "duration": 433,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nスペとシーザリオとブエナが一緒に夏祭りに行くみたいだぞ！\n\nでも、どうやらなかなか待ち合わせ場所にたどり着かないみたいだ…",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=f_U2Q9J5mwI",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=f_U2Q9J5mwI"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20260917-title-670bcc41f03c",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「猫の救出大作戦」編",
+      "date": "2026-09-17",
+      "video_id": "NFCA4edYh_U",
+      "url": "https://www.youtube.com/watch?v=NFCA4edYh_U",
+      "thumbnail": "https://i.ytimg.com/vi/NFCA4edYh_U/maxresdefault.jpg",
+      "duration": 287,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！\nどうやらビリーヴがお茶を買おうとしたら、自販機の前でライトオとデュランダルが騒いでたみたいだぞ！\n\nいったいどうしたんだろうにゃ",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=NFCA4edYh_U",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=NFCA4edYh_U"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20261009-title-4097cc4c13f5",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「ウマ娘消失事件」編",
+      "date": "2026-10-09",
+      "video_id": "ODCHf6O2LeQ",
+      "url": "https://www.youtube.com/watch?v=ODCHf6O2LeQ",
+      "thumbnail": "https://i.ytimg.com/vi_webp/ODCHf6O2LeQ/maxresdefault.webp",
+      "duration": 541,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "オマエら！大変だ！！\nどうやら「ウマ娘消失事件」が発生したらしいぞ！？\n\nチヨノオー、クリーク、イナリ、アルダンが事件について話してるから、オマエらも聞いてみようぜ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=ODCHf6O2LeQ",
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=ODCHf6O2LeQ"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "official-special-20261017-re-dive",
+      "series_id": "official-special",
+      "title": "プリンセスコネクト！Re:Dive×ウマ娘 プリティーダービーコラボ記念生放送！",
+      "date": "2026-10-17",
+      "video_id": "0rKu9PQsHBk",
+      "url": "https://www.youtube.com/watch?v=0rKu9PQsHBk",
+      "thumbnail": "https://i.ytimg.com/vi/0rKu9PQsHBk/maxresdefault.jpg",
+      "duration": 6965,
+      "cast_status": "verified",
+      "cast": [
+        {
+          "name": "M・A・O",
+          "role": "ペコリーヌ"
+        },
+        {
+          "name": "伊藤美来",
+          "role": "コッコロ"
+        },
+        {
+          "name": "立花理香",
+          "role": "キャル"
+        },
+        {
+          "name": "上田瞳",
+          "role": "ゴールドシップ"
+        },
+        {
+          "name": "石原夏織",
+          "role": "アーモンドアイ"
+        },
+        {
+          "name": "中島由貴",
+          "role": "ラッキーライラック"
+        },
+        {
+          "name": "羊宮妃那",
+          "role": "デアリングタクト"
+        }
+      ],
+      "characters": [],
+      "sessions": [
+        {
+          "label": "本期节目",
+          "date": "2026-10-17",
+          "cast": [
+            {
+              "name": "M・A・O",
+              "role": "ペコリーヌ"
+            },
+            {
+              "name": "伊藤美来",
+              "role": "コッコロ"
+            },
+            {
+              "name": "立花理香",
+              "role": "キャル"
+            },
+            {
+              "name": "上田瞳",
+              "role": "ゴールドシップ"
+            },
+            {
+              "name": "石原夏織",
+              "role": "アーモンドアイ"
+            },
+            {
+              "name": "中島由貴",
+              "role": "ラッキーライラック"
+            },
+            {
+              "name": "羊宮妃那",
+              "role": "デアリングタクト"
+            }
+          ]
+        }
+      ],
+      "summary": "ペコリーヌ役のM・A・Oさん、コッコロ役の伊藤美来さん、キャル役の立花理香さん、そして「ウマ娘 プリティーダービー」から、ゴールドシップ役の上田瞳さん、アーモンドアイ役の石原夏織さん、ラッキーライラック役の中島由貴さん、デアリングタクト役の羊宮妃那さんをお迎えし、「ウマ娘 プリティーダービー」とのコラボ情報をたっぷりご紹介いたします！",
+      "source_kind": "official_external",
+      "source_url": "https://www.youtube.com/watch?v=0rKu9PQsHBk",
+      "sources": [
+        {
+          "kind": "official_external",
+          "label": "联动方官方频道",
+          "url": "https://www.youtube.com/watch?v=0rKu9PQsHBk"
+        }
+      ]
     },
     {
       "id": "official-special-abema-stakes-01",
@@ -1101,7 +1544,7 @@
           ]
         }
       ],
-      "summary": "2024年3月30日（土）、31日（日）に「ぱかスペース！ 5th EVENT -NEW GATE- 同時視聴」の配信が決定しました！5th EVENT 第4公演 -NEW GATE- 出走キャストが見逃し配信を視聴しながら、イベント本編の振り返りトークやウラ話をお届け予定です！録音なし（再配信なし）の1度きりの生配信となりますのでお聴き逃しなく！トークを聴きながら、「ABEMA PPV ONLINE LIVE」や「イープラス Streaming+」の見逃し配信を同時に視聴してお楽しみください！※本スペース配信では",
+      "summary": "2024年3月30日（土）、31日（日）に「ぱかスペース！ 5th EVENT -NEW GATE- 同時視聴」の配信が決定しました！ 5th EVENT 第4公演 -NEW GATE- 出走キャストが見逃し配信を視聴しながら、イベント本編の振り返りトークやウラ話をお届け予定です！ 録音なし（再配信なし）の1度きりの生配信となりますのでお聴き逃しなく！ トークを聴きながら、「ABEMA PPV ONLINE LIVE」や「イープラス Streaming+」の見逃し配信を同時に視聴してお楽しみください！ ※本スペース",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=1827",
       "sources": [
@@ -1111,7 +1554,8 @@
           "url": "https://umamusume.jp/news/detail?id=1827"
         }
       ],
-      "media": []
+      "media": [],
+      "summary_translation_status": "stale"
     },
     {
       "id": "official-special-paka-space-5th-event-yell",
@@ -1201,7 +1645,7 @@
           ]
         }
       ],
-      "summary": "公式X（Twitter）スペース配信「ぱかスペース！ 5th EVENT -YELL- 同時視聴」の追加出走者と詳細情報が決定しました！2月10日（土）のDAY1にシュヴァルグラン役の夏吉ゆうこさん、2月11日（日）のDAY2にゴールドシップ役の上田瞳さんが出走！5th EVENT 第3公演 -YELL- 出走キャストが見逃し配信を視聴しながら、イベント本編の振り返りトークや公演を終えた今だから言えるウラ話をお届けします！録音なし（再配信なし）の1度きりの生配信となりますのでお聴き逃しなく！トークを聴きながら、「A",
+      "summary": "公式X（Twitter）スペース配信「ぱかスペース！ 5th EVENT -YELL- 同時視聴」の追加出走者と詳細情報が決定しました！ 2月10日（土）のDAY1にシュヴァルグラン役の夏吉ゆうこさん、2月11日（日）のDAY2にゴールドシップ役の上田瞳さんが出走！ 5th EVENT 第3公演 -YELL- 出走キャストが見逃し配信を視聴しながら、イベント本編の振り返りトークや公演を終えた今だから言えるウラ話をお届けします！ 録音なし（再配信なし）の1度きりの生配信となりますのでお聴き逃しなく！ トークを聴きなが",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=1768",
       "sources": [
@@ -1211,7 +1655,8 @@
           "url": "https://umamusume.jp/news/detail?id=1768"
         }
       ],
-      "media": []
+      "media": [],
+      "summary_translation_status": "stale"
     },
     {
       "id": "paka-live-tv-001",
@@ -3678,6 +4123,55 @@
           "role": "タップダンスシチー",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rena Maeda",
+          "role": "Grass Wonder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruno Inoue",
+          "role": "Inari One",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Minami Tsuda",
+          "role": "Air Shakur",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayumi Hinohara",
+          "role": "Yaeno Muteki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Meiku Harukawa",
+          "role": "Symboli Kris S",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Minami Shinoda",
+          "role": "Tap Dance City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -3750,6 +4244,41 @@
         {
           "name": "MAKIKO",
           "role": "サウンズオブアース",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Koji Okino",
+          "role": "Trainer",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Karin Takahashi",
+          "role": "Kawakami Princess",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yukina Shuto",
+          "role": "Haru Urara",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Iori Saeki",
+          "role": "King Halo",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
@@ -3826,6 +4355,55 @@
           "role": "メジロブライト",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaori Maeda",
+          "role": "Nice Nature",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shino Shimoji",
+          "role": "Nakayama Festa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Noguchi",
+          "role": "Mejiro Palmer",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Marika Kono",
+          "role": "Silence Suzuka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayaka Onishi",
+          "role": "Mejiro Bright",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -3845,7 +4423,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.35」は11月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-036",
@@ -3900,6 +4479,48 @@
           "role": "ドゥラメンテ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Koji Okino",
+          "role": "Trainer",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sumire Uesaka",
+          "role": "Agnes Tachyon",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hina Tachibana",
+          "role": "Satono Diamond",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuji Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Akina",
+          "role": "Duramente",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -3919,7 +4540,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.36」は12月27日22時半に放送！TVアニメの振り返りや最新情報お届け！"
     },
     {
       "id": "paka-live-tv-037",
@@ -3974,6 +4596,55 @@
           "role": "ノースフライト",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sora Tokui",
+          "role": "TM Opera O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Ogura",
+          "role": "Manhattan Cafe",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nozomi Yamamoto",
+          "role": "Yukino Bijin",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Watanabe",
+          "role": "Winning Ticket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hiyori Nitta",
+          "role": "Matikanefukukitaru",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Maria Sashide",
+          "role": "North Flight",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -3993,7 +4664,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.37」は1月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-038",
@@ -4084,6 +4756,83 @@
           "role": "シーザリオ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Azumi Waki",
+          "role": "Special Week",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Ueda",
+          "role": "Gold Ship",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Watanabe",
+          "role": "Winning Ticket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Masumi Tazawa",
+          "role": "Ikuno Dictus",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinaki Yano",
+          "role": "Kitasan Black",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayasa Ito",
+          "role": "Vivlos",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Akina",
+          "role": "Duramente",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruka Sato",
+          "role": "Cesario",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4103,7 +4852,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.38」は2月22日(木)20時に放送！3周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-039",
@@ -4158,6 +4908,55 @@
           "role": "エアメサイア",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rena Maeda",
+          "role": "Grass Wonder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kanna Nakamura",
+          "role": "Narita Top Road",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Riona Imaizumi",
+          "role": "Yamamin Zephyr",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hinata Sato",
+          "role": "K.S.Miracle",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuna Nemoto",
+          "role": "Air Messiah",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4177,7 +4976,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.39」は3月28日20時に放送！次回のガチャ更新などゲームの最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-040",
@@ -4232,6 +5032,55 @@
           "role": "ヒシミラクル",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kana Yuuki",
+          "role": "Super Creek",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ruriko Noguchi",
+          "role": "Sakura Chiyono O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayumi Hinohara",
+          "role": "Yaeno Muteki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruka Shiraishi",
+          "role": "Neo Universe",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sakura Kasuga",
+          "role": "Hishi Miracle",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4251,7 +5100,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.40」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-041",
@@ -4306,6 +5156,55 @@
           "role": "デアリングハート",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Iori Saeki",
+          "role": "King Halo",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Ogura",
+          "role": "Manhattan Cafe",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shiori Sugiura",
+          "role": "Sweep Tosho",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaya Okuno",
+          "role": "Verxina",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruka Sato",
+          "role": "Cesario",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shio Kisui",
+          "role": "Daring Heart",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4325,7 +5224,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.41」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-042",
@@ -4380,6 +5280,55 @@
           "role": "ドリームジャーニー",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sora Tokui",
+          "role": "TM Opera O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruna Kawai",
+          "role": "Nishino Flower",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Natsumi Fujiwara",
+          "role": "Katsuragi Ace",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Mayu Yoshioka",
+          "role": "Dream Journey",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4399,7 +5348,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.42」は6月24日20時に放送！新育成シナリオや新たなウマ娘の情報をお届け！"
     },
     {
       "id": "paka-live-tv-043",
@@ -4454,6 +5404,55 @@
           "role": "ワンダーアキュート",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yurina Amami",
+          "role": "Mr. C.B.",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayame Fujino",
+          "role": "Eishin Flash",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Owada",
+          "role": "Smart Falcon",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Tsukada",
+          "role": "Transcend",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Konomi Inugaki",
+          "role": "Copano Rickey",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kanoko Sudo",
+          "role": "Wonder Acute",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4473,7 +5472,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.43」は7月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-044",
@@ -4564,6 +5564,97 @@
           "role": "デュランダル",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Ueda",
+          "role": "Gold Ship",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Eri Suzuki",
+          "role": "Tosen Jordan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaya Okuno",
+          "role": "Verxina",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruka Sato",
+          "role": "Cesario",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Fuuka Izumi",
+          "role": "Buena Vista",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuu Serizawa",
+          "role": "Gentildonna",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yumiko Mochizuki",
+          "role": "Calstone Light O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kana Nogi",
+          "role": "Durandal",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4583,7 +5674,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.44」は8月23日(金)20時に放送！3.5周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-045",
@@ -4638,6 +5730,55 @@
           "role": "デアリングハート",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rena Maeda",
+          "role": "Grass Wonder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rika Kinugawa",
+          "role": "Narita Brian",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Mio Hoshitani",
+          "role": "Mayano Top Gun",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayaka Fukuhara",
+          "role": "Seeking the Pearl",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hiyori Nitta",
+          "role": "Matikanefukukitaru",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shio Kisui",
+          "role": "Daring Heart",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4657,7 +5798,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.45」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-046",
@@ -4712,6 +5854,55 @@
           "role": "バブルガムフェロー",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Minami Tsuda",
+          "role": "Air Shakur",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Chisa Kimura",
+          "role": "Daiwa Scarlet",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kondo Yui",
+          "role": "Biwa Hayahide",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Meiku Harukawa",
+          "role": "Symboli Kris S",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sayaka Kamitani",
+          "role": "Bubble Gum Fellow",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4731,7 +5922,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.46」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-047",
@@ -4786,6 +5978,55 @@
           "role": "ブラストワンピース",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sora Tokui",
+          "role": "TM Opera O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Minori Suzuki",
+          "role": "Agnes Digital",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Sasaki",
+          "role": "Admire Vega",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Misaki Watada",
+          "role": "Meisho Doto",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kanna Nakamura",
+          "role": "Narita Top Road",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hika Tsukishiro",
+          "role": "Win Variation",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Azusa Shizuki",
+          "role": "Blast Onepiece",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4805,7 +6046,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.47」は11月27日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！"
     },
     {
       "id": "paka-live-tv-048",
@@ -4872,6 +6114,55 @@
           "role": "フジマサマーチ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Azusa Tadokoro",
+          "role": "Symboli Rudolf",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yurina Amami",
+          "role": "Mr. C.B.",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Natsumi Fujiwara",
+          "role": "Katsuragi Ace",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4891,7 +6182,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.48」は12月25日20時に放送！アニメ『シングレ』やゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-049",
@@ -4946,6 +6238,55 @@
           "role": "ダンツフレーム",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaori Maeda",
+          "role": "Nice Nature",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuu Sasahara",
+          "role": "Curren Chan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Masumi Tazawa",
+          "role": "Ikuno Dictus",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Riona Imaizumi",
+          "role": "Yamanin Zephyr",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Aki Sairenji",
+          "role": "Furioso",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Honoka Inoue",
+          "role": "Aston Machan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruna Fukushima",
+          "role": "Dantsu Flame",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -4965,7 +6306,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.49」は1月29日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-050",
@@ -5056,6 +6398,97 @@
           "role": "グランアレグリア",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Ozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yurina Amami",
+          "role": "Mr. C. B.",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Moe Kahara",
+          "role": "Fusaichi Pandora",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Fuuka Izumi",
+          "role": "Buena Vista",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuu Serizawa",
+          "role": "Gentildonna",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hika Tsukishiro",
+          "role": "Win Variation",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaori Ishihara",
+          "role": "Almond Eye",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuki Nakashima",
+          "role": "Lucky Lilac",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hina Natsume",
+          "role": "Gran Alegria",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5075,7 +6508,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.50」は2月22日(土)20時に放送！4周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-051",
@@ -5130,6 +6564,55 @@
           "role": "デュランダル",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kana Yuuki",
+          "role": "Super Creek",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Oozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Meiku Harukawa",
+          "role": "Symboli Kris S",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Misato Matsuoka",
+          "role": "Tanino Gimlet",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Minami Shinoda",
+          "role": "Tap Dance City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kana Nogi",
+          "role": "Durandal",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5149,7 +6632,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.51」は3月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-052",
@@ -5160,7 +6644,7 @@
       "video_id": "V34w6OzrI24",
       "url": "https://www.youtube.com/watch?v=V34w6OzrI24",
       "thumbnail": "https://i.ytimg.com/vi_webp/V34w6OzrI24/maxresdefault.webp",
-      "duration": 10800,
+      "duration": 127,
       "cast_status": "verified",
       "cast": [
         {
@@ -5218,13 +6702,62 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Owada",
+          "role": "Smart Falcon",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Tsukuda",
+          "role": "Transcend",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Asaka",
+          "role": "Espoir City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Konomi Inagaki",
+          "role": "Copano Rickey",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Fuuka Izumi",
+          "role": "Buena Vista",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hiyori Manase",
+          "role": "Chrono Genesis",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
       "sessions": [],
       "summary": "Golden Week (\"Gray Week\")",
-      "source_kind": "official_announcement",
-      "source_url": "https://umamusume.jp/news/detail?id=2515",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=V34w6OzrI24",
       "sources": [
         {
           "kind": "official_announcement",
@@ -5242,7 +6775,9 @@
           "url": "https://www.youtube.com/watch?v=V34w6OzrI24"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.52」は4月27日20時に放送！GWキャンペーンやゲームの最新情報をお届け！",
+      "summary_translation_status": "stale"
     },
     {
       "id": "paka-live-tv-053",
@@ -5297,6 +6832,55 @@
           "role": "フェノーメノ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Azusa Tadokoro",
+          "role": "Symboli Rudolf",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayumi Hinohara",
+          "role": "Yaeno Muteki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuna Nemoto",
+          "role": "Air Messiah",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shio Kisui",
+          "role": "Daring Heart",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuriko Hibi",
+          "role": "Fenomeno",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5316,7 +6900,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.53」は5月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-054",
@@ -5371,6 +6956,48 @@
           "role": "ベルノライト",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Oozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Afumi Hashi",
+          "role": "Mejiro Ryan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rika Nagae",
+          "role": "Ines Fujin",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Kosaka",
+          "role": "Gold City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ruriko Noguchi",
+          "role": "Sakura Chiyono O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5390,7 +7017,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.54」は6月25日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-055",
@@ -5445,6 +7073,55 @@
           "role": "ウインバリアシオン",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yurina Amami",
+          "role": "Mr. C.B.",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hikaru Tono",
+          "role": "Matikanetannhauser",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuko Natsuyoshi",
+          "role": "Cheval Grand",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Akina",
+          "role": "Duramente",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Nanae Kojima",
+          "role": "Rhein Kraft",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Moe Kahara",
+          "role": "Fusaichi Pandora",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hika Tsukishiro",
+          "role": "Win Variation",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5464,7 +7141,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.55」は7月30日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-056",
@@ -5543,6 +7221,83 @@
           "role": "アドマイヤグルーヴ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Oozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Kosaka",
+          "role": "Gold City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yukina Shuto",
+          "role": "Haru Urara",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Moe Kahara",
+          "role": "Fusaichi Pandora",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Miyu Kubota",
+          "role": "Loves Only You",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hiyori Manase",
+          "role": "Chrono Genesis",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satsumi Matsuda",
+          "role": "Stay Gold",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hina Suzuki",
+          "role": "Admire Groove",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5562,7 +7317,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.56」は8月22日(金)20時に放送！4.5周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-057",
@@ -5617,6 +7373,55 @@
           "role": "マーベラスサンデー",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kana Yuuki",
+          "role": "Super Creek",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Eriko Matsui",
+          "role": "Fuji Kiseki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Oozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Rei Matsuzaki",
+          "role": "Hishi Akebono",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayami Fujino",
+          "role": "Eishin Flash",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Eri Suzuki",
+          "role": "Tosen Jordan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Marie Miyake",
+          "role": "Marvelous Sunday",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5636,7 +7441,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.57」は9月28日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-058",
@@ -5691,6 +7497,55 @@
           "role": "ワンダーアキュート",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaori Maeda",
+          "role": "Nice Nature",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shiori Sugiura",
+          "role": "Sweep Tosho",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yui Tsukada",
+          "role": "Transcend",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Haruna Fukushima",
+          "role": "Dantsu Flame",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sayaka Kikuchi",
+          "role": "Hokko Tarumae",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kanoko Sudo",
+          "role": "Wonder Acute",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5710,7 +7565,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.58」は10月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-059",
@@ -5765,6 +7621,48 @@
           "role": "レッドディザイア",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Mayu Yoshioka",
+          "role": "Dream Journey",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Ueda",
+          "role": "Gold Ship",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Kosaka",
+          "role": "Gold City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuriko Hibi",
+          "role": "Fenomeno",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hitomi Sekine",
+          "role": "Red Desire",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5784,7 +7682,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.59」は11月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-060",
@@ -5839,6 +7738,55 @@
           "role": "キセキ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sora Tokui",
+          "role": "T.M. Opera O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Chinami Hashimoto",
+          "role": "Fine Motion",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Masumi Tazawa",
+          "role": "Ikuno Dictus",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Mizuki Mano",
+          "role": "Sakura Laurel",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Sayaka Kamitani",
+          "role": "Bubble Gum Fellow",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Seena Hoshiki",
+          "role": "Kiseki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5858,7 +7806,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.60」は12月24日20時に放送！ゲーム最新情報や新たなウマ娘の情報をお届け！"
     },
     {
       "id": "paka-live-tv-061",
@@ -5919,6 +7868,55 @@
           "role": "サウンズオブアース",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuka Otsubo",
+          "role": "Taiki Shuttle",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Marika Kono",
+          "role": "Silence Suzuka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Naomi Ozora",
+          "role": "Tamamo Cross",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yu Sasahara",
+          "role": "Curren Chan",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shiori Sugiura",
+          "role": "Sweep Tosho",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hiyori Nitta",
+          "role": "Matikanefukukitaru",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Saki Miyashita",
+          "role": "Still in Love",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -5938,7 +7936,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.61」は1月28日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-062",
@@ -6017,6 +8016,83 @@
           "role": "カジノドライヴ",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Ayami Fujino",
+          "role": "Eishin Flash",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Asaka",
+          "role": "Espoir City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Fuuka Izumi",
+          "role": "Buena Vista",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Kaori Ishihara",
+          "role": "Almond Eye",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Yuki Nakashima",
+          "role": "Lucky Lilac",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Seena Hoshiki",
+          "role": "Kiseki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Shuri Miyumi",
+          "role": "Forever Young",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Tsukino Chikasada",
+          "role": "Marche Lorraine",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Hana Shimano",
+          "role": "Victoire Pisa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
+        },
+        {
+          "name": "Aimi",
+          "role": "Casino Drive",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
       "characters": [],
@@ -6036,7 +8112,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV Vol.62」は2月22日20時に放送！5周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-prime-001",
@@ -6098,6 +8175,48 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Shio Kisui",
+          "role": "Daring Heart",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Azumi Waki",
+          "role": "Special Week",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hina Yomiya",
+          "role": "Daring Tact",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Maria Sashide",
+          "role": "North Flight",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Kaori Ishihara",
+          "role": "Almond Eye",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Shuri Miyumi",
+          "role": "Forever Young",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6117,7 +8236,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #1」は3月27日20時に放送！次回ガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-prime-002",
@@ -6179,6 +8299,55 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Eriko Matsui",
+          "role": "Fuji Kiseki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Minori Suzuki",
+          "role": "Agnes Digital",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yuri Fujimoto",
+          "role": "Jungle Pocket",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Minami Shinoda",
+          "role": "Tap Dance City",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Mayu Yoshioka",
+          "role": "Dream Journey",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Shuri Miyumi",
+          "role": "Forever Young",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hana Shimano",
+          "role": "Victoire Pisa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6198,7 +8367,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #2」は4月28日20時に放送！GWキャンペーンやゲームの最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-prime-003",
@@ -6260,6 +8430,55 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Rena Maeda",
+          "role": "Grass Wonder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yui Ogura",
+          "role": "Manhattan Cafe",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yuu Serizawa",
+          "role": "Gentildonna",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Azusa Shizuki",
+          "role": "Blast Onepiece",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hina Natsume",
+          "role": "Gran Alegria",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hitomi Sekine",
+          "role": "Red Desire",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hana Shimano",
+          "role": "Victoire Pisa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6279,7 +8498,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #3」は5月27日20時に放送！新育成シナリオなどゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-prime-004",
@@ -6341,6 +8561,55 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yukiyo Fujii",
+          "role": "Tazuna Hayakawa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Minami Takahashi",
+          "role": "El Condor Pasa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Chinami Hashimoto",
+          "role": "Fine Motion",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Misaki Watada",
+          "role": "Meisho Doto",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Kaori Maeda",
+          "role": "Nice Nature",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Kanna Nakamura",
+          "role": "Narita Top Road",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Anju Oda",
+          "role": "Curren Bouquetd'or",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6360,7 +8629,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #4」は6月26日20時に放送！新育成シナリオの詳細などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-prime-005",
@@ -6422,6 +8692,55 @@
           "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Satsumi Matsuda",
+          "role": "Stay Gold",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Ayaka Onishi",
+          "role": "Mejiro Bright",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Haruna Fukushima",
+          "role": "Dantsu Flame",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Moe Kahara",
+          "role": "Fusaichi Pandora",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yumiko Mochizuki",
+          "role": "Calstone Light O",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Kaori Ishihara",
+          "role": "Almond Eye",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Seena Hoshiki",
+          "role": "Kiseki",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6441,7 +8760,8 @@
           "url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #5」は7月29日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
     },
     {
       "id": "paka-live-tv-prime-006",
@@ -6451,7 +8771,7 @@
       "end_date": "2026-08-22",
       "video_id": "604WzTEF4is",
       "url": "https://www.youtube.com/watch?v=604WzTEF4is",
-      "thumbnail": "https://i.ytimg.com/vi/604WzTEF4is/maxresdefault.jpg",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3396/Header/pakalive_dash5_kokuchi_KV.png?c=20260814180029",
       "duration": 13694,
       "cast_status": "verified",
       "cast": [
@@ -6523,6 +8843,83 @@
         {
           "name": "浅見春那",
           "role": "？？？？？"
+        },
+        {
+          "name": "Satomi Akesaka",
+          "role": "Misato Akasaka",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Tomoyo Takayanagi",
+          "role": "Oguri Cap",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yurina Amami",
+          "role": "Mr. C.B.",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Akina",
+          "role": "Duramente",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Fuka Izumi",
+          "role": "Buena Vista",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hikari Senga",
+          "role": "Epiphaneia",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Misora Takahashi",
+          "role": "Logotype",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hana Shimano",
+          "role": "Victoire Pisa",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yui Kanari",
+          "role": "Titleholder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Arisa Kori",
+          "role": "Efforia",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Haruna Asami",
+          "role": "Phalaenopsis",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
       ],
       "characters": [],
@@ -6598,7 +8995,8 @@
           "url": "https://www.youtube.com/watch?v=604WzTEF4is"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #6」は8月22日19時に放送！5.5周年の最新情報などをお届け！"
     },
     {
       "id": "paka-live-tv-prime-007",
@@ -6608,7 +9006,7 @@
       "end_date": "2026-09-27",
       "video_id": "CHDZJgHuiGo",
       "url": "https://www.youtube.com/watch?v=CHDZJgHuiGo",
-      "thumbnail": "https://i.ytimg.com/vi/CHDZJgHuiGo/maxresdefault.jpg",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3462/Header/pakadash_7_kokuchiKV.png?c=20260918183019",
       "duration": 10266,
       "cast_status": "verified",
       "cast": [
@@ -6651,6 +9049,62 @@
         {
           "name": "浅见春那",
           "role": "ファレノプシス",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Rena Maeda",
+          "role": "Grass Wonder",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Rika Kinugawa",
+          "role": "Narita Brian",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Azusa Tadokoro",
+          "role": "Symboli Rudolf",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Akina",
+          "role": "Duramente",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hina Suzuki",
+          "role": "Admire Groove",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Yurina Kikuchi",
+          "role": "Rose Kingdom",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Haruna Asami",
+          "role": "Phalaenopsis",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "N/A",
+          "role": "现实嘉宾",
+          "person_type": "external_guest",
           "source_kind": "community_archive",
           "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
         }
@@ -6712,7 +9166,195 @@
           "url": "https://www.youtube.com/watch?v=CHDZJgHuiGo"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「ぱかライブTV' #7」は9月27日20時に放送！次回のガチャ更新などゲーム最新情報をお届け！"
+    },
+    {
+      "id": "paka-live-tv-prime-008",
+      "series_id": "paka-live-tv-prime",
+      "title": "ぱかライブTV' #8",
+      "date": "2026-10-24",
+      "end_date": "2026-10-24",
+      "video_id": "YFsYv2UV8rU",
+      "url": "https://www.youtube.com/watch?v=YFsYv2UV8rU",
+      "thumbnail": "https://i.ytimg.com/vi/YFsYv2UV8rU/maxresdefault.jpg",
+      "duration": null,
+      "cast_status": "verified",
+      "cast": [
+        {
+          "name": "星谷美緒",
+          "role": "マヤノトップガン",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "木村千咲",
+          "role": "ダイワスカーレット",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "山本希望",
+          "role": "ユキノビジン",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "河野ひより",
+          "role": "ノーリーズン",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "紫月杏朱彩",
+          "role": "ブラストワンピース",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "海野水玉",
+          "role": "ルーラーシップ",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "星谷美緒",
+          "role": "マヤノトップガン"
+        },
+        {
+          "name": "木村千咲",
+          "role": "ダイワスカーレット"
+        },
+        {
+          "name": "山本希望",
+          "role": "ユキノビジン"
+        },
+        {
+          "name": "河野ひより",
+          "role": "ノーリーズン"
+        },
+        {
+          "name": "紫月杏朱彩",
+          "role": "ブラストワンピース"
+        },
+        {
+          "name": "海野水玉",
+          "role": "ルーラーシップ"
+        },
+        {
+          "name": "廣瀬千夏",
+          "role": "？？？？？"
+        },
+        {
+          "name": "Mio Hoshitani",
+          "role": "Mayano Top Gun",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Chisa Kimura",
+          "role": "Daiwa Scarlet",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Nozomi Yamamoto",
+          "role": "Yukino Bijin",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Hiyori Kono",
+          "role": "No Reason",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Azusa Shizuki",
+          "role": "Blast Onepiece",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Mizutama Umino",
+          "role": "Rulership",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "name": "Chinatsu Hirose",
+          "role": "???",
+          "person_type": "external_guest",
+          "source_kind": "community_archive",
+          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        }
+      ],
+      "characters": [],
+      "sessions": [
+        {
+          "label": "本期节目",
+          "date": "2026-10-24",
+          "cast": [
+            {
+              "name": "星谷美緒",
+              "role": "マヤノトップガン"
+            },
+            {
+              "name": "木村千咲",
+              "role": "ダイワスカーレット"
+            },
+            {
+              "name": "山本希望",
+              "role": "ユキノビジン"
+            },
+            {
+              "name": "河野ひより",
+              "role": "ノーリーズン"
+            },
+            {
+              "name": "紫月杏朱彩",
+              "role": "ブラストワンピース"
+            },
+            {
+              "name": "海野水玉",
+              "role": "ルーラーシップ"
+            },
+            {
+              "name": "廣瀬千夏",
+              "role": "？？？？？"
+            }
+          ]
+        }
+      ],
+      "summary": "公式生配信番組「ぱかライブTV' #8」を放送します！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=YFsYv2UV8rU",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=3500"
+        },
+        {
+          "kind": "community_archive",
+          "label": "Umamusume Wiki 补档",
+          "url": "https://umamusu.wiki/PakaLive_TV_Dash"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=YFsYv2UV8rU"
+        }
+      ],
+      "media": [],
+      "source_title": "「ぱかライブTV' #8」は10月24日20時に放送！新ウマ娘や新育成シナリオの情報をお届け！",
+      "summary_translation_status": "stale"
     },
     {
       "id": "pakatube-20180409-3TFnrD1sYNU",
@@ -9444,6 +12086,223 @@
       "sessions": []
     },
     {
+      "id": "pakatube-20261017-gang-beasts-a-4",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグA】ライアン、パーマー、アルダン、ブライトの4人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-17",
+      "video_id": "rr6APbScbA8",
+      "url": "https://www.youtube.com/watch?v=rr6APbScbA8",
+      "thumbnail": "https://i.ytimg.com/vi_webp/rr6APbScbA8/maxresdefault.webp",
+      "duration": 742,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグAはライアン、パーマー、アルダン、ブライトの4人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware Co.",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=rr6APbScbA8",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=rr6APbScbA8",
+          "label": "官方视频",
+          "video_id": "rr6APbScbA8",
+          "duration": 742
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=rr6APbScbA8"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261018-gang-beasts-b-6",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグB】ブラスト、アイ、ララ、ラヴズ、ブーケ、マルシュの6人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-18",
+      "video_id": "omogzeRSS0U",
+      "url": "https://www.youtube.com/watch?v=omogzeRSS0U",
+      "thumbnail": "https://i.ytimg.com/vi_webp/omogzeRSS0U/maxresdefault.webp",
+      "duration": 1590,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグBはブラスト、アイ、ララ、ラヴズ、ブーケ、マルシュの6人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=omogzeRSS0U",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=omogzeRSS0U",
+          "label": "官方视频",
+          "video_id": "omogzeRSS0U",
+          "duration": 1590
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=omogzeRSS0U"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261019-gang-beasts-c-4",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグC】フラッシュ、ピサ、ローズ、ルーラーの4人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-19",
+      "video_id": "J5SYkzTjQow",
+      "url": "https://www.youtube.com/watch?v=J5SYkzTjQow",
+      "thumbnail": "https://i.ytimg.com/vi/J5SYkzTjQow/maxresdefault.jpg",
+      "duration": 636,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグCはフラッシュ、ピサ、ローズ、ルーラーの4人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware Co., ",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=J5SYkzTjQow",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=J5SYkzTjQow",
+          "label": "官方视频",
+          "video_id": "J5SYkzTjQow",
+          "duration": 636
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=J5SYkzTjQow"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261020-gang-beasts-d-4",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグD】ヤン子、エピ、ロゴ、カジノの4人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-20",
+      "video_id": "yuc0p1uf76c",
+      "url": "https://www.youtube.com/watch?v=yuc0p1uf76c",
+      "thumbnail": "https://i.ytimg.com/vi/yuc0p1uf76c/maxresdefault.jpg",
+      "duration": 443,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグDはヤン子、エピ、ロゴ、カジノの4人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware Co., Ltd.",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=yuc0p1uf76c",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=yuc0p1uf76c",
+          "label": "官方视频",
+          "video_id": "yuc0p1uf76c",
+          "duration": 443
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=yuc0p1uf76c"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261021-gang-beasts-e-4",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグE】ファイン、シャカール、トップロード、ミラ子の4人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-21",
+      "video_id": "_eSlUkKrJr8",
+      "url": "https://www.youtube.com/watch?v=_eSlUkKrJr8",
+      "thumbnail": "https://i.ytimg.com/vi/_eSlUkKrJr8/maxresdefault.jpg",
+      "duration": 580,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグEはファイン、シャカール、トップロード、ミラ子の4人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware C",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=_eSlUkKrJr8",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=_eSlUkKrJr8",
+          "label": "官方视频",
+          "video_id": "_eSlUkKrJr8",
+          "duration": 580
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=_eSlUkKrJr8"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261022-gang-beasts-f-4",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグF】シービー、ローレル、エース、バブルの4人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-22",
+      "video_id": "EfR9hcHGE5o",
+      "url": "https://www.youtube.com/watch?v=EfR9hcHGE5o",
+      "thumbnail": "https://i.ytimg.com/vi_webp/EfR9hcHGE5o/maxresdefault.webp",
+      "duration": 1046,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグFはシービー、ローレル、エース、バブルの4人が激突するぜ！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Middleware Co., ",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=EfR9hcHGE5o",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=EfR9hcHGE5o",
+          "label": "官方视频",
+          "video_id": "EfR9hcHGE5o",
+          "duration": 1046
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=EfR9hcHGE5o"
+        }
+      ]
+    },
+    {
+      "id": "pakatube-20261023-gang-beasts-g-5",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜予選リーグG】スペ、グラス、エル、スカイ、ファレノの5人が真剣勝負だ！【ゲーム実況】",
+      "date": "2026-10-23",
+      "video_id": "Ywe1Kgzj_I8",
+      "url": "https://www.youtube.com/watch?v=Ywe1Kgzj_I8",
+      "thumbnail": "https://i.ytimg.com/vi_webp/Ywe1Kgzj_I8/maxresdefault.webp",
+      "duration": 1185,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "summary": "第1回トレセン学園『Gang Beasts』最強決定戦が開幕！ 予選リーグGはスペ、グラス、エル、スカイ、ファレノの5人が激突するぜ！ キングはスーパーシード！ 最強決定戦へ進むのは一体誰だ！ ---+-----+-----+-----+-----+-----+-----+-----+--- 最強のチャンネル登録！ https://www.youtube.com/@UMAMUSUME_official?sub_confirmation=1 【ウマ娘 プリティーダービー 公式ポータルサイト】 https://umamusume.jp 【ウマ娘 プリティーダービー 公式X（Twitter）】 https://x.com/uma_musu 【CyStore】 https://cystore.com/ 【ぱかチューブっ!公式サイト】 https://pakatube.umamusume.jp 【ぱかチューブっ!公式X（Twitter）】 https://x.com/pakatube Supported by \"CRIWARE\". CRIWARE is a trademark of CRI Mi",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=Ywe1Kgzj_I8",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=Ywe1Kgzj_I8",
+          "label": "官方视频",
+          "video_id": "Ywe1Kgzj_I8",
+          "duration": 1185
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=Ywe1Kgzj_I8"
+        }
+      ]
+    },
+    {
       "id": "sokosoko-paka-live-tv-001",
       "series_id": "sokosoko-paka-live-tv",
       "title": "そこそこぱかライブTV Vol.1",
@@ -11063,7 +13922,8 @@
           "url": "https://www.youtube.com/watch?v=SgjpPQAZBUk"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.28」11月22日(水)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-029",
@@ -11126,7 +13986,8 @@
           "url": "https://www.youtube.com/watch?v=PwrpxjcWLHc"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.29」12月22日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-030",
@@ -11197,7 +14058,8 @@
           "url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.30」1月12日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-031",
@@ -11268,7 +14130,8 @@
           "url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.31」3月15日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-032",
@@ -11339,7 +14202,8 @@
           "url": "https://www.youtube.com/watch?v=jE_tS1AXrpE"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.32」4月19日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-033",
@@ -11410,7 +14274,8 @@
           "url": "https://www.youtube.com/watch?v=dHH09LrU0W8"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.33」5月9日(木)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-034",
@@ -11481,7 +14346,8 @@
           "url": "https://www.youtube.com/watch?v=yROD36Huu3E"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.34」6月14日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-035",
@@ -11544,7 +14410,8 @@
           "url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.35」7月13日(土)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-036",
@@ -11607,7 +14474,8 @@
           "url": "https://www.youtube.com/watch?v=y8ENTiVBOE4"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.36」8月16日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-037",
@@ -11678,7 +14546,8 @@
           "url": "https://www.youtube.com/watch?v=NwVUbyLz3NA"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.37」9月6日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-038",
@@ -11741,7 +14610,8 @@
           "url": "https://www.youtube.com/watch?v=tOsCVsCgb5g"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.38」10月11日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-039",
@@ -11804,7 +14674,8 @@
           "url": "https://www.youtube.com/watch?v=II-L2QN9z6M"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.39」11月15日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-040",
@@ -11867,7 +14738,8 @@
           "url": "https://www.youtube.com/watch?v=PcMHRobfh5s"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.40」12月13日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-041",
@@ -11930,7 +14802,8 @@
           "url": "https://www.youtube.com/watch?v=3vhdJaOqMgg"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.41」1月17日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-042",
@@ -12001,7 +14874,8 @@
           "url": "https://www.youtube.com/watch?v=_8twOlkRBkw"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.42」2月21日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-043",
@@ -12064,7 +14938,8 @@
           "url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.43」4月11日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-044",
@@ -12127,7 +15002,8 @@
           "url": "https://www.youtube.com/watch?v=yffmn8gBaj0"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.44」5月16日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-045",
@@ -12188,7 +15064,7 @@
     {
       "id": "sokosoko-paka-live-tv-046",
       "series_id": "sokosoko-paka-live-tv",
-      "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル！",
+      "title": "そこそこぱかライブTV Vol.46 アニメ『ウマ娘 シンデレラグレイ』振り返り生放送スペシャル",
       "date": "2025-07-03",
       "end_date": "2025-07-03",
       "video_id": "EtyMt8pfEf8",
@@ -12365,7 +15241,8 @@
           "url": "https://www.youtube.com/watch?v=JMy6FcJz8gk"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.48」9月12日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-049",
@@ -12428,7 +15305,8 @@
           "url": "https://www.youtube.com/watch?v=d3TidydxtoE"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.49」10月17日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-050",
@@ -12497,7 +15375,7 @@
     {
       "id": "sokosoko-paka-live-tv-051",
       "series_id": "sokosoko-paka-live-tv",
-      "title": "そこそこぱかライブTV Vol.51 アニメ『ウマ娘 シンデレラグレイ』第2クール振り返り生放送スペシャル！",
+      "title": "そこそこぱかライブTV Vol.51 アニメ『ウマ娘 シンデレラグレイ』第2クール振り返り生放送スペシャル",
       "date": "2025-12-28",
       "end_date": "2025-12-28",
       "video_id": "gIwX-jwD2Sk",
@@ -12626,7 +15504,8 @@
           "url": "https://www.youtube.com/watch?v=tWKLV0KAM7U"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.52」2月13日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-053",
@@ -12689,12 +15568,13 @@
           "url": "https://www.youtube.com/watch?v=jyMgyrfS4xY"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.53」4月17日(金)19時公開！そこそこなトークをゆるりとお届け！"
     },
     {
       "id": "sokosoko-paka-live-tv-054",
       "series_id": "sokosoko-paka-live-tv",
-      "title": "そこそこぱかライブTV Vol.54 7th EVENT 「THE STAGE」 in TOKYO 振り返り生放送スペシャル！",
+      "title": "そこそこぱかライブTV Vol.54 7th EVENT 「THE STAGE」 in TOKYO 振り返り生放送スペシャル",
       "date": "2026-06-28",
       "video_id": "CbCs_zfy4mk",
       "url": "https://www.youtube.com/watch?v=CbCs_zfy4mk",
@@ -12808,7 +15688,8 @@
           "url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
         }
       ],
-      "media": []
+      "media": [],
+      "source_title": "「そこそこぱかライブTV Vol.55」8月28日(金)19時公開！そこそこなトークをゆるりとお届け！"
     }
   ]
 }
