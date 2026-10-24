@@ -128,6 +128,9 @@ done
 for name in album_covers uma_avatars uma_moe uma_official uma_va video_thumbs uma_tools/img; do mkdir -p "$ROOT/shared/$name"; done
 node "$SRC/deploy/media-sync.js" stage "$SRC" "$PREVIOUS_SOURCE" "$ROOT/shared" "$RELEASE"
 python3 "$RELEASE/uma_tools/update_events.py"
+if ! timeout 300 python3 "$RELEASE/uma_tools/sync_event_images.py"; then
+  echo 'Event artwork prefetch incomplete; retaining verified cached artwork and local default covers.'
+fi
 python3 "$RELEASE/uma_tools/build_anime_catalog.py"
 python3 "$RELEASE/uma_tools/build_pedigree.py"
 mkdir -p "$ROOT/shared/assets" "$ROOT/shared/backups"

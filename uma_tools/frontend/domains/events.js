@@ -118,12 +118,13 @@ export function createEvents(deps) {
   }
 
   function eventSessionTable(session) {
-    return session && session.setlist_html
-      ? deps.linkSetlistSongs(
-          deps.fixAvatarSrc(deps.hideEncorePerf(session.setlist_html)),
-          session.performances,
-        )
-      : "";
+    if (!session || !session.setlist_html) return "";
+    const html = deps.fixAvatarSrc(deps.hideEncorePerf(session.setlist_html));
+    // A generated table may contain only the column header when no song rows
+    // were collected. Treat that as empty so the whole setlist block stays
+    // hidden instead of rendering a misleading blank frame.
+    if (!/<tbody\b[\s\S]*?<tr\b[\s\S]*?<\/tr>/i.test(html)) return "";
+    return deps.linkSetlistSongs(html, session.performances);
   }
 
   const eventSeriesMap = deps.computed(function () {
@@ -147,8 +148,7 @@ export function createEvents(deps) {
   });
 
   const eventTypeOptions = deps.computed(function () {
-    return [{ value: "kind:all", label: "全部" }].concat(
-      [
+    const groups = [
         ["concert", "音乐演出"],
         ["onsite", "线下活动"],
         ["official_program", "官方节目"],
@@ -160,14 +160,13 @@ export function createEvents(deps) {
           ...eventSeries.value
             .filter((series) => (series.kinds || [series.kind]).includes(kind))
             .map((series) => ({
-              value: "series:" + kind + ":" + series.id,
+              value: "series:" + (evKind.value === 'all' && evSeries.value === series.id && kind === (series.kind || (series.kinds || [])[0]) ? 'all' : kind) + ":" + series.id,
               label: series.name,
             })),
           { value: "series:" + kind + ":unclassified", label: "其他" + label },
         ],
-      })),
-      eventSeries.value.map(series => ({ value: 'series:all:' + series.id, label: series.name + '（全部类型）' })),
-    );
+      }));
+    return [{ value: "kind:all", label: "全部" }].concat(groups);
   });
 
   const eventTypeSelection = deps.computed({
@@ -180,7 +179,6 @@ export function createEvents(deps) {
       const [type, kind, id] = String(value).split(":");
       evSeries.value = type === "series" ? id : "all";
       evKind.value = kind;
-      evMode.value = "all";
       eventsPage.value = 1;
       deps.pushUrl();
     },
@@ -245,7 +243,7 @@ export function createEvents(deps) {
   }
 
   function eventSummary(event) {
-    const value = String((event && event.summary) || "").trim();
+    const value = String((event && (event.summary_zh || event.summary)) || "").trim();
     if (!value || /(?:出处|提取码|网盘|https?:\/\/)/i.test(value)) return "";
     return value;
   }
@@ -275,21 +273,21 @@ export function createEvents(deps) {
 
   const eventVoiceCast = deps.computed(function () {
     const event = eventDetail.value;
-    const all = ((event && event.cast) || []).filter(function (item) {
-      return item.voice_actor_id;
-    });
+    const all = (event && event.cast) || [];
     const session = selectedEventSession.value;
     if (session && Array.isArray(session.cast))
-      return session.cast.filter(function (item) {
-        return item.voice_actor_id;
-      });
+      return session.cast;
     const allowed = new Set((session && session.character_ids) || []);
     if (((event && event.sessions) || []).length > 1 && allowed.size) {
-      return all.filter(function (item) {
-        return allowed.has(item.character_id);
-      });
+      return all.filter(item => !item.voice_actor_id || allowed.has(item.character_id));
     }
     return ((event && event.sessions) || []).length > 1 ? [] : all;
+  });
+
+  const eventCharacterCast = deps.computed(function () {
+    const event = eventDetail.value;
+    const session = selectedEventSession.value;
+    return [...new Set((session && session.character_ids) || (event && event.character_ids) || [])];
   });
 
   const eventUnscopedCast = deps.computed(function () {
@@ -298,15 +296,16 @@ export function createEvents(deps) {
     const scoped = new Set();
     (event.sessions || []).forEach(function (session) {
       (session.cast || []).forEach(function (item) {
-        if (item.voice_actor_id) scoped.add(item.voice_actor_id);
+        scoped.add(item.voice_actor_id || "external:" + (item.name || item.person_type || "unknown"));
       });
       const characters = new Set(session.character_ids || []);
       (event.cast || []).forEach(function (item) {
-        if (characters.has(item.character_id)) scoped.add(item.voice_actor_id);
+        if (characters.has(item.character_id)) scoped.add(item.voice_actor_id || "external:" + (item.name || item.person_type || "unknown"));
       });
     });
     return (event.cast || []).filter(function (item) {
-      return item.voice_actor_id && !scoped.has(item.voice_actor_id);
+      const key = item.voice_actor_id || "external:" + (item.name || item.person_type || "unknown");
+      return !scoped.has(key);
     });
   });
 
@@ -353,12 +352,7 @@ export function createEvents(deps) {
               ? "Bilibili"
               : host || "外部平台",
           label: item.label || "节目影像 " + (index + 1),
-          image:
-            item.thumbnail ||
-            (videoId
-              ? "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg"
-              : "") ||
-            (event && event.image) ||
+          image: (event && (event.image_preview || event.image)) ||
             "/uma_tools/img/event-covers/onsite.svg",
         };
       })
@@ -625,6 +619,7 @@ export function createEvents(deps) {
     eventTypeSelection,
     eventUnscopedCast,
     eventVoiceCast,
+    eventCharacterCast,
     eventYearOptions,
     eventYears,
     eventsAll,

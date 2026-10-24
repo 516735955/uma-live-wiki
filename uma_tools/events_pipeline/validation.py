@@ -116,6 +116,10 @@ def validate(
         cast_keys = []
         for cast in event.get("cast") or []:
             person_type = cast.get("person_type")
+            if person_type in {"unresolved_cast", "external_guest"}:
+                if not cast.get("name") or not cast.get("source_url"):
+                    errors.append(f"event {event['id']} has unresolved cast without source {cast.get('name')}")
+                continue
             if person_type != "voice_actor":
                 errors.append(f"event {event['id']} publishes non-Uma cast {cast.get('name')}")
             if not cast.get("voice_actor_id"):

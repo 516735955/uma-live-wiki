@@ -24,6 +24,12 @@ const MUSIC_SOURCE_FILES = [
   'music/lyric_timings.json'
 ];
 const CHARACTER_INDEX_FILE = 'character_index_data.js';
+const EVENT_IMAGE_MAP = 'auto_update/event_images.json';
+const EVENT_KIND_COVERS = {
+  concert: '/uma_tools/img/event-covers/concert.svg',
+  official_program: '/uma_tools/img/event-covers/official-program.svg',
+  onsite: '/uma_tools/img/event-covers/onsite.svg'
+};
 
 function normalize(value) {
   return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
@@ -138,19 +144,25 @@ function eventSearchText(event, actors = new Map()) {
   });
   return normalize([
     event.title,
+    event.title_zh,
+    event.title_ja,
     event.date,
     event.venue,
     event.summary,
+    event.summary_zh,
+    event.summary_ja,
     ...(event.character_ids || []),
     ...cast,
     ...sessions
   ].filter(Boolean).join(' '));
 }
 
-function eventSummary(event, searchText) {
+function eventSummary(event, searchText, image) {
   return {
     id: event.id,
     title: event.title,
+    title_zh: event.title_zh || '',
+    title_ja: event.title_ja || '',
     date: event.date,
     end_date: event.end_date,
     schedule_status: event.schedule_status,
@@ -164,8 +176,11 @@ function eventSummary(event, searchText) {
     character_count: (event.character_ids || []).length,
     session_count: Math.max(1, (event.sessions || []).length),
     song_count: eventSongCount(event),
-    image: event.image,
+    image: image || event.image,
     summary: event.summary,
+    summary_zh: event.summary_zh || '',
+    summary_ja: event.summary_ja || '',
+    localization_state: event.localization_state || '',
     legacy_url: event.legacy_url,
     legacy_aliases: event.legacy_aliases || [],
     setlist_status: event.setlist_status,
@@ -362,7 +377,8 @@ class CatalogStore {
     if (this.signatureCheckedAt && Date.now() - this.signatureCheckedAt < 100) return this.checkedSignature;
     const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     const pending = await fs.promises.stat(path.join(this.dataDir, 'auto_update/catalog_pending.json')).catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
-    this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published');
+    const eventImages = await fs.promises.stat(path.join(this.dataDir, EVENT_IMAGE_MAP)).catch(() => null);
+    this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published') + ':' + (eventImages ? eventImages.mtimeMs + ':' + eventImages.size : 'no-event-images');
     this.signatureCheckedAt = Date.now();
     return this.checkedSignature;
   }
@@ -428,12 +444,48 @@ class CatalogStore {
     if (buildIds.size !== 1 || !buildIds.has(manifest.build_id)) {
       throw new Error('catalog revision mismatch');
     }
-    const sourceRevision = crypto.createHash('sha1')
+    let sourceRevision = crypto.createHash('sha1')
       .update(texts.join('\u0000'))
       .digest('hex')
       .slice(0, 12);
 
-    const events = Array.isArray(eventsDoc.events) ? eventsDoc.events : [];
+    const seriesById = new Map((eventsDoc.series || []).map((series) => [series.id, series]));
+    let eventImages = {};
+    try {
+      const document = JSON.parse(await fs.promises.readFile(path.join(this.dataDir, EVENT_IMAGE_MAP), 'utf8'));
+      const siteRoot = path.resolve(this.dataDir, '..');
+      const localAsset = (value) => {
+        if (typeof value !== 'string' || !value.startsWith('/')) return '';
+        const target = path.resolve(siteRoot, `.${value}`);
+        if (target !== siteRoot && !target.startsWith(siteRoot + path.sep)) return '';
+        return fs.existsSync(target) ? value : '';
+      };
+      eventImages = Object.fromEntries(Object.entries(document.items || {}).flatMap(([id, item]) => {
+        const mapped = item && typeof item === 'object' ? {
+          ...item,
+          image_url: localAsset(item.image_url),
+          hero_image_url: localAsset(item.hero_image_url),
+          original_url: localAsset(item.original_url)
+        } : null;
+        return mapped && mapped.image_url && mapped.hero_image_url && mapped.original_url ? [[id, mapped]] : [];
+      }));
+    } catch (error) { if (error.code !== 'ENOENT') console.warn('[catalog:event-images]', error.message); }
+    sourceRevision = crypto.createHash('sha1')
+      .update(sourceRevision + '\u0000' + JSON.stringify(eventImages))
+      .digest('hex')
+      .slice(0, 12);
+    const fallbackImage = (event) => {
+      const mapped = eventImages[String(event.id || '')];
+      if (mapped && mapped.image_url) return mapped.image_url;
+      if (String(event.image || '').startsWith('/')) return event.image;
+      const series = seriesById.get(event.series_id) || {};
+      if (String(series.cover || '').startsWith('/')) return series.cover;
+      return EVENT_KIND_COVERS[event.kind] || '/uma_tools/img/event-covers/onsite.svg';
+    };
+    const events = (Array.isArray(eventsDoc.events) ? eventsDoc.events : []).map((event) => {
+      const mapped = eventImages[String(event.id || '')] || {};
+      return { ...event, image: fallbackImage(event), image_original: mapped.original_url || mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : ''), source_image: mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : '') };
+    });
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
     const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
@@ -441,7 +493,6 @@ class CatalogStore {
     const characters = JSON.parse(texts[10].replace(/^window\.CHAR_INDEX\s*=\s*/, '').replace(/;\s*$/, ''));
     const charactersById = new Map(characters.map((character) => [character.id, character]));
     const actorsById = new Map(voiceActors.map(actor => [actor.id, actor]));
-    const seriesById = new Map((eventsDoc.series || []).map((series) => [series.id, series]));
     const eventRows = events.map((event) => {
       const series = seriesById.get(event.series_id) || {};
       const names = (event.character_ids || []).map((id) => {
@@ -469,6 +520,7 @@ class CatalogStore {
       buildId: manifest.build_id + '-api' + CATALOG_RESPONSE_SCHEMA + '-' + sourceRevision,
       manifest,
       eventsDoc,
+      eventImages,
       songsDoc,
       creatorsDoc,
       appearancesDoc,
@@ -644,7 +696,10 @@ class CatalogStore {
         }))
       });
     }).filter(Boolean);
-    return { build_id: store.buildId, event, series: (store.eventsDoc.series || []).find(series => series.id === event.series_id) || null, catalog_songs: songs };
+    const imageMap = store.eventImages || {};
+    const mapped = imageMap[String(event.id)] || {};
+    const detailEvent = mapped.hero_image_url ? { ...event, image: mapped.hero_image_url, image_preview: mapped.image_url, source_image: mapped.source_image || event.source_image || '' } : event;
+    return { build_id: store.buildId, event: detailEvent, series: (store.eventsDoc.series || []).find(series => series.id === event.series_id) || null, catalog_songs: songs };
   }
 
   async songs(params) {

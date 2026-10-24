@@ -1,4 +1,5 @@
 export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","openNews","eventDateLabel","eventSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
+bindings.push("eventCharacterCast", "characterImage");
 export const template = `
             <content-state v-if="eventsError" state="error" subject="活动" :retry="true" @retry="loadEvents()"></content-state>
 
@@ -9,9 +10,9 @@ export const template = `
                         <input type="search" v-model.trim="eventsQuery" aria-label="搜索活动、系列、出演者、角色或歌曲" placeholder="搜索活动、系列、出演者、角色或歌曲" autocomplete="off">
                         <button v-if="eventsQuery" type="button" @click.prevent="eventsQuery=''" aria-label="清空搜索">×</button>
                     </label>
-                    <div class="archive-controls">
+                    <div class="archive-controls event-filter-controls">
                         <ui-select v-model="evTime" label="状态" :options="[{value:'all',label:'全部'},{value:'upcoming',label:'未结束'},{value:'past',label:'已结束'},{value:'announced',label:'日期未知'},{value:'cancelled',label:'已取消'}]" @change="setEvTime"></ui-select>
-                        <ui-select v-model="eventTypeSelection" label="类型" :options="eventTypeOptions"></ui-select>
+                        <ui-select class="event-type-select" v-model="eventTypeSelection" label="类型" :options="eventTypeOptions"></ui-select>
                         <ui-select v-model="evYear" label="年份" :options="eventYearOptions" @change="setEvYear"></ui-select>
                     </div>
                 </div>
@@ -55,11 +56,11 @@ export const template = `
                     <div class="entity-hero">
                         <span v-if="eventDetail.schedule_status==='cancelled'" class="event-status-cancelled event-hero-status">已取消</span>
                         <div class="entity-cover event-cover">
-                            <img v-media-src="eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
+                            <img v-media-src="eventDetail.image" :data-original="eventDetail.image_original" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
                         </div>
                         <div class="entity-intro">
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
-                            <h1>{{ eventDetail.title }}</h1>
+                            <h1>{{ eventDetail.title }}</h1><p v-if="eventDetail.title_ja && eventDetail.title_ja !== eventDetail.title" class="entity-reading">{{ eventDetail.title_ja }}</p>
                             <dl class="entity-meta">
                                 <div><dt>日期</dt><dd>{{ eventDateLabel(eventDetail) }}</dd></div>
                                 <div v-if="eventDetail.venue"><dt>地点</dt><dd>{{ eventDetail.venue }}</dd></div>
@@ -79,7 +80,7 @@ export const template = `
                         </button>
                     </nav>
 
-                    <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled'" class="entity-section">
+                    <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled' && (eventSessionTable(selectedEventSession) || (selectedEventSession.performances && selectedEventSession.performances.length))" class="entity-section">
                         <div class="section-toolbar">
                             <div class="entity-section-actions"><span>{{ selectedEventSession.date || eventDetail.date }}<template v-if="selectedEventSession.songs.length"> · {{ selectedEventSession.songs.length }} 首</template></span><entity-actions v-if="eventPlayableRows.length" size="compact" play-label="播放本场" add-label="加入本场" @play="playEventSession" @add="enqueueEventSession"></entity-actions></div>
                         </div>
@@ -102,15 +103,18 @@ export const template = `
                     <section class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">{{ eventDetail.schedule_status==='cancelled' ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
-                            <a v-for="cast in eventVoiceCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))">
+                            <component v-for="(cast,index) in eventVoiceCast" :is="cast.voice_actor_id ? 'a' : 'span'" :key="cast.voice_actor_id || ('external-' + cast.name + '-' + index)" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="cast.voice_actor_id ? routes.voiceActors(cast.voice_actor_id) : undefined" @click="cast.voice_actor_id && internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
-                            </a>
+                            </component>
+                        </div>
+                        <div v-else-if="eventCharacterCast.length" class="performer-chip-list">
+                            <a v-for="characterId in eventCharacterCast" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event, () => openCharacter(characterId))"><img v-if="characterImage(characterId)" v-media-src="characterImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></a>
                         </div>
                         <content-state v-else state="uncollected" subject="出演阵容"></content-state>
                     </section>
                     <section v-if="eventUnscopedCast.length" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">场次未明确</span></div>
-                        <div class="performer-chip-list"><a v-for="cast in eventUnscopedCast" :key="cast.voice_actor_id" class="performer-chip voice-chip" :href="routes.voiceActors(cast.voice_actor_id)" @click="internalLink($event, () => openVoice(cast.voice_actor_id))"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span></a></div>
+                        <div class="performer-chip-list"><component v-for="(cast,index) in eventUnscopedCast" :is="cast.voice_actor_id ? 'a' : 'span'" :key="cast.voice_actor_id || ('external-' + cast.name + '-' + index)" class="performer-chip voice-chip" :href="cast.voice_actor_id ? routes.voiceActors(cast.voice_actor_id) : undefined" @click="cast.voice_actor_id && internalLink($event, () => openVoice(cast.voice_actor_id))"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em></component></div>
                     </section>
 
                     <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>

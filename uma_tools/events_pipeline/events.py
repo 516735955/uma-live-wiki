@@ -306,7 +306,7 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
             char_id = identities.character_id(str(item))
             if char_id and char_id not in characters:
                 characters.append(char_id)
-        if source.get("series_id") == "pakatube-character-program":
+        if source.get("series_id") == "pakatube-character-program" or source.get('cast_status') == 'character_only':
             for char_id in identities.characters_in_text((source.get("title") or "") + " " + (source.get("summary") or "")):
                 if char_id not in characters:
                     characters.append(char_id)
@@ -314,11 +314,6 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 host_id = identities.character_id("ゴールドシップ")
                 if host_id and host_id not in characters:
                     characters.append(host_id)
-        if characters:
-            cast = pipeline_identities.merge_cast_records([
-                *cast,
-                *pipeline_identities.make_character_cast(characters, identities, "official_character_credit", source_url),
-            ])
         sessions = []
         for index, source_session in enumerate(source_sessions):
             session_cast = pipeline_identities.make_cast(source_session.get("cast") or [], identities, source_kind, source_url)
@@ -331,11 +326,6 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 char_id = identities.character_id(str(item))
                 if char_id and char_id not in session_characters:
                     session_characters.append(char_id)
-            if session_characters:
-                session_cast = pipeline_identities.merge_cast_records([
-                    *session_cast,
-                    *pipeline_identities.make_character_cast(session_characters, identities, "official_character_credit", source_url),
-                ])
             session_date, session_source_date = normalized_broadcast_date(
                 source_session.get("date") or source.get("date"),
                 " ".join(str(source_session.get(key) or "") for key in ("label", "start_time", "summary")) + " " + source_text,
@@ -356,6 +346,9 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                          **({"source_date": source_date} if source_date else {})}]
         events.append({
             "id": event_id, "title": source.get("title") or "", "date": program_date, "end_date": program_end_date,
+            **({"id_aliases": list(dict.fromkeys(source.get("id_aliases") or []))} if source.get("id_aliases") else {}),
+            **({"title_aliases": list(dict.fromkeys(source.get("title_aliases") or []))} if source.get("title_aliases") else {}),
+            **({"source_title": source.get("source_title")} if source.get("source_title") else {}),
             "kind": kind, "mode": source.get("mode") or "online", "series_id": source.get("series_id") or ("official-special" if kind == "official_program" else ""), "venue": source.get("venue") or "在线播出",
             "cast_status": "verified" if cast else (source.get("cast_status") or "pending"), "cast": cast, "character_ids": characters,
             "sessions": sessions,
@@ -406,7 +399,7 @@ def apply_overrides(events: list[dict[str, pipeline_common.Any]], overrides: dic
             *(str(item or "") for item in event.get("character_ids") or [] if item),
             *(str(item.get("character_id") or "") for item in event.get("cast") or [] if item.get("character_id")),
         ]))
-        if event_characters:
+        if event_characters and event.get('kind') != 'official_program':
             represented_characters = {
                 str(item.get("character_id") or "")
                 for item in event.get("cast") or []

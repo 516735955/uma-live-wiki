@@ -144,6 +144,7 @@ from events_pipeline.program_text import (
     parse_program_sessions,
     program_identity,
     program_text_lines,
+    canonical_program_title,
 )
 
 from events_pipeline.archives import (
@@ -179,8 +180,10 @@ from events_pipeline.program_discovery import (
     fetch_json_url,
     fetch_video_metadata,
     is_official_program_announcement,
+    is_official_program_candidate,
     is_official_special_video,
     is_pakatube_character_program,
+    is_official_collaboration_program,
     official_news_programs,
     refresh_programs,
 )

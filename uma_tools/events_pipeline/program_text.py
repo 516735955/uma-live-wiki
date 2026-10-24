@@ -7,6 +7,9 @@ from . import text as pipeline_text
 
 def program_identity(title: str) -> tuple[str, str]:
     normalized = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    # Gold Ship's GW parody is a special, not the 564th regular episode.
+    if pipeline_common.re.search(r'ゴルシちゃんのGW計画.*Vol\.?\s*564', normalized, pipeline_common.re.I):
+        return '', ''
     match = pipeline_common.re.search(r"そこそこぱかライブTV\s*Vol\.?\s*(\d+)", normalized, pipeline_common.re.I)
     if match:
         number = int(match.group(1))
@@ -20,6 +23,29 @@ def program_identity(title: str) -> tuple[str, str]:
         number = int(match.group(1))
         return f"paka-live-tv-{number:03d}", "paka-live-tv"
     return "", ""
+
+
+def canonical_program_title(title: str) -> str:
+    """Return the stable Japanese display title for numbered programmes."""
+    identity, series_id = program_identity(title)
+    if not identity:
+        return (title or "").strip()
+    number = identity.rsplit("-", 1)[-1].lstrip("0") or "0"
+    names = {
+        "paka-live-tv": "ぱかライブTV",
+        "paka-live-tv-prime": "ぱかライブTV'",
+        "sokosoko-paka-live-tv": "そこそこぱかライブTV",
+    }
+    base = f"{names[series_id]} {'#' if series_id == 'paka-live-tv-prime' else 'Vol.'}{number}"
+    normalized = pipeline_common.unicodedata.normalize("NFKC", title or "")
+    # Preserve real special-edition subtitles while discarding announcement
+    # prose around the numbered programme name.
+    episode = pipeline_common.re.search(r"(?:Vol\.?|#)\s*\d+", normalized, pipeline_common.re.I)
+    suffix = normalized[episode.end():].strip(' 「」『』　!！') if episode else ''
+    if (suffix and pipeline_common.re.search(r'周年|スペシャル|振り返り|特別|出張', suffix)
+            and not pipeline_common.re.search(r'決定|お届け|日時|放送します|配信します', suffix)):
+        return f"{base} {suffix}"
+    return base
 
 
 def expected_regular_program_ids(rows: pipeline_common.Iterable[dict[str, pipeline_common.Any]]) -> dict[tuple[str, int], str]:

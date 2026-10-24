@@ -232,6 +232,29 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             self.assertTrue(UPDATE_EVENTS.is_pakatube_character_program(title), title)
         for title in ["【ウマ娘】新シリーズ配信アニメ制作決定！", "4th EVENT ティザーPV", "新CM公開"]:
             self.assertFalse(UPDATE_EVENTS.is_pakatube_character_program(title), title)
+        for title in [
+            "Vol.131「カレンブーケドール」【トレセン学園生徒紹介】",
+            "Vol.130「レッドディザイア」【トレセン学園生徒紹介】",
+        ]:
+            self.assertFalse(UPDATE_EVENTS.is_pakatube_character_program(title), title)
+
+    def test_cross_franchise_live_program_requires_uma_and_broadcast_evidence(self):
+        self.assertTrue(UPDATE_EVENTS.is_official_collaboration_program(
+            "ウマ娘×プリンセスコネクト Re:Dive コラボ生放送"
+        ))
+        self.assertFalse(UPDATE_EVENTS.is_official_collaboration_program(
+            "プリンセスコネクト Re:Dive 新CM"
+        ))
+
+    def test_numbered_program_title_keeps_real_special_subtitle(self):
+        self.assertEqual(
+            UPDATE_EVENTS.canonical_program_title("「ウマ娘」ぱかライブTV' #6 5.5周年スペシャル！"),
+            "ぱかライブTV' #6 5.5周年スペシャル",
+        )
+        self.assertEqual(
+            UPDATE_EVENTS.canonical_program_title("ぱかライブTV Vol.63 発表まとめ！"),
+            "ぱかライブTV Vol.63",
+        )
 
     def test_official_special_scope_includes_cast_commentary(self):
         self.assertTrue(
@@ -240,6 +263,9 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             )
         )
         self.assertFalse(UPDATE_EVENTS.is_official_special_video("【ラジオ切り抜き】レースの模様をお届け！"))
+        self.assertTrue(UPDATE_EVENTS.is_official_program_candidate("【ウマ娘の日常】「ウマ娘消失事件」編"))
+        self.assertTrue(UPDATE_EVENTS.is_official_program_candidate("【TVアニメ第3期】第1話の同時視聴やっちゃうぞ！"))
+        self.assertFalse(UPDATE_EVENTS.is_official_program_candidate("【ラジオ切り抜き】レースの模様をお届け！"))
 
     def test_program_refresh_is_additive_and_preserves_reviewed_values(self):
         existing = {
@@ -248,6 +274,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 "id": "program-1",
                 "series_id": "official-special",
                 "title": "人工确认标题",
+                "manual_fields": ["title", "cast"],
                 "date": "",
                 "cast": [{"name": "确认声优"}],
                 "source_kind": "community_archive",
@@ -289,6 +316,53 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             {(row["id"], row["field"]) for row in report["conflicts"]},
             {("program-1", "cast"), ("program-1", "title")},
         )
+
+    def test_program_refresh_replaces_stale_official_announcement_title(self):
+        existing = {"programs": [{
+            "id": "paka-live-tv-prime-008",
+            "title": "「ぱかライブTV' #8」は10月24日20時に放送！新情報！",
+            "source_kind": "official_announcement",
+            "source_url": "https://umamusume.jp/news/detail?id=1",
+        }]}
+        discovered = {"programs": [{
+            "id": "paka-live-tv-prime-008",
+            "title": "ぱかライブTV' #8",
+            "source_title": "「ぱかライブTV' #8」は10月24日20時に放送！新情報！",
+            "source_kind": "official_youtube",
+            "video_id": "abcdefghijk",
+            "source_url": "https://www.youtube.com/watch?v=abcdefghijk",
+        }]}
+        merged, _ = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        row = merged["programs"][0]
+        self.assertEqual(row["title"], "ぱかライブTV' #8")
+        self.assertEqual(row["source_title"], discovered["programs"][0]["source_title"])
+
+    def test_program_refresh_keeps_reviewed_title_against_official_discovery(self):
+        existing = {"programs": [{
+            "id": "paka-live-tv-prime-008", "title": "人工确认标题",
+            "metadata_status": "reviewed", "source_kind": "official_announcement",
+        }]}
+        discovered = {"programs": [{
+            "id": "paka-live-tv-prime-008", "title": "ぱかライブTV' #8",
+            "source_kind": "official_youtube",
+        }]}
+        merged, _ = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        self.assertEqual(merged["programs"][0]["title"], "人工确认标题")
+
+    def test_program_refresh_joins_different_ids_when_official_video_is_identical(self):
+        existing = {"programs": [{
+            "id": "official-special-old", "title": "旧标题", "video_id": "abcdefghijk",
+            "source_kind": "community_archive", "source_url": "https://archive.example/old",
+        }]}
+        discovered = {"programs": [{
+            "id": "official-special-new", "title": "新标题", "video_id": "abcdefghijk",
+            "source_kind": "official_youtube", "source_url": "https://youtube.com/watch?v=abcdefghijk",
+            "sources": [{"kind": "official_youtube", "url": "https://youtube.com/watch?v=abcdefghijk"}],
+        }]}
+        merged, _ = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        self.assertEqual([row["id"] for row in merged["programs"]], ["official-special-old"])
+        self.assertIn("official-special-new", merged["programs"][0]["id_aliases"])
+        self.assertIn("https://youtube.com/watch?v=abcdefghijk", [row.get("url") for row in merged["programs"][0].get("sources", [])])
 
     def test_setlist_relationships_are_parsed_per_song_row(self):
         class Identities:
@@ -693,7 +767,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual({row["character_id"] for row in matching}, {"zankan_koukou"})
         self.assertEqual({row["role"] for row in matching}, {"崭新光辉"})
 
-    def test_character_credited_programs_resolve_to_the_current_voice_cast(self):
+    def test_character_programs_do_not_infer_voice_actor_attendance(self):
         built = UPDATE_EVENTS.build()
         programs = [
             event for event in built["catalog"]["events"]
@@ -710,10 +784,9 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 for row in event.get("cast") or []
                 if row.get("character_id") and row.get("voice_actor_id")
             }
-            self.assertEqual(set(cast_by_character), set(event["character_ids"]), event["id"])
-            self.assertEqual(event["cast_status"], "verified")
-            for actor_id in cast_by_character.values():
-                self.assertIn(event["id"], voice_appearances.get(actor_id, set()))
+            self.assertFalse(cast_by_character, event['id'])
+            self.assertEqual(event["cast_status"], "character_only")
+            self.assertFalse(any(event['id'] in ids for ids in voice_appearances.values()), event['id'])
 
     def test_explicit_alias_merge_preserves_curated_setlist_and_all_evidence(self):
         rows = [

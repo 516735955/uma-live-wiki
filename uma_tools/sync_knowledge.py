@@ -13,6 +13,8 @@ from knowledge_io import ROOT, read_json, write_json
 STATE = ROOT / 'data/auto_update/runner.json'
 DAY = 24 * 60 * 60
 RETRY = 60 * 60
+STEP_TIMEOUTS = {'events': 300, 'programs': 1200, 'catalogs': 120,
+                 'event-localization': 300, 'event-images': 300}
 # Source order makes new identities available before resolving their relations.
 STEPS = [
     ('characters', ['sync_character_sources.py']),
@@ -24,6 +26,8 @@ STEPS = [
     ('albums', ['auto_albums.py']),
     ('setlists', ['auto_setlists.py']),
     ('catalogs', ['update_events.py']),
+    ('event-localization', ['localize_events.js']),
+    ('event-images', ['sync_event_images.py']),
     ('music-metadata', ['sync_music_metadata.py', '--workers', '3', '--limit', '40', '--utaten']),
     ('voice-profiles', ['update_events.py', '--refresh-profiles']),
     ('music-build', ['update_events.py', '--music-only']),
@@ -40,7 +44,10 @@ STEP_OUTPUTS = {
     'pedigree-build': ['pedigree_data.js', 'character_pedigree_meta.js'],
     'events': ['events_data.json'], 'programs': ['events/official_programs.json'],
     'albums': ['albums.json'], 'setlists': ['live_cat_data.json', 'events/赛马娘LIVE歌单导出.csv'],
-    'catalogs': ['events_catalog.json', 'song_catalog.json', 'voice_actor_profiles.json'],
+    'catalogs': ['events_catalog.json', 'song_catalog.json', 'voice_actor_profiles.json',
+                 'creator_catalog.json', 'appearance_index.json', 'catalog_manifest.json'],
+    'event-localization': ['auto_update/event_localizations.json'],
+    'event-images': ['auto_update/event_images.json'],
     'music-metadata': ['music/credits.json', 'music/creators.json', 'music/lyrics.json', 'music/lyric_timings.json'],
     'voice-profiles': ['events/voice_actor_details.json'],
     'music-build': ['song_catalog.json', 'creator_catalog.json', 'appearance_index.json'],
@@ -110,6 +117,8 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'pedigree-source': {'characters'}, 'horse-profiles': {'pedigree-source'},
             'pedigree-build': {'characters', 'pedigree-source'}, 'voice-profiles': {'characters'},
             'catalogs': {'characters', 'events', 'programs', 'albums', 'setlists'},
+            'event-localization': {'catalogs'},
+            'event-images': {'catalogs'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
             'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
         }
@@ -119,9 +128,11 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         started = clock()
         before = output_contents(name)
         try:
-            completed = run([sys.executable, str(ROOT / 'uma_tools' / arguments[0]), *arguments[1:]],
+            executable = 'node' if arguments[0].endswith('.js') else sys.executable
+            completed = run([executable, str(ROOT / 'uma_tools' / arguments[0]), *arguments[1:]],
                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8',
-                            errors='replace', timeout=20 * 60)
+                            errors='replace', timeout=STEP_TIMEOUTS.get(name, 20 * 60),
+                            env={**os.environ, 'PYTHON_BIN': sys.executable})
             ok = completed.returncode == 0
             lines = (completed.stdout if ok else completed.stderr or completed.stdout).strip().splitlines()
             message = lines[-1][:500] if lines else ('complete' if ok else 'source update failed')

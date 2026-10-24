@@ -450,6 +450,23 @@ def make_cast(items: pipeline_common.Iterable[dict[str, pipeline_common.Any]], i
         # Known franchise actors can participate without a catalogued character.
         # Actors with character roles still require an unambiguous casting link.
         if not actor_id:
+            if evidence not in {"official_youtube", "official_external", "official_announcement"} and item.get("source_kind") not in {"official_youtube", "official_external", "official_announcement"}:
+                continue
+            # Preserve an official source's named participant without inventing
+            # a voice-actor identity or character relationship.  This is
+            # consumed as an unresolved/guest row by the event UI and can be
+            # resolved later when the canonical registry gains an alias.
+            out.append({
+                "voice_actor_id": "",
+                "name": name,
+                "character_id": "",
+                "role": role,
+                "evidence": str(item.get("source_kind") or evidence),
+                "source_url": str(item.get("source_url") or source_url),
+                "person_type": "unresolved_cast",
+                "resolution": "unresolved",
+                **({'participation_label': item['participation_label']} if item.get('participation_label') else {}),
+            })
             continue
         item_evidence = str(item.get("source_kind") or evidence)
         item_source_url = str(item.get("source_url") or source_url)

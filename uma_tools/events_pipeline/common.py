@@ -89,6 +89,7 @@ PROGRAM_SOURCE_PRIORITY = {
     "official_broadcaster": 2,
     "official_announcement": 3,
     "official_youtube": 4,
+    "official_external": 4,
 }
 
 
