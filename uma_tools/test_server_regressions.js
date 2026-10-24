@@ -127,6 +127,7 @@ async function main() {
     crypto, Buffer, require, setTimeout, BAIDU_APPID: 'test', BAIDU_SECRET: 'test', transCache: {},
     hasCjk: () => true,
     currentTerms: () => emptyTerms, translationKey: (source) => source,
+    cachedTranslation: () => '',
     translationKeyWithTerms: (source) => source,
     newsContent: { message: () => '' },
     fetchTranslation: () => Promise.reject(new Error('timeout')),

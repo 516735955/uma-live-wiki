@@ -79,6 +79,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"event data written: {coverage['events']} events, {coverage['official_programs']} official programs, {len(built['profiles']['voice_actors'])} voice actors")
         print("curated live source integrity: " + ", ".join(f"{name}={info['sha256'][:12]}" for name, info in built["catalog"]["source_integrity"].items()))
     errors = (refreshed_programs or {}).get('coverage', {}).get('source_errors', []) + profile_errors
+    rechecks = (refreshed_programs or {}).get('coverage', {}).get('metadata_recheck_pending', [])
+    if rechecks:
+        print(f"retained archived metadata; {len(rechecks)} existing video rechecks remain queued")
     if errors:
         print('source updates partially failed: ' + '; '.join(errors), file=pipeline_common.sys.stderr)
         return 1

@@ -40,6 +40,14 @@ class TranslationCache {
     this.reload();
     return Object.hasOwn(this.overlay, key) ? this.overlay[key] : this.values[key];
   }
+  findBySuffix(suffix, prefix = '') {
+    this.reload();
+    const values = { ...this.values, ...this.overlay };
+    for (const [key, value] of Object.entries(values)) {
+      if (key.startsWith(prefix) && key.endsWith(suffix) && typeof value === 'string') return value;
+    }
+    return '';
+  }
   set(key, value) {
     return this.setMany({ [key]: value });
   }

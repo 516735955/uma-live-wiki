@@ -161,7 +161,7 @@ def apply_additive_program_refresh(
                 filled_fields.append(field)
                 continue
             if (
-                field in {"date", "end_date", "thumbnail", "duration", "summary"}
+                field in {"date", "end_date", "thumbnail", "duration", "summary", "metadata_checked_at"}
                 and value_is_present(discovered_value)
                 and value_is_present(existing_value)
                 and reliable_update

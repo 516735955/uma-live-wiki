@@ -179,6 +179,7 @@ from events_pipeline.program_discovery import (
     discover_official_channel,
     fetch_json_url,
     fetch_video_metadata,
+    public_watch_metadata,
     is_official_program_announcement,
     is_official_program_candidate,
     is_official_special_video,

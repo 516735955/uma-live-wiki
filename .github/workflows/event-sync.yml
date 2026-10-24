@@ -41,7 +41,7 @@ jobs:
       - name: Discover, reconcile and localize incremental event data
         id: collect
         continue-on-error: true
-        run: python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images
+        run: python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images entity-localization
       - name: Verify complete usable catalogs
         run: |
           python uma_tools/update_events.py --check

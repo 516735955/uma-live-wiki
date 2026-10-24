@@ -33,7 +33,13 @@ exports.createService = function (deps) {
   const BAIDU_SECRET = _baiduCreds.secret;
   const statusFile = deps.path.join(deps.DATA_DIR, 'auto_update', 'translation_status.json');
   let blockedUntil = 0;
-  try { blockedUntil = JSON.parse(deps.fs.readFileSync(statusFile, 'utf8')).blocked_until || 0; } catch (_) {}
+  let blockedCode = '';
+  try {
+    const status = JSON.parse(deps.fs.readFileSync(statusFile, 'utf8'));
+    blockedUntil = status.blocked_until || 0;
+    blockedCode = String(status.code || '');
+    if (blockedCode === '54004') blockedUntil = Infinity;
+  } catch (_) {}
 
   const translations = new deps.TranslationCache(
     TRANS_CACHE_FILE,
@@ -71,9 +77,23 @@ exports.createService = function (deps) {
       : source;
   }
 
+  function cachedTranslation(source) {
+    const terms = currentTerms();
+    const key = translationKeyWithTerms(source, terms);
+    let cached = translations.get(key) || translations.get('fragment:' + key) || translations.get(source) || translations.get('fragment:' + source);
+    if (!cached && terms.protect(source).count && typeof translations.findBySuffix === 'function') {
+      cached = translations.findBySuffix(':' + source, 'terms_') || translations.findBySuffix(':' + source, 'fragment:terms_');
+    }
+    if (!cached) return '';
+    const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
+    const value = terms.normalize(cached);
+    return value && value !== source && translationFactsMatch(source, value) && !untranslatedJapanese(source, value)
+      ? value : '';
+  }
+
   const newsContent = new deps.NewsContent(
     deps.path.join(__dirname, "news-overrides.json"),
-    (source) => translations.get(translationKey(source)),
+    (source) => cachedTranslation(source),
     (source) => translations.get(source),
   );
 
@@ -139,9 +159,15 @@ exports.createService = function (deps) {
                   const result = JSON.parse(body);
                   if (result.error_code && !['54003', '54005', '52001', '52002'].includes(String(result.error_code))) {
                     blockedUntil = Date.now() + 3600000;
+                    if (String(result.error_code) === '54004') {
+                      blockedCode = '54004';
+                      blockedUntil = Infinity;
+                    } else {
+                      blockedUntil = Date.now() + 3600000;
+                    }
                     try {
                       deps.fs.mkdirSync(deps.path.dirname(statusFile), { recursive: true });
-                      deps.fs.writeFileSync(statusFile + '.tmp', JSON.stringify({ blocked_until: blockedUntil, code: String(result.error_code) }), { mode: 0o600 });
+                      deps.fs.writeFileSync(statusFile + '.tmp', JSON.stringify({ blocked_until: String(result.error_code) === '54004' ? null : blockedUntil, code: String(result.error_code) }), { mode: 0o600 });
                       deps.fs.renameSync(statusFile + '.tmp', statusFile);
                     } catch (_) { console.error('[translation] cannot save API retry status'); }
                   }
@@ -375,7 +401,15 @@ exports.createService = function (deps) {
     const key = terms.protect(src).count
       ? "msg_html2_terms_" + terms.revision + "_" + hash
       : "msg_html2_" + hash;
-    const cached = newsContent.message(originalKey) || translations.get(key);
+    let cached = newsContent.message(originalKey) || translations.get(key);
+    if (!cached && terms.protect(src).count && typeof translations.findBySuffix === 'function') {
+      cached = translations.findBySuffix('_' + hash, 'msg_html2_terms_');
+    }
+    if (cached) {
+      const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
+      const normalized = terms.normalize(cached);
+      cached = normalized && normalized !== src && translationFactsMatch(src, normalized) && !untranslatedJapanese(src, normalized) ? normalized : '';
+    }
     if (cached && cached !== src) return { value: terms.normalize(cached), dirty: false };
     if (!BAIDU_APPID || !BAIDU_SECRET) return { value: '', dirty: true };
     const tokens = await splitHtmlText(src, signal);
@@ -411,11 +445,20 @@ exports.createService = function (deps) {
     // Limits apply to the protected query, not to the shorter original Japanese.
     const translated = new Map();
     runs.forEach((run) => {
-      const cachedFragment = archivedFragments[run.text] || archivedFragments[run.archiveText] || translations.get(
+      let cachedFragment = archivedFragments[run.text] || archivedFragments[run.archiveText] || translations.get(
         "fragment:" + (terms.protect(run.text).count
           ? "terms_" + terms.revision + ":" + run.text
           : run.text),
       );
+      if (!cachedFragment && terms.protect(run.text).count && typeof translations.findBySuffix === 'function') {
+        cachedFragment = translations.findBySuffix(':' + run.text, 'fragment:terms_');
+      }
+      if (!cachedFragment) cachedFragment = cachedTranslation(run.text);
+      if (cachedFragment) {
+        const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
+        const normalized = terms.normalize(cachedFragment);
+        cachedFragment = normalized && normalized !== run.text && translationFactsMatch(run.text, normalized) && !untranslatedJapanese(run.text, normalized) ? normalized : '';
+      }
       if (cachedFragment) translated.set(run, terms.normalize(cachedFragment));
       else {
         const known = terms.protect(run.text);
@@ -546,5 +589,7 @@ exports.createService = function (deps) {
       );
   }
   return { newsContent, translateTitle, translateArticle,
-    get translationAvailable() { return !!BAIDU_APPID && !!BAIDU_SECRET && Date.now() >= blockedUntil; } };
+    translateHtmlMessage,
+    get translationBlockCode() { return blockedCode; },
+    get translationAvailable() { return !!BAIDU_APPID && !!BAIDU_SECRET && blockedCode !== '54004' && Date.now() >= blockedUntil; } };
 };

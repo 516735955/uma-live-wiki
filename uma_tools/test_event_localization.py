@@ -7,11 +7,22 @@ import unittest
 from unittest.mock import patch
 
 from event_localization import apply_localizations
-from publish_event_sources import preserve_collaborator_changes
+from publish_event_sources import preserve_collaborator_changes, parse_source
 from events_pipeline import program_discovery
 
 
 class EventLocalizationTests(unittest.TestCase):
+    def test_complete_past_program_uses_listing_change_signal_and_expiry(self):
+        existing = {'title': 'ぱかライブTV Vol.1', 'date': '2020-01-01', 'cast_status': 'verified',
+                    'metadata_checked_at': program_discovery.pipeline_common.time.time()}
+        listing = {'id': 'abcdefghijk', 'title': '「ウマ娘」ぱかライブTV Vol.1'}
+        with patch.object(program_discovery, 'cached_video_metadata', return_value=None):
+            self.assertFalse(program_discovery.existing_metadata_is_due(existing, listing))
+            self.assertTrue(program_discovery.existing_metadata_is_due(existing, {**listing, 'title': 'ぱかライブTV Vol.2'}))
+            self.assertTrue(program_discovery.existing_metadata_is_due({**existing, 'metadata_checked_at': 1}, listing))
+    def test_publication_preserves_historical_javascript_data_syntax(self):
+        source = "window.CHAR_DETAIL = {demo: {html: '中文简介'}};"
+        self.assertEqual(parse_source('data/character_detail_data.js', source), {'demo': {'html': '中文简介'}})
     def test_official_watch_fallback_validates_identity_and_uses_broadcast_date(self):
         player = {'videoDetails': {'videoId': 'abcdefghijk', 'channelId': 'official',
                                   'title': '番組', 'shortDescription': '公式番組', 'lengthSeconds': '60'},
@@ -26,6 +37,13 @@ class EventLocalizationTests(unittest.TestCase):
         with patch.object(program_discovery.pipeline_common.urllib.request, 'urlopen', return_value=io.BytesIO(markup)):
             with self.assertRaises(ValueError):
                 program_discovery.public_watch_metadata('another-id')
+
+    def test_official_watch_metadata_uses_primary_html_date_when_microformat_is_absent(self):
+        page = b'<link rel="canonical" href="https://www.youtube.com/watch?v=abcdefghijk"><meta content="2026-10-23T02:00:03-07:00" itemprop="datePublished"><meta content="Program title" itemprop="name">'
+        with patch.object(program_discovery.pipeline_common.urllib.request, 'urlopen', return_value=io.BytesIO(page)):
+            value = program_discovery.public_watch_metadata('abcdefghijk', 'official')
+        self.assertEqual(program_discovery._approximate_date(value), '2026-10-23')
+        self.assertEqual(value['channel_id'], 'official')
 
     def test_movie_index_reads_entries_in_both_arrays_without_collecting_promotional_clips(self):
         index = {'latest': [{'url': 'abcdefghijk', 'title': '【ゲーム実況】Gang Beasts'}],

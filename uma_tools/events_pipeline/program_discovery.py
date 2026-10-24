@@ -7,6 +7,7 @@ from . import program_text as pipeline_program_text
 from . import text as pipeline_text
 import sqlite3
 import datetime as _datetime
+from html.parser import HTMLParser
 
 
 PAKATUBE_MOVIE_INDEX = "https://pakatube.umamusume.jp/data/movie.json"
@@ -74,7 +75,7 @@ def cached_video_metadata(video_id: str, max_age: int) -> dict[str, pipeline_com
     return None
 
 
-def public_watch_metadata(video_id: str) -> dict[str, pipeline_common.Any]:
+def public_watch_metadata(video_id: str, expected_channel: str = "") -> dict[str, pipeline_common.Any]:
     """Read published metadata from the official watch page without a player session."""
     url = f'https://www.youtube.com/watch?v={video_id}&hl=ja'
     request = pipeline_common.urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -84,12 +85,54 @@ def public_watch_metadata(video_id: str) -> dict[str, pipeline_common.Any]:
         raise ValueError('public watch page exceeds metadata limit')
     text = raw.decode('utf-8', 'replace')
     match = pipeline_common.re.search(r'ytInitialPlayerResponse\s*=\s*', text)
-    if not match:
-        raise ValueError('public watch metadata not present')
-    player = pipeline_common.json.JSONDecoder().raw_decode(text[match.end():])[0]
+    player = {}
+    if match:
+        try:
+            player = pipeline_common.json.JSONDecoder().raw_decode(text[match.end():])[0]
+        except pipeline_common.json.JSONDecodeError:
+            player = {}
     details = player.get('videoDetails') or {}
     micro = (player.get('microformat') or {}).get('playerMicroformatRenderer') or {}
-    published = micro.get('publishDate') or micro.get('uploadDate') or ''
+    class PageMetadata(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.values = {}
+            self.canonical = ''
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if tag == 'meta' and attrs.get('content'):
+                self.values[attrs.get('itemprop') or attrs.get('name') or attrs.get('property')] = attrs['content']
+            if tag == 'link' and attrs.get('rel') == 'canonical':
+                self.canonical = attrs.get('href') or ''
+    page = PageMetadata()
+    page.feed(text)
+    def meta(name):
+        return page.values.get(name, '')
+    if not details.get('videoId') and page.canonical:
+        canonical_id = pipeline_common.urllib.parse.parse_qs(pipeline_common.urllib.parse.urlparse(page.canonical).query).get('v', [''])[0]
+        if canonical_id == video_id:
+            details['videoId'] = canonical_id
+    published = micro.get('publishDate') or micro.get('uploadDate') or meta('datePublished') or meta('uploadDate')
+    if not published:
+        for block in pipeline_common.re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', text, pipeline_common.re.I):
+            try:
+                payload = pipeline_common.json.loads(pipeline_common.html.unescape(block))
+                candidates = payload if isinstance(payload, list) else [payload]
+                video = next((item for item in candidates if isinstance(item, dict) and item.get('@type') in ('VideoObject', ['VideoObject'])), {})
+                published = video.get('uploadDate') or video.get('datePublished') or ''
+                details['title'] = details.get('title') or video.get('name') or ''
+                details['shortDescription'] = details.get('shortDescription') or video.get('description') or ''
+                if published: break
+            except (ValueError, TypeError):
+                continue
+    if not details.get('title'):
+        details['title'] = meta('name') or meta('title')
+    if not details.get('shortDescription'):
+        details['shortDescription'] = meta('description')
+    if not details.get('channelId'):
+        # Discovery only supplies this value for an owned official-channel
+        # feed. Never read a recommended video's channel from arbitrary JSON.
+        details['channelId'] = meta('channelId') or expected_channel
     live = micro.get('liveBroadcastDetails') or {}
     released = live.get('startTimestamp') or published
     try:
@@ -103,16 +146,21 @@ def public_watch_metadata(video_id: str) -> dict[str, pipeline_common.Any]:
         'id': details.get('videoId'), 'channel_id': details.get('channelId'),
         'title': details.get('title'), 'description': details.get('shortDescription') or '',
         'release_timestamp': stamp.timestamp(),
-        'thumbnail': thumbnails[-1].get('url', '') if thumbnails else '',
+        'thumbnail': thumbnails[-1].get('url', '') if thumbnails else (meta('thumbnailUrl') or meta('og:image')),
         'webpage_url': f'https://www.youtube.com/watch?v={video_id}',
         'duration': int(details.get('lengthSeconds') or 0), 'metadata_origin': 'official_watch_page',
     }
+    missing = [field for field, value in (('canonical video id', result.get('id')), ('title', result.get('title')), ('channel id', result.get('channel_id')), ('published date', released)) if not value]
+    if missing:
+        raise ValueError('public watch missing ' + ', '.join(missing))
     if not valid_video_metadata(result, video_id):
-        raise ValueError('public watch identity/channel/date unavailable')
+        raise ValueError('public watch canonical identity/date mismatch')
+    if expected_channel and result.get('channel_id') != expected_channel:
+        raise ValueError('public watch channel mismatch: expected ' + expected_channel)
     return result
 
 
-def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -> dict[str, pipeline_common.Any] | None:
+def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, expected_channel: str = "") -> dict[str, pipeline_common.Any] | None:
     """Read verified metadata cache first; failed fetches are never cached."""
     cache_file = PROGRAM_METADATA_CACHE / f"{video_id}.json"
     def usable(value: dict[str, pipeline_common.Any]) -> bool:
@@ -142,7 +190,12 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -
             result = pipeline_common.subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=30)
             metadata = pipeline_common.json.loads(result.stdout)
             if not usable(metadata):
-                reasons.append(client + ': missing verified identity/channel/date')
+                missing = [name for name, ok in (
+                    ('identity', metadata.get('id') == video_id), ('title', metadata.get('title')),
+                    ('channel', metadata.get('channel_id')),
+                    ('date', _approximate_date({key: metadata.get(key) for key in ('release_date', 'release_timestamp', 'upload_date')})),
+                ) if not ok]
+                reasons.append(client + ': missing ' + ','.join(missing))
                 continue
             try:
                 PROGRAM_METADATA_CACHE.mkdir(parents=True, exist_ok=True)
@@ -156,7 +209,7 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -
         except (OSError, pipeline_common.subprocess.SubprocessError, pipeline_common.json.JSONDecodeError) as error:
             reasons.append(client + ': ' + error_reason(error))
     try:
-        metadata = public_watch_metadata(video_id)
+        metadata = public_watch_metadata(video_id, expected_channel)
         pipeline_common.atomic_json(cache_file, metadata)
         METADATA_ERRORS.pop(video_id, None)
         return metadata
@@ -354,6 +407,26 @@ def _video_ids(row: dict[str, pipeline_common.Any]) -> set[str]:
     }
 
 
+def _inventory_title(value: str) -> str:
+    value = pipeline_program_text.canonical_program_title(value)
+    return pipeline_common.re.sub(r'【[^】]*視点[^】]*】\s*$', '', value).strip()
+
+
+def existing_metadata_is_due(existing: dict, listing: dict) -> bool:
+    """Use the official listing as the change signal for complete past episodes."""
+    if not is_official_program_candidate(str(listing.get('title') or '')):
+        return False  # Supplementary performance clips do not redefine episodes.
+    if cached_video_metadata(str(listing['id']), _metadata_ttl(existing)):
+        return True
+    if _inventory_title(str(existing.get('title') or '')) != _inventory_title(str(listing.get('title') or '')):
+        return True
+    checked = float(existing.get('metadata_checked_at') or 0)
+    if checked and pipeline_common.time.time() - checked >= METADATA_TTL_PUBLISHED:
+        return True
+    return bool(not existing.get('date') or str(existing['date']) >= pipeline_common.dt.date.today().isoformat()
+                or existing.get('metadata_status') == 'pending' or existing.get('cast_status') in {'pending', 'partial'})
+
+
 def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
     errors = []
     index_rows = []
@@ -453,6 +526,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
     youtube_available = bool(pipeline_common.shutil_which("yt-dlp"))
     channel_entries = discover_official_channel() if youtube_available else []
     source_errors = list(getattr(channel_entries, 'errors', []))
+    metadata_rechecks = []
     if not youtube_available:
         source_errors.append('required program collector yt-dlp is unavailable')
     rebuild_regular = int(existing_doc.get("schema_version") or 1) < 2 and bool(channel_entries)
@@ -484,7 +558,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         for row in channel_entries
         if row.get("id")
         and (
-            str(row["id"]) in existing_video_ids
+            (str(row["id"]) in existing_video_ids and existing_metadata_is_due(existing_by_video[str(row['id'])], row))
             or (pipeline_program_text.program_identity(row.get("title") or "")[0] in expected_id_values and str(row["id"]) not in existing_video_ids)
             or (is_pakatube_character_program(row.get("title") or "") and str(row["id"]) not in existing_video_ids)
             or (is_official_special_video(row.get("title") or "") and str(row["id"]) not in existing_video_ids)
@@ -523,7 +597,12 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
     candidate_rows = [*fresh_rows, *network_rows[:batch_size]]
     fetched_video_ids: set[str] = set()
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {executor.submit(fetch_video_metadata, row["id"], _metadata_ttl(existing_by_video.get(row["id"], row))): row["id"] for row in candidate_rows}
+        futures = {executor.submit(
+            fetch_video_metadata,
+            row["id"],
+            _metadata_ttl(existing_by_video.get(row["id"], row)),
+            row.get("source_channel_id") or row.get("channel_id") or pipeline_common.OFFICIAL_CHANNEL_ID,
+        ): row["id"] for row in candidate_rows}
         for future in pipeline_common.concurrent.futures.as_completed(futures):
             metadata = future.result()
             source_row = next((row for row in candidate_rows if row.get("id") == futures[future]), {})
@@ -533,14 +612,20 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
                     metadata.get("channel_id") != source_row.get("source_channel_id")
                     and source_row["source_channel"] not in channel_url.lower()
                 ):
-                    source_errors.append('external video metadata unavailable or channel mismatch: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel'))
+                    reason = 'external video metadata unavailable or channel mismatch: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel')
+                    (metadata_rechecks if futures[future] in existing_by_video else source_errors).append(reason)
                     continue
             elif not metadata or metadata.get("channel_id") != pipeline_common.OFFICIAL_CHANNEL_ID:
-                source_errors.append('official video metadata unavailable: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel'))
+                reason = 'official video metadata unavailable: ' + futures[future] + ': ' + METADATA_ERRORS.get(futures[future], 'unexpected channel')
+                (metadata_rechecks if futures[future] in existing_by_video else source_errors).append(reason)
                 continue
             if metadata.get("_metadata_stale"):
-                source_errors.append("stale metadata retained after refresh failure: " + futures[future])
+                (metadata_rechecks if futures[future] in existing_by_video else source_errors).append("stale metadata retained after refresh failure: " + futures[future])
             fetched_metadata.append(metadata)
+            try:
+                metadata['_metadata_checked_at'] = (PROGRAM_METADATA_CACHE / (str(metadata['id']) + '.json')).stat().st_mtime
+            except OSError:
+                metadata['_metadata_checked_at'] = pipeline_common.time.time()
             fetched_video_ids.add(str(metadata.get("id") or futures[future]))
             if not is_official_program_candidate(metadata.get('title') or ''):
                 continue
@@ -561,6 +646,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
                 continue
             programs.append({
                 "id": event_id, "series_id": series_id, "title": display_title, **({"source_title": source_title} if display_title != source_title else {}), "date": broadcast_date,
+                "metadata_checked_at": metadata['_metadata_checked_at'],
                 "video_id": metadata.get("id") or "", "url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata.get('id')}",
                 "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
                 "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [],
@@ -606,6 +692,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         programs.append({
             "id": f"pakatube-{date.replace('-', '') or 'undated'}-{suffix}", "series_id": "pakatube-character-program", "title": base_title,
             "date": date, "video_id": metadata.get("id") or "", "url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata['id']}",
+            "metadata_checked_at": metadata['_metadata_checked_at'],
             "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
             "cast_status": "character_only", "cast": [], "characters": [],
             "summary": pipeline_text.clean_text(description)[:500] or "角色出演节目。未将角色配音关系记作声优本人出演。",
@@ -625,6 +712,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             "series_id": "official-special",
             "title": metadata.get("title") or "",
             "date": date,
+            "metadata_checked_at": metadata['_metadata_checked_at'],
             "video_id": metadata.get("id") or "",
             "url": url,
             "thumbnail": metadata.get("thumbnail") or "",
@@ -671,7 +759,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             and (bool(program.get("cast")) or bool(program.get("video_id")))
         )
         if richer:
-            for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status"):
+            for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status", "metadata_checked_at"):
                 if program.get(field):
                     target[field] = program[field]
         target["sources"] = list({(item.get("kind"), item.get("url")): item for item in [*target.get("sources", []), *implicit_sources(program)] if item.get("url")}.values())
@@ -711,7 +799,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
     found_ids = {row["id"] for row in ordered if row["id"] in set(expected_ids.values()) and row.get("date") and (row.get("source_url") or row.get("url"))}
     missing_ids = sorted(set(expected_ids.values()) - found_ids)
     pending_video_ids = sorted(
-        set(candidates) - fetched_video_ids,
+        set(candidates) - fetched_video_ids - existing_video_ids,
         key=lambda value: (candidates[value].get("approximate_date") or "", value),
         reverse=True,
     )
@@ -720,8 +808,9 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         "source": f"official YouTube channel {pipeline_common.OFFICIAL_CHANNEL_ID} and official portal announcements",
         "refreshed_at": pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat(),
         "coverage": {
-            "official_youtube_refresh": "verified" if channel_entries else ("tool_unavailable" if not youtube_available else "source_unavailable"),
+            "official_youtube_refresh": ("metadata_recheck_pending" if metadata_rechecks else "verified") if channel_entries else ("tool_unavailable" if not youtube_available else "source_unavailable"),
             "source_errors": source_errors,
+            "metadata_recheck_pending": metadata_rechecks,
             "expected_regular_episodes": len(expected_ids),
             "records": len(ordered),
             "source_verified_regular_episodes": len(found_ids),

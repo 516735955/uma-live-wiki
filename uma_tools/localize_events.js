@@ -32,7 +32,6 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
       fs, path, crypto, https, ROOT: root, DATA_DIR: data,
       TranslationCache, NewsContent, createTerms, loadTerms,
     });
-    if (!service.translationAvailable) return '';
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 45000);
     try {
@@ -80,7 +79,9 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
     execFileSync(process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3'),
       [path.join(root, 'uma_tools/update_events.py')], { cwd: root, stdio: 'inherit' });
   }
-  const result = { events: events.length, changed, pending: pending.length };
+  const result = { events: events.length, changed, pending: pending.length,
+    deferredQuota: service && service.translationBlockCode === '54004' ? pending.length : 0,
+    deferredOwner: options.noApi ? pending.length : 0 };
   console.log('event localization:', JSON.stringify(result));
   return result;
 }
@@ -88,6 +89,6 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
 module.exports = { run };
 if (require.main === module) {
   run(undefined, { noApi: process.argv.includes('--no-api') })
-    .then(result => { if (result.pending) process.exitCode = 1; })
+    .then(result => { if (result.pending > Math.max(result.deferredQuota, result.deferredOwner)) process.exitCode = 1; })
     .catch(error => { console.error(error.message); process.exitCode = 1; });
 }

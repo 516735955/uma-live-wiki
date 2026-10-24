@@ -14,7 +14,7 @@ STATE = ROOT / 'data/auto_update/runner.json'
 DAY = 24 * 60 * 60
 RETRY = 60 * 60
 STEP_TIMEOUTS = {'events': 300, 'programs': 1200, 'catalogs': 120,
-                 'event-localization': 300, 'event-images': 300}
+                 'event-localization': 300, 'event-images': 300, 'entity-localization': 300}
 # Source order makes new identities available before resolving their relations.
 STEPS = [
     ('characters', ['sync_character_sources.py']),
@@ -35,6 +35,7 @@ STEPS = [
     ('anime-watch', ['sync_anime_watch.py']),
     ('anime-credits', ['sync_anime_credits.py']),
     ('anime-build', ['build_anime_catalog.py']),
+    ('entity-localization', ['localize_entities.js']),
 ]
 
 STEP_OUTPUTS = {
@@ -48,6 +49,9 @@ STEP_OUTPUTS = {
                  'creator_catalog.json', 'appearance_index.json', 'catalog_manifest.json'],
     'event-localization': ['auto_update/event_localizations.json'],
     'event-images': ['auto_update/event_images.json'],
+    'entity-localization': ['auto_update/entity_localizations.json', 'character_detail_data.js',
+                            'horses_details.js', 'anime/works.json', 'anime/units.json',
+                            'anime_catalog.json', 'anime_relation_index.json'],
     'music-metadata': ['music/credits.json', 'music/creators.json', 'music/lyrics.json', 'music/lyric_timings.json'],
     'voice-profiles': ['events/voice_actor_details.json'],
     'music-build': ['song_catalog.json', 'creator_catalog.json', 'appearance_index.json'],
@@ -119,6 +123,7 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'catalogs': {'characters', 'events', 'programs', 'albums', 'setlists'},
             'event-localization': {'catalogs'},
             'event-images': {'catalogs'},
+            'entity-localization': {'characters', 'horse-profiles', 'anime', 'anime-build'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
             'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
         }
@@ -128,8 +133,13 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         started = clock()
         before = output_contents(name)
         try:
+            github_owner = os.environ.get('GITHUB_ACTIONS') == 'true'
+            # Activity translation belongs to Actions. News and entity
+            # descriptions share the production archive/cache owner.
+            read_archive_only = (name == 'event-localization' and not github_owner) or (name == 'entity-localization' and github_owner)
+            step_arguments = [*arguments, *(['--no-api'] if read_archive_only else [])]
             executable = 'node' if arguments[0].endswith('.js') else sys.executable
-            completed = run([executable, str(ROOT / 'uma_tools' / arguments[0]), *arguments[1:]],
+            completed = run([executable, str(ROOT / 'uma_tools' / step_arguments[0]), *step_arguments[1:]],
                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8',
                             errors='replace', timeout=STEP_TIMEOUTS.get(name, 20 * 60),
                             env={**os.environ, 'PYTHON_BIN': sys.executable})

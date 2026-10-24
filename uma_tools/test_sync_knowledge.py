@@ -2,6 +2,7 @@
 
 import copy
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -16,6 +17,17 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_automatic_translation_has_one_owner_for_each_data_domain(self):
+        with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'ROOT', Path(folder)), patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('event-localization', ['localize_events.js']), ('entity-localization', ['localize_entities.js'])]):
+            for github in ('true', 'false'):
+                calls = []
+                def execute(command, **kwargs):
+                    calls.append(command)
+                    return subprocess.CompletedProcess(command, 0, 'saved', '')
+                with patch.dict(os.environ, {'GITHUB_ACTIONS': github}):
+                    runner.run_updates(force=True, run=execute)
+                self.assertEqual('--no-api' in calls[0], github != 'true')
+                self.assertEqual('--no-api' in calls[1], github == 'true')
     def test_dependencies_rebuild_only_after_an_input_changes_even_on_partial_failure(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(runner, 'ROOT', Path(folder)), patch.object(runner, 'STATE', Path(folder) / 'state.json'), patch.object(runner, 'STEPS', [('events', ['a.py']), ('catalogs', ['b.py'])]):
             data = Path(folder) / 'data'; data.mkdir()

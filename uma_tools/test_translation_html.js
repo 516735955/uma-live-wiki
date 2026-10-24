@@ -22,7 +22,11 @@ async function main() {
         async setMany(values) { Object.assign(this.values, values); }
       }
       class Edits { title() { return ''; } message() { return ''; } apply(value) { return value; } }
-      const service = createService({ fs, path, crypto, ROOT: path.resolve(__dirname, '..'),
+      const fixtureFs = { ...fs, readFileSync(file, ...args) {
+        if (path.basename(String(file)) === 'translation_status.json') throw Object.assign(new Error('isolated provider state'), { code: 'ENOENT' });
+        return fs.readFileSync(file, ...args);
+      } };
+      const service = createService({ fs: fixtureFs, path, crypto, ROOT: path.resolve(__dirname, '..'),
         DATA_DIR: path.resolve(__dirname, '../data'), TranslationCache: Cache, NewsContent: Edits,
         createTerms, loadTerms: () => [{ ja: '架空名', zh: '名称' }],
         https: { request(url, options, callback) {
