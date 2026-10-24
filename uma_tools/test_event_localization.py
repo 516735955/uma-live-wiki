@@ -1,5 +1,6 @@
 """Exercise source updates and concurrent publication without network calls."""
 import json
+import io
 from pathlib import Path
 import tempfile
 import unittest
@@ -11,6 +12,21 @@ from events_pipeline import program_discovery
 
 
 class EventLocalizationTests(unittest.TestCase):
+    def test_official_watch_fallback_validates_identity_and_uses_broadcast_date(self):
+        player = {'videoDetails': {'videoId': 'abcdefghijk', 'channelId': 'official',
+                                  'title': '番組', 'shortDescription': '公式番組', 'lengthSeconds': '60'},
+                  'microformat': {'playerMicroformatRenderer': {
+                      'publishDate': '2026-10-13T12:00:00+09:00',
+                      'liveBroadcastDetails': {'startTimestamp': '2026-10-24T20:00:00+09:00'}}}}
+        markup = ('var ytInitialPlayerResponse = '+json.dumps(player)+';').encode()
+        with patch.object(program_discovery.pipeline_common.urllib.request, 'urlopen', return_value=io.BytesIO(markup)):
+            result = program_discovery.public_watch_metadata('abcdefghijk')
+        self.assertEqual(program_discovery._approximate_date(result), '2026-10-24')
+        self.assertEqual(result['channel_id'], 'official')
+        with patch.object(program_discovery.pipeline_common.urllib.request, 'urlopen', return_value=io.BytesIO(markup)):
+            with self.assertRaises(ValueError):
+                program_discovery.public_watch_metadata('another-id')
+
     def test_movie_index_reads_entries_in_both_arrays_without_collecting_promotional_clips(self):
         index = {'latest': [{'url': 'abcdefghijk', 'title': '【ゲーム実況】Gang Beasts'}],
                  'shorts': [{'url': 'lmnopqrstuv', 'title': '新CM公開'}]}

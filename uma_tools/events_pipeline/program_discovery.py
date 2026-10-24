@@ -74,6 +74,44 @@ def cached_video_metadata(video_id: str, max_age: int) -> dict[str, pipeline_com
     return None
 
 
+def public_watch_metadata(video_id: str) -> dict[str, pipeline_common.Any]:
+    """Read published metadata from the official watch page without a player session."""
+    url = f'https://www.youtube.com/watch?v={video_id}&hl=ja'
+    request = pipeline_common.urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with pipeline_common.urllib.request.urlopen(request, timeout=15) as response:
+        raw = response.read(8_000_001)
+    if len(raw) > 8_000_000:
+        raise ValueError('public watch page exceeds metadata limit')
+    text = raw.decode('utf-8', 'replace')
+    match = pipeline_common.re.search(r'ytInitialPlayerResponse\s*=\s*', text)
+    if not match:
+        raise ValueError('public watch metadata not present')
+    player = pipeline_common.json.JSONDecoder().raw_decode(text[match.end():])[0]
+    details = player.get('videoDetails') or {}
+    micro = (player.get('microformat') or {}).get('playerMicroformatRenderer') or {}
+    published = micro.get('publishDate') or micro.get('uploadDate') or ''
+    live = micro.get('liveBroadcastDetails') or {}
+    released = live.get('startTimestamp') or published
+    try:
+        stamp = _datetime.datetime.fromisoformat(released.replace('Z', '+00:00'))
+        if stamp.tzinfo is None:
+            stamp = stamp.replace(tzinfo=_datetime.timezone(_datetime.timedelta(hours=9)))
+    except (ValueError, AttributeError):
+        raise ValueError('public watch date unavailable')
+    thumbnails = (details.get('thumbnail') or {}).get('thumbnails') or []
+    result = {
+        'id': details.get('videoId'), 'channel_id': details.get('channelId'),
+        'title': details.get('title'), 'description': details.get('shortDescription') or '',
+        'release_timestamp': stamp.timestamp(),
+        'thumbnail': thumbnails[-1].get('url', '') if thumbnails else '',
+        'webpage_url': f'https://www.youtube.com/watch?v={video_id}',
+        'duration': int(details.get('lengthSeconds') or 0), 'metadata_origin': 'official_watch_page',
+    }
+    if not valid_video_metadata(result, video_id):
+        raise ValueError('public watch identity/channel/date unavailable')
+    return result
+
+
 def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -> dict[str, pipeline_common.Any] | None:
     """Read verified metadata cache first; failed fetches are never cached."""
     cache_file = PROGRAM_METADATA_CACHE / f"{video_id}.json"
@@ -117,6 +155,13 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED) -
             return metadata
         except (OSError, pipeline_common.subprocess.SubprocessError, pipeline_common.json.JSONDecodeError) as error:
             reasons.append(client + ': ' + error_reason(error))
+    try:
+        metadata = public_watch_metadata(video_id)
+        pipeline_common.atomic_json(cache_file, metadata)
+        METADATA_ERRORS.pop(video_id, None)
+        return metadata
+    except (OSError, ValueError, TimeoutError, AttributeError) as error:
+        reasons.append('official watch page: ' + str(error)[:180])
     METADATA_ERRORS[video_id] = '; '.join(reasons)
     if stale:
         stale['_metadata_stale'] = True
