@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T05:48:17+00:00",
+  "generated_at": "2026-10-24T07:17:17+00:00",
   "coverage": {
     "songs": 1038,
     "versions": 2055,
     "albums": 115,
     "release_tracks": 2242,
-    "live_performances": 1265,
+    "live_performances": 1390,
     "credited_songs": 417,
     "lyric_songs": 244,
     "credited_versions": 1381,
@@ -22145,6 +22145,23 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0173"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -22241,7 +22258,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 5,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -22371,7 +22388,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 5,
+      "performance_count": 6,
       "original_version_id": "song-empress-game-c140ff5898-v-c140ff5898",
       "creator_ids": [
         "creator-09658ba257",
@@ -26840,6 +26857,50 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -26884,6 +26945,50 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Fade to black",
                 "label": ""
@@ -26940,6 +27045,28 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -26959,6 +27086,50 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Fade to black",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 2,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Fade to black",
                 "label": ""
@@ -27016,7 +27187,7 @@
             }
           ],
           "release_count": 0,
-          "performance_count": 8,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -27027,7 +27198,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 8,
+      "performance_count": 15,
       "original_version_id": "song-fade-to-black-6c2a8e8237-v-6d94677003",
       "creator_ids": [],
       "has_lyrics": false
@@ -28113,6 +28284,54 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -28165,6 +28384,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Find My Only Way ※Short ver.",
                 "label": "Short Ver."
@@ -28229,6 +28496,30 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -28252,6 +28543,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Find My Only Way ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 9,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Find My Only Way ※Short ver.",
                 "label": "Short Ver."
@@ -28489,7 +28828,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 15,
+          "performance_count": 22,
           "instrumental": false,
           "credits": [
             {
@@ -29090,7 +29429,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 15,
+      "performance_count": 22,
       "original_version_id": "song-find-my-only-way-46f68c23ae-v-46f68c23ae",
       "creator_ids": [
         "creator-500b86dc49",
@@ -36937,6 +37276,54 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -36989,6 +37376,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "GIRLS' LEGEND U ※Short ver.",
                 "label": "Short Ver."
@@ -37053,6 +37488,30 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -37076,6 +37535,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "GIRLS' LEGEND U ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 10,
+              "setlist_no": "13",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "GIRLS' LEGEND U ※Short ver.",
                 "label": "Short Ver."
@@ -37645,7 +38152,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 26,
+          "performance_count": 33,
           "instrumental": false,
           "credits": [
             {
@@ -38626,7 +39133,7 @@
       ],
       "version_count": 4,
       "release_count": 4,
-      "performance_count": 26,
+      "performance_count": 33,
       "original_version_id": "song-girls-legend-u-a4a797abe1-v-a4a797abe1",
       "creator_ids": [
         "creator-647bf144a4",
@@ -43165,6 +43672,54 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -43217,6 +43772,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Happiness",
                 "label": ""
@@ -43281,6 +43884,30 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -43304,6 +43931,54 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Happiness",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 8,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Happiness",
                 "label": ""
@@ -43369,7 +44044,7 @@
             }
           ],
           "release_count": 0,
-          "performance_count": 8,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -43380,7 +44055,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 8,
+      "performance_count": 15,
       "original_version_id": "song-happiness-554d029033-v-b918fcaa47",
       "creator_ids": [],
       "has_lyrics": false
@@ -52414,6 +53089,23 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-1"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0078"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-1",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
               "event_date": "2019-04-14",
@@ -52472,7 +53164,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -52571,7 +53263,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 5,
+      "performance_count": 6,
       "original_version_id": "song-lucky-comes-true-cdcf832135-v-cdcf832135",
       "creator_ids": [
         "creator-078370b132",
@@ -53451,6 +54143,48 @@
               "event_url": "/zh-Hans/events/live-other-2023-02-12-2023-2?session=live-other-2023-02-12-2023-2-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -53491,6 +54225,48 @@
                 "va-0065"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Make debut! ※Short ver.",
                 "label": "Short Ver."
@@ -53543,6 +54319,27 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -53560,6 +54357,48 @@
                 "va-0065"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Make debut! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 4,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Make debut! ※Short ver.",
                 "label": "Short Ver."
@@ -54003,6 +54842,50 @@
               "event_url": "/zh-Hans/events/paka-live-tv-003?session=paka-live-tv-003-session-1"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0040",
+                "va-0078",
+                "va-0175",
+                "va-0176",
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0009",
+                "va-0040",
+                "va-0090",
+                "va-0179",
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -54046,7 +54929,6 @@
                 "specialweek",
                 "silencesuzuka",
                 "tokaiteio",
-                "goldcity",
                 "haruurara",
                 "matikanefukukitaru"
               ],
@@ -54055,7 +54937,6 @@
                 "va-0040",
                 "va-0078",
                 "va-0175",
-                "va-0176",
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
@@ -54090,6 +54971,31 @@
               "event_url": "/zh-Hans/events/live-other-2019-01-19-animax-musix-2019-osaka?session=live-other-2019-01-19-animax-musix-2019-osaka-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0009",
+                "va-0034",
+                "va-0040",
+                "va-0043",
+                "va-0113",
+                "va-0114",
+                "va-0158",
+                "va-0173",
+                "va-0176"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -54107,7 +55013,6 @@
                 "biwahayahide",
                 "mejiroryan",
                 "winningticket",
-                "goldcity",
                 "naritataishin",
                 "nicenature"
               ],
@@ -54119,8 +55024,7 @@
                 "va-0113",
                 "va-0114",
                 "va-0158",
-                "va-0173",
-                "va-0176"
+                "va-0173"
               ],
               "event_url": "/zh-Hans/events/live-other-2018-12-16-cygamesfes2018-2-special-live-day2?session=live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1"
             },
@@ -54326,7 +55230,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 38,
+          "performance_count": 48,
           "instrumental": false,
           "credits": [
             {
@@ -55027,7 +55931,7 @@
       ],
       "version_count": 7,
       "release_count": 7,
-      "performance_count": 38,
+      "performance_count": 48,
       "original_version_id": "song-make-debut-2c6c00a71e-v-2c6c00a71e",
       "creator_ids": [
         "creator-6ed889314c",
@@ -63023,6 +63927,52 @@
               }
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -63071,6 +64021,52 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Never Looking Back ※Short ver.",
                 "label": "Short Ver."
@@ -63131,6 +64127,29 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -63152,6 +64171,52 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Never Looking Back ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 7,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Never Looking Back ※Short ver.",
                 "label": "Short Ver."
@@ -63502,7 +64567,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 22,
+          "performance_count": 29,
           "instrumental": false,
           "credits": [
             {
@@ -66100,7 +67165,7 @@
       ],
       "version_count": 35,
       "release_count": 35,
-      "performance_count": 22,
+      "performance_count": 29,
       "original_version_id": "song-never-looking-back-d2ca0c4311-v-d2ca0c4311",
       "creator_ids": [
         "creator-16e2e72a5f",
@@ -70109,6 +71174,94 @@
               "event_url": "/zh-Hans/events/live-cd-2023-04-02-winning-live-10?session=live-cd-2023-04-02-winning-live-10-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1"
+            },
+            {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1"
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -70211,6 +71364,94 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1"
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1"
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "Overrunner! ※Short ver.",
                 "label": "Short Ver."
@@ -70325,6 +71566,50 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1"
+            },
+            {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -70373,6 +71658,94 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1"
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "Overrunner! ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 11,
+              "setlist_no": "14",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1"
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "Overrunner! ※Short ver.",
                 "label": "Short Ver."
@@ -70488,7 +71861,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 18,
+          "performance_count": 32,
           "instrumental": false,
           "credits": [
             {
@@ -70899,7 +72272,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 18,
+      "performance_count": 32,
       "original_version_id": "song-overrunner-39c89e20aa-v-39c89e20aa",
       "creator_ids": [
         "creator-motokiyo-f316ca29d4"
@@ -76152,6 +77525,23 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-2"
             },
             {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0090"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -76267,7 +77657,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -76397,7 +77787,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 8,
       "original_version_id": "song-rising-girl-a1bf16c093-v-a1bf16c093",
       "creator_ids": [
         "creator-0fab8f5af3",
@@ -77661,6 +79051,23 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-1"
             },
             {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0035"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
               "event_title": "CygamesFes2018 1日 赛马娘Pretty DerbySPECIAL LIVE DAY1",
               "event_date": "2018-12-15",
@@ -77776,7 +79183,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -77906,7 +79313,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 8,
       "original_version_id": "song-secret-graduation-6bf6aaa7ba-v-6bf6aaa7ba",
       "creator_ids": [
         "creator-500b86dc49",
@@ -79954,6 +81361,23 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
             },
             {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -79971,6 +81395,23 @@
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-2?session=live-other-2019-04-14-2-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
             },
             {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -80107,7 +81548,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 9,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -80383,7 +81824,7 @@
       ],
       "version_count": 4,
       "release_count": 6,
-      "performance_count": 9,
+      "performance_count": 11,
       "original_version_id": "song-silent-star-5582fe43d4-v-5582fe43d4",
       "creator_ids": [
         "creator-corochi-3d0a352bef",
@@ -86748,6 +88189,50 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -86792,6 +88277,50 @@
                 "va-0065"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "SUNRISE",
                 "label": ""
@@ -86848,6 +88377,28 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -86867,6 +88418,50 @@
                 "va-0065"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "SUNRISE",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 6,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0065"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "SUNRISE",
                 "label": ""
@@ -86924,7 +88519,7 @@
             }
           ],
           "release_count": 0,
-          "performance_count": 8,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -86935,7 +88530,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 8,
+      "performance_count": 15,
       "original_version_id": "song-sunrise-54bf3dc2c4-v-4c284d1cf0",
       "creator_ids": [],
       "has_lyrics": false
@@ -97032,6 +98627,23 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-extra-2022-11-05?session=live-numbered-4th-event-extra-2022-11-05-session-1"
             },
             {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -97049,6 +98661,23 @@
                 "va-0179"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-2?session=live-other-2019-04-14-2-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
             },
             {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -97147,7 +98776,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 8,
+          "performance_count": 10,
           "instrumental": false,
           "credits": [
             {
@@ -97277,7 +98906,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 8,
+      "performance_count": 10,
       "original_version_id": "song-unbreakable-8c599c4256-v-8c599c4256",
       "creator_ids": [
         "creator-095e4a5b84",
@@ -111229,6 +112858,23 @@
               }
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0113"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -111268,7 +112914,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -111390,7 +113036,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-winning-melody-e5682b894c-v-e5682b894c",
       "creator_ids": [
         "creator-269d4179e5",
@@ -115316,6 +116962,40 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-10-18?session=live-numbered-6th-event-2025-10-18-session-1"
             },
             {
+              "event_id": "live-other-source-d8047d25f070",
+              "event_title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+              "event_date": "2025-07-26",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d8047d25f070-session-1",
+              "session_label": "2部",
+              "session_date": "2025-07-26",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d8047d25f070?session=live-other-source-d8047d25f070-session-1"
+            },
+            {
+              "event_id": "live-other-source-3ecbf19d7cc8",
+              "event_title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+              "event_date": "2025-07-26",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-3ecbf19d7cc8-session-1",
+              "session_label": "1部",
+              "session_date": "2025-07-26",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0179"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-3ecbf19d7cc8?session=live-other-source-3ecbf19d7cc8-session-1"
+            },
+            {
               "event_id": "live-cd-2025-07-26-1-2",
               "event_title": "动画『赛马娘 Cinderella Gray』第1季度完结主题曲 : 「∞」发售纪念上线活动【2部】",
               "event_date": "2025-07-26",
@@ -115376,7 +117056,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -115448,7 +117128,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 4,
+      "performance_count": 6,
       "original_version_id": "song-38f64525a9-v-38f64525a9",
       "creator_ids": [
         "creator-honoka-takahashi-370b06424b"
@@ -116677,6 +118357,23 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-1",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
               "event_date": "2019-04-14",
@@ -116694,6 +118391,23 @@
                 "va-0040"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+            },
+            {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 11,
+              "setlist_no": "11",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
             },
             {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -116754,7 +118468,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -117107,7 +118821,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 5,
+      "performance_count": 7,
       "original_version_id": "song-66e8f91931-v-66e8f91931",
       "creator_ids": [
         "creator-apis-7e6674d509",
@@ -131330,6 +133044,54 @@
               "event_url": "/zh-Hans/events/live-cd-2023-02-12-winning-live-09?session=live-cd-2023-02-12-winning-live-09-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "guest_performers": [
+                "稲村梓",
+                "門田奈菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1"
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "guest_performers": [
+                "稲村梓",
+                "門田奈菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1"
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -131351,10 +133113,6 @@
                 "va-0029",
                 "va-0065",
                 "va-0130"
-              ],
-              "guest_performers": [
-                "稲村梓",
-                "門田奈菜"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-18-00?session=live-other-2023-01-29-1-29-18-00-session-1"
             },
@@ -131381,11 +133139,55 @@
                 "va-0065",
                 "va-0130"
               ],
+              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
               "guest_performers": [
                 "稲村梓",
                 "門田奈菜"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1"
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "guest_performers": [
+                "稲村梓",
+                "門田奈菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1"
             },
             {
               "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -131409,10 +133211,6 @@
                 "va-0029",
                 "va-0065",
                 "va-0130"
-              ],
-              "guest_performers": [
-                "稲村梓",
-                "門田奈菜"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-18-00?session=live-other-2023-01-28-1-28-18-00-session-1"
             },
@@ -131439,11 +133237,31 @@
                 "va-0065",
                 "va-0130"
               ],
+              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+            },
+            {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
               "guest_performers": [
                 "稲村梓",
                 "門田奈菜"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-28-1-28-13-00?session=live-other-2023-01-28-1-28-13-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1"
             },
             {
               "event_id": "live-other-2023-01-27-1-27-18-00",
@@ -131468,11 +133286,55 @@
                 "va-0065",
                 "va-0130"
               ],
+              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
               "guest_performers": [
                 "稲村梓",
                 "門田奈菜"
               ],
-              "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1"
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1"
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 12,
+              "setlist_no": "15",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0022",
+                "va-0029",
+                "va-0065",
+                "va-0130"
+              ],
+              "guest_performers": [
+                "稲村梓",
+                "門田奈菜"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1"
             },
             {
               "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -131496,10 +133358,6 @@
                 "va-0029",
                 "va-0065",
                 "va-0130"
-              ],
-              "guest_performers": [
-                "稲村梓",
-                "門田奈菜"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-18-00?session=live-other-2023-01-15-1-15-18-00-session-1"
             },
@@ -131525,10 +133383,6 @@
                 "va-0029",
                 "va-0065",
                 "va-0130"
-              ],
-              "guest_performers": [
-                "稲村梓",
-                "門田奈菜"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-15-1-15-13-00?session=live-other-2023-01-15-1-15-13-00-session-1"
             },
@@ -133086,6 +134940,50 @@
               "event_url": "/zh-Hans/events/paka-live-tv-003?session=paka-live-tv-003-session-1"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0040",
+                "va-0078",
+                "va-0175",
+                "va-0176",
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0009",
+                "va-0040",
+                "va-0090",
+                "va-0179",
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -133129,7 +135027,6 @@
                 "specialweek",
                 "silencesuzuka",
                 "tokaiteio",
-                "goldcity",
                 "haruurara",
                 "matikanefukukitaru"
               ],
@@ -133138,7 +135035,6 @@
                 "va-0040",
                 "va-0078",
                 "va-0175",
-                "va-0176",
                 "va-0184"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
@@ -133173,6 +135069,31 @@
               "event_url": "/zh-Hans/events/live-other-2019-01-19-animax-musix-2019-osaka?session=live-other-2019-01-19-animax-musix-2019-osaka-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 12,
+              "setlist_no": "12",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0009",
+                "va-0034",
+                "va-0040",
+                "va-0043",
+                "va-0113",
+                "va-0114",
+                "va-0158",
+                "va-0173",
+                "va-0176"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -133190,7 +135111,6 @@
                 "biwahayahide",
                 "mejiroryan",
                 "winningticket",
-                "goldcity",
                 "naritataishin",
                 "nicenature"
               ],
@@ -133202,10 +135122,55 @@
                 "va-0113",
                 "va-0114",
                 "va-0158",
-                "va-0173",
-                "va-0176"
+                "va-0173"
               ],
               "event_url": "/zh-Hans/events/live-other-2018-12-16-cygamesfes2018-2-special-live-day2?session=live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0007",
+                "va-0035",
+                "va-0040",
+                "va-0175",
+                "va-0179",
+                "va-0184",
+                "va-0185"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 9,
+              "setlist_no": "9",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0007",
+                "va-0035",
+                "va-0040",
+                "va-0175",
+                "va-0179",
+                "va-0184",
+                "va-0185"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
             },
             {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -134588,7 +136553,7 @@
             }
           ],
           "release_count": 50,
-          "performance_count": 159,
+          "performance_count": 171,
           "instrumental": false,
           "credits": [
             {
@@ -149166,7 +151131,7 @@
       ],
       "version_count": 24,
       "release_count": 127,
-      "performance_count": 159,
+      "performance_count": 171,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
         "creator-eaf94340d3",
@@ -154762,6 +156727,24 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003",
+                "va-0009"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -154805,7 +156788,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -154852,7 +156835,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-a470359a05-v-a470359a05",
       "creator_ids": [
         "creator-14a2ce8737",
@@ -161776,6 +163759,40 @@
               }
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -161812,6 +163829,23 @@
                 "va-0040"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
             },
             {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -161948,7 +163982,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 10,
+          "performance_count": 13,
           "instrumental": false,
           "credits": [
             {
@@ -162078,7 +164112,7 @@
       ],
       "version_count": 2,
       "release_count": 3,
-      "performance_count": 10,
+      "performance_count": 13,
       "original_version_id": "song-c42fc6be53-v-c42fc6be53",
       "creator_ids": [
         "creator-9dd245e820",
@@ -162471,6 +164505,23 @@
               "event_url": "/zh-Hans/events/live-other-2021-07-11-twinkle-holiday?session=live-other-2021-07-11-twinkle-holiday-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0034"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -162510,7 +164561,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 6,
+          "performance_count": 7,
           "instrumental": false,
           "credits": [
             {
@@ -162614,7 +164665,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 6,
+      "performance_count": 7,
       "original_version_id": "song-9a102f980a-v-9a102f980a",
       "creator_ids": [
         "creator-4f0b2872a5",
@@ -201175,6 +203226,40 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-2"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0184"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -201271,7 +203356,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 6,
+          "performance_count": 8,
           "instrumental": false,
           "credits": [
             {
@@ -201616,7 +203701,7 @@
       ],
       "version_count": 6,
       "release_count": 6,
-      "performance_count": 6,
+      "performance_count": 8,
       "original_version_id": "song-c7cdb22480-v-c7cdb22480",
       "creator_ids": [
         "creator-8734859531",
@@ -204091,6 +206176,23 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0175"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-1",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
               "event_date": "2019-04-14",
@@ -204108,6 +206210,23 @@
                 "va-0175"
               ],
               "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+            },
+            {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0175"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
             },
             {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -204206,7 +206325,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -204336,7 +206455,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 7,
+      "performance_count": 9,
       "original_version_id": "song-778904f80f-v-778904f80f",
       "creator_ids": [
         "creator-500b86dc49",
@@ -212848,6 +214967,48 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -212888,6 +215049,48 @@
                 "va-0029"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "奇跡",
                 "label": ""
@@ -212940,6 +215143,27 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -212957,6 +215181,48 @@
                 "va-0029"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "奇跡",
+                "label": ""
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 5,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0029"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "奇跡",
                 "label": ""
@@ -213010,7 +215276,7 @@
             }
           ],
           "release_count": 0,
-          "performance_count": 8,
+          "performance_count": 15,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -213021,7 +215287,7 @@
       ],
       "version_count": 1,
       "release_count": 0,
-      "performance_count": 8,
+      "performance_count": 15,
       "original_version_id": "song-0ec3138e2c-v-0ec3138e2c",
       "creator_ids": [],
       "has_lyrics": false
@@ -215600,6 +217866,23 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 8,
+              "setlist_no": "8",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0043"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -215639,7 +217922,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -215738,7 +218021,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-f38143b3b3-v-f38143b3b3",
       "creator_ids": [
         "creator-500b86dc49",
@@ -219755,6 +222038,40 @@
               "event_url": "/zh-Hans/events/live-numbered-3rd-event-2021-08-28?session=live-numbered-3rd-event-2021-08-28-session-1"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
+              "event_id": "live-other-source-188f6109b0ea",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-188f6109b0ea-session-1",
+              "session_label": "2部",
+              "session_date": "2019-04-14",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0003"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-188f6109b0ea?session=live-other-source-188f6109b0ea-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-2",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第2部",
               "event_date": "2019-04-14",
@@ -219870,7 +222187,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 7,
+          "performance_count": 9,
           "instrumental": false,
           "credits": [
             {
@@ -220223,7 +222540,7 @@
       ],
       "version_count": 5,
       "release_count": 7,
-      "performance_count": 7,
+      "performance_count": 9,
       "original_version_id": "song-3dc019b31d-v-3dc019b31d",
       "creator_ids": [
         "creator-corochi-3d0a352bef",
@@ -221225,6 +223542,23 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0114"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -221283,7 +223617,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -221358,7 +223692,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-c90f013526-v-c90f013526",
       "creator_ids": [
         "creator-500b86dc49",
@@ -222210,6 +224544,23 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-07-15?session=live-numbered-5th-event-2023-07-15-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0158"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -222249,7 +224600,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -222377,7 +224728,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-b9fa9ed01c-v-b9fa9ed01c",
       "creator_ids": [
         "creator-fe5f20aedc"
@@ -223876,6 +226227,25 @@
               "event_url": "/zh-Hans/events/live-cd-2021-11-06-starting-gate-unit-song-collection?session=live-cd-2021-11-06-starting-gate-unit-song-collection-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 10,
+              "setlist_no": "10",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0113",
+                "va-0114",
+                "va-0158"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -223923,7 +226293,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 5,
           "instrumental": false,
           "credits": [
             {
@@ -224112,7 +226482,7 @@
       ],
       "version_count": 2,
       "release_count": 3,
-      "performance_count": 4,
+      "performance_count": 5,
       "original_version_id": "song-blue-d4b4826cc5-v-d4b4826cc5",
       "creator_ids": [
         "creator-269d4179e5",
@@ -226771,6 +229141,50 @@
               }
             },
             {
+              "event_id": "live-other-source-8c9ce05df25f",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-8c9ce05df25f-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-8c9ce05df25f?session=live-other-source-8c9ce05df25f-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1a01d0acf9ef",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+              "event_date": "2023-01-29",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1a01d0acf9ef-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-29",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1a01d0acf9ef?session=live-other-source-1a01d0acf9ef-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-29-1-29-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/29 18:00",
               "event_date": "2023-01-29",
@@ -226815,6 +229229,50 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-29-1-29-13-00?session=live-other-2023-01-29-1-29-13-00-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-d1a7865dd2fd",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-d1a7865dd2fd-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-d1a7865dd2fd?session=live-other-source-d1a7865dd2fd-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-1626cc31ded5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+              "event_date": "2023-01-28",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-1626cc31ded5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-28",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-1626cc31ded5?session=live-other-source-1626cc31ded5-session-1",
               "performance_variant": {
                 "title": "本能スピード ※Short ver.",
                 "label": "Short Ver."
@@ -226871,6 +229329,28 @@
               }
             },
             {
+              "event_id": "live-other-source-0322e990dec5",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+              "event_date": "2023-01-27",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-0322e990dec5-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-27",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-0322e990dec5?session=live-other-source-0322e990dec5-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
               "event_id": "live-other-2023-01-27-1-27-18-00",
               "event_title": "舞台「赛马娘 Pretty Derby」～Sprinters’ Story～ 1/27 18:00",
               "event_date": "2023-01-27",
@@ -226890,6 +229370,50 @@
                 "va-0130"
               ],
               "event_url": "/zh-Hans/events/live-other-2023-01-27-1-27-18-00?session=live-other-2023-01-27-1-27-18-00-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-33aa029e2a6c",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-33aa029e2a6c-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-33aa029e2a6c?session=live-other-source-33aa029e2a6c-session-1",
+              "performance_variant": {
+                "title": "本能スピード ※Short ver.",
+                "label": "Short Ver."
+              }
+            },
+            {
+              "event_id": "live-other-source-28a9dcb9bd10",
+              "event_title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+              "event_date": "2023-01-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-28a9dcb9bd10-session-1",
+              "session_label": "本公演",
+              "session_date": "2023-01-15",
+              "performance_index": 3,
+              "setlist_no": "4",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0065",
+                "va-0130"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-28a9dcb9bd10?session=live-other-source-28a9dcb9bd10-session-1",
               "performance_variant": {
                 "title": "本能スピード ※Short ver.",
                 "label": "Short Ver."
@@ -227063,7 +229587,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 20,
+          "performance_count": 27,
           "instrumental": false,
           "credits": [
             {
@@ -228133,7 +230657,7 @@
       ],
       "version_count": 14,
       "release_count": 15,
-      "performance_count": 20,
+      "performance_count": 27,
       "original_version_id": "song-87be3723c2-v-87be3723c2",
       "creator_ids": [
         "creator-434eff6e60",
@@ -229277,6 +231801,23 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0185"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
               "event_title": "CygamesFes2018 1日 赛马娘Pretty DerbySPECIAL LIVE DAY1",
               "event_date": "2018-12-15",
@@ -229335,7 +231876,7 @@
             }
           ],
           "release_count": 2,
-          "performance_count": 3,
+          "performance_count": 4,
           "instrumental": false,
           "credits": [
             {
@@ -229465,7 +232006,7 @@
       ],
       "version_count": 2,
       "release_count": 4,
-      "performance_count": 3,
+      "performance_count": 4,
       "original_version_id": "song-tuning-heart-c3af3e8174-v-c3af3e8174",
       "creator_ids": [
         "creator-76282ff619",
@@ -234741,6 +237282,23 @@
           ],
           "performances": [
             {
+              "event_id": "live-other-source-90b641fafdd4",
+              "event_title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+              "event_date": "2018-12-15",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-90b641fafdd4-session-1",
+              "session_label": "DAY1",
+              "session_date": "2018-12-15",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0007"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-90b641fafdd4?session=live-other-source-90b641fafdd4-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
               "event_title": "CygamesFes2018 1日 赛马娘Pretty DerbySPECIAL LIVE DAY1",
               "event_date": "2018-12-15",
@@ -234780,7 +237338,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 2,
+          "performance_count": 3,
           "instrumental": false,
           "credits": [
             {
@@ -234896,7 +237454,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 2,
+      "performance_count": 3,
       "original_version_id": "song-1bd7539454-v-1bd7539454",
       "creator_ids": [
         "creator-4ff3d80645",
@@ -241487,6 +244045,23 @@
               "event_url": "/zh-Hans/events/live-numbered-5th-event-2023-09-16?session=live-numbered-5th-event-2023-09-16-session-2"
             },
             {
+              "event_id": "live-other-source-39a0b6c84f97",
+              "event_title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+              "event_date": "2019-04-14",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-39a0b6c84f97-session-1",
+              "session_label": "1部",
+              "session_date": "2019-04-14",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0176"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-39a0b6c84f97?session=live-other-source-39a0b6c84f97-session-1"
+            },
+            {
               "event_id": "live-other-2019-04-14-1",
               "event_title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
               "event_date": "2019-04-14",
@@ -241497,13 +244072,26 @@
               "session_date": "2019-04-14",
               "performance_index": 7,
               "setlist_no": "7",
-              "character_ids": [
-                "goldcity"
-              ],
+              "character_ids": [],
+              "voice_actor_ids": [],
+              "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+            },
+            {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 6,
+              "setlist_no": "6",
+              "character_ids": [],
               "voice_actor_ids": [
                 "va-0176"
               ],
-              "event_url": "/zh-Hans/events/live-other-2019-04-14-1?session=live-other-2019-04-14-1-session-1"
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
             },
             {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -241516,12 +244104,8 @@
               "session_date": "2018-12-16",
               "performance_index": 6,
               "setlist_no": "6",
-              "character_ids": [
-                "goldcity"
-              ],
-              "voice_actor_ids": [
-                "va-0176"
-              ],
+              "character_ids": [],
+              "voice_actor_ids": [],
               "event_url": "/zh-Hans/events/live-other-2018-12-16-cygamesfes2018-2-special-live-day2?session=live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1"
             },
             {
@@ -241545,7 +244129,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 4,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -241650,7 +244234,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 4,
+      "performance_count": 6,
       "original_version_id": "song-8f0d72cf0d-v-8f0d72cf0d",
       "creator_ids": [
         "creator-e10b319977",
@@ -245736,6 +248320,24 @@
               "event_url": "/zh-Hans/events/live-numbered-4th-event-2022-03-05?session=live-numbered-4th-event-2022-03-05-session-1"
             },
             {
+              "event_id": "live-other-source-2d0f3bde0354",
+              "event_title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+              "event_date": "2018-12-16",
+              "kind": "onsite",
+              "series_id": "",
+              "session_id": "live-other-source-2d0f3bde0354-session-1",
+              "session_label": "DAY2",
+              "session_date": "2018-12-16",
+              "performance_index": 7,
+              "setlist_no": "7",
+              "character_ids": [],
+              "voice_actor_ids": [
+                "va-0009",
+                "va-0040"
+              ],
+              "event_url": "/zh-Hans/events/live-other-source-2d0f3bde0354?session=live-other-source-2d0f3bde0354-session-1"
+            },
+            {
               "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
               "event_title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
               "event_date": "2018-12-16",
@@ -245783,7 +248385,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 10,
+          "performance_count": 11,
           "instrumental": false,
           "credits": [
             {
@@ -245934,7 +248536,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 10,
+      "performance_count": 11,
       "original_version_id": "song-2d2a6742e3-v-2d2a6742e3",
       "creator_ids": [
         "creator-47bf338b49",
@@ -252273,5 +254875,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "b180f68b85e61f8f9297"
+  "build_id": "6ab18552c46714f9dd9b"
 }

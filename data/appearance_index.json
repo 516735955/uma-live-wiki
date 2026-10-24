@@ -2148,6 +2148,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -2157,7 +2183,7 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -2171,7 +2197,7 @@
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -3169,6 +3195,8 @@
             "live-other-2021-07-11-twinkle-holiday",
             "live-cd-2021-04-04-winning-live-01",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
             "live-other-2019-01-19-animax-musix-2019-osaka",
@@ -3200,7 +3228,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 71
+          "performances": 73
         },
         {
           "song_id": "song-4bfe85c283",
@@ -3255,6 +3283,8 @@
           "event_ids": [
             "live-other-2022-03-20-sp",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
             "live-other-2019-01-19-animax-musix-2019-osaka",
@@ -3267,7 +3297,26 @@
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 10
+          "performances": 12
+        },
+        {
+          "song_id": "song-3dc019b31d",
+          "name": "恋はダービー☆",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
+            "live-other-2019-04-14-2",
+            "live-other-2019-04-14-1",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-numbered-1st-event-2017-07-01",
+            "live-cd-2017-01-08-starting-gate-01-2",
+            "live-cd-2017-01-08-starting-gate-01-1"
+          ],
+          "version_ids": [
+            "song-3dc019b31d-v-3dc019b31d"
+          ],
+          "performances": 9
         },
         {
           "song_id": "song-dramatic-journey-60664c4bb2",
@@ -3343,23 +3392,6 @@
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
-          ],
-          "performances": 7
-        },
-        {
-          "song_id": "song-3dc019b31d",
-          "name": "恋はダービー☆",
-          "event_ids": [
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-other-2019-04-14-1",
-            "live-numbered-2nd-event-2018-10-14",
-            "live-numbered-1st-event-2017-07-01",
-            "live-cd-2017-01-08-starting-gate-01-2",
-            "live-cd-2017-01-08-starting-gate-01-1"
-          ],
-          "version_ids": [
-            "song-3dc019b31d-v-3dc019b31d"
           ],
           "performances": 7
         },
@@ -3476,6 +3508,20 @@
           "performances": 4
         },
         {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-challenge-dash-b7a5610844",
           "name": "アコガレChallenge Dash!!",
           "event_ids": [
@@ -3575,19 +3621,6 @@
           ],
           "version_ids": [
             "song-unite-01e9fce749-v-01e9fce749"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 3
         },
@@ -5054,6 +5087,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -5063,7 +5109,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -5277,6 +5323,7 @@
           "name": "うまぴょい伝説",
           "event_ids": [
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-cd-2018-05-13-starting-gate-09-10",
             "live-numbered-1st-event-2017-07-01"
@@ -5284,19 +5331,20 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 8
         },
         {
           "song_id": "song-1bd7539454",
           "name": "猪突猛進爆進中!!",
           "event_ids": [
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-cd-2018-05-13-starting-gate-09-10"
           ],
           "version_ids": [
             "song-1bd7539454-v-1bd7539454"
           ],
-          "performances": 2
+          "performances": 3
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -6537,6 +6585,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -6546,7 +6607,20 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -6560,7 +6634,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -7290,7 +7364,9 @@
             "live-numbered-3rd-event-2021-08-28",
             "live-cd-2021-04-04-winning-live-01",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -7307,7 +7383,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 41
+          "performances": 43
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -7315,7 +7391,9 @@
           "event_ids": [
             "live-other-2023-02-12-2023-2",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -7327,7 +7405,7 @@
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 10
+          "performances": 12
         },
         {
           "song_id": "song-goal-to-my-ship-01b3127078",
@@ -7362,6 +7440,21 @@
           "performances": 6
         },
         {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 6
+        },
+        {
           "song_id": "song-we-are-dreamers-77f071fc29",
           "name": "We are DREAMERS!!",
           "event_ids": [
@@ -7386,6 +7479,21 @@
           ],
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-a470359a05",
+          "name": "ぱかチューブっ！ですが、何か？",
+          "event_ids": [
+            "live-cd-2022-07-17-winning-live-05-winning-live-06",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
+            "live-other-2019-04-14-2",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-a470359a05-v-a470359a05"
           ],
           "performances": 5
         },
@@ -7420,20 +7528,6 @@
           "performances": 5
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 5
-        },
-        {
           "song_id": "song-l-arc-de-gloire-aa7474ca7e",
           "name": "L'Arc de gloire",
           "event_ids": [
@@ -7456,20 +7550,6 @@
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-a470359a05",
-          "name": "ぱかチューブっ！ですが、何か？",
-          "event_ids": [
-            "live-cd-2022-07-17-winning-live-05-winning-live-06",
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-a470359a05-v-a470359a05"
           ],
           "performances": 4
         },
@@ -12879,6 +12959,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-8c9ce05df25f-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1a01d0acf9ef-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -12888,7 +12994,7 @@
           "session_id": "live-other-2023-01-29-1-29-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -12902,7 +13008,33 @@
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-d1a7865dd2fd-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1626cc31ded5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -12916,7 +13048,7 @@
           "session_id": "live-other-2023-01-28-1-28-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -12930,7 +13062,20 @@
           "session_id": "live-other-2023-01-28-1-28-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-0322e990dec5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -12944,7 +13089,33 @@
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-33aa029e2a6c-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-28a9dcb9bd10-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -12958,7 +13129,7 @@
           "session_id": "live-other-2023-01-15-1-15-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -12972,7 +13143,7 @@
           "session_id": "live-other-2023-01-15-1-15-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -13152,16 +13323,23 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-overrunner-39c89e20aa-v-39c89e20aa"
           ],
-          "performances": 17
+          "performances": 31
         },
         {
           "song_id": "song-228f943b49",
@@ -13172,18 +13350,25 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-cd-2022-11-27-winning-live-08",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 13
+          "performances": 20
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -13191,17 +13376,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -13209,17 +13401,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-happiness-554d029033",
@@ -13228,16 +13427,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-happiness-554d029033-v-b918fcaa47"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-sunrise-54bf3dc2c4",
@@ -13246,16 +13452,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -15801,6 +16014,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-8c9ce05df25f-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1a01d0acf9ef-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -15810,7 +16049,7 @@
           "session_id": "live-other-2023-01-29-1-29-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -15824,7 +16063,33 @@
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-d1a7865dd2fd-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1626cc31ded5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -15838,7 +16103,7 @@
           "session_id": "live-other-2023-01-28-1-28-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -15852,7 +16117,20 @@
           "session_id": "live-other-2023-01-28-1-28-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-0322e990dec5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -15866,7 +16144,33 @@
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-33aa029e2a6c-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-28a9dcb9bd10-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -15880,7 +16184,7 @@
           "session_id": "live-other-2023-01-15-1-15-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -15894,7 +16198,7 @@
           "session_id": "live-other-2023-01-15-1-15-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -16078,16 +16382,23 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-overrunner-39c89e20aa-v-39c89e20aa"
           ],
-          "performances": 16
+          "performances": 30
         },
         {
           "song_id": "song-228f943b49",
@@ -16097,18 +16408,25 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-cd-2022-11-27-winning-live-08",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
+          "performances": 19
         },
         {
           "song_id": "song-fade-to-black-6c2a8e8237",
@@ -16117,16 +16435,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -16134,17 +16459,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-happiness-554d029033",
@@ -16153,16 +16485,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-happiness-554d029033-v-b918fcaa47"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-0ec3138e2c",
@@ -16171,16 +16510,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-0ec3138e2c-v-0ec3138e2c"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -16188,16 +16534,23 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
           ],
-          "performances": 7
+          "performances": 14
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -16205,16 +16558,23 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
           ],
-          "performances": 7
+          "performances": 14
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -18928,6 +19288,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -18937,7 +19310,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -19252,13 +19625,14 @@
             "live-numbered-3rd-event-2021-08-28",
             "live-other-2021-07-17-title-120f9f043a5b",
             "live-other-2021-07-11-twinkle-holiday",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 26
+          "performances": 27
         },
         {
           "song_id": "song-4bfe85c283",
@@ -19278,6 +19652,23 @@
             "song-4bfe85c283-v-4bfe85c283"
           ],
           "performances": 11
+        },
+        {
+          "song_id": "song-9a102f980a",
+          "name": "アウト・オブ・トライアングル",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-4th-event-extra-2022-11-05",
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-2021-07-11-twinkle-holiday",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-cd-2018-07-15-starting-gate-11-12"
+          ],
+          "version_ids": [
+            "song-9a102f980a-v-9a102f980a"
+          ],
+          "performances": 7
         },
         {
           "song_id": "song-87be3723c2",
@@ -19335,22 +19726,6 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
-          ],
-          "performances": 6
-        },
-        {
-          "song_id": "song-9a102f980a",
-          "name": "アウト・オブ・トライアングル",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-4th-event-extra-2022-11-05",
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2021-07-11-twinkle-holiday",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-cd-2018-07-15-starting-gate-11-12"
-          ],
-          "version_ids": [
-            "song-9a102f980a-v-9a102f980a"
           ],
           "performances": 6
         },
@@ -19495,6 +19870,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-prismatic-spurt-5d848409a4",
           "name": "PRISMATIC SPURT!!!!",
           "event_ids": [
@@ -19576,17 +19963,6 @@
             "song-beyond-the-future-aaed329475-v-aaed329475"
           ],
           "performances": 2
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
-          ],
-          "performances": 1
         },
         {
           "song_id": "song-ms-victoria-8fdfbbf2a8",
@@ -20108,6 +20484,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -20117,7 +20506,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -20536,6 +20925,7 @@
             "live-numbered-3rd-event-2021-08-28",
             "live-cd-2021-08-04-title-3968b924ad22",
             "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -20549,7 +20939,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 28
+          "performances": 30
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -20574,6 +20964,7 @@
           "name": "Secret GRADUATION",
           "event_ids": [
             "live-numbered-5th-event-2023-09-16",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -20584,7 +20975,7 @@
           "version_ids": [
             "song-secret-graduation-6bf6aaa7ba-v-6bf6aaa7ba"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -23296,6 +23687,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -23305,7 +23722,7 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -23319,7 +23736,20 @@
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -23333,7 +23763,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -23349,6 +23779,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -23358,7 +23801,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -24558,9 +25001,13 @@
             "live-cd-2021-08-04-title-3968b924ad22",
             "live-cd-2021-04-04-winning-live-01",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -24597,7 +25044,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 69
+          "performances": 74
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -24610,8 +25057,11 @@
             "live-other-2022-03-20-sp",
             "live-numbered-4th-event-2022-03-05",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -24622,15 +25072,18 @@
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 15
+          "performances": 18
         },
         {
           "song_id": "song-c42fc6be53",
           "name": "わたしの印は大本命◎",
           "event_ids": [
             "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-numbered-1st-event-2017-07-01",
@@ -24642,7 +25095,40 @@
           "version_ids": [
             "song-c42fc6be53-v-c42fc6be53"
           ],
-          "performances": 10
+          "performances": 13
+        },
+        {
+          "song_id": "song-66e8f91931",
+          "name": "ありがとう、神様",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-39a0b6c84f97",
+            "live-other-2019-04-14-1",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-2018-11-25-title-aae05e9ef411",
+            "live-numbered-2nd-event-2018-10-14"
+          ],
+          "version_ids": [
+            "song-66e8f91931-v-66e8f91931"
+          ],
+          "performances": 7
+        },
+        {
+          "song_id": "song-2d2a6742e3",
+          "name": "走れウマ娘",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-other-2022-12-31-6-2022-2023",
+            "live-numbered-4th-event-2022-05-04",
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-2d2a6742e3-v-2d2a6742e3"
+          ],
+          "performances": 7
         },
         {
           "song_id": "song-fanfare-for-future-7b77e575ce",
@@ -24719,21 +25205,6 @@
           "performances": 6
         },
         {
-          "song_id": "song-2d2a6742e3",
-          "name": "走れウマ娘",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2022-12-31-6-2022-2023",
-            "live-numbered-4th-event-2022-05-04",
-            "live-numbered-4th-event-2022-03-05",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
-          ],
-          "version_ids": [
-            "song-2d2a6742e3-v-2d2a6742e3"
-          ],
-          "performances": 6
-        },
-        {
           "song_id": "song-blow-my-gale-0d9e0c78df",
           "name": "BLOW my GALE",
           "event_ids": [
@@ -24743,21 +25214,6 @@
           ],
           "version_ids": [
             "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
-          ],
-          "performances": 5
-        },
-        {
-          "song_id": "song-66e8f91931",
-          "name": "ありがとう、神様",
-          "event_ids": [
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-other-2018-11-25-title-aae05e9ef411",
-            "live-numbered-2nd-event-2018-10-14"
-          ],
-          "version_ids": [
-            "song-66e8f91931-v-66e8f91931"
           ],
           "performances": 5
         },
@@ -26603,6 +27059,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -26612,7 +27081,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -26824,13 +27293,14 @@
             "live-numbered-4th-event-extra-2022-11-05",
             "live-numbered-4th-event-2022-05-04",
             "live-other-2022-02-13-2022",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-05-13-starting-gate-09-10"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 10
+          "performances": 11
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -26842,6 +27312,19 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2022-02-13-2022",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 3
         },
@@ -26859,16 +27342,17 @@
           "performances": 3
         },
         {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
+          "song_id": "song-f38143b3b3",
+          "name": "希望ディスカバリー",
           "event_ids": [
-            "live-other-2022-02-13-2022",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-cd-2018-05-13-starting-gate-09-10"
           ],
           "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+            "song-f38143b3b3-v-f38143b3b3"
           ],
-          "performances": 2
+          "performances": 3
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -26915,18 +27399,6 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-f38143b3b3",
-          "name": "希望ディスカバリー",
-          "event_ids": [
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-cd-2018-05-13-starting-gate-09-10"
-          ],
-          "version_ids": [
-            "song-f38143b3b3-v-f38143b3b3"
           ],
           "performances": 2
         },
@@ -39299,6 +39771,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-8c9ce05df25f-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1a01d0acf9ef-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -39308,7 +39806,7 @@
           "session_id": "live-other-2023-01-29-1-29-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -39322,7 +39820,33 @@
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-d1a7865dd2fd-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1626cc31ded5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -39336,7 +39860,7 @@
           "session_id": "live-other-2023-01-28-1-28-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -39350,7 +39874,20 @@
           "session_id": "live-other-2023-01-28-1-28-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-0322e990dec5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -39364,7 +39901,33 @@
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-33aa029e2a6c-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-28a9dcb9bd10-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -39378,7 +39941,7 @@
           "session_id": "live-other-2023-01-15-1-15-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -39392,7 +39955,7 @@
           "session_id": "live-other-2023-01-15-1-15-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -39662,6 +40225,32 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-overrunner-39c89e20aa",
+          "name": "Overrunner!",
+          "event_ids": [
+            "live-numbered-5th-event-2024-02-03",
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-2023-01-29-1-29-18-00",
+            "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
+            "live-other-2023-01-28-1-28-18-00",
+            "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
+            "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
+            "live-other-2023-01-15-1-15-18-00",
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
+          ],
+          "version_ids": [
+            "song-overrunner-39c89e20aa-v-39c89e20aa"
+          ],
+          "performances": 30
+        },
+        {
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
@@ -39672,11 +40261,18 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-cd-2022-11-27-winning-live-08",
             "live-numbered-4th-event-extra-2022-11-05",
             "live-other-2022-08-27-animelo-summer-live-2022-sparkle",
@@ -39686,26 +40282,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 18
-        },
-        {
-          "song_id": "song-overrunner-39c89e20aa",
-          "name": "Overrunner!",
-          "event_ids": [
-            "live-numbered-5th-event-2024-02-03",
-            "live-numbered-5th-event-2023-07-15",
-            "live-other-2023-01-29-1-29-18-00",
-            "live-other-2023-01-29-1-29-13-00",
-            "live-other-2023-01-28-1-28-18-00",
-            "live-other-2023-01-28-1-28-13-00",
-            "live-other-2023-01-27-1-27-18-00",
-            "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
-          ],
-          "version_ids": [
-            "song-overrunner-39c89e20aa-v-39c89e20aa"
-          ],
-          "performances": 16
+          "performances": 25
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -39713,18 +40290,25 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05",
             "live-other-2022-08-27-animelo-summer-live-2022-sparkle"
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
-          "performances": 9
+          "performances": 16
         },
         {
           "song_id": "song-87be3723c2",
@@ -39734,16 +40318,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-87be3723c2-v-87be3723c2"
           ],
-          "performances": 9
+          "performances": 16
         },
         {
           "song_id": "song-happiness-554d029033",
@@ -39752,16 +40343,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-happiness-554d029033-v-b918fcaa47"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -39769,17 +40367,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-other-2022-02-13-2022"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -39787,17 +40392,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-sunrise-54bf3dc2c4",
@@ -39806,16 +40418,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-sunrise-54bf3dc2c4-v-4c284d1cf0"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -39823,16 +40442,23 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
           ],
-          "performances": 7
+          "performances": 14
         },
         {
           "song_id": "song-4bfe85c283",
@@ -43718,6 +44344,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-1",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -43727,7 +44366,7 @@
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -44040,6 +44679,7 @@
             "live-numbered-4th-event-2022-03-05",
             "live-numbered-3rd-event-2021-08-28",
             "live-cd-2021-04-04-winning-live-01",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-1",
             "live-other-2018-10-08-vol-21-climax-run-3-in",
             "live-cd-2018-03-17-starting-gate-07-08",
@@ -44048,7 +44688,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 16
+          "performances": 17
         },
         {
           "song_id": "song-lucky-comes-true-cdcf832135",
@@ -44056,6 +44696,7 @@
           "event_ids": [
             "live-numbered-5th-event-2024-03-22",
             "live-numbered-4th-event-2022-03-05",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-1",
             "live-other-2018-10-08-vol-21-climax-run-3-in",
             "live-cd-2018-03-17-starting-gate-07-08"
@@ -44063,7 +44704,7 @@
           "version_ids": [
             "song-lucky-comes-true-cdcf832135-v-cdcf832135"
           ],
-          "performances": 5
+          "performances": 6
         },
         {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
@@ -44079,6 +44720,19 @@
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
           ],
           "performances": 5
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2023-02-12-2023-2",
+            "live-other-source-39a0b6c84f97",
+            "live-other-2019-04-14-1"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 3
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -44163,18 +44817,6 @@
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
-          ],
-          "performances": 2
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2023-02-12-2023-2",
-            "live-other-2019-04-14-1"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 2
         },
@@ -46231,6 +46873,28 @@
           "session_label": "本期节目",
           "evidence": [
             "community_archive"
+          ]
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
           ]
         },
         {
@@ -50414,6 +51078,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -50423,7 +51100,7 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -51071,6 +51748,7 @@
             "live-numbered-3rd-event-2021-08-28",
             "live-cd-2021-04-04-winning-live-01",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
             "live-other-2019-01-19-animax-musix-2019-osaka",
             "live-other-2018-11-25-title-aae05e9ef411",
@@ -51089,13 +51767,14 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 36
+          "performances": 37
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
           "name": "Make debut!",
           "event_ids": [
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
             "live-other-2019-01-19-animax-musix-2019-osaka",
             "live-other-2018-11-25-title-aae05e9ef411",
@@ -51108,13 +51787,14 @@
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 9
+          "performances": 10
         },
         {
           "song_id": "song-rising-girl-a1bf16c093",
           "name": "Rising Girl",
           "event_ids": [
             "live-numbered-4th-event-2022-03-05",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -51125,7 +51805,7 @@
           "version_ids": [
             "song-rising-girl-a1bf16c093-v-a1bf16c093"
           ],
-          "performances": 7
+          "performances": 8
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -57446,6 +58126,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -57455,7 +58148,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -57745,13 +58438,14 @@
             "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
             "live-cd-2021-11-06-winning-live-02",
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 15
+          "performances": 16
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -57774,11 +58468,39 @@
           "event_ids": [
             "live-numbered-4th-event-2022-05-04",
             "live-cd-2021-11-06-starting-gate-unit-song-collection",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-blue-d4b4826cc5-v-d4b4826cc5"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 4
+        },
+        {
+          "song_id": "song-winning-melody-e5682b894c",
+          "name": "WINNING MELODY",
+          "event_ids": [
+            "live-numbered-5th-event-2024-03-22",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-cd-2018-07-15-starting-gate-11-12"
+          ],
+          "version_ids": [
+            "song-winning-melody-e5682b894c-v-e5682b894c"
           ],
           "performances": 4
         },
@@ -57796,18 +58518,6 @@
           "performances": 3
         },
         {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-never-looking-back-d2ca0c4311",
           "name": "Never Looking Back",
           "event_ids": [
@@ -57816,19 +58526,6 @@
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-winning-melody-e5682b894c",
-          "name": "WINNING MELODY",
-          "event_ids": [
-            "live-numbered-5th-event-2024-03-22",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-cd-2018-07-15-starting-gate-11-12"
-          ],
-          "version_ids": [
-            "song-winning-melody-e5682b894c-v-e5682b894c"
           ],
           "performances": 3
         },
@@ -58151,6 +58848,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -58160,7 +58870,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -58445,6 +59155,7 @@
             "live-numbered-4th-event-2022-05-04",
             "live-cd-2021-11-06-winning-live-02",
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-10-08-vol-21-climax-run-3-in",
             "live-other-2018-07-29-2018-tv",
@@ -58454,20 +59165,21 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
           "name": "Make debut!",
           "event_ids": [
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-07-29-2018-tv"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-blue-d4b4826cc5",
@@ -58475,11 +59187,26 @@
           "event_ids": [
             "live-numbered-4th-event-2022-05-04",
             "live-cd-2021-11-06-starting-gate-unit-song-collection",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-blue-d4b4826cc5-v-d4b4826cc5"
+          ],
+          "performances": 5
+        },
+        {
+          "song_id": "song-c90f013526",
+          "name": "感情ノ黎明",
+          "event_ids": [
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-2018-10-08-vol-21-climax-run-3-in",
+            "live-cd-2018-07-15-starting-gate-11-12"
+          ],
+          "version_ids": [
+            "song-c90f013526-v-c90f013526"
           ],
           "performances": 4
         },
@@ -58492,19 +59219,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-c90f013526",
-          "name": "感情ノ黎明",
-          "event_ids": [
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-other-2018-10-08-vol-21-climax-run-3-in",
-            "live-cd-2018-07-15-starting-gate-11-12"
-          ],
-          "version_ids": [
-            "song-c90f013526-v-c90f013526"
           ],
           "performances": 3
         },
@@ -58699,6 +59413,28 @@
           "series_id": "",
           "evidence": [
             "eventernote"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d8047d25f070",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-3ecbf19d7cc8",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
           ]
         },
         {
@@ -66128,6 +66864,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-8c9ce05df25f-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1a01d0acf9ef-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -66137,7 +66899,7 @@
           "session_id": "live-other-2023-01-29-1-29-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -66151,7 +66913,33 @@
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-d1a7865dd2fd-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-1626cc31ded5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -66165,7 +66953,7 @@
           "session_id": "live-other-2023-01-28-1-28-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -66179,7 +66967,20 @@
           "session_id": "live-other-2023-01-28-1-28-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-0322e990dec5-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -66193,7 +66994,33 @@
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-33aa029e2a6c-session-1",
+          "session_label": "本公演",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-28a9dcb9bd10-session-1",
+          "session_label": "本公演",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -66207,7 +67034,7 @@
           "session_id": "live-other-2023-01-15-1-15-18-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -66221,7 +67048,7 @@
           "session_id": "live-other-2023-01-15-1-15-13-00-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -66338,16 +67165,23 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-overrunner-39c89e20aa-v-39c89e20aa"
           ],
-          "performances": 16
+          "performances": 30
         },
         {
           "song_id": "song-228f943b49",
@@ -66357,17 +67191,24 @@
             "live-cd-2023-04-02-winning-live-10",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 18
         },
         {
           "song_id": "song-87be3723c2",
@@ -66376,17 +67217,24 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-87be3723c2-v-87be3723c2"
           ],
-          "performances": 9
+          "performances": 16
         },
         {
           "song_id": "song-fade-to-black-6c2a8e8237",
@@ -66395,16 +67243,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-fade-to-black-6c2a8e8237-v-6d94677003"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-girls-legend-u-a4a797abe1",
@@ -66412,17 +67267,24 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
             "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c",
             "live-numbered-4th-event-extra-2022-11-05"
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-happiness-554d029033",
@@ -66431,16 +67293,23 @@
             "live-numbered-5th-event-2023-07-15",
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-happiness-554d029033-v-b918fcaa47"
           ],
-          "performances": 8
+          "performances": 15
         },
         {
           "song_id": "song-find-my-only-way-46f68c23ae",
@@ -66448,16 +67317,23 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-find-my-only-way-46f68c23ae-v-46f68c23ae"
           ],
-          "performances": 7
+          "performances": 14
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -66465,16 +67341,23 @@
           "event_ids": [
             "live-other-2023-01-29-1-29-18-00",
             "live-other-2023-01-29-1-29-13-00",
+            "live-other-source-8c9ce05df25f",
+            "live-other-source-1a01d0acf9ef",
             "live-other-2023-01-28-1-28-18-00",
             "live-other-2023-01-28-1-28-13-00",
+            "live-other-source-1626cc31ded5",
+            "live-other-source-d1a7865dd2fd",
             "live-other-2023-01-27-1-27-18-00",
+            "live-other-source-0322e990dec5",
             "live-other-2023-01-15-1-15-18-00",
-            "live-other-2023-01-15-1-15-13-00"
+            "live-other-2023-01-15-1-15-13-00",
+            "live-other-source-28a9dcb9bd10",
+            "live-other-source-33aa029e2a6c"
           ],
           "version_ids": [
             "song-never-looking-back-d2ca0c4311-v-d2ca0c4311"
           ],
-          "performances": 7
+          "performances": 14
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -67410,6 +68293,83 @@
           "evidence": [
             "google_sheet",
             "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": "",
+          "evidence": [
+            "curated_live_cast"
           ]
         }
       ],
@@ -78608,6 +79568,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -78617,7 +79590,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -78899,13 +79872,14 @@
             "live-numbered-4th-event-2022-03-05",
             "live-cd-2021-11-06-winning-live-02",
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
         },
         {
           "song_id": "song-blue-d4b4826cc5",
@@ -78913,25 +79887,41 @@
           "event_ids": [
             "live-numbered-4th-event-2022-05-04",
             "live-cd-2021-11-06-starting-gate-unit-song-collection",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-cd-2018-07-15-starting-gate-11-12"
           ],
           "version_ids": [
             "song-blue-d4b4826cc5-v-d4b4826cc5"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
           "name": "Make debut!",
           "event_ids": [
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
           ],
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 3
+          "performances": 4
+        },
+        {
+          "song_id": "song-b9fa9ed01c",
+          "name": "手綱と絆",
+          "event_ids": [
+            "live-numbered-5th-event-2023-07-15",
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-cd-2018-07-15-starting-gate-11-12"
+          ],
+          "version_ids": [
+            "song-b9fa9ed01c-v-b9fa9ed01c"
+          ],
+          "performances": 4
         },
         {
           "song_id": "song-never-looking-back-d2ca0c4311",
@@ -78967,19 +79957,6 @@
           ],
           "version_ids": [
             "song-4bfe85c283-v-4bfe85c283"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-b9fa9ed01c",
-          "name": "手綱と絆",
-          "event_ids": [
-            "live-numbered-5th-event-2023-07-15",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-cd-2018-07-15-starting-gate-11-12"
-          ],
-          "version_ids": [
-            "song-b9fa9ed01c-v-b9fa9ed01c"
           ],
           "performances": 3
         },
@@ -85578,6 +86555,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -85587,7 +86577,7 @@
           "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -85924,6 +86914,7 @@
           "event_ids": [
             "live-numbered-3rd-event-2021-08-28",
             "live-other-2021-07-17-title-120f9f043a5b",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-numbered-2nd-event-2018-10-14",
             "live-numbered-1st-event-2017-07-01",
@@ -85935,7 +86926,21 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 11
+          "performances": 12
+        },
+        {
+          "song_id": "song-empress-game-c140ff5898",
+          "name": "EMPRESS GAME",
+          "event_ids": [
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-numbered-1st-event-2017-07-01"
+          ],
+          "version_ids": [
+            "song-empress-game-c140ff5898-v-c140ff5898"
+          ],
+          "performances": 4
         },
         {
           "song_id": "song-cdbc25c785",
@@ -85952,19 +86957,6 @@
           "performances": 4
         },
         {
-          "song_id": "song-empress-game-c140ff5898",
-          "name": "EMPRESS GAME",
-          "event_ids": [
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-numbered-2nd-event-2018-10-14",
-            "live-numbered-1st-event-2017-07-01"
-          ],
-          "version_ids": [
-            "song-empress-game-c140ff5898-v-c140ff5898"
-          ],
-          "performances": 3
-        },
-        {
           "song_id": "song-endless-dream-eabbcc4d12",
           "name": "ENDLESS DREAM!!",
           "event_ids": [
@@ -85973,6 +86965,18 @@
           ],
           "version_ids": [
             "song-endless-dream-eabbcc4d12-v-eabbcc4d12"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-source-2d0f3bde0354",
+            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 2
         },
@@ -86031,17 +87035,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 1
         },
@@ -86856,6 +87849,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-1",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -86865,7 +87871,7 @@
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -86884,6 +87890,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -86893,7 +87912,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -87216,8 +88235,10 @@
             "live-numbered-4th-event-2022-05-04",
             "live-cd-2022-04-02-cd-winning-live-03",
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-1",
             "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -87228,14 +88249,16 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 22
+          "performances": 25
         },
         {
           "song_id": "song-778904f80f",
           "name": "今日もウララかケセラセラ！",
           "event_ids": [
             "live-numbered-5th-event-2023-09-16",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-1",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -87245,7 +88268,7 @@
           "version_ids": [
             "song-778904f80f-v-778904f80f"
           ],
-          "performances": 7
+          "performances": 9
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -87277,6 +88300,20 @@
           "performances": 4
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-source-39a0b6c84f97",
+            "live-other-2019-04-14-1",
+            "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-2018-11-25-title-aae05e9ef411"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-blow-my-gale-0d9e0c78df",
           "name": "BLOW my GALE",
           "event_ids": [
@@ -87286,19 +88323,6 @@
           ],
           "version_ids": [
             "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2019-04-14-1",
-            "live-other-2019-01-19-animax-musix-2019-osaka",
-            "live-other-2018-11-25-title-aae05e9ef411"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
           "performances": 3
         },
@@ -87813,16 +88837,39 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-1",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
           "title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
           "kind": "onsite",
           "series_id": "",
-          "session_id": "live-other-2019-04-14-1-session-1",
-          "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast"
+          ]
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-2d0f3bde0354-session-1",
+          "session_label": "DAY2",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -87833,11 +88880,8 @@
           "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
           "kind": "onsite",
           "series_id": "",
-          "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
-          "session_label": "本公演",
           "evidence": [
-            "google_sheet",
-            "setlist_performer"
+            "curated_live_cast"
           ]
         },
         {
@@ -88046,8 +89090,8 @@
             "live-numbered-4th-event-2022-05-04",
             "live-numbered-4th-event-2022-03-05",
             "live-cd-2021-08-04-title-3968b924ad22",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-source-39a0b6c84f97",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-07-29-2018-tv",
             "live-cd-2018-03-17-starting-gate-07-08",
             "live-other-2017-12-16-2017"
@@ -88076,8 +89120,8 @@
           "name": "Make debut!",
           "event_ids": [
             "live-numbered-4th-event-2022-03-05",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-source-39a0b6c84f97",
+            "live-other-source-2d0f3bde0354",
             "live-other-2018-07-29-2018-tv"
           ],
           "version_ids": [
@@ -88090,8 +89134,8 @@
           "name": "素顔のココロ",
           "event_ids": [
             "live-numbered-5th-event-2023-09-16",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+            "live-other-source-39a0b6c84f97",
+            "live-other-source-2d0f3bde0354",
             "live-cd-2018-03-17-starting-gate-07-08"
           ],
           "version_ids": [
@@ -88787,6 +89831,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-d8047d25f070",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-d8047d25f070-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-3ecbf19d7cc8",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-3ecbf19d7cc8-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-cd-2025-07-26-1-2",
           "date": "2025-07-26",
           "end_date": "2025-07-26",
@@ -88796,7 +89866,7 @@
           "session_id": "live-cd-2025-07-26-1-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -88810,7 +89880,7 @@
           "session_id": "live-cd-2025-07-26-1-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -89653,6 +90723,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -89662,7 +90745,7 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -89681,6 +90764,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -89690,7 +90786,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -90240,8 +91336,10 @@
             "live-other-2021-12-31-z-5",
             "live-cd-2021-11-06-winning-live-02",
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
             "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
@@ -90255,7 +91353,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 49
+          "performances": 52
         },
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -90282,30 +91380,14 @@
           "performances": 15
         },
         {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-other-2026-09-19-2026",
-            "live-other-2024-11-08-idol-square-6",
-            "live-numbered-5th-event-2023-07-15",
-            "live-numbered-4th-event-2022-05-04",
-            "live-other-2022-03-20-sp",
-            "live-other-2019-04-14-2",
-            "live-other-2019-01-19-animax-musix-2019-osaka",
-            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
-          ],
-          "performances": 8
-        },
-        {
           "song_id": "song-unbreakable-8c599c4256",
           "name": "unbreakable",
           "event_ids": [
             "live-numbered-6th-event-2025-05-24",
             "live-numbered-4th-event-extra-2022-11-05",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-numbered-1st-event-2017-07-01",
@@ -90315,7 +91397,26 @@
           "version_ids": [
             "song-unbreakable-8c599c4256-v-8c599c4256"
           ],
-          "performances": 8
+          "performances": 10
+        },
+        {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-other-2026-09-19-2026",
+            "live-other-2024-11-08-idol-square-6",
+            "live-numbered-5th-event-2023-07-15",
+            "live-numbered-4th-event-2022-05-04",
+            "live-other-2022-03-20-sp",
+            "live-other-source-188f6109b0ea",
+            "live-other-2019-04-14-2",
+            "live-other-2019-01-19-animax-musix-2019-osaka",
+            "live-other-2018-08-25-animelo-summer-live-2018-ok-2"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 9
         },
         {
           "song_id": "song-next-frontier-5267707c1b",
@@ -90379,6 +91480,22 @@
           ],
           "version_ids": [
             "song-uma-summer-d7e35f6a48-v-d7e35f6a48"
+          ],
+          "performances": 6
+        },
+        {
+          "song_id": "song-38f64525a9",
+          "name": "∞",
+          "event_ids": [
+            "live-numbered-6th-event-2025-10-18",
+            "live-cd-2025-07-26-1-2",
+            "live-cd-2025-07-26-1-1",
+            "live-other-source-d8047d25f070",
+            "live-other-source-3ecbf19d7cc8",
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-38f64525a9-v-38f64525a9"
           ],
           "performances": 6
         },
@@ -90487,20 +91604,6 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-38f64525a9",
-          "name": "∞",
-          "event_ids": [
-            "live-numbered-6th-event-2025-10-18",
-            "live-cd-2025-07-26-1-2",
-            "live-cd-2025-07-26-1-1",
-            "live-numbered-6th-event-2025-05-24"
-          ],
-          "version_ids": [
-            "song-38f64525a9-v-38f64525a9"
           ],
           "performances": 4
         },
@@ -93022,6 +94125,32 @@
           ]
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-39a0b6c84f97-session-1",
+          "session_label": "1部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-188f6109b0ea-session-1",
+          "session_label": "2部",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -93031,7 +94160,7 @@
           "session_id": "live-other-2019-04-14-2-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -93045,7 +94174,20 @@
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
+            "setlist_performer"
+          ]
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
             "setlist_performer"
           ]
         },
@@ -93059,7 +94201,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -94047,8 +95189,11 @@
             "live-other-2021-10-06-fns",
             "live-numbered-3rd-event-2021-08-28",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-other-2018-11-25-title-aae05e9ef411",
             "live-numbered-2nd-event-2018-10-14",
@@ -94082,7 +95227,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 51
+          "performances": 55
         },
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -94091,6 +95236,8 @@
             "live-other-2022-07-17-bilibili-macro-link-star-phase-2022",
             "live-numbered-4th-event-2022-03-05",
             "paka-live-tv-003",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
             "live-other-2019-04-14-2",
             "live-other-2019-04-14-1",
             "live-other-2018-11-25-title-aae05e9ef411",
@@ -94103,14 +95250,16 @@
           "version_ids": [
             "song-make-debut-2c6c00a71e-v-2c6c00a71e"
           ],
-          "performances": 11
+          "performances": 13
         },
         {
           "song_id": "song-silent-star-5582fe43d4",
           "name": "Silent Star",
           "event_ids": [
             "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
             "live-other-2019-04-14-2",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-numbered-1st-event-2017-07-01",
@@ -94122,7 +95271,25 @@
           "version_ids": [
             "song-silent-star-5582fe43d4-v-5582fe43d4"
           ],
-          "performances": 9
+          "performances": 11
+        },
+        {
+          "song_id": "song-c7cdb22480",
+          "name": "七色の景色",
+          "event_ids": [
+            "live-numbered-3rd-event-2021-08-28",
+            "live-other-source-188f6109b0ea",
+            "live-other-source-39a0b6c84f97",
+            "live-other-2019-04-14-2",
+            "live-other-2019-04-14-1",
+            "live-other-2018-11-25-title-aae05e9ef411",
+            "live-numbered-2nd-event-2018-10-14",
+            "live-other-2018-10-08-vol-21-climax-run-3-in"
+          ],
+          "version_ids": [
+            "song-c7cdb22480-v-c7cdb22480"
+          ],
+          "performances": 8
         },
         {
           "song_id": "song-fanfare-for-future-7b77e575ce",
@@ -94137,22 +95304,6 @@
           ],
           "version_ids": [
             "song-fanfare-for-future-7b77e575ce-v-7b77e575ce"
-          ],
-          "performances": 6
-        },
-        {
-          "song_id": "song-c7cdb22480",
-          "name": "七色の景色",
-          "event_ids": [
-            "live-numbered-3rd-event-2021-08-28",
-            "live-other-2019-04-14-2",
-            "live-other-2019-04-14-1",
-            "live-other-2018-11-25-title-aae05e9ef411",
-            "live-numbered-2nd-event-2018-10-14",
-            "live-other-2018-10-08-vol-21-climax-run-3-in"
-          ],
-          "version_ids": [
-            "song-c7cdb22480-v-c7cdb22480"
           ],
           "performances": 6
         },
@@ -94413,6 +95564,19 @@
           ]
         },
         {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "live-other-source-90b641fafdd4-session-1",
+          "session_label": "DAY1",
+          "evidence": [
+            "setlist_performer"
+          ]
+        },
+        {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
           "date": "2018-12-15",
           "end_date": "2018-12-15",
@@ -94422,7 +95586,7 @@
           "session_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1-session-1",
           "session_label": "本公演",
           "evidence": [
-            "google_sheet",
+            "curated_live_cast",
             "setlist_performer"
           ]
         },
@@ -94706,6 +95870,7 @@
           "name": "うまぴょい伝説",
           "event_ids": [
             "live-numbered-4th-event-2022-03-05",
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-other-2018-08-25-animelo-summer-live-2018-ok-2",
@@ -94717,12 +95882,13 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 12
+          "performances": 14
         },
         {
           "song_id": "song-tuning-heart-c3af3e8174",
           "name": "気まぐれTuning Heart",
           "event_ids": [
+            "live-other-source-90b641fafdd4",
             "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
             "live-numbered-2nd-event-2018-10-14",
             "live-cd-2018-03-17-starting-gate-07-08"
@@ -94730,7 +95896,7 @@
           "version_ids": [
             "song-tuning-heart-c3af3e8174-v-c3af3e8174"
           ],
-          "performances": 3
+          "performances": 4
         },
         {
           "song_id": "song-endless-dream-eabbcc4d12",
@@ -95634,6 +96800,22 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -95654,6 +96836,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -95668,6 +96858,14 @@
           "date": "2018-12-16",
           "end_date": "2018-12-16",
           "title": "CygamesFes 2018 第2日闭幕舞台",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
           "kind": "onsite",
           "series_id": ""
         },
@@ -97427,6 +98625,22 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -97445,6 +98659,14 @@
           "series_id": "",
           "session_id": "live-other-2019-04-14-1-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -99412,6 +100634,22 @@
           "series_id": "official-special",
           "session_id": "official-special-20200811-1-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2019-04-14-2",
@@ -102610,6 +103848,22 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-d8047d25f070",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-3ecbf19d7cc8",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-cd-2025-07-26-1-2",
           "date": "2025-07-26",
           "end_date": "2025-07-26",
@@ -103254,6 +104508,14 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -103272,6 +104534,14 @@
           "series_id": "",
           "session_id": "live-other-2019-01-19-animax-musix-2019-osaka-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -105205,6 +106475,14 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -105273,6 +106551,14 @@
           "series_id": "pakatube-character-program",
           "session_id": "pakatube-20181226-htnkgbybugc-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -108138,6 +109424,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-188f6109b0ea",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 2部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-2",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -110176,6 +111470,14 @@
           "series_id": "",
           "session_id": "live-other-2019-01-19-animax-musix-2019-osaka-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -116708,6 +118010,14 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -117735,6 +119045,14 @@
           "series_id": "paka-live-tv",
           "session_id": "paka-live-tv-014-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -119712,6 +121030,14 @@
           "series_id": "paka-live-tv",
           "session_id": "paka-live-tv-005-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -122625,6 +123951,14 @@
           "series_id": "sokosoko-paka-live-tv",
           "session_id": "sokosoko-paka-live-tv-004-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -126461,6 +127795,14 @@
           "session_label": "DAY1"
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -129031,14 +130373,28 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-1",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
           "title": "Paka Radio：赛马娘宣传部·平成最后的Precious Pretty Party公开录音 第1部",
           "kind": "onsite",
-          "series_id": "",
-          "session_id": "live-other-2019-04-14-1-session-1",
-          "session_label": "本公演"
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -129046,9 +130402,7 @@
           "end_date": "2018-12-16",
           "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
           "kind": "onsite",
-          "series_id": "",
-          "session_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2-session-1",
-          "session_label": "本公演"
+          "series_id": ""
         },
         {
           "event_id": "eventernote-2018-12-16",
@@ -129241,8 +130595,6 @@
             "live-numbered-4th-event-2022-05-04",
             "live-numbered-4th-event-2022-03-05",
             "live-cd-2021-08-04-title-3968b924ad22",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
             "live-other-2018-07-29-2018-tv",
             "live-cd-2018-03-17-starting-gate-07-08",
             "live-other-2017-12-16-2017"
@@ -129250,7 +130602,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 17
+          "performances": 15
         },
         {
           "song_id": "song-gsk-5bda42ace7",
@@ -129263,34 +130615,6 @@
           ],
           "version_ids": [
             "song-gsk-5bda42ace7-v-5bda42ace7"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-make-debut-2c6c00a71e",
-          "name": "Make debut!",
-          "event_ids": [
-            "live-numbered-4th-event-2022-03-05",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-other-2018-07-29-2018-tv"
-          ],
-          "version_ids": [
-            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
-          ],
-          "performances": 4
-        },
-        {
-          "song_id": "song-8f0d72cf0d",
-          "name": "素顔のココロ",
-          "event_ids": [
-            "live-numbered-5th-event-2023-09-16",
-            "live-other-2019-04-14-1",
-            "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
-            "live-cd-2018-03-17-starting-gate-07-08"
-          ],
-          "version_ids": [
-            "song-8f0d72cf0d-v-8f0d72cf0d"
           ],
           "performances": 4
         },
@@ -129397,6 +130721,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-make-debut-2c6c00a71e",
+          "name": "Make debut!",
+          "event_ids": [
+            "live-numbered-4th-event-2022-03-05",
+            "live-other-2018-07-29-2018-tv"
+          ],
+          "version_ids": [
+            "song-make-debut-2c6c00a71e-v-2c6c00a71e"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-shake-the-world-6a204b97d3",
           "name": "Shake The World!!",
           "event_ids": [
@@ -129465,6 +130801,18 @@
           ],
           "version_ids": [
             "song-cdbc25c785-v-cdbc25c785"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-8f0d72cf0d",
+          "name": "素顔のココロ",
+          "event_ids": [
+            "live-numbered-5th-event-2023-09-16",
+            "live-cd-2018-03-17-starting-gate-07-08"
+          ],
+          "version_ids": [
+            "song-8f0d72cf0d-v-8f0d72cf0d"
           ],
           "performances": 2
         },
@@ -129687,6 +131035,14 @@
           "series_id": "paka-live-tv",
           "session_id": "paka-live-tv-006-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -133890,6 +135246,14 @@
           "session_label": "DAY1"
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -134860,6 +136224,14 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2019-04-14-1",
           "date": "2019-04-14",
           "end_date": "2019-04-14",
@@ -134878,6 +136250,14 @@
           "series_id": "",
           "session_id": "live-other-2019-01-19-animax-musix-2019-osaka-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-90b641fafdd4",
+          "date": "2018-12-15",
+          "end_date": "2018-12-15",
+          "title": "CygamesFes2018 1日目 ウマ娘プリティーダービーSPECIAL LIVE DAY1",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-15-cygamesfes2018-1-special-live-day1",
@@ -136273,6 +137653,14 @@
           "series_id": "winning-live-release",
           "session_id": "live-cd-2021-04-04-winning-live-01-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-39a0b6c84f97",
+          "date": "2019-04-14",
+          "end_date": "2019-04-14",
+          "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2019-04-14-1",
@@ -139418,6 +140806,14 @@
           "series_id": "paka-live-tv",
           "session_id": "paka-live-tv-004-session-1",
           "session_label": "本期节目"
+        },
+        {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
@@ -143972,6 +145368,22 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -143990,6 +145402,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -144012,6 +145440,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-27-1-27-18-00",
           "date": "2023-01-27",
           "end_date": "2023-01-27",
@@ -144020,6 +145456,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -152878,6 +154330,22 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -152896,6 +154364,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -152918,6 +154402,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-27-1-27-18-00",
           "date": "2023-01-27",
           "end_date": "2023-01-27",
@@ -152926,6 +154418,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -156433,6 +157941,22 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -156451,6 +157975,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -156473,6 +158013,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-27-1-27-18-00",
           "date": "2023-01-27",
           "end_date": "2023-01-27",
@@ -156481,6 +158029,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -160183,6 +161747,62 @@
           "series_id": "numbered-live",
           "session_id": "live-numbered-5th-event-2024-03-22-session-2",
           "session_label": "DAY2"
+        },
+        {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": ""
         }
       ],
       "songs": [
@@ -160616,6 +162236,22 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-8c9ce05df25f",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1a01d0acf9ef",
+          "date": "2023-01-29",
+          "end_date": "2023-01-29",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-29-1-29-18-00",
           "date": "2023-01-29",
           "end_date": "2023-01-29",
@@ -160634,6 +162270,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-29-1-29-13-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-d1a7865dd2fd",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-1626cc31ded5",
+          "date": "2023-01-28",
+          "end_date": "2023-01-28",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-28-1-28-18-00",
@@ -160656,6 +162308,14 @@
           "session_label": "本公演"
         },
         {
+          "event_id": "live-other-source-0322e990dec5",
+          "date": "2023-01-27",
+          "end_date": "2023-01-27",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "live-other-2023-01-27-1-27-18-00",
           "date": "2023-01-27",
           "end_date": "2023-01-27",
@@ -160664,6 +162324,22 @@
           "series_id": "",
           "session_id": "live-other-2023-01-27-1-27-18-00-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "live-other-source-33aa029e2a6c",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-28a9dcb9bd10",
+          "date": "2023-01-15",
+          "end_date": "2023-01-15",
+          "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+          "kind": "onsite",
+          "series_id": ""
         },
         {
           "event_id": "live-other-2023-01-15-1-15-18-00",
@@ -181144,6 +182820,22 @@
           "series_id": ""
         },
         {
+          "event_id": "live-other-source-d8047d25f070",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【2部】",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-source-3ecbf19d7cc8",
+          "date": "2025-07-26",
+          "end_date": "2025-07-26",
+          "title": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」発売記念リリースイベント【1部】",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "sokosoko-paka-live-tv-046",
           "date": "2025-07-03",
           "end_date": "2025-07-03",
@@ -182104,6 +183796,22 @@
           "session_label": "本期节目"
         },
         {
+          "event_id": "live-other-source-2d0f3bde0354",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日目 ウマ娘プリティーダービーSPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
+          "event_id": "live-other-2018-12-16-cygamesfes2018-2-special-live-day2",
+          "date": "2018-12-16",
+          "end_date": "2018-12-16",
+          "title": "CygamesFes2018 2日 赛马娘Pretty DerbySPECIAL LIVE DAY2",
+          "kind": "onsite",
+          "series_id": ""
+        },
+        {
           "event_id": "eventernote-2018-12-16",
           "date": "2018-12-16",
           "end_date": "2018-12-16",
@@ -182211,6 +183919,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-24T05:48:17+00:00",
-  "build_id": "b180f68b85e61f8f9297"
+  "generated_at": "2026-10-24T07:17:17+00:00",
+  "build_id": "6ab18552c46714f9dd9b"
 }
