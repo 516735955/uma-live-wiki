@@ -26,7 +26,7 @@ warnings.filterwarnings("error", category=Image.DecompressionBombWarning)
 REFRESH_AFTER_SECONDS = 7 * 24 * 60 * 60
 
 
-def atomic(path: Path, payload: bytes) -> None:
+def atomic(path: Path, payload: bytes, *, public: bool = False) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temporary = tempfile.mkstemp(prefix=path.name + ".", dir=path.parent)
     try:
@@ -34,6 +34,8 @@ def atomic(path: Path, payload: bytes) -> None:
             handle.write(payload)
             handle.flush()
             os.fsync(handle.fileno())
+        if public:
+            os.chmod(temporary, 0o644)
         os.replace(temporary, path)
     finally:
         if os.path.exists(temporary):
@@ -92,6 +94,13 @@ def run(root: Path = ROOT, force: bool = False) -> dict:
         old = items.get(event_id)
         def cached_file(key: str) -> Path:
             return root / str(old.get(key, "")).lstrip("/")
+        if old:
+            for key in ("image_url", "hero_image_url", "original_url"):
+                file = cached_file(key)
+                if file.is_file() and file.resolve().is_relative_to(cache.resolve()):
+                    # Existing archives can contain mkstemp's private 0600 mode.
+                    # nginx must be able to serve these public image files too.
+                    file.chmod(0o644)
         checked_at = float(old.get("checked_at", old.get("fetched_at", 0)) or 0) if old else 0
         if (not force and old and old.get("source_image") == source
                 and all(cached_file(key).is_file() for key in ("image_url", "hero_image_url", "original_url"))
@@ -112,9 +121,9 @@ def run(root: Path = ROOT, force: bool = False) -> dict:
             # Generate and validate every representation before replacing any file.
             small = encode(original, 480)
             hero = encode(original, 960)
-            atomic(original_path, original)
-            atomic(small_path, small)
-            atomic(hero_path, hero)
+            atomic(original_path, original, public=True)
+            atomic(small_path, small, public=True)
+            atomic(hero_path, hero, public=True)
             items[event_id] = {"source_image": source, "image_url": "/uma_tools/img/" + str(small_path.relative_to(root / "uma_tools/img")), "hero_image_url": "/uma_tools/img/" + str(hero_path.relative_to(root / "uma_tools/img")), "original_url": "/uma_tools/img/" + str(original_path.relative_to(root / "uma_tools/img")), "sha256": hashlib.sha256(original).hexdigest()}
             items[event_id]["checked_at"] = time.time()
             updated += 1
