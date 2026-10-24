@@ -228,7 +228,8 @@ def main():
         if u_art:
             save_art(u_art, Path(ROOT) / 'uma_official' / (cid + '.png'), (296, 389))
         if u_icon:
-            save_art(u_icon, Path(ROOT) / 'uma_avatars' / (cid + '.png'), (200, 200))
+            main_color = official_colors.get(cid, (info['color'] or '#8C83FF', '#FFFFFF'))[0]
+            save_art(u_icon, Path(ROOT) / 'uma_avatars' / (cid + '.png'), (200, 200), background=main_color)
         os.path.exists(tmp) and os.remove(tmp)
 
         # uma_moe 透明立绘（副本操作，符合铁律）

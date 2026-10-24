@@ -3,7 +3,6 @@
 用法: python3 make_avatar.py <cid> <透明立绘路径> [窗边长覆盖值]
 """
 import io, re, sys, os, json
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from PIL import Image, ImageDraw, ImageChops, ImageFilter
 
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -13,6 +12,32 @@ ROOT = os.path.dirname(TOOLS_DIR)
 def hex2rgb(hx):
     hx = hx.lstrip('#')
     return tuple(int(hx[i:i+2], 16) for i in (0, 2, 4))
+
+def compose_avatar(win, main_rgb):
+    """Compose a square bust on the established coloured circular background."""
+    win = win.convert('RGBA')
+    side = win.width
+    S, W, DIAM, BUST = 4, 800, 780, 720
+    bust = win.resize((BUST, BUST), Image.Resampling.LANCZOS)
+    canvas = Image.new('RGBA', (W, W), (0, 0, 0, 0))
+    shadow = Image.new('RGBA', (W, W), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).ellipse((44, 58, 44 + DIAM, 58 + DIAM), fill=(15, 12, 35, 185))
+    canvas.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(26)))
+    ImageDraw.Draw(canvas).ellipse((10, 10, W - 10, W - 10), fill=main_rgb + (255,))
+    alpha = win.getchannel('A')
+    hist_w = hist_x = 0
+    for y in range(win.height):
+        for x in range(win.width):
+            value = alpha.getpixel((x, y))
+            if value > 120:
+                hist_w += value
+                hist_x += x * value
+    centre = hist_x / hist_w if hist_w else side / 2
+    canvas.paste(bust, (round(W / 2 - centre / side * BUST), 11 * S), bust)
+    mask = Image.new('L', (W, W), 0)
+    ImageDraw.Draw(mask).ellipse((10, 10, W - 10, W - 10), fill=255)
+    canvas.putalpha(ImageChops.multiply(canvas.getchannel('A'), mask.filter(ImageFilter.GaussianBlur(26))))
+    return canvas.resize((200, 200), Image.Resampling.LANCZOS)
 
 def main():
     cid = sys.argv[1]
@@ -24,11 +49,6 @@ def main():
     chars = json.loads(t[_i:_j + 1])
     main_hex = next((c.get('main', '#8c83ff') for c in chars if c['id'] == cid), '#8c83ff')
     main_rgb = hex2rgb(main_hex)
-
-    S = 4
-    W = 200 * S          # 800 超采样画布
-    DIAM = 195 * S       # 圆直径 780
-    BUST = 180 * S       # bust 720
 
     src = Image.open(art_path).convert('RGBA')
     bb = src.split()[3].point(lambda v: 255 if v > 60 else 0).getbbox()
@@ -63,41 +83,12 @@ def main():
         sq.paste(win, ((side - win.size[0]) // 2, 0))
         win = sq
 
-    # ===== 4倍超采样复刻认可构图 =====
-    S = 4; W = 800
-    bust = win.resize((int(180*S), int(180*S)), Image.LANCZOS)
-    canvas = Image.new('RGBA', (W, W), (0, 0, 0, 0))
-    dd = ImageDraw.Draw(canvas)
-    # 投影：右下偏移椭圆+模糊（在圆底层之下）
-    sh = Image.new('RGBA', (W, W), (0, 0, 0, 0))
-    ImageDraw.Draw(sh).ellipse((44, 58, 44+DIAM, 58+DIAM), fill=(15, 12, 35, 185))
-    sh = sh.filter(ImageFilter.GaussianBlur(26))
-    canvas.alpha_composite(sh)
-    # 主色圆底 d=195@200 → 直径780 居中留边10
-    dd.ellipse((10, 10, W-10, W-10), fill=main_rgb + (255,))
-    # bust 180×180@200 → 720×720，基准位置(40,44)（对应200尺度的(10,11)）
-    # 水平按内容质心微调，使角色主体居中
-    aw = win.split()[3]
-    hist_w = 0; hist_x = 0
-    for yy in range(win.size[1]):
-        for xx in range(win.size[0]):
-            av = aw.getpixel((xx, yy))
-            if av > 120:
-                hist_w += av; hist_x += xx * av
-    cx_in_win = (hist_x / hist_w) if hist_w else side / 2
-    rel_cx = cx_in_win / float(side)
-    pos = (int(round(W/2 - rel_cx * BUST)), int(11 * S))
-    canvas.paste(bust, pos, bust)
-    # 圆形软边蒙版
-    mask = Image.new('L', (W, W), 0)
-    ImageDraw.Draw(mask).ellipse((10, 10, W-10, W-10), fill=255)
-    mask = mask.filter(ImageFilter.GaussianBlur(26))
-    canvas.putalpha(ImageChops.multiply(canvas.split()[3], mask))
-    final = canvas.resize((200, 200), Image.LANCZOS)
+    final = compose_avatar(win, main_rgb)
 
     dst = os.path.join(ROOT, 'uma_avatars', cid + '.png')
     final.save(dst, optimize=True)
     print('%s -> %s | 窗=%d' % (cid, dst, side))
 
 if __name__ == '__main__':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     main()

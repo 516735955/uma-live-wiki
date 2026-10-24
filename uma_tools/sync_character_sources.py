@@ -11,6 +11,7 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 from PIL import Image
+from make_avatar import compose_avatar, hex2rgb
 
 from knowledge_io import ROOT, USER_AGENT, bounded_read, fetch, fill_empty, read_json, read_window, write_json, write_text, write_window
 
@@ -89,13 +90,16 @@ def parse_character(markup, cid):
     return record, detail, art, avatar
 
 
-def save_art(url, path, size):
+def save_art(url, path, size, *, background=None):
     image = Image.open(io.BytesIO(fetch(url, binary=True))).convert('RGBA')
     if size[0] == size[1]:
         side = min(image.size)
         left, top = (image.width - side) // 2, (image.height - side) // 2
         image = image.crop((left, top, left + side, top + side))
-    image.thumbnail(size, Image.Resampling.LANCZOS)
+    if background:
+        image = compose_avatar(image, hex2rgb(background))
+    else:
+        image.thumbnail(size, Image.Resampling.LANCZOS)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')
     try:
@@ -170,7 +174,7 @@ def main():
                 if avatar:
                     image_path = ROOT / 'uma_avatars' / (cid + '.png')
                     if args.refresh_assets or not image_path.exists():
-                        save_art(avatar, image_path, (200, 200))
+                        save_art(avatar, image_path, (200, 200), background=record['main'])
                     record['av'] = '/uma_avatars/' + cid + '.png'
                     record.setdefault('img', record['av'])
             if cid not in existing:

@@ -1,6 +1,7 @@
 """Exercise incremental publication, source failures and restart scheduling."""
 
 import copy
+import io
 import json
 import os
 from pathlib import Path
@@ -17,6 +18,23 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_portrait_versions_keep_transparency_and_coloured_circle_separate(self):
+        from PIL import Image
+        source = Image.new('RGBA', (680, 680), (0, 0, 0, 0))
+        source.paste((255, 255, 255, 255), (300, 100, 380, 600))
+        buffer = io.BytesIO(); source.save(buffer, 'PNG')
+        with tempfile.TemporaryDirectory() as folder, patch.object(characters, 'fetch', return_value=buffer.getvalue()):
+            card, avatar = Path(folder) / 'card.png', Path(folder) / 'avatar.png'
+            characters.save_art('https://example.test/list.png', card, (296, 389))
+            characters.save_art('https://example.test/top.png', avatar, (200, 200), background='#B9214A')
+            with Image.open(card) as image:
+                self.assertEqual(image.getpixel((0, 0))[3], 0)
+            with Image.open(avatar) as image:
+                self.assertEqual(image.size, (200, 200))
+                self.assertGreater(image.getpixel((30, 100))[3], 240)
+                self.assertEqual(image.getpixel((30, 100))[:3], (185, 33, 74))
+                self.assertLess(image.getpixel((0, 0))[3], 10)
+
     def test_official_order_is_dom_order_and_local_entries_stay_stable(self):
         values = [{'id': 1, 'name': 2, 'category': 3, 'cv': 4}, 'azuma', '吾妻', [5], 'CV', 'トレセン学園関係者',
                   {'id': 7, 'name': 8, 'category': 9, 'cv': 4}, 'winmarilyn', 'ウインマリリン', [10], 'ウマ娘']
