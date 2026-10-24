@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T12:42:05+00:00",
+  "generated_at": "2026-10-24T15:10:00+00:00",
   "coverage": {
     "creators": 301,
     "credited_works": 417,
@@ -21230,7 +21230,9 @@
     {
       "id": "creator-3e35bf54dc",
       "name": "千葉 梓",
-      "aliases": [],
+      "aliases": [
+        "千葉梓"
+      ],
       "type": "person",
       "affiliations": [
         "Cygames"
@@ -32128,7 +32130,9 @@
     {
       "id": "creator-90ee476c0a",
       "name": "康 貞蘭",
-      "aliases": [],
+      "aliases": [
+        "康貞蘭"
+      ],
       "type": "person",
       "affiliations": [
         "Cygames"
@@ -59558,5 +59562,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "b62679e655c25b869149"
+  "build_id": "a505c8b5dc55f1e9deed"
 }

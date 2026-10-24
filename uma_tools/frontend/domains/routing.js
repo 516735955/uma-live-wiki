@@ -244,6 +244,7 @@ export function createRouting(deps) {
           path = deps.routes.news(deps.newsDetail.value.announce_id);
         } else {
           path = deps.routes.query(deps.routes.news(), {
+            q: deps.newsQuery.value,
             range: deps.newsRange.value,
             type: deps.newsType.value,
             page: deps.newsPage.value,
@@ -286,6 +287,7 @@ export function createRouting(deps) {
             : deps.routes.query(deps.routes.albums(), {
                 q: deps.relQuery.value,
                 work: deps.relWork.value,
+                release_series: deps.relSeries.value,
                 type: deps.relFilter.value,
                 year: deps.relYear.value,
                 sort: deps.relSort.value === "newest" ? "" : deps.relSort.value,
@@ -469,6 +471,7 @@ export function createRouting(deps) {
         deps.activeTab.value = "news";
         if (seg[1]) return deps.openNews(decodeURIComponent(seg[1]));
         else {
+          deps.newsQuery.value = url.searchParams.get("q") || "";
           deps.newsRange.value = ["7", "30", "90"].includes(
             url.searchParams.get("range"),
           )
@@ -565,6 +568,7 @@ export function createRouting(deps) {
         if (!seg[2]) {
           deps.relQuery.value = url.searchParams.get("q") || "";
           deps.relWork.value = url.searchParams.get("work") || "";
+          deps.relSeries.value = url.searchParams.get("release_series") || "";
           deps.relFilter.value =
             url.searchParams.get("type") === "数字单曲"
               ? "单曲"

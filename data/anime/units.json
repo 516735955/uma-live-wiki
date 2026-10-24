@@ -6584,7 +6584,7 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 3,
+      "released_count": 4,
       "date_blocks": [
         {
           "from": 1,
@@ -6770,6 +6770,18 @@
           "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
           "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
           "cover_source_ref": "official-story-anime-umayuru-fullgate-e03"
+        },
+        "4": {
+          "title_ja": "",
+          "title_zh": "",
+          "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
+          "summary_zh": "樱花桂为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
+          "duration": "",
+          "source_refs": [
+            "runtime-entity-localizations-anime-umayuru-fullgate-e04"
+          ],
+          "dates": [],
+          "staff_status": "pending"
         }
       }
     }

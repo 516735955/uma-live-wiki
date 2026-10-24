@@ -8,6 +8,8 @@ from . import identities as pipeline_identities
 from . import music as pipeline_music
 from . import validation as pipeline_validation
 from . import setlists as pipeline_setlists
+from . import event_enrichment as pipeline_event_enrichment
+from . import generate_group_images as pipeline_group_images
 
 
 def build(programs_override: dict[str, pipeline_common.Any] | None = None, details_override: dict[str, pipeline_common.Any] | None = None) -> dict[str, pipeline_common.Any]:
@@ -36,6 +38,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     events = pipeline_events.dedupe_events(pipeline_setlists.merge_numbered_sources(events))
     sheet_blocks = pipeline_setlists.read_blocks(pipeline_common.ROOT)
     pipeline_setlists.apply_sheet(events, sheet_blocks, identities, eventernote)
+    event_groups = []
     for event in events:
         event.pop("session_aliases", None)
         # Preserve known franchise actors with documented participation even
@@ -66,6 +69,12 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
             if event.get("schedule_status") == "cancelled":
                 session["schedule_status"] = "cancelled"
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
+    events, event_groups = pipeline_event_enrichment.enrich(events)
+    # Generate parent collages from this build's enriched events before the
+    # material hash is calculated, so new editorial children ship atomically
+    # with the catalog and receive a matching build id.
+    pipeline_group_images.rebuild(events, event_groups)
+    events, event_groups = pipeline_event_enrichment.enrich(events)
     for event in events:
         if not event.get("series_id"):
             derived = pipeline_events.title_series_id(event.get("title") or "")
@@ -93,6 +102,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
             "official_programs": len(programs.get("programs") or []), "unresolved_cast_names": len(appearances["unresolved_cast"]),
         },
         "series": series.get("series") or [],
+        "event_groups": event_groups,
         "events": events,
     }
     profiles_doc = {"schema_version": 1, "generated_at": catalog["generated_at"], "voice_actors": profiles}
@@ -103,7 +113,22 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "voice_details": details, "overrides": overrides, "characters": characters,
         "voice_list": voice_list, "photos": photos, "voice_identities": identity_registry,
         "music_sources": music_sources, "google_setlists": sheet_blocks,
-        "event_copy": [(event["id"], event.get("title_zh"), event.get("summary_zh")) for event in events],
+        "event_groups": event_groups,
+        "event_group_source": pipeline_common.read_json(pipeline_common.EVENTS_DIR / "groupings.json"),
+        "venue_source": pipeline_common.read_json(pipeline_common.EVENTS_DIR / "venues.json"),
+        # Parent-group collage assets are generated inputs too.  Include their
+        # content in the material hash so a refreshed cover cannot be served
+        # under an unchanged catalog build id.
+        "event_group_images": {
+            path.name: pipeline_common.sha256(path)
+            for path in sorted(pipeline_event_enrichment.GROUP_IMAGE_DIR.glob("*.svg"))
+        },
+        "event_copy": [(
+            event["id"], event.get("title_zh"), event.get("summary_zh"),
+            event.get("group_ids"), event.get("venue_id"),
+            tuple((session.get("id"), session.get("start_time"), session.get("doors_time"), session.get("end_time"))
+                  for session in event.get("sessions") or []),
+        ) for event in events],
     }
     build_id = pipeline_common.hashlib.sha256(
         pipeline_common.json.dumps(build_material, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")

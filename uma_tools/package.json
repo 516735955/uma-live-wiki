@@ -4,7 +4,8 @@
   "private": true,
   "description": "赛马娘 live 页面工具：本地服务 + 官网新CD检测 + 网易云详情补全",
   "devDependencies": {
-    "esbuild": "0.25.5"
+    "esbuild": "0.25.5",
+    "pinyin-pro": "3.29.5"
   },
   "scripts": {
     "serve": "node server.js --no-crawl",
@@ -12,6 +13,7 @@
     "check:deployment": "node check_deployment.js",
     "check:music": "python3 sync_music_metadata.py --check",
     "check:anime": "python3 build_anime_catalog.py --check && python3 sync_anime_assets.py --check && python3 apply_cingray_character_additions.py --check",
+    "build:search-pronunciations": "node build_search_pronunciations.js",
     "test:music": "python3 -m unittest test_sync_music_metadata",
     "test:catalog": "node test_catalog_store.js && node test_scoped_catalogs.js",
     "test:routes": "node test_routes.js",

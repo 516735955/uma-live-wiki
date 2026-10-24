@@ -231,6 +231,12 @@ export function createVoices(deps) {
     return groups;
   });
 
+  // Keep the same flat activity-record model as character pages. Year grouping
+  // is a presentation choice and must not change filtering or session labels.
+  const voiceHistoryEvents = deps.computed(function () {
+    return voicePastByYear.value.flatMap(function (group) { return group.events; });
+  });
+
   function openVoice(actorId) {
     const isCurrent = deps.beginEntityNavigation();
     const show = function () {
@@ -344,6 +350,7 @@ export function createVoices(deps) {
     voiceName,
     voicePaletteStyle,
     voicePastByYear,
+    voiceHistoryEvents,
     voicePhoto,
     voicePhotoByName,
     voiceProfileForName,

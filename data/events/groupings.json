@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "groups": [
+    {
+      "id": "program-peak-2026-06",
+      "kind": "series_arc",
+      "title": "PEAK 游戏实况（2026-06）",
+      "title_ja": "",
+      "summary": "官方频道发布四位赛马娘挑战《PEAK》的游戏实况与幕后内容。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20260606-peak-4",
+          "role": "child",
+          "label": "正篇"
+        },
+        {
+          "event_id": "pakatube-20260607-peak-4",
+          "role": "child",
+          "label": "花絮"
+        }
+      ]
+    },
+    {
+      "id": "program-overcooked-2026-07",
+      "kind": "series_arc",
+      "title": "Overcooked! 游戏实况（2026-07）",
+      "title_ja": "",
+      "summary": "官方频道发布四位赛马娘挑战《Overcooked!》的游戏实况与幕后内容。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20260711-overcooked-4",
+          "role": "child",
+          "label": "正篇"
+        },
+        {
+          "event_id": "pakatube-20260712-overcooked-4",
+          "role": "child",
+          "label": "花絮"
+        }
+      ]
+    },
+    {
+      "id": "program-among-us-3d-2026-09",
+      "kind": "multi_view_program",
+      "title": "Among Us 3D 游戏实况（2026-09）",
+      "title_ja": "",
+      "summary": "官方频道发布六位赛马娘游玩《Among Us 3D》的多视角实况。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20260911-among-us-3d-6",
+          "role": "child",
+          "label": "六视角"
+        }
+      ]
+    },
+    {
+      "id": "program-among-us-3d-2026-03",
+      "kind": "multi_view_program",
+      "title": "Among Us 3D 游戏实况（2026-03）",
+      "title_ja": "",
+      "summary": "官方频道发布六位赛马娘游玩《Among Us 3D》的多视角实况。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20260301-among-us-3d-6",
+          "role": "child",
+          "label": "六视角"
+        }
+      ]
+    },
+    {
+      "id": "program-gang-beasts-2024-part-2",
+      "kind": "series_arc",
+      "title": "Gang Beasts 游戏实况·第二部",
+      "title_ja": "",
+      "summary": "官方频道发布《Gang Beasts》第二部团队对战实况，分为前篇、中篇和后篇。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20240921-gang-beasts-2-4",
+          "role": "child",
+          "label": "前篇"
+        },
+        {
+          "event_id": "pakatube-20240922-gang-beasts-2-4",
+          "role": "child",
+          "label": "中篇"
+        },
+        {
+          "event_id": "pakatube-20240923-gang-beasts-2-4",
+          "role": "child",
+          "label": "后篇"
+        }
+      ],
+      "source_identity": {
+        "kind": "official_description_links",
+        "match": "Gang Beasts ゲーム実況第2部",
+        "rule": "official description links 前編/中編/後編 and shared playlist"
+      }
+    },
+    {
+      "id": "program-gang-beasts-2026-qualifiers",
+      "kind": "competition",
+      "title": "Gang Beasts 最强决定战（第1回）",
+      "title_ja": "",
+      "summary": "官方频道举办第1回训练员学园《Gang Beasts》最强决定战，A至G组为预选赛程。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "pakatube-20261017-gang-beasts-a-4",
+          "role": "child",
+          "label": "预选A组"
+        },
+        {
+          "event_id": "pakatube-20261018-gang-beasts-b-6",
+          "role": "child",
+          "label": "预选B组"
+        },
+        {
+          "event_id": "pakatube-20261019-gang-beasts-c-4",
+          "role": "child",
+          "label": "预选C组"
+        },
+        {
+          "event_id": "pakatube-20261020-gang-beasts-d-4",
+          "role": "child",
+          "label": "预选D组"
+        },
+        {
+          "event_id": "pakatube-20261021-gang-beasts-e-4",
+          "role": "child",
+          "label": "预选E组"
+        },
+        {
+          "event_id": "pakatube-20261022-gang-beasts-f-4",
+          "role": "child",
+          "label": "预选F组"
+        },
+        {
+          "event_id": "pakatube-20261023-gang-beasts-g-5",
+          "role": "child",
+          "label": "预选G组"
+        }
+      ],
+      "source_identity": {
+        "kind": "official_description",
+        "match": "第1回トレセン学園『Gang Beasts』最強決定戦",
+        "channel_id": "UCAWxPGGuIfWME2KTLUmSCHw",
+        "rule": "official identity phrase plus qualifier label A-G"
+      }
+    },
+    {
+      "id": "onsite-twinkle-hakodate",
+      "kind": "onsite_group",
+      "title": "Twinkle Circle! 函馆公演",
+      "title_ja": "",
+      "summary": "Twinkle Circle! 函馆站官方线下活动，包含现场演出、谈话与综艺环节；官方资料显示活动以粉丝与马娘的羁绊为主题。",
+      "source_urls": ["https://umamusume.jp/contents/event/twinkle-circle/", "https://prtimes.jp/main/html/rd/p/000000954.000005593.html"],
+      "image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg"},
+      "members": [
+        {
+          "event_id": "live-twinkle-2024-08-31-twinkle-circle-day1",
+          "role": "child",
+          "label": "Day1"
+        },
+        {
+          "event_id": "live-twinkle-2024-09-01-twinkle-circle-day2",
+          "role": "child",
+          "label": "Day2"
+        }
+      ]
+    },
+    {
+      "id": "onsite-twinkle-aichi",
+      "kind": "onsite_group",
+      "title": "Twinkle Circle! 爱知公演",
+      "title_ja": "",
+      "summary": "Twinkle Circle! 爱知站官方线下活动，包含现场演出、谈话与综艺环节；部分最终场次提供官方免费直播。",
+      "source_urls": ["https://umamusume.jp/contents/event/twinkle-circle/", "https://prtimes.jp/main/html/rd/p/000000954.000005593.html"],
+      "image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg"},
+      "members": [
+        {
+          "event_id": "live-twinkle-2024-09-28-twinkle-circle-day1",
+          "role": "child",
+          "label": "Day1"
+        },
+        {
+          "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-1",
+          "role": "child",
+          "label": "Day2"
+        },
+        {
+          "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-2",
+          "role": "child",
+          "label": "Day2"
+        }
+      ]
+    },
+    {
+      "id": "onsite-twinkle-makuhari",
+      "kind": "onsite_group",
+      "title": "Twinkle Circle! 幕张公演",
+      "title_ja": "",
+      "summary": "Twinkle Circle! 幕张站官方线下活动，包含现场演出、谈话与综艺环节；部分最终场次提供官方免费直播。",
+      "source_urls": ["https://umamusume.jp/contents/event/twinkle-circle/", "https://prtimes.jp/main/html/rd/p/000000954.000005593.html"],
+      "image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg"},
+      "members": [
+        {
+          "event_id": "live-twinkle-2024-10-19-twinkle-circle-day1",
+          "role": "child",
+          "label": "Day1"
+        },
+        {
+          "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-1",
+          "role": "child",
+          "label": "Day2"
+        },
+        {
+          "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-2",
+          "role": "child",
+          "label": "Day2"
+        }
+      ]
+    },
+    {
+      "id": "onsite-twinkle-osaka",
+      "kind": "onsite_group",
+      "title": "Twinkle Circle! 大阪公演",
+      "title_ja": "",
+      "summary": "Twinkle Circle! 大阪站官方线下活动，包含现场演出、谈话与综艺环节；部分最终场次提供官方免费直播。",
+      "source_urls": ["https://umamusume.jp/contents/event/twinkle-circle/", "https://prtimes.jp/main/html/rd/p/000000954.000005593.html"],
+      "image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg"},
+      "members": [
+        {
+          "event_id": "live-twinkle-2024-11-16-twinkle-circle-day1",
+          "role": "child",
+          "label": "Day1"
+        },
+        {
+          "event_id": "live-twinkle-2024-11-17-twinkle-circle-day2",
+          "role": "child",
+          "label": "Day2"
+        }
+      ]
+    },
+    {
+      "id": "onsite-twinkle-fukuoka",
+      "kind": "onsite_group",
+      "title": "Twinkle Circle! 福冈公演",
+      "title_ja": "",
+      "summary": "Twinkle Circle! 福冈站官方线下活动，包含现场演出、谈话与综艺环节；部分最终场次提供官方免费直播。",
+      "source_urls": ["https://umamusume.jp/contents/event/twinkle-circle/", "https://prtimes.jp/main/html/rd/p/000000954.000005593.html"],
+      "image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg"},
+      "members": [
+        {
+          "event_id": "live-twinkle-2024-12-15-twinkle-circle",
+          "role": "child",
+          "label": "日间公演"
+        },
+        {
+          "event_id": "live-twinkle-2024-12-15-twinkle-circle-2",
+          "role": "child",
+          "label": "本场"
+        }
+      ]
+    },
+    {
+      "id": "onsite-sprinters-story-2023",
+      "kind": "onsite_group",
+      "title": "舞台《Sprinters’ Story》公演",
+      "title_ja": "",
+      "summary": "舞台《赛马娘 Pretty Derby》～Sprinters’ Story～于2023年1月在品川王子大饭店 Stellar Ball 上演，包含原创剧情、歌曲、踢踏舞、竞赛场景与胜者演唱会。",
+      "source_urls": ["https://umamusume-stage.com/", "https://www.nelke.co.jp/stage/umamusume_stage/index.html"],
+      "image": "https://umamusume-stage.com/wp/wp-content/themes/umamusume_stage/images/kv_v2_pc_wide.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://umamusume-stage.com/wp/wp-content/themes/umamusume_stage/images/kv_v2_pc_wide.jpg"},
+      "members": [
+        {
+          "event_id": "live-other-2023-01-15-1-15-13-00",
+          "role": "child",
+          "label": "13:00"
+        },
+        {
+          "event_id": "live-other-2023-01-15-1-15-18-00",
+          "role": "child",
+          "label": "18:00"
+        },
+        {
+          "event_id": "live-other-2023-01-27-1-27-18-00",
+          "role": "child",
+          "label": "18:00"
+        },
+        {
+          "event_id": "live-other-2023-01-28-1-28-13-00",
+          "role": "child",
+          "label": "13:00"
+        },
+        {
+          "event_id": "live-other-2023-01-28-1-28-18-00",
+          "role": "child",
+          "label": "18:00"
+        },
+        {
+          "event_id": "live-other-2023-01-29-1-29-13-00",
+          "role": "child",
+          "label": "13:00"
+        },
+        {
+          "event_id": "live-other-2023-01-29-1-29-18-00",
+          "role": "child",
+          "label": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2026-02-08",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray 怪物的蹄迹展谈话与放映",
+      "title_ja": "",
+      "summary": "《赛马娘 Cinderella Gray 怪物的蹄迹展》纪念谈话活动与特别放映。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2026-02-08",
+          "role": "child",
+          "label": "第2场"
+        },
+        {
+          "event_id": "eventernote-2026-02-08-2",
+          "role": "child",
+          "label": "第1场"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2025-10-11",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray Blu-ray 发售纪念第1赛",
+      "title_ja": "",
+      "summary": "动画《赛马娘 Cinderella Gray》Blu-ray 发售纪念活动·第1赛。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2025-10-11",
+          "role": "child",
+          "label": "第1场"
+        },
+        {
+          "event_id": "eventernote-2025-10-11-2",
+          "role": "child",
+          "label": "第2场"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2025-12-06",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray Blu-ray 发售纪念第2赛",
+      "title_ja": "",
+      "summary": "动画《赛马娘 Cinderella Gray》Blu-ray 发售纪念活动·第2赛。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2025-12-06",
+          "role": "child",
+          "label": "第2场"
+        },
+        {
+          "event_id": "eventernote-2025-12-06-2",
+          "role": "child",
+          "label": "第1场"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2025-07-26",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray 主题曲发售纪念",
+      "title_ja": "",
+      "summary": "动画《赛马娘 Cinderella Gray》第1季度完结主题曲发售纪念活动。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "live-cd-2025-07-26-1-1",
+          "role": "child",
+          "label": "第1部"
+        },
+        {
+          "event_id": "live-cd-2025-07-26-1-2",
+          "role": "child",
+          "label": "第2部"
+        }
+      ]
+    },
+    {
+      "id": "onsite-screening-2025-03-30",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray 提前放映会",
+      "title_ja": "",
+      "summary": "动画《赛马娘 Cinderella Gray》提前放映会与谈话活动。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "anime-cinderella-gray-screening-20250330",
+          "role": "overview",
+          "label": "企划概览（官方主记录）"
+        },
+        {
+          "event_id": "eventernote-2025-03-30",
+          "role": "child",
+          "label": "第1场"
+        },
+        {
+          "event_id": "eventernote-2025-03-30-2",
+          "role": "child",
+          "label": "第2场"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2026-03-28",
+      "kind": "onsite_group",
+      "title": "Northern Horse Park Part3 谈话活动",
+      "title_ja": "",
+      "summary": "赛马娘 Pretty Derby×Northern Horse Park Part3 出演者谈话活动。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2026-03-28",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×Norther"
+        },
+        {
+          "event_id": "eventernote-2026-03-28-2",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×Norther"
+        },
+        {
+          "event_id": "eventernote-2026-03-28-3",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×Norther"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2026-08-01",
+      "kind": "onsite_group",
+      "title": "Northern Masters Horse Show 谈话活动",
+      "title_ja": "",
+      "summary": "Northern Masters Horse Show 赛马娘特别节目谈话活动。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2026-08-01",
+          "role": "child",
+          "label": "Northern Masters Horse S"
+        },
+        {
+          "event_id": "eventernote-2026-08-01-2",
+          "role": "child",
+          "label": "Northern Masters Horse S"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2025-11-30",
+      "kind": "onsite_group",
+      "title": "佐贺赛马场联动谈话活动",
+      "title_ja": "",
+      "summary": "佐贺赛马场 presents 赛马娘 Pretty Derby×佐贺偶像是传奇联动活动谈话。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2025-11-30",
+          "role": "child",
+          "label": "『佐贺赛马场presents 赛马娘 Prett"
+        },
+        {
+          "event_id": "eventernote-2025-11-30-2",
+          "role": "child",
+          "label": "『佐贺赛马场presents 赛马娘 Prett"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2024-10-13",
+      "kind": "onsite_group",
+      "title": "金泽赛马联动谈话活动",
+      "title_ja": "",
+      "summary": "赛马娘 Pretty Derby×金泽赛马联动活动声优谈话。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2024-10-13",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×金泽赛马「赛马"
+        },
+        {
+          "event_id": "eventernote-2024-10-13-2",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×金泽赛马「赛马"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2024-09-15",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动",
+      "title_ja": "",
+      "summary": "赛马娘 Pretty Derby×带广赛马联动活动谈话。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2024-09-15",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×带广赛马联动活"
+        },
+        {
+          "event_id": "eventernote-2024-09-15-2",
+          "role": "child",
+          "label": "赛马娘 Pretty Derby×带广赛马联动活"
+        }
+      ]
+    },
+    {
+      "id": "onsite-talk-2026-01-31",
+      "kind": "onsite_group",
+      "title": "Cinderella Gray 第二季度片尾主题曲谈话活动",
+      "title_ja": "",
+      "summary": "动画《赛马娘 Cinderella Gray》第二季度片尾主题曲特别谈话活动。",
+      "source_urls": [],
+      "members": [
+        {
+          "event_id": "eventernote-2026-01-31-2",
+          "role": "child",
+          "label": "第1场"
+        },
+        {
+          "event_id": "eventernote-2026-01-31",
+          "role": "child",
+          "label": "第2场"
+        }
+      ]
+    }
+  ]
+}

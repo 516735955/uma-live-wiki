@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "venues": [
+    {
+      "id": "venue-国内外各所-ライブビュ-イング等",
+      "raw": "!_国内外各所 (ライブビューイング等)",
+      "display": "国内外各地（直播观览等）",
+      "name_zh": "国内外各地（直播观览等）",
+      "name_ja": "!_国内外各所 (ライブビューイング等)",
+      "city": "",
+      "normalization_status": "region_placeholder"
+    },
+    {
+      "id": "venue-東京都内某所",
+      "raw": "!_東京都内某所",
+      "display": "东京市内某处",
+      "name_zh": "东京市内某处",
+      "name_ja": "!_東京都内某所",
+      "city": "",
+      "normalization_status": "region_placeholder"
+    },
+    {
+      "id": "venue-関東近郊",
+      "raw": "!_関東近郊",
+      "display": "关东近郊",
+      "name_zh": "关东近郊",
+      "name_ja": "!_関東近郊",
+      "city": "",
+      "normalization_status": "region_placeholder"
+    },
+    {
+      "id": "venue-akihabaraゲ-マ-ズ本店",
+      "raw": "AKIHABARAゲーマーズ本店",
+      "display": "秋叶原 Gamers 本店",
+      "name_zh": "秋叶原 Gamers 本店",
+      "name_ja": "AKIHABARAゲーマーズ本店",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-aichi-sky-expo",
+      "raw": "Aichi Sky Expo",
+      "display": "Aichi Sky Expo（爱知天空展览馆）",
+      "name_zh": "Aichi Sky Expo（爱知天空展览馆）",
+      "name_ja": "Aichi Sky Expo",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-es-con-field-hokkaido",
+      "raw": "ES CON FIELD HOKKAIDO",
+      "display": "ES CON FIELD HOKKAIDO（北海道棒球场）",
+      "name_zh": "ES CON FIELD HOKKAIDO（北海道棒球场）",
+      "name_ja": "ES CON FIELD HOKKAIDO",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-fcgビル",
+      "raw": "FCGビル",
+      "display": "FCG 大楼",
+      "name_zh": "FCG 大楼",
+      "name_ja": "FCGビル",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-gmoアリ-ナさいたま",
+      "raw": "GMOアリーナさいたま",
+      "display": "GMO 埼玉竞技场",
+      "name_zh": "GMO 埼玉竞技场",
+      "name_ja": "GMOアリーナさいたま",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-new-pier-hall",
+      "raw": "NEW PIER HALL",
+      "display": "NEW PIER HALL（新码头大厅）",
+      "name_zh": "NEW PIER HALL（新码头大厅）",
+      "name_ja": "NEW PIER HALL",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-new-pier-hall-ニュ-ピアホ-ル",
+      "raw": "NEW PIER HALL(ニューピアホール)",
+      "display": "NEW PIER HALL（新码头大厅）",
+      "name_zh": "NEW PIER HALL（新码头大厅）",
+      "name_ja": "NEW PIER HALL(ニューピアホール)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-nhkホ-ル",
+      "raw": "NHKホール",
+      "display": "NHK Hall（NHK音乐厅）",
+      "name_zh": "NHK Hall（NHK音乐厅）",
+      "name_ja": "NHKホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-peacock-theater",
+      "raw": "Peacock Theater",
+      "display": "Peacock Theater（孔雀剧院）",
+      "name_zh": "Peacock Theater（孔雀剧院）",
+      "name_ja": "Peacock Theater",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tbs放送センタ",
+      "raw": "TBS放送センター",
+      "display": "TBS 广播中心",
+      "name_zh": "TBS 广播中心",
+      "name_ja": "TBS放送センター",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tft-hall-1000",
+      "raw": "TFT HALL 1000",
+      "display": "TFT HALL 1000",
+      "name_zh": "TFT HALL 1000",
+      "name_ja": "TFT HALL 1000",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-the-grand-hall",
+      "raw": "THE GRAND HALL",
+      "display": "THE GRAND HALL（大堂）",
+      "name_zh": "THE GRAND HALL（大堂）",
+      "name_ja": "THE GRAND HALL",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tohoシネマズすすきの",
+      "raw": "TOHOシネマズすすきの",
+      "display": "TOHO Cinemas 薄野",
+      "name_zh": "TOHO Cinemas 薄野",
+      "name_ja": "TOHOシネマズすすきの",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tohoシネマズ六本木ヒルズ",
+      "raw": "TOHOシネマズ六本木ヒルズ",
+      "display": "TOHO Cinemas 六本木新城",
+      "name_zh": "TOHO Cinemas 六本木新城",
+      "name_ja": "TOHOシネマズ六本木ヒルズ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tohoシネマズ新宿",
+      "raw": "TOHOシネマズ新宿",
+      "display": "TOHO Cinemas 新宿",
+      "name_zh": "TOHO Cinemas 新宿",
+      "name_ja": "TOHOシネマズ新宿",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tohoシネマズ日比谷",
+      "raw": "TOHOシネマズ日比谷",
+      "display": "TOHO Cinemas 日比谷",
+      "name_zh": "TOHO Cinemas 日比谷",
+      "name_ja": "TOHOシネマズ日比谷",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tohoシネマズ日比谷-スクリ-ン12-旧-tohoシネマズスカラ座",
+      "raw": "TOHOシネマズ日比谷 スクリーン12 (旧 TOHOシネマズスカラ座)",
+      "display": "TOHO Cinemas 日比谷 12号厅（原 TOHO Cinemas 斯卡拉座）",
+      "name_zh": "TOHO Cinemas 日比谷 12号厅（原 TOHO Cinemas 斯卡拉座）",
+      "name_ja": "TOHOシネマズ日比谷 スクリーン12 (旧 TOHOシネマズスカラ座)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tokyo-dome-city-hall",
+      "raw": "TOKYO DOME CITY HALL",
+      "display": "TOKYO DOME CITY HALL（东京巨蛋城剧场）",
+      "name_zh": "TOKYO DOME CITY HALL（东京巨蛋城剧场）",
+      "name_ja": "TOKYO DOME CITY HALL",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-tsutaya三軒茶屋店",
+      "raw": "TSUTAYA三軒茶屋店",
+      "display": "TSUTAYA 三轩茶屋店",
+      "name_zh": "TSUTAYA 三轩茶屋店",
+      "name_ja": "TSUTAYA三軒茶屋店",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-twtc-hall-1-台北世界貿易中心展覽一館-世貿一館-台北世界貿易センタ-展示ホ-ル1号館",
+      "raw": "TWTC Hall 1 台北世界貿易中心展覽一館(世貿一館)/台北世界貿易センター展示ホール1号館",
+      "display": "TWTC 1号厅（台北世界贸易中心）",
+      "name_zh": "TWTC 1号厅（台北世界贸易中心）",
+      "name_ja": "TWTC Hall 1 台北世界貿易中心展覽一館(世貿一館)/台北世界貿易センター展示ホール1号館",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-yokohama-landmark-hall",
+      "raw": "Yokohama LANDMARK HALL",
+      "display": "横滨 Landmark Hall",
+      "name_zh": "横滨 Landmark Hall",
+      "name_ja": "Yokohama LANDMARK HALL",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-zepp-divercity",
+      "raw": "Zepp DiverCity",
+      "display": "Zepp DiverCity 东京",
+      "name_zh": "Zepp DiverCity 东京",
+      "name_ja": "Zepp DiverCity",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-animate-hall-black",
+      "raw": "animate hall BLACK",
+      "display": "animate hall BLACK（池袋）",
+      "name_zh": "animate hall BLACK（池袋）",
+      "name_ja": "animate hall BLACK",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-うみかぜ公園",
+      "raw": "うみかぜ公園",
+      "display": "海风公园",
+      "name_zh": "海风公园",
+      "name_ja": "うみかぜ公園",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-さいたまス-パ-アリ-ナ",
+      "raw": "さいたまスーパーアリーナ",
+      "display": "埼玉超级竞技场",
+      "name_zh": "埼玉超级竞技场",
+      "name_ja": "さいたまスーパーアリーナ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-しんまちボ-ドウォ-ク-パラソルショップ",
+      "raw": "しんまちボードウォーク(パラソルショップ)",
+      "display": "新町木板步道（阳伞商店区）",
+      "name_zh": "新町木板步道（阳伞商店区）",
+      "name_ja": "しんまちボードウォーク(パラソルショップ)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ぴあアリ-ナmm",
+      "raw": "ぴあアリーナMM",
+      "display": "Pia Arena MM",
+      "name_zh": "Pia Arena MM",
+      "name_ja": "ぴあアリーナMM",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-アニメイト新宿-旧店舗-移転済",
+      "raw": "アニメイト新宿(旧店舗/移転済)",
+      "display": "Animate 新宿（旧店铺，已迁址）",
+      "name_zh": "Animate 新宿（旧店铺，已迁址）",
+      "name_ja": "アニメイト新宿(旧店舗/移転済)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-アニメイト池袋本店-9f-animate-hall-black",
+      "raw": "アニメイト池袋本店 9F animate hall BLACK",
+      "display": "Animate 池袋本店 9F animate hall BLACK",
+      "name_zh": "Animate 池袋本店 9F animate hall BLACK",
+      "name_ja": "アニメイト池袋本店 9F animate hall BLACK",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-アニメイト池袋本店-b2f-アニメイトシアタ",
+      "raw": "アニメイト池袋本店 B2F アニメイトシアター",
+      "display": "Animate 池袋本店 B2F 动画剧场",
+      "name_zh": "Animate 池袋本店 B2F 动画剧场",
+      "name_ja": "アニメイト池袋本店 B2F アニメイトシアター",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-インテックス大阪-5号館",
+      "raw": "インテックス大阪 5号館",
+      "display": "大阪国际展览中心 5号馆",
+      "name_zh": "大阪国际展览中心 5号馆",
+      "name_ja": "インテックス大阪 5号館",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ディファ有明",
+      "raw": "ディファ有明",
+      "display": "Differ Ariake（有明）",
+      "name_zh": "Differ Ariake（有明）",
+      "name_ja": "ディファ有明",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ノ-ザンホ-スパ-ク",
+      "raw": "ノーザンホースパーク",
+      "display": "Northern Horse Park（北方马匹公园）",
+      "name_zh": "Northern Horse Park（北方马匹公园）",
+      "name_ja": "ノーザンホースパーク",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ベル-ナド-ム",
+      "raw": "ベルーナドーム",
+      "display": "Belluna Dome（西武巨蛋）",
+      "name_zh": "Belluna Dome（西武巨蛋）",
+      "name_ja": "ベルーナドーム",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ベル-ナド-ム-西武ド-ム",
+      "raw": "ベルーナドーム(西武ドーム)",
+      "display": "Belluna Dome（西武巨蛋）",
+      "name_zh": "Belluna Dome（西武巨蛋）",
+      "name_ja": "ベルーナドーム(西武ドーム)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ポ-トメッセなごや",
+      "raw": "ポートメッセなごや",
+      "display": "Port Messe 名古屋",
+      "name_zh": "Port Messe 名古屋",
+      "name_ja": "ポートメッセなごや",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-マリンメッセ福岡b館",
+      "raw": "マリンメッセ福岡B館",
+      "display": "Marine Messe 福冈 B馆",
+      "name_zh": "Marine Messe 福冈 B馆",
+      "name_ja": "マリンメッセ福岡B館",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ユナイテッド-シネマ-アクアシティお台場",
+      "raw": "ユナイテッド・シネマ アクアシティお台場",
+      "display": "United Cinemas Aqua City 台场",
+      "name_zh": "United Cinemas Aqua City 台场",
+      "name_ja": "ユナイテッド・シネマ アクアシティお台場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-ラフォ-レミュ-ジアム六本木",
+      "raw": "ラフォーレミュージアム六本木",
+      "display": "Laforet Museum 六本木",
+      "name_zh": "Laforet Museum 六本木",
+      "name_ja": "ラフォーレミュージアム六本木",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-中山競馬場",
+      "raw": "中山競馬場",
+      "display": "中山赛马场",
+      "name_zh": "中山赛马场",
+      "name_ja": "中山競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-伊香立公園",
+      "raw": "伊香立公園",
+      "display": "伊香立公园",
+      "name_zh": "伊香立公园",
+      "name_ja": "伊香立公園",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-佐久市駒場公園",
+      "raw": "佐久市駒場公園",
+      "display": "佐久市驹场公园",
+      "name_zh": "佐久市驹场公园",
+      "name_ja": "佐久市駒場公園",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-佐賀競馬場",
+      "raw": "佐賀競馬場",
+      "display": "佐贺赛马场",
+      "name_zh": "佐贺赛马场",
+      "name_ja": "佐賀競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-函館サ-モン-まるなまアリ-ナ",
+      "raw": "函館サーモン・まるなまアリーナ",
+      "display": "函馆 Salmon Marunami Arena",
+      "name_zh": "函馆 Salmon Marunami Arena",
+      "name_ja": "函館サーモン・まるなまアリーナ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-台北世界貿易中心",
+      "raw": "台北世界貿易中心",
+      "display": "台北世界贸易中心",
+      "name_zh": "台北世界贸易中心",
+      "name_ja": "台北世界貿易中心",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-名古屋競馬場",
+      "raw": "名古屋競馬場",
+      "display": "名古屋赛马场",
+      "name_zh": "名古屋赛马场",
+      "name_ja": "名古屋競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-品川グランドホ-ル",
+      "raw": "品川グランドホール",
+      "display": "品川大堂",
+      "name_zh": "品川大堂",
+      "name_ja": "品川グランドホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-品川プリンスホテル-ステラボ-ル",
+      "raw": "品川プリンスホテル ステラボール",
+      "display": "品川王子大饭店 Stella Ball",
+      "name_zh": "品川王子大饭店 Stella Ball",
+      "name_ja": "品川プリンスホテル ステラボール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-園田競馬場",
+      "raw": "園田競馬場",
+      "display": "园田赛马场",
+      "name_zh": "园田赛马场",
+      "name_ja": "園田競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-在线播出",
+      "raw": "在线播出",
+      "display": "在线播出",
+      "name_zh": "在线播出",
+      "name_ja": "在线播出",
+      "city": "",
+      "normalization_status": "channel"
+    },
+    {
+      "id": "venue-大井競馬場",
+      "raw": "大井競馬場",
+      "display": "大井赛马场",
+      "name_zh": "大井赛马场",
+      "name_ja": "大井競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-大手町三井ホ-ル",
+      "raw": "大手町三井ホール",
+      "display": "大手町三井 Hall",
+      "name_zh": "大手町三井 Hall",
+      "name_ja": "大手町三井ホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-大阪城ホ-ル",
+      "raw": "大阪城ホール",
+      "display": "大阪城音乐厅",
+      "name_zh": "大阪城音乐厅",
+      "name_ja": "大阪城ホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-山野ホ-ル-貸出中止",
+      "raw": "山野ホール(貸出中止)",
+      "display": "山野 Hall（已停止出租）",
+      "name_zh": "山野 Hall（已停止出租）",
+      "name_ja": "山野ホール(貸出中止)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-帯広競馬場",
+      "raw": "帯広競馬場",
+      "display": "带广赛马场",
+      "name_zh": "带广赛马场",
+      "name_ja": "帯広競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-幕張メッセ-国際展示場ホ-ル",
+      "raw": "幕張メッセ 国際展示場ホール",
+      "display": "幕张国际展览馆大厅",
+      "name_zh": "幕张国际展览馆大厅",
+      "name_ja": "幕張メッセ 国際展示場ホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-幕張メッセイベントホ-ル",
+      "raw": "幕張メッセイベントホール",
+      "display": "幕张展览馆活动大厅",
+      "name_zh": "幕张展览馆活动大厅",
+      "name_ja": "幕張メッセイベントホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-幕張メッセ-イベントホ-ル",
+      "raw": "幕張メッセ・イベントホール",
+      "display": "幕张展览馆活动大厅",
+      "name_zh": "幕张展览馆活动大厅",
+      "name_ja": "幕張メッセ・イベントホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-幕張メッセ国際展示場",
+      "raw": "幕張メッセ国際展示場",
+      "display": "幕张国际展览馆",
+      "name_zh": "幕张国际展览馆",
+      "name_ja": "幕張メッセ国際展示場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-恵比寿ガ-デンホ-ル",
+      "raw": "恵比寿ガーデンホール",
+      "display": "惠比寿花园大厅",
+      "name_zh": "惠比寿花园大厅",
+      "name_ja": "恵比寿ガーデンホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-新宿住友ビル三角広場",
+      "raw": "新宿住友ビル三角広場",
+      "display": "新宿住友大厦三角广场",
+      "name_zh": "新宿住友大厦三角广场",
+      "name_ja": "新宿住友ビル三角広場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-新宿住友ホ-ル",
+      "raw": "新宿住友ホール",
+      "display": "新宿住友 Hall",
+      "name_zh": "新宿住友 Hall",
+      "name_ja": "新宿住友ホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-新町橋東公園ステ-ジ",
+      "raw": "新町橋東公園ステージ",
+      "display": "新町桥东公园舞台",
+      "name_zh": "新町桥东公园舞台",
+      "name_ja": "新町橋東公園ステージ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-日テレらんらんホ-ル",
+      "raw": "日テレらんらんホール",
+      "display": "日本电视台 Ran-Ran Hall",
+      "name_zh": "日本电视台 Ran-Ran Hall",
+      "name_ja": "日テレらんらんホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-日本武道館",
+      "raw": "日本武道館",
+      "display": "日本武道馆",
+      "name_zh": "日本武道馆",
+      "name_ja": "日本武道館",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-有明アリ-ナ",
+      "raw": "有明アリーナ",
+      "display": "有明体育馆",
+      "name_zh": "有明体育馆",
+      "name_ja": "有明アリーナ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-札幌シネマフロンティア",
+      "raw": "札幌シネマフロンティア",
+      "display": "札幌 Cinema Frontier",
+      "name_zh": "札幌 Cinema Frontier",
+      "name_ja": "札幌シネマフロンティア",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-東京ガ-デンシアタ",
+      "raw": "東京ガーデンシアター",
+      "display": "东京花园剧场",
+      "name_zh": "东京花园剧场",
+      "name_ja": "東京ガーデンシアター",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-東京ビッグサイト",
+      "raw": "東京ビッグサイト",
+      "display": "东京国际展示场",
+      "name_zh": "东京国际展示场",
+      "name_ja": "東京ビッグサイト",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-東京ビッグサイト-東京国際展示場",
+      "raw": "東京ビッグサイト(東京国際展示場)",
+      "display": "东京国际展示场（东京 Big Sight）",
+      "name_zh": "东京国际展示场（东京 Big Sight）",
+      "name_ja": "東京ビッグサイト(東京国際展示場)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-東京国際フォ-ラム-ホ-ルc",
+      "raw": "東京国際フォーラム ホールC",
+      "display": "东京国际论坛 C厅",
+      "name_zh": "东京国际论坛 C厅",
+      "name_ja": "東京国際フォーラム ホールC",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-横浜アリ-ナ",
+      "raw": "横浜アリーナ",
+      "display": "横滨体育馆",
+      "name_zh": "横滨体育馆",
+      "name_ja": "横浜アリーナ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-横浜ベイホ-ル",
+      "raw": "横浜ベイホール",
+      "display": "横滨 Bay Hall",
+      "name_zh": "横滨 Bay Hall",
+      "name_ja": "横浜ベイホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-武蔵野の森総合スポ-ツプラザ-メインアリ-ナ",
+      "raw": "武蔵野の森総合スポーツプラザ・メインアリーナ",
+      "display": "武藏野之森综合体育广场主竞技场",
+      "name_zh": "武藏野之森综合体育广场主竞技场",
+      "name_ja": "武蔵野の森総合スポーツプラザ・メインアリーナ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-江戸川区総合文化センタ-大ホ-ル",
+      "raw": "江戸川区総合文化センター大ホール",
+      "display": "江户川区综合文化中心大礼堂",
+      "name_zh": "江户川区综合文化中心大礼堂",
+      "name_ja": "江戸川区総合文化センター大ホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-浦和競馬場",
+      "raw": "浦和競馬場",
+      "display": "浦和赛马场",
+      "name_zh": "浦和赛马场",
+      "name_ja": "浦和競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-烏丸半島芝生広場",
+      "raw": "烏丸半島芝生広場",
+      "display": "乌丸半岛草坪广场",
+      "name_zh": "乌丸半岛草坪广场",
+      "name_ja": "烏丸半島芝生広場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-眉山山頂ステ-ジ",
+      "raw": "眉山山頂ステージ",
+      "display": "眉山山顶舞台",
+      "name_zh": "眉山山顶舞台",
+      "name_ja": "眉山山頂ステージ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-眉山林間ステ-ジ",
+      "raw": "眉山林間ステージ",
+      "display": "眉山林间舞台",
+      "name_zh": "眉山林间舞台",
+      "name_ja": "眉山林間ステージ",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-眉山林間ステ-ジ-眉山山頂林間駐車場",
+      "raw": "眉山林間ステージ(眉山山頂林間駐車場)",
+      "display": "眉山林间舞台（眉山山顶林间停车场）",
+      "name_zh": "眉山林间舞台（眉山山顶林间停车场）",
+      "name_ja": "眉山林間ステージ(眉山山頂林間駐車場)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-科学技術館サイエンスホ-ル",
+      "raw": "科学技術館サイエンスホール",
+      "display": "科学技术馆科学厅",
+      "name_zh": "科学技术馆科学厅",
+      "name_ja": "科学技術館サイエンスホール",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-笠松競馬場",
+      "raw": "笠松競馬場",
+      "display": "笠松赛马场",
+      "name_zh": "笠松赛马场",
+      "name_ja": "笠松競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-舞浜アンフィシアタ",
+      "raw": "舞浜アンフィシアター",
+      "display": "舞滨圆形剧场",
+      "name_zh": "舞滨圆形剧场",
+      "name_ja": "舞浜アンフィシアター",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-金沢競馬場",
+      "raw": "金沢競馬場",
+      "display": "金泽赛马场",
+      "name_zh": "金泽赛马场",
+      "name_ja": "金沢競馬場",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    },
+    {
+      "id": "venue-駅前不動産スタジアム-鳥栖スタジアム",
+      "raw": "駅前不動産スタジアム(鳥栖スタジアム)",
+      "display": "站前不动产体育场（鸟栖体育场）",
+      "name_zh": "站前不动产体育场（鸟栖体育场）",
+      "name_ja": "駅前不動産スタジアム(鳥栖スタジアム)",
+      "city": "",
+      "normalization_status": "reviewed_display"
+    }
+  ]
+}
+

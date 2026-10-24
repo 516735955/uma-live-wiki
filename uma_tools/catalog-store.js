@@ -6,8 +6,11 @@ const routes = require('./route-utils');
 const catalogModel = require('./catalog-model');
 const crypto = require('crypto');
 const businessDate = require('./business-date');
+const searchText = require('./search-text');
+const { createClassification } = require('./music-classification');
+const { projectEvents } = require('./event-presentation');
 
-const CATALOG_RESPONSE_SCHEMA = 9;
+const CATALOG_RESPONSE_SCHEMA = 10;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -378,7 +381,9 @@ class CatalogStore {
     const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     const pending = await fs.promises.stat(path.join(this.dataDir, 'auto_update/catalog_pending.json')).catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
     const eventImages = await fs.promises.stat(path.join(this.dataDir, EVENT_IMAGE_MAP)).catch(() => null);
+    const anime = await fs.promises.stat(path.join(this.dataDir, 'anime_catalog.json')).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
     this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published') + ':' + (eventImages ? eventImages.mtimeMs + ':' + eventImages.size : 'no-event-images');
+    this.checkedSignature += ':' + (anime ? anime.mtimeMs + ':' + anime.size : 'no-anime');
     this.signatureCheckedAt = Date.now();
     return this.checkedSignature;
   }
@@ -428,6 +433,8 @@ class CatalogStore {
     const musicCreatorsDoc = JSON.parse(texts[7]);
     const lyricsDoc = JSON.parse(texts[8]);
     const timingsDoc = JSON.parse(texts[9]);
+    const animeText = await fs.promises.readFile(path.join(this.dataDir, 'anime_catalog.json'), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
+    const classifyAlbum = createClassification(JSON.parse(animeText), songsDoc.songs || [], albumWork);
     const music = {
       creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
       lyrics: lyricsDoc.versions || {},
@@ -445,7 +452,7 @@ class CatalogStore {
       throw new Error('catalog revision mismatch');
     }
     let sourceRevision = crypto.createHash('sha1')
-      .update(texts.join('\u0000'))
+      .update(texts.join('\u0000') + animeText)
       .digest('hex')
       .slice(0, 12);
 
@@ -482,10 +489,18 @@ class CatalogStore {
       if (String(series.cover || '').startsWith('/')) return series.cover;
       return EVENT_KIND_COVERS[event.kind] || '/uma_tools/img/event-covers/onsite.svg';
     };
-    const events = (Array.isArray(eventsDoc.events) ? eventsDoc.events : []).map((event) => {
+    const sourceEvents = (Array.isArray(eventsDoc.events) ? eventsDoc.events : []).map((event) => {
       const mapped = eventImages[String(event.id || '')] || {};
-      return { ...event, image: fallbackImage(event), image_original: mapped.original_url || mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : ''), source_image: mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : '') };
+      return { ...event, image: fallbackImage(event), image_preview: mapped.image_url || fallbackImage(event), image_original: mapped.original_url || mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : ''), source_image: mapped.source_image || event.source_image || (String(event.image || '').startsWith('http') ? event.image : '') };
     });
+    const groups = (eventsDoc.event_groups || []).map(group => {
+      const mapped = eventImages[String(group.id)] || {};
+      return { ...group, image: mapped.image_url || group.image,
+        image_preview: mapped.image_url || group.image,
+        image_original: mapped.original_url || group.image_original || group.image };
+    });
+    const presentation = projectEvents(sourceEvents, groups);
+    const events = presentation.events;
     const songs = Array.isArray(songsDoc.songs) ? songsDoc.songs : [];
     const creators = Array.isArray(creatorsDoc.creators) ? creatorsDoc.creators : [];
     const voiceActors = Array.isArray(voicesDoc.voice_actors) ? voicesDoc.voice_actors : [];
@@ -499,11 +514,11 @@ class CatalogStore {
         const character = charactersById.get(id) || {};
         return [character.zh, character.ja, character.en].filter(Boolean).join(' ');
       });
-      const search = normalize([eventSearchText(event, actorsById), series.name, series.name_ja, ...names].filter(Boolean).join(' '));
+      const search = searchText.fields([event.title, event.title_ja, event.title_aliases, event.venue, event.summary, event.schedule_status === 'cancelled' ? '已取消' : '', event.status_note, eventSearchText(event, actorsById), series.name, series.name_ja, ...names, ...(event.character_ids || []).map(id => charactersById.get(id)), ...(event.cast || []).map(row => actorsById.get(row.voice_actor_id)?.identity), ...(event.sessions || []).flatMap(row => [row.label, row.summary, presentation.rawById.get(row.source_event_id)?.title])]);
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
-      const search = songSearchText(song, music);
+      const search = searchText.fields([songSearchText(song, music), song.title, song.aliases, song.artists, ...(song.character_ids || []).map(id => charactersById.get(id)), ...(song.voice_actor_ids || []).map(id => actorsById.get(id)?.identity)]);
       const summary = songSummary(song, search, music);
       summary.artist_names = (song.voice_actor_ids || []).map((id) => {
         const actor = actorsById.get(id);
@@ -512,10 +527,10 @@ class CatalogStore {
       return { data: song, summary, search };
     });
     const creatorRows = creators.map((creator) => {
-      const search = creatorSearchText(creator);
+      const search = searchText.fields([creatorSearchText(creator), creator.name, creator.aliases]);
       return { data: creator, summary: creatorSummary(creator, search), search };
     });
-    const albumRowsIndexed = albumRows.map((album) => ({ data: album, summary: albumSummary(album) }));
+    const albumRowsIndexed = albumRows.map((album) => ({ data: album, summary: { ...albumSummary(album), ...classifyAlbum(album, stableAlbumId(album)) } }));
     const snapshot = {
       buildId: manifest.build_id + '-api' + CATALOG_RESPONSE_SCHEMA + '-' + sourceRevision,
       manifest,
@@ -526,12 +541,14 @@ class CatalogStore {
       appearancesDoc,
       voicesDoc,
       albums: albumRows,
+      charactersById,
       eventRows,
       songRows,
       creatorRows,
       music,
       albumRows: albumRowsIndexed,
-      eventsById: new Map(events.flatMap(event => [event.id, ...(event.id_aliases || [])].map(id => [String(id), event]))),
+      eventsById: new Map([...presentation.byId, ...sourceEvents.flatMap(event => (event.id_aliases || []).map(id => [String(id), event]))]),
+      parentForChild: presentation.parentForChild,
       songsById: new Map(songs.map((song) => [String(song.id), song])),
       creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
       songAliases: new Map(),
@@ -646,18 +663,18 @@ class CatalogStore {
     let rows = store.eventRows.filter((row) => {
       const event = row.data;
       const eventTime = businessDate.eventDate(event.end_date || event.date);
-      if (query && !row.search.includes(query)) return false;
+      if (query && !searchText.matchesIndex(row.search, query)) return false;
       if (kind !== 'all' && event.kind !== kind) return false;
       if (mode !== 'all' && event.mode !== mode) return false;
-      if (year !== 'all' && releaseYear(event.date) !== year) return false;
+      if (year !== 'all' && ![event.date, ...(event.sessions || []).map(session => session.date)].some(date => releaseYear(date) === year)) return false;
       if (series !== 'all' && (event.series_id || 'unclassified') !== series) return false;
       if (time === 'upcoming' && (event.schedule_status === 'cancelled' || !eventTime || eventTime < today)) return false;
-      if (time === 'cancelled' && event.schedule_status !== 'cancelled') return false;
+      if (time === 'cancelled' && !['cancelled', 'partially_cancelled'].includes(event.schedule_status)) return false;
       if (time === 'past' && (!eventTime || eventTime >= today)) return false;
       if (time === 'announced' && eventTime) return false;
       return true;
     });
-    rows = rows.slice().sort((a, b) => String(b.data.date || '').localeCompare(String(a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
+    rows = rows.slice().sort((a, b) => String(b.data.sort_date || b.data.date || '').localeCompare(String(a.data.sort_date || a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 20));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
@@ -668,7 +685,7 @@ class CatalogStore {
       series: (store.eventsDoc.series || []).map(series => ({...series,
         kinds: [...new Set(store.eventRows.filter(row => row.data.series_id === series.id).map(row => row.data.kind))]
       })),
-      years: Array.from(new Set(store.eventRows.map((row) => releaseYear(row.data.date)))).sort().reverse(),
+      years: Array.from(new Set(store.eventRows.flatMap(row => [row.data.date, ...(row.data.sessions || []).map(session => session.date)]).filter(Boolean).map(releaseYear))).sort().reverse(),
       items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
       total,
       page,
@@ -678,9 +695,11 @@ class CatalogStore {
 
   async event(id, legacy, snapshot) {
     const store = snapshot || await this.get();
-    const event = (id && store.eventsById.get(String(id))) || (legacy && (store.eventsDoc.events || [])
+    let event = (id && store.eventsById.get(String(id))) || (legacy && (store.eventsDoc.events || [])
       .find((item) => item.legacy_url === legacy || (item.legacy_aliases || []).includes(legacy)));
     if (!event) return null;
+    const requested = store.parentForChild.get(event.id);
+    if (requested) event = { ...requested.parent, requested_session_id: requested.session_id };
     const versionsBySong = new Map();
     (event.sessions || []).forEach((session) => (session.performances || []).forEach((performance) => {
       if (!versionsBySong.has(performance.song_id)) versionsBySong.set(performance.song_id, new Set());
@@ -705,7 +724,7 @@ class CatalogStore {
   async songs(params) {
     const store = await this.get();
     const query = musicSearchText(params.get('q'));
-    let rows = query ? store.songRows.filter((row) => row.search.includes(query)) : store.songRows.slice();
+    let rows = query ? store.songRows.filter((row) => searchText.matchesIndex(row.search, query)) : store.songRows.slice();
     rows.sort((a, b) => String(a.data.title).localeCompare(String(b.data.title), 'ja'));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 30));
@@ -734,7 +753,7 @@ class CatalogStore {
     const role = params.get('role') || '';
     let rows = store.creatorRows.filter((row) => {
       if (params.get('type') === 'person' && row.data.type === 'organization') return false;
-      if (query && !row.search.includes(query)) return false;
+      if (query && !searchText.matchesIndex(row.search, query)) return false;
       if (role && !(row.data.roles || []).some((item) => item.role === role)) return false;
       return true;
     });
@@ -769,14 +788,16 @@ class CatalogStore {
       albumYears: [...new Set(store.albums.map(row => releaseYear(row.release)))],
     })).searchParams;
     const query = musicSearchText(params.get('q'));
-    const work = params.get('work') || '';
+    const work = params.get('work') === 'all' ? '' : params.get('work') || '';
+    const releaseSeries = params.get('release_series') === 'all' ? '' : params.get('release_series') || '';
     const type = params.get('type') ? albumType(params.get('type')) : '';
     const year = params.get('year') || '';
     const sort = params.get('sort') || 'newest';
     let rows = store.albumRows.filter((row) => {
       const album = row.summary;
-      if (query && !album.search_text.includes(query)) return false;
-      if (work && album.work !== work) return false;
+      if (query && !searchText.includes([album.search_text, album.works?.map(key => routes.albumWorks.find(row => row.key === key)?.label), routes.albumSeries.find(row => row.key === album.release_series)?.label], query)) return false;
+      if (work && !(album.works || [album.work]).includes(work)) return false;
+      if (releaseSeries && album.release_series !== releaseSeries) return false;
       if (type && album.type !== type) return false;
       if (year && releaseYear(album.release) !== year) return false;
       return true;
@@ -828,7 +849,8 @@ class CatalogStore {
       voices = voices.filter(row => row.id === params.get('id'));
       if (!voices.length) return null;
     }
-    else if (params && params.get('scope') === 'index') voices = voices.map(row => ({id:row.id,identity:row.identity,photo:row.photo,roles:row.roles}));
+    if (params?.get('q')) voices = voices.filter(row => searchText.includes([row.identity, row.aliases, ...(row.roles || []).map(role => store.charactersById.get(role.character_id) || role)], params.get('q')));
+    if (params && params.get('scope') === 'index') voices = voices.map(row => ({id:row.id,identity:row.identity,photo:row.photo,roles:row.roles}));
     return { build_id: store.buildId, voice_actors: voices };
   }
 
@@ -836,7 +858,13 @@ class CatalogStore {
     const store = await this.get();
     const table = type === 'voice_actor' ? store.appearancesDoc.voice_actors : store.appearancesDoc.characters;
     if (!table || !Object.hasOwn(table, id)) return null;
-    const appearance = table[id];
+    const originalAppearance = table[id];
+    const appearance = { ...originalAppearance, events: (originalAppearance.events || []).map(row => {
+      const mapped = store.parentForChild.get(row.event_id);
+      if (!mapped) return row;
+      const session = mapped.parent.sessions.find(session => session.id === row.session_id) || mapped.parent.sessions.find(session => session.source_event_id === row.event_id);
+      return { ...row, parent_event_id: mapped.parent.id, parent_title: mapped.parent.title, child_label: session?.label || row.session_label, event_id: mapped.parent.id, session_id: row.session_id || mapped.session_id };
+    }) };
     const songIds = new Set((appearance.songs || []).map((item) => item.song_id).filter(Boolean));
     const songs = Array.from(songIds)
       .map((songId) => store.songsById.get(String(songId)))

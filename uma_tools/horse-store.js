@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const SearchText = require('./search-text');
 
 class HorseStore {
   constructor(directory) { this.directory = directory; this.snapshots = new Map(); this.pending = new Map(); }
@@ -28,12 +29,12 @@ class HorseStore {
   }
   async index(params) {
     const snapshot = await this.read('horses_list.js');
-    const query = String(params.get('q') || '').normalize('NFKC').toLowerCase().trim();
+    const query = params.get('q');
     const sex = ['male','female','gelding'].includes(params.get('sex')) ? params.get('sex') : '';
     const sort = ['oldest','name'].includes(params.get('sort')) ? params.get('sort') : 'newest';
     const all = snapshot.value;
     if (!Array.isArray(all)) throw new Error('Invalid horse index');
-    let rows = all.filter(row => !query || [row.zh,row.ja,row.en,row.born,row.birthdate].some(value => String(value || '').normalize('NFKC').toLowerCase().includes(query)));
+    let rows = all.filter(row => !query || SearchText.includes([row.zh,row.ja,row.en,row.aliases,row.born,row.birthdate], query));
     if (sex) rows = rows.filter(row => row.sex === sex);
     const birthValue = row => {
       const raw = String(row.birthdate || row.born || '');

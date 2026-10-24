@@ -18,6 +18,8 @@ function loadFrontend(context) {
   const contentStateSource = read(path.join(directory, 'content-state.js'))
     .replace('export const ContentState', 'const ContentState');
   context.ContentState = vm.runInContext('(function(){' + contentStateSource + ';return ContentState;})()', context, { filename: 'content-state.js' });
+  const activitySource = read(path.join(directory, 'activity-components.js')).replace(/export (const|function) /g, '$1 ');
+  Object.assign(context, vm.runInContext('(function(){' + activitySource + ';return {ActivityTime,ActivityHistory};})()', context, { filename: 'activity-components.js' }));
   const imports = Array.from(
     wiring.matchAll(
       /import\s*\{\s*(\w+)\s*\}\s*from "\/uma_tools\/frontend\/domains\/([\w-]+)\.js";/g,

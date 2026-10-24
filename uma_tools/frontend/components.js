@@ -1,4 +1,5 @@
 import { ContentState } from "/uma_tools/frontend/content-state.js";
+import { ActivityTime, ActivityHistory } from "/uma_tools/frontend/activity-components.js";
 
 export function registerComponents(umaApp, routes) {
   umaApp.component("ui-select", window.UmaUi.UiSelect);
@@ -7,6 +8,8 @@ export function registerComponents(umaApp, routes) {
   umaApp.component("creator-network", window.UmaCreatorNetwork.CreatorNetwork);
   umaApp.component("audio-dock", window.UmaUi.AudioDock);
   umaApp.component("content-state", ContentState);
+  umaApp.component("activity-time", ActivityTime);
+  umaApp.component("activity-history", ActivityHistory);
   umaApp.component("platform-mark", {
     props: { platform: String },
     // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.
@@ -85,6 +88,16 @@ export function registerComponents(umaApp, routes) {
           },
         );
       },
+      recordingHref(work, recording) {
+        return routes.query(routes.anime(work.id), {
+          section: "music",
+          version: recording.version || "",
+          release: recording.release || "",
+        });
+      },
+      recordingLabel(recording) {
+        return recording.label || "录音版本";
+      },
       roleLabel(role, group) {
         return this.selfCharacterId ||
           (this.hideSingleRole && group.roles.length === 1)
@@ -162,11 +175,12 @@ export function registerComponents(umaApp, routes) {
           <dl v-if="creditRoles(editionGroup,group).length" class="credit-ledger">
             <div v-for="role in creditRoles(editionGroup,group)" :key="role.key" :class="{'participation-unlabelled':!roleLabel(role,group),'participation-role-only':!hasScopeContent(role)}">
               <dt v-if="roleLabel(role,group)">{{roleLabel(role,group)}}</dt>
-              <dd v-if="hasScopeContent(role)" class="participation-scopes">
+              <dd v-if="hasScopeContent(role) || role.recordings.length" class="participation-scopes">
                 <div v-for="scope in role.scopes.filter(scope=>scope.units.length || scope.institutions.length)" :key="scope.key" class="participation-scope">
                   <span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span>
                   <div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition,scope)" @click="follow($event,scopeHref(group.work,unit,scope.edition,scope))">{{unit.label}}</a></div>
                 </div>
+                <details v-if="role.recordings.length" class="participation-recordings"><summary>录音详情（{{role.recordings.length}}）</summary><div class="participation-recording-list"><a v-for="recording in role.recordings" :key="recording.key" class="credit-role-tag" :href="recordingHref(group.work,recording)" @click="follow($event,recordingHref(group.work,recording))">{{recordingLabel(recording)}}<small v-if="recording.release"> · {{recording.release}}</small></a></div></details>
               </dd>
             </div>
           </dl>

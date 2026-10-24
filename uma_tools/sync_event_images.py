@@ -76,7 +76,7 @@ def fetch(url: str) -> bytes:
     return payload
 
 
-def run(root: Path = ROOT, force: bool = False) -> dict:
+def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = None) -> dict:
     catalog = json.loads((root / "data/events_catalog.json").read_text(encoding="utf-8"))
     state_file = root / "data/auto_update/event_images.json"
     cache = root / "uma_tools/img/event-cache"
@@ -87,8 +87,10 @@ def run(root: Path = ROOT, force: bool = False) -> dict:
     items = dict(state.get("items") or {})
     source_cache: dict[str, bytes] = {}
     updated = failed = 0
-    for event in catalog.get("events", []):
+    for event in [*catalog.get("events", []), *catalog.get("event_groups", [])]:
         event_id, source = str(event.get("id") or ""), str(event.get("image") or "")
+        if event_ids is not None and event_id not in event_ids:
+            continue
         if not event_id or not source.startswith(("http://", "https://")):
             continue
         old = items.get(event_id)
@@ -136,4 +138,9 @@ def run(root: Path = ROOT, force: bool = False) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(run(force="--force" in sys.argv), ensure_ascii=False))
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--event-id", action="append", help="refresh only the selected event or parent IDs")
+    args = parser.parse_args()
+    print(json.dumps(run(force=args.force, event_ids=set(args.event_id) if args.event_id else None), ensure_ascii=False))

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "build_id": "anime-894406d54dd1657a",
+  "build_id": "anime-049c306246220113",
   "generated_at": "2026-10-13T00:00:00+08:00",
   "coverage": {
     "works": 11,
-    "units": 126,
-    "released_units": 126,
+    "units": 127,
+    "released_units": 127,
     "scheduled_units": 0,
     "watch_resources": 133,
     "relations": 2053,
@@ -1205,64 +1205,27 @@
         }
       ],
       "cover_original": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png",
-      "unit_count": 3,
-      "released_count": 3,
+      "unit_count": 4,
+      "released_count": 4,
       "latest_unit": {
-        "id": "anime-umayuru-fullgate-e03",
+        "id": "anime-umayuru-fullgate-e04",
         "work_id": "anime-umayuru-fullgate",
-        "number": 3,
-        "label": "第 3 话",
+        "number": 4,
+        "label": "第 4 话",
         "unit_type": "short",
-        "title_zh": "把不输给任何人的热情化作艺术！",
-        "title_ja": "誰にも負けない熱意をアートに！",
-        "summary_zh": "赛马娘们为粉丝活动准备艺术作品时，热血的黄金船师范代现身。争夺最富热情作品的较量，就此开始！",
-        "release_date": "2026-10-11",
+        "title_zh": "",
+        "title_ja": "",
+        "summary_zh": "樱花桂为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
+        "release_date": "",
         "status": "released",
-        "stills": [
-          {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-01.webp",
-            "source_ref": "official-story-anime-umayuru-fullgate-e03",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg"
-          },
-          {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-02.webp",
-            "source_ref": "official-story-anime-umayuru-fullgate-e03",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/52ae14adaf2b43d480051b913af374f5/UFG_03_02.jpg"
-          },
-          {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-03.webp",
-            "source_ref": "official-story-anime-umayuru-fullgate-e03",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3ad03dfd25a74f5da73ca992c36806db/UFG_03_03.jpg"
-          },
-          {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-04.webp",
-            "source_ref": "official-story-anime-umayuru-fullgate-e03",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2abb5d7649f64d75a5be4abc68c9215c/UFG_03_04.jpg"
-          },
-          {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e03-05.webp",
-            "source_ref": "official-story-anime-umayuru-fullgate-e03",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f0f4fa35277a4d71ae02eedc766d54ae/UFG_03_05.jpg"
-          }
-        ],
+        "stills": [],
         "source_refs": [
-          "official-story-anime-umayuru-fullgate-e03",
-          "official-ending-anime-umayuru-fullgate-e03"
+          "runtime-entity-localizations-anime-umayuru-fullgate-e04"
         ],
-        "summary_ja": "ファンイベントに向けアート作品を作るウマ娘たちの前に、熱血ゴールドシップ師範代が登場！\n最も熱い作品を決める戦いが、今始まる―！",
-        "duration": "3分04秒",
-        "dates": [
-          {
-            "label": "YouTube公开",
-            "date": "2026-10-11",
-            "display": "2026-10-11 21:00",
-            "timezone": "JST"
-          }
-        ],
-        "staff_status": "complete",
-        "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
-        "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
-        "cover_source_ref": "official-story-anime-umayuru-fullgate-e03"
+        "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
+        "duration": "",
+        "dates": [],
+        "staff_status": "pending"
       },
       "next_unit": null,
       "main_character_ids": []
@@ -8491,6 +8454,26 @@
       "cover": "/uma_tools/img/anime/episodes/anime-umayuru-fullgate-e03.webp",
       "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cd2b9de7f50e42b193ea391b6d017d03/UFG_03_01.jpg",
       "cover_source_ref": "official-story-anime-umayuru-fullgate-e03"
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04",
+      "work_id": "anime-umayuru-fullgate",
+      "number": 4,
+      "label": "第 4 话",
+      "unit_type": "short",
+      "title_zh": "",
+      "title_ja": "",
+      "summary_zh": "樱花桂为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
+      "release_date": "",
+      "status": "released",
+      "stills": [],
+      "source_refs": [
+        "runtime-entity-localizations-anime-umayuru-fullgate-e04"
+      ],
+      "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
+      "duration": "",
+      "dates": [],
+      "staff_status": "pending"
     }
   ],
   "watch_resources": [

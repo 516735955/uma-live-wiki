@@ -118,6 +118,7 @@ export function createDomains(env) {
           "relQuery",
           "relSort",
           "relWork",
+          "relSeries",
           "relYear",
         ],
         anime: [
@@ -155,6 +156,7 @@ export function createDomains(env) {
           "newsPage",
           "newsPageCount",
           "newsRange",
+          "newsQuery",
           "newsType",
           "openNews",
         ],

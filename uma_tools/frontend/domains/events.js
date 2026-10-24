@@ -18,6 +18,23 @@ export function createEvents(deps) {
 
   const selectedEventSessionId = deps.ref("");
 
+  const eventSessionOptions = deps.computed(function () {
+    const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
+    return sessions.map(function (session, index) {
+      const date = session.date || eventDetail.value.date || "日期待补";
+      const time = session.start_time || session.broadcast_time || session.broadcast || "";
+      const suffix = [date, time].filter(Boolean).join(" · ");
+      const kind = session.unit_kind || session.eventunit_kind || eventDetail.value.unit_kind || eventDetail.value.eventunit_kind || "场次";
+      const kindLabel = { 赛程: "赛程", 分集: "分集", 场次: "场次" }[kind] || kind;
+      return {
+        value: session.id,
+        label: [kindLabel, session.label || "第" + (index + 1) + "项", suffix]
+          .filter(Boolean)
+          .join(" · "),
+      };
+    });
+  });
+
   const homeNextEvent = deps.ref(null);
 
   const eventsError = deps.ref("");
@@ -41,9 +58,10 @@ export function createEvents(deps) {
   const eventsPerPage = 20;
 
   const charHistoryEvents = deps.computed(function () {
-    const query = String(deps.charHistoryQuery.value || "")
-      .trim()
-      .toLowerCase();
+    const query = String(deps.charHistoryQuery.value || "").trim();
+    const matches = (values) => window.UmaSearch && typeof window.UmaSearch.includes === "function"
+      ? window.UmaSearch.includes(values, query)
+      : values.some((value) => String(value || "").toLowerCase().includes(query.toLowerCase()));
     return (deps.charAppearance.value.events || []).filter(function (event) {
       if (
         deps.charHistoryKind.value !== "all" &&
@@ -51,11 +69,7 @@ export function createEvents(deps) {
       )
         return false;
       return (
-        !query ||
-        String(event.title || "")
-          .toLowerCase()
-          .indexOf(query) !== -1 ||
-        String(event.date || "").indexOf(query) !== -1
+        !query || matches([event.title, event.date, event.session_label, event.parent_title, event.child_label])
       );
     });
   });
@@ -248,6 +262,10 @@ export function createEvents(deps) {
     return value;
   }
 
+  const eventCurrentSummary = deps.computed(function () {
+    return eventSummary(eventDetail.value);
+  });
+
   function eventStatusNewsId(event) {
     const source = String((event && event.status_source_url) || "");
     const match = source.match(/^https:\/\/umamusume\.jp\/news\/detail\?id=(\d+)(?:&|$)/);
@@ -315,8 +333,10 @@ export function createEvents(deps) {
 
   const eventMediaCards = deps.computed(function () {
     const event = eventDetail.value;
+    const session = selectedEventSession.value;
+    const media = session && Array.isArray(session.media) ? session.media : (event && event.media) || [];
     const seen = new Set();
-    return ((event && event.media) || [])
+    return media
       .map(function (item, index) {
         const videoId = window.UmaCatalog.youtubeVideoId(item.url) || window.UmaCatalog.youtubeVideoId(item.video_id);
         const url = String(
@@ -352,7 +372,7 @@ export function createEvents(deps) {
               ? "Bilibili"
               : host || "外部平台",
           label: item.label || "节目影像 " + (index + 1),
-          image: (event && (event.image_preview || event.image)) ||
+          image: item.image_preview || item.image || (session && (session.image_preview || session.image)) || (event && (event.image_preview || event.image)) ||
             "/uma_tools/img/event-covers/onsite.svg",
         };
       })
@@ -487,6 +507,7 @@ export function createEvents(deps) {
         deps.activeTab.value = "not-found";
         return;
       }
+      requestedSessionId = requestedSessionId || found.requested_session_id || "";
       const aliasedSession = (found.sessions || []).find(session => (session.id_aliases || []).includes(requestedSessionId));
       if (aliasedSession) requestedSessionId = aliasedSession.id;
       if (requestedSessionId && !(found.sessions || []).some(session => session.id === requestedSessionId)) {
@@ -614,6 +635,8 @@ export function createEvents(deps) {
     eventSongCount,
     eventSongs,
     eventSummary,
+    eventCurrentSummary,
+    eventSessionOptions,
     eventStatusNewsId,
     eventTypeOptions,
     eventTypeSelection,

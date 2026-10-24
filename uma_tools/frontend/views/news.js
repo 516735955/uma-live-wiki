@@ -1,4 +1,4 @@
-export const bindings = ["newsItems","newsError","newsLoading","newsRange","newsType","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsLanguage","setNewsLanguage","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage","loadNews","newsLink","routes"];
+export const bindings = ["newsItems","newsError","newsLoading","newsRange","newsType","newsQuery","newsFiltered","newsHero","newsDetail","newsDetailBody","newsDetailLoading","newsLanguage","setNewsLanguage","newsImage","newsDate","newsTypeOf","newsTypeLabel","newsTitle","openNews","newsHeroCover","newsPage","newsPaged","newsPageCount","newsPageStart","newsPageEnd","newsPageList","setNewsPage","goNewsPage","loadNews","newsLink","routes"];
 export const template = `
             <div v-if="newsDetail" class="news-detail">
                 <div v-if="newsDetail.image_big" class="news-detail-cover-wrap">
@@ -49,6 +49,7 @@ export const template = `
                 </div>
 
                 <div v-if="!newsError" class="archive-toolbar">
+                    <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="newsQuery" aria-label="搜索新闻标题" placeholder="搜索新闻标题" autocomplete="off"><button v-if="newsQuery" type="button" @click.prevent="newsQuery=''" aria-label="清空搜索">×</button></label>
                     <div class="archive-controls">
                         <ui-select v-model="newsRange" label="时间" :options="[{value:'all',label:'全部'},{value:'7',label:'7天内'},{value:'30',label:'30天内'},{value:'90',label:'90天内'}]"></ui-select>
                         <ui-select v-model="newsType" label="类型" :options="[{value:'all',label:'全部'},{value:'media',label:'MEDIA'},{value:'game',label:'GAME'},{value:'cd',label:'CD相关'}]"></ui-select>

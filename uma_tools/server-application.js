@@ -33,7 +33,7 @@ exports.createService = function (deps) {
           { cacheControl: "no-store" },
         );
       if (req.method === "GET" && urlPath === "/api/news-index")
-        return deps.handleNewsIndex(res);
+        return deps.handleNewsIndex(res, params);
       if (req.method === "GET" && urlPath === "/api/home-summary")
         return deps.handleHomeSummary(res);
       if (req.method === "GET" && urlPath.startsWith("/api/catalog/"))

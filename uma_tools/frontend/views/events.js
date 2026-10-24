@@ -1,4 +1,4 @@
-export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","openNews","eventDateLabel","eventSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
+export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectedEventSessionId","eventSessionOptions","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventUnscopedCast","openEvent","openNews","eventDateLabel","eventSummary","eventCurrentSummary","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
 bindings.push("eventCharacterCast", "characterImage");
 export const template = `
             <content-state v-if="eventsError" state="error" subject="活动" :retry="true" @retry="loadEvents()"></content-state>
@@ -54,36 +54,35 @@ export const template = `
             <template v-else-if="eventDetail">
                 <article class="entity-detail event-entity-detail">
                     <div class="entity-hero">
-                        <span v-if="eventDetail.schedule_status==='cancelled'" class="event-status-cancelled event-hero-status">已取消</span>
+                        <span v-if="eventDetail.schedule_status==='cancelled' || (selectedEventSession && selectedEventSession.schedule_status==='cancelled')" class="event-status-cancelled event-hero-status">已取消</span>
                         <div class="entity-cover event-cover">
                             <img v-media-src="eventDetail.image" :data-original="eventDetail.image_original" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
                         </div>
                         <div class="entity-intro">
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
                             <h1>{{ eventDetail.title }}</h1><p v-if="eventDetail.title_ja && eventDetail.title_ja !== eventDetail.title" class="entity-reading">{{ eventDetail.title_ja }}</p>
-                            <dl class="entity-meta">
-                                <div><dt>日期</dt><dd>{{ eventDateLabel(eventDetail) }}</dd></div>
-                                <div v-if="eventDetail.venue"><dt>地点</dt><dd>{{ eventDetail.venue }}</dd></div>
-                            </dl>
+                            <activity-time v-if="eventSessionOptions.length > 1" :date="eventDetail.date" :end-date="eventDetail.end_date"></activity-time>
+                            <dl v-if="eventDetail.venue" class="entity-meta event-venue-meta"><div><dt>地点</dt><dd>{{ eventDetail.venue }}</dd></div></dl>
+                            <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || eventDetail.eventunit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
+                            <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast"></activity-time>
                         </div>
                     </div>
 
                     <section class="entity-overview">
                         <dl><div><dt>形式</dt><dd>{{ eventModeLabel(eventDetail.mode) }}</dd></div><div v-if="eventSeriesName(eventDetail)"><dt>系列</dt><dd>{{ eventSeriesName(eventDetail) }}</dd></div></dl>
-                        <p v-if="eventSummary(eventDetail)">{{ eventSummary(eventDetail) }}</p>
+                        <p v-if="eventCurrentSummary">{{ eventCurrentSummary }}</p>
+                        <div v-if="selectedEventSession && ((selectedEventSession.image_preview || selectedEventSession.image) || selectedEventSession.summary_zh || selectedEventSession.summary)" class="event-session-context">
+                            <img v-if="selectedEventSession.image_preview || selectedEventSession.image" v-media-src="selectedEventSession.image_preview || selectedEventSession.image" :data-original="selectedEventSession.image_original || selectedEventSession.image" :alt="selectedEventSession.label || '当前场次'" loading="lazy">
+                            <div class="event-session-context-copy">
+                                <b>{{ selectedEventSession.label || '当前场次' }}</b>
+                                <p v-if="selectedEventSession.summary_zh || selectedEventSession.summary">{{ selectedEventSession.summary_zh || selectedEventSession.summary }}</p>
+                            </div>
+                        </div>
                         <p v-if="eventDetail.schedule_status==='cancelled'" class="event-status-note">{{ eventDetail.status_note }} <a v-if="eventStatusNewsId(eventDetail)" class="text-link" :href="routes.news(eventStatusNewsId(eventDetail))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventDetail)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventDetail.status_source_url" class="text-link" :href="eventDetail.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
                     </section>
 
-                    <nav v-if="eventDetail.sessions && eventDetail.sessions.length>1" class="entity-tabs" aria-label="活动场次">
-                        <button v-for="session in eventDetail.sessions" :key="session.id" :class="{active:selectedEventSession && selectedEventSession.id===session.id}" @click="selectEventSession(session.id)">
-                            {{ session.label }}
-                        </button>
-                    </nav>
-
                     <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled' && (eventSessionTable(selectedEventSession) || (selectedEventSession.performances && selectedEventSession.performances.length))" class="entity-section">
-                        <div class="section-toolbar">
-                            <div class="entity-section-actions"><span>{{ selectedEventSession.date || eventDetail.date }}<template v-if="selectedEventSession.songs.length"> · {{ selectedEventSession.songs.length }} 首</template></span><entity-actions v-if="eventPlayableRows.length" size="compact" play-label="播放本场" add-label="加入本场" @play="playEventSession" @add="enqueueEventSession"></entity-actions></div>
-                        </div>
+                        <div class="section-toolbar"><span class="credit-role-tag">演出曲目</span><div class="entity-section-actions"><entity-actions v-if="eventPlayableRows.length" size="compact" play-label="播放本场" add-label="加入本场" @play="playEventSession" @add="enqueueEventSession"></entity-actions></div></div>
                         <div v-if="eventSessionTable(selectedEventSession)" class="setlist-frame" @click="onEventSetlistClick($event)" v-html="eventSessionTable(selectedEventSession)"></div>
                         <table v-else-if="selectedEventSession.performances && selectedEventSession.performances.length" class="data-table setlist-table">
                             <thead><tr><th>#</th><th>曲名</th><th>出演者</th><th>出处</th><th>试听</th></tr></thead>

@@ -34,6 +34,7 @@
     if (!grid || !input || grid.getAttribute('data-c-inited')) return;
     grid.setAttribute('data-c-inited', '1');
     var norm = window.UmaUi.searchText;
+    var search = window.UmaSearch;
     function data() {
       return (window.CHAR_INDEX && window.CHAR_INDEX.length) ? window.CHAR_INDEX : [];
     }
@@ -47,8 +48,11 @@
       var s = window.__uma_app ? window.__uma_app.charSort : 'default';
       var list = data().filter(function (c) {
         if (!q) return true;
+        if (search && typeof search.includes === 'function') {
+          return search.includes([c.zh, c.ja, c.en, c.cv_zh, c.cv], input.value);
+        }
         return norm(c.zh).indexOf(q) >= 0 || norm(c.ja).indexOf(q) >= 0 ||
-               norm(c.en).indexOf(q) >= 0 || norm(c.cv_zh).indexOf(q) >= 0 || norm(c.cv).indexOf(q) >= 0;
+          norm(c.en).indexOf(q) >= 0 || norm(c.cv_zh).indexOf(q) >= 0 || norm(c.cv).indexOf(q) >= 0;
       });
       if (s === 'zh') { list = list.slice().sort(function (a, b) { return norm(a.zh).localeCompare(norm(b.zh), 'zh'); }); }
       else if (s === 'en') { list = list.slice().sort(function (a, b) { return norm(a.en).localeCompare(norm(b.en)); }); }
@@ -253,6 +257,7 @@
     if (!grid || !input || grid.getAttribute('data-va-inited')) return;
     grid.setAttribute('data-va-inited', '1');
     var norm = window.UmaUi.searchText;
+    var search = window.UmaSearch;
     const cards = new Map();
     function data() {
       var generated = window.__uma_app && window.__uma_app.voiceProfiles;
@@ -277,6 +282,11 @@
       var q = norm(input.value.trim());
       var list = data().filter(function (v) {
         if (!q) return true;
+        if (search && typeof search.includes === 'function') {
+          var values = [v.zh, v.ja, v.kana].concat(v.aliases);
+          v.roles.forEach(function (role) { values.push(role.zh, role.ja); });
+          return search.includes(values, input.value);
+        }
         if ([v.zh, v.ja, v.kana].concat(v.aliases).some(name => norm(name).includes(q))) return true;
         for (var i = 0; i < v.roles.length; i++) {
           if ([v.roles[i].zh, v.roles[i].ja].some(name => norm(name).includes(q))) return true;

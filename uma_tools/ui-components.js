@@ -3,7 +3,8 @@
 
   let sequence = 0;
   function searchText(value) {
-    return String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim();
+    var shared = window.UmaSearch;
+    return shared ? shared.fields(value) : String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
   }
   function scrollBehavior() { return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'; }
   const addedTimers = new WeakMap();

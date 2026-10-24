@@ -25,6 +25,8 @@ export function createAlbums(deps) {
   const relQuery = deps.ref("");
 
   const relWork = deps.ref("");
+  const relSeries = deps.ref("");
+  const relSeriesList = window.UmaRoutes.albumSeries;
 
   const relSort = deps.ref("newest");
 
@@ -487,6 +489,7 @@ export function createAlbums(deps) {
       q: relQuery.value,
       type: relFilter.value,
       work: relWork.value,
+      release_series: relSeries.value,
       year: relYear.value,
       sort: relSort.value,
       page: relPage.value,
@@ -530,7 +533,7 @@ export function createAlbums(deps) {
       { flush: "sync" },
     );
     deps.watch(
-      relWork,
+      [relWork, relSeries],
       function () {
         if (!deps.restoringRoute) {
           relPage.value = 1;
@@ -570,7 +573,7 @@ export function createAlbums(deps) {
       { flush: "sync" },
     );
     deps.watch(
-      [relQuery, relWork, relFilter, relYear, relSort],
+      [relQuery, relWork, relSeries, relFilter, relYear, relSort],
       function () {
         albumListRevision += 1;
         if (
@@ -627,6 +630,8 @@ export function createAlbums(deps) {
     relTypeList,
     relWork,
     relWorkList,
+    relSeries,
+    relSeriesList,
     relYear,
     relYearList,
     relationReleaseVocalists,

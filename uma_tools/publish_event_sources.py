@@ -17,6 +17,7 @@ GENERATED = ["data/" + name for name in (
     "appearance_index.json", "catalog_manifest.json", "voice_actor_profiles.json",
     "anime_catalog.json", "anime_relation_index.json",
 )]
+GENERATED += ["uma_tools/search-pronunciations.json", "uma_tools/search-pronunciations-ui.js"]
 
 
 def git(*args: str, capture: bool = True) -> str:
@@ -99,8 +100,10 @@ def main() -> int:
                 write_source(name, merged)
         subprocess.run([sys.executable, str(ROOT / "uma_tools/update_events.py")], cwd=ROOT, check=True)
         subprocess.run([sys.executable, str(ROOT / "uma_tools/build_anime_catalog.py")], cwd=ROOT, check=True)
+        subprocess.run(["node", str(ROOT / "uma_tools/build_search_pronunciations.js")], cwd=ROOT, check=True)
         subprocess.run(["node", str(ROOT / "uma_tools/test_catalog_store.js")], cwd=ROOT, check=True)
-        git("add", "--", *SOURCES, *GENERATED)
+        group_images = [str(file.relative_to(ROOT)) for file in sorted((ROOT / "uma_tools/img/event-groups").glob("*.svg"))]
+        git("add", "--", *SOURCES, *GENERATED, *group_images)
         if not git("diff", "--cached", "--name-only"):
             print("No event data changes to publish.")
             return 0

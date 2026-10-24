@@ -17,8 +17,14 @@
   const albumWorks = [
     {key:'s1',label:'动画 Season 1'}, {key:'s2',label:'动画 Season 2'}, {key:'s3',label:'动画 Season 3'},
     {key:'rttp',label:'ROAD TO THE TOP'}, {key:'movie',label:'新時代の扉'}, {key:'cinderella',label:'芦毛灰姑娘'},
-    {key:'yon',label:'赛马娘四格'}, {key:'yuru',label:'摇曳马娘'}, {key:'starting-gate',label:'STARTING GATE'},
-    {key:'winning-live',label:'WINNING LIVE'}, {key:'solo-vocal',label:'Solo Vocal Tracks'}, {key:'other',label:'其他作品／独立发行'},
+    {key:'yon',label:'赛马娘四格'}, {key:'yuru',label:'摇曳马娘'},
+    {key:'pretty-gray',label:'摇曳马娘 Pretty Gray'}, {key:'fullgate',label:'摇曳马娘 Full Gate!'},
+    {key:'anniversary',label:'周年特别动画'}, {key:'game',label:'游戏'}, {key:'independent',label:'其他作品'},
+  ];
+  const albumSeries = [
+    {key:'starting-gate',label:'STARTING GATE'}, {key:'winning-live',label:'WINNING LIVE'},
+    {key:'solo-vocal',label:'Solo Vocal Tracks'}, {key:'animation-derby',label:'ANIMATION DERBY'},
+    {key:'other',label:'其他／独立发行'},
   ];
 
   function normalizeSection(section) {
@@ -75,7 +81,12 @@
       oneOf('sort', ['name', 'newest']);
       if (['数字单曲','デジタルシングル','Digital Single'].includes(url.searchParams.get('type'))) url.searchParams.set('type', '单曲');
       oneOf('type', ['专辑','单曲','原声带','精选辑','其他','all']);
+      if (['starting-gate','winning-live','solo-vocal','other'].includes(url.searchParams.get('work'))) {
+        if (!url.searchParams.has('release_series')) url.searchParams.set('release_series', url.searchParams.get('work'));
+        url.searchParams.delete('work');
+      }
       oneOf('work', [...albumWorks.map(work => work.key),'all']);
+      oneOf('release_series', [...albumSeries.map(series => series.key),'all']);
       if (url.searchParams.has('year') && !/^(\d{4}|unknown|all)$/.test(url.searchParams.get('year'))) url.searchParams.delete('year');
       if (metadata.albumYears) oneOf('year', [...metadata.albumYears, 'all']);
     }
@@ -98,6 +109,7 @@
     prefix: prefix,
     sections: sections,
     albumWorks: albumWorks,
+    albumSeries: albumSeries,
     normalizeSection: normalizeSection,
     resolve: resolve,
     home: function () { return prefix + '/'; },

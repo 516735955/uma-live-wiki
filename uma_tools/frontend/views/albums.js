@@ -1,5 +1,6 @@
 export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
 bindings.push("musicPeopleError", "loadMusicPeople");
+bindings.push("relSeries", "relSeriesList");
 export const template = `
             <content-state v-if="albumsError" state="error" subject="专辑资料" :retry="true" @retry="loadAlbums()"></content-state>
             <template v-if="!albumDetail">
@@ -8,6 +9,7 @@ export const template = `
                     <div class="archive-controls">
                         <ui-select v-model="relFilter" label="类型" :options="[{value:'',label:'全部'},...relTypeList.map(type=>({value:type,label:type}))]"></ui-select>
                         <ui-select v-model="relWork" label="作品" :options="[{value:'',label:'全部'},...relWorkList.map(item=>({value:item.key,label:item.label}))]"></ui-select>
+                        <ui-select v-model="relSeries" label="发行系列" :options="[{value:'',label:'全部'},...relSeriesList.map(item=>({value:item.key,label:item.label}))]"></ui-select>
                         <ui-select v-model="relYear" label="年份" :options="[{value:'',label:'全部'},...relYearList.map(year=>({value:year,label:year==='unknown'?'未知':year}))]"></ui-select>
                         <ui-select v-model="relSort" label="排序" :options="albumSortOptions"></ui-select>
                     </div>
@@ -24,7 +26,7 @@ export const template = `
                         </div>
                         <div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>
                     </a>
-                    <content-state v-if="!albumsError && !albumsLoading && !relFiltered.length" :state="(relQuery || relFilter || relWork || relYear) ? 'filtered' : 'uncollected'" subject="专辑" :clear="Boolean(relQuery || relFilter || relWork || relYear)" @clear="relQuery='';relFilter='';relWork='';relYear='';relPage=1"></content-state>
+                    <content-state v-if="!albumsError && !albumsLoading && !relFiltered.length" :state="(relQuery || relFilter || relWork || relSeries || relYear) ? 'filtered' : 'uncollected'" subject="专辑" :clear="Boolean(relQuery || relFilter || relWork || relSeries || relYear)" @clear="relQuery='';relFilter='';relWork='';relSeries='';relYear='';relPage=1"></content-state>
                 </div>
                 <div v-if="relFiltered.length" class="ui-pager"><span>{{ relPageStart }}–{{ relPageEnd }} / {{ albumsTotal }}</span><div><button :disabled="relPage<=1" @click="goRelPage(-1)">上一页</button><button v-for="(page,i) in relPageList" :key="i" :class="{active:page===relPage}" :disabled="page==='…'" @click="setRelPage(page)">{{ page }}</button><button :disabled="relPage>=relPageCount" @click="goRelPage(1)">下一页</button></div></div>
             </template>

@@ -22,7 +22,7 @@ async function main() {
       const current = await page(width);
       await current.goto(base+'/zh-Hans/music/albums',{waitUntil:'domcontentloaded'});
       await current.locator('.album-card').first().waitFor();
-      assert.strictEqual(await current.locator('.ui-select-trigger').count(),4);
+      assert.strictEqual(await current.locator('.ui-select-trigger').count(),5);
       for (const trigger of await current.locator('.ui-select-trigger').all()) {
         await trigger.click();
         const bounds = await current.locator('.ui-select-menu:visible').boundingBox();

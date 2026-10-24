@@ -1,0 +1,276 @@
+"""Deterministic, source-preserving enrichment for event groupings and venues.
+
+Grouping is an editorial relationship, not an identity merge.  Every source
+event remains addressable; the relationship only gives the catalog and UI a
+stable parent/child view when the official evidence supports it.
+"""
+from __future__ import annotations
+
+from . import common
+
+
+GROUPINGS_FILE = common.EVENTS_DIR / "groupings.json"
+VENUES_FILE = common.EVENTS_DIR / "venues.json"
+NEWS_SNAPSHOT_FILE = common.DATA_DIR / "news_snapshot.json"
+EVENTERNOTE_FILE = common.DATA_DIR / "events_data.json"
+GROUP_IMAGE_DIR = common.ROOT / "uma_tools" / "img" / "event-groups"
+
+
+def _read(path):
+    if not path.exists():
+        return {}
+    return common.read_json(path)
+
+
+def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[list[dict], list[dict]]:
+    """Attach validated editorial group metadata without changing event IDs."""
+    document = document if document is not None else _read(GROUPINGS_FILE)
+    groups = document.get("groups") or []
+    by_event: dict[str, list[tuple[dict, dict]]] = {}
+    output_groups: list[dict] = []
+    for group in groups:
+        group_id = str(group.get("id") or "").strip()
+        members = group.get("members") or []
+        if not group_id or not members:
+            continue
+        clean_members = []
+        for member in members:
+            event_id = str(member.get("event_id") or "").strip()
+            if not event_id:
+                continue
+            item = {
+                "event_id": event_id,
+                "role": str(member.get("role") or "child"),
+                "label": str(member.get("label") or ""),
+                "source_urls": list(dict.fromkeys(str(url) for url in member.get("source_urls") or [] if url)),
+            }
+            by_event.setdefault(event_id, []).append((group, item))
+            clean_members.append(item)
+        if not clean_members:
+            continue
+        output_group = {
+            "id": group_id,
+            "kind": str(group.get("kind") or "program_group"),
+            "title": str(group.get("title") or group_id),
+            "title_ja": str(group.get("title_ja") or ""),
+            "summary": str(group.get("summary") or ""),
+            "source_urls": list(dict.fromkeys(str(url) for url in group.get("source_urls") or [] if url)),
+            "source_identity": dict(group.get("source_identity") or {}),
+            "members": clean_members,
+        }
+        # Preserve editorial scheduling/image facts supplied by the source
+        # document; enrichment may fill missing values, but must not discard
+        # an explicitly confirmed end date or parent cover.
+        for key in ("image", "image_strategy", "image_source", "date_start", "date_end", "confirmed_end_date"):
+            if key in group:
+                output_group[key] = group[key]
+        output_groups.append(output_group)
+    known_by_id = {str(event.get("id") or ""): event for event in events}
+    known = set(known_by_id)
+    # Apply only explicit, source-backed identities.  This is deliberately
+    # narrower than title similarity: a newly discovered child must contain
+    # the configured official identity phrase (and, for the qualifier series,
+    # an A–G qualifier marker) before it can join a group automatically.
+    output_by_id = {group["id"]: group for group in output_groups}
+    for event in events:
+        event_id = str(event.get("id") or "")
+        evidence = " ".join(str(event.get(key) or "") for key in ("title", "source_title", "source_description", "summary"))
+        for group in output_groups:
+            identity = group.get("source_identity") or {}
+            phrase = str(identity.get("match") or "")
+            if not phrase or phrase not in evidence:
+                continue
+            rule = str(identity.get("rule") or "")
+            label = ""
+            if "A-G" in rule or "qualifier" in rule:
+                marker = common.re.search(r"(?:预选|予選|組\s*|组\s*)([A-G])", evidence, common.re.I)
+                if not marker:
+                    continue
+                label = f"预选{marker.group(1)}组"
+            if any(member["event_id"] == event_id for member in group["members"]):
+                continue
+            member = {"event_id": event_id, "role": "child", "label": label or group["title"], "source_urls": []}
+            group["members"].append(member)
+            by_event.setdefault(event_id, []).append((group, member))
+            output_by_id[group["id"]] = group
+    enriched = []
+    for event in events:
+        row = dict(event)
+        memberships = by_event.get(str(event.get("id") or ""), [])
+        if memberships:
+            group, member = memberships[0]
+            row["group_id"] = group["id"]
+            row["group_ids"] = [item[0]["id"] for item in memberships]
+            row["group_role"] = member["role"]
+            row["group_label"] = member["label"] or group.get("title") or group["id"]
+            if group.get("image"):
+                row["group_image"] = str(group["image"])
+                # A shared official KV may stand in for a child only when the
+                # child still has the generic placeholder.  Independent
+                # artwork remains untouched and its provenance stays intact.
+                if "/event-covers/" in str(row.get("image") or "") and str(row.get("image") or "").endswith(".svg"):
+                    source = dict(group.get("image_source") or {})
+                    row["image"] = str(group["image"])
+                    row["image_source"] = {
+                        "kind": "official_shared_visual",
+                        "group_id": group["id"],
+                        "url": source.get("url") or str(group["image"]),
+                    }
+            row["group_date_start"] = str(group.get("date_start") or "")
+            row["group_date_end"] = str(group.get("date_end") or "")
+            if member["source_urls"]:
+                row["group_source_urls"] = member["source_urls"]
+        enriched.append(row)
+    # Keep stale editorial members visible in coverage, but never attach them
+    # to a different event or silently invent an event record.
+    for group in output_groups:
+        group["missing_event_ids"] = [m["event_id"] for m in group["members"] if m["event_id"] not in known]
+        children = []
+        for member in group["members"]:
+            event = known_by_id.get(member["event_id"])
+            if not event:
+                continue
+            children.append({
+                "event_id": event["id"],
+                "label": member["label"] or event.get("title") or event["id"],
+                "date": event.get("date") or "",
+                "date_end": event.get("end_date") or event.get("date") or "",
+                "image": event.get("image") or "",
+            })
+        group["children"] = children
+        dates = [item["date"] for item in children if item["date"]]
+        ends = [item["date_end"] for item in children if item["date_end"]]
+        group["date_start"] = group.get("date_start") or (min(dates) if dates else "")
+        group["date_end"] = group.get("date_end") or (max(ends) if ends else "")
+        local_image = GROUP_IMAGE_DIR / f"{group['id']}.svg"
+        group["image"] = group.get("image") or (
+            f"/uma_tools/img/event-groups/{group['id']}.svg" if local_image.exists() else (children[0]["image"] if children else "")
+        )
+        group["image_strategy"] = group.get("image_strategy") or (
+            "deterministic_child_collage" if len(children) > 1 else "child_media"
+        )
+    return enriched, output_groups
+
+
+def apply_venues(events: list[dict], document: dict | None = None) -> list[dict]:
+    """Add a stable venue key and display aliases; preserve raw venue text."""
+    document = document if document is not None else _read(VENUES_FILE)
+    by_raw = {str(item.get("raw") or ""): item for item in document.get("venues") or [] if item.get("raw")}
+    output = []
+    for event in events:
+        row = dict(event)
+        raw = str(event.get("venue") or "")
+        item = by_raw.get(raw)
+        if item:
+            row["venue_raw"] = raw
+            row["venue_id"] = str(item.get("id") or "")
+            row["venue_zh"] = str(item.get("name_zh") or "")
+            row["venue_ja"] = str(item.get("name_ja") or "")
+            row["venue_city"] = str(item.get("city") or "")
+            if item.get("display"):
+                row["venue"] = str(item["display"])
+        output.append(row)
+    return output
+
+
+def apply_news_images(events: list[dict], snapshot: dict | None = None) -> list[dict]:
+    """Reuse already archived official-news images for matching program cards.
+
+    This is deliberately title/number constrained: a generic keyword match
+    must never replace a curated event image with an unrelated news banner.
+    """
+    snapshot = snapshot if snapshot is not None else (_read(NEWS_SNAPSHOT_FILE) if NEWS_SNAPSHOT_FILE.exists() else {})
+    news = snapshot.get("information_list") or []
+    output = []
+    for event in events:
+        row = dict(event)
+        if not str(row.get("image") or "").endswith(".svg"):
+            output.append(row)
+            continue
+        title = str(row.get("title") or "")
+        match = common.re.search(r"(?:PakaLive TV'?|ぱかライブTV'?)\s*(?:Vol\.?\s*|#\s*)(\d+)", title, common.re.I)
+        if not match:
+            output.append(row)
+            continue
+        number = match.group(1)
+        candidates = []
+        for item in news:
+            news_title = str(item.get("title") or "")
+            if not common.re.search(r"ぱかライブTV", news_title, common.re.I):
+                continue
+            if not common.re.search(rf"(?:Vol\.?\s*{number}\b|#\s*{number}\b)", news_title, common.re.I):
+                continue
+            if item.get("image"):
+                candidates.append(item)
+        if candidates:
+            item = candidates[0]
+            row["image"] = item["image"]
+            row["image_source"] = {"kind": "official_news", "announce_id": item.get("announce_id"), "title": item.get("title")}
+        output.append(row)
+    return output
+
+
+def apply_source_times(events: list[dict]) -> list[dict]:
+    """Promote explicitly published clock times without deriving an end time."""
+    marker = common.re.compile(r"(?:开场|開場|入場)\s*([01]?\d|2[0-3]):([0-5]\d).*?(?:开演|開演|開始|start)\s*([01]?\d|2[0-3]):([0-5]\d).*?(?:终演|終演|終了|end)\s*([01]?\d|2[0-3]):([0-5]\d)", common.re.I | common.re.S)
+    start_only = common.re.compile(r"(?:开演|開演|開始|start)\s*([01]?\d|2[0-3]):([0-5]\d)", common.re.I)
+    title_time = common.re.compile(r"(?:^|[\s【\[（(])([01]?\d|2[0-3]):([0-5]\d)(?:$|[\s】\]）)])")
+    archived = _read(EVENTERNOTE_FILE) if EVENTERNOTE_FILE.exists() else {}
+    archived_by_link = {str(item.get("link")): item for item in archived.get("events") or [] if item.get("link")}
+    output = []
+    for event in events:
+        row = dict(event)
+        source_text = " ".join(str(row.get(key) or "") for key in ("title", "source_title", "summary", "source_date", "source_time_text"))
+        event_source = next((item for item in row.get("sources") or [] if item.get("kind") == "eventernote"), None)
+        archived_item = archived_by_link.get(str(event_source.get("url"))) if event_source else None
+        if archived_item and archived_item.get("times"):
+            source_text = f"{source_text} {archived_item['times']}"
+        match = marker.search(source_text)
+        start = start_only.search(source_text)
+        title_match = title_time.search(str(row.get("title") or ""))
+        if not row.get("sessions") and (match or start or title_match):
+            row["sessions"] = [{
+                "id": f"{row.get('id', 'event')}-session-1",
+                "label": "本场",
+                "date": row.get("date") or "",
+                "songs": [],
+                "character_ids": list(row.get("character_ids") or []),
+                "cast": list(row.get("cast") or []),
+                "setlist_status": "none",
+            }]
+        # A single source-level clock cannot be assigned to multiple sessions
+        # safely.  Leave those rows untouched unless a future source provides
+        # per-session evidence; never broadcast one time to every session.
+        if len(row.get("sessions") or []) > 1:
+            output.append(row)
+            continue
+        for session in row.get("sessions") or []:
+            child = dict(session)
+            if match:
+                child.setdefault("doors_time", f"{int(match.group(1)):02d}:{match.group(2)}")
+                child.setdefault("start_time", f"{int(match.group(3)):02d}:{match.group(4)}")
+                child.setdefault("end_time", f"{int(match.group(5)):02d}:{match.group(6)}")
+                child["time_source"] = "eventernote" if archived_item else "event_source_text"
+                child["time_precision"] = "minute"
+                if archived_item:
+                    child["time_source_url"] = archived_item.get("link") or event_source.get("url")
+            elif start:
+                child.setdefault("start_time", f"{int(start.group(1)):02d}:{start.group(2)}")
+                child["time_source"] = "eventernote" if archived_item else "event_source_text"
+                child["time_precision"] = "minute"
+                if archived_item:
+                    child["time_source_url"] = archived_item.get("link") or event_source.get("url")
+            elif title_match:
+                child.setdefault("start_time", f"{int(title_match.group(1)):02d}:{title_match.group(2)}")
+                child["time_source"] = "event_title"
+                child["time_precision"] = "minute"
+            row.setdefault("time_source", child.get("time_source"))
+            row.setdefault("time_precision", child.get("time_precision"))
+            session.clear(); session.update(child)
+        output.append(row)
+    return output
+
+
+def enrich(events: list[dict], groupings: dict | None = None, venues: dict | None = None) -> tuple[list[dict], list[dict]]:
+    events, groups = apply_groupings(events, groupings)
+    return apply_source_times(apply_news_images(apply_venues(events, venues))), groups

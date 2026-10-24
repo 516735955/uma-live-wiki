@@ -1,5 +1,6 @@
 // news service. Dependencies are explicit live ports.
 exports.createService = function (deps) {
+  const SearchText = require('./search-text');
   const archive = new (require('./news-archive').NewsArchive)(deps.DATA_DIR);
   const archiveLoads = new Map();
   let archiveRefreshRunning = false;
@@ -545,14 +546,51 @@ exports.createService = function (deps) {
     });
   }
 
-  async function handleNewsIndex(res) {
+  async function filterNewsIndex(data, params) {
+    const query = params && params.get('q');
+    if (!query) return data;
+    const copy = { ...data };
+    copy.information_list = (data.information_list || []).filter(item =>
+      SearchText.includes([
+        item.title, item.title_zh, item.title_ja, item.source,
+        item.post_at, item.update_at, item.type, item.announce_id
+      ], query)
+    );
+    // Search the persisted bilingual archive as well. This is read-only: it
+    // never fetches an article or starts translation work.
+    try {
+      const archived = await archive.request('search', { q: query, limit: 200 });
+      const known = new Set(copy.information_list.map(item => String(item.announce_id)));
+      for (const row of archived || []) {
+        const key = String(row.key || '');
+        const id = key.replace(/^official-/, '');
+        if (!id || known.has(id)) continue;
+        copy.information_list.push({
+          announce_id: id,
+          title: row.original_title || id,
+          title_zh: row.translated_title || '',
+          post_at: '', update_at: '', image: '', source: key.startsWith('official-') ? 'official' : 'lantis',
+          archive_state: row.state || 'complete'
+        });
+      }
+    } catch (error) { console.error('[news:archive:search]', error.message); }
+    return copy;
+  }
+
+  function newsIndexOptions(data, params, options) {
+    if (!params || !params.get('q')) return options;
+    return { ...options, etag: '"news-' + deps.crypto.createHash('sha1').update(JSON.stringify(data)).digest('hex').slice(0, 12) + '"' };
+  }
+
+  async function handleNewsIndex(res, params) {
     reloadNewsSnapshotIfNewer();
     reloadLantisIfNewer();
     const signature = archiveSignature();
     const now = Date.now();
     if (indexRepresentation && indexRepresentation.source === newsIndexCache.data &&
         indexRepresentation.signature === signature && now - indexRepresentation.at < 1000) {
-      deps.sendJson(res, 200, indexRepresentation.data, indexRepresentation.options);
+      const filtered = await filterNewsIndex(indexRepresentation.data, params);
+      deps.sendJson(res, 200, filtered, newsIndexOptions(filtered, params, indexRepresentation.options));
       return;
     }
     const cached = newsResponseSnapshot();
@@ -571,7 +609,8 @@ exports.createService = function (deps) {
           '"',
       };
       indexRepresentation = { source, signature, at: now, data: cached, options };
-      deps.sendJson(res, 200, cached, options);
+      const filtered = await filterNewsIndex(cached, params);
+      deps.sendJson(res, 200, filtered, newsIndexOptions(filtered, params, options));
       if (!deps.NO_AUTO_CRAWL) {
         // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。
         ensureLantisFresh();
@@ -594,9 +633,10 @@ exports.createService = function (deps) {
       .then(async (data) => {
         const listed = await archivedTitles(data.information_list || []);
         const response = { ...data, information_list: listed };
-        deps.sendJson(res, 200, response, {
+        const filtered = await filterNewsIndex(response, params);
+        deps.sendJson(res, 200, filtered, newsIndexOptions(filtered, params, {
           cacheControl: "public, max-age=60, stale-while-revalidate=300",
-        });
+        }));
       })
       .catch((error) => {
         console.error(

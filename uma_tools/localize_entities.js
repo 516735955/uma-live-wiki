@@ -39,7 +39,7 @@ function hasJapaneseDescription(html) {
   return hasJapanese(description);
 }
 
-function sourceRecords(root) {
+function sourceRecords(root, options = {}) {
   const data = path.join(root, 'data');
   const records = [];
   for (const work of (readJson(path.join(data, 'anime/works.json'), {}).works || [])) {
@@ -175,7 +175,13 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
   const translate = options.translate || translator.translate;
   let changed = 0;
   let animeChanged = false;
-  for (const source of sourceRecords(root)) {
+  const scope = options.scope || '';
+  const allSources = sourceRecords(root);
+  const selectedSources = allSources.filter(item => !scope || (scope === 'horses' ? item.entity_type === 'horse' : scope === 'characters' ? item.entity_type === 'character' : scope === 'anime' ? item.entity_type.startsWith('anime_') : item.entity_type === scope));
+  const selectedKeys = new Set(selectedSources.map(item => item.key));
+  // A scoped run must not discard another maintainer's pending queue.
+  pending = (document.pending || []).filter(item => !selectedKeys.has(item.key));
+  for (const source of selectedSources) {
     handledKeys.add(source.key);
     const previous = records[source.key] || {};
     const next = { ...previous, entity_type: source.entity_type, entity_id: source.entity_id };
@@ -251,8 +257,11 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
     deferredOwner: options.noApi ? pendingAutomatic : 0 };
 }
 
-if (require.main === module) run(undefined, { noApi: process.argv.includes('--no-api'), initialize: process.argv.includes('--initialize') })
-  .then(result => { console.log('entity localization:', JSON.stringify(result)); if (result.pendingAutomatic > Math.max(result.deferredQuota, result.deferredOwner)) process.exitCode = 1; })
-  .catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
+if (require.main === module) {
+  const scopeArg = process.argv.find(value => value.startsWith('--scope='));
+  run(undefined, { noApi: process.argv.includes('--no-api'), initialize: process.argv.includes('--initialize'), scope: scopeArg ? scopeArg.slice(8) : '' })
+    .then(result => { console.log('entity localization:', JSON.stringify(result)); if (result.pendingAutomatic > Math.max(result.deferredQuota, result.deferredOwner)) process.exitCode = 1; })
+    .catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
+}
 
 module.exports = { run, sourceRecords };

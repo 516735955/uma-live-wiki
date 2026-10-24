@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install offline search build dependency
+        run: npm ci --prefix uma_tools --ignore-scripts
       - name: Install existing collection dependencies
         run: python -m pip install Pillow beautifulsoup4 openpyxl yt-dlp
       - uses: actions/cache/restore@v4
@@ -44,6 +46,7 @@ jobs:
         run: python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images entity-localization
       - name: Verify complete usable catalogs
         run: |
+          npm run --prefix uma_tools build:search-pronunciations
           python uma_tools/update_events.py --check
           node uma_tools/test_catalog_store.js
       - name: Publish verified source changes to main

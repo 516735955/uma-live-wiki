@@ -17,6 +17,7 @@ export function createNews(deps) {
   const newsNow = deps.ref(Date.now());
 
   const newsType = deps.ref("all");
+  const newsQuery = deps.ref("");
 
   const newsDetail = deps.ref(null);
 
@@ -41,10 +42,13 @@ export function createNews(deps) {
   const newsDefaultCover = "/uma_tools/img/news-card-default.webp";
 
   let newsLoadPromise = null;
+  let newsLoadQuery = null;
+  let newsLoadSerial = 0;
 
   let newsDetailRequest = null;
 
   let newsTranslationRequest = null;
+  let newsSearchTimer = 0;
 
   const newsHero = deps.computed(function () {
     function timeOf(n) {
@@ -352,21 +356,29 @@ export function createNews(deps) {
   }
 
   function loadNews(fresh) {
-    if (newsLoadPromise) return newsLoadPromise;
+    const requestedQuery = String(newsQuery.value || '').trim();
+    if (newsLoadPromise && newsLoadQuery === requestedQuery) return newsLoadPromise;
+    const serial = ++newsLoadSerial;
+    newsLoadQuery = requestedQuery;
     newsError.value = "";
     newsLoading.value = true;
     newsLoadPromise = deps.api
-      .request("/api/news-index", { fresh: !!fresh })
+      .request("/api/news-index" + (requestedQuery ? deps.api.query({ q: requestedQuery }) : ""), { fresh: !!fresh })
       .then(function (d) {
-        newsLoadPromise = null;
+        if (serial !== newsLoadSerial) return;
         newsItems.value = (d && d.information_list) || [];
         newsLoading.value = false;
       })
       .catch(function () {
-        newsLoadPromise = null;
+        if (serial !== newsLoadSerial) return;
         newsLoading.value = false;
-        newsError.value =
-          "新闻列表暂时无法载入，请稍后重试。";
+        newsError.value = "新闻列表暂时无法载入，请稍后重试。";
+      })
+      .finally(function () {
+        if (serial === newsLoadSerial) {
+          newsLoadPromise = null;
+          newsLoadQuery = null;
+        }
       });
     return newsLoadPromise;
   }
@@ -642,6 +654,14 @@ export function createNews(deps) {
       },
       { flush: "sync" },
     );
+    deps.watch(newsQuery, function () {
+      if (!deps.restoringRoute) {
+        newsPage.value = 1;
+        deps.pushUrl(true);
+        window.clearTimeout(newsSearchTimer);
+        newsSearchTimer = window.setTimeout(function () { loadNews(false); }, 300);
+      }
+    }, { flush: "sync" });
     deps.watch(
       [
         newsPageCount,
@@ -684,6 +704,7 @@ export function createNews(deps) {
     newsPageList,
     newsPageStart,
     newsPaged,
+    newsQuery,
     newsRange,
     newsTitle,
     newsLink,

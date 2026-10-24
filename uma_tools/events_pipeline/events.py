@@ -257,7 +257,12 @@ def attach_eventernote(events: list[dict[str, pipeline_common.Any]], eventernote
             "venue": source.get("venue") or "",
             "cast_status": "verified" if cast else "pending", "cast": cast, "character_ids": [], "sessions": [], "media": [],
             "sources": [{"kind": "eventernote", "label": "Eventernote", "url": source.get("link") or ""}],
-            "legacy_url": "", "image": source.get("img") or "", "summary": source.get("times") or "",
+            # Eventernote's ``times`` is source evidence for the structured
+            # schedule fields, not an editorial event description.  Keep the
+            # raw text provenance on the source record and let enrichment
+            # promote it to session times without displaying it as summary.
+            "legacy_url": "", "image": source.get("img") or "", "summary": "",
+            "source_time_text": source.get("times") or "",
         })
 
 

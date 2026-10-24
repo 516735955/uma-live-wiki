@@ -274,10 +274,15 @@ export function createAnime(deps) {
   ];
 
   function animeSearchText(value) {
-    return String(value || "")
-      .normalize("NFKC")
-      .toLowerCase()
-      .replace(/\s+/g, "");
+    return String(value || "").normalize("NFKC").replace(/\s+/g, "");
+  }
+
+  function animeIncludes(values, query) {
+    if (!query) return true;
+    if (window.UmaSearch && typeof window.UmaSearch.includes === "function")
+      return window.UmaSearch.includes(values, query);
+    const needle = animeSearchText(query).toLowerCase();
+    return values.some((value) => animeSearchText(value).toLowerCase().includes(needle));
   }
 
   function animeUnitMatchesQuery(unit, query) {
@@ -285,18 +290,16 @@ export function createAnime(deps) {
       /^(?:第\s*)?(\d+)\s*(?:话|話|集)?$/,
     );
     if (number) return unit.number === Number(number[1]);
-    return [
+    return animeIncludes([
       unit.label,
       unit.title_zh,
       unit.title_ja,
       ...(unit.aliases || []),
-    ].some((value) => animeSearchText(value).includes(animeSearchText(query)));
+    ], query);
   }
 
   function animeWorkTitleMatches(work, query) {
-    return [work.title_zh, work.title_ja, ...(work.aliases || [])].some(
-      (value) => animeSearchText(value).includes(animeSearchText(query)),
-    );
+    return animeIncludes([work.title_zh, work.title_ja, ...(work.aliases || [])], query);
   }
 
   function animeMatchedUnits(work) {
@@ -345,9 +348,7 @@ export function createAnime(deps) {
   }
 
   const animeFiltered = deps.computed(function () {
-    const query = String(animeQuery.value || "")
-      .trim()
-      .toLowerCase();
+    const query = String(animeQuery.value || "").trim();
     const rows = (animeCatalog.value.works || []).filter(function (work) {
       if (
         animeFormat.value !== "all" &&
@@ -399,18 +400,15 @@ export function createAnime(deps) {
 
   const animeHeroArtwork = deps.computed(() => {
     const unit = animeUnitDetail.value;
-    return (
-      (unit && (unit.cover || (unit.stills || [])[0]?.url)) ||
-      animeArtwork(
-        animeDetail.value,
-        animeDetail.value?.id === "anime-rttt" && animeEdition.value === "film",
-      )
+    return (unit && (unit.cover || (unit.stills || [])[0]?.url)) || animeArtwork(
+      animeDetail.value,
+      animeDetail.value?.id === "anime-rttt" && animeEdition.value === "film",
     );
   });
 
   const animeHeroOriginal = deps.computed(() => {
-    const unit = animeUnitDetail.value,
-      work = animeDetail.value;
+    const unit = animeUnitDetail.value;
+    const work = animeDetail.value;
     return (
       (unit && (unit.cover_original || (unit.stills || [])[0]?.original)) ||
       (work?.id === "anime-rttt" && animeEdition.value === "film"
@@ -613,7 +611,7 @@ export function createAnime(deps) {
   );
 
   const animeUnitGroups = deps.computed(() => {
-    const query = animeEpisodeQuery.value.trim().toLowerCase();
+    const query = animeEpisodeQuery.value.trim();
     const groups = [];
     animeWorkUnits.value.forEach((unit) => {
       if (query && !animeUnitMatchesQuery(unit, query)) return;

@@ -145,13 +145,13 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_youtube",
-      "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
+      "source_kind": "official_broadcaster",
+      "source_url": "https://www.allnightnippon.com/umamusume/",
       "sources": [
         {
-          "kind": "official_youtube",
-          "label": "官方 YouTube",
-          "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
+          "kind": "official_broadcaster",
+          "label": "节目官方页（待定期次）",
+          "url": "https://www.allnightnippon.com/umamusume/"
         }
       ],
       "media": []
@@ -168,13 +168,13 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_youtube",
-      "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
+      "source_kind": "official_broadcaster",
+      "source_url": "https://www.allnightnippon.com/umamusume/",
       "sources": [
         {
-          "kind": "official_youtube",
-          "label": "官方 YouTube",
-          "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
+          "kind": "official_broadcaster",
+          "label": "节目官方页（待定期次）",
+          "url": "https://www.allnightnippon.com/umamusume/"
         }
       ],
       "media": []
@@ -191,13 +191,13 @@
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
       "summary": "全6回的特别广播已由官方宣布；本期日期与出演阵容尚未公布。",
-      "source_kind": "official_youtube",
-      "source_url": "https://www.youtube.com/watch?v=k66w0hd_6Ms",
+      "source_kind": "official_broadcaster",
+      "source_url": "https://www.allnightnippon.com/umamusume/",
       "sources": [
         {
-          "kind": "official_youtube",
-          "label": "官方 YouTube",
-          "url": "https://www.youtube.com/watch?v=k66w0hd_6Ms"
+          "kind": "official_broadcaster",
+          "label": "节目官方页（待定期次）",
+          "url": "https://www.allnightnippon.com/umamusume/"
         }
       ],
       "media": []
@@ -8146,7 +8146,7 @@
       "end_date": "2026-03-27",
       "video_id": "",
       "url": "",
-      "thumbnail": "",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3147/Header/pakalive_dash1_kokuchiKV.png?c=20260323180039",
       "duration": 7500,
       "cast_status": "verified",
       "cast": [
@@ -8244,7 +8244,7 @@
       ],
       "characters": [],
       "sessions": [],
-      "summary": "Spring Ballroom Event",
+      "summary": "介绍下一次卡池更新等游戏最新情报。",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=3147",
       "sources": [
@@ -8270,7 +8270,7 @@
       "end_date": "2026-04-28",
       "video_id": "",
       "url": "",
-      "thumbnail": "",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3205/Header/pakalive_dash2_kokuchi_KV.png?c=20260421180105",
       "duration": 8400,
       "cast_status": "verified",
       "cast": [
@@ -8375,7 +8375,7 @@
       ],
       "characters": [],
       "sessions": [],
-      "summary": "Golden Week",
+      "summary": "介绍黄金周活动与游戏最新情报。",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=3205",
       "sources": [
@@ -8401,7 +8401,7 @@
       "end_date": "2026-05-27",
       "video_id": "",
       "url": "",
-      "thumbnail": "",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3241/Header/pakadash_3_kokuchiKV.png?c=20260521180008",
       "duration": 8400,
       "cast_status": "verified",
       "cast": [
@@ -8506,7 +8506,7 @@
       ],
       "characters": [],
       "sessions": [],
-      "summary": "June brides",
+      "summary": "介绍新育成剧本等游戏最新情报。",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=3241",
       "sources": [
@@ -8532,7 +8532,7 @@
       "end_date": "2026-06-26",
       "video_id": "",
       "url": "",
-      "thumbnail": "",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3290/Header/pakadash_4_kokuchiKV.png?c=20260619180010",
       "duration": 8100,
       "cast_status": "verified",
       "cast": [
@@ -8637,7 +8637,7 @@
       ],
       "characters": [],
       "sessions": [],
-      "summary": "Ramen scenario",
+      "summary": "介绍新育成剧本详情等游戏最新情报。",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=3290",
       "sources": [
@@ -8663,7 +8663,7 @@
       "end_date": "2026-07-29",
       "video_id": "",
       "url": "",
-      "thumbnail": "",
+      "thumbnail": "https://prd-info-umamusume.akamaized.net/announce/3343/Header/pakalive_dash5_kokuchiKV.png?c=20260722180005",
       "duration": 8400,
       "cast_status": "verified",
       "cast": [
@@ -8768,7 +8768,7 @@
       ],
       "characters": [],
       "sessions": [],
-      "summary": "Summer Event",
+      "summary": "介绍下一次卡池更新及夏季活动等游戏最新情报。",
       "source_kind": "official_announcement",
       "source_url": "https://umamusume.jp/news/detail?id=3343",
       "sources": [

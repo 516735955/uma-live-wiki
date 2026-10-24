@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T12:42:05+00:00",
+  "generated_at": "2026-10-24T15:10:00+00:00",
   "coverage": {
     "songs": 1038,
     "versions": 2055,
@@ -8,9 +8,9 @@
     "release_tracks": 2242,
     "live_performances": 1390,
     "credited_songs": 417,
-    "lyric_songs": 244,
+    "lyric_songs": 249,
     "credited_versions": 1381,
-    "lyric_versions": 454
+    "lyric_versions": 462
   },
   "songs": [
     {
@@ -6931,7 +6931,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "高柳知葉",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2706903589",
               "image": "https://p1.music.126.net/m0ADQzPiorf5Kr6RdwBN8g==/109951171007125463.jpg",
               "instrumental": false,
               "vocalists": [
@@ -52078,7 +52078,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "ヒシアケボノ (CV. 松嵜麗)、カレンチャン (CV. 篠原侑)、シーキングザパール (CV. 福原綾香)、ニシノフラワー (CV. 河井晴菜)、バンブーメモリー (CV. 藍原ことみ)、ビリーヴ (CV. 秋山実咲)、カルストンライトオ (CV. 望月ゆみこ)、デュランダル (CV. 野木奏)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3449096955",
               "image": "",
               "instrumental": false,
               "vocalists": [
@@ -52242,8 +52242,8 @@
             "creator-6af7080acf",
             "creator-847c4f59b6"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-lightningfast-1ca8f6c83c-v-1ca8f6c83c",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -52257,7 +52257,7 @@
         "creator-6af7080acf",
         "creator-847c4f59b6"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-like-a-shooting-star-29734d3ef7",
@@ -62921,9 +62921,9 @@
             "creator-500b86dc49",
             "creator-c02c150e3b"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-my-against-fight-7a3344525e-v-7a3344525e",
+          "has_lyrics": true,
+          "has_timing": true
         },
         {
           "id": "song-my-against-fight-7a3344525e-v-92a6621002",
@@ -62990,9 +62990,9 @@
             "creator-500b86dc49",
             "creator-c02c150e3b"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-my-against-fight-7a3344525e-v-92a6621002",
+          "has_lyrics": true,
+          "has_timing": true
         }
       ],
       "version_count": 2,
@@ -63003,7 +63003,7 @@
         "creator-500b86dc49",
         "creator-c02c150e3b"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-mystery-chemistry-3f3c5255cd",
@@ -151124,9 +151124,9 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-228f943b49-v-5d0c6ea225",
+          "has_lyrics": true,
+          "has_timing": true
         }
       ],
       "version_count": 24,
@@ -194573,8 +194573,8 @@
           "creator_ids": [
             "creator-c436f537bf"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-e74bdc4483-v-e74bdc4483",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -194627,8 +194627,8 @@
           "creator_ids": [
             "creator-c436f537bf"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-e74bdc4483-v-e74bdc4483",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -194639,7 +194639,7 @@
       "creator_ids": [
         "creator-c436f537bf"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-d5fdbb21dc",
@@ -244726,8 +244726,8 @@
             "creator-6d35eb906e",
             "creator-8ccf39ae29"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-d375262b50-v-d375262b50",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -244739,7 +244739,7 @@
         "creator-6d35eb906e",
         "creator-8ccf39ae29"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-25dac2a02b",
@@ -245278,9 +245278,9 @@
             "creator-24ff9668ab",
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-aed14a1a3a-v-aed14a1a3a",
+          "has_lyrics": true,
+          "has_timing": true
         },
         {
           "id": "song-aed14a1a3a-v-2954ef1177",
@@ -245545,7 +245545,7 @@
         "creator-24ff9668ab",
         "creator-eaf94340d3"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-6dd76137dc",
@@ -254875,5 +254875,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "b62679e655c25b869149"
+  "build_id": "a505c8b5dc55f1e9deed"
 }

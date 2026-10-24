@@ -3,53 +3,70 @@ export function createAnimeParticipation(deps) {
     const works = new Map();
     rows.forEach((row) => {
       if (!row.work) return;
+      const relation = row.relation || {};
       let group = works.get(row.work.id);
       if (!group) {
         group = { work: row.work, roles: [] };
         works.set(row.work.id, group);
       }
       let label;
+      let songUsageKey = '';
+      let songEditionKey = '';
       if (row.entry)
         label = [row.entry.group, row.entry.role].filter(Boolean).join(" · ");
-      else if (row.relation.target_type === "character")
-        label = deps.characterName(row.relation.target_id);
-      else if (row.relation.target_type === "song") {
+      else if (relation.target_type === "character")
+        label = deps.characterName(relation.target_id);
+      else if (relation.target_type === "song") {
         let version =
-          row.relation.version_label !==
-          deps.animeRelationTargetLabel(row.relation)
-            ? row.relation.version_label
+          relation.version_label !==
+          deps.animeRelationTargetLabel(relation)
+            ? relation.version_label
             : "";
+        if (/原唱发行版|原曲发行版|发行版/.test(String(version || ""))) version = "";
         if (row.unit) {
           version = String(version || '').split(/\s*[/／]\s*/).filter(part => {
             const episode = part.match(/(?:第[一二三四五六七八九十\d]+季)?第?\s*(\d+)\s*[话話]/);
             return !episode || Number(episode[1]) !== Number(row.unit.number);
           }).join(' · ');
         }
-        label = [deps.animeMusicUsageLabel(row.relation.usage_type), version]
-          .filter(Boolean)
-          .join(" · ");
+        songUsageKey = relation.usage_type || '';
+        label = deps.animeMusicUsageLabel(relation.usage_type) || version;
       } else
         label =
-          row.relation.role_name ||
-          row.relation.signature ||
-          row.relation.label ||
+          relation.role_name ||
+          relation.signature ||
+          relation.label ||
           "";
       const institutions = row.entry ? row.entry.institutions || [] : [];
-      const recordingKey = row.relation && row.relation.target_type === 'song'
-        ? [row.relation.target_id, row.relation.version_id || '', row.relation.release_id || ''].join('|')
+      const recordingIdentity = relation.target_type === 'song'
+        ? [relation.target_id, relation.version_id || ''].join('|')
         : '';
-      const key = [label, recordingKey].filter(Boolean).join('|');
+      const recordingKey = relation.target_type === 'song'
+        ? [recordingIdentity, relation.release_id || ''].join('|')
+        : '';
+      const editionsForRole = row.work.id === "anime-rttt"
+        ? (row.unit ? ["web"] : deps.animeRowEditions(row.entry || row.relation))
+        : [""];
+      songEditionKey = editionsForRole.slice().sort().join(',');
+      // A work's usage is one upper-level row. Version/release differences
+      // belong in the expandable recording details, not in parallel OP/ED
+      // cards. Non-song credits retain their existing role identity.
+      const key = relation.target_type === 'song'
+        ? ['song', relation.target_id, songUsageKey, songEditionKey].join('|')
+        : [label, recordingIdentity, songEditionKey].filter(Boolean).join('|');
       let role = group.roles.find((role) => role.key === key);
       if (!role) {
         role = { key, label, units: [], editions: [], scopes: [], recordings: [] };
         group.roles.push(role);
       }
-      if (recordingKey && !role.recordings.some((item) => item.key === recordingKey))
+      const recordingLabel = relation.version_label || relation.release_name || relation.release_title || '';
+      if (recordingKey && recordingLabel && !role.recordings.some((item) => item.key === recordingKey))
         role.recordings.push({
           key: recordingKey,
-          song: row.relation.target_id,
-          version: row.relation.version_id || '',
-          release: row.relation.release_id || '',
+          song: relation.target_id,
+          version: relation.version_id || '',
+          release: relation.release_id || '',
+          label: recordingLabel,
         });
       const editions =
         row.work.id === "anime-rttt"
@@ -57,13 +74,11 @@ export function createAnimeParticipation(deps) {
             ? ["web"]
             : deps.animeRowEditions(row.entry || row.relation)
           : [""];
-      const scopeVersion = row.relation && row.relation.version_id || '';
-      const scopeRelease = row.relation && row.relation.release_id || '';
       (editions.length ? editions : [""]).forEach((edition) => {
-        const scopeKey = JSON.stringify([edition, institutions, scopeVersion, scopeRelease]);
+        const scopeKey = JSON.stringify([edition, institutions]);
         let scope = role.scopes.find((item) => item.key === scopeKey);
         if (!scope) {
-          scope = { key: scopeKey, edition, institutions, version_id: scopeVersion, release_id: scopeRelease, units: [] };
+          scope = { key: scopeKey, edition, institutions, units: [] };
           role.scopes.push(scope);
         }
         if (

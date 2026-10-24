@@ -1,0 +1,19 @@
+'use strict';
+const assert = require('assert');
+const search = require('./search-text');
+
+assert(search.includes('パカライブ', 'ぱかライブ'));
+assert(search.includes('ウマ娘 プリティーダービー', 'ウマ娘　プリティーダービー'));
+assert(search.includes(['Special Week', '特别周'], 'special week'));
+assert(search.includes('北部玄驹', 'beibuxuanju'));
+assert(search.includes('北部玄驹', 'bbxj'));
+assert(search.includes('特别周', 'tbz'));
+assert(search.includes(['赛马娘 Pretty Derby 春公演'], '赛马娘'));
+assert(search.includes(['赛马娘 Pretty Derby 春公演'], 'smn'));
+assert(search.includes(['赛马娘 Pretty Derby'], '賽馬娘'));
+assert(search.includes(['黄金船'], '黃金船'));
+assert(!search.includes('Machico', 'Lynn'));
+assert.strictEqual(search.kanaToRomaji('キャラ'), 'kyara');
+assert.strictEqual(search.kanaToRomaji('トウカイテイオー'), 'toukaiteio');
+assert.strictEqual(search.kanaToRomaji('マックイーン'), 'makkuin');
+console.log('search text checks passed');

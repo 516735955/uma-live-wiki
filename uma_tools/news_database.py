@@ -309,6 +309,19 @@ class NewsDatabase:
                     for row in self.db.execute('''SELECT a.key,v.original_title,v.translated_title
                         FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
                         WHERE v.translated_title!='' ''')}
+        if operation == 'search':
+            query = str(args.get('q', '')).strip().casefold()
+            if not query:
+                return []
+            limit = min(200, max(1, int(args.get('limit', 50))))
+            like = '%' + query + '%'
+            rows = self.db.execute('''SELECT a.key,a.revision,v.original_title,v.translated_title,v.state,
+                    v.japanese_text,v.chinese_text
+                FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
+                WHERE lower(v.original_title) LIKE ? OR lower(v.translated_title) LIKE ?
+                   OR lower(v.japanese_text) LIKE ? OR lower(COALESCE(v.chinese_text,'')) LIKE ?
+                ORDER BY a.checked_at DESC LIMIT ?''', (like, like, like, like, limit)).fetchall()
+            return [dict(row) for row in rows]
         if operation == 'source_failure':
             with self.db:
                 self.db.execute('INSERT OR REPLACE INTO source_failures(key,checked_at,next_at,error) VALUES(?,?,?,?)',
