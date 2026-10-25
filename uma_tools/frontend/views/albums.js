@@ -1,6 +1,7 @@
 export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
 bindings.push("musicPeopleError", "loadMusicPeople");
 bindings.push("relSeries", "relSeriesList");
+bindings.push("albumHeading");
 export const template = `
             <content-state v-if="albumsError" state="error" subject="专辑资料" :retry="true" @retry="loadAlbums()"></content-state>
             <template v-if="!albumDetail">
@@ -22,7 +23,7 @@ export const template = `
                             <img class="album-cover" v-media-src="coverThumb(album.cover,420)" :alt="album.name" :loading="index < 2 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" decoding="async" @load="sampleCover($event, album.cover)" @error="onCatalogImageError($event)">
                         <div class="album-info">
                             <div class="album-name">{{ album.name }}</div>
-                            <div class="album-count">{{ album.release || '日期待补' }} · {{ album.type }}</div>
+                            <div class="album-count">{{ album.release || '日期待补' }}　{{ album.type }}</div>
                         </div>
                         <div class="card-veil"><p>View more</p><span class="card-veil-arrow" aria-hidden="true">&gt;</span></div>
                     </a>
@@ -33,7 +34,7 @@ export const template = `
             <article v-else class="entity-detail album-entity-detail">
                 <div class="entity-hero music-archive-hero">
                     <div class="entity-cover album-cover-detail"><img v-media-src="coverThumb(albumDetail.data.cover,720)" :data-original="albumDetail.data.cover" :alt="albumDetail.data.name" fetchpriority="high" @error="onCatalogImageError($event)"></div>
-                    <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1>{{ albumDetail.data.name }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div><div v-if="albumDetail.data.company"><dt>发行公司</dt><dd>{{ albumDetail.data.company }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
+                    <div class="entity-intro"><span class="entity-kind">{{ albumDetail.data.type || '专辑' }}</span><h1 :title="albumDetail.data.name">{{ albumHeading }}</h1><dl class="entity-meta"><div><dt>发行日期</dt><dd>{{ albumDetail.data.release || '—' }}</dd></div><div><dt>商品编号</dt><dd>{{ albumDetail.data.catalog || '—' }}</dd></div><div v-if="albumDetail.data.company"><dt>发行公司</dt><dd>{{ albumDetail.data.company }}</dd></div></dl><entity-actions v-if="albumPlayableCount(albumDetail)" size="hero" :playing="player.current && player.current.albumId===(albumDetail.data.id || albumDetail.data.catalog) && isActive(player.current.url)" play-label="播放这张专辑" add-label="加入这张专辑" @play="playAlbum(albumDetail)" @add="enqueueAlbum(albumDetail)"></entity-actions></div>
                 </div>
                 <div class="media-content">
                     <content-state v-if="musicPeopleError" state="error" subject="人物资料" :retry="true" @retry="loadMusicPeople"></content-state>

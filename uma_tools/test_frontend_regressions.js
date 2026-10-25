@@ -128,7 +128,7 @@ async function main() {
   assert.strictEqual(horseDomain.horseMajorRows.value[0].grade,'','another track cannot supply a grade');
   const labelSource=context.createCreators({...context.Vue});
   assert.strictEqual(labelSource.creatorRoleLabel('lyricist',[{roles:[{role:'lyricist',label:'作词'}]}]),'作词','the collaborator panel uses labels from its loaded creator response');
-  assert.strictEqual(labelSource.creatorWorkRoleLabels(['lyricist','composer']),'lyricist · composer','list indices are not passed as creator metadata');
+  assert.strictEqual(labelSource.creatorWorkRoleLabels(['lyricist','composer']),'lyricist composer','list indices are not passed as creator metadata');
   await app.applyCurrentRoute();
   window.CHAR_INDEX.push({id:'avatar-check',zh:'头像核对',img:'/uma_official/avatar-check.png',av:'/uma_avatars/AvatarCheck.png'});
   assert.strictEqual(app.characterImage('avatar-check'), '/uma_official/avatar-check.png', 'ordinary relations keep profile artwork');
@@ -406,10 +406,10 @@ async function main() {
   const participation = context.createAnimeParticipation({...context.Vue,
     animeMusicUsageLabel: () => '片尾曲', animeRelationTargetLabel: () => '歌曲'});
   const recordingRoles = participation.groupAnimeParticipation(musicRows)[0].roles;
-  assert.strictEqual(recordingRoles.length,2,'different recordings keep distinct episode scopes; reissues do not duplicate usages');
-  assert.deepStrictEqual(Array.from(recordingRoles[0].units, unit => unit.number),[1]);
-  assert.deepStrictEqual(Array.from(recordingRoles[1].units, unit => unit.number),[2]);
-  assert.strictEqual(recordingRoles[1].scopes[0].version_id,'v2','episode links retain the recording identity');
+  assert.strictEqual(recordingRoles.length,1,'one composition and usage display once across recordings and reissues');
+  assert.deepStrictEqual(Array.from(recordingRoles[0].units, unit => unit.number),[1,2]);
+  assert.strictEqual(recordingRoles[0].scopes[0].mediaByUnit['episode-2'].version_id,'v2','episode links retain the recording identity');
+  assert.strictEqual(recordingRoles[0].scopes[0].mediaByUnit['episode-1'].release_id,'','multiple reissues do not select an arbitrary release');
   animeFailure = 'person';
   location.href = 'http://localhost/zh-Hans/database/staff/staff-UMP';
   await app.applyCurrentRoute();

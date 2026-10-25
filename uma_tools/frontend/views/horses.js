@@ -31,7 +31,7 @@ export const template = `
                     <div v-else-if="horsePaged.length" class="horse-list">
                         <a v-for="horse in horsePaged" :key="horse.id" class="horse-row" :href="routes.horses(horse.id)" @click="internalLink($event, () => openHorse(horse.id))">
                             <span class="horse-thumb"><img v-if="horse.photo" v-media-src="horse.photo" :alt="horse.zh" loading="lazy" @error="onHorseImageError($event)"><i v-else>{{ (horse.zh || '马').slice(0,1) }}</i></span>
-                            <span class="horse-row-main"><b>{{ horse.zh }}</b><span class="horse-row-ja">{{ horse.ja }}<template v-if="horse.en"> · {{ horse.en }}</template></span><span class="horse-row-meta">{{ horseSexLabel(horse) }}<template v-if="horse.born"> · {{ horse.born }} 年出生</template><template v-if="horse.birthdate"> · {{ horse.birthdate }}</template></span></span>
+                            <span class="horse-row-main"><b>{{ horse.zh }}</b><span class="horse-row-ja">{{ horse.ja }}<template v-if="horse.en">　{{ horse.en }}</template></span><span class="horse-row-meta">{{ horseSexLabel(horse) }}<template v-if="horse.born">　{{ horse.born }} 年出生</template><template v-if="horse.birthdate">　{{ horse.birthdate }}</template></span></span>
                             <span class="horse-row-go">查看 <em>→</em></span>
                         </a>
                     </div>
@@ -50,9 +50,9 @@ export const template = `
                     <div class="entity-hero" :class="{'entity-hero-text':!horseDetail.photo}">
                         <div v-if="horseDetail.photo" class="entity-cover horse-cover"><img v-media-src="horseDetail.photo" :alt="horseDetail.zh" fetchpriority="high" @error="onHorseImageError($event)"></div>
                         <div class="entity-intro">
-                            <span class="entity-kind">原型马 · {{ horseSexLabel(horseDetail) }}</span>
+                            <span class="entity-kind">原型马　{{ horseSexLabel(horseDetail) }}</span>
                             <h1>{{ horseDetail.zh }}</h1>
-                            <p class="entity-reading">{{ horseDetail.ja }}<template v-if="horseDetail.en"> · {{ horseDetail.en }}</template></p>
+                            <p class="entity-reading">{{ horseDetail.ja }}<template v-if="horseDetail.en">　{{ horseDetail.en }}</template></p>
                             <p class="horse-badge-line">
                                 <span v-if="horseDetail.born" class="horse-badge">出生 {{ horseDetail.birthdate || horseDetail.born + ' 年' }}</span>
                                 <span v-if="horseDetail.colour" class="horse-badge">毛色 {{ horseDetail.colour }}</span>
@@ -106,7 +106,7 @@ export const template = `
                         <div class="horse-awards"><span v-for="(award,index) in horseDetail.awards" :key="index" class="horse-award-chip">{{ award.year }} {{ award.title }}</span></div>
                     </section>
                     <section v-if="horseDetail.retirement && horseDetail.retirement.length" class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">退役 · 繁育 · 纪念</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">退役　繁育　纪念</span></div>
                         <p v-for="(paragraph,index) in horseDetail.retirement" :key="index" class="horse-paragraph">{{ paragraph }}</p>
                     </section>
 

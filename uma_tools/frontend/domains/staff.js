@@ -203,7 +203,7 @@ export function createStaff(deps) {
           candidate.rawRole === entry.role,
       );
       if (!group) {
-        const role = [entry.group, entry.role].filter(Boolean).join(" · ");
+        const role = [entry.group, entry.role].filter(Boolean).join(" ");
         group = {
           key: role,
           role,

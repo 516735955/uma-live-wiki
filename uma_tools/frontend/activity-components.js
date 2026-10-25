@@ -39,6 +39,8 @@ export const ActivityTime = {
     date: { type: String, default: '' }, endDate: { type: String, default: '' },
     doorsTime: { type: String, default: '' }, startTime: { type: String, default: '' },
     endTime: { type: String, default: '' }, broadcastTime: { type: String, default: '' },
+    broadcastDate: { type: String, default: '' },
+    publishedTime: { type: String, default: '' }, publishedDate: { type: String, default: '' },
     endEstimated: { type: Boolean, default: false },
     startEstimated: { type: Boolean, default: false },
     note: { type: String, default: '' },
@@ -56,7 +58,8 @@ export const ActivityTime = {
         ['开场', this.doorsTime, this.date],
         [this.startEstimated ? '预计开演' : '开演', this.startTime, this.date],
         [this.endEstimated ? '预计结束' : '结束', this.endTime, this.endDate || this.date],
-        ['播出', this.broadcastTime && !this.startTime ? this.broadcastTime : '', this.date],
+        ['播出', this.broadcastTime, this.broadcastDate || this.date],
+        ['公开', this.publishedTime, this.publishedDate || this.date],
         ['安排', this.note, ''],
       ].filter((row) => row[1]).map(([label, value, date]) => {
         const normalized = normalizeActivityTime(date, value);
@@ -94,8 +97,8 @@ export const ActivityTime = {
     primaryChannel() { return this.channelRows[0] || null; },
     otherChannels() { return this.channelRows.slice(1); },
   },
-  methods: { formatClock, formatRowTime(row) { const time = row.value || ''; return row.date && row.date !== this.date ? `${row.date} · ${time}` : time; } },
-  template: `<dl class="entity-meta activity-time-info"><div v-if="!channelRows.length"><dt>{{ label }}</dt><dd>{{ dateText }}</dd></div><div v-if="primaryChannel"><dt>{{ primaryChannel.label }}</dt><dd>{{ primaryChannel.value }}<template v-if="primaryChannel.time"> · {{ primaryChannel.time }}</template><small v-if="primaryChannel.suffix"> {{ primaryChannel.suffix }}</small></dd></div><details v-if="otherChannels.length" class="activity-time-more"><summary>其他播出时间（{{ otherChannels.length }}）</summary><div v-for="row in otherChannels" :key="row.label+'-'+row.value"><dt>{{ row.label }}</dt><dd>{{ row.value }}<template v-if="row.time"> · {{ row.time }}</template><small v-if="row.suffix"> {{ row.suffix }}</small></dd></div></details><div v-for="row in rows" :key="row.label"><dt>{{ row.label }}</dt><dd>{{ formatRowTime(row) }}</dd></div></dl>`,
+  methods: { formatClock, formatRowTime(row) { const time = row.value || ''; return row.date && row.date !== this.date ? `${row.date}　${time}` : time; } },
+  template: `<dl class="entity-meta activity-time-info"><div v-if="!channelRows.length"><dt>{{ label }}</dt><dd>{{ dateText }}</dd></div><div v-if="primaryChannel"><dt>{{ primaryChannel.label }}</dt><dd>{{ primaryChannel.value }}<template v-if="primaryChannel.time">　{{ primaryChannel.time }}</template><small v-if="primaryChannel.suffix"> {{ primaryChannel.suffix }}</small></dd></div><details v-if="otherChannels.length" class="activity-time-more"><summary>其他播出时间（{{ otherChannels.length }}）</summary><div v-for="row in otherChannels" :key="row.label+'-'+row.value"><dt>{{ row.label }}</dt><dd>{{ row.value }}<template v-if="row.time">　{{ row.time }}</template><small v-if="row.suffix"> {{ row.suffix }}</small></dd></div></details><div v-for="row in rows" :key="row.label"><dt>{{ row.label }}</dt><dd>{{ formatRowTime(row) }}</dd></div></dl>`,
 };
 
 export const ActivityHistory = {

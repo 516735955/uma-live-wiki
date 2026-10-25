@@ -101,7 +101,7 @@ export const template = `
                                 <li v-for="line in selectedSongLyricLines" :key="line.index"><span>{{ line.text }}</span></li>
                             </ol>
                         </template>
-                        <content-state v-else-if="!songLyricsApplicable" state="not_applicable" subject="歌词" reason="该录音为纯音乐，无歌词"></content-state>
+                        <content-state v-else-if="!songLyricsApplicable" state="not_applicable" subject="歌词" reason="该内容为纯音乐或对白、谈话，无歌曲歌词"></content-state>
                         <content-state v-else state="uncollected" subject="歌词"></content-state>
                     </section>
 
@@ -110,7 +110,7 @@ export const template = `
                         <thead><tr><th>日期</th><th>活动 / 场次</th><th>版本</th><th>演唱角色</th></tr></thead>
                         <tbody><tr v-for="row in songDetailPerformances" :key="row.performance.session_id+'-'+row.performance.performance_index">
                             <td data-label="日期">{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
-                            <td data-label="活动 / 场次"><a class="text-link stacked" :href="row.performance.event_url" @click="internalLink($event, () => openEventUrl(row.performance.event_url))"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }}<template v-if="row.display_no"> · 第 {{ row.display_no }} 首</template></span></a></td>
+                            <td data-label="活动 / 场次"><a class="text-link stacked" :href="row.performance.event_url" @click="internalLink($event, () => openEventUrl(row.performance.event_url))"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }}<template v-if="row.display_no">　第 {{ row.display_no }} 首</template></span></a></td>
                             <td data-label="版本">{{ (row.performance.performance_variant && (row.performance.performance_variant.label || row.performance.performance_variant.title)) || row.version.version_label || '原始版本' }}</td>
                             <td data-label="演唱角色"><div class="performer-chip-list compact song-performance-cast"><a v-for="characterId in row.performance.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event, () => openCharacter(characterId))"><img v-if="characterPerformanceImage(characterId)" v-media-src="characterPerformanceImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></a><span v-for="guest in (row.performance.guest_performers || [])" :key="guest" class="guest-performer">{{ guest }}</span></div></td>
                         </tr></tbody>

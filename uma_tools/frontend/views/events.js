@@ -29,7 +29,7 @@ export const template = `
                         <time v-else>{{ event.date || '待公布' }}</time>
                         <span class="event-catalog-main">
                             <b>{{ event.title }}</b>
-                            <span>{{ eventSeriesName(event) || eventKindLabel(event.kind) }}<template v-if="event.venue"> · {{ event.venue }}</template></span>
+                            <span>{{ eventSeriesName(event) || eventKindLabel(event.kind) }}<template v-if="event.venue">　{{ event.venue }}</template></span>
                         </span>
                         <span class="event-catalog-facts">
                             <em v-if="event.schedule_status==='cancelled'" class="event-status-cancelled">已取消</em>
@@ -54,30 +54,27 @@ export const template = `
             <template v-else-if="eventDetail">
                 <article class="entity-detail event-entity-detail">
                     <div class="entity-hero">
-                        <span v-if="eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-status-cancelled event-hero-status">{{ eventDetail.schedule_status==='cancelled' ? '已取消' : eventCancellation ? '本场已取消' : '部分场次取消' }}</span>
+                        <div v-if="eventSessionOptions.length > 1 || eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-hero-controls">
+                            <span v-if="eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-status-cancelled">{{ eventDetail.schedule_status==='cancelled' ? '已取消' : eventCancellation ? '本场已取消' : '部分场次取消' }}</span>
+                            <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :floating="true" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
+                        </div>
                         <div class="entity-cover event-cover">
-                            <img v-media-src="eventDetail.image" :data-original="eventDetail.image_original" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
+                            <img :key="selectedEventSessionId || eventDetail.id" v-media-src="eventSessionImage" :data-original="(selectedEventSession && (selectedEventSession.image_original || selectedEventSession.image)) || eventDetail.image_original || eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,selectedEventSession || eventDetail)">
                         </div>
                         <div class="entity-intro">
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
                             <h1>{{ eventDetail.title }}</h1><p v-if="eventDetail.title_ja && eventDetail.title_ja !== eventDetail.title" class="entity-reading">{{ eventDetail.title_ja }}</p>
-                            <activity-time v-if="eventSessionOptions.length > 1 || !selectedEventSession" :date="eventDetail.date" :end-date="eventDetail.end_date"></activity-time>
+                            <div class="event-hero-facts">
+                            <activity-time v-if="!selectedEventSession" :date="eventDetail.date" :end-date="eventDetail.end_date" :doors-time="eventDetail.doors_time" :start-time="eventDetail.start_time" :end-time="eventDetail.end_time" :broadcast-time="eventDetail.broadcast_time"></activity-time>
                             <dl v-if="(selectedEventSession && selectedEventSession.venue) || eventDetail.venue" class="entity-meta event-venue-meta"><div><dt>地点</dt><dd>{{ (selectedEventSession && selectedEventSession.venue) || eventDetail.venue }}</dd></div></dl>
-                            <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || eventDetail.eventunit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
-                            <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :start-estimated="!!selectedEventSession.start_time_estimated" :note="selectedEventSession.schedule_note || ''" :end-estimated="!!selectedEventSession.end_time_estimated" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast"></activity-time>
+                            <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :start-estimated="!!selectedEventSession.start_time_estimated" :note="selectedEventSession.schedule_note || ''" :end-estimated="!!selectedEventSession.end_time_estimated" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast" :broadcast-date="selectedEventSession.broadcast_date" :published-time="selectedEventSession.published_time" :published-date="selectedEventSession.published_date"></activity-time>
+                            </div>
                         </div>
                     </div>
 
                     <section class="entity-overview">
                         <dl><div><dt>形式</dt><dd>{{ eventModeLabel(eventDetail.mode) }}</dd></div><div v-if="eventSeriesName(eventDetail)"><dt>系列</dt><dd>{{ eventSeriesName(eventDetail) }}</dd></div></dl>
                         <p v-if="eventCurrentSummary">{{ eventCurrentSummary }}</p>
-                        <div v-if="selectedEventSession && (eventSessionImage || eventSessionSummary)" class="event-session-context">
-                            <img v-if="eventSessionImage" v-media-src="eventSessionImage" :data-original="selectedEventSession.image_original || selectedEventSession.image" :alt="selectedEventSession.label || '当前场次'" loading="lazy">
-                            <div class="event-session-context-copy">
-                                <b>{{ selectedEventSession.label || '当前场次' }}</b>
-                                <p v-if="eventSessionSummary">{{ eventSessionSummary }}</p>
-                            </div>
-                        </div>
                         <p v-if="eventCancellation" class="event-status-note">{{ eventCancellation.status_note }} <a v-if="eventStatusNewsId(eventCancellation)" class="text-link" :href="routes.news(eventStatusNewsId(eventCancellation))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventCancellation)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventCancellation.status_source_url" class="text-link" :href="eventCancellation.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
                     </section>
 
@@ -126,7 +123,7 @@ export const template = `
                         <div class="section-toolbar"><span class="credit-role-tag">节目影像</span></div>
                         <div class="event-video-grid">
                             <div v-for="media in eventMediaCards" :key="media.key" class="event-video" :class="'event-video-'+media.platform">
-                                <iframe v-if="media.embedUrl && activeMediaKey===media.key" v-media-src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+' · '+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe v-if="media.embedUrl && activeMediaKey===media.key" v-media-src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+'　'+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <button v-else-if="media.embedUrl" class="event-video-launch" type="button" @click="activateEventMedia(media)">
                                     <img v-media-src="media.image" :alt="media.label" loading="lazy" @error="onEventImageError($event,eventDetail)">
                                     <span class="event-video-platform">{{ media.platformLabel }}</span>

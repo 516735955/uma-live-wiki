@@ -15,6 +15,10 @@ export function createAlbums(deps) {
   let albumListRevision = 0;
 
   const albumDetail = deps.ref(null);
+  const albumHeading = deps.computed(() => String(albumDetail.value?.data?.name || '')
+    .replace(/^(?:TVアニメ)?[『「](?:ウマ娘\s*プリティーダービー|赛马娘\s*Pretty Derby)[』」]\s*/i, '')
+    .replace(/\s*\(2021 Remastered Version\)/i, '（2021重制）')
+    .replace(/Original Sound\s*Track/i, '原声集'));
 
   let albumsLoadPromise = null;
 
@@ -595,6 +599,7 @@ export function createAlbums(deps) {
     start,
     addAlbumTrack,
     albumDetail,
+    albumHeading,
     albumPlayableCount,
     albumSortOptions,
     albumTrackSecondary,

@@ -21,15 +21,13 @@ export function createEvents(deps) {
   const eventSessionOptions = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
     return sessions.map(function (session, index) {
-      const date = session.date || eventDetail.value.date || "日期待补";
-      const time = session.start_time || session.broadcast_time || session.broadcast || "";
-      const suffix = [date, time].filter(Boolean).join(" · ");
-      const unitLabel = session.label === time ? '' : session.label || "第" + (index + 1) + "项";
+      const unitLabel = session.label && !/^\d{1,2}:\d{2}$/.test(session.label)
+        ? session.label : "第" + (index + 1) + "回";
       return {
         value: session.id,
-        label: [unitLabel, suffix, session.schedule_status === 'cancelled' && !unitLabel.includes('取消') ? '已取消' : '']
+        label: [unitLabel, session.schedule_status === 'cancelled' && !unitLabel.includes('取消') ? '已取消' : '']
           .filter(Boolean)
-          .join(" · "),
+          .join(" "),
       };
     });
   });
@@ -262,20 +260,17 @@ export function createEvents(deps) {
   }
 
   const eventCurrentSummary = deps.computed(function () {
-    return eventSummary(eventDetail.value);
+    return eventSummary(selectedEventSession.value) || eventSummary(eventDetail.value);
   });
 
   const eventSessionSummary = deps.computed(function () {
-    const summary = eventSummary(selectedEventSession.value);
-    return summary === eventCurrentSummary.value ? '' : summary;
+    return eventSummary(selectedEventSession.value);
   });
 
   const eventSessionImage = deps.computed(function () {
     const session = selectedEventSession.value || {};
     const parent = eventDetail.value || {};
-    const image = session.image_preview || session.image || '';
-    const parentImages = [parent.image_preview, parent.image, parent.image_original].filter(Boolean);
-    return parentImages.includes(image) || (session.image && parentImages.includes(session.image)) ? '' : image;
+    return session.image_preview || session.image || parent.image_preview || parent.image || '';
   });
 
   const eventCancellation = deps.computed(function () {
@@ -508,8 +503,10 @@ export function createEvents(deps) {
   }
 
   function selectEventSession(sessionId) {
+    if (!eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
     selectedEventSessionId.value = sessionId;
-    deps.pushUrl(true);
+    activeMediaKey.value = "";
+    deps.pushUrl();
   }
 
   function openEvent(eventOrId, requestedSessionId) {

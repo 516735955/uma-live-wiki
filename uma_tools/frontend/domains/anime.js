@@ -539,7 +539,7 @@ export function createAnime(deps) {
       ? '地区：' + regions.map(region => regionNames[region] || region).join('、')
       : resource.status === 'region_limited' ? '有地区限制' : '');
     return [resource.access === 'membership' ? '需会员' : resource.status === 'membership' ? '需登录或会员' : '',
-      regionLabel].filter(Boolean).join(' · ');
+      regionLabel].filter(Boolean).join('、');
   }
 
   function setAnimeSection(section) {

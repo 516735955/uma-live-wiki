@@ -524,6 +524,8 @@ export function createRouting(deps) {
               ? url.searchParams.get("year")
               : "all";
           deps.evSeries.value = url.searchParams.get("series") || "all";
+          const selectedSeries = deps.eventSeriesMap.value[deps.evSeries.value];
+          if (selectedSeries) deps.evKind.value = selectedSeries.kind;
           if (deps.evSeries.value === 'unclassified' && deps.evKind.value === 'all') deps.evSeries.value = 'all';
           deps.eventsPage.value = Math.max(
             1,

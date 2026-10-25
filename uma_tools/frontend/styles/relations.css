@@ -96,13 +96,17 @@
 .anime-unit-context-copy h2 { margin: 8px 0 4px; color: var(--ui-navy); font-size: 1.1rem; }
 .anime-unit-context-copy .entity-reading { margin: 0 0 8px; }
 .anime-unit-context-copy .entity-meta { margin-top: 10px; }
-.event-session-select { margin-top: 14px; max-width: 360px; }
+.event-hero-controls { position: absolute; z-index: 3; top: 18px; right: 24px; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 10px; }
+.event-hero-controls .event-session-select { width: auto; min-width: 180px; max-width: 100%; margin: 0; }
+.event-entity-detail > .entity-hero:has(.event-hero-controls) .entity-kind { margin-right: 210px; }
+.event-hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; margin-top: 12px; }
+.event-entity-detail .event-hero-facts > dl { display: contents; }
+.event-hero-facts > .activity-time-info > div:first-child { order: -1; }
+.event-hero-facts > dl > div { display: flex; gap: 12px; align-items: baseline; border-top: 1px solid #dfe3ee; padding: 9px 0; }
+.event-hero-facts dt, .event-hero-facts dd { padding: 0; margin: 0; }
+.event-hero-facts dt { flex-shrink: 0; }
+.event-hero-facts dd { min-width: 0; overflow-wrap: anywhere; }
 .event-session-time { margin-top: 12px; }
-.event-session-context { display: grid; grid-template-columns: minmax(96px, 160px) minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--surface-line); }
-.event-session-context > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; background: var(--surface-muted); }
-.event-session-context-copy > b { display: block; margin-bottom: 6px; color: var(--ui-navy); }
-.event-session-context-copy .activity-time-info { margin-top: 0; }
-.event-session-context-copy p { margin: 8px 0 0; }
 .activity-time-info { margin-top: 15px; }
 .activity-time-info > div { border-color: #dfe3ee; }
 .activity-time-info dt { color: #69738c; }
@@ -120,9 +124,19 @@
 @media (max-width: 640px) {
   .anime-unit-context { grid-template-columns: 1fr; }
   .anime-unit-context-art { max-width: 220px; }
-  .event-session-select { max-width: none; }
-  .event-session-context { grid-template-columns: 88px minmax(0, 1fr); gap: 10px; }
+  .event-entity-detail > .entity-hero > .event-hero-controls { position: static; grid-column: 1 / -1; grid-row: 1; }
+  .event-entity-detail > .entity-hero > .entity-intro { display: contents; }
+  .event-entity-detail > .entity-hero > .entity-cover { grid-row: 1 / 4; }
+  .event-entity-detail > .entity-hero:has(.event-hero-controls) > .entity-cover { grid-row: 2 / 5; }
+  .event-entity-detail .entity-intro > .entity-kind,
+  .event-entity-detail .entity-intro > h1,
+  .event-entity-detail .entity-intro > .entity-reading { grid-column: 2; margin: 0; }
+  .event-entity-detail .entity-intro > .entity-kind { justify-self: start; }
+  .event-entity-detail .entity-intro > .event-hero-facts { grid-column: 1 / -1; }
+  .event-entity-detail > .entity-hero:has(.event-hero-controls) .entity-kind { margin-right: 0; }
+  .event-hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
 }
+@media (max-width: 400px) { .event-hero-facts { grid-template-columns: 1fr; } }
 .character-entity-detail .entity-hero .performer-chip,
 .voice-entity-detail .entity-hero .performer-chip { color: var(--ui-navy); }
 .character-entity-detail .entity-tabs button.active,

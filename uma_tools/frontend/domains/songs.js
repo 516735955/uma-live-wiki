@@ -289,7 +289,7 @@ export function createSongs(deps) {
   const songLyricsApplicable = deps.computed(function () {
     const versions = (songDetail.value && songDetail.value.versions) || [];
     return !(versions.length && versions.every(function (version) {
-      return version.instrumental === true;
+      return version.instrumental === true || version.content_type === 'spoken';
     }));
   });
 

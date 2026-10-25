@@ -73,6 +73,8 @@ export function registerComponents(umaApp, routes) {
         });
       },
       scopeHref(work, unit, edition, scope) {
+        const media = unit && scope && scope.mediaByUnit
+          ? scope.mediaByUnit[unit.id] || {} : scope || {};
         return routes.query(
           routes.anime(
             work.id,
@@ -83,8 +85,8 @@ export function registerComponents(umaApp, routes) {
           {
             section: this.section,
             edition: work.id === "anime-rttt" ? (unit ? "web" : edition) : "",
-            version: (scope && scope.version_id) || "",
-            release: (scope && scope.release_id) || "",
+            version: media.version_id || "",
+            release: media.release_id || "",
           },
         );
       },
@@ -175,12 +177,11 @@ export function registerComponents(umaApp, routes) {
           <dl v-if="creditRoles(editionGroup,group).length" class="credit-ledger">
             <div v-for="role in creditRoles(editionGroup,group)" :key="role.key" :class="{'participation-unlabelled':!roleLabel(role,group),'participation-role-only':!hasScopeContent(role)}">
               <dt v-if="roleLabel(role,group)">{{roleLabel(role,group)}}</dt>
-              <dd v-if="hasScopeContent(role) || role.recordings.length" class="participation-scopes">
+              <dd v-if="hasScopeContent(role)" class="participation-scopes">
                 <div v-for="scope in role.scopes.filter(scope=>scope.units.length || scope.institutions.length)" :key="scope.key" class="participation-scope">
                   <span v-if="scope.institutions.length" class="participation-institution">机构：{{scope.institutions.join('、')}}</span>
                   <div v-if="scope.units.length" class="role-tag-row participation-episodes"><a v-for="unit in scope.units" :key="unit.id" class="credit-role-tag episode-tag" :href="scopeHref(group.work,unit,scope.edition,scope)" @click="follow($event,scopeHref(group.work,unit,scope.edition,scope))">{{unit.label}}</a></div>
                 </div>
-                <details v-if="role.recordings.length" class="participation-recordings"><summary>录音详情（{{role.recordings.length}}）</summary><div class="participation-recording-list"><a v-for="recording in role.recordings" :key="recording.key" class="credit-role-tag" :href="recordingHref(group.work,recording)" @click="follow($event,recordingHref(group.work,recording))">{{recordingLabel(recording)}}<small v-if="recording.release"> · {{recording.release}}</small></a></div></details>
               </dd>
             </div>
           </dl>

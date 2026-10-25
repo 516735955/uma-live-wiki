@@ -165,7 +165,7 @@ export function createCreators(deps) {
   }
 
   function creatorWorkRoleLabels(roles) {
-    return (roles || []).map(role => creatorRoleLabel(role)).join(" · ");
+    return (roles || []).map(role => creatorRoleLabel(role)).join(" ");
   }
 
   function creatorPortrait(creator) {

@@ -775,7 +775,7 @@ export function createNavigation(deps) {
           ? "赛马娘演出综合站"
           : [entity || directory, entity && section, "赛马娘演出综合站"]
               .filter(Boolean)
-              .join(" · ");
+              .join(" ");
       },
       function (title) {
         document.title = title;

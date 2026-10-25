@@ -14,7 +14,7 @@ export function createAnimeParticipation(deps) {
       let songEditionKey = '';
       let songVersionLabel = '';
       if (row.entry)
-        label = [row.entry.group, row.entry.role].filter(Boolean).join(" · ");
+        label = [row.entry.group, row.entry.role].filter(Boolean).join(" ");
       else if (relation.target_type === "character")
         label = deps.characterName(relation.target_id);
       else if (relation.target_type === "song") {
@@ -28,7 +28,7 @@ export function createAnimeParticipation(deps) {
           version = String(version || '').split(/\s*[/／]\s*/).filter(part => {
             const episode = part.match(/(?:第[一二三四五六七八九十\d]+季)?第?\s*(\d+)\s*[话話]/);
             return !episode || Number(episode[1]) !== Number(row.unit.number);
-          }).join(' · ');
+          }).join('、');
         }
         songUsageKey = relation.usage_type || '';
         songVersionLabel = version;
@@ -50,14 +50,14 @@ export function createAnimeParticipation(deps) {
         ? (row.unit ? ["web"] : deps.animeRowEditions(row.entry || row.relation))
         : [""];
       songEditionKey = editionsForRole.slice().sort().join(',');
-      // Reissues share a usage row; distinct recordings retain their own
-      // episode scope and navigation target.
+      // Display a composition once per use and edition; retain recording
+      // targets on each episode rather than duplicating the visible role.
       const key = relation.target_type === 'song'
-        ? ['song', recordingIdentity, songUsageKey, songEditionKey, row.entry ? label : ''].join('|')
+        ? ['song', relation.target_id, songUsageKey, songEditionKey, row.entry ? label : ''].join('|')
         : [label, recordingIdentity, songEditionKey].filter(Boolean).join('|');
       let role = group.roles.find((role) => role.key === key);
       if (!role) {
-        role = { key, label: [label, songVersionLabel && songVersionLabel !== label ? songVersionLabel : ''].filter(Boolean).join(' · '), units: [], editions: [], scopes: [], recordings: [] };
+        role = { key, label, units: [], editions: [], scopes: [], recordings: [] };
         group.roles.push(role);
       }
       const recordingLabel = relation.version_label || relation.release_name || relation.release_title || '';
@@ -76,11 +76,19 @@ export function createAnimeParticipation(deps) {
             : deps.animeRowEditions(row.entry || row.relation)
           : [""];
       (editions.length ? editions : [""]).forEach((edition) => {
-        const scopeKey = JSON.stringify([edition, institutions, recordingIdentity]);
+        const scopeKey = JSON.stringify([edition, institutions]);
         let scope = role.scopes.find((item) => item.key === scopeKey);
         if (!scope) {
-          scope = { key: scopeKey, edition, institutions, units: [], version_id: relation.version_id || '', release_id: relation.release_id || '' };
+          scope = { key: scopeKey, edition, institutions, units: [], mediaByUnit: {}, version_id: relation.version_id || '', release_id: relation.release_id || '' };
           role.scopes.push(scope);
+        }
+        if (row.unit && relation.target_type === 'song') {
+          const media = scope.mediaByUnit[row.unit.id] || { versions: [], releases: [] };
+          if (relation.version_id && !media.versions.includes(relation.version_id)) media.versions.push(relation.version_id);
+          if (relation.release_id && !media.releases.includes(relation.release_id)) media.releases.push(relation.release_id);
+          media.version_id = media.versions.length === 1 ? media.versions[0] : '';
+          media.release_id = media.releases.length === 1 ? media.releases[0] : '';
+          scope.mediaByUnit[row.unit.id] = media;
         }
         if (
           row.unit &&
@@ -265,7 +273,7 @@ export function createAnimeParticipation(deps) {
     if (!row) return "";
     return [row.unit && row.unit.label, row.relation.label]
       .filter(Boolean)
-      .join(" · ");
+      .join(" ");
   }
   function relatedAnimeHref(row) {
     const relation = row && row.relation;

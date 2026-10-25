@@ -19,12 +19,13 @@
       modelValue: { type: [String, Number], default: '' },
       options: { type: Array, default: function () { return []; } },
       label: { type: String, default: '' },
+      floating: { type: Boolean, default: false },
       ariaLabel: { type: String, default: '' }
     },
     emits: ['update:modelValue', 'change'],
     data: function () {
       sequence += 1;
-      return { open: false, activeIndex: -1, groupValue: null, menuShift: 0, menuAbove: false, menuHeight: 286, listId: 'ui-select-' + sequence };
+      return { open: false, activeIndex: -1, groupValue: null, menuShift: 0, menuAbove: false, menuHeight: 286, menuX: 0, menuY: 0, menuWidth: 0, listId: 'ui-select-' + sequence };
     },
     computed: {
       selectedOption: function () {
@@ -37,7 +38,13 @@
         get() { return this.options.find(option => String(option.value) === this.groupValue && option.children) || null; },
         set(option) { this.groupValue = option ? String(option.value) : null; }
       },
-      visibleOptions: function () { return this.group ? this.group.children : this.options; }
+      visibleOptions: function () { return this.group ? this.group.children : this.options; },
+      menuStyle() {
+        const style = { transform: 'translateX(' + this.menuShift + 'px)', maxWidth: 'calc(100vw - 16px)', maxHeight: this.menuHeight + 'px' };
+        return this.floating
+          ? { ...style, position: 'fixed', left: this.menuX + 'px', right: 'auto', top: this.menuY + 'px', bottom: 'auto', width: this.menuWidth + 'px', zIndex: 1000 }
+          : { ...style, top: this.menuAbove ? 'auto' : undefined, bottom: this.menuAbove ? 'calc(100% + 7px)' : undefined };
+      }
     },
     watch: {
       options: { deep: true, handler() { if (this.open) { this.activeIndex = this.initialIndex(); this.positionMenu(); } } },
@@ -46,12 +53,14 @@
     mounted: function () {
       document.addEventListener('pointerdown', this.onOutside);
       window.addEventListener('resize', this.positionMenu);
+      window.addEventListener('scroll', this.onScroll, true);
       window.visualViewport?.addEventListener('resize', this.positionMenu);
       window.visualViewport?.addEventListener('scroll', this.positionMenu);
     },
     beforeUnmount: function () {
       document.removeEventListener('pointerdown', this.onOutside);
       window.removeEventListener('resize', this.positionMenu);
+      window.removeEventListener('scroll', this.onScroll, true);
       window.visualViewport?.removeEventListener('resize', this.positionMenu);
       window.visualViewport?.removeEventListener('scroll', this.positionMenu);
     },
@@ -70,6 +79,11 @@
           const below = top + height - trigger.bottom - 16, above = trigger.top - top - 16;
           this.menuAbove = below < 180 && above > below;
           this.menuHeight = Math.max(40, Math.min(286, window.innerWidth <= 700 ? height * .52 : 286, this.menuAbove ? above : below));
+          if (this.floating) {
+            this.menuX = trigger.left;
+            this.menuWidth = trigger.width;
+            this.menuY = this.menuAbove ? Math.max(top + 8, trigger.top - this.menuHeight - 7) : trigger.bottom + 7;
+          }
           this.menuShift = 0;
           this.$nextTick(() => {
             if (!this.open || !this.$refs.menu) return;
@@ -100,8 +114,9 @@
         this.positionMenu();
       },
       onOutside: function (event) {
-        if (this.open && !this.$el.contains(event.target)) this.close();
+        if (this.open && !this.$el.contains(event.target) && !this.$refs.menu?.contains(event.target)) this.close();
       },
+      onScroll(event) { if (this.floating && !this.$refs.menu?.contains(event.target)) this.positionMenu(); },
       close: function (restoreFocus = false) { this.open = false; this.activeIndex = -1; this.group = null; if (restoreFocus) this.$refs.trigger?.focus(); },
       toggle: function () {
         if (this.open) { this.close(); return; }
@@ -117,7 +132,7 @@
         this.$emit('change', option.value);
         this.close();
         this.$nextTick(() => {
-          if (this.$refs.trigger) this.$refs.trigger.focus();
+          if (this.$refs.trigger) this.$refs.trigger.focus({ preventScroll: this.floating });
         });
       },
       onKeydown: function (event) {
@@ -157,14 +172,14 @@
           <span>{{ selectedOption.label }}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
-        <div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="{transform:'translateX(' + menuShift + 'px)',maxWidth:'calc(100vw - 16px)',maxHeight:menuHeight+'px',top:menuAbove?'auto':undefined,bottom:menuAbove?'calc(100% + 7px)':undefined}" role="listbox" @keydown="onKeydown">
-          <button v-if="group" class="ui-select-back" type="button" @click="back">‹ {{ label }} · {{ group.label }}</button>
+        <teleport to="body" :disabled="!floating"><div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="menuStyle" role="listbox" @keydown="onKeydown">
+          <button v-if="group" class="ui-select-back" type="button" @click="back">‹ {{ label }}　{{ group.label }}</button>
           <button v-for="(option,index) in visibleOptions" :id="listId+'-option-'+index" :key="String(option.value)" type="button" role="option" tabindex="-1" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
             <span>{{ option.label }}</span>
             <svg v-if="option.children" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
             <svg v-else-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>
           </button>
-        </div>
+        </div></teleport>
       </div>`
   };
 
