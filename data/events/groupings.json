@@ -2,6 +2,20 @@
   "schema_version": 1,
   "groups": [
     {
+      "id": "program-golf-world-2026-01", "kind": "series_arc",
+      "title": "Everybody’s Golf WORLD 四人游戏实况（2026年1月）",
+      "summary": "目白善信、目白赖恩、目白阿尔丹与目白光明共同游玩《Everybody’s Golf WORLD》。上篇进行通常模式对战，下篇继续进行综艺模式对战。",
+      "source_urls": ["https://www.youtube.com/watch?v=tQDO-uVCl40", "https://www.youtube.com/watch?v=fxXEJ_DEdW0"],
+      "members": [{"event_id": "pakatube-20260131-golf-world-4", "label": "上篇"}, {"event_id": "pakatube-20260201-golf-world-4", "label": "下篇"}]
+    },
+    {
+      "id": "program-shadow-corridor-2025-11", "kind": "series_arc",
+      "title": "Shadow Corridor 三姐妹游戏实况",
+      "summary": "三姐妹连续三夜公开《Shadow Corridor》恐怖游戏实况，依次探索路地、寒蝉回廊和骸流溪谷。",
+      "source_urls": ["https://www.youtube.com/watch?v=YMxjZF3gtoM", "https://www.youtube.com/watch?v=6kWw9Nn4dIY", "https://www.youtube.com/watch?v=GVBUPmeFIrg"],
+      "members": [{"event_id": "pakatube-20251124-shadow-corridor", "label": "第一夜"}, {"event_id": "pakatube-20251125-shadow-corridor", "label": "第二夜"}, {"event_id": "pakatube-20251126-shadow-corridor", "label": "第三夜"}]
+    },
+    {
       "id": "onsite-kanazawa-2025-10-12",
       "kind": "onsite_group",
       "title": "金泽赛马联动谈话活动（2025年10月12日）",
@@ -337,6 +351,7 @@
     },
     {
       "id": "onsite-sprinters-story-2023",
+      "session_days": ["2023-01-15", "2023-01-16", "2023-01-17", "2023-01-19", "2023-01-20", "2023-01-21", "2023-01-22", "2023-01-23", "2023-01-24", "2023-01-26", "2023-01-27", "2023-01-28", "2023-01-29"],
       "kind": "onsite_group",
       "title": "舞台《Sprinters’ Story》公演",
       "title_ja": "",

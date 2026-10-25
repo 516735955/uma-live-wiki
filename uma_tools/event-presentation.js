@@ -28,7 +28,7 @@ function projectEvents(events, groups = []) {
       const source = child.sessions?.length ? child.sessions : [{ id: child.id + '-session-1', date: child.date, performances: [], songs: [], character_ids: child.character_ids || [] }];
       return source.map(session => ({
         ...session, source_event_id: child.id,
-        label: unitLabel(source.length === 1 ? (member.label || child.title) : [member.label, session.label].filter(Boolean).join(' · ')),
+        label: unitLabel(source.length === 1 ? (member.label || child.title) : [member.label, session.label].filter(Boolean).join('、')),
         date: session.date || child.date,
         venue: session.venue || child.venue || '',
         venue_id: session.venue_id || child.venue_id || '',
@@ -49,8 +49,17 @@ function projectEvents(events, groups = []) {
       }));
     });
     const cancelled = sessions.filter(session => session.schedule_status === 'cancelled').length;
+    if (group.session_days?.length) {
+      for (const session of sessions) {
+        const day = group.session_days.indexOf(session.date);
+        if (day < 0) continue;
+        const sameDay = sessions.filter(item => item.date === session.date)
+          .sort((a, b) => String(a.start_time || '').localeCompare(String(b.start_time || '')));
+        session.label = 'DAY' + (day + 1) + (sameDay.length > 1 ? '　第' + (sameDay.indexOf(session) + 1) + '回' : '');
+      }
+    }
     const parent = {
-      ...first, id: group.id, title: group.title, title_zh: group.title,
+      ...first, id: group.id, title: first.display_title || group.title, title_zh: first.display_title || group.title,
       title_ja: group.title_ja || '', title_aliases: children.flatMap(member => [member.event.title, member.event.title_ja]).filter(Boolean),
       summary: group.summary || '', summary_zh: group.summary || '', summary_ja: '',
       date: group.date_start || first.date,
@@ -60,9 +69,9 @@ function projectEvents(events, groups = []) {
       venue: children.every(member => member.event.venue === first.venue) ? first.venue : '',
       venue_id: children.every(member => member.event.venue_id === first.venue_id) ? first.venue_id : '',
       status_note: group.status_note || '', status_source_url: group.status_source_url || '',
-      image: group.image || first.image,
-      image_preview: group.image_preview || group.image || first.image_preview || first.image,
-      image_original: group.image_original || group.image || first.image_original,
+      image: sessions[0].image || first.image,
+      image_preview: sessions[0].image_preview || sessions[0].image || first.image_preview || first.image,
+      image_original: sessions[0].image_original || sessions[0].image || first.image_original,
       unit_kind: group.kind === 'competition' ? '赛程' : ['series_arc', 'online_series'].includes(group.kind) ? '分集' : '场次',
       sessions,
       cast: unique(children.flatMap(member => member.event.cast || []), cast => cast.voice_actor_id || cast.character_id || cast.name || JSON.stringify(cast)),

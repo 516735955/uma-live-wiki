@@ -394,13 +394,13 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 **({"broadcast_time": source_session.get("broadcast_time") or source_session["start_time"]} if source_session.get("broadcast_time") or (kind == "official_program" and source_session.get("start_time")) else {}),
                 **({"end_time": source_session["end_time"]} if source_session.get("end_time") else {}),
                 **({"doors_time": source_session["doors_time"]} if source_session.get("doors_time") else {}),
-                **{key: source_session[key] for key in ("source_time_text", "time_precision", "broadcast_time_kind", "time_source_url") if source_session.get(key)},
+                **{key: source_session[key] for key in ("source_time_text", "time_precision", "broadcast_time_kind", "time_source_url", "published_time", "published_date", "publication_source_url") if source_session.get(key)},
             })
         if not sessions:
             sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": program_date, "songs": [], "character_ids": characters, "cast": cast,
                          **({"source_date": source_date} if source_date else {})}]
         if len(sessions) == 1:
-            for field in ("broadcast_time", "end_time", "time_precision", "time_source_url", "source_time_text", "broadcast_time_kind"):
+            for field in ("broadcast_time", "end_time", "time_precision", "time_source_url", "source_time_text", "broadcast_time_kind", "published_time", "published_date", "publication_source_url"):
                 if source.get(field) and not sessions[0].get(field):
                     sessions[0][field] = source[field]
         events.append({

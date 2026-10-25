@@ -8,11 +8,12 @@ from __future__ import annotations
 
 import datetime as _datetime
 import re
+import unicodedata
 from typing import Any
 
 JST = _datetime.timezone(_datetime.timedelta(hours=9), name="Asia/Tokyo")
 
-_CLOCK = re.compile(r"(?<!\d)(?P<hour>\d{1,2})(?:時(?:(?P<minute>\d{1,2})分?)?|:(?P<colon_minute>\d{2}))(?:\s*(?:から|より|に|放送|配信|公開|開始))?")
+_CLOCK = re.compile(r"(?<![\dA-Za-z])(?P<hour>\d{1,2})(?:時(?:(?P<half>半)|(?P<minute>\d{1,2})分?)?|:(?P<colon_minute>\d{2})(?!\d))(?:\s*(?:から|より|に|放送|配信|公開|開始))?")
 _BROADCAST_WORDS = re.compile(r"放送|配信|公開|生放送|ライブ|実況|stream|live", re.I)
 _NOISE_WORDS = re.compile(r"chapter|チャプター|締切|期限|応募|抽選|受付|購入|販売|終了|メンテ", re.I)
 
@@ -46,7 +47,7 @@ def _attach_date(schedule: dict[str, str] | None, broadcast_date: str = "") -> d
 
 
 def _extract_from_text(text: str, *, require_context: bool) -> dict[str, str] | None:
-    for line in str(text or "").splitlines():
+    for line in unicodedata.normalize('NFKC', str(text or "")).splitlines():
         if _NOISE_WORDS.search(line) or (require_context and not _BROADCAST_WORDS.search(line)):
             continue
         for match in _CLOCK.finditer(line):
@@ -55,10 +56,10 @@ def _extract_from_text(text: str, *, require_context: bool) -> dict[str, str] | 
             context = line[start:match.start()]
             if re.search(r"(?:https?://|[/-]\d{2,4}[/-]?$)", context):
                 continue
-            value = _clock(match.group("hour"), match.group("minute") or match.group("colon_minute"))
+            value = _clock(match.group("hour"), '30' if match.group('half') else match.group("minute") or match.group("colon_minute"))
             if value:
                 return {"broadcast_time": value, "broadcast_time_zone": "Asia/Tokyo", "broadcast_time_kind": "announced",
-                        "time_precision": "minute" if match.group("minute") or match.group("colon_minute") else "hour"}
+                        "time_precision": "minute" if match.group('half') or match.group("minute") or match.group("colon_minute") else "hour"}
     return None
 
 
@@ -106,6 +107,14 @@ def schedule_for_program(*, source_title: str = "", source_description: str = ""
         return result
     metadata_schedule = extract_metadata_time(metadata)
     if metadata_schedule:
+        # An ordinary uploaded video has a publication clock, not a broadcast
+        # start. Preserve the distinction in source records as well as the UI.
+        if metadata and metadata.get('live_status') == 'not_live' and not metadata.get('was_live'):
+            return {'published_time': metadata_schedule['broadcast_time'],
+                    'published_date': metadata_schedule['broadcast_date'],
+                    'publication_source_url': metadata.get('webpage_url') or metadata.get('source_url') or source_url,
+                    'time_precision': metadata_schedule['time_precision'],
+                    'source_time_text': metadata_schedule['source_time_text']}
         return metadata_schedule
     result = _attach_date(_extract_from_text(source_description, require_context=True), broadcast_date) or {}
     if result and source_url: result["time_source_url"] = source_url

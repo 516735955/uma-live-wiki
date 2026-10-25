@@ -664,10 +664,12 @@ class CatalogStore {
     })).searchParams;
     const query = normalize(params.get('q'));
     const time = params.get('time') || 'all';
-    const kind = params.get('kind') || 'all';
+    let kind = params.get('kind') || 'all';
     const mode = params.get('mode') || 'all';
     const year = params.get('year') || 'all';
     const series = params.get('series') || 'all';
+    const selectedSeries = (store.eventsDoc.series || []).find(row => row.id === series);
+    if (selectedSeries) kind = selectedSeries.kind;
     const today = businessDate.today();
     let rows = store.eventRows.filter((row) => {
       const event = row.data;
@@ -691,9 +693,9 @@ class CatalogStore {
     return {
       build_id: store.buildId,
       business_date: today,
-      series: (store.eventsDoc.series || []).map(series => ({...series,
-        kinds: [...new Set(store.eventRows.filter(row => row.data.series_id === series.id).map(row => row.data.kind))]
-      })),
+      series: (store.eventsDoc.series || [])
+        .filter(series => store.eventRows.some(row => row.data.series_id === series.id))
+        .map(series => ({...series, kinds: [series.kind]})),
       years: Array.from(new Set(store.eventRows.flatMap(row => [row.data.date, ...(row.data.sessions || []).map(session => session.date)]).filter(Boolean).map(releaseYear))).sort().reverse(),
       items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
       total,

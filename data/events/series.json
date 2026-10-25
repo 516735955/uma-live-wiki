@@ -1,15 +1,465 @@
 {
   "schema_version": 1,
   "series": [
-    {"id": "numbered-live", "name": "编号系列公演", "name_ja": "ナンバリングイベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/numbered-live.svg", "primary": "#315FC2", "secondary": "#FF8C1A"},
-    {"id": "winning-live-release", "name": "WINNING LIVE 发售纪念活动", "name_ja": "WINNING LIVE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/winning-live.svg", "primary": "#4169D8", "secondary": "#FF8C1A"},
-    {"id": "starting-gate-release", "name": "STARTING GATE 发售纪念活动", "name_ja": "STARTING GATE 発売記念イベント", "kind": "concert", "cover": "/uma_tools/img/event-covers/starting-gate.svg", "primary": "#219C9F", "secondary": "#B9D934"},
-    {"id": "twinkle-circle", "name": "Twinkle Circle!", "name_ja": "Twinkle Circle!", "kind": "concert", "cover": "/uma_tools/img/event-covers/twinkle-circle.svg", "primary": "#23AEB4", "secondary": "#FF8C1A"},
-    {"id": "paka-live-tv", "name": "PakaLive TV", "name_ja": "ぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv.svg", "primary": "#315FC2", "secondary": "#FF8C1A"},
-    {"id": "paka-live-tv-prime", "name": "PakaLive TV'", "name_ja": "ぱかライブTV'", "kind": "official_program", "cover": "/uma_tools/img/event-covers/paka-live-tv-prime.svg", "primary": "#4169D8", "secondary": "#34CED0"},
-    {"id": "sokosoko-paka-live-tv", "name": "SokoSoko PakaLive TV", "name_ja": "そこそこぱかライブTV", "kind": "official_program", "cover": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg", "primary": "#28A8AE", "secondary": "#B9D934"},
-    {"id": "pakatube-character-program", "name": "PakaTube 角色节目", "name_ja": "ぱかチューブっ！キャラクター番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/pakatube.svg", "primary": "#315FC2", "secondary": "#34CED0"},
-    {"id": "all-night-nippon-gold", "name": "赛马娘 All Night Nippon GOLD", "name_ja": "ウマ娘のオールナイトニッポンGOLD", "kind": "official_program", "cover": "https://www.allnightnippon.com/wp/assets/uploads/2026/04/0db77b4f6fba8a23caaf2f92d512ea5a.jpg", "cover_source": "https://www.allnightnippon.com/umamusume/", "primary": "#9B6B20", "secondary": "#F2C84B"},
-    {"id": "official-special", "name": "官方特别节目", "name_ja": "公式特別番組", "kind": "official_program", "cover": "/uma_tools/img/event-covers/official-program.svg", "primary": "#4169D8", "secondary": "#34CED0"}
+    {
+      "id": "numbered-live",
+      "name": "编号系列公演",
+      "name_ja": "ナンバリングイベント",
+      "kind": "concert",
+      "cover": "/uma_tools/img/event-covers/numbered-live.svg",
+      "primary": "#315FC2",
+      "secondary": "#FF8C1A"
+    },
+    {
+      "id": "winning-live-release",
+      "name": "WINNING LIVE 发售纪念活动",
+      "name_ja": "WINNING LIVE 発売記念イベント",
+      "kind": "onsite",
+      "cover": "/uma_tools/img/event-covers/winning-live.svg",
+      "primary": "#4169D8",
+      "secondary": "#FF8C1A"
+    },
+    {
+      "id": "starting-gate-release",
+      "name": "STARTING GATE 发售纪念活动",
+      "name_ja": "STARTING GATE 発売記念イベント",
+      "kind": "onsite",
+      "cover": "/uma_tools/img/event-covers/starting-gate.svg",
+      "primary": "#219C9F",
+      "secondary": "#B9D934"
+    },
+    {
+      "id": "twinkle-circle",
+      "name": "Twinkle Circle!",
+      "name_ja": "Twinkle Circle!",
+      "kind": "onsite",
+      "cover": "/uma_tools/img/event-covers/twinkle-circle.svg",
+      "primary": "#23AEB4",
+      "secondary": "#FF8C1A"
+    },
+    {
+      "id": "animax-musix",
+      "name": "ANIMAX MUSIX",
+      "kind": "concert",
+      "title_patterns": [
+        "ANIMAX MUSIX"
+      ]
+    },
+    {
+      "id": "animelo-summer-live",
+      "name": "Animelo Summer Live",
+      "kind": "concert",
+      "title_patterns": [
+        "Animelo Summer Live"
+      ]
+    },
+    {
+      "id": "tokyo-idol-festival",
+      "name": "TOKYO IDOL FESTIVAL",
+      "kind": "concert",
+      "title_patterns": [
+        "TOKYO IDOL FESTIVAL"
+      ]
+    },
+    {
+      "id": "chojigen-music",
+      "name": "超次元音乐祭",
+      "kind": "concert",
+      "title_patterns": [
+        "超次元.*(?:音乐祭|音楽祭|音乐节)"
+      ]
+    },
+    {
+      "id": "momoiro-uta-gassen",
+      "name": "桃色歌合战",
+      "kind": "concert",
+      "title_patterns": [
+        "桃色歌合战",
+        "ももいろ歌合戦"
+      ]
+    },
+    {
+      "id": "aniera-festa",
+      "name": "Aniera Festa",
+      "kind": "concert",
+      "title_patterns": [
+        "ANIERA FESTA",
+        "Aniera Festa"
+      ]
+    },
+    {
+      "id": "idol-square",
+      "name": "IDOL SQUARE",
+      "kind": "concert",
+      "title_patterns": [
+        "IDOL SQUARE"
+      ]
+    },
+    {
+      "id": "inazuma-rock",
+      "name": "稻妻摇滚音乐节",
+      "kind": "concert",
+      "title_patterns": [
+        "稻妻摇滚",
+        "イナズマロック"
+      ]
+    },
+    {
+      "id": "bilibili-macro-link",
+      "name": "BILIBILI MACRO LINK",
+      "kind": "concert",
+      "title_patterns": [
+        "BILIBILI MACRO LINK"
+      ]
+    },
+    {
+      "id": "v-carnival",
+      "name": "V-Carnival",
+      "kind": "concert",
+      "title_patterns": [
+        "V-Carnival"
+      ]
+    },
+    {
+      "id": "vtuber-fes",
+      "name": "VTuber Fes Japan",
+      "kind": "concert",
+      "title_patterns": [
+        "VTuber Fes Japan"
+      ]
+    },
+    {
+      "id": "stage-sprinters-story",
+      "name": "舞台《Sprinters’ Story》",
+      "kind": "onsite",
+      "title_patterns": [
+        "Sprinters[’'‘]? ?Story"
+      ]
+    },
+    {
+      "id": "nakayama-winners-lady",
+      "name": "中山赛马场 Winners Lady 联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "Winners Lady"
+      ]
+    },
+    {
+      "id": "racecourse-obihiro",
+      "name": "带广赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "带广赛马",
+        "帯広競馬",
+        "ばんえい競馬"
+      ]
+    },
+    {
+      "id": "racecourse-kanazawa",
+      "name": "金泽赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "金泽赛马",
+        "金沢競馬"
+      ]
+    },
+    {
+      "id": "racecourse-kasamatsu",
+      "name": "笠松赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "笠松赛马",
+        "笠松競馬"
+      ]
+    },
+    {
+      "id": "racecourse-urawa",
+      "name": "浦和赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "浦和赛马",
+        "浦和競馬"
+      ]
+    },
+    {
+      "id": "racecourse-saga",
+      "name": "佐贺赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "佐贺赛马",
+        "佐賀競馬"
+      ]
+    },
+    {
+      "id": "tokyo-mega-illumi",
+      "name": "东京 Mega Illumi 联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "Mega Illumi",
+        "メガイルミ"
+      ]
+    },
+    {
+      "id": "anime-release-events",
+      "name": "动画音乐发售纪念活动",
+      "kind": "onsite",
+      "title_patterns": [
+        "ANIMATION DERBY",
+        "(?:动画|アニメ).*主题曲.*发售",
+        "(?:动画|アニメ).*主題歌.*発売",
+        "(?:动画|アニメ).*アルバム.*発売",
+        "(?:动画|アニメ).*专辑.*发售",
+        "四格马娘.*发售"
+      ]
+    },
+    {
+      "id": "paka-live-tv",
+      "name": "PakaLive TV",
+      "name_ja": "ぱかライブTV",
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/paka-live-tv.svg",
+      "primary": "#315FC2",
+      "secondary": "#FF8C1A"
+    },
+    {
+      "id": "paka-live-tv-prime",
+      "name": "PakaLive TV'",
+      "name_ja": "ぱかライブTV'",
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/paka-live-tv-prime.svg",
+      "primary": "#4169D8",
+      "secondary": "#34CED0"
+    },
+    {
+      "id": "sokosoko-paka-live-tv",
+      "name": "SokoSoko PakaLive TV",
+      "name_ja": "そこそこぱかライブTV",
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/sokosoko-paka-live-tv.svg",
+      "primary": "#28A8AE",
+      "secondary": "#B9D934"
+    },
+    {
+      "id": "pakatube-character-program",
+      "name": "PakaTube 角色节目",
+      "name_ja": "ぱかチューブっ！キャラクター番組",
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/pakatube.svg",
+      "primary": "#315FC2",
+      "secondary": "#34CED0"
+    },
+    {
+      "id": "all-night-nippon-gold",
+      "name": "赛马娘 All Night Nippon GOLD",
+      "name_ja": "ウマ娘のオールナイトニッポンGOLD",
+      "kind": "official_program",
+      "cover": "https://www.allnightnippon.com/wp/assets/uploads/2026/04/0db77b4f6fba8a23caaf2f92d512ea5a.jpg",
+      "cover_source": "https://www.allnightnippon.com/umamusume/",
+      "primary": "#9B6B20",
+      "secondary": "#F2C84B"
+    },
+    {
+      "id": "official-special",
+      "name": "官方特别节目",
+      "name_ja": "公式特別番組",
+      "kind": "official_program",
+      "cover": "/uma_tools/img/event-covers/official-program.svg",
+      "primary": "#4169D8",
+      "secondary": "#34CED0"
+    },
+    {
+      "id": "live-bluray-release",
+      "name": "演唱会 Blu-ray 发售上映活动",
+      "kind": "onsite",
+      "title_patterns": [
+        "(?:EVENT|SPECIAL DREAMERS).*Blu-ray.*(?:发售|発売)"
+      ]
+    },
+    {
+      "id": "northern-horse-park",
+      "name": "Northern Horse Park 联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "Northern Horse Park"
+      ]
+    },
+    {
+      "id": "northern-masters-horse-show",
+      "name": "Northern Masters Horse Show",
+      "kind": "onsite",
+      "title_patterns": [
+        "Northern Masters Horse Show"
+      ]
+    },
+    {
+      "id": "thoroughbred-horse-show",
+      "name": "Thoroughbred Horse Show",
+      "kind": "onsite",
+      "title_patterns": [
+        "Thoroughbred Horse Show"
+      ]
+    },
+    {
+      "id": "racecourse-sonoda",
+      "name": "园田赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "园田赛马",
+        "園田競馬"
+      ]
+    },
+    {
+      "id": "racecourse-nagoya",
+      "name": "名古屋赛马场联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "名古屋赛马",
+        "名古屋競馬"
+      ]
+    },
+    {
+      "id": "anime-cinderella-bluray",
+      "name": "Cinderella Gray Blu-ray 发售活动",
+      "kind": "onsite",
+      "title_patterns": [
+        "(?:Cinderella Gray|シンデレラグレイ).*Blu-ray.*(?:发售|発売)"
+      ]
+    },
+    {
+      "id": "anime-cinderella-exhibition",
+      "name": "Cinderella Gray 怪物的蹄迹展",
+      "kind": "onsite",
+      "title_patterns": [
+        "怪物的蹄迹展",
+        "怪物の蹄跡展"
+      ]
+    },
+    {
+      "id": "anime-screening-events",
+      "name": "动画提前上映与谈话活动",
+      "kind": "onsite",
+      "title_patterns": [
+        "(?:动画|アニメ|TVアニメ).*?(?:提前放映|先行上映)"
+      ]
+    },
+    {
+      "id": "movie-stage-greetings",
+      "name": "新时代之扉 见面会与首映礼",
+      "kind": "onsite",
+      "title_patterns": [
+        "(?:剧场版|劇場版).*?(?:见面会|首映礼|舞台挨拶|完成披露)"
+      ]
+    },
+    {
+      "id": "movie-f-village",
+      "name": "新时代之扉 F VILLAGE 联动",
+      "kind": "onsite",
+      "title_patterns": [
+        "F VILLAGE"
+      ]
+    },
+    {
+      "id": "paka-radio",
+      "name": "Paka Radio",
+      "kind": "official_program",
+      "title_patterns": [
+        "Paka Radio",
+        "ぱかラジ"
+      ]
+    },
+    {
+      "id": "fns-music-program",
+      "name": "FNS 歌谣祭",
+      "kind": "official_program",
+      "title_patterns": [
+        "FNS歌",
+        "FNS 歌"
+      ]
+    },
+    {
+      "id": "shibuya-music-program",
+      "name": "涩谷之音",
+      "kind": "official_program",
+      "title_patterns": [
+        "涩谷之音",
+        "シブヤノオト"
+      ]
+    },
+    {
+      "id": "anison-premium",
+      "name": "Anison! Premium!",
+      "kind": "official_program",
+      "title_patterns": [
+        "Anison! Premium!",
+        "アニソン！プレミアム"
+      ]
+    },
+    {
+      "id": "cdtv",
+      "name": "CDTV",
+      "kind": "official_program",
+      "title_patterns": [
+        "CDTV"
+      ]
+    },
+    {
+      "id": "ongaku-no-hi",
+      "name": "音乐之日",
+      "kind": "official_program",
+      "title_patterns": [
+        "音乐之日",
+        "音楽の日"
+      ]
+    },
+    {
+      "id": "songs-of-tokyo",
+      "name": "SONGS OF TOKYO",
+      "kind": "official_program",
+      "title_patterns": [
+        "SONGS OF TOKYO"
+      ]
+    },
+    {
+      "id": "wonder-festival",
+      "name": "Wonder Festival 赛马娘舞台",
+      "kind": "onsite",
+      "title_patterns": [
+        "Wonder Festival",
+        "ワンダーフェスティバル"
+      ]
+    },
+    {
+      "id": "animejapan",
+      "name": "AnimeJapan 赛马娘舞台",
+      "kind": "onsite",
+      "title_patterns": [
+        "AnimeJapan"
+      ]
+    },
+    {
+      "id": "taiwan-comic-exhibition",
+      "name": "台湾漫画博览会",
+      "kind": "onsite",
+      "title_patterns": [
+        "台湾漫画博览会"
+      ]
+    },
+    {
+      "id": "cygamesfes",
+      "name": "CygamesFes",
+      "kind": "onsite",
+      "title_patterns": [
+        "CygamesFes"
+      ]
+    },
+    {
+      "id": "tif-one-song-fes",
+      "name": "TIF presents ONE SONG FES.",
+      "kind": "official_program",
+      "title_patterns": [
+        "TIF.*预热宣传节目",
+        "TIF presents ONE SONG FES"
+      ]
+    }
   ]
 }

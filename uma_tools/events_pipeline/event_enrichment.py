@@ -16,6 +16,47 @@ EVENTERNOTE_FILE = common.DATA_DIR / "events_data.json"
 GROUP_IMAGE_DIR = common.ROOT / "uma_tools" / "img" / "event-groups"
 
 
+def apply_classification(events: list[dict], series_document: dict) -> list[dict]:
+    """Use one editorial primary category per series, independent of source and mode."""
+    series = series_document.get("series") or []
+    by_id = {item["id"]: item for item in series}
+    for event in events:
+        text = " ".join(str(event.get(key) or "") for key in ("title", "title_ja"))
+        current = by_id.get(event.get("series_id"))
+        if not current:
+            current = next((item for item in series if any(
+                common.re.search(pattern, text, common.re.I)
+                for pattern in item.get("title_patterns") or []
+            )), None)
+        if current:
+            event["series_id"] = current["id"]
+            event["kind"] = current["kind"]
+        if event.get("series_id") in {"winning-live-release", "starting-gate-release"}:
+            prefix = "WINNING LIVE" if event["series_id"] == "winning-live-release" else "STARTING GATE"
+            match = common.re.search(prefix + r"\s*(\d{1,2}(?:(?:\s*[&＆/・、]\s*|\s+)(?:WINNING LIVE\s*|STARTING GATE\s*)?\d{1,2})*)", text, common.re.I)
+            if match:
+                numbers = common.re.findall(r"\d+", match.group(1))
+                title = prefix + " " + "&".join(f"{int(number):02d}" for number in numbers) + " 发售纪念活动"
+                event["display_title"] = title
+                if event.get("group_label") and event.get("group_id"):
+                    title += " " + str(event["group_label"])
+                if event["title"] != title:
+                    event["title_aliases"] = list(dict.fromkeys([*event.get("title_aliases", []), event["title"]]))
+                    event["title"] = event["title_zh"] = title
+        title = str(event.get("title") or "")
+        compact = common.re.sub(r"^(?:赛马娘|ウマ娘)\s*(?:Pretty Derby|プリティーダービー)\s*", "", title, flags=common.re.I)
+        if common.re.search(r'EVENT WORLD TOUR\s*[「『\"]?THE STAGE', compact, common.re.I):
+            compact = common.re.sub(r'(\d+(?:th|st|nd|rd)) EVENT WORLD TOUR\s*[「『\"]?THE STAGE[」』\"]?\s*[－–—-]\s*', r'\1 EVENT THE STAGE ', compact, flags=common.re.I)
+            compact = compact.replace("TOKYO", "东京公演").replace("OSAKA", "大阪公演")
+        compact = compact.replace(" · ", " ").strip()
+        if compact and compact != title:
+            event["title_aliases"] = list(dict.fromkeys([*event.get("title_aliases", []), title]))
+            event["title"] = event["title_zh"] = compact
+            if not event.get("title_ja"):
+                event["title_ja"] = title
+    return events
+
+
 def _read(path):
     if not path.exists():
         return {}
@@ -61,7 +102,7 @@ def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[l
         # Preserve editorial scheduling/image facts supplied by the source
         # document; enrichment may fill missing values, but must not discard
         # an explicitly confirmed end date or parent cover.
-        for key in ("image", "image_strategy", "image_source", "date_start", "date_end", "confirmed_end_date"):
+        for key in ("image", "image_strategy", "image_source", "date_start", "date_end", "confirmed_end_date", "session_days"):
             if key in group:
                 output_group[key] = group[key]
         output_groups.append(output_group)
@@ -149,13 +190,8 @@ def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[l
         ends = [item["date_end"] for item in children if item["date_end"]]
         group["date_start"] = group.get("date_start") or (min(dates) if dates else "")
         group["date_end"] = group.get("date_end") or (max(ends) if ends else "")
-        local_image = GROUP_IMAGE_DIR / f"{group['id']}.svg"
-        group["image"] = group.get("image") or (
-            f"/uma_tools/img/event-groups/{group['id']}.svg" if local_image.exists() else (children[0]["image"] if children else "")
-        )
-        group["image_strategy"] = group.get("image_strategy") or (
-            "deterministic_child_collage" if len(children) > 1 else "child_media"
-        )
+        group["image"] = children[0]["image"] if children else ""
+        group["image_strategy"] = "default_session"
     return enriched, output_groups
 
 
@@ -274,7 +310,9 @@ def apply_source_times(events: list[dict]) -> list[dict]:
                 if match and not child.get(field) and field not in manual:
                     child[field] = f"{int(match.group(1)):02d}:{match.group(2)}"
                     filled = True
-                    if field == "end_time" and common.re.search(r"目安|预计|預計|予定|预定", text):
+                    # Eventernote labels its end clock as an estimate even
+                    # when the archived compact times omit that page note.
+                    if field == "end_time" and (own_archive or (archived_item if not multiple else None) or common.re.search(r"目安|预计|預計|予定|预定", text)):
                         child["end_time_estimated"] = True
             if not multiple and title_match and not child.get("start_time") and "start_time" not in manual:
                 child["start_time"] = f"{int(title_match.group(1)):02d}:{title_match.group(2)}"
@@ -293,6 +331,43 @@ def apply_source_times(events: list[dict]) -> list[dict]:
     return output
 
 
+def apply_video_times(events: list[dict]) -> list[dict]:
+    """Keep archived official upload clocks separate from live broadcast clocks."""
+    from .program_discovery import PROGRAM_METADATA_CACHE, valid_video_metadata
+    from .program_schedule import extract_metadata_time
+    for event in events:
+        sources = [item for item in event.get("sources") or [] if item.get("kind") == "official_youtube"]
+        if len(event.get("sessions") or []) != 1:
+            continue
+        for source in sources:
+            match = common.re.search(r"(?:[?&]v=|youtu\.be/)([\w-]{11})", source.get("url") or "")
+            if not match:
+                continue
+            video_id = match.group(1)
+            path = PROGRAM_METADATA_CACHE / (video_id + ".json")
+            metadata = _read(path)
+            if not valid_video_metadata(metadata, video_id) or metadata.get("channel_id") != "UCAWxPGGuIfWME2KTLUmSCHw":
+                continue
+            schedule = extract_metadata_time(metadata)
+            if not schedule:
+                continue
+            session = event["sessions"][0]
+            if metadata.get("was_live") or metadata.get("live_status") in {"was_live", "is_live", "is_upcoming"} or metadata.get("live_start_timestamp"):
+                for key, value in schedule.items():
+                    if not session.get(key):
+                        session[key] = value
+            else:
+                session["published_time"] = schedule["broadcast_time"]
+                session["published_date"] = schedule["broadcast_date"]
+                session["publication_source_url"] = source["url"]
+                if session.get("broadcast_time_kind") == "metadata" and session.get("broadcast_time") == schedule["broadcast_time"]:
+                    session.pop("broadcast_time", None)
+                if event.get("broadcast_time_kind") == "metadata" and event.get("broadcast_time") == schedule["broadcast_time"]:
+                    event.pop("broadcast_time", None)
+            break
+    return events
+
+
 def enrich(events: list[dict], groupings: dict | None = None, venues: dict | None = None) -> tuple[list[dict], list[dict]]:
     events, groups = apply_groupings(events, groupings)
-    return apply_source_times(apply_news_images(apply_venues(events, venues))), groups
+    return apply_video_times(apply_source_times(apply_news_images(apply_venues(events, venues)))), groups

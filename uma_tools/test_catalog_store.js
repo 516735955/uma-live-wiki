@@ -46,6 +46,9 @@ async function main() {
   assert(eventList.items.every((event) => !event.cast && !event.sessions), 'event list leaked detail payloads');
   assert((await store.events(new URLSearchParams('q=PakaLive+TV'))).total > 0, 'server pagination retains series-name search');
   assert((await store.events(new URLSearchParams('q=Tokai+Teio'))).total > 0, 'server pagination retains character aliases');
+  assert.strictEqual((await store.events(new URLSearchParams('kind=concert&series=winning-live-release'))).total,
+    (await store.events(new URLSearchParams('kind=onsite&series=winning-live-release'))).total,
+    'historical category links keep the complete series after primary classification changes');
 
   const knownEventId = 'live-numbered-6th-event-2025-10-18';
   const knownEvent = await store.event(knownEventId);
@@ -114,6 +117,10 @@ async function main() {
   assert(Buffer.byteLength(JSON.stringify(scopedAlbum)) < 300 * 1024, 'album recordings must remain scoped to the requested album');
   assert(scopedAlbum.catalog_songs.every(song => !song.performances && !song.detail_complete));
   const solo = await store.album('album-lacz-10116', '');
+  const umapyoi = (await store.song('song-228f943b49')).song;
+  const recordingFor = albumId => umapyoi.versions.find(version => version.releases.some(release => release.album_id === albumId && !version.version_label.includes('Size') && !version.version_label.includes('Remastered')));
+  assert.notStrictEqual(recordingFor('album-laca-15621').id, recordingFor('album-laca-15859').id, 'different officially credited singing ensembles must not share a recording');
+  assert.strictEqual(recordingFor('album-laca-15621').releases.find(release => release.album_id === 'album-laca-15621').vocalists.length, 3, 'STARTING GATE 01 retains all three credited singers');
   assert.strictEqual(solo.catalog_songs.length, new Set(solo.catalog_songs.map((song) => song.id)).size, 'solo tracks must not duplicate full song objects');
   assert.strictEqual(solo.album.songs.length, 77, 'all solo recordings remain present');
   const lastPage = await store.songs(new URLSearchParams('page=999&page_size=30'));

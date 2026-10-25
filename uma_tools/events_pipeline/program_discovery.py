@@ -329,6 +329,26 @@ def is_official_special_video(title: str) -> bool:
     )
 
 
+def announcement_artwork(message: str) -> str:
+    """Read the article's own artwork instead of the portal's generic sharing image."""
+    class Images(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.urls = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag != "img":
+                return
+            attrs = dict(attrs)
+            url = attrs.get("src") or attrs.get("data-src") or ""
+            if url.startswith("https://") and not pipeline_common.re.search(r"logo|favicon|og[-_]?image|/common/", url, pipeline_common.re.I):
+                self.urls.append(url)
+
+    images = Images()
+    images.feed(message or "")
+    return images.urls[0] if images.urls else ""
+
+
 def announcement_identity(title: str, message: str, date: str) -> tuple[str, str]:
     regular = pipeline_program_text.program_identity(title)
     if not regular[0]:
@@ -523,7 +543,7 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
                 **({"source_title": title} if display_title != title else {}), "date": date,
                 **schedule,
                 "end_date": sessions[-1]["date"] if sessions and sessions[-1].get("date") else date,
-                "video_id": video_id, "url": video_url, "thumbnail": row.get("image") or "", "duration": None,
+                "video_id": video_id, "url": video_url, "thumbnail": announcement_artwork(message), "duration": None,
                 "cast_status": "verified" if cast else "pending", "cast": cast, "characters": [], "sessions": sessions,
                 "summary": pipeline_text.clean_text(message)[:260], "source_kind": "official_announcement", "source_url": official_url,
             })

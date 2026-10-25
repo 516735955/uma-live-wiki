@@ -31,6 +31,14 @@ class ProgramScheduleTest(unittest.TestCase):
     def test_date_only_does_not_invent_midnight(self):
         self.assertIsNone(extract_announced_time("2026年10月24日に公開"))
 
+    def test_half_hour_and_fullwidth_clock(self):
+        self.assertEqual(extract_announced_time('２２時半から放送')['broadcast_time'], '22:30')
+
+    def test_upload_clock_is_publication(self):
+        value = schedule_for_program(metadata={'release_timestamp': 0, 'live_status': 'not_live', 'webpage_url': 'https://example.test/video'})
+        self.assertEqual(value['published_time'], '09:00')
+        self.assertNotIn('broadcast_time', value)
+
     def test_verified_metadata_is_jst(self):
         value = extract_metadata_time({"release_timestamp": datetime.datetime(2026, 10, 24, 11, tzinfo=datetime.timezone.utc).timestamp()})
         self.assertEqual(value["broadcast_time"], "20:00")

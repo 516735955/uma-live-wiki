@@ -345,6 +345,993 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "live-other-2021-12-31-z-5": {
+      "image": "https://www.momoclo.net/momoiroutagassen_5/images/main.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.momoclo.net/momoiroutagassen_5/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-11-20": {
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2022/10/chirashi.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-20185/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-11-20-2": {
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2022/10/chirashi.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-20185/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2022-12-31-6-2022-2023": {
+      "image": "https://www.momoclo.net/momoiroutagassen_6/images/main.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.momoclo.net/momoiroutagassen_6/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-07-30": {
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2023/06/7131763343075a9cecc059e4d55d9179.jpeg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-22985/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-10-22-2": {
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2023/09/bnr_kanazawa1024x576_20231022.jpeg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-23938/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-10-22": {
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2023/09/bnr_kanazawa1024x576_20231022.jpeg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-23938/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2023-12-31-7-2023-2024": {
+      "image": "https://www.momoclo.net/momoiroutagassen_7/images/main.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.momoclo.net/momoiroutagassen_7/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2024-11-08-idol-square-6": {
+      "image": "https://idolsquare.com/data/korabo_6.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://idolsquare.com/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-11-16-twinkle-circle-day1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-12-15-twinkle-circle-2": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-09-29-twinkle-circle-day2-2": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-09-01-twinkle-circle-day2": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-09-28-twinkle-circle-day1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-10-19-twinkle-circle-day1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-11-17-twinkle-circle-day2": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-09-29-twinkle-circle-day2-1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-10-20-twinkle-circle-day2-2": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-10-20-twinkle-circle-day2-1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-08-31-twinkle-circle-day1": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-twinkle-2024-12-15-twinkle-circle": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1971/Header/pakalive41_Twinkle_circle_KV.png?c=20240624225111",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1971",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-12-21": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2269/Header/nakayamacollabo2024_KV.jpg?c=20241220141001",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=2269",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-12-22": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2269/Header/nakayamacollabo2024_KV.jpg?c=20241220141001",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=2269",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-12-28": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2269/Header/nakayamacollabo2024_KV.jpg?c=20241220141001",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=2269",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2024-12-31-8": {
+      "image": "https://www.momoclo.net/momoiroutagassen_8/images/main.jpg?v=1",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.momoclo.net/momoiroutagassen_8/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2025-11-30-2": {
+      "image": "https://web-form.jp/sagakeiba-corabo2025/images/lp/img_maivisual.png",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://web-form.jp/sagakeiba-corabo2025/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2025-11-30": {
+      "image": "https://web-form.jp/sagakeiba-corabo2025/images/lp/img_maivisual.png",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://web-form.jp/sagakeiba-corabo2025/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-03-28-3": {
+      "image": "https://image.pia.jp/images/202602/202602090062_ex.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://w.pia.jp/t/umamusume-nthp/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-03-28": {
+      "image": "https://image.pia.jp/images/202602/202602090062_ex.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://w.pia.jp/t/umamusume-nthp/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-03-28-2": {
+      "image": "https://image.pia.jp/images/202602/202602090062_ex.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://w.pia.jp/t/umamusume-nthp/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-09-20": {
+      "image": "https://banei-keiba.or.jp/lp/umamusume/2026/img/h1.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://banei-keiba.or.jp/lp/umamusume/2026/index.html",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2027-02-06": {
+      "image": "/uma_tools/img/event-covers/winning-live.svg",
+      "image_source": {
+        "kind": "fallback_pending_artwork",
+        "url": "https://umamusume.lantis.jp/live/1432/",
+        "checked_at": "2026-10-25",
+        "note": "本次读取官方活动公告未发现独立活动图片；不使用网站通用分享图。"
+      }
+    },
+    "eventernote-2026-12-05": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8953_7.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-6th-event-the-new-frontier-blu-ray/",
+        "title": "2026-10-14 ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray BD/DVD",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-12-12": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/live/1413/",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2018-05-13-starting-gate-09-10": {
+      "image": "/album_covers/LACA-15709.webp",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15709",
+        "release_name": "ウマ娘 プリティーダービー STARTING GATE 09",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2018-07-15-starting-gate-11-12": {
+      "image": "/album_covers/LACA-15711.webp",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15711",
+        "release_name": "ウマ娘 プリティーダービー STARTING GATE 11",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2022-11-27-winning-live-08": {
+      "image": "https://p1.music.126.net/u61WHBLZempoMXt2knYkWw==/109951170973797158.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25014",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 08",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2023-02-12-winning-live-09": {
+      "image": "https://p1.music.126.net/3g-MUjUaUVPXNc3Nazplcg==/109951170973792144.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25032",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 09",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2023-04-02-winning-live-10": {
+      "image": "https://p1.music.126.net/-gEh8VoeZJ4byfekn1cGOg==/109951170973798054.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25034",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 10",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2023-05-07-winning-live-11": {
+      "image": "https://p1.music.126.net/xd8sIoxJozBR7F21UdF9BQ==/109951170973801108.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACM-24348",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 11",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2023-08-13-road-to-the-top": {
+      "image": "https://p2.music.126.net/gMoIlo6I6FL4pYhoZ6ueNw==/109951170973923429.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-9983",
+        "release_name": "アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」アルバム",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2023-11-05-winning-live-13-14": {
+      "image": "https://p1.music.126.net/B1HXc8DqJ2yNhl0YJjZhGQ==/109951170973793892.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25055",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 13",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-02-18-tv-season-3-animation-derby-season-3-vol": {
+      "image": "https://p1.music.126.net/44XIyIxgRko5GoxycVxgsw==/109951170973839178.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACM-24452",
+        "release_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY Season 3 vol.1「ソシテミンナノ」",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-05-12-winning-live-15": {
+      "image": "https://p1.music.126.net/GpPtFSVaUcM2_ovVWMdf3A==/109951170973799225.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25080",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 15",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-06-22-winning-live-16": {
+      "image": "https://p1.music.126.net/GOOu53Ej2TkynKgSI6lrkw==/109951170973796314.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25083",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 16",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-07-27-winning-live-18": {
+      "image": "https://p1.music.126.net/h4bjFbFtCvlQtDqW0-i4Sg==/109951170973801735.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25086",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 18",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-08-10-winning-live-19": {
+      "image": "https://p1.music.126.net/jLzwIn67sw4fGOn2a_olPQ==/109951170973803859.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25099",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 19",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-10-26-winning-live-20": {
+      "image": "https://p1.music.126.net/mTr_JIWs0bJx2o5Frqsl4w==/109951170977395828.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25100",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 20",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2024-11-10-winning-live-21": {
+      "image": "https://p1.music.126.net/wlHpmhViAHGU-Le21_l9oA==/109951170977402596.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25109",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 21",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2025-01-12-winning-live-22": {
+      "image": "https://p1.music.126.net/YOquKGKi8HVMcW5FV7LcDA==/109951170977401411.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25119",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 22",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2025-02-15-winning-live-23": {
+      "image": "https://p1.music.126.net/rzJxJxj2l9cTKs1XE5ICrg==/109951170977404427.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25135",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 23",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2025-07-06-winning-live-24": {
+      "image": "https://p1.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-35146",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 24",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2025-07-26-1-1": {
+      "image": "https://p1.music.126.net/m0ADQzPiorf5Kr6RdwBN8g==/109951171007125463.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "UPCH-6039",
+        "release_name": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2025-07-26-1-2": {
+      "image": "https://p1.music.126.net/m0ADQzPiorf5Kr6RdwBN8g==/109951171007125463.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "UPCH-6039",
+        "release_name": "アニメ『ウマ娘 シンデレラグレイ』第1クールエンディング主題歌 : 「∞」",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-01-31-2": {
+      "image": "https://p1.music.126.net/_QwGg4OdbTo6ye-AiGme0A==/109951172345399338.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "UMCS-50001",
+        "release_name": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : 「ふたり」",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-01-31": {
+      "image": "https://p1.music.126.net/_QwGg4OdbTo6ye-AiGme0A==/109951172345399338.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "UMCS-50001",
+        "release_name": "アニメ『ウマ娘 シンデレラグレイ』第2クールエンディング主題歌 : 「ふたり」",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-cd-2026-08-16-winning-live-33": {
+      "image": "https://p1.music.126.net/MlOdcrnxNmPsMzoM-6VK9g==/109951172895228512.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25269",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 33",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-028": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1636/Header/sokopaka28KV.png?c=20231120184205",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1636",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-035": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1638/Header/pakalive35_kokutiKV.png?c=20231122180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1638",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-029": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1684/Header/sokopaka29KV.png?c=20231221180539",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1684",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-036": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1682/Header/pakalive36_kokutiKV.png?c=20231221002818",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1682",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-030": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1720/Header/sokopaka30KV.png?c=20240110180001",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1720",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-037": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1732/Header/pakalive37_kokutiKV.png?c=20240122183001",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1732",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-038": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1781/Header/pakalive38_KV_kokuti2.png?c=20240216185900",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1781",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-031": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1833/Header/sokopaka31_KV.jpg?c=20240313180003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1833",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-039": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1841/Header/pakalive39_KV_kokuti.png?c=20240319190004",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1841",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-032": {
+      "image": "https://i.ytimg.com/vi/jE_tS1AXrpE/hqdefault.jpg",
+      "image_source": {
+        "kind": "official_youtube_thumbnail",
+        "url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-040": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1907/Header/pakalive40_KV_kokuti.png?c=20240418180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1907",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-033": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1932/Header/sokopaka33_KV.jpg?c=20240508180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1932",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-041": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1952/Header/pakalive41_KV_kokuti.png?c=20240517170005",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1952",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-034": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1988/Header/sokopaka34_KV_2.jpg?c=20240613190140",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1988",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-042": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1990/Header/pakalive42_kokuchi_2.png?c=20240621185002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=1990",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-035": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2023/Header/sokopaka35_KV.png?c=20240711200002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2023",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-043": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2031/Header/pakalive43_kokuchi_KV.png?c=20240719183057",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2031",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-036": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2070/Header/sokopaka36_KV.png?c=20240817102101",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2070",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-044": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2074/Header/pakalive44_kokuti.png?c=20240819131710",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2074",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-037": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2115/Header/sokopaka37_KV_2.png?c=20240905110251",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2115",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-045": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2140/Header/pakalive45_kokuchi_KV.png?c=20240920183025",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2140",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-038": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2170/Header/sokopaka38_KV.png?c=20241009183017",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2170",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-046": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2181/Header/pakalive46_KV_kokuchi.png?c=20241018180003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2181",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-039": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2227/Header/sokopaka39_KV_2.png?c=20241113180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2227",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-047": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2233/Header/pakalive47_kokuchiKV.png?c=20241120180033",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2233",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-040": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2285/Header/sokopaka40_KV_2.jpg?c=20241212180016",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2285",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-048": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2286/Header/pakalive48_kokuti_KV.png?c=20241213180001",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2286",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-041": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2341/Header/sokopaka41_KV.png?c=20250116180004",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2341",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-049": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2346/Header/pakalive49_kokuchi_KV.png?c=20250122180003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2346",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-042": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2409/Header/sokopaka42_KV.png?c=20250219180056",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2409",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-050": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2391/Header/pakalive50_kokuchi_B.png?c=20250214190002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2391",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-051": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2463/Header/pakalive51_kokuchi_KV.jpg?c=20250321190004",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2463",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-043": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2503/Header/sokopaka43_KV.png?c=20250409180013",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2503",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-052": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2515/Header/pakalive52_kokuchi_KV.png?c=20250423200038",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2515",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-044": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2554/Header/sokopaka44_KV.png?c=20250514190017",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2554",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-053": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2570/Header/pakalive53_kokuchi_KV.png?c=20250521190005",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2570",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-054": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2600/Header/pakalive54_KV_kokuti_2.png?c=20250618184557",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2600",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-055": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2669/Header/pakalive55_KV_kokuti.png?c=20250723180055",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2669",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-056": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2706/Header/pakalive56_kv_futae.png?c=20250815190003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2706",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-048": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2764/Header/sokopaka48_KV_4.png?c=20250911180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2764",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-057": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2783/Header/pakalive57_kokuchi.png?c=20250919190002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2783",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-049": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2844/Header/sokopaka49_KV.png?c=20251016193002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2844",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-058": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2843/Header/pakalive58_kokuchi.png?c=20251017183003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2843",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-059": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2913/Header/pakalive59_kokuchi_KV.png?c=20251120180002",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2913",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-060": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2962/Header/pakalive60_kokuchi_KV.png?c=20251217180008",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=2962",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-061": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3019/Header/pakalive61_kokuchi_KV.png?c=20260128160221",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3019",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-052": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3058/Header/sokopaka52_KV.png?c=20260212180003",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3058",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-062": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3064/Header/pakalive62_kokuchi.png?c=20260216183842",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3064",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-001": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3147/Header/pakalive_dash1_kokuchiKV.png?c=20260323180039",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3147",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-053": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3197/Header/sokopaka53_thumbnail.png?c=20260415180015",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3197",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-002": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3205/Header/pakalive_dash2_kokuchi_KV.png?c=20260421180105",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3205",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-003": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3241/Header/pakadash_3_kokuchiKV.png?c=20260521180008",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3241",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-004": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3290/Header/pakadash_4_kokuchiKV.png?c=20260619180010",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3290",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-005": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3343/Header/pakalive_dash5_kokuchiKV.png?c=20260722180005",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3343",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-006": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3396/Header/pakalive_dash5_kokuchi_KV.png?c=20260814180029",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3396",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "sokosoko-paka-live-tv-055": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3424/Header/sokosoko55_KV.png?c=20260828193016",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3424",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-007": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3462/Header/pakadash_7_kokuchiKV.png?c=20260918183019",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3462",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "paka-live-tv-prime-008": {
+      "image": "https://prd-info-umamusume.akamaized.net/announce/3500/Header/pakadash8_kokuchi.png?c=20261016180031",
+      "image_source": {
+        "kind": "official_announcement_artwork",
+        "url": "https://umamusume.jp/news/detail?id=3500",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-05-05": {
+      "summary": "Machi Asobi Vol.20 的 Cygames 展位举行声优签名色纸赠送会，面向在现场购买《Make debut!》CD并取得兑换券的前200名观众。",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "动画官方活动公告",
+          "url": "https://anime-umamusume.jp/archive/1st/news/20180420_04.html"
+        }
+      ],
+      "session_patches": {
+        "eventernote-2018-05-05-session-1": {
+          "start_time": "15:00",
+          "end_time": "15:30",
+          "start_time_estimated": true,
+          "end_time_estimated": true,
+          "time_source_url": "https://anime-umamusume.jp/archive/1st/news/20180420_04.html",
+          "source_time_text": "お渡し会 2018年5月5日（土）15:00〜15:30 ※予定"
+        }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/156334_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-12-16": {
+      "summary": "CygamesFes 2018 第二日的闭幕舞台邀请主持人与多部作品的嘉宾共同登台，赛马娘 Special LIVE DAY2 的出演者也参与最终环节。",
+      "sources_add": [
+        {
+          "kind": "official_report",
+          "label": "CygamesFes 官方第二日报告",
+          "url": "https://cygamesfes.jp/report_day2/"
+        },
+        {
+          "kind": "official_schedule",
+          "label": "CygamesFes 官方节目表",
+          "url": "https://cygamesfes.jp/timetable/"
+        }
+      ]
+    },
     "live-numbered-4th-event-extra-2022-11-05": {
       "event_session_aliases": {
         "eventernote-2022-11-05": "live-numbered-4th-event-extra-2022-11-05-session-1",
@@ -583,7 +1570,23 @@
           "label": "节目官方页",
           "url": "https://official.idolfes.com/s/tif2024/page/broadcast"
         }
-      ]
+      ],
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/382814_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      },
+      "kind": "official_program",
+      "series_id": "tif-one-song-fes",
+      "session_patches": {
+        "eventernote-2024-06-20-session-1": {
+          "broadcast_time": "02:10",
+          "broadcast_date": "2024-07-25",
+          "time_source_url": "https://official.idolfes.com/s/tif2024/page/broadcast"
+        }
+      }
     },
     "live-other-2024-07-25-tif-presents-one-song-fes": {
       "date": "2024-07-25",
@@ -667,7 +1670,13 @@
           "source_kind": "official_announcement",
           "source_url": "https://umamusume.jp/news/detail?id=1805"
         }
-      ]
+      ],
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1805/Header/Venue101syussousya_osirase.png?c=20240303110005",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1805",
+        "reviewed_at": "2026-10-25"
+      }
     },
     "live-numbered-7th-event-3": {
       "cast_status": "announced_tba",
@@ -726,6 +1735,13 @@
           "time_source_url": "https://pia-arena-mm.jp/event/3824.html",
           "source_time_text": "2024年2月24日 15:00開場／16:00開演"
         }
+      },
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/355483_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-other-2023-12-06-2023-fns-1": {
@@ -737,7 +1753,13 @@
         }
       ],
       "kind": "official_program",
-      "mode": "online"
+      "mode": "online",
+      "session_patches": {
+        "live-other-2023-12-06-2023-fns-1-session-1": {
+          "broadcast_time": "18:30",
+          "time_source_url": "https://www.fujitv.co.jp/FNS/2023/"
+        }
+      }
     },
     "live-cd-2022-09-25-winning-live-07": {
       "sources_add": [
@@ -756,6 +1778,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/320/",
           "source_time_text": "2022-09-25 18:30 配信予定"
         }
+      },
+      "image": "https://p1.music.126.net/5SYwvzdrQ4xrhfvEQgssgQ==/109951170973786852.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-25001",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 07",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2022-07-17-winning-live-05-winning-live-06": {
@@ -775,6 +1804,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/386/",
           "source_time_text": "2022-07-17 16:00 配信予定"
         }
+      },
+      "image": "https://p2.music.126.net/jiN0KbQYg0tH6Tp28PD_XQ==/109951170973792765.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACM-24249",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 05",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2022-05-22-cd-winning-live-04": {
@@ -794,6 +1830,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/389/",
           "source_time_text": "2022-05-22 18:30 配信予定"
         }
+      },
+      "image": "https://p2.music.126.net/Xq0-ZspY3r_7nA2fM-4sQA==/109951170973794250.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15938",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 04",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2022-04-02-cd-winning-live-03": {
@@ -803,7 +1846,14 @@
           "label": "活动内容与日程公告",
           "url": "https://umamusume.lantis.jp/discography/winning-live-03/"
         }
-      ]
+      ],
+      "image": "https://p2.music.126.net/ZpqU0PAXIQF7e59_Zlqm_Q==/109951170973790880.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15930",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 03",
+        "reviewed_at": "2026-10-25"
+      }
     },
     "live-other-2022-03-20-sp": {
       "sources_add": [
@@ -847,6 +1897,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/441/",
           "source_time_text": "2021-11-06 18:30 配信予定"
         }
+      },
+      "image": "https://p2.music.126.net/RZgaCnRGb93shYit-lLZ7Q==/109951170973854829.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15879",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 02",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2021-11-06-starting-gate-unit-song-collection": {
@@ -866,6 +1923,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/441/",
           "source_time_text": "2021-11-06 16:00 配信予定"
         }
+      },
+      "image": "https://p2.music.126.net/fLN5GTIH9G7waU_fsHqHeA==/109951170973858325.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15889",
+        "release_name": "『ウマ娘 プリティーダービー』STARTING GATE Unit Song Collection",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2021-08-04-title-3968b924ad22": {
@@ -885,6 +1949,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/444/",
           "source_time_text": "2021-08-04 20:00 配信予定"
         }
+      },
+      "image": "https://p1.music.126.net/YblKqoAykpAkk47yVqHvAA==/109951170973869528.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15873",
+        "release_name": "アニメ『うまよん』ミニアルバム",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2021-04-04-winning-live-01": {
@@ -904,6 +1975,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/469/",
           "source_time_text": "2021-04-04 18:30 配信予定"
         }
+      },
+      "image": "https://p2.music.126.net/NY9mDi616DjmE0BsFu9G2w==/109951170973866055.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACA-15859",
+        "release_name": "『ウマ娘 プリティーダービー』WINNING LIVE 01",
+        "reviewed_at": "2026-10-25"
       }
     },
     "live-cd-2021-04-04-tv-season-2-animation-derby-season-2-vol": {
@@ -923,6 +2001,13 @@
           "time_source_url": "https://umamusume.lantis.jp/live/469/",
           "source_time_text": "2021-04-04 15:00 配信予定"
         }
+      },
+      "image": "https://p1.music.126.net/Fpz9Rdsyj2VShKVFwQEJFw==/109951170973838563.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "catalog": "LACM-24083",
+        "release_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY Season 2 vol.1「ユメヲカケル！」",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2023-04-28": {
@@ -935,6 +2020,13 @@
           "source_time_text": "最終レース終了後、準備が出来次第",
           "schedule_note": "末场比赛结束后，准备就绪即开始"
         }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/338560_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2026-09-20-2": {
@@ -942,6 +2034,12 @@
         "eventernote-2026-09-20-2-session-1": {
           "start_time_estimated": true
         }
+      },
+      "image": "https://banei-keiba.or.jp/lp/umamusume/2026/img/h1.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://banei-keiba.or.jp/lp/umamusume/2026/index.html",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2025-09-14": {
@@ -949,6 +2047,12 @@
         "eventernote-2025-09-14-session-1": {
           "start_time_estimated": true
         }
+      },
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2024/08/f7f618bbeff05bbcabac7b3213986a70-1.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-28610/",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2024-09-15-2": {
@@ -956,6 +2060,12 @@
         "eventernote-2024-09-15-2-session-1": {
           "start_time_estimated": true
         }
+      },
+      "image": "https://www.kanazawakeiba.com/wp-content/uploads/2024/08/f7f618bbeff05bbcabac7b3213986a70-1.jpg",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://www.kanazawakeiba.com/event/info-28610/",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2025-10-12-2": {
@@ -977,6 +2087,13 @@
         "eventernote-2024-10-13-2-session-1": {
           "start_time_estimated": true
         }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/394178_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2024-10-13": {
@@ -984,6 +2101,13 @@
         "eventernote-2024-10-13-session-1": {
           "start_time_estimated": true
         }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/390963_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2026-08-01": {
@@ -994,6 +2118,13 @@
           "venue": "Northern Horse Park · 主竞技场",
           "venue_id": "venue-northern-horsepark-main-arena"
         }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/484344_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "eventernote-2026-08-01-2": {
@@ -1004,6 +2135,13 @@
           "venue": "Northern Horse Park · Palazzo Vega 小马表演馆",
           "venue_id": "venue-northern-horsepark-pony-hall"
         }
+      },
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/484345_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
       }
     },
     "stage-sprinters-story-2023-cancelled": {
@@ -1094,6 +2232,12 @@
           "time_source_url": "https://umamusume.jp/news/detail?id=1855",
           "schedule_note": "预计19:00左右开始"
         }
+      },
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1827/Header/pakaspace_5thNEWGATE.jpg?c=20240323203602",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1827",
+        "reviewed_at": "2026-10-25"
       }
     },
     "official-special-paka-space-5th-event-yell": {
@@ -1108,6 +2252,12 @@
           "time_source_url": "https://umamusume.jp/news/detail?id=1768",
           "schedule_note": "预计19:00左右开始"
         }
+      },
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1768/Header/pakaspace_yell.jpg?c=20240304144207",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=1768",
+        "reviewed_at": "2026-10-25"
       }
     },
     "official-special-20221130-tv-extra-stage": {
@@ -1149,7 +2299,13 @@
           "label": "出演者官方播出告知",
           "url": "https://ameblo.jp/tsubaki-factory/entry-12916324488.html"
         }
-      ]
+      ],
+      "image": "https://prd-info-umamusume.akamaized.net/announce/2638/Header/2025_premiere no sokutsu.png?c=20250630100044",
+      "image_source": {
+        "kind": "official_event_visual",
+        "url": "https://umamusume.jp/news/detail?id=2638",
+        "reviewed_at": "2026-10-25"
+      }
     },
     "live-other-2022-07-16-2022": {
       "kind": "official_program",
@@ -1178,6 +2334,534 @@
     "live-other-2021-07-17-title-120f9f043a5b": {
       "kind": "official_program",
       "mode": "online"
+    },
+    "eventernote-2025-06-22": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8845.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-5th-event-arena-tour-go-beyond-yell-new-gate-blu-ray/",
+        "title": "2025-03-19 ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -YELL- & -NEW GATE- Blu-ray BD/DVD",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-12-01": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8773.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-5th-event-arena-tour-go-beyond-wish-gaze-blu-ray/",
+        "title": "2024-09-25 ウマ娘 プリティーダービー 5th EVENT ARENA TOUR GO BEYOND -WISH- & -GAZE- Blu-ray BD/DVD",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-09": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8716.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-4th-event-special-dreamers-extra-stage-blu-ray/",
+        "title": "2023-11-15 ウマ娘 プリティーダービー 4th EVENT SPECIAL DREAMERS!! EXTRA STAGE Blu-ray BD/DVD",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-04-09": {
+      "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8653.jpg",
+      "image_source": {
+        "kind": "associated_release_cover",
+        "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-4th-event-special-dreamers-blu-ray/",
+        "title": "2023-03-08 ウマ娘 プリティーダービー 4th EVENT SPECIAL DREAMERS!! Blu-ray BD/DVD",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "all-night-nippon-gold-005": {
+      "summary": "官方已宣布第5期计划于2027年1月播出；具体日期、时刻与出演阵容尚未公布。",
+      "summary_zh": "官方已宣布第5期计划于2027年1月播出；具体日期、时刻与出演阵容尚未公布。",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 第2至第6期播出计划",
+          "url": "https://prtimes.jp/main/html/rd/p/000001273.000005593.html"
+        }
+      ]
+    },
+    "all-night-nippon-gold-006": {
+      "summary": "官方已宣布第6期计划于2027年3月播出；具体日期、时刻与出演阵容尚未公布。",
+      "summary_zh": "官方已宣布第6期计划于2027年3月播出；具体日期、时刻与出演阵容尚未公布。",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 第2至第6期播出计划",
+          "url": "https://prtimes.jp/main/html/rd/p/000001273.000005593.html"
+        }
+      ]
+    },
+    "eventernote-2024-06-28": {
+      "image": "https://www.sonoda-himeji.jp/resources/images/library/2024/1717715880_11b6ed804b699b917541.jpg",
+      "image_source": {
+        "kind": "official_shared_visual",
+        "url": "https://www.sonoda-himeji.jp/news/detail/1964",
+        "reviewed_at": "2026-10-25"
+      },
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "园田赛马场 2024联动活动公告",
+          "url": "https://www.sonoda-himeji.jp/news/detail/1964"
+        }
+      ]
+    },
+    "eventernote-2024-06-28-2": {
+      "image": "https://www.sonoda-himeji.jp/resources/images/library/2024/1717715880_11b6ed804b699b917541.jpg",
+      "image_source": {
+        "kind": "official_shared_visual",
+        "url": "https://www.sonoda-himeji.jp/news/detail/1964",
+        "reviewed_at": "2026-10-25"
+      },
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "园田赛马场 2024联动活动公告",
+          "url": "https://www.sonoda-himeji.jp/news/detail/1964"
+        }
+      ]
+    },
+    "eventernote-2026-11-21": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/466254_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-04-30": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/466953_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2026-04-29": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/466952_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-12-08": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/394511_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2024-08-03-tokyo-idol-festival-2024-day2-heat-garage": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/380432_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-06-25": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/383287_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-05-24": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/379975_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2024-05-06-title-7caa082310e6": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/375000_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2024-04-29": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/374771_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-28": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/364198_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-24": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/364195_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-23": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/364187_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-17": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/363321_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-16-3": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/363318_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-12-02": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/360437_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-04-15": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/340215_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-02-12-3": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/332885_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2023-02-12-2": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/332884_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-28": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326573_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-25": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326572_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-24": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326571_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-17": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326570_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-11": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326569_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-12-03": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/326568_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-09-19-2": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/317200_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-09-19": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/317199_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2022-04-30-vtuber-fes-japan-2022": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/302779.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-04-10-2": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/303740_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2022-04-10": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/303739_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2021-11-20-animax-musix-2021-yokohama-part2": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/282823_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2019-01-19-animax-musix-2019-osaka": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/167014_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2018-10-08-vol-21-climax-run-3-in": {
+      "image": "/uma_tools/img/event-covers/official-program.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/174868_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-10-08": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/177752_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2018-08-25-animelo-summer-live-2018-ok-2": {
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/147621_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2018-05-05-vol-20-in": {
+      "image": "/uma_tools/img/event-covers/official-program.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/156333_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-03-31": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/152352_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-03-31-2": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/152354_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-03-25": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/146131_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2018-03-25-2": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/149311_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2017-10-08": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/128886_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2017-10-08-vol-19-2-in-vol-2": {
+      "image": "/uma_tools/img/event-covers/official-program.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/128885_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2017-09-02": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/123710_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2017-05-07-vol-18-3-in": {
+      "image": "/uma_tools/img/event-covers/official-program.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/112760_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2016-05-04-vol-16-2-1r": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/76356_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2016-03-27-animejapan-2016": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/73037_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2016-03-26-animejapan-2016": {
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/73060_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2025-03-30": {
+      "image": "/uma_tools/img/anime/anime-cinderella-gray.webp",
+      "image_source": {
+        "kind": "official_shared_visual",
+        "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "eventernote-2025-03-30-2": {
+      "image": "/uma_tools/img/anime/anime-cinderella-gray.webp",
+      "image_source": {
+        "kind": "official_shared_visual",
+        "url": "https://prtimes.jp/main/html/rd/p/000001063.000005593.html",
+        "reviewed_at": "2026-10-25"
+      }
+    },
+    "live-other-2026-04-25-2026": {
+      "kind": "concert",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "海风偶像祭2026 官方演出页",
+          "url": "https://esfes.jp/music/260425/"
+        }
+      ]
     }
   },
   "event_aliases": {

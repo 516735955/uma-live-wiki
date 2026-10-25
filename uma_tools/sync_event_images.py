@@ -10,6 +10,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import urllib.parse
 import warnings
 from pathlib import Path
 
@@ -60,7 +61,8 @@ def fetch(url: str) -> bytes:
         candidates.append(url.replace("/maxresdefault.", "/hqdefault."))
     last_error = None
     for candidate in candidates:
-        request = urllib.request.Request(candidate, headers={"User-Agent": "UmaLiveWiki/1.0", "Accept": "image/*"})
+        request_url = urllib.parse.quote(candidate, safe=":/?&=%#+@;,!$'()*[]~")
+        request = urllib.request.Request(request_url, headers={"User-Agent": "UmaLiveWiki/1.0", "Accept": "image/*"})
         try:
             with urllib.request.urlopen(request, timeout=12) as response:
                 payload = response.read(8 * 1024 * 1024 + 1)
@@ -87,7 +89,7 @@ def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = Non
     items = dict(state.get("items") or {})
     source_cache: dict[str, bytes] = {}
     updated = failed = 0
-    for event in [*catalog.get("events", []), *catalog.get("event_groups", [])]:
+    for event in catalog.get("events", []):
         event_id, source = str(event.get("id") or ""), str(event.get("image") or "")
         if event_ids is not None and event_id not in event_ids:
             continue

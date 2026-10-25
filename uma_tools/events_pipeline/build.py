@@ -9,7 +9,6 @@ from . import music as pipeline_music
 from . import validation as pipeline_validation
 from . import setlists as pipeline_setlists
 from . import event_enrichment as pipeline_event_enrichment
-from . import generate_group_images as pipeline_group_images
 
 
 def build(programs_override: dict[str, pipeline_common.Any] | None = None, details_override: dict[str, pipeline_common.Any] | None = None) -> dict[str, pipeline_common.Any]:
@@ -70,11 +69,6 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
                 session["schedule_status"] = "cancelled"
             session["setlist_status"] = "verified" if session.get("setlist_source") else "none"
     events, event_groups = pipeline_event_enrichment.enrich(events)
-    # Generate parent collages from this build's enriched events before the
-    # material hash is calculated, so new editorial children ship atomically
-    # with the catalog and receive a matching build id.
-    pipeline_group_images.rebuild(events, event_groups)
-    events, event_groups = pipeline_event_enrichment.enrich(events)
     for event in events:
         event.pop("session_patches", None)
         if not event.get("series_id"):
@@ -83,6 +77,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
                 event["series_id"] = derived
     from event_localization import apply_localizations
     apply_localizations(events, pipeline_common.DATA_DIR)
+    pipeline_event_enrichment.apply_classification(events, series)
     events.sort(key=lambda event: (event.get("date") or "0000-00-00", event.get("title") or "", event["id"]), reverse=True)
     generated_at = pipeline_common.dt.datetime.now(pipeline_common.dt.timezone.utc).replace(microsecond=0).isoformat()
     songs_catalog = pipeline_music.build_song_catalog(albums, events, identities, generated_at, overrides, music_sources)
@@ -127,7 +122,8 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "event_copy": [(
             event["id"], event.get("title_zh"), event.get("summary_zh"),
             event.get("group_ids"), event.get("venue_id"),
-            tuple((session.get("id"), session.get("start_time"), session.get("doors_time"), session.get("end_time"))
+            tuple((session.get("id"), session.get("start_time"), session.get("doors_time"), session.get("end_time"),
+                   session.get("broadcast_time"), session.get("published_time"), session.get("published_date"))
                   for session in event.get("sessions") or []),
         ) for event in events],
     }
