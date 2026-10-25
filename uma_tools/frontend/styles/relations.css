@@ -112,8 +112,6 @@
 .activity-time-more > div { display: grid; grid-template-columns: 86px minmax(0, 1fr); border-top: 1px solid #dfe3ee; }
 .activity-time-more dt,
 .activity-time-more dd { padding: 8px; }
-.history-group + .history-group { border-top: 1px solid var(--surface-line); }
-.history-group-title { display: block; padding: 10px 12px 4px; color: var(--text-2); font-size: .82rem; }
 .participation-recordings { margin-top: 8px; }
 .participation-recordings summary { cursor: pointer; color: var(--brand-dark); font-weight: 700; }
 .participation-recording-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }

@@ -92,23 +92,11 @@ export const ActivityTime = {
 export const ActivityHistory = {
   props: { events: { type: Array, default: () => [] }, routes: { type: Object, required: true }, dateLabel: { type: Function, required: true }, kindLabel: { type: Function, required: true }, sessionLabel: { type: Function, required: true } },
   emits: ['open'],
-  computed: {
-    groups() {
-      const map = new Map();
-      this.events.forEach((event) => {
-        const key = event.parent_event_id || event.event_id;
-        if (!map.has(key)) map.set(key, { key, title: event.parent_title || event.title, children: [] });
-        const group = map.get(key); group.children.push(event); if (!group.title) group.title = event.title;
-      });
-      return Array.from(map.values());
-    },
-  },
   methods: {
-    groupTitle(group) { return group.children.length > 1 || group.children[0].parent_event_id ? group.title : ''; },
-    childLabel(event) { return event.child_label || event.session_label || event.participation_label || ''; },
+    label(event) { return event.child_label || this.sessionLabel(event); },
     title(event) { return event.parent_title || event.title; },
     href(event) { return this.routes.events(event.event_id, event.session_id); },
     open(event, click) { if (click.button !== 0 || click.metaKey || click.ctrlKey || click.shiftKey || click.altKey) return; click.preventDefault(); this.$emit('open', event); },
   },
-  template: `<div class="history-list"><div v-for="group in groups" :key="group.key" class="history-group"><b v-if="groupTitle(group)" class="history-group-title">{{ groupTitle(group) }}</b><a v-for="event in group.children" :key="event.event_id+'-'+(event.session_id||'event')" :href="href(event)" @click="open(event,$event)"><time>{{ dateLabel(event) }}</time><span>{{ groupTitle(group) && childLabel(event) ? childLabel(event) : title(event) }}<em v-if="sessionLabel(event) && !groupTitle(group)" class="credit-role-tag session-tag">{{ sessionLabel(event) }}</em><em v-if="event.participation_label && !groupTitle(group)" class="credit-role-tag session-tag">{{ event.participation_label }}</em></span><em>{{ kindLabel(event.kind) }}</em></a></div></div>`,
+  template: `<div class="history-list"><a v-for="event in events" :key="event.event_id+'-'+(event.session_id||'event')" :href="href(event)" @click="open(event,$event)"><time>{{ dateLabel(event) }}</time><span>{{ title(event) }}<em v-if="label(event)" class="credit-role-tag session-tag">{{ label(event) }}</em><em v-if="event.participation_label" class="credit-role-tag session-tag">{{ event.participation_label }}</em></span><em>{{ kindLabel(event.kind) }}</em></a></div>`,
 };
