@@ -361,6 +361,11 @@ export function createAnime(deps) {
       return animeWorkMatchesQuery(work, query);
     });
     return rows.sort(function (a, b) {
+      if (query && window.UmaSearch?.rank) {
+        const values = work => [work.title_zh, work.title_ja, ...(work.aliases || [])];
+        const rank = window.UmaSearch.rank(values(a), query) - window.UmaSearch.rank(values(b), query);
+        if (rank) return rank;
+      }
       if (animeSort.value === "name")
         return String(a.title_zh || a.title_ja || "").localeCompare(
           String(b.title_zh || b.title_ja || ""),

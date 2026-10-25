@@ -43,18 +43,18 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
   for (const event of events) {
     const original = {
       title_ja: event.title_ja || event.title || '',
-      summary_ja: event.summary_ja || event.summary || '',
+      summary_ja: event.summary_ja ?? event.summary ?? '',
     };
     const approved = manual[event.id] || {};
     const previous = saved[event.id] || {};
     const next = { ...previous, ...original };
     for (const field of ['title', 'summary']) {
       const source = original[field + '_ja'];
-      if (!source) { next[field + '_zh'] = ''; continue; }
       if (approved[field + '_zh'] && approved[field + '_ja'] === source) {
         next[field + '_zh'] = approved[field + '_zh'];
         continue;
       }
+      if (!source) { next[field + '_zh'] = ''; continue; }
       if (previous[field + '_ja'] === source && previous[field + '_zh']) continue;
       const translated = await translate(source);
       if (translated && !untranslatedJapanese(source, translated) && translationFactsMatch(source, translated)) {

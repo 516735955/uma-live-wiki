@@ -241,22 +241,19 @@ export function createStaff(deps) {
   }
 
   const staffFiltered = deps.computed(() => {
-    const q = window.UmaUi.searchText(staffQuery.value);
+    const q = staffQuery.value.trim();
+    const values = (person) => [person.name, ...(person.aliases || []), ...(person.roles || [])];
     return (deps.animeCatalog.value.people || [])
       .filter(
         (person) =>
           !q ||
-          [
-            person.name,
-            ...(person.aliases || []),
-            ...(person.roles || []),
-          ].some((value) =>
-            window.UmaUi.searchText(value)
-              .includes(q),
-          ),
+          (window.UmaSearch?.includes
+            ? window.UmaSearch.includes(values(person), q)
+            : values(person).some(value => window.UmaUi.searchText(value).includes(window.UmaUi.searchText(q)))),
       )
       .slice()
       .sort((a, b) =>
+        (q && window.UmaSearch?.rank ? window.UmaSearch.rank(values(a), q) - window.UmaSearch.rank(values(b), q) : 0) ||
         (Number(b.work_count) || 0) - (Number(a.work_count) || 0) ||
             String(a.name || "").localeCompare(String(b.name || ""), "zh"),
       );

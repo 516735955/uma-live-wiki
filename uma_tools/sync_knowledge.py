@@ -36,6 +36,7 @@ STEPS = [
     ('anime-credits', ['sync_anime_credits.py']),
     ('anime-build', ['build_anime_catalog.py']),
     ('entity-localization', ['localize_entities.js']),
+    ('search-pronunciations', ['build_search_pronunciations.js']),
 ]
 
 STEP_OUTPUTS = {
@@ -126,6 +127,7 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             'entity-localization': {'characters', 'horse-profiles', 'anime', 'anime-build'},
             'music-build': {'catalogs', 'music-metadata', 'voice-profiles'},
             'anime-build': {'anime', 'anime-watch', 'anime-credits', 'music-build'},
+            'search-pronunciations': {'catalogs', 'event-localization', 'entity-localization', 'music-build', 'anime-build'},
         }
         dependency_changed = name in pending_dependencies or bool(dependencies.get(name, set()) & executed)
         if not force and not dependency_changed and float(previous.get('next_at', 0)) > clock():
