@@ -123,7 +123,8 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
             event["id"], event.get("title_zh"), event.get("summary_zh"),
             event.get("group_ids"), event.get("venue_id"),
             tuple((session.get("id"), session.get("start_time"), session.get("doors_time"), session.get("end_time"),
-                   session.get("broadcast_time"), session.get("published_time"), session.get("published_date"))
+                   session.get("broadcast_time"), session.get("broadcast_date"), session.get("published_time"), session.get("published_date"),
+                   session.get("start_time_estimated"), session.get("end_time_estimated"))
                   for session in event.get("sessions") or []),
         ) for event in events],
     }

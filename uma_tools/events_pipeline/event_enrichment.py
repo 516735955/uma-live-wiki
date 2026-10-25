@@ -45,9 +45,13 @@ def apply_classification(events: list[dict], series_document: dict) -> list[dict
                     event["title"] = event["title_zh"] = title
         title = str(event.get("title") or "")
         compact = common.re.sub(r"^(?:赛马娘|ウマ娘)\s*(?:Pretty Derby|プリティーダービー)\s*", "", title, flags=common.re.I)
+        if compact.startswith('×'):
+            compact = '赛马娘' + compact
+        compact = common.re.sub(r'^赛马娘\s+(?=\d+(?:st|nd|rd|th) EVENT)', '', compact)
         if common.re.search(r'EVENT WORLD TOUR\s*[「『\"]?THE STAGE', compact, common.re.I):
             compact = common.re.sub(r'(\d+(?:th|st|nd|rd)) EVENT WORLD TOUR\s*[「『\"]?THE STAGE[」』\"]?\s*[－–—-]\s*', r'\1 EVENT THE STAGE ', compact, flags=common.re.I)
-            compact = compact.replace("TOKYO", "东京公演").replace("OSAKA", "大阪公演")
+            for city, label in {'TOKYO': '东京公演', 'OSAKA': '大阪公演', 'LOS ANGELES': '洛杉矶公演', 'YOKOHAMA': '横滨公演', 'SEOUL': '首尔公演', 'LONDON': '伦敦公演'}.items():
+                compact = compact.replace(city, label)
         compact = compact.replace(" · ", " ").strip()
         if compact and compact != title:
             event["title_aliases"] = list(dict.fromkeys([*event.get("title_aliases", []), title]))

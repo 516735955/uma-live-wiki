@@ -550,9 +550,27 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
     return DiscoveryRows(programs, errors)
 
 
+def character_program_media(metadata: dict, names: dict[str, str]) -> dict:
+    view = pipeline_common.re.search(r'【([^【】]+)視点】', metadata.get('title') or '')
+    name = view[1].strip() if view else ''
+    return {
+        'url': metadata.get('webpage_url') or f"https://www.youtube.com/watch?v={metadata['id']}",
+        'label': names.get(name, name) + '视角' if name else '官方视频',
+        'video_id': metadata.get('id') or '', 'duration': metadata.get('duration'),
+        **({'image': metadata['thumbnail']} if metadata.get('thumbnail') else {}),
+    }
+
+
 def refresh_programs() -> dict[str, pipeline_common.Any]:
     existing_doc = pipeline_common.read_json(pipeline_common.EVENTS_DIR / "official_programs.json") if (pipeline_common.EVENTS_DIR / "official_programs.json").exists() else {"programs": []}
     existing_programs = list(existing_doc.get("programs") or [])
+    character_file = pipeline_common.DATA_DIR / 'character_index_data.js'
+    characters = pipeline_common.read_window_data(character_file, 'CHAR_INDEX') if character_file.exists() else []
+    names_by_id = {character['id']: character.get('zh') or character.get('ja') for character in characters}
+    character_names = {character[key]: names_by_id[character['id']] for character in characters for key in ('zh', 'ja', 'en') if character.get(key)}
+    aliases_file = pipeline_common.EVENTS_DIR / 'overrides.json'
+    aliases = pipeline_common.read_json(aliases_file).get('character_aliases', {}) if aliases_file.exists() else {}
+    character_names.update({alias: names_by_id[identity] for alias, identity in aliases.items() if identity in names_by_id})
     youtube_available = bool(pipeline_common.shutil_which("yt-dlp"))
     channel_entries = discover_official_channel() if youtube_available else []
     source_errors = list(getattr(channel_entries, 'errors', []))
@@ -724,7 +742,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         base_title = group_key.split("\t", 1)[1]
         suffix = pipeline_text.stable_suffix(base_title) or metadata["id"]
         media = [
-            {"url": item.get("webpage_url") or f"https://www.youtube.com/watch?v={item['id']}", "label": "官方视频", "video_id": item.get("id") or "", "duration": item.get("duration")}
+            character_program_media(item, character_names)
             for item in sorted(group, key=lambda row: row.get("title") or "")
         ]
         programs.append({

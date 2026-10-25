@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T05:54:28+00:00",
+  "generated_at": "2026-10-25T09:52:12+00:00",
   "coverage": {
     "creators": 305,
     "credited_works": 423,
-    "credited_versions": 1388
+    "credited_versions": 1443
   },
   "creators": [
     {
@@ -1086,11 +1086,39 @@
           "role": "lyricist",
           "label": "作词",
           "count": 1
+        },
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 1
         }
       ],
-      "work_count": 1,
-      "version_count": 1,
+      "work_count": 2,
+      "version_count": 2,
       "works": [
+        {
+          "song_id": "song-228f943b49",
+          "title": "うまぴょい伝説",
+          "cover": "/album_covers/LACA-15621.webp",
+          "release_date": "2016-11-30",
+          "album_name": "アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」アルバム",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-8fbcc5f162"
+          ],
+          "versions": [
+            {
+              "id": "song-228f943b49-v-8fbcc5f162",
+              "title": "うまぴょい伝説 (Anime Size)",
+              "version_label": "Anime Size / 演唱版：LACA-9983",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        },
         {
           "song_id": "song-32ce030f79",
           "title": "チヨノオーのお悩み相談室のうた",
@@ -1123,6 +1151,15 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-32ce030f79"
+          ]
+        },
+        {
+          "creator_id": "creator-eaf94340d3",
+          "name": "本田晃弘",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-228f943b49"
           ]
         }
       ]
@@ -5186,15 +5223,6 @@
           ]
         },
         {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
-          ]
-        },
-        {
           "creator_id": "creator-500b86dc49",
           "name": "真崎エリカ",
           "shared_version_count": 1,
@@ -6048,17 +6076,7 @@
           ]
         }
       ],
-      "collaborators": [
-        {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
-          ]
-        }
-      ]
+      "collaborators": []
     },
     {
       "id": "creator-takuma-a015fe0b54",
@@ -10751,11 +10769,11 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 33
+          "count": 34
         }
       ],
       "work_count": 2,
-      "version_count": 33,
+      "version_count": 34,
       "works": [
         {
           "song_id": "song-4bfe85c283",
@@ -10769,6 +10787,7 @@
           "version_ids": [
             "song-4bfe85c283-v-025ee6b6c3",
             "song-4bfe85c283-v-235dae4c76",
+            "song-4bfe85c283-v-2fc5d06861",
             "song-4bfe85c283-v-3f64091d48",
             "song-4bfe85c283-v-49ac0076ad",
             "song-4bfe85c283-v-4bfe85c283",
@@ -10837,6 +10856,14 @@
               "id": "song-4bfe85c283-v-f000d56bc9",
               "title": "ユメヲカケル！ -トレセン学園応援団 Ver-",
               "version_label": "トレセン学園応援団 Ver",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-4bfe85c283-v-2fc5d06861",
+              "title": "ユメヲカケル！",
+              "version_label": "演唱版：LACA-15938",
               "roles": [
                 "lyricist"
               ]
@@ -11087,7 +11114,7 @@
         {
           "creator_id": "creator-647bf144a4",
           "name": "東大路憲太",
-          "shared_version_count": 33,
+          "shared_version_count": 34,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-4bfe85c283",
@@ -17321,16 +17348,11 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 9
-        },
-        {
-          "role": "arranger",
-          "label": "编曲",
-          "count": 8
+          "count": 10
         }
       ],
       "work_count": 1,
-      "version_count": 9,
+      "version_count": 10,
       "works": [
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -17339,13 +17361,13 @@
           "release_date": "2017-01-11",
           "album_name": "『ウマ娘 プリティーダービー』STARTING GATE 02 (2021 Remastered Version)",
           "roles": [
-            "composer",
-            "arranger"
+            "composer"
           ],
           "version_ids": [
             "song-unlimited-impact-3293fdf81d-v-3293fdf81d",
             "song-unlimited-impact-3293fdf81d-v-3fb84de87c",
             "song-unlimited-impact-3293fdf81d-v-602eaff8c1",
+            "song-unlimited-impact-3293fdf81d-v-73c0f0b73f",
             "song-unlimited-impact-3293fdf81d-v-7dbfc2f0c9",
             "song-unlimited-impact-3293fdf81d-v-a52ae8f6a2",
             "song-unlimited-impact-3293fdf81d-v-abe5de4572",
@@ -17359,8 +17381,7 @@
               "title": "UNLIMITED IMPACT",
               "version_label": "",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17368,8 +17389,7 @@
               "title": "UNLIMITED IMPACT (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17377,8 +17397,7 @@
               "title": "UNLIMITED IMPACT (Game Size)",
               "version_label": "Game Size",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17386,8 +17405,7 @@
               "title": "UNLIMITED IMPACT (Game Size)（トランセンド）",
               "version_label": "Game Size / 角色独唱：トランセンド",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17395,8 +17413,7 @@
               "title": "UNLIMITED IMPACT (Game Size)（ビコーペガサス）",
               "version_label": "Game Size / 角色独唱：ビコーペガサス",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17404,8 +17421,7 @@
               "title": "UNLIMITED IMPACT (Game Size)（ホッコータルマエ）",
               "version_label": "Game Size / 角色独唱：ホッコータルマエ",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17413,8 +17429,7 @@
               "title": "UNLIMITED IMPACT (Game Size)（ワンダーアキュート）",
               "version_label": "Game Size / 角色独唱：ワンダーアキュート",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
@@ -17430,8 +17445,15 @@
               "title": "UNLIMITED IMPACT -夏の夕映え Ver-",
               "version_label": "夏の夕映え Ver",
               "roles": [
-                "composer",
-                "arranger"
+                "composer"
+              ]
+            },
+            {
+              "id": "song-unlimited-impact-3293fdf81d-v-73c0f0b73f",
+              "title": "UNLIMITED IMPACT",
+              "version_label": "演唱版：LACA-15930",
+              "roles": [
+                "composer"
               ]
             }
           ]
@@ -17441,7 +17463,7 @@
         {
           "creator_id": "creator-500b86dc49",
           "name": "真崎エリカ",
-          "shared_version_count": 9,
+          "shared_version_count": 10,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-unlimited-impact-3293fdf81d"
@@ -26526,21 +26548,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 17
+          "count": 20
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 17
+          "count": 20
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 17
+          "count": 20
         }
       ],
       "work_count": 1,
-      "version_count": 17,
+      "version_count": 20,
       "works": [
         {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
@@ -26556,6 +26578,7 @@
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-07458a884f",
             "song-winning-the-soul-7eddcf2b7f-v-0dd2834f81",
+            "song-winning-the-soul-7eddcf2b7f-v-16b40386ac",
             "song-winning-the-soul-7eddcf2b7f-v-2ebe62cd5a",
             "song-winning-the-soul-7eddcf2b7f-v-313062436b",
             "song-winning-the-soul-7eddcf2b7f-v-33d1e97c75",
@@ -26564,9 +26587,11 @@
             "song-winning-the-soul-7eddcf2b7f-v-5df88c1dd3",
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f",
             "song-winning-the-soul-7eddcf2b7f-v-89792428c2",
+            "song-winning-the-soul-7eddcf2b7f-v-9c729c37af",
             "song-winning-the-soul-7eddcf2b7f-v-b4a3654daa",
             "song-winning-the-soul-7eddcf2b7f-v-ba19fe402a",
             "song-winning-the-soul-7eddcf2b7f-v-c265d32c54",
+            "song-winning-the-soul-7eddcf2b7f-v-cea4b24470",
             "song-winning-the-soul-7eddcf2b7f-v-d97229354f",
             "song-winning-the-soul-7eddcf2b7f-v-dd35986a74",
             "song-winning-the-soul-7eddcf2b7f-v-f2ea355fe2",
@@ -26587,6 +26612,16 @@
               "id": "song-winning-the-soul-7eddcf2b7f-v-d97229354f",
               "title": "winning the soul (Game Size)",
               "version_label": "Game Size",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-winning-the-soul-7eddcf2b7f-v-16b40386ac",
+              "title": "winning the soul (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-15938",
               "roles": [
                 "lyricist",
                 "composer",
@@ -26737,6 +26772,26 @@
               "id": "song-winning-the-soul-7eddcf2b7f-v-07458a884f",
               "title": "winning the soul (TV Size)",
               "version_label": "TV Size",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-winning-the-soul-7eddcf2b7f-v-cea4b24470",
+              "title": "winning the soul",
+              "version_label": "演唱版：LACA-15930",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-winning-the-soul-7eddcf2b7f-v-9c729c37af",
+              "title": "winning the soul",
+              "version_label": "演唱版：LACA-15938",
               "roles": [
                 "lyricist",
                 "composer",
@@ -32632,11 +32687,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 19
+          "count": 25
         }
       ],
       "work_count": 4,
-      "version_count": 20,
+      "version_count": 26,
       "works": [
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -32761,13 +32816,19 @@
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-0724ce7d3b",
+            "song-special-record-c828cf2dc0-v-097f94fab3",
             "song-special-record-c828cf2dc0-v-2d85536b6d",
+            "song-special-record-c828cf2dc0-v-30b08eb587",
             "song-special-record-c828cf2dc0-v-4a0442bebe",
             "song-special-record-c828cf2dc0-v-7850562b7e",
             "song-special-record-c828cf2dc0-v-7bb15ce995",
             "song-special-record-c828cf2dc0-v-8f08aa9c2e",
+            "song-special-record-c828cf2dc0-v-a4c37054a9",
+            "song-special-record-c828cf2dc0-v-b5afc76596",
+            "song-special-record-c828cf2dc0-v-bb047179c3",
             "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
+            "song-special-record-c828cf2dc0-v-eec081a7e2",
             "song-special-record-c828cf2dc0-v-fefb8d2174"
           ],
           "versions": [
@@ -32783,6 +32844,30 @@
               "id": "song-special-record-c828cf2dc0-v-fefb8d2174",
               "title": "Special Record! (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-eec081a7e2",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1973",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-bb047179c3",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1974",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-30b08eb587",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1975",
               "roles": [
                 "arranger"
               ]
@@ -32842,6 +32927,30 @@
               "roles": [
                 "arranger"
               ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-a4c37054a9",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15755",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-b5afc76596",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15756",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-097f94fab3",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15757",
+              "roles": [
+                "arranger"
+              ]
             }
           ]
         },
@@ -32884,7 +32993,7 @@
         {
           "creator_id": "creator-6ed889314c",
           "name": "新田目駿",
-          "shared_version_count": 18,
+          "shared_version_count": 24,
           "shared_work_count": 3,
           "shared_song_ids": [
             "song-exercise-the-right-317ac0dc78",
@@ -32895,7 +33004,7 @@
         {
           "creator_id": "creator-ce924538d1",
           "name": "谷ナオキ",
-          "shared_version_count": 9,
+          "shared_version_count": 15,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-special-record-c828cf2dc0"
@@ -33924,21 +34033,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 17
+          "count": 23
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 20
+          "count": 26
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 18
+          "count": 24
         }
       ],
       "work_count": 5,
-      "version_count": 20,
+      "version_count": 26,
       "works": [
         {
           "song_id": "song-make-debut-2c6c00a71e",
@@ -34046,13 +34155,19 @@
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-0724ce7d3b",
+            "song-special-record-c828cf2dc0-v-097f94fab3",
             "song-special-record-c828cf2dc0-v-2d85536b6d",
+            "song-special-record-c828cf2dc0-v-30b08eb587",
             "song-special-record-c828cf2dc0-v-4a0442bebe",
             "song-special-record-c828cf2dc0-v-7850562b7e",
             "song-special-record-c828cf2dc0-v-7bb15ce995",
             "song-special-record-c828cf2dc0-v-8f08aa9c2e",
+            "song-special-record-c828cf2dc0-v-a4c37054a9",
+            "song-special-record-c828cf2dc0-v-b5afc76596",
+            "song-special-record-c828cf2dc0-v-bb047179c3",
             "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
+            "song-special-record-c828cf2dc0-v-eec081a7e2",
             "song-special-record-c828cf2dc0-v-fefb8d2174"
           ],
           "versions": [
@@ -34070,6 +34185,36 @@
               "id": "song-special-record-c828cf2dc0-v-fefb8d2174",
               "title": "Special Record! (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-eec081a7e2",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1973",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-bb047179c3",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1974",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-30b08eb587",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1975",
               "roles": [
                 "lyricist",
                 "composer",
@@ -34140,6 +34285,36 @@
               "id": "song-special-record-c828cf2dc0-v-7850562b7e",
               "title": "Special Record! (TV Size) (2021 Remastered Version)",
               "version_label": "TV Size / 2021 Remastered Version",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-a4c37054a9",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15755",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-b5afc76596",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15756",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-097f94fab3",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15757",
               "roles": [
                 "lyricist",
                 "composer",
@@ -34237,7 +34412,7 @@
         {
           "creator_id": "creator-a0d84fd99d",
           "name": "廣澤優也",
-          "shared_version_count": 18,
+          "shared_version_count": 24,
           "shared_work_count": 3,
           "shared_song_ids": [
             "song-exercise-the-right-317ac0dc78",
@@ -34248,7 +34423,7 @@
         {
           "creator_id": "creator-ce924538d1",
           "name": "谷ナオキ",
-          "shared_version_count": 9,
+          "shared_version_count": 15,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-special-record-c828cf2dc0"
@@ -35145,17 +35320,17 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 52
+          "count": 94
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 144
+          "count": 186
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 90
+          "count": 78
         },
         {
           "role": "producer",
@@ -35164,7 +35339,7 @@
         }
       ],
       "work_count": 18,
-      "version_count": 148,
+      "version_count": 190,
       "works": [
         {
           "song_id": "song-228f943b49",
@@ -35178,36 +35353,186 @@
             "arranger"
           ],
           "version_ids": [
+            "song-228f943b49-v-02584bf6f6",
+            "song-228f943b49-v-06947febdc",
+            "song-228f943b49-v-0a0d834524",
+            "song-228f943b49-v-0ee8c3ef76",
             "song-228f943b49-v-0fe15a8ebf",
             "song-228f943b49-v-115f12d608",
-            "song-228f943b49-v-228f943b49",
-            "song-228f943b49-v-27954ca38d",
-            "song-228f943b49-v-291bb1c8c0",
+            "song-228f943b49-v-13b03ec01f",
+            "song-228f943b49-v-1a834bf759",
+            "song-228f943b49-v-1ad24eb74f",
+            "song-228f943b49-v-1f03402771",
+            "song-228f943b49-v-246a1190de",
+            "song-228f943b49-v-25d9f2bc30",
+            "song-228f943b49-v-28252ebe47",
             "song-228f943b49-v-29206e2b41",
-            "song-228f943b49-v-2c21c72e4a",
-            "song-228f943b49-v-4a308b7364",
-            "song-228f943b49-v-4f4504cb6c",
+            "song-228f943b49-v-2a061d886e",
+            "song-228f943b49-v-2abbe06fff",
+            "song-228f943b49-v-2f0474c00f",
+            "song-228f943b49-v-32dcba02b8",
+            "song-228f943b49-v-33c3dbd97d",
+            "song-228f943b49-v-4106e390e4",
+            "song-228f943b49-v-42134cef6c",
+            "song-228f943b49-v-46b7abd7f3",
+            "song-228f943b49-v-52f41ae1eb",
+            "song-228f943b49-v-55f25346c6",
+            "song-228f943b49-v-5667211566",
             "song-228f943b49-v-5d0c6ea225",
-            "song-228f943b49-v-623e5032d4",
+            "song-228f943b49-v-5dd43c059f",
             "song-228f943b49-v-6303aaaad6",
-            "song-228f943b49-v-64d2a75db1",
             "song-228f943b49-v-7006bca4f7",
-            "song-228f943b49-v-7ba84e55c1",
-            "song-228f943b49-v-7eaa031f24",
-            "song-228f943b49-v-9475577067",
-            "song-228f943b49-v-a53cc40d56",
-            "song-228f943b49-v-ae7c814e16",
+            "song-228f943b49-v-70f6e37dda",
+            "song-228f943b49-v-7602b1cd37",
+            "song-228f943b49-v-79787e2723",
+            "song-228f943b49-v-87263e50a7",
+            "song-228f943b49-v-8fbcc5f162",
+            "song-228f943b49-v-911361b60c",
+            "song-228f943b49-v-91e5fa0086",
+            "song-228f943b49-v-98486c96d3",
+            "song-228f943b49-v-98d9d87379",
+            "song-228f943b49-v-9d273ac33c",
+            "song-228f943b49-v-9d8d8ee71f",
+            "song-228f943b49-v-9df554bdf7",
+            "song-228f943b49-v-a4e01a162a",
+            "song-228f943b49-v-ab8a7ebeb4",
+            "song-228f943b49-v-ae145475ed",
+            "song-228f943b49-v-aedf0807f8",
+            "song-228f943b49-v-b00ac0ccaa",
+            "song-228f943b49-v-b0e02ad73a",
             "song-228f943b49-v-b373901aa7",
-            "song-228f943b49-v-c676696ddc",
-            "song-228f943b49-v-cd3aaf8f3b",
-            "song-228f943b49-v-d0e897e8c0",
-            "song-228f943b49-v-df88301c97"
+            "song-228f943b49-v-b5338614c5",
+            "song-228f943b49-v-bb35fac8ce",
+            "song-228f943b49-v-bcccce7f9a",
+            "song-228f943b49-v-be7dd32f32",
+            "song-228f943b49-v-c00a418854",
+            "song-228f943b49-v-c3a29fb160",
+            "song-228f943b49-v-cae8ea5d45",
+            "song-228f943b49-v-d76624304f",
+            "song-228f943b49-v-d81b462592",
+            "song-228f943b49-v-db43e2b8a7",
+            "song-228f943b49-v-e075e8a399",
+            "song-228f943b49-v-e184b96765",
+            "song-228f943b49-v-e3dccba0bd",
+            "song-228f943b49-v-e9831068eb",
+            "song-228f943b49-v-f398ce58b7",
+            "song-228f943b49-v-f914ec77e5",
+            "song-228f943b49-v-fa3c0681da",
+            "song-228f943b49-v-fb771fffcf"
           ],
           "versions": [
             {
-              "id": "song-228f943b49-v-228f943b49",
-              "title": "うまぴょい伝説",
-              "version_label": "",
+              "id": "song-228f943b49-v-b373901aa7",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-f398ce58b7",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1955",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-246a1190de",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1956",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-e184b96765",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1957",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-98d9d87379",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1958",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-1f03402771",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1959",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-70f6e37dda",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1960",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-0a0d834524",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1961",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-cae8ea5d45",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1962",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-fa3c0681da",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1963",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-28252ebe47",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1964",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-9d8d8ee71f",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1965",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-e3dccba0bd",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1966",
               "roles": [
                 "lyricist",
                 "composer",
@@ -35215,13 +35540,21 @@
               ]
             },
             {
-              "id": "song-228f943b49-v-b373901aa7",
+              "id": "song-228f943b49-v-c3a29fb160",
               "title": "うまぴょい伝説 (2021 Remastered Version)",
-              "version_label": "2021 Remastered Version",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1974",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-2a061d886e",
+              "title": "うまぴょい伝説 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1975",
+              "roles": [
+                "lyricist",
+                "composer"
               ]
             },
             {
@@ -35230,8 +35563,16 @@
               "version_label": "Anime Size",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-8fbcc5f162",
+              "title": "うまぴょい伝説 (Anime Size)",
+              "version_label": "Anime Size / 演唱版：LACA-9983",
+              "roles": [
+                "lyricist",
+                "composer"
               ]
             },
             {
@@ -35240,14 +35581,13 @@
               "version_label": "Game Size",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-64d2a75db1",
-              "title": "うまぴょい伝説 (Game Size)（アドマイヤグルーヴ）",
-              "version_label": "Game Size / 角色独唱：アドマイヤグルーヴ",
+              "id": "song-228f943b49-v-2f0474c00f",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-15930",
               "roles": [
                 "lyricist",
                 "composer",
@@ -35255,153 +35595,147 @@
               ]
             },
             {
-              "id": "song-228f943b49-v-c676696ddc",
-              "title": "うまぴょい伝説 (Game Size)（エスポワールシチー）",
-              "version_label": "Game Size / 角色独唱：エスポワールシチー",
+              "id": "song-228f943b49-v-db43e2b8a7",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-15938",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-7ba84e55c1",
-              "title": "うまぴょい伝説 (Game Size)（エピファネイア）",
-              "version_label": "Game Size / 角色独唱：エピファネイア",
+              "id": "song-228f943b49-v-46b7abd7f3",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25001",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-4f4504cb6c",
-              "title": "うまぴょい伝説 (Game Size)（カレンブーケドール）",
-              "version_label": "Game Size / 角色独唱：カレンブーケドール",
+              "id": "song-228f943b49-v-9d273ac33c",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25014",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-cd3aaf8f3b",
-              "title": "うまぴょい伝説 (Game Size)（サクラチトセオー）",
-              "version_label": "Game Size / 角色独唱：サクラチトセオー",
+              "id": "song-228f943b49-v-2abbe06fff",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25032",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-a53cc40d56",
-              "title": "うまぴょい伝説 (Game Size)（スティルインラブ）",
-              "version_label": "Game Size / 角色独唱：スティルインラブ",
+              "id": "song-228f943b49-v-1ad24eb74f",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25069",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-ae7c814e16",
-              "title": "うまぴょい伝説 (Game Size)（ステイゴールド）",
-              "version_label": "Game Size / 角色独唱：ステイゴールド",
+              "id": "song-228f943b49-v-55f25346c6",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25080",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-4a308b7364",
-              "title": "うまぴょい伝説 (Game Size)（ダンツフレーム）",
-              "version_label": "Game Size / 角色独唱：ダンツフレーム",
+              "id": "song-228f943b49-v-52f41ae1eb",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25083",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-7eaa031f24",
-              "title": "うまぴょい伝説 (Game Size)（デアリングタクト）",
-              "version_label": "Game Size / 角色独唱：デアリングタクト",
+              "id": "song-228f943b49-v-bb35fac8ce",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25086",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-d0e897e8c0",
-              "title": "うまぴょい伝説 (Game Size)（ビリーヴ）",
-              "version_label": "Game Size / 角色独唱：ビリーヴ",
+              "id": "song-228f943b49-v-aedf0807f8",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25100",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-2c21c72e4a",
-              "title": "うまぴょい伝説 (Game Size)（ブエナビスタ）",
-              "version_label": "Game Size / 角色独唱：ブエナビスタ",
+              "id": "song-228f943b49-v-7602b1cd37",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25119",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-27954ca38d",
-              "title": "うまぴょい伝説 (Game Size)（ルーラーシップ）",
-              "version_label": "Game Size / 角色独唱：ルーラーシップ",
+              "id": "song-228f943b49-v-5dd43c059f",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25135",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-9475577067",
-              "title": "うまぴょい伝説 (Game Size)（ロゴタイプ）",
-              "version_label": "Game Size / 角色独唱：ロゴタイプ",
+              "id": "song-228f943b49-v-e9831068eb",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25151",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-623e5032d4",
-              "title": "うまぴょい伝説 (Game Size)（ローズキングダム）",
-              "version_label": "Game Size / 角色独唱：ローズキングダム",
+              "id": "song-228f943b49-v-d81b462592",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25156",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-291bb1c8c0",
-              "title": "うまぴょい伝説 (Sasuke Haraguchi Remix)",
-              "version_label": "Sasuke Haraguchi Remix",
+              "id": "song-228f943b49-v-25d9f2bc30",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-25163",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
-              "id": "song-228f943b49-v-df88301c97",
-              "title": "うまぴょい伝説 (TAKU INOUE Remix)",
-              "version_label": "TAKU INOUE Remix",
+              "id": "song-228f943b49-v-b0e02ad73a",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACA-9973",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-c00a418854",
+              "title": "うまぴょい伝説 (Game Size)",
+              "version_label": "Game Size / 演唱版：LACM-24249",
+              "roles": [
+                "lyricist",
+                "composer"
               ]
             },
             {
@@ -35430,14 +35764,263 @@
               "version_label": "TV Size / 2021 Remastered Version",
               "roles": [
                 "lyricist",
-                "composer",
-                "arranger"
+                "composer"
               ]
             },
             {
               "id": "song-228f943b49-v-5d0c6ea225",
               "title": "うまぴょい伝説 (TV Size)",
-              "version_label": "TV Size / 第二季第13话",
+              "version_label": "TV Size / TV Size / 第二季第13话",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-79787e2723",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15709",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-f914ec77e5",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15711",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-87263e50a7",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15712",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-42134cef6c",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15755",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-ab8a7ebeb4",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15859",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-9df554bdf7",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15879",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-0ee8c3ef76",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15930",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-911361b60c",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-15938",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-33c3dbd97d",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-19014",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-be7dd32f32",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25001",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-a4e01a162a",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25014",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-ae145475ed",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25032",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-06947febdc",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25034",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-bcccce7f9a",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25069",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-5667211566",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25080",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-98486c96d3",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25083",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-fb771fffcf",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25086",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-b00ac0ccaa",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25098",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-d76624304f",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25100",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-13b03ec01f",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25119",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-32dcba02b8",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25135",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-91e5fa0086",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25151",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-1a834bf759",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25156",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-02584bf6f6",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACA-25163",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-b5338614c5",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACM-24249",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-e075e8a399",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACM-24348",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-228f943b49-v-4106e390e4",
+              "title": "うまぴょい伝説",
+              "version_label": "演唱版：LACM-24452",
               "roles": [
                 "lyricist",
                 "composer",
@@ -37087,6 +37670,15 @@
           ]
         },
         {
+          "creator_id": "creator-cygames-f5bc529953",
+          "name": "Cygames",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-228f943b49"
+          ]
+        },
+        {
           "creator_id": "creator-d-d-mouse-6c2a1136ab",
           "name": "DÉ DÉ MOUSE",
           "shared_version_count": 1,
@@ -37102,24 +37694,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-a470359a05"
-          ]
-        },
-        {
-          "creator_id": "creator-sasuke-haraguchi-b35f958bea",
-          "name": "Sasuke Haraguchi",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
-          ]
-        },
-        {
-          "creator_id": "creator-taku-inoue-7553565d84",
-          "name": "TAKU INOUE",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
           ]
         },
         {
@@ -37285,16 +37859,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 44
+          "count": 45
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 72
+          "count": 73
         }
       ],
       "work_count": 19,
-      "version_count": 76,
+      "version_count": 77,
       "works": [
         {
           "song_id": "song-4bfe85c283",
@@ -37309,6 +37883,7 @@
           "version_ids": [
             "song-4bfe85c283-v-025ee6b6c3",
             "song-4bfe85c283-v-235dae4c76",
+            "song-4bfe85c283-v-2fc5d06861",
             "song-4bfe85c283-v-3f64091d48",
             "song-4bfe85c283-v-49ac0076ad",
             "song-4bfe85c283-v-4bfe85c283",
@@ -37383,6 +37958,15 @@
               "id": "song-4bfe85c283-v-f000d56bc9",
               "title": "ユメヲカケル！ -トレセン学園応援団 Ver-",
               "version_label": "トレセン学園応援団 Ver",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-4bfe85c283-v-2fc5d06861",
+              "title": "ユメヲカケル！",
+              "version_label": "演唱版：LACA-15938",
               "roles": [
                 "composer",
                 "arranger"
@@ -38322,7 +38906,7 @@
         {
           "creator_id": "creator-3b78b1a677",
           "name": "マイクスギヤマ",
-          "shared_version_count": 33,
+          "shared_version_count": 34,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-4bfe85c283",
@@ -49293,11 +49877,11 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 360
+          "count": 361
         }
       ],
       "work_count": 34,
-      "version_count": 360,
+      "version_count": 361,
       "works": [
         {
           "song_id": "song-unlimited-impact-3293fdf81d",
@@ -49312,6 +49896,7 @@
             "song-unlimited-impact-3293fdf81d-v-3293fdf81d",
             "song-unlimited-impact-3293fdf81d-v-3fb84de87c",
             "song-unlimited-impact-3293fdf81d-v-602eaff8c1",
+            "song-unlimited-impact-3293fdf81d-v-73c0f0b73f",
             "song-unlimited-impact-3293fdf81d-v-7dbfc2f0c9",
             "song-unlimited-impact-3293fdf81d-v-a52ae8f6a2",
             "song-unlimited-impact-3293fdf81d-v-abe5de4572",
@@ -49388,6 +49973,14 @@
               "id": "song-unlimited-impact-3293fdf81d-v-3fb84de87c",
               "title": "UNLIMITED IMPACT -夏の夕映え Ver-",
               "version_label": "夏の夕映え Ver",
+              "roles": [
+                "lyricist"
+              ]
+            },
+            {
+              "id": "song-unlimited-impact-3293fdf81d-v-73c0f0b73f",
+              "title": "UNLIMITED IMPACT",
+              "version_label": "演唱版：LACA-15930",
               "roles": [
                 "lyricist"
               ]
@@ -53185,7 +53778,7 @@
         {
           "creator_id": "creator-28646fea7b",
           "name": "佐伯高志",
-          "shared_version_count": 9,
+          "shared_version_count": 10,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-unlimited-impact-3293fdf81d"
@@ -56546,11 +57139,11 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 10
+          "count": 16
         }
       ],
       "work_count": 2,
-      "version_count": 10,
+      "version_count": 16,
       "works": [
         {
           "song_id": "song-special-record-c828cf2dc0",
@@ -56563,13 +57156,19 @@
           ],
           "version_ids": [
             "song-special-record-c828cf2dc0-v-0724ce7d3b",
+            "song-special-record-c828cf2dc0-v-097f94fab3",
             "song-special-record-c828cf2dc0-v-2d85536b6d",
+            "song-special-record-c828cf2dc0-v-30b08eb587",
             "song-special-record-c828cf2dc0-v-4a0442bebe",
             "song-special-record-c828cf2dc0-v-7850562b7e",
             "song-special-record-c828cf2dc0-v-7bb15ce995",
             "song-special-record-c828cf2dc0-v-8f08aa9c2e",
+            "song-special-record-c828cf2dc0-v-a4c37054a9",
+            "song-special-record-c828cf2dc0-v-b5afc76596",
+            "song-special-record-c828cf2dc0-v-bb047179c3",
             "song-special-record-c828cf2dc0-v-c63435c8b8",
             "song-special-record-c828cf2dc0-v-c828cf2dc0",
+            "song-special-record-c828cf2dc0-v-eec081a7e2",
             "song-special-record-c828cf2dc0-v-fefb8d2174"
           ],
           "versions": [
@@ -56585,6 +57184,30 @@
               "id": "song-special-record-c828cf2dc0-v-fefb8d2174",
               "title": "Special Record! (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-eec081a7e2",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1973",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-bb047179c3",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1974",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-30b08eb587",
+              "title": "Special Record! (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version / 演唱版：LZC-1975",
               "roles": [
                 "arranger"
               ]
@@ -56644,6 +57267,30 @@
               "roles": [
                 "arranger"
               ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-a4c37054a9",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15755",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-b5afc76596",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15756",
+              "roles": [
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-special-record-c828cf2dc0-v-097f94fab3",
+              "title": "Special Record!",
+              "version_label": "演唱版：LACA-15757",
+              "roles": [
+                "arranger"
+              ]
             }
           ]
         },
@@ -56675,7 +57322,7 @@
         {
           "creator_id": "creator-a0d84fd99d",
           "name": "廣澤優也",
-          "shared_version_count": 9,
+          "shared_version_count": 15,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-special-record-c828cf2dc0"
@@ -56684,7 +57331,7 @@
         {
           "creator_id": "creator-6ed889314c",
           "name": "新田目駿",
-          "shared_version_count": 9,
+          "shared_version_count": 15,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-special-record-c828cf2dc0"
@@ -59942,5 +60589,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "aeebe7b717edb0eac43e"
+  "build_id": "7d40f2f4c422878b747e"
 }
