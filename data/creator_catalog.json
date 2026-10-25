@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T11:36:14+00:00",
+  "generated_at": "2026-10-25T11:44:29+00:00",
   "coverage": {
     "creators": 305,
-    "credited_works": 423,
+    "credited_works": 422,
     "credited_versions": 1443
   },
   "creators": [
@@ -5623,22 +5623,23 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 2
+          "count": 3
         }
       ],
       "work_count": 1,
-      "version_count": 2,
+      "version_count": 3,
       "works": [
         {
           "song_id": "song-c42fc6be53",
           "title": "わたしの印は大本命◎",
           "cover": "/album_covers/LACA-15621.webp",
           "release_date": "2016-11-30",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05 (2021 Remastered Version)",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05",
           "roles": [
             "arranger"
           ],
           "version_ids": [
+            "song-935e0f8210-v-935e0f8210",
             "song-c42fc6be53-v-5d3e5907f6",
             "song-c42fc6be53-v-c42fc6be53"
           ],
@@ -5658,6 +5659,14 @@
               "roles": [
                 "arranger"
               ]
+            },
+            {
+              "id": "song-935e0f8210-v-935e0f8210",
+              "title": "わたしの印は大本命◎",
+              "version_label": "ANIMATION DERBY 05 收录版",
+              "roles": [
+                "arranger"
+              ]
             }
           ]
         }
@@ -5666,7 +5675,7 @@
         {
           "creator_id": "creator-9dd245e820",
           "name": "俊龍",
-          "shared_version_count": 2,
+          "shared_version_count": 3,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-c42fc6be53"
@@ -18191,7 +18200,7 @@
           "count": 3
         }
       ],
-      "work_count": 2,
+      "work_count": 1,
       "version_count": 3,
       "works": [
         {
@@ -18199,12 +18208,13 @@
           "title": "わたしの印は大本命◎",
           "cover": "/album_covers/LACA-15621.webp",
           "release_date": "2016-11-30",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05 (2021 Remastered Version)",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05",
           "roles": [
             "lyricist",
             "composer"
           ],
           "version_ids": [
+            "song-935e0f8210-v-935e0f8210",
             "song-c42fc6be53-v-5d3e5907f6",
             "song-c42fc6be53-v-c42fc6be53"
           ],
@@ -18226,27 +18236,11 @@
                 "lyricist",
                 "composer"
               ]
-            }
-          ]
-        },
-        {
-          "song_id": "song-935e0f8210",
-          "title": "私の印は大本命◎",
-          "cover": "/album_covers/LACA-15755.webp",
-          "release_date": "2018-09-12",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05",
-          "roles": [
-            "lyricist",
-            "composer"
-          ],
-          "version_ids": [
-            "song-935e0f8210-v-935e0f8210"
-          ],
-          "versions": [
+            },
             {
               "id": "song-935e0f8210-v-935e0f8210",
-              "title": "私の印は大本命◎",
-              "version_label": "",
+              "title": "わたしの印は大本命◎",
+              "version_label": "ANIMATION DERBY 05 收录版",
               "roles": [
                 "lyricist",
                 "composer"
@@ -18259,7 +18253,7 @@
         {
           "creator_id": "creator-sizuk-48ce8b41f3",
           "name": "Sizuk",
-          "shared_version_count": 2,
+          "shared_version_count": 3,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-c42fc6be53"
@@ -60589,5 +60583,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "3b7deabb23794963b839"
+  "build_id": "e4d8a003a184fdaf93fc"
 }

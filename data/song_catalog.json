@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T11:36:14+00:00",
+  "generated_at": "2026-10-25T11:44:29+00:00",
   "coverage": {
-    "songs": 1042,
+    "songs": 1041,
     "versions": 2169,
     "albums": 115,
     "release_tracks": 2250,
     "live_performances": 1265,
-    "credited_songs": 423,
-    "lyric_songs": 249,
+    "credited_songs": 422,
+    "lyric_songs": 248,
     "credited_versions": 1443,
     "lyric_versions": 472
   },
@@ -165871,9 +165871,12 @@
       "aliases": [
         "わたしの印は大本命◎",
         "わたしの印は大本命◎ (2021 Remastered Version)",
-        "わたしの印は大本命◎（Marching Band Ver.）"
+        "わたしの印は大本命◎（Marching Band Ver.）",
+        "私の印は大本命◎"
       ],
-      "legacy_ids": [],
+      "legacy_ids": [
+        "song-935e0f8210"
+      ],
       "artists": [
         "和氣あず未"
       ],
@@ -166261,10 +166264,79 @@
           "lyrics_ref": "song-c42fc6be53-v-5d3e5907f6",
           "has_lyrics": true,
           "has_timing": true
+        },
+        {
+          "id": "song-935e0f8210-v-935e0f8210",
+          "title": "わたしの印は大本命◎",
+          "version_label": "ANIMATION DERBY 05 收录版",
+          "artists": [
+            "和氣あず未"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-15755",
+              "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05",
+              "release_date": "2018-09-12",
+              "catalog": "LACA-15755",
+              "type": "专辑",
+              "cover": "/album_covers/LACA-15755.webp",
+              "track_number": 1,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "和氣あず未",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1309074007",
+              "image": "https://p2.music.126.net/FT67rs_XvAhfDD61ccw0Kw==/109951163545978549.jpg",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0040",
+                  "voice_actor_name": "和气杏未",
+                  "character_id": "specialweek",
+                  "character": {
+                    "id": "specialweek",
+                    "name": "特别周",
+                    "name_ja": "スペシャルウィーク",
+                    "name_en": "Special Week",
+                    "image": "/uma_official/specialweek.png",
+                    "color_main": "#EE6DCB",
+                    "color_sub": "#FFDEF9"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-9dd245e820"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-9dd245e820"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-sizuk-48ce8b41f3"
+            }
+          ],
+          "creator_ids": [
+            "creator-9dd245e820",
+            "creator-sizuk-48ce8b41f3"
+          ],
+          "lyrics_ref": "song-935e0f8210-v-935e0f8210",
+          "has_lyrics": true,
+          "has_timing": true
         }
       ],
-      "version_count": 2,
-      "release_count": 3,
+      "version_count": 3,
+      "release_count": 4,
       "performance_count": 10,
       "original_version_id": "song-c42fc6be53-v-c42fc6be53",
       "creator_ids": [
@@ -242745,106 +242817,6 @@
       "has_lyrics": false
     },
     {
-      "id": "song-935e0f8210",
-      "title": "私の印は大本命◎",
-      "aliases": [
-        "私の印は大本命◎"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "和氣あず未"
-      ],
-      "character_ids": [
-        "specialweek"
-      ],
-      "voice_actor_ids": [
-        "va-0040"
-      ],
-      "released_character_ids": [
-        "specialweek"
-      ],
-      "released_voice_actor_ids": [
-        "va-0040"
-      ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "/album_covers/LACA-15755.webp",
-      "release_date": "2018-09-12",
-      "versions": [
-        {
-          "id": "song-935e0f8210-v-935e0f8210",
-          "title": "私の印は大本命◎",
-          "version_label": "",
-          "artists": [
-            "和氣あず未"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-15755",
-              "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 05",
-              "release_date": "2018-09-12",
-              "catalog": "LACA-15755",
-              "type": "专辑",
-              "cover": "/album_covers/LACA-15755.webp",
-              "track_number": 1,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "和氣あず未",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1309074007",
-              "image": "https://p2.music.126.net/FT67rs_XvAhfDD61ccw0Kw==/109951163545978549.jpg",
-              "instrumental": false,
-              "vocalists": [
-                {
-                  "voice_actor_id": "va-0040",
-                  "voice_actor_name": "和气杏未",
-                  "character_id": "specialweek",
-                  "character": {
-                    "id": "specialweek",
-                    "name": "特别周",
-                    "name_ja": "スペシャルウィーク",
-                    "name_en": "Special Week",
-                    "image": "/uma_official/specialweek.png",
-                    "color_main": "#EE6DCB",
-                    "color_sub": "#FFDEF9"
-                  }
-                }
-              ]
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": false,
-          "credits": [
-            {
-              "role": "lyricist",
-              "role_label": "作词",
-              "creator_id": "creator-9dd245e820"
-            },
-            {
-              "role": "composer",
-              "role_label": "作曲",
-              "creator_id": "creator-9dd245e820"
-            }
-          ],
-          "creator_ids": [
-            "creator-9dd245e820"
-          ],
-          "lyrics_ref": "song-935e0f8210-v-935e0f8210",
-          "has_lyrics": true,
-          "has_timing": true
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-935e0f8210-v-935e0f8210",
-      "creator_ids": [
-        "creator-9dd245e820"
-      ],
-      "has_lyrics": true
-    },
-    {
       "id": "song-a0e9b9b737",
       "title": "私の目標、私の進む先",
       "aliases": [
@@ -257457,5 +257429,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "3b7deabb23794963b839"
+  "build_id": "e4d8a003a184fdaf93fc"
 }

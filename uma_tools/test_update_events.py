@@ -529,6 +529,27 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["performance_variant"]["label"], "Short Ver.")
 
+    def test_corrected_album_title_preserves_edition_identity_and_original_spelling(self):
+        identities = UPDATE_EVENTS.IdentityIndex([], [], {}, {}, {})
+        albums = [
+            {'name': 'First album', 'catalog': 'ORIG-1', 'release': '2022-01-01',
+             'songs': [{'name': 'Correct title', 'artist': 'Singer', 'url': 'first.mp3'}]},
+            {'name': 'Second album', 'catalog': 'LATER-1', 'release': '2023-01-01',
+             'songs': [{'name': 'Correct title', 'source_name': 'Misspelled title', 'artist': 'Singer',
+                        'url': 'second.mp3', 'version_label': 'Second album edition', 'version_id': 'published-edition'}]},
+        ]
+        original = UPDATE_EVENTS.build_song_catalog(albums[:1], [], identities, 'now')['songs'][0]
+        overrides = {'song_versions': {'Correct title': {'legacy_song_ids': ['published-misspelling']}}}
+        song = UPDATE_EVENTS.build_song_catalog(albums, [], identities, 'now', overrides)['songs'][0]
+        self.assertEqual(song['id'], original['id'])
+        self.assertIn('Misspelled title', song['aliases'])
+        self.assertIn('published-misspelling', song['legacy_ids'])
+        self.assertEqual({v['id'] for v in song['versions']}, {original['versions'][0]['id'], 'published-edition'})
+        corrected = next(v for v in song['versions'] if v['id'] == 'published-edition')
+        self.assertEqual(corrected['title'], 'Correct title')
+        self.assertEqual(corrected['releases'][0]['audio_url'], 'second.mp3')
+        self.assertEqual(song['release_count'], 2)
+
     def test_same_recording_under_two_release_titles_keeps_published_ids(self):
         identities = UPDATE_EVENTS.IdentityIndex([], [], {}, {}, {})
         albums = [

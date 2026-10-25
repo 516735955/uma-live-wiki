@@ -287,6 +287,10 @@ def build_song_catalog(
             if not variant and performers and performers != canonical_performers.get(key):
                 variant = performer_variants.setdefault((key, performers), '演唱版：' + (album.get('catalog') or album_id))
             work, version = ensure_version(str(track.get("name") or ""), variant, str(track.get("work_context") or ""))
+            if track.get("version_id"):
+                version["id"] = str(track["version_id"])
+            if track.get("source_name"):
+                work["aliases"].add(str(track["source_name"]))
             artist = str(track.get("artist") or "").strip()
             instrumental = bool(track.get("instrumental")) or pipeline_song_identity.is_instrumental_track(str(track.get("name") or ""), artist)
             version["instrumental"] = bool(version["instrumental"] or instrumental)

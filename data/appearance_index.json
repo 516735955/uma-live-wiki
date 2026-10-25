@@ -24640,13 +24640,15 @@
           "album_ids": [
             "album-laca-15621",
             "album-lzc-1973",
-            "album-lzc-1955"
+            "album-lzc-1955",
+            "album-laca-15755"
           ],
           "version_ids": [
             "song-c42fc6be53-v-c42fc6be53",
-            "song-c42fc6be53-v-5d3e5907f6"
+            "song-c42fc6be53-v-5d3e5907f6",
+            "song-935e0f8210-v-935e0f8210"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-challenge-dash-b7a5610844",
@@ -24742,17 +24744,6 @@
             "song-496f508d38-v-339cf450c6"
           ],
           "releases": 2
-        },
-        {
-          "song_id": "song-935e0f8210",
-          "name": "私の印は大本命◎",
-          "album_ids": [
-            "album-laca-15755"
-          ],
-          "version_ids": [
-            "song-935e0f8210-v-935e0f8210"
-          ],
-          "releases": 1
         },
         {
           "song_id": "song-beyond-the-future-aaed329475",
@@ -98588,13 +98579,15 @@
           "album_ids": [
             "album-laca-15621",
             "album-lzc-1973",
-            "album-lzc-1955"
+            "album-lzc-1955",
+            "album-laca-15755"
           ],
           "version_ids": [
             "song-c42fc6be53-v-c42fc6be53",
-            "song-c42fc6be53-v-5d3e5907f6"
+            "song-c42fc6be53-v-5d3e5907f6",
+            "song-935e0f8210-v-935e0f8210"
           ],
-          "releases": 3
+          "releases": 4
         },
         {
           "song_id": "song-challenge-dash-b7a5610844",
@@ -98690,17 +98683,6 @@
             "song-496f508d38-v-339cf450c6"
           ],
           "releases": 2
-        },
-        {
-          "song_id": "song-935e0f8210",
-          "name": "私の印は大本命◎",
-          "album_ids": [
-            "album-laca-15755"
-          ],
-          "version_ids": [
-            "song-935e0f8210-v-935e0f8210"
-          ],
-          "releases": 1
         },
         {
           "song_id": "song-beyond-the-future-aaed329475",
@@ -186258,6 +186240,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-25T11:36:14+00:00",
-  "build_id": "3b7deabb23794963b839"
+  "generated_at": "2026-10-25T11:44:29+00:00",
+  "build_id": "e4d8a003a184fdaf93fc"
 }
