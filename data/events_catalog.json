@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T09:52:12+00:00",
+  "generated_at": "2026-10-25T10:04:01+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -9294,12 +9294,13 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
-          "time_precision": "hour",
-          "time_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY",
+          "broadcast_time": "20:00",
+          "time_precision": "minute",
+          "time_source_url": "https://umamusume.jp/news/detail?id=3424",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
           "setlist_status": "none",
+          "schedule_note": "原定19:00，官方8月28日18:30追记改为20:00公开。",
           "published_time": "20:00",
           "published_date": "2026-08-28",
           "publication_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
@@ -9350,7 +9351,7 @@
       ],
       "venue_sources": [],
       "time_source": null,
-      "time_precision": "hour",
+      "time_precision": "minute",
       "title_ja": "そこそこぱかライブTV Vol.55",
       "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の鈴木日菜さん、星希成奏さん、華成結さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこラヴリー♡な話」、「そこそこニコニコな話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、3人の絆を確かめるゲームにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.55",
@@ -198465,5 +198466,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "7d40f2f4c422878b747e"
+  "build_id": "f3f76af75104d734cba3"
 }

@@ -54,7 +54,7 @@ export const ActivityTime = {
       return this.endDate && this.endDate !== this.date ? `${from} — ${this.endDate}` : from;
     },
     rows() {
-      return [
+      const rows = [
         ['开场', this.doorsTime, this.date],
         [this.startEstimated ? '预计开演' : '开演', this.startTime, this.date],
         [this.endEstimated ? '预计结束' : '结束', this.endTime, this.endDate || this.date],
@@ -65,6 +65,9 @@ export const ActivityTime = {
         const normalized = normalizeActivityTime(date, value);
         return { label, value: normalized.time || value, date: normalized.date || date };
       });
+      const broadcast = rows.find((row) => row.label === '播出');
+      return rows.filter((row) => row.label !== '公开' || !broadcast
+        || row.date !== broadcast.date || row.value !== broadcast.value);
     },
     channelRows() {
       const seen = new Set();

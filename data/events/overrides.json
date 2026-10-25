@@ -1267,6 +1267,21 @@
       }
     },
     "sokosoko-paka-live-tv-055": {
+      "session_patches": {
+        "sokosoko-paka-live-tv-055-session-1": {
+          "broadcast_time": "20:00",
+          "time_precision": "minute",
+          "time_source_url": "https://umamusume.jp/news/detail?id=3424",
+          "schedule_note": "原定19:00，官方8月28日18:30追记改为20:00公开。"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "节目公开时间变更追记",
+          "url": "https://umamusume.jp/news/detail?id=3424"
+        }
+      ],
       "image": "https://prd-info-umamusume.akamaized.net/announce/3424/Header/sokosoko55_KV.png?c=20260828193016",
       "image_source": {
         "kind": "official_announcement_artwork",
