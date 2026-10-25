@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T11:58:10+00:00",
+  "generated_at": "2026-10-25T12:26:32+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -4074,14 +4074,15 @@
             }
           ],
           "setlist_status": "none",
-          "doors_time": "13:00",
-          "start_time": "14:30",
           "end_time": "21:00",
           "end_time_estimated": true,
-          "time_source": "eventernote",
+          "time_source": "official_announcement",
+          "time_source_url": "https://www.animax.co.jp/events/animaxmusix/",
           "time_precision": "minute",
-          "source_time_text": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】    開場 13:00 開演 14:30 終演 21:00 ※終演時間はあくまでも目安になります 開場 13:00 開演 14:30 終演 21:00 ※終演時間はあくまでも目安になります",
-          "time_source_url": "https://www.eventernote.com/events/466254"
+          "schedule_note": "现行官方活动页列DAY2预计21:00结束；2026年7月旧公告列20:30，保留为历史日程差异。赛马娘参加DAY2。",
+          "doors_time": "13:00",
+          "start_time": "14:30",
+          "source_time_text": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】    開場 13:00 開演 14:30 終演 21:00 ※終演時間はあくまでも目安になります 開場 13:00 開演 14:30 終演 21:00 ※終演時間はあくまでも目安になります"
         }
       ],
       "media": [],
@@ -4090,6 +4091,16 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/466254"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "ANIMAX MUSIX 2026现行日程",
+          "url": "https://www.animax.co.jp/events/animaxmusix/"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "2026年7月旧公告日程",
+          "url": "https://umamusume.jp/news/detail?id=3374"
         }
       ],
       "legacy_url": "",
@@ -4122,7 +4133,7 @@
           "url": "https://www.eventernote.com/places/1"
         }
       ],
-      "time_source": "eventernote",
+      "time_source": "official_announcement",
       "time_precision": "minute",
       "title_ja": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
       "summary_ja": "",
@@ -189682,5 +189693,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "ed4e3f5adefeefdd911b"
+  "build_id": "fa011a485ad21f035c99"
 }

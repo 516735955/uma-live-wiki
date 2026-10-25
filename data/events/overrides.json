@@ -2469,6 +2469,28 @@
       ]
     },
     "eventernote-2026-11-21": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "ANIMAX MUSIX 2026现行日程",
+          "url": "https://www.animax.co.jp/events/animaxmusix/"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "2026年7月旧公告日程",
+          "url": "https://umamusume.jp/news/detail?id=3374"
+        }
+      ],
+      "session_patches": {
+        "eventernote-2026-11-21-session-1": {
+          "end_time": "21:00",
+          "end_time_estimated": true,
+          "time_source": "official_announcement",
+          "time_source_url": "https://www.animax.co.jp/events/animaxmusix/",
+          "time_precision": "minute",
+          "schedule_note": "现行官方活动页列DAY2预计21:00结束；2026年7月旧公告列20:30，保留为历史日程差异。赛马娘参加DAY2。"
+        }
+      },
       "image": "/uma_tools/img/event-covers/concert.svg",
       "image_source": {
         "kind": "unresolved",
