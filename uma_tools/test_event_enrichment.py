@@ -4,6 +4,19 @@ from events_pipeline.event_enrichment import apply_groupings, apply_news_images,
 
 
 class EventEnrichmentTests(unittest.TestCase):
+    def test_manual_session_correction_survives_source_time_refresh(self):
+        rows = [{'id': 'e', 'title': '16:30', 'summary': '開演 16:30 終演 17:00',
+                 'session_patches': {'s': {'date': '2024-02-24', 'start_time': None, 'end_time': None,
+                                          'schedule_note': '末场比赛结束后'}},
+                 'sessions': [{'id': 's', 'date': '2024-02-25', 'start_time': '16:30',
+                               'songs': ['kept'], 'notes_html': '<b>保留</b>'}]}]
+        enriched = apply_source_times(apply_source_times(rows))[0]['sessions'][0]
+        self.assertEqual(enriched['date'], '2024-02-24')
+        self.assertIsNone(enriched['start_time'])
+        self.assertIsNone(enriched['end_time'])
+        self.assertEqual(enriched['songs'], ['kept'])
+        self.assertEqual(enriched['notes_html'], '<b>保留</b>')
+
     def test_new_competition_stages_require_identity_and_own_stage_title(self):
         group = {"id": "g", "kind": "competition", "members": [{"event_id": "a"}],
                  "source_identity": {"match": "第1回トレセン学園『Gang Beasts』最強決定戦", "rule": "qualifier A-G"}}
@@ -52,6 +65,23 @@ class EventEnrichmentTests(unittest.TestCase):
         self.assertEqual(enriched[0]["venue"], "横滨体育馆")
         self.assertEqual(enriched[0]["venue_raw"], "横浜アリーナ")
         self.assertEqual(enriched[0]["venue_id"], "yokohama")
+        self.assertEqual(apply_venues(enriched, {"venues": [{"id": "yokohama", "raw": "横浜アリーナ", "display": "横滨体育馆", "aliases": ["横滨体育馆"]}]})[0]['venue_raw'], '横浜アリーナ')
+
+    def test_channels_and_regions_are_not_physical_venues(self):
+        for status in ('channel', 'region_placeholder'):
+            enriched = apply_venues([{'id': 'e', 'venue': 'raw'}], {'venues': [
+                {'id': 'placeholder', 'raw': 'raw', 'display': '已知形式或区域', 'normalization_status': status}
+            ]})
+            self.assertEqual(enriched[0]['venue_id'], '')
+            self.assertEqual(enriched[0]['venue_raw'], 'raw')
+
+    def test_historical_venue_name_uses_event_date(self):
+        document = {'venues': [{'id': 'v', 'raw': 'Current Arena', 'display': '新冠名',
+            'display_history': [{'before': '2026-02-01', 'display': '旧名称'}]}]}
+        rows = apply_venues([{'id': 'old', 'venue': 'Current Arena', 'date': '2024-08-31'},
+                             {'id': 'new', 'venue': 'Current Arena', 'date': '2026-08-31'}], document)
+        self.assertEqual([r['venue'] for r in rows], ['旧名称', '新冠名'])
+        self.assertEqual([r['venue_id'] for r in rows], ['v', 'v'])
 
     def test_official_news_image_replaces_only_matching_program_placeholder(self):
         events = [

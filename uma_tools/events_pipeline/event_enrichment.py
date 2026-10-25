@@ -162,20 +162,31 @@ def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[l
 def apply_venues(events: list[dict], document: dict | None = None) -> list[dict]:
     """Add a stable venue key and display aliases; preserve raw venue text."""
     document = document if document is not None else _read(VENUES_FILE)
-    by_raw = {str(item.get("raw") or ""): item for item in document.get("venues") or [] if item.get("raw")}
+    by_raw = {str(alias): item for item in document.get("venues") or []
+              for alias in [item.get("raw"), *(item.get("aliases") or [])] if alias}
+    by_raw.update({item['raw']: item for item in document.get('venues') or [] if item.get('raw')})
     output = []
     for event in events:
         row = dict(event)
-        raw = str(event.get("venue") or "")
+        raw = str(event.get("venue_raw") or event.get("venue") or "")
         item = by_raw.get(raw)
         if item:
             row["venue_raw"] = raw
-            row["venue_id"] = str(item.get("id") or "")
+            row["venue_id"] = "" if item.get("normalization_status") in {"channel", "region_placeholder"} else str(item.get("id") or "")
             row["venue_zh"] = str(item.get("name_zh") or "")
             row["venue_ja"] = str(item.get("name_ja") or "")
             row["venue_city"] = str(item.get("city") or "")
+            row["venue_country"] = str(item.get("country") or "")
+            row["venue_aliases"] = list(dict.fromkeys([raw, item.get("name_ja") or '', *(item.get("aliases") or [])]))
+            row["venue_sources"] = item.get("sources") or []
             if item.get("display"):
                 row["venue"] = str(item["display"])
+            for name in item.get('display_history') or []:
+                if row.get('date') and row['date'] < name.get('before', ''):
+                    row['venue'] = name['display']
+                    row['venue_zh'] = name['display']
+                    row['venue_ja'] = name.get('name_ja') or row['venue_ja']
+                    break
         output.append(row)
     return output
 
@@ -252,18 +263,20 @@ def apply_source_times(events: list[dict]) -> list[dict]:
         multiple = len(row.get("sessions") or []) > 1
         for session in row.get("sessions") or []:
             child = dict(session)
+            manual = (row.get("session_patches") or {}).get(child.get("id"), {})
+            child.update(manual)
             own_source = next((item for item in child.get("sources") or [] if item.get("kind") == "eventernote"), None)
             own_archive = archived_by_link.get(str(own_source.get("url"))) if own_source else None
             text = " ".join([str(child.get("source_time_text") or ""), str((own_archive or {}).get("times") or ""), "" if multiple else source_text])
             filled = False
             for field, pattern in patterns.items():
                 match = pattern.search(text)
-                if match and not child.get(field):
+                if match and not child.get(field) and field not in manual:
                     child[field] = f"{int(match.group(1)):02d}:{match.group(2)}"
                     filled = True
                     if field == "end_time" and common.re.search(r"目安|预计|預計|予定|预定", text):
                         child["end_time_estimated"] = True
-            if not multiple and title_match and not child.get("start_time"):
+            if not multiple and title_match and not child.get("start_time") and "start_time" not in manual:
                 child["start_time"] = f"{int(title_match.group(1)):02d}:{title_match.group(2)}"
                 filled = True
             if filled:

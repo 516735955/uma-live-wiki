@@ -5,6 +5,15 @@ from events_pipeline.program_schedule import extract_announced_time, extract_met
 
 
 class ProgramScheduleTest(unittest.TestCase):
+    def test_multiple_dates_keep_independent_late_night_clocks(self):
+        from events_pipeline.program_text import program_session_time
+        description = "2025年7月6日（日）25:55 ～ 26:20\n2025年7月13日（日）26:05 ～ 26:30"
+        first = program_session_time(description, "2025-07-06")
+        second = program_session_time(description, "2025-07-13")
+        self.assertEqual((first["broadcast_date"], first["broadcast_time"]), ("2025-07-07", "01:55"))
+        self.assertEqual((second["broadcast_date"], second["broadcast_time"]), ("2025-07-14", "02:05"))
+        self.assertEqual(program_session_time(description, "2025-07-20"), {})
+
     def test_japanese_hour_without_minutes(self):
         self.assertEqual(extract_announced_time("「ぱかライブTV' #5」は7月29日20時放送！")["broadcast_time"], "20:00")
 

@@ -513,7 +513,9 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
                 schedule_text = pipeline_common.re.split(r"※放送時間|番組概要", "\n".join(pipeline_program_text.program_text_lines(program_message)), maxsplit=1)[0]
                 parsed_dates = pipeline_text.all_dates(schedule_text)
                 if len(parsed_dates) > 1:
-                    sessions = [{"label": f"第{index + 1}回", "date": value, "cast": cast} for index, value in enumerate(parsed_dates[:2])]
+                    sessions = [{"label": f"第{index + 1}回", "date": value, "cast": cast,
+                                 **pipeline_program_text.program_session_time(program_message, value)}
+                                for index, value in enumerate(parsed_dates[:2])]
             display_title = pipeline_program_text.canonical_program_title(title)
             schedule = pipeline_program_schedule.schedule_for_program(source_title=title, source_description=message, broadcast_date=date, source_url=official_url)
             programs.append({

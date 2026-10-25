@@ -379,6 +379,9 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 source_session.get("date") or source.get("date"),
                 " ".join(str(source_session.get(key) or "") for key in ("label", "start_time", "summary")) + " " + source_text,
             )
+            if source_session.get("broadcast_date"):
+                session_date = source_session["broadcast_date"]
+                session_source_date = source_session.get("date") if session_date != source_session.get("date") else ""
             sessions.append({
                 "id": f"{event_id}-session-{index + 1}",
                 "label": source_session.get("label") or f"场次 {index + 1}",
@@ -391,6 +394,7 @@ def add_programs(events: list[dict[str, pipeline_common.Any]], programs_doc: dic
                 **({"broadcast_time": source_session.get("broadcast_time") or source_session["start_time"]} if source_session.get("broadcast_time") or (kind == "official_program" and source_session.get("start_time")) else {}),
                 **({"end_time": source_session["end_time"]} if source_session.get("end_time") else {}),
                 **({"doors_time": source_session["doors_time"]} if source_session.get("doors_time") else {}),
+                **{key: source_session[key] for key in ("source_time_text", "time_precision", "broadcast_time_kind", "time_source_url") if source_session.get(key)},
             })
         if not sessions:
             sessions = [{"id": f"{event_id}-session-1", "label": "本期节目", "date": program_date, "songs": [], "character_ids": characters, "cast": cast,
@@ -541,6 +545,11 @@ def dedupe_events(events: list[dict[str, pipeline_common.Any]]) -> list[dict[str
 
     def merge_session(target: dict[str, pipeline_common.Any], incoming: dict[str, pipeline_common.Any]) -> None:
         target['id_aliases'] = list(dict.fromkeys([*target.get('id_aliases', []), incoming['id'], *incoming.get('id_aliases', [])]))
+        for field in ('doors_time', 'start_time', 'end_time', 'broadcast_time', 'end_date',
+                      'time_source', 'time_source_url', 'time_precision', 'source_time_text',
+                      'broadcast_time_kind', 'end_time_estimated', 'start_time_estimated'):
+            if not target.get(field) and incoming.get(field) is not None:
+                target[field] = incoming[field]
         if incoming.get('source_date') and not target.get('source_date'):
             target['source_date'] = incoming['source_date']
         target['alternate_setlist_sources'] = [*target.get('alternate_setlist_sources', []),

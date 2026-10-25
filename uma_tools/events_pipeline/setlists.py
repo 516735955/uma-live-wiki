@@ -130,7 +130,7 @@ def apply_sheet(events, blocks, identities, eventernote=None):
             continue
         session = sessions[0]
         names = list(dict.fromkeys(name for song in block['songs'] if clean_song(song['name']) for name in song['performers'] if not ALL_CAST.fullmatch(name)))
-        known_cast = session.get('cast') or event.get('cast') or []
+        known_cast = session.get('cast') or (event.get('cast') if len(event.get('sessions', [])) == 1 else []) or []
         full_names = list(names)
         source_urls = {source.get('url') for source in event.get('sources', [])}
         legacy_urls = {event.get('legacy_url'), *event.get('legacy_aliases', [])}
@@ -180,8 +180,13 @@ def apply_sheet(events, blocks, identities, eventernote=None):
         performances = curated_performances(session.get('setlist_html'), performances, identities, known_cast)
         session['performances'] = performances
         session['songs'] = [song['song'] for song in performances]
-        session['cast'] = identity_tools.merge_cast_records(session_cast)
-        session['character_ids'] = list(dict.fromkeys(cid for row in performances for cid in row['character_ids']))
+        # A song sheet identifies singers, not every talk guest or presenter.
+        # Preserve independently documented attendance for this session.
+        session['cast'] = identity_tools.merge_cast_records([*known_cast, *session_cast])
+        session['character_ids'] = list(dict.fromkeys([
+            *session.get('character_ids', []),
+            *(cid for row in performances for cid in row['character_ids']),
+        ]))
         session['setlist_html'] = display_table(session.get('setlist_html'), {**block, 'songs': rendered}, known_cast, identities)
         if session.get('setlist_source'):
             session.setdefault('alternate_setlist_sources', []).append(session['setlist_source'])

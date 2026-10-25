@@ -76,6 +76,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     pipeline_group_images.rebuild(events, event_groups)
     events, event_groups = pipeline_event_enrichment.enrich(events)
     for event in events:
+        event.pop("session_patches", None)
         if not event.get("series_id"):
             derived = pipeline_events.title_series_id(event.get("title") or "")
             if derived:

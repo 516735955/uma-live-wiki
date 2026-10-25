@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from . import common as pipeline_common
 from . import text as pipeline_text
+from . import program_schedule
 
 
 def program_identity(title: str) -> tuple[str, str]:
@@ -134,6 +135,17 @@ def parse_program_cast_line(line: str) -> dict[str, str] | None:
     return None
 
 
+def program_session_time(description: str, date: str) -> dict:
+    """Read a clock from this date's schedule line, before summaries are shortened."""
+    for line in program_text_lines(description):
+        if pipeline_text.first_date(line) != date:
+            continue
+        schedule = program_schedule.schedule_for_program(source_title="配信 " + line, broadcast_date=date)
+        if schedule:
+            return {**schedule, "source_time_text": line}
+    return {}
+
+
 def parse_program_sessions(description: str, default_date: str = "") -> list[dict[str, pipeline_common.Any]]:
     lines = program_text_lines(description)
     session_dates: dict[str, str] = {}
@@ -165,7 +177,8 @@ def parse_program_sessions(description: str, default_date: str = "") -> list[dic
             elif cast:
                 break
         if cast:
-            sessions.append({"label": label, "date": session_dates.get(pipeline_text.fold_name(label), default_date), "cast": cast})
+            date = session_dates.get(pipeline_text.fold_name(label), default_date)
+            sessions.append({"label": label, "date": date, "cast": cast, **program_session_time(description, date)})
     return sessions
 
 

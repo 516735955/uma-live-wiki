@@ -517,7 +517,7 @@ class CatalogStore {
         const character = charactersById.get(id) || {};
         return [character.zh, character.ja, character.en].filter(Boolean).join(' ');
       });
-      const search = searchText.fields([event.title, event.title_ja, event.title_aliases, event.venue, event.summary, event.schedule_status === 'cancelled' ? '已取消' : '', event.status_note, eventSearchText(event, actorsById), series.name, series.name_ja, ...names, ...(event.character_ids || []).map(id => charactersById.get(id)), ...(event.cast || []).map(row => actorsById.get(row.voice_actor_id)?.identity), ...(event.sessions || []).flatMap(row => [row.label, row.summary, presentation.rawById.get(row.source_event_id)?.title])]);
+      const search = searchText.fields([event.title, event.title_ja, event.title_aliases, event.venue, event.venue_raw, event.venue_aliases, event.venue_city, event.summary, ['cancelled','partially_cancelled'].includes(event.schedule_status) ? '已取消' : '', event.status_note, eventSearchText(event, actorsById), series.name, series.name_ja, ...names, ...(event.character_ids || []).map(id => charactersById.get(id)), ...(event.cast || []).map(row => actorsById.get(row.voice_actor_id)?.identity), ...(event.sessions || []).flatMap(row => [row.label, row.summary, row.venue, presentation.rawById.get(row.source_event_id)?.title])]);
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {

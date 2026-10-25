@@ -19,6 +19,29 @@ class Identities:
 
 
 class GoogleSetlistTests(unittest.TestCase):
+    def test_song_sheet_preserves_non_singing_session_guest(self):
+        guest = {'voice_actor_id': 'va-a', 'character_id': 'char-a', 'name': '声优甲',
+                 'role': '角色甲', 'evidence': 'official_announcement'}
+        event = {'id': 'canonical', 'title': 'ウマ娘2nd EVENT', 'date': '2026-10-17',
+                 'series_id': 'numbered-live', 'sources': [],
+                 'sessions': [{'id': 's', 'label': 'DAY1', 'date': '2026-10-17',
+                               'cast': [guest], 'character_ids': ['char-a']}]}
+        block = {'title': 'ウマ娘2nd EVENT', 'date': '2026-10-17',
+                 'songs': [{'no': '1', 'name': 'Song', 'performers': ['Actor B']}]}
+        apply_sheet([event], [block], Identities())
+        self.assertEqual({c['voice_actor_id'] for c in event['sessions'][0]['cast']}, {'va-a', 'va-b'})
+        self.assertEqual(event['sessions'][0]['performances'][0]['voice_actor_ids'], ['va-b'])
+
+    def test_merge_keeps_official_time_alongside_curated_songs(self):
+        base = {'id': 'e', 'title': 'Event', 'date': '2026-10-17', 'sources': [], 'cast': [], 'character_ids': []}
+        song = {**base, 'kind': 'concert', 'sessions': [{'id': 's1', 'date': '2026-10-17', 'label': 'DAY1', 'songs': ['Song']}]}
+        official = {**base, 'kind': 'official_program', 'sessions': [{'id': 's2', 'date': '2026-10-17', 'label': 'DAY1',
+                     'broadcast_time': '20:00', 'time_source_url': 'https://example.test/schedule'}]}
+        merged = dedupe_events([song, official])[0]['sessions'][0]
+        self.assertEqual(merged['songs'], ['Song'])
+        self.assertEqual(merged['broadcast_time'], '20:00')
+        self.assertEqual(merged['time_source_url'], 'https://example.test/schedule')
+
     def test_curated_table_keeps_roles_sources_notes_and_sections(self):
         table = ('<table><thead><tr><th>歌曲信息</th></tr></thead><tbody>'
                  '<tr><td class="setlist-no">1</td><td class="setlist-song">Finale</td>'

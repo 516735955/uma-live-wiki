@@ -190,6 +190,9 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 {
                     "label": "DAY1",
                     "date": "2024-03-30",
+                    "broadcast_time": "19:00", "broadcast_date": "2024-03-30",
+                    "broadcast_time_zone": "Asia/Tokyo", "broadcast_time_kind": "announced", "time_precision": "minute",
+                    "source_time_text": "DAY1：2024年3月30日（土）19:00頃開始予定",
                     "cast": [
                         {"name": "明坂聡美", "role": "実況"},
                         {"name": "天海由梨奈", "role": "ミスターシービー"},
@@ -198,6 +201,9 @@ DAY2：2024年3月31日（日）19:00頃開始予定
                 {
                     "label": "DAY2",
                     "date": "2024-03-31",
+                    "broadcast_time": "19:00", "broadcast_date": "2024-03-31",
+                    "broadcast_time_zone": "Asia/Tokyo", "broadcast_time_kind": "announced", "time_precision": "minute",
+                    "source_time_text": "DAY2：2024年3月31日（日）19:00頃開始予定",
                     "cast": [{"name": "上田瞳", "role": "ゴールドシップ"}],
                 },
             ],
