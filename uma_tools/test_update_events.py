@@ -446,6 +446,19 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             "うまぴょい伝説 ※Short ver.",
         )
 
+    def test_new_ensemble_splits_recordings_and_same_ensemble_reissue_stays_shared(self):
+        from types import SimpleNamespace
+        identities = SimpleNamespace(voice_id=lambda name: '', character_id=lambda name: '',
+                                     current_character_id=lambda *args: '', character_payload=lambda key: {},
+                                     profile_by_id={}, character_by_id={})
+        albums = [{'id':identifier, 'name':identifier, 'release':'2024-01-01',
+                   'songs':[{'name':'Ensemble fixture song','artist':artist}]}
+                  for identifier,artist in [('first','Singer A'),('second','Singer B'),('reissue','Singer B')]]
+        catalog = UPDATE_EVENTS.build_song_catalog(albums, [], identities, '2026-10-25')
+        versions = catalog['songs'][0]['versions']
+        self.assertEqual(len(versions), 2)
+        self.assertEqual(sorted(version['release_count'] for version in versions), [1,2])
+
     def test_song_catalog_groups_explicit_versions_without_losing_releases(self):
         class Identities:
             @staticmethod
@@ -969,7 +982,7 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             program_discovery.fetch_json_url = original_json
             common.fetch_text_url = original_text
 
-    def test_version_metadata_inherits_without_copying_full_lyrics_to_short_or_instrumental(self):
+    def test_credits_inherit_but_recording_lyrics_require_an_explicit_mapping(self):
         work = {
             "title": "Test Song",
             "versions": {
@@ -998,12 +1011,15 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         original_id = UPDATE_EVENTS.effective_music_metadata(work, credits, lyrics, {"versions": {}}, {"versions": {}})
         self.assertEqual(original_id, "original")
         self.assertEqual(work["versions"]["alternate"]["credits"], work["versions"]["original"]["credits"])
-        self.assertEqual(work["versions"]["alternate"]["lyrics_ref"], "original")
-        self.assertTrue(work["versions"]["alternate"]["has_lyrics"])
+        self.assertEqual(work["versions"]["alternate"]["lyrics_ref"], "")
+        self.assertFalse(work["versions"]["alternate"]["has_lyrics"])
         self.assertEqual(work["versions"]["short"]["lyrics_ref"], "")
         self.assertFalse(work["versions"]["short"]["has_lyrics"])
         self.assertEqual(work["versions"]["off-vocal"]["lyrics_ref"], "")
         self.assertFalse(work["versions"]["off-vocal"]["has_lyrics"])
+        UPDATE_EVENTS.effective_music_metadata(work, credits, lyrics, {"versions": {}},
+                                               {"versions": {"alternate": {"lyrics_from": "original"}}})
+        self.assertEqual(work["versions"]["alternate"]["lyrics_ref"], "original")
 
     def test_committed_relationships_reference_known_records(self):
         catalog = json.loads((ROOT / "data" / "events_catalog.json").read_text(encoding="utf-8"))

@@ -102,14 +102,17 @@ def utaten_artist_names(composition: dict[str, pipeline_common.Any]) -> list[str
 
 
 def artist_match(recording: dict[str, pipeline_common.Any], composition: dict[str, pipeline_common.Any]) -> bool:
-    source = {pipeline_recordings.normalized_name(name) for name in utaten_artist_names(composition)}
-    if not source:
-        return False
-    for name in recording.get("artists") or []:
-        key = pipeline_recordings.normalized_name(name)
-        if key and key in source:
-            return True
-    return False
+    source = set()
+    for credit in utaten_artist_names(composition):
+        # UtaTen credits character ensembles as Character(Voice Actor), often
+        # in one comma-separated name. Compare the complete performer set.
+        names = pipeline_common.re.findall(r'[（(]\s*(?:CV\s*[.．:：]?\s*)?([^()（）]+)[)）]', credit, pipeline_common.re.I)
+        for name in names or pipeline_common.re.split(r'[、,，／/&＋+]', credit):
+            key = pipeline_recordings.normalized_name(name)
+            if key:
+                source.add(key)
+    expected = {pipeline_recordings.normalized_name(name) for name in recording.get('artists') or [] if name}
+    return bool(source and expected and source == expected)
 
 
 def fetch_utaten(recording: dict[str, pipeline_common.Any]) -> tuple[str, dict[str, pipeline_common.Any] | None, str]:

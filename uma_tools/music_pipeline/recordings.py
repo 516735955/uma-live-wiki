@@ -49,6 +49,7 @@ def version_recordings(songs: dict[str, pipeline_common.Any]) -> dict[str, dict[
                 "tracks": releases,
                 "releases": release_rows,
                 "artists": artists,
+                "content_type": version.get('content_type') or '',
             }
     return rows
 

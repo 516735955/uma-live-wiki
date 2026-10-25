@@ -37,7 +37,10 @@ function createClassification(anime = {}, songs = [], fallbackWork = () => '') {
     if (relation.version_id) for (const release of recordings.get(relation.version_id)?.releases || []) add(release.album_id, work);
   }
   return (album, id) => {
-    const series = releaseSeries(album);
+    const series = album.release_series || releaseSeries(album);
+    if (Array.isArray(album.works) && album.works.length) {
+      return { works: [...new Set(album.works)], release_series: series };
+    }
     const works = new Set(worksByAlbum.get(id) || []);
     const fallback = fallbackWork(album.name);
     if (!works.size && !['other','winning-live','starting-gate','solo-vocal'].includes(fallback)) works.add(fallback);

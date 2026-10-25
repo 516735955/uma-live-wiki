@@ -26,6 +26,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--normalize-lyrics-only", action="store_true", help="offline: rebuild canonical lyric documents and stable timing references")
     parser.add_argument("--revalidate-utaten", action="store_true", help="remove prior UtaTen matches whose credited artist does not match this recording")
     parser.add_argument("--skip-official", action="store_true", help="skip the official Lantis credit refresh")
+    parser.add_argument("--recheck-missing", action="store_true", help="retry unresolved lyric and timing sources while retaining accepted metadata")
     parser.add_argument("--check", action="store_true", help="validate committed music source documents without network access")
     args = parser.parse_args(argv)
 
@@ -42,6 +43,7 @@ def main(argv: list[str] | None = None) -> int:
     lrclib_checked = set(source_state.get("lrclib_checked") or [])
     lrclib_checked_at = dict(source_state.get('lrclib_checked_at') or {})
     wiki_checked_at = dict(source_state.get('umamusu_wiki_checked_at') or {})
+    source_results = dict(source_state.get('source_results') or {})
     umamusu_wiki_checked = {int(value) for value in source_state.get("umamusu_wiki_checked") or [] if str(value).isdigit()}
     overrides = pipeline_common.read_json(pipeline_common.OVERRIDES_FILE, {"schema_version": 1, "versions": {}})
     if not isinstance(overrides.get("versions"), dict):
@@ -213,7 +215,7 @@ def main(argv: list[str] | None = None) -> int:
         }
         refresh_tracks = {source_track for version_id, row in target_versions.items() if version_id in refresh for source_track in row["tracks"]}
         targets = sorted({source_track for row in target_versions.values() for source_track in row["tracks"]
-                          if source_track in refresh_tracks or source_track not in netease_checked or now - float(netease_checked_at.get(source_track, 0)) >= 86400},
+                          if args.recheck_missing or source_track in refresh_tracks or source_track not in netease_checked or now - float(netease_checked_at.get(source_track, 0)) >= 86400},
                          key=lambda track: float(netease_checked_at.get(track, 0)))
         if args.limit:
             targets = targets[: max(0, args.limit)]
@@ -223,6 +225,12 @@ def main(argv: list[str] | None = None) -> int:
             for index, future in enumerate(pipeline_common.concurrent.futures.as_completed(futures), 1):
                 source_track, payload, error = future.result()
                 fetched[source_track] = payload
+                source_results['netease:' + source_track] = {
+                    'url': pipeline_common.LYRIC_URL.format(track_id=source_track),
+                    'checked_at': pipeline_common.time.time(),
+                    'status': 'access_failed' if error else 'lyrics_received' if ((payload or {}).get('lrc') or {}).get('lyric') else 'no_lyric_returned',
+                    **({'error': error} if error else {}),
+                }
                 netease_checked_at[source_track] = pipeline_common.time.time()
                 if error:
                     errors.append((source_track, error))
@@ -238,8 +246,8 @@ def main(argv: list[str] | None = None) -> int:
         now = pipeline_common.time.time()
         target_utaten = [
             row for version_id, row in recordings.items()
-            if not row["instrumental"]
-            and (version_id in refresh or version_id not in utaten_checked or now - float(utaten_checked_at.get(version_id, 0)) >= 24 * 60 * 60)
+            if not row["instrumental"] and row.get('content_type') != 'spoken'
+            and (args.recheck_missing or version_id in refresh or version_id not in utaten_checked or now - float(utaten_checked_at.get(version_id, 0)) >= 24 * 60 * 60)
             and (version_id not in (lyrics.get("versions") or {}) or version_id not in (credits.get("versions") or {}))
         ]
         # Newly discovered recordings come first; older missing metadata rotates
@@ -253,6 +261,12 @@ def main(argv: list[str] | None = None) -> int:
             for index, future in enumerate(pipeline_common.concurrent.futures.as_completed(futures), 1):
                 version_id, payload, error = future.result()
                 results[version_id] = payload
+                source_results['utaten:' + version_id] = {
+                    'url': (payload or {}).get('source_url') or pipeline_common.UTATEN_SEARCH_URL.format(title=pipeline_common.urllib.parse.quote(recordings[version_id]['version_title'])),
+                    'checked_at': pipeline_common.time.time(),
+                    'status': 'access_failed' if error else 'verified_match' if payload else 'no_verified_match',
+                    **({'error': error} if error else {}),
+                }
                 if error:
                     errors.append((version_id, error))
                 else:
@@ -320,8 +334,8 @@ def main(argv: list[str] | None = None) -> int:
         target_lrclib = [
             (row, pipeline_lyrics.lyric_document_lines(lyrics, version_id))
             for version_id, row in recordings.items()
-            if not row["instrumental"]
-            and (version_id in refresh or version_id not in lrclib_checked or now - float(lrclib_checked_at.get(version_id, 0)) >= 7 * 86400)
+            if not row["instrumental"] and row.get('content_type') != 'spoken'
+            and (args.recheck_missing or version_id in refresh or version_id not in lrclib_checked or now - float(lrclib_checked_at.get(version_id, 0)) >= 7 * 86400)
             and version_id in lyric_versions
             and (version_id not in timing_versions or version_id in refresh)
         ]
@@ -333,6 +347,12 @@ def main(argv: list[str] | None = None) -> int:
             for index, future in enumerate(pipeline_common.concurrent.futures.as_completed(futures), 1):
                 version_id, payload, error = future.result()
                 results[version_id] = payload
+                source_results['lrclib:' + version_id] = {
+                    'url': 'https://lrclib.net/api/search?track_name=' + pipeline_common.urllib.parse.quote(recordings[version_id]['version_title']),
+                    'checked_at': pipeline_common.time.time(),
+                    'status': 'access_failed' if error else 'verified_timing' if payload else 'no_verified_timing',
+                    **({'error': error} if error else {}),
+                }
                 if error:
                     errors.append((version_id, error))
                 else:
@@ -358,6 +378,7 @@ def main(argv: list[str] | None = None) -> int:
     pipeline_common.write_json(pipeline_common.TIMINGS_FILE, timings)
     pipeline_common.write_json(pipeline_common.SOURCE_STATE_FILE, {
         "schema_version": 1,
+        "source_results": source_results,
         "netease_checked": sorted(netease_checked),
         "netease_checked_at": netease_checked_at,
         "utaten_checked": sorted(utaten_checked),

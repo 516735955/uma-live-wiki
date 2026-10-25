@@ -57,6 +57,12 @@ class MusicBoundaryTests(unittest.TestCase):
         self.assertFalse(artist_match({'artists': ['ArtistA']}, composition))
         self.assertTrue(artist_match({'artists': ['ArtistAB']}, composition))
 
+    def test_utaten_character_ensemble_requires_every_credited_performer(self):
+        composition = {'recordedAs': {'byArtist': {'name': '甲(CV. ArtistA),乙（ArtistB）'}}}
+        self.assertTrue(artist_match({'artists': ['ArtistA', 'ArtistB']}, composition))
+        self.assertFalse(artist_match({'artists': ['ArtistA']}, composition))
+        self.assertFalse(artist_match({'artists': ['ArtistA', 'ArtistC']}, composition))
+
     def test_blank_timing_line_does_not_shift_lyric_ids(self):
         lyrics, timings = canonicalize_lyrics({'v': {'song_id': 's'}},
             {'versions': {'v': {'lines': ['甲', '乙']}}},

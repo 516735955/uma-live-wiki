@@ -5495,8 +5495,7 @@
       "source": "official_lantis_catalog",
       "source_catalog": "LACA-25099"
     },
-    "song-unlimited-impact-3293fdf81d-v-3293fdf81d": {
-      "source_track_id": "1918915926",
+    "song-unlimited-impact-3293fdf81d-v-73c0f0b73f": {
       "credits": [
         {
           "role": "lyricist",
@@ -5507,15 +5506,10 @@
           "role": "composer",
           "name": "佐伯高志",
           "creator_id": "creator-28646fea7b"
-        },
-        {
-          "role": "arranger",
-          "name": "佐伯高志",
-          "creator_id": "creator-28646fea7b"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACA-15622"
+      "source": "netease_recording_metadata",
+      "source_track_id": "1918915926"
     },
     "song-unlimited-impact-3293fdf81d-v-e159ac610c": {
       "credits": [
@@ -5751,8 +5745,7 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703856180"
     },
-    "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f": {
-      "source_track_id": "1929093003",
+    "song-winning-the-soul-7eddcf2b7f-v-9c729c37af": {
       "credits": [
         {
           "role": "lyricist",
@@ -5770,8 +5763,8 @@
           "creator_id": "creator-340e11375e"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACM-24083"
+      "source": "netease_recording_metadata",
+      "source_track_id": "1929093003"
     },
     "song-winning-the-soul-7eddcf2b7f-v-d97229354f": {
       "source_track_id": "1830409080",
@@ -5979,8 +5972,7 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703863843"
     },
-    "song-228f943b49-v-228f943b49": {
-      "source_track_id": "553544024",
+    "song-228f943b49-v-79787e2723": {
       "credits": [
         {
           "role": "lyricist",
@@ -5990,27 +5982,15 @@
         },
         {
           "role": "composer",
-          "name": "本田晃弘",
-          "affiliation": "Cygames",
-          "creator_id": "creator-eaf94340d3"
-        },
-        {
-          "role": "arranger",
           "name": "本田晃弘",
           "affiliation": "Cygames",
           "creator_id": "creator-eaf94340d3"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACA-15621",
-      "supplemental_sources": [
-        {
-          "source": "credit_recording",
-          "source_url": "https://www.yinhuadm.cc/p/26358-2-1.html"
-        }
-      ]
+      "source": "netease_recording_metadata",
+      "source_track_id": "553544024"
     },
-    "song-228f943b49-v-b373901aa7": {
+    "song-228f943b49-v-246a1190de": {
       "credits": [
         {
           "role": "lyricist",
@@ -6019,11 +5999,6 @@
         },
         {
           "role": "composer",
-          "name": "本田晃弘",
-          "creator_id": "creator-eaf94340d3"
-        },
-        {
-          "role": "arranger",
           "name": "本田晃弘",
           "creator_id": "creator-eaf94340d3"
         }
@@ -6031,32 +6006,28 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703854234"
     },
-    "song-228f943b49-v-115f12d608": {
-      "source_track_id": "2047751482",
+    "song-228f943b49-v-8fbcc5f162": {
       "credits": [
         {
           "role": "lyricist",
           "name": "本田晃弘",
-          "affiliation": "Cygames",
           "creator_id": "creator-eaf94340d3"
         },
         {
           "role": "composer",
           "name": "本田晃弘",
-          "affiliation": "Cygames",
           "creator_id": "creator-eaf94340d3"
         },
         {
           "role": "arranger",
-          "name": "本田晃弘",
-          "affiliation": "Cygames",
-          "creator_id": "creator-eaf94340d3"
+          "name": "Cygames",
+          "creator_id": "creator-cygames-f5bc529953"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACA-9983"
+      "source": "netease_recording_metadata",
+      "source_track_id": "2047751482"
     },
-    "song-228f943b49-v-7006bca4f7": {
+    "song-228f943b49-v-db43e2b8a7": {
       "credits": [
         {
           "role": "lyricist",
@@ -6065,11 +6036,6 @@
         },
         {
           "role": "composer",
-          "name": "本田晃弘",
-          "creator_id": "creator-eaf94340d3"
-        },
-        {
-          "role": "arranger",
           "name": "本田晃弘",
           "creator_id": "creator-eaf94340d3"
         }
@@ -7711,8 +7677,7 @@
       "source": "netease_recording_metadata",
       "source_track_id": "2703857069"
     },
-    "song-4bfe85c283-v-4bfe85c283": {
-      "source_track_id": "1929090416",
+    "song-4bfe85c283-v-2fc5d06861": {
       "credits": [
         {
           "role": "lyricist",
@@ -7730,8 +7695,8 @@
           "creator_id": "creator-647bf144a4"
         }
       ],
-      "source": "official_lantis_catalog",
-      "source_catalog": "LACA-15938"
+      "source": "netease_recording_metadata",
+      "source_track_id": "1929090416"
     },
     "song-4bfe85c283-v-49ac0076ad": {
       "credits": [
@@ -13105,6 +13070,1115 @@
       ],
       "source": "utaten",
       "source_url": "https://utaten.com/lyric/mi25092542/"
+    },
+    "song-special-record-c828cf2dc0-v-bb047179c3": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "composer",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854691"
+    },
+    "song-special-record-c828cf2dc0-v-30b08eb587": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        },
+        {
+          "role": "composer",
+          "name": "新田目駿",
+          "creator_id": "creator-6ed889314c"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854715"
+    },
+    "song-unlimited-impact-3293fdf81d-v-3293fdf81d": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "真崎エリカ",
+          "creator_id": "creator-500b86dc49"
+        },
+        {
+          "role": "composer",
+          "name": "佐伯高志",
+          "creator_id": "creator-28646fea7b"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "452804955"
+    },
+    "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "composer",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "arranger",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1823015697"
+    },
+    "song-winning-the-soul-7eddcf2b7f-v-cea4b24470": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "composer",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "arranger",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1918916923"
+    },
+    "song-winning-the-soul-7eddcf2b7f-v-16b40386ac": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        },
+        {
+          "role": "composer",
+          "name": "宮崎 誠",
+          "creator_id": "creator-340e11375e"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1929092992"
+    },
+    "song-228f943b49-v-b373901aa7": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854716"
+    },
+    "song-228f943b49-v-115f12d608": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703867316"
+    },
+    "song-228f943b49-v-7006bca4f7": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1830411328"
+    },
+    "song-228f943b49-v-87263e50a7": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "571339685"
+    },
+    "song-228f943b49-v-42134cef6c": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1309074014"
+    },
+    "song-228f943b49-v-ab8a7ebeb4": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1830409083"
+    },
+    "song-228f943b49-v-9df554bdf7": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1902905781"
+    },
+    "song-228f943b49-v-0ee8c3ef76": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1918915940"
+    },
+    "song-228f943b49-v-2f0474c00f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1918915922"
+    },
+    "song-228f943b49-v-911361b60c": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1929090417"
+    },
+    "song-228f943b49-v-33c3dbd97d": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2119695392"
+    },
+    "song-228f943b49-v-be7dd32f32": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1981787077"
+    },
+    "song-228f943b49-v-46b7abd7f3": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1981788651"
+    },
+    "song-228f943b49-v-a4e01a162a": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1992357883"
+    },
+    "song-228f943b49-v-9d273ac33c": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1992357166"
+    },
+    "song-228f943b49-v-ae145475ed": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2012090614"
+    },
+    "song-228f943b49-v-2abbe06fff": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2012090616"
+    },
+    "song-228f943b49-v-bcccce7f9a": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703852844"
+    },
+    "song-228f943b49-v-1ad24eb74f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703851074"
+    },
+    "song-228f943b49-v-5667211566": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2162858407"
+    },
+    "song-228f943b49-v-55f25346c6": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2162857502"
+    },
+    "song-228f943b49-v-98486c96d3": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2153073702"
+    },
+    "song-228f943b49-v-52f41ae1eb": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2153073703"
+    },
+    "song-228f943b49-v-fb771fffcf": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703852874"
+    },
+    "song-228f943b49-v-bb35fac8ce": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703851108"
+    },
+    "song-228f943b49-v-b00ac0ccaa": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2615054064"
+    },
+    "song-228f943b49-v-d76624304f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2616558776"
+    },
+    "song-228f943b49-v-aedf0807f8": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2616558779"
+    },
+    "song-228f943b49-v-13b03ec01f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2648922737"
+    },
+    "song-228f943b49-v-7602b1cd37": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2648922739"
+    },
+    "song-228f943b49-v-32dcba02b8": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2672428980"
+    },
+    "song-228f943b49-v-5dd43c059f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2672428981"
+    },
+    "song-228f943b49-v-91e5fa0086": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2704242833"
+    },
+    "song-228f943b49-v-e9831068eb": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2704242837"
+    },
+    "song-228f943b49-v-1a834bf759": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2704243985"
+    },
+    "song-228f943b49-v-d81b462592": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2704243992"
+    },
+    "song-228f943b49-v-02584bf6f6": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2713937358"
+    },
+    "song-228f943b49-v-25d9f2bc30": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2713936412"
+    },
+    "song-228f943b49-v-b0e02ad73a": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703864023"
+    },
+    "song-228f943b49-v-b5338614c5": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1942413125"
+    },
+    "song-228f943b49-v-c00a418854": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1942413027"
+    },
+    "song-228f943b49-v-e075e8a399": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703851025"
+    },
+    "song-228f943b49-v-4106e390e4": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2099977237"
+    },
+    "song-228f943b49-v-f398ce58b7": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854222"
+    },
+    "song-228f943b49-v-e184b96765": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703853029"
+    },
+    "song-228f943b49-v-98d9d87379": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703853021"
+    },
+    "song-228f943b49-v-1f03402771": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854306"
+    },
+    "song-228f943b49-v-70f6e37dda": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854359"
+    },
+    "song-228f943b49-v-0a0d834524": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703853142"
+    },
+    "song-228f943b49-v-cae8ea5d45": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703853137"
+    },
+    "song-228f943b49-v-fa3c0681da": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854375"
+    },
+    "song-228f943b49-v-28252ebe47": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703856168"
+    },
+    "song-228f943b49-v-9d8d8ee71f": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703854406"
+    },
+    "song-228f943b49-v-e3dccba0bd": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703856223"
+    },
+    "song-228f943b49-v-c3a29fb160": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703856475"
+    },
+    "song-228f943b49-v-2a061d886e": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "2703856518"
+    },
+    "song-4bfe85c283-v-4bfe85c283": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "マイクスギヤマ",
+          "creator_id": "creator-3b78b1a677"
+        },
+        {
+          "role": "composer",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        },
+        {
+          "role": "arranger",
+          "name": "東大路憲太",
+          "creator_id": "creator-647bf144a4"
+        }
+      ],
+      "source": "netease_recording_metadata",
+      "source_track_id": "1823012873"
+    },
+    "song-228f943b49-v-f914ec77e5": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "utaten",
+      "source_url": "https://utaten.com/lyric/ac18050701/"
+    },
+    "song-228f943b49-v-06947febdc": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "utaten",
+      "source_url": "https://utaten.com/lyric/ym23021010/"
     }
   }
 }

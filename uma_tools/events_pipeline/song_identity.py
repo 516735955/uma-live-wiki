@@ -286,25 +286,10 @@ def effective_music_metadata(
         lyric_source_id = str(version_override.get("lyrics_from") or version_id)
         lyric = source_lyrics.get(lyric_source_id)
         timing = source_timings.get(lyric_source_id)
-        if (
-            not lyric
-            and not version.get("instrumental")
-            and not is_short_recording(version.get("title") or "", version.get("version_label") or "")
-        ):
-            lyric_source_id = str(version_override.get("lyrics_from") or parent_id)
-            lyric = source_lyrics.get(lyric_source_id)
-            timing = source_timings.get(lyric_source_id)
-            visited = set()
-            while not lyric and lyric_source_id and lyric_source_id not in visited:
-                visited.add(lyric_source_id)
-                source_override = overrides.get(lyric_source_id) or {}
-                next_id = str(source_override.get("lyrics_from") or source_override.get("parent_version_id") or "")
-                if not next_id:
-                    break
-                lyric_source_id = next_id
-                lyric = source_lyrics.get(lyric_source_id)
-                timing = source_timings.get(lyric_source_id)
-        if version.get("instrumental") or version_override.get("no_lyrics"):
+        # A shared composition does not prove that its covers, edits or live
+        # recordings have the same text or clock. Only an explicit, reviewed
+        # lyrics_from mapping may reuse a recording's document and timing.
+        if version.get("instrumental") or version.get('content_type') == 'spoken' or version_override.get("no_lyrics"):
             lyric = None
             timing = None
         version["lyrics_ref"] = lyric_source_id if lyric and (lyric.get("uses_all_lines") or lyric.get("line_ids") or lyric.get("lines")) else ""

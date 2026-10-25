@@ -184,6 +184,7 @@ def build_song_catalog(
     works: dict[str, dict[str, pipeline_common.Any]] = {}
     used_song_ids: dict[str, str] = {}
     published_song_ids: dict[str, str] = {}
+    published_base_releases: set[tuple[str, str]] = set()
     # Keep URLs for already published works stable while allowing newly seen
     # equivalent titles to use the same folded identity.  The catalog is only
     # a compatibility index here; a failed or partial read must not block a
@@ -198,6 +199,9 @@ def build_song_catalog(
                 previous_id = str(previous.get("id") or "")
                 if not previous_id:
                     continue
+                for version in previous.get('versions') or []:
+                    if version.get('id') == pipeline_song_identity.stable_version_id(previous_id, version.get('title') or ''):
+                        published_base_releases.update((release.get('album_id') or '', version.get('title') or '') for release in version.get('releases') or [])
                 for title in [previous.get("title"), *(previous.get("aliases") or [])]:
                     key = pipeline_song_identity.fold_song_key(str(title or ""))
                     if key:
@@ -207,6 +211,36 @@ def build_song_catalog(
             }
     except (OSError, ValueError, TypeError):
         published_song_ids = {}
+
+    def performer_key(track):
+        raw = str(track.get('artist') or '')
+        keys = set()
+        for name in pipeline_common.re.split(r'[、,，・/]', raw):
+            if not name.strip() or pipeline_common.re.fullmatch(r'\s*ウマ娘\s*プリティーダービー\s*', name):
+                continue
+            resolved = release_vocalists(name, identities)
+            keys.update(row['voice_actor_id'] for row in resolved)
+            if not resolved:
+                keys.add(pipeline_text.fold_name(name))
+        return tuple(sorted(keys))
+
+    def recording_key(track):
+        return (pipeline_song_identity.fold_song_key(track.get('name') or ''), track.get('work_context') or '')
+
+    canonical_performers = {}
+    performer_variants = {}
+    ordered_albums = sorted(albums, key=lambda album: (album.get('release') or '9999', pipeline_song_identity.stable_album_id(album)))
+    # Keep published recording URLs stable when a new source is inserted before
+    # an older release. Explicitly reviewed variant labels retain priority.
+    for known_only in (True, False):
+        for album in ordered_albums:
+            album_id = pipeline_song_identity.stable_album_id(album)
+            for track in album.get('songs') or []:
+                key, performers = recording_key(track), performer_key(track)
+                if track.get('version_label'):
+                    performer_variants[(key, performers)] = track['version_label']
+                elif performers and (not known_only or (album_id, track.get('name') or '') in published_base_releases):
+                    canonical_performers.setdefault(key, performers)
 
     def ensure_version(exact_title: str, release_variant: str = "", work_context: str = "") -> tuple[dict[str, pipeline_common.Any], dict[str, pipeline_common.Any]]:
         title = pipeline_song_identity.clean_song(exact_title)
@@ -238,7 +272,7 @@ def build_song_catalog(
         version_key = pipeline_song_identity.fold_song_key(identity_title)
         version = work["versions"].setdefault(version_key, {
             "id": str(override_config.get("version_id") or pipeline_song_identity.stable_version_id(work["id"], identity_title)), "title": title,
-            "version_label": release_variant or version_label, "artists": set(), "releases": [], "performances": [],
+            "version_label": " / ".join(dict.fromkeys(value for value in (version_label, release_variant) if value)), "artists": set(), "releases": [], "performances": [],
             "instrumental": False,
         })
         return work, version
@@ -248,10 +282,16 @@ def build_song_catalog(
         for track_number, track in enumerate(album.get("songs") or [], 1):
             if not pipeline_song_identity.clean_song(str(track.get("name") or "")):
                 continue
-            work, version = ensure_version(str(track.get("name") or ""), str(track.get("version_label") or ""), str(track.get("work_context") or ""))
+            key, performers = recording_key(track), performer_key(track)
+            variant = str(track.get('version_label') or '')
+            if not variant and performers and performers != canonical_performers.get(key):
+                variant = performer_variants.setdefault((key, performers), '演唱版：' + (album.get('catalog') or album_id))
+            work, version = ensure_version(str(track.get("name") or ""), variant, str(track.get("work_context") or ""))
             artist = str(track.get("artist") or "").strip()
             instrumental = bool(track.get("instrumental")) or pipeline_song_identity.is_instrumental_track(str(track.get("name") or ""), artist)
             version["instrumental"] = bool(version["instrumental"] or instrumental)
+            if track.get('content_type') == 'spoken':
+                version['content_type'] = 'spoken'
             vocalists = [] if instrumental else release_vocalists(artist, identities)
             if artist:
                 work["artists"].add(artist)
@@ -271,6 +311,7 @@ def build_song_catalog(
                 "track_number": track_number, "disc_number": track.get("disc_number"), "disc_track_number": track.get("disc_track_number"),
                 "artist": artist, "audio_url": track.get("url") or "", "image": track.get("pic") or "",
                 "instrumental": instrumental, "vocalists": vocalists,
+                **({'content_type': 'spoken'} if track.get('content_type') == 'spoken' else {}),
             }
             version["releases"].append(release)
 
@@ -379,6 +420,7 @@ def build_song_catalog(
                 "artists": sorted(version["artists"]), "releases": releases, "performances": performances,
                 "release_count": len(releases), "performance_count": len(performances),
                 "instrumental": bool(version.get("instrumental")),
+                **({'content_type': 'spoken'} if version.get('content_type') == 'spoken' else {}),
                 "credits": list(version.get("credits") or []),
                 "creator_ids": list(version.get("creator_ids") or []),
                 "lyrics_ref": version.get("lyrics_ref") or "",
