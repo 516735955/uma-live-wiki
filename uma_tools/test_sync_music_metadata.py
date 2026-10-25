@@ -13,6 +13,14 @@ SPEC.loader.exec_module(SYNC)
 
 
 class MusicMetadataSyncTest(unittest.TestCase):
+    def test_recording_credits_are_not_sung_lines(self):
+        from music_pipeline.recordings import choose_candidate
+        recording = {'tracks': ['one'], 'artists': ['Alice', 'Bob']}
+        payload = {'one': {'lrc': {'lyric': '[00:01.00]役A(Alice) 役B(Bob)\n[00:02.00]歌の本文（合いの手）\n[00:03.00]役C(Other) 役D(Unknown)'}}}
+        _, lines, _ = choose_candidate(recording, payload)
+        self.assertEqual([line['start_ms'] for line in lines], [2000, 3000])
+        self.assertEqual(lines[0]['text'], '歌の本文（合いの手）')
+
     def test_utaten_preserves_multiple_people_in_the_same_role(self):
         docs = ({'creators': []}, {'versions': {'one': {'credits': [{'role': 'composer', 'name': 'Alice'}]}}}, {'versions': {}}, {'versions': {}})
         result = {'credits': [{'role': 'composer', 'name': 'Bob'}], 'source_url': 'https://example.test/song'}

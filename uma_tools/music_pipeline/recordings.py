@@ -96,6 +96,17 @@ def choose_candidate(recording: dict[str, pipeline_common.Any], fetched: dict[st
         payload = fetched.get(source_track) or {}
         raw = ((payload.get("lrc") or {}).get("lyric") or "") if isinstance(payload, dict) else ""
         lines, credits = pipeline_lyrics.parse_lyric(raw)
+        expected_artists = [normalized_name(name) for name in recording.get('artists', [])]
+        def is_performer_credit(line):
+            text = line['text'].strip()
+            if not pipeline_common.re.fullmatch(r'(?:[^\s()（）]+[（(][^()（）]+[）)]\s*){2,}', text):
+                return False
+            voices = pipeline_common.re.findall(r'[（(]([^()（）]+)[）)]', text)
+            return bool(expected_artists) and all(
+                any(artist == normalized_name(voice) or artist.endswith('cv' + normalized_name(voice))
+                    for artist in expected_artists) for voice in voices
+            )
+        lines = [line for line in lines if not is_performer_credit(line)]
         for credit in credits:
             key = (credit["role"], normalized_name(credit["name"]))
             if key not in seen_credits:

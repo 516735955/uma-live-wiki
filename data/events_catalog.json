@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T12:26:32+00:00",
+  "generated_at": "2026-10-25T14:56:30+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -2992,12 +2992,14 @@
           "setlist_status": "none",
           "doors_time": "16:30",
           "start_time": "17:30",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/1432/",
+          "source_time_text": "開場/開演時間：16:30/17:30 (予定)",
+          "end_time_source_url": "https://www.eventernote.com/events/497787",
+          "schedule_note": "入场16:30、开演17:30由发行方公告确认。结束18:30来自Eventernote预计，官方未公布结束时刻。",
           "end_time": "18:30",
           "end_time_estimated": true,
-          "time_source": "eventernote",
-          "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント    開場 16:30 開演 17:30 終演 18:30 開場 16:30 開演 17:30 終演 18:30",
-          "time_source_url": "https://www.eventernote.com/events/497787"
+          "time_precision": "minute"
         }
       ],
       "media": [],
@@ -3006,6 +3008,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/497787"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "发行方活动与出演公告",
+          "url": "https://umamusume.lantis.jp/live/1432/"
         }
       ],
       "legacy_url": "",
@@ -3041,7 +3048,7 @@
           "url": "https://www.eventernote.com/places/1286"
         }
       ],
-      "time_source": "eventernote",
+      "time_source": "official_announcement",
       "time_precision": "minute",
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント",
       "summary_ja": "",
@@ -94487,7 +94494,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "/uma_tools/img/event-covers/paka-live-tv.svg",
+      "image": "https://prd-info-umamusume.akamaized.net/announce/1604/Header/pakalive34_KV.png?c=20240319202207",
       "summary": "秋季祭典活动",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -94505,6 +94512,11 @@
         "在线播出"
       ],
       "venue_sources": [],
+      "image_source": {
+        "kind": "official_news",
+        "announce_id": 1604,
+        "title": "ゲーム内最新情報やキャンペーン情報など！「ぱかライブTV Vol.34」発表まとめ！"
+      },
       "time_source": null,
       "time_precision": null,
       "title_ja": "ぱかライブTV Vol.34",
@@ -189693,5 +189705,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "fa011a485ad21f035c99"
+  "build_id": "376f5b31a1f22b89a418"
 }

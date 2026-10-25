@@ -613,6 +613,24 @@
       }
     },
     "eventernote-2027-02-06": {
+      "session_patches": {
+        "eventernote-2027-02-06-session-1": {
+          "doors_time": "16:30",
+          "start_time": "17:30",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/1432/",
+          "source_time_text": "開場/開演時間：16:30/17:30 (予定)",
+          "end_time_source_url": "https://www.eventernote.com/events/497787",
+          "schedule_note": "入场16:30、开演17:30由发行方公告确认。结束18:30来自Eventernote预计，官方未公布结束时刻。"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "发行方活动与出演公告",
+          "url": "https://umamusume.lantis.jp/live/1432/"
+        }
+      ],
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "image_source": {
         "kind": "fallback_pending_artwork",
