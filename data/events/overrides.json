@@ -1626,6 +1626,16 @@
     "live-other-2024-07-25-tif-presents-one-song-fes": {
       "date": "2024-07-25",
       "end_date": "2024-07-25",
+      "session_patches": {
+        "live-other-2024-07-25-tif-presents-one-song-fes-session-1": {
+          "end_time": "03:10",
+          "end_time_estimated": false,
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.jp/news/detail?id=2024",
+          "time_precision": "minute",
+          "schedule_note": "官方首播记作7月24日26:10—27:10，即7月25日02:10—03:10。"
+        }
+      },
       "session_aliases": {
         "official-special-20240724-tif-presents-one-song-fes-session-1": [
           "live-other-2024-07-25-tif-presents-one-song-fes-session-2"
