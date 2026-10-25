@@ -12,6 +12,7 @@ export function createAnimeParticipation(deps) {
       let label;
       let songUsageKey = '';
       let songEditionKey = '';
+      let songVersionLabel = '';
       if (row.entry)
         label = [row.entry.group, row.entry.role].filter(Boolean).join(" · ");
       else if (relation.target_type === "character")
@@ -30,6 +31,7 @@ export function createAnimeParticipation(deps) {
           }).join(' · ');
         }
         songUsageKey = relation.usage_type || '';
+        songVersionLabel = version;
         label = deps.animeMusicUsageLabel(relation.usage_type) || version;
       } else
         label =
@@ -48,19 +50,18 @@ export function createAnimeParticipation(deps) {
         ? (row.unit ? ["web"] : deps.animeRowEditions(row.entry || row.relation))
         : [""];
       songEditionKey = editionsForRole.slice().sort().join(',');
-      // A work's usage is one upper-level row. Version/release differences
-      // belong in the expandable recording details, not in parallel OP/ED
-      // cards. Non-song credits retain their existing role identity.
+      // Reissues share a usage row; distinct recordings retain their own
+      // episode scope and navigation target.
       const key = relation.target_type === 'song'
-        ? ['song', relation.target_id, songUsageKey, songEditionKey].join('|')
+        ? ['song', recordingIdentity, songUsageKey, songEditionKey, row.entry ? label : ''].join('|')
         : [label, recordingIdentity, songEditionKey].filter(Boolean).join('|');
       let role = group.roles.find((role) => role.key === key);
       if (!role) {
-        role = { key, label, units: [], editions: [], scopes: [], recordings: [] };
+        role = { key, label: [label, songVersionLabel && songVersionLabel !== label ? songVersionLabel : ''].filter(Boolean).join(' · '), units: [], editions: [], scopes: [], recordings: [] };
         group.roles.push(role);
       }
       const recordingLabel = relation.version_label || relation.release_name || relation.release_title || '';
-      if (recordingKey && recordingLabel && !role.recordings.some((item) => item.key === recordingKey))
+      if (recordingKey && !role.recordings.some((item) => item.key === recordingKey))
         role.recordings.push({
           key: recordingKey,
           song: relation.target_id,
@@ -75,10 +76,10 @@ export function createAnimeParticipation(deps) {
             : deps.animeRowEditions(row.entry || row.relation)
           : [""];
       (editions.length ? editions : [""]).forEach((edition) => {
-        const scopeKey = JSON.stringify([edition, institutions]);
+        const scopeKey = JSON.stringify([edition, institutions, recordingIdentity]);
         let scope = role.scopes.find((item) => item.key === scopeKey);
         if (!scope) {
-          scope = { key: scopeKey, edition, institutions, units: [] };
+          scope = { key: scopeKey, edition, institutions, units: [], version_id: relation.version_id || '', release_id: relation.release_id || '' };
           role.scopes.push(scope);
         }
         if (

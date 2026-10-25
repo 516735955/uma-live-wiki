@@ -398,6 +398,18 @@ async function main() {
   assert(rtttParticipation, 'the participant has RTTT credits');
   assert(rtttParticipation.roles.some(role => role.editions.includes('film')), 'film participation remains visible alongside network episodes');
   assert(rtttParticipation.roles.some(role => role.units.length), 'network episode tags remain individually available');
+  const musicRows = [
+    {version:'v1', release:'r1', episode:1},
+    {version:'v1', release:'r2', episode:1},
+    {version:'v2', release:'r3', episode:2},
+  ].map(row => ({work:{id:'work',format:'tv'},unit:{id:'episode-'+row.episode,number:row.episode},relation:{target_type:'song',target_id:'song',version_id:row.version,release_id:row.release,usage_type:'ending'}}));
+  const participation = context.createAnimeParticipation({...context.Vue,
+    animeMusicUsageLabel: () => '片尾曲', animeRelationTargetLabel: () => '歌曲'});
+  const recordingRoles = participation.groupAnimeParticipation(musicRows)[0].roles;
+  assert.strictEqual(recordingRoles.length,2,'different recordings keep distinct episode scopes; reissues do not duplicate usages');
+  assert.deepStrictEqual(Array.from(recordingRoles[0].units, unit => unit.number),[1]);
+  assert.deepStrictEqual(Array.from(recordingRoles[1].units, unit => unit.number),[2]);
+  assert.strictEqual(recordingRoles[1].scopes[0].version_id,'v2','episode links retain the recording identity');
   animeFailure = 'person';
   location.href = 'http://localhost/zh-Hans/database/staff/staff-UMP';
   await app.applyCurrentRoute();
