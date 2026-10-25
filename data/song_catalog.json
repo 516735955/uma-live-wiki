@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T16:00:27+00:00",
+  "generated_at": "2026-10-25T16:09:53+00:00",
   "coverage": {
     "songs": 1041,
     "versions": 2169,
@@ -167397,6 +167397,201 @@
       "has_lyrics": true
     },
     {
+      "id": "song-1ststep-5038a85ba6",
+      "title": "アオハル杯 1st Step",
+      "aliases": [
+        "アオハル杯 1st Step",
+        "アオハル杯 ジュニア級"
+      ],
+      "legacy_ids": [
+        "song-90ed3b94c8"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-90ed3b94c8-v-90ed3b94c8",
+          "title": "アオハル杯 1st Step",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 50,
+              "disc_number": 2,
+              "disc_track_number": 16,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402438",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-90ed3b94c8-v-90ed3b94c8",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-2ndstep-0c9f2fb457",
+      "title": "アオハル杯 2nd Step",
+      "aliases": [
+        "アオハル杯 2nd Step",
+        "アオハル杯 クラシック級"
+      ],
+      "legacy_ids": [
+        "song-e5032583f9"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-e5032583f9-v-e5032583f9",
+          "title": "アオハル杯 2nd Step",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 55,
+              "disc_number": 2,
+              "disc_track_number": 21,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401590",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-e5032583f9-v-e5032583f9",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-3rdstep-9395c9b1fd",
+      "title": "アオハル杯 3rd Step",
+      "aliases": [
+        "アオハル杯 3rd Step",
+        "アオハル杯 シニア級"
+      ],
+      "legacy_ids": [
+        "song-51b5482872"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-51b5482872-v-51b5482872",
+          "title": "アオハル杯 3rd Step",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 57,
+              "disc_number": 2,
+              "disc_track_number": 23,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401591",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-51b5482872-v-51b5482872",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-89c7b6b79b",
       "title": "アオハル杯～輝け、チームの絆～",
       "aliases": [
@@ -167455,192 +167650,6 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-89c7b6b79b-v-89c7b6b79b",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-e5032583f9",
-      "title": "アオハル杯 クラシック級",
-      "aliases": [
-        "アオハル杯 クラシック級"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-e5032583f9-v-e5032583f9",
-          "title": "アオハル杯 クラシック級",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 55,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401590",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-e5032583f9-v-e5032583f9",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-51b5482872",
-      "title": "アオハル杯 シニア級",
-      "aliases": [
-        "アオハル杯 シニア級"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-51b5482872-v-51b5482872",
-          "title": "アオハル杯 シニア級",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 57,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401591",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-51b5482872-v-51b5482872",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-90ed3b94c8",
-      "title": "アオハル杯 ジュニア級",
-      "aliases": [
-        "アオハル杯 ジュニア級"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-90ed3b94c8-v-90ed3b94c8",
-          "title": "アオハル杯 ジュニア級",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 50,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402438",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-90ed3b94c8-v-90ed3b94c8",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -173582,6 +173591,71 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-bnw-e75098554e-v-e75098554e",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-5ec8422dcc",
+      "title": "カーニバルレース ファンファーレ",
+      "aliases": [
+        "カーニバルレース ファンファーレ",
+        "レーシングカーニバル HARD ファンファーレ"
+      ],
+      "legacy_ids": [
+        "song-hard-6f3309b00d"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-hard-6f3309b00d-v-6f3309b00d",
+          "title": "カーニバルレース ファンファーレ",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 72,
+              "disc_number": 3,
+              "disc_track_number": 10,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402449",
+              "image": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-hard-6f3309b00d-v-6f3309b00d",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -183868,12 +183942,15 @@
       "has_lyrics": false
     },
     {
-      "id": "song-a1c93ab4b7",
-      "title": "ダービーウマ娘物語 -アイネスフウジン編-",
+      "id": "song-61e0f54f78",
+      "title": "ダービーウマ娘物語 序章",
       "aliases": [
-        "ダービーウマ娘物語 -アイネスフウジン編-"
+        "ダービーウマ娘物語 -アイネスフウジン編-",
+        "ダービーウマ娘物語 序章"
       ],
-      "legacy_ids": [],
+      "legacy_ids": [
+        "song-a1c93ab4b7"
+      ],
       "artists": [
         "纯音乐"
       ],
@@ -183888,7 +183965,7 @@
       "versions": [
         {
           "id": "song-a1c93ab4b7-v-a1c93ab4b7",
-          "title": "ダービーウマ娘物語 -アイネスフウジン編-",
+          "title": "ダービーウマ娘物語 序章",
           "version_label": "",
           "artists": [
             "纯音乐"
@@ -183902,8 +183979,8 @@
               "type": "原声带",
               "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
               "track_number": 20,
-              "disc_number": null,
-              "disc_track_number": null,
+              "disc_number": 1,
+              "disc_track_number": 20,
               "artist": "纯音乐",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402418",
               "image": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
@@ -183988,6 +184065,201 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-2ed0665937-v-2ed0665937",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-f2b0b17edd",
+      "title": "チャレンジレース",
+      "aliases": [
+        "チャレンジレース",
+        "レーシングカーニバル"
+      ],
+      "legacy_ids": [
+        "song-0869686784"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-0869686784-v-0869686784",
+          "title": "チャレンジレース",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 74,
+              "disc_number": 3,
+              "disc_track_number": 12,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402451",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-0869686784-v-0869686784",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-08ee734fa7",
+      "title": "チャレンジレース ファンファーレ",
+      "aliases": [
+        "チャレンジレース ファンファーレ",
+        "レーシングカーニバル VERY HARD ファンファーレ"
+      ],
+      "legacy_ids": [
+        "song-very-hard-a47503afa2"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-very-hard-a47503afa2-v-a47503afa2",
+          "title": "チャレンジレース ファンファーレ",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 73,
+              "disc_number": 3,
+              "disc_track_number": 11,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402450",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-very-hard-a47503afa2-v-a47503afa2",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-f0635109e2",
+      "title": "チャレンジレース 最後の勝負",
+      "aliases": [
+        "チャレンジレース 最後の勝負",
+        "レーシングカーニバル 最後の勝負"
+      ],
+      "legacy_ids": [
+        "song-ca987c011b"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-ca987c011b-v-ca987c011b",
+          "title": "チャレンジレース 最後の勝負",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 75,
+              "disc_number": 3,
+              "disc_track_number": 13,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401597",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-ca987c011b-v-ca987c011b",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -204553,68 +204825,6 @@
       "has_lyrics": false
     },
     {
-      "id": "song-0869686784",
-      "title": "レーシングカーニバル",
-      "aliases": [
-        "レーシングカーニバル"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-0869686784-v-0869686784",
-          "title": "レーシングカーニバル",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 74,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402451",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-0869686784-v-0869686784",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
       "id": "song-de-go-go-9df826ca31",
       "title": "レーシングカーニバル de Go Go!",
       "aliases": [
@@ -204673,192 +204883,6 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-de-go-go-9df826ca31-v-9df826ca31",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-hard-6f3309b00d",
-      "title": "レーシングカーニバル HARD ファンファーレ",
-      "aliases": [
-        "レーシングカーニバル HARD ファンファーレ"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-hard-6f3309b00d-v-6f3309b00d",
-          "title": "レーシングカーニバル HARD ファンファーレ",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 72,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402449",
-              "image": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-hard-6f3309b00d-v-6f3309b00d",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-very-hard-a47503afa2",
-      "title": "レーシングカーニバル VERY HARD ファンファーレ",
-      "aliases": [
-        "レーシングカーニバル VERY HARD ファンファーレ"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-very-hard-a47503afa2-v-a47503afa2",
-          "title": "レーシングカーニバル VERY HARD ファンファーレ",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 73,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402450",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-very-hard-a47503afa2-v-a47503afa2",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-ca987c011b",
-      "title": "レーシングカーニバル 最後の勝負",
-      "aliases": [
-        "レーシングカーニバル 最後の勝負"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-ca987c011b-v-ca987c011b",
-          "title": "レーシングカーニバル 最後の勝負",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 75,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045401597",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-ca987c011b-v-ca987c011b",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -216550,6 +216574,71 @@
       "has_lyrics": false
     },
     {
+      "id": "song-99824f936c",
+      "title": "大井レース場 ファンファーレ",
+      "aliases": [
+        "大井 通常 ファンファーレ",
+        "大井レース場 ファンファーレ"
+      ],
+      "legacy_ids": [
+        "song-ebbde2bf39"
+      ],
+      "artists": [
+        "纯音乐"
+      ],
+      "character_ids": [],
+      "voice_actor_ids": [],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+      "release_date": "2023-04-26",
+      "versions": [
+        {
+          "id": "song-ebbde2bf39-v-ebbde2bf39",
+          "title": "大井レース場 ファンファーレ",
+          "version_label": "",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 101,
+              "disc_number": 3,
+              "disc_track_number": 39,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402469",
+              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 1,
+      "performance_count": 0,
+      "original_version_id": "song-ebbde2bf39-v-ebbde2bf39",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-99e040fead",
       "title": "大井 東京大賞典 ファンファーレ",
       "aliases": [
@@ -216608,68 +216697,6 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-99e040fead-v-99e040fead",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
-      "id": "song-ebbde2bf39",
-      "title": "大井 通常 ファンファーレ",
-      "aliases": [
-        "大井 通常 ファンファーレ"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-ebbde2bf39-v-ebbde2bf39",
-          "title": "大井 通常 ファンファーレ",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 101,
-              "disc_number": null,
-              "disc_track_number": null,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402469",
-              "image": "https://p2.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-ebbde2bf39-v-ebbde2bf39",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -258318,5 +258345,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "dce853a25a6132d3db34"
+  "build_id": "21c21371918af6f8843d"
 }
