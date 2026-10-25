@@ -4,6 +4,21 @@ from events_pipeline.event_enrichment import apply_groupings, apply_news_images,
 
 
 class EventEnrichmentTests(unittest.TestCase):
+    def test_new_competition_stages_require_identity_and_own_stage_title(self):
+        group = {"id": "g", "kind": "competition", "members": [{"event_id": "a"}],
+                 "source_identity": {"match": "第1回トレセン学園『Gang Beasts』最強決定戦", "rule": "qualifier A-G"}}
+        def event(id, title, official=True):
+            return {"id": id, "title": title, "summary": group["source_identity"]["match"],
+                    "sources": [{"kind": "official_youtube" if official else "unverified"}]}
+        events = [event("a", "予選リーグA"), event("final", "Gang Beasts 決勝"),
+                  event("semi", "Gang Beasts 準決勝"), event("trailer", "決勝予告"),
+                  event("unrelated", "別企画"), event("unverified", "決勝", False)]
+        _, groups = apply_groupings(events, {"groups": [group]})
+        members = {m["event_id"]: m["label"] for m in groups[0]["members"]}
+        self.assertEqual(set(members), {"a", "final", "semi"})
+        self.assertEqual(members["final"], "决赛")
+        self.assertEqual(members["semi"], "半决赛")
+
     def test_grouping_is_relationship_only_and_preserves_ids(self):
         events = [{"id": "a", "title": "A"}, {"id": "b", "title": "B"}]
         enriched, groups = apply_groupings(events, {"groups": [{

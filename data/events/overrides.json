@@ -243,6 +243,12 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "live-numbered-4th-event-extra-2022-11-05": {
+      "event_session_aliases": {
+        "eventernote-2022-11-05": "live-numbered-4th-event-extra-2022-11-05-session-1",
+        "eventernote-2022-11-06": "live-numbered-4th-event-extra-2022-11-05-session-2"
+      }
+    },
     "live-numbered-7th-event-2026-10-22": {
       "schedule_status": "cancelled",
       "status_source_url": "https://umamusume.jp/news/detail?id=3503",

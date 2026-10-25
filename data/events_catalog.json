@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T21:31:02+00:00",
+  "generated_at": "2026-10-25T05:09:58+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -118,6 +118,199 @@
     }
   ],
   "event_groups": [
+    {
+      "id": "program-boomerang-fu-2024-07",
+      "kind": "series_arc",
+      "title": "Boomerang Fu 五人游戏实况（2024年7月）",
+      "title_ja": "",
+      "summary": "为纪念育成剧本“大丰食祭”上线，特别周、菱曙、米浴、西野花和葛城王牌共同游玩《Boomerang Fu》，包括个人生存战与团队对战。",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=Lx5cc1pGi0s",
+        "https://www.youtube.com/watch?v=p3b3PzheHeg",
+        "https://www.youtube.com/watch?v=k6lOpFcAjwQ"
+      ],
+      "source_identity": {},
+      "members": [
+        {
+          "event_id": "pakatube-20240708-5",
+          "role": "child",
+          "label": "上篇",
+          "source_urls": []
+        },
+        {
+          "event_id": "pakatube-20240709-5",
+          "role": "child",
+          "label": "中篇",
+          "source_urls": []
+        },
+        {
+          "event_id": "pakatube-20240710-5",
+          "role": "child",
+          "label": "下篇",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "pakatube-20240708-5",
+          "label": "上篇",
+          "date": "2024-07-08",
+          "date_end": "2024-07-08",
+          "image": "https://i.ytimg.com/vi/Lx5cc1pGi0s/maxresdefault.jpg"
+        },
+        {
+          "event_id": "pakatube-20240709-5",
+          "label": "中篇",
+          "date": "2024-07-09",
+          "date_end": "2024-07-09",
+          "image": "https://i.ytimg.com/vi/p3b3PzheHeg/maxresdefault.jpg"
+        },
+        {
+          "event_id": "pakatube-20240710-5",
+          "label": "下篇",
+          "date": "2024-07-10",
+          "date_end": "2024-07-10",
+          "image": "https://i.ytimg.com/vi_webp/k6lOpFcAjwQ/maxresdefault.webp"
+        }
+      ],
+      "date_start": "2024-07-08",
+      "date_end": "2024-07-10",
+      "image": "/uma_tools/img/event-groups/program-boomerang-fu-2024-07.svg",
+      "image_strategy": "deterministic_child_collage"
+    },
+    {
+      "id": "onsite-obihiro-2026-09-20",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2026年9月20日）",
+      "title_ja": "",
+      "summary": "",
+      "source_urls": [],
+      "source_identity": {},
+      "members": [
+        {
+          "event_id": "eventernote-2026-09-20",
+          "role": "child",
+          "label": "第1回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2026-09-20-2",
+          "role": "child",
+          "label": "第2回",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "eventernote-2026-09-20",
+          "label": "第1回",
+          "date": "2026-09-20",
+          "date_end": "2026-09-20",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/487093_s.jpg"
+        },
+        {
+          "event_id": "eventernote-2026-09-20-2",
+          "label": "第2回",
+          "date": "2026-09-20",
+          "date_end": "2026-09-20",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/490156_s.jpg"
+        }
+      ],
+      "date_start": "2026-09-20",
+      "date_end": "2026-09-20",
+      "image": "/uma_tools/img/event-groups/onsite-obihiro-2026-09-20.svg",
+      "image_strategy": "deterministic_child_collage"
+    },
+    {
+      "id": "onsite-obihiro-2025-09-14",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2025年9月14日）",
+      "title_ja": "",
+      "summary": "",
+      "source_urls": [],
+      "source_identity": {},
+      "members": [
+        {
+          "event_id": "eventernote-2025-09-14-2",
+          "role": "child",
+          "label": "第1回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2025-09-14",
+          "role": "child",
+          "label": "第2回",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "eventernote-2025-09-14-2",
+          "label": "第1回",
+          "date": "2025-09-14",
+          "date_end": "2025-09-14",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/442800_s.jpg"
+        },
+        {
+          "event_id": "eventernote-2025-09-14",
+          "label": "第2回",
+          "date": "2025-09-14",
+          "date_end": "2025-09-14",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/439195_s.jpg"
+        }
+      ],
+      "date_start": "2025-09-14",
+      "date_end": "2025-09-14",
+      "image": "/uma_tools/img/event-groups/onsite-obihiro-2025-09-14.svg",
+      "image_strategy": "deterministic_child_collage"
+    },
+    {
+      "id": "onsite-obihiro-2023-09-24",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2023年9月24日）",
+      "title_ja": "",
+      "summary": "",
+      "source_urls": [],
+      "source_identity": {},
+      "members": [
+        {
+          "event_id": "eventernote-2023-09-24",
+          "role": "child",
+          "label": "第1回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2023-09-24-2",
+          "role": "child",
+          "label": "第2回",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "eventernote-2023-09-24",
+          "label": "第1回",
+          "date": "2023-09-24",
+          "date_end": "2023-09-24",
+          "image": "/uma_tools/img/event-covers/onsite.svg"
+        },
+        {
+          "event_id": "eventernote-2023-09-24-2",
+          "label": "第2回",
+          "date": "2023-09-24",
+          "date_end": "2023-09-24",
+          "image": "/uma_tools/img/event-covers/onsite.svg"
+        }
+      ],
+      "date_start": "2023-09-24",
+      "date_end": "2023-09-24",
+      "image": "/uma_tools/img/event-covers/onsite.svg",
+      "image_strategy": "deterministic_child_collage"
+    },
     {
       "id": "program-peak-2026-06",
       "kind": "series_arc",
@@ -334,7 +527,7 @@
       "kind": "competition",
       "title": "Gang Beasts 最强决定战（第1回）",
       "title_ja": "",
-      "summary": "官方频道举办第1回训练员学园《Gang Beasts》最强决定战，A至G组为预选赛程。",
+      "summary": "官方频道举办第1回特雷森学园《Gang Beasts》最强决定战，A至G组为预选赛程。",
       "source_urls": [],
       "source_identity": {
         "kind": "official_description",
@@ -515,13 +708,13 @@
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-1",
           "role": "child",
-          "label": "Day2",
+          "label": "DAY2 · 第1回",
           "source_urls": []
         },
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-2",
           "role": "child",
-          "label": "Day2",
+          "label": "DAY2 · 第2回",
           "source_urls": []
         }
       ],
@@ -541,14 +734,14 @@
         },
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-1",
-          "label": "Day2",
+          "label": "DAY2 · 第1回",
           "date": "2024-09-29",
           "date_end": "2024-09-29",
           "image": "https://eventernote.s3.amazonaws.com/images/events/381315_s.jpg"
         },
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-2",
-          "label": "Day2",
+          "label": "DAY2 · 第2回",
           "date": "2024-09-29",
           "date_end": "2024-09-29",
           "image": "https://eventernote.s3.amazonaws.com/images/events/387431_s.jpg"
@@ -579,13 +772,13 @@
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-1",
           "role": "child",
-          "label": "Day2",
+          "label": "DAY2 · 第1回",
           "source_urls": []
         },
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-2",
           "role": "child",
-          "label": "Day2",
+          "label": "DAY2 · 第2回",
           "source_urls": []
         }
       ],
@@ -605,14 +798,14 @@
         },
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-1",
-          "label": "Day2",
+          "label": "DAY2 · 第1回",
           "date": "2024-10-20",
           "date_end": "2024-10-20",
           "image": "https://eventernote.s3.amazonaws.com/images/events/381317_s.jpg"
         },
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-2",
-          "label": "Day2",
+          "label": "DAY2 · 第2回",
           "date": "2024-10-20",
           "date_end": "2024-10-20",
           "image": "https://eventernote.s3.amazonaws.com/images/events/387432_s.jpg"
@@ -688,13 +881,13 @@
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle",
           "role": "child",
-          "label": "日间公演",
+          "label": "日场",
           "source_urls": []
         },
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle-2",
           "role": "child",
-          "label": "本场",
+          "label": "夜场",
           "source_urls": []
         }
       ],
@@ -707,14 +900,14 @@
       "children": [
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle",
-          "label": "日间公演",
+          "label": "日场",
           "date": "2024-12-15",
           "date_end": "2024-12-15",
           "image": "https://eventernote.s3.amazonaws.com/images/events/381320_s.jpg"
         },
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle-2",
-          "label": "本场",
+          "label": "夜场",
           "date": "2024-12-15",
           "date_end": "2024-12-15",
           "image": "https://eventernote.s3.amazonaws.com/images/events/381321_s.jpg"
@@ -1085,19 +1278,19 @@
         {
           "event_id": "eventernote-2026-03-28",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第2回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2026-03-28-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2026-03-28-3",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第3回",
           "source_urls": []
         }
       ],
@@ -1105,21 +1298,21 @@
       "children": [
         {
           "event_id": "eventernote-2026-03-28",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第2回",
           "date": "2026-03-28",
           "date_end": "2026-03-28",
           "image": "https://eventernote.s3.amazonaws.com/images/events/463135_s.jpg"
         },
         {
           "event_id": "eventernote-2026-03-28-2",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第1回",
           "date": "2026-03-28",
           "date_end": "2026-03-28",
           "image": "https://eventernote.s3.amazonaws.com/images/events/463133_s.jpg"
         },
         {
           "event_id": "eventernote-2026-03-28-3",
-          "label": "赛马娘 Pretty Derby×Norther",
+          "label": "第3回",
           "date": "2026-03-28",
           "date_end": "2026-03-28",
           "image": "https://eventernote.s3.amazonaws.com/images/events/463134_s.jpg"
@@ -1142,13 +1335,13 @@
         {
           "event_id": "eventernote-2026-08-01",
           "role": "child",
-          "label": "Northern Masters Horse S",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2026-08-01-2",
           "role": "child",
-          "label": "Northern Masters Horse S",
+          "label": "第2回",
           "source_urls": []
         }
       ],
@@ -1156,14 +1349,14 @@
       "children": [
         {
           "event_id": "eventernote-2026-08-01",
-          "label": "Northern Masters Horse S",
+          "label": "第1回",
           "date": "2026-08-01",
           "date_end": "2026-08-01",
           "image": "https://eventernote.s3.amazonaws.com/images/events/484344_s.jpg"
         },
         {
           "event_id": "eventernote-2026-08-01-2",
-          "label": "Northern Masters Horse S",
+          "label": "第2回",
           "date": "2026-08-01",
           "date_end": "2026-08-01",
           "image": "https://eventernote.s3.amazonaws.com/images/events/484345_s.jpg"
@@ -1186,13 +1379,13 @@
         {
           "event_id": "eventernote-2025-11-30",
           "role": "child",
-          "label": "『佐贺赛马场presents 赛马娘 Prett",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2025-11-30-2",
           "role": "child",
-          "label": "『佐贺赛马场presents 赛马娘 Prett",
+          "label": "第2回",
           "source_urls": []
         }
       ],
@@ -1200,14 +1393,14 @@
       "children": [
         {
           "event_id": "eventernote-2025-11-30",
-          "label": "『佐贺赛马场presents 赛马娘 Prett",
+          "label": "第1回",
           "date": "2025-11-30",
           "date_end": "2025-11-30",
           "image": "https://eventernote.s3.amazonaws.com/images/events/446343_s.jpg"
         },
         {
           "event_id": "eventernote-2025-11-30-2",
-          "label": "『佐贺赛马场presents 赛马娘 Prett",
+          "label": "第2回",
           "date": "2025-11-30",
           "date_end": "2025-11-30",
           "image": "https://eventernote.s3.amazonaws.com/images/events/452334_s.jpg"
@@ -1230,13 +1423,13 @@
         {
           "event_id": "eventernote-2024-10-13",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2024-10-13-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+          "label": "第2回",
           "source_urls": []
         }
       ],
@@ -1244,14 +1437,14 @@
       "children": [
         {
           "event_id": "eventernote-2024-10-13",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+          "label": "第1回",
           "date": "2024-10-13",
           "date_end": "2024-10-13",
           "image": "https://eventernote.s3.amazonaws.com/images/events/390963_s.jpg"
         },
         {
           "event_id": "eventernote-2024-10-13-2",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+          "label": "第2回",
           "date": "2024-10-13",
           "date_end": "2024-10-13",
           "image": "https://eventernote.s3.amazonaws.com/images/events/394178_s.jpg"
@@ -1274,13 +1467,13 @@
         {
           "event_id": "eventernote-2024-09-15",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2024-09-15-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活",
+          "label": "第2回",
           "source_urls": []
         }
       ],
@@ -1288,14 +1481,14 @@
       "children": [
         {
           "event_id": "eventernote-2024-09-15",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活",
+          "label": "第1回",
           "date": "2024-09-15",
           "date_end": "2024-09-15",
           "image": "https://eventernote.s3.amazonaws.com/images/events/387462_s.jpg"
         },
         {
           "event_id": "eventernote-2024-09-15-2",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活",
+          "label": "第2回",
           "date": "2024-09-15",
           "date_end": "2024-09-15",
           "image": "https://eventernote.s3.amazonaws.com/images/events/392976_s.jpg"
@@ -1762,46 +1955,24 @@
     {
       "id": "saga-race-collaboration-talks-2023",
       "kind": "onsite_group",
-      "title": "佐贺赛马联动谈话活动（2023）",
-      "title_ja": "佐賀競馬場コラボトークイベント（2023）",
-      "summary": "2023年佐贺赛马联动期间的特别谈话活动，按日期与场次保留子活动。",
-      "source_urls": [],
+      "title": "佐贺赛马联动谈话活动（2023年2月）",
+      "title_ja": "ウマ娘 プリティーダービー×さがけいば コラボイベント スペシャルトークショー",
+      "summary": "2023年2月佐贺赛马联动的特别谈话活动，由饰演真机伶的篠原侑与饰演醒目飞鹰的大和田仁美出演。",
+      "source_urls": [
+        "https://www.sagakeiba.net/news/2023/01/28/294989/"
+      ],
       "source_identity": {},
       "members": [
         {
           "event_id": "eventernote-2023-02-12-2",
           "role": "child",
-          "label": "2月12日 第1场",
+          "label": "第1回",
           "source_urls": []
         },
         {
           "event_id": "eventernote-2023-02-12-3",
           "role": "child",
-          "label": "2月12日 第2场",
-          "source_urls": []
-        },
-        {
-          "event_id": "eventernote-2023-12-16",
-          "role": "child",
-          "label": "12月16日 第1场",
-          "source_urls": []
-        },
-        {
-          "event_id": "eventernote-2023-12-16-2",
-          "role": "child",
-          "label": "12月16日 第2场",
-          "source_urls": []
-        },
-        {
-          "event_id": "eventernote-2023-12-17-2",
-          "role": "child",
-          "label": "12月17日 第1场",
-          "source_urls": []
-        },
-        {
-          "event_id": "eventernote-2023-12-17-3",
-          "role": "child",
-          "label": "12月17日 第2场",
+          "label": "第2回",
           "source_urls": []
         }
       ],
@@ -1809,50 +1980,94 @@
       "children": [
         {
           "event_id": "eventernote-2023-02-12-2",
-          "label": "2月12日 第1场",
+          "label": "第1回",
           "date": "2023-02-12",
           "date_end": "2023-02-12",
           "image": "https://eventernote.s3.amazonaws.com/images/events/332884_s.jpg"
         },
         {
           "event_id": "eventernote-2023-02-12-3",
-          "label": "2月12日 第2场",
+          "label": "第2回",
           "date": "2023-02-12",
           "date_end": "2023-02-12",
           "image": "https://eventernote.s3.amazonaws.com/images/events/332885_s.jpg"
-        },
+        }
+      ],
+      "date_start": "2023-02-12",
+      "date_end": "2023-02-12",
+      "image": "/uma_tools/img/event-groups/saga-race-collaboration-talks-2023.svg",
+      "image_strategy": "deterministic_child_collage"
+    },
+    {
+      "id": "saga-race-collaboration-talks-2023-12",
+      "kind": "onsite_group",
+      "title": "佐贺赛马联动谈话活动（2023年12月）",
+      "title_ja": "",
+      "summary": "2023年12月佐贺赛马联动的特别谈话活动，由饰演醒目飞鹰的大和田仁美与饰演北港火山的菊池纱矢香出演。",
+      "source_urls": [
+        "https://www.sagakeiba.net/news/2023/11/20/403222/"
+      ],
+      "source_identity": {},
+      "members": [
         {
           "event_id": "eventernote-2023-12-16",
-          "label": "12月16日 第1场",
+          "role": "child",
+          "label": "DAY1 · 第1回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2023-12-16-2",
+          "role": "child",
+          "label": "DAY1 · 第2回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2023-12-17-2",
+          "role": "child",
+          "label": "DAY2 · 第1回",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2023-12-17-3",
+          "role": "child",
+          "label": "DAY2 · 第2回",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "eventernote-2023-12-16",
+          "label": "DAY1 · 第1回",
           "date": "2023-12-16",
           "date_end": "2023-12-16",
           "image": "https://eventernote.s3.amazonaws.com/images/events/361258_s.jpg"
         },
         {
           "event_id": "eventernote-2023-12-16-2",
-          "label": "12月16日 第2场",
+          "label": "DAY1 · 第2回",
           "date": "2023-12-16",
           "date_end": "2023-12-16",
           "image": "https://eventernote.s3.amazonaws.com/images/events/361259_s.jpg"
         },
         {
           "event_id": "eventernote-2023-12-17-2",
-          "label": "12月17日 第1场",
+          "label": "DAY2 · 第1回",
           "date": "2023-12-17",
           "date_end": "2023-12-17",
           "image": "https://eventernote.s3.amazonaws.com/images/events/361260_s.jpg"
         },
         {
           "event_id": "eventernote-2023-12-17-3",
-          "label": "12月17日 第2场",
+          "label": "DAY2 · 第2回",
           "date": "2023-12-17",
           "date_end": "2023-12-17",
           "image": "https://eventernote.s3.amazonaws.com/images/events/361261_s.jpg"
         }
       ],
-      "date_start": "2023-02-12",
+      "date_start": "2023-12-16",
       "date_end": "2023-12-17",
-      "image": "/uma_tools/img/event-groups/saga-race-collaboration-talks-2023.svg",
+      "image": "/uma_tools/img/event-groups/saga-race-collaboration-talks-2023-12.svg",
       "image_strategy": "deterministic_child_collage"
     },
     {
@@ -6701,6 +6916,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2026-09-20",
+      "group_ids": [
+        "onsite-obihiro-2026-09-20"
+      ],
+      "group_role": "child",
+      "group_label": "第2回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -6888,6 +7111,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2026-09-20",
+      "group_ids": [
+        "onsite-obihiro-2026-09-20"
+      ],
+      "group_role": "child",
+      "group_label": "第1回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -10017,7 +10248,7 @@
         "onsite-talk-2026-08-01"
       ],
       "group_role": "child",
-      "group_label": "Northern Masters Horse S",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "ノーザンホースパーク",
@@ -10148,7 +10379,7 @@
         "onsite-talk-2026-08-01"
       ],
       "group_role": "child",
-      "group_label": "Northern Masters Horse S",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "ノーザンホースパーク",
@@ -18688,7 +18919,7 @@
         "onsite-talk-2026-03-28"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×Norther",
+      "group_label": "第3回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "ノーザンホースパーク",
@@ -18820,7 +19051,7 @@
         "onsite-talk-2026-03-28"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×Norther",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "ノーザンホースパーク",
@@ -18952,7 +19183,7 @@
         "onsite-talk-2026-03-28"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×Norther",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "ノーザンホースパーク",
@@ -24568,7 +24799,7 @@
         "onsite-talk-2025-11-30"
       ],
       "group_role": "child",
-      "group_label": "『佐贺赛马场presents 赛马娘 Prett",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -24763,7 +24994,7 @@
         "onsite-talk-2025-11-30"
       ],
       "group_role": "child",
-      "group_label": "『佐贺赛马场presents 赛马娘 Prett",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -32706,6 +32937,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2025-09-14",
+      "group_ids": [
+        "onsite-obihiro-2025-09-14"
+      ],
+      "group_role": "child",
+      "group_label": "第2回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -32891,6 +33130,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2025-09-14",
+      "group_ids": [
+        "onsite-obihiro-2025-09-14"
+      ],
+      "group_role": "child",
+      "group_label": "第1回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -49953,7 +50200,7 @@
         "onsite-twinkle-fukuoka"
       ],
       "group_role": "child",
-      "group_label": "日间公演",
+      "group_label": "日场",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -50798,7 +51045,7 @@
         "onsite-twinkle-fukuoka"
       ],
       "group_role": "child",
-      "group_label": "本场",
+      "group_label": "夜场",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -56822,7 +57069,7 @@
         "onsite-twinkle-makuhari"
       ],
       "group_role": "child",
-      "group_label": "Day2",
+      "group_label": "DAY2 · 第2回",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -57650,7 +57897,7 @@
         "onsite-twinkle-makuhari"
       ],
       "group_role": "child",
-      "group_label": "Day2",
+      "group_label": "DAY2 · 第1回",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -58643,7 +58890,7 @@
         "onsite-talk-2024-10-13"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "金沢競馬場",
@@ -58806,7 +59053,7 @@
         "onsite-talk-2024-10-13"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×金泽赛马「赛马",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "金沢競馬場",
@@ -59783,7 +60030,7 @@
         "onsite-twinkle-aichi"
       ],
       "group_role": "child",
-      "group_label": "Day2",
+      "group_label": "DAY2 · 第2回",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -60588,7 +60835,7 @@
         "onsite-twinkle-aichi"
       ],
       "group_role": "child",
-      "group_label": "Day2",
+      "group_label": "DAY2 · 第1回",
       "group_image": "https://umamusume.jp/contents/event/twinkle-circle/assets/images/ogp_twinklecircle.jpg",
       "group_date_start": "",
       "group_date_end": "",
@@ -62812,7 +63059,7 @@
         "onsite-talk-2024-09-15"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×带广赛马联动活",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "帯広競馬場",
@@ -63007,7 +63254,7 @@
         "onsite-talk-2024-09-15"
       ],
       "group_role": "child",
-      "group_label": "赛马娘 Pretty Derby×带广赛马联动活",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "帯広競馬場",
@@ -67980,6 +68227,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "program-boomerang-fu-2024-07",
+      "group_ids": [
+        "program-boomerang-fu-2024-07"
+      ],
+      "group_role": "child",
+      "group_label": "下篇",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "在线播出",
       "venue_id": "venue-在线播出",
       "venue_zh": "在线播出",
@@ -68053,6 +68308,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "program-boomerang-fu-2024-07",
+      "group_ids": [
+        "program-boomerang-fu-2024-07"
+      ],
+      "group_role": "child",
+      "group_label": "中篇",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "在线播出",
       "venue_id": "venue-在线播出",
       "venue_zh": "在线播出",
@@ -68126,6 +68389,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "program-boomerang-fu-2024-07",
+      "group_ids": [
+        "program-boomerang-fu-2024-07"
+      ],
+      "group_role": "child",
+      "group_label": "上篇",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "在线播出",
       "venue_id": "venue-在线播出",
       "venue_zh": "在线播出",
@@ -86656,12 +86927,12 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "group_id": "saga-race-collaboration-talks-2023",
+      "group_id": "saga-race-collaboration-talks-2023-12",
       "group_ids": [
-        "saga-race-collaboration-talks-2023"
+        "saga-race-collaboration-talks-2023-12"
       ],
       "group_role": "child",
-      "group_label": "12月17日 第2场",
+      "group_label": "DAY2 · 第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -86787,12 +87058,12 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "group_id": "saga-race-collaboration-talks-2023",
+      "group_id": "saga-race-collaboration-talks-2023-12",
       "group_ids": [
-        "saga-race-collaboration-talks-2023"
+        "saga-race-collaboration-talks-2023-12"
       ],
       "group_role": "child",
-      "group_label": "12月17日 第1场",
+      "group_label": "DAY2 · 第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -87041,12 +87312,12 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "group_id": "saga-race-collaboration-talks-2023",
+      "group_id": "saga-race-collaboration-talks-2023-12",
       "group_ids": [
-        "saga-race-collaboration-talks-2023"
+        "saga-race-collaboration-talks-2023-12"
       ],
       "group_role": "child",
-      "group_label": "12月16日 第2场",
+      "group_label": "DAY1 · 第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -87172,12 +87443,12 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "group_id": "saga-race-collaboration-talks-2023",
+      "group_id": "saga-race-collaboration-talks-2023-12",
       "group_ids": [
-        "saga-race-collaboration-talks-2023"
+        "saga-race-collaboration-talks-2023-12"
       ],
       "group_role": "child",
-      "group_label": "12月16日 第1场",
+      "group_label": "DAY1 · 第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -91538,6 +91809,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2023-09-24",
+      "group_ids": [
+        "onsite-obihiro-2023-09-24"
+      ],
+      "group_role": "child",
+      "group_label": "第2回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -91693,6 +91972,14 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "group_id": "onsite-obihiro-2023-09-24",
+      "group_ids": [
+        "onsite-obihiro-2023-09-24"
+      ],
+      "group_role": "child",
+      "group_label": "第1回",
+      "group_date_start": "",
+      "group_date_end": "",
       "venue_raw": "帯広競馬場",
       "venue_id": "venue-帯広競馬場",
       "venue_zh": "带广赛马场",
@@ -103862,7 +104149,7 @@
         "saga-race-collaboration-talks-2023"
       ],
       "group_role": "child",
-      "group_label": "2月12日 第2场",
+      "group_label": "第2回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -103942,7 +104229,7 @@
         "saga-race-collaboration-talks-2023"
       ],
       "group_role": "child",
-      "group_label": "2月12日 第1场",
+      "group_label": "第1回",
       "group_date_start": "",
       "group_date_end": "",
       "venue_raw": "佐賀競馬場",
@@ -116637,6 +116924,10 @@
       ],
       "image": "/uma_tools/img/event-covers/numbered/4th-extra.png",
       "summary": "时间地点\n出处：AniLive资料库（码：zEmG）\nhttps://pan.quark.cn/s/75b0090dc04f 码：zEmG",
+      "event_session_aliases": {
+        "eventernote-2022-11-05": "live-numbered-4th-event-extra-2022-11-05-session-1",
+        "eventernote-2022-11-06": "live-numbered-4th-event-extra-2022-11-05-session-2"
+      },
       "title_aliases": [],
       "id_aliases": [],
       "setlist_status": "verified",
@@ -172650,5 +172941,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "04de00d82d339520d8e0"
+  "build_id": "583fc59ee5a5e8bad7d3"
 }

@@ -14,6 +14,15 @@ assert.strictEqual(result.events[0].sessions[1].summary,'本场简介2');
 assert.strictEqual(result.events[0].sessions[1].cast[0].voice_actor_id,'actor-2');
 assert.strictEqual(result.events[0].sessions[1].performances[0].note,'保留注释');
 assert.strictEqual(JSON.stringify(sources),original);
+for (const kind of ['release_event', 'screening', 'recording_event', 'festival_program', 'online_series']) {
+  assert.strictEqual(projectEvents(sources, [{id:'p',kind,title:'Parent',members:sources.map(e => ({event_id:e.id}))}]).events.length, 1, kind + ' remains one parent');
+}
+const mixed = projectEvents(sources.map((e,i) => ({...e, venue:'venue-'+i, schedule_status:i ? 'cancelled' : '', status_note:i ? '官方取消本场' : '', status_source_url:i ? 'https://example.com/cancel' : ''})), [{id:'mixed',kind:'onsite_group',title:'Mixed',members:sources.map(e => ({event_id:e.id}))}]).events[0];
+assert.strictEqual(mixed.venue, '');
+assert.strictEqual(mixed.schedule_status, 'partially_cancelled');
+assert.strictEqual(mixed.sessions[1].status_note, '官方取消本场');
+assert.strictEqual(mixed.sessions[1].venue, 'venue-1');
+assert.strictEqual(mixed.sessions[0].status_note, '');
 const classify = createClassification({relations:[{source_type:'anime_work',source_id:'anime-cinderella-gray',relation_type:'uses_song',target_type:'song',target_id:'s',version_id:'v',release_id:'a'}]},[],()=> 'other');
 assert.deepStrictEqual(classify({name:'外部歌手独立单曲'},'a'),{works:['cinderella'],release_series:'other'});
 console.log('event parent projection, source preservation and independent music classification passed');

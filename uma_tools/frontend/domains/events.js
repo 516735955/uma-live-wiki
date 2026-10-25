@@ -266,6 +266,24 @@ export function createEvents(deps) {
     return eventSummary(eventDetail.value);
   });
 
+  const eventSessionSummary = deps.computed(function () {
+    const summary = eventSummary(selectedEventSession.value);
+    return summary === eventCurrentSummary.value ? '' : summary;
+  });
+
+  const eventSessionImage = deps.computed(function () {
+    const session = selectedEventSession.value || {};
+    const parent = eventDetail.value || {};
+    const image = session.image_preview || session.image || '';
+    const parentImages = [parent.image_preview, parent.image, parent.image_original].filter(Boolean);
+    return parentImages.includes(image) || (session.image && parentImages.includes(session.image)) ? '' : image;
+  });
+
+  const eventCancellation = deps.computed(function () {
+    if (selectedEventSession.value?.schedule_status === 'cancelled') return selectedEventSession.value;
+    return eventDetail.value?.schedule_status === 'cancelled' ? eventDetail.value : null;
+  });
+
   function eventStatusNewsId(event) {
     const source = String((event && event.status_source_url) || "");
     const match = source.match(/^https:\/\/umamusume\.jp\/news\/detail\?id=(\d+)(?:&|$)/);
@@ -636,6 +654,9 @@ export function createEvents(deps) {
     eventSongs,
     eventSummary,
     eventCurrentSummary,
+    eventSessionSummary,
+    eventSessionImage,
+    eventCancellation,
     eventSessionOptions,
     eventStatusNewsId,
     eventTypeOptions,

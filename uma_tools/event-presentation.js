@@ -4,6 +4,10 @@ function unique(rows, key) {
   return [...new Map(rows.map(row => [key(row), row])).values()];
 }
 
+function unitLabel(label) {
+  return String(label || '').replace(/\bday\s*(\d+)/ig, 'DAY$1').replace(/第(\d+)[场部]/g, '第$1回');
+}
+
 // The source events remain intact. Directory aggregation is a projection,
 // while every former source URL resolves to its actual child unit.
 function projectEvents(events, groups = []) {
@@ -13,7 +17,7 @@ function projectEvents(events, groups = []) {
   const hidden = new Set();
   const parents = [];
   for (const group of groups) {
-    if (!['competition','series_arc','onsite_group'].includes(group.kind)) continue;
+    if (!['competition', 'series_arc', 'onsite_group', 'release_event', 'screening', 'recording_event', 'festival_program', 'online_series'].includes(group.kind)) continue;
     const members = (group.members || group.children || []).map(member => ({ ...member, event: rawById.get(member.event_id || member.id) })).filter(member => member.event);
     const children = members.filter(member => member.role !== 'overview');
     if (children.length < 2 || children.some(member => parentForChild.has(member.event.id))) continue;
@@ -24,8 +28,10 @@ function projectEvents(events, groups = []) {
       const source = child.sessions?.length ? child.sessions : [{ id: child.id + '-session-1', date: child.date, performances: [], songs: [], character_ids: child.character_ids || [] }];
       return source.map(session => ({
         ...session, source_event_id: child.id,
-        label: source.length === 1 ? (member.label || child.title) : [member.label, session.label].filter(Boolean).join(' · '),
+        label: unitLabel(source.length === 1 ? (member.label || child.title) : [member.label, session.label].filter(Boolean).join(' · ')),
         date: session.date || child.date,
+        venue: session.venue || child.venue || '',
+        venue_id: session.venue_id || child.venue_id || '',
         doors_time: session.doors_time || child.doors_time || '',
         start_time: session.start_time || child.start_time || '',
         end_time: session.end_time || child.end_time || '',
@@ -38,6 +44,8 @@ function projectEvents(events, groups = []) {
         media: session.media || (source.length === 1 ? child.media || [] : []),
         sources: session.sources || child.sources || [],
         schedule_status: session.schedule_status || child.schedule_status || '',
+        status_note: session.status_note || child.status_note || '',
+        status_source_url: session.status_source_url || child.status_source_url || '',
       }));
     });
     const cancelled = sessions.filter(session => session.schedule_status === 'cancelled').length;
@@ -48,10 +56,14 @@ function projectEvents(events, groups = []) {
       date: group.date_start || first.date,
       end_date: group.kind === 'competition' ? (group.confirmed_end_date || '') : group.date_end || children.at(-1).event.end_date || children.at(-1).event.date,
       sort_date: children.at(-1).event.date,
+      doors_time: '', start_time: '', end_time: '', broadcast_time: '',
+      venue: children.every(member => member.event.venue === first.venue) ? first.venue : '',
+      venue_id: children.every(member => member.event.venue_id === first.venue_id) ? first.venue_id : '',
+      status_note: group.status_note || '', status_source_url: group.status_source_url || '',
       image: group.image || first.image,
       image_preview: group.image_preview || group.image || first.image_preview || first.image,
       image_original: group.image_original || group.image || first.image_original,
-      unit_kind: group.kind === 'competition' ? '赛程' : group.kind === 'series_arc' ? '分集' : '场次',
+      unit_kind: group.kind === 'competition' ? '赛程' : ['series_arc', 'online_series'].includes(group.kind) ? '分集' : '场次',
       sessions,
       cast: unique(children.flatMap(member => member.event.cast || []), cast => cast.voice_actor_id || cast.character_id || cast.name || JSON.stringify(cast)),
       character_ids: [...new Set(children.flatMap(member => member.event.character_ids || []))],

@@ -68,9 +68,8 @@ def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[l
     known_by_id = {str(event.get("id") or ""): event for event in events}
     known = set(known_by_id)
     # Apply only explicit, source-backed identities.  This is deliberately
-    # narrower than title similarity: a newly discovered child must contain
-    # the configured official identity phrase (and, for the qualifier series,
-    # an A–G qualifier marker) before it can join a group automatically.
+    # narrower than title similarity: the official source must identify the
+    # same competition, and its own title must identify the actual stage.
     output_by_id = {group["id"]: group for group in output_groups}
     for event in events:
         event_id = str(event.get("id") or "")
@@ -83,10 +82,18 @@ def apply_groupings(events: list[dict], document: dict | None = None) -> tuple[l
             rule = str(identity.get("rule") or "")
             label = ""
             if "A-G" in rule or "qualifier" in rule:
-                marker = common.re.search(r"(?:预选|予選|組\s*|组\s*)([A-G])", evidence, common.re.I)
-                if not marker:
+                if not any(source.get("kind") == "official_youtube" for source in event.get("sources") or []):
                     continue
-                label = f"预选{marker.group(1)}组"
+                title = str(event.get("source_title") or event.get("title") or "")
+                if common.re.search(r"予告|预告|告知|振り返り|回顾|ダイジェスト|ハイライト", title):
+                    continue
+                marker = common.re.search(r"(?:预选|予選)(?:リーグ)?\s*([A-G])|([A-G])\s*[組组]", title, common.re.I)
+                stages = ((r"準々決勝|四分之一决赛", "四分之一决赛"), (r"準決勝|半决赛", "半决赛"), (r"敗者復活|复活赛", "复活赛"), (r"決勝|决赛", "决赛"))
+                label = next((label for pattern, label in stages if common.re.search(pattern, title)), "")
+                if not label and marker:
+                    label = f"预选{(marker.group(1) or marker.group(2)).upper()}组"
+                if not label:
+                    continue
             if any(member["event_id"] == event_id for member in group["members"]):
                 continue
             member = {"event_id": event_id, "role": "child", "label": label or group["title"], "source_urls": []}

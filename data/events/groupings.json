@@ -2,6 +2,45 @@
   "schema_version": 1,
   "groups": [
     {
+      "id": "program-boomerang-fu-2024-07",
+      "kind": "series_arc",
+      "title": "Boomerang Fu 五人游戏实况（2024年7月）",
+      "summary": "为纪念育成剧本“大丰食祭”上线，特别周、菱曙、米浴、西野花和葛城王牌共同游玩《Boomerang Fu》，包括个人生存战与团队对战。",
+      "source_urls": ["https://www.youtube.com/watch?v=Lx5cc1pGi0s", "https://www.youtube.com/watch?v=p3b3PzheHeg", "https://www.youtube.com/watch?v=k6lOpFcAjwQ"],
+      "members": [
+        {"event_id": "pakatube-20240708-5", "label": "上篇"},
+        {"event_id": "pakatube-20240709-5", "label": "中篇"},
+        {"event_id": "pakatube-20240710-5", "label": "下篇"}
+      ]
+    },
+    {
+      "id": "onsite-obihiro-2026-09-20",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2026年9月20日）",
+      "members": [
+        {"event_id": "eventernote-2026-09-20", "label": "第1回"},
+        {"event_id": "eventernote-2026-09-20-2", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "onsite-obihiro-2025-09-14",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2025年9月14日）",
+      "members": [
+        {"event_id": "eventernote-2025-09-14-2", "label": "第1回"},
+        {"event_id": "eventernote-2025-09-14", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "onsite-obihiro-2023-09-24",
+      "kind": "onsite_group",
+      "title": "带广赛马联动谈话活动（2023年9月24日）",
+      "members": [
+        {"event_id": "eventernote-2023-09-24", "label": "第1回"},
+        {"event_id": "eventernote-2023-09-24-2", "label": "第2回"}
+      ]
+    },
+    {
       "id": "program-peak-2026-06",
       "kind": "series_arc",
       "title": "PEAK 游戏实况（2026-06）",
@@ -106,7 +145,7 @@
       "kind": "competition",
       "title": "Gang Beasts 最强决定战（第1回）",
       "title_ja": "",
-      "summary": "官方频道举办第1回训练员学园《Gang Beasts》最强决定战，A至G组为预选赛程。",
+      "summary": "官方频道举办第1回特雷森学园《Gang Beasts》最强决定战，A至G组为预选赛程。",
       "source_urls": [],
       "members": [
         {
@@ -192,12 +231,12 @@
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-1",
           "role": "child",
-          "label": "Day2"
+          "label": "DAY2 · 第1回"
         },
         {
           "event_id": "live-twinkle-2024-09-29-twinkle-circle-day2-2",
           "role": "child",
-          "label": "Day2"
+          "label": "DAY2 · 第2回"
         }
       ]
     },
@@ -219,12 +258,12 @@
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-1",
           "role": "child",
-          "label": "Day2"
+          "label": "DAY2 · 第1回"
         },
         {
           "event_id": "live-twinkle-2024-10-20-twinkle-circle-day2-2",
           "role": "child",
-          "label": "Day2"
+          "label": "DAY2 · 第2回"
         }
       ]
     },
@@ -263,12 +302,12 @@
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle",
           "role": "child",
-          "label": "日间公演"
+          "label": "日场"
         },
         {
           "event_id": "live-twinkle-2024-12-15-twinkle-circle-2",
           "role": "child",
-          "label": "本场"
+          "label": "夜场"
         }
       ]
     },
@@ -435,17 +474,17 @@
         {
           "event_id": "eventernote-2026-03-28",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther"
+          "label": "第2回"
         },
         {
           "event_id": "eventernote-2026-03-28-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther"
+          "label": "第1回"
         },
         {
           "event_id": "eventernote-2026-03-28-3",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×Norther"
+          "label": "第3回"
         }
       ]
     },
@@ -460,12 +499,12 @@
         {
           "event_id": "eventernote-2026-08-01",
           "role": "child",
-          "label": "Northern Masters Horse S"
+          "label": "第1回"
         },
         {
           "event_id": "eventernote-2026-08-01-2",
           "role": "child",
-          "label": "Northern Masters Horse S"
+          "label": "第2回"
         }
       ]
     },
@@ -480,12 +519,12 @@
         {
           "event_id": "eventernote-2025-11-30",
           "role": "child",
-          "label": "『佐贺赛马场presents 赛马娘 Prett"
+          "label": "第1回"
         },
         {
           "event_id": "eventernote-2025-11-30-2",
           "role": "child",
-          "label": "『佐贺赛马场presents 赛马娘 Prett"
+          "label": "第2回"
         }
       ]
     },
@@ -500,12 +539,12 @@
         {
           "event_id": "eventernote-2024-10-13",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马"
+          "label": "第1回"
         },
         {
           "event_id": "eventernote-2024-10-13-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×金泽赛马「赛马"
+          "label": "第2回"
         }
       ]
     },
@@ -520,12 +559,12 @@
         {
           "event_id": "eventernote-2024-09-15",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活"
+          "label": "第1回"
         },
         {
           "event_id": "eventernote-2024-09-15-2",
           "role": "child",
-          "label": "赛马娘 Pretty Derby×带广赛马联动活"
+          "label": "第2回"
         }
       ]
     },
@@ -661,17 +700,26 @@
     {
       "id": "saga-race-collaboration-talks-2023",
       "kind": "onsite_group",
-      "title": "佐贺赛马联动谈话活动（2023）",
-      "title_ja": "佐賀競馬場コラボトークイベント（2023）",
-      "summary": "2023年佐贺赛马联动期间的特别谈话活动，按日期与场次保留子活动。",
-      "source_urls": [],
+      "title": "佐贺赛马联动谈话活动（2023年2月）",
+      "title_ja": "ウマ娘 プリティーダービー×さがけいば コラボイベント スペシャルトークショー",
+      "summary": "2023年2月佐贺赛马联动的特别谈话活动，由饰演真机伶的篠原侑与饰演醒目飞鹰的大和田仁美出演。",
+      "source_urls": ["https://www.sagakeiba.net/news/2023/01/28/294989/"],
       "members": [
-        {"event_id": "eventernote-2023-02-12-2", "role": "child", "label": "2月12日 第1场"},
-        {"event_id": "eventernote-2023-02-12-3", "role": "child", "label": "2月12日 第2场"},
-        {"event_id": "eventernote-2023-12-16", "role": "child", "label": "12月16日 第1场"},
-        {"event_id": "eventernote-2023-12-16-2", "role": "child", "label": "12月16日 第2场"},
-        {"event_id": "eventernote-2023-12-17-2", "role": "child", "label": "12月17日 第1场"},
-        {"event_id": "eventernote-2023-12-17-3", "role": "child", "label": "12月17日 第2场"}
+        {"event_id": "eventernote-2023-02-12-2", "role": "child", "label": "第1回"},
+        {"event_id": "eventernote-2023-02-12-3", "role": "child", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "saga-race-collaboration-talks-2023-12",
+      "kind": "onsite_group",
+      "title": "佐贺赛马联动谈话活动（2023年12月）",
+      "summary": "2023年12月佐贺赛马联动的特别谈话活动，由饰演醒目飞鹰的大和田仁美与饰演北港火山的菊池纱矢香出演。",
+      "source_urls": ["https://www.sagakeiba.net/news/2023/11/20/403222/"],
+      "members": [
+        {"event_id": "eventernote-2023-12-16", "label": "DAY1 · 第1回"},
+        {"event_id": "eventernote-2023-12-16-2", "label": "DAY1 · 第2回"},
+        {"event_id": "eventernote-2023-12-17-2", "label": "DAY2 · 第1回"},
+        {"event_id": "eventernote-2023-12-17-3", "label": "DAY2 · 第2回"}
       ]
     },
     {

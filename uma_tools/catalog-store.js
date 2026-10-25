@@ -550,7 +550,7 @@ class CatalogStore {
       creatorRows,
       music,
       albumRows: albumRowsIndexed,
-      eventsById: new Map([...presentation.byId, ...sourceEvents.flatMap(event => (event.id_aliases || []).map(id => [String(id), event]))]),
+      eventsById: new Map([...presentation.byId, ...sourceEvents.flatMap(event => [...(event.id_aliases || []), ...Object.keys(event.event_session_aliases || {})].map(id => [String(id), event]))]),
       parentForChild: presentation.parentForChild,
       songsById: new Map(songs.map((song) => [String(song.id), song])),
       creatorsById: new Map(creators.map((creator) => [String(creator.id), creator])),
@@ -701,8 +701,10 @@ class CatalogStore {
     let event = (id && store.eventsById.get(String(id))) || (legacy && (store.eventsDoc.events || [])
       .find((item) => item.legacy_url === legacy || (item.legacy_aliases || []).includes(legacy)));
     if (!event) return null;
+    const aliasedSession = event.event_session_aliases?.[String(id)];
     const requested = store.parentForChild.get(event.id);
     if (requested) event = { ...requested.parent, requested_session_id: requested.session_id };
+    if (aliasedSession) event = { ...event, requested_session_id: aliasedSession };
     const versionsBySong = new Map();
     (event.sessions || []).forEach((session) => (session.performances || []).forEach((performance) => {
       if (!versionsBySong.has(performance.song_id)) versionsBySong.set(performance.song_id, new Set());

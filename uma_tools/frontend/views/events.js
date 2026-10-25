@@ -54,7 +54,7 @@ export const template = `
             <template v-else-if="eventDetail">
                 <article class="entity-detail event-entity-detail">
                     <div class="entity-hero">
-                        <span v-if="eventDetail.schedule_status==='cancelled' || (selectedEventSession && selectedEventSession.schedule_status==='cancelled')" class="event-status-cancelled event-hero-status">已取消</span>
+                        <span v-if="eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-status-cancelled event-hero-status">{{ eventDetail.schedule_status==='cancelled' ? '已取消' : eventCancellation ? '本场已取消' : '部分场次取消' }}</span>
                         <div class="entity-cover event-cover">
                             <img v-media-src="eventDetail.image" :data-original="eventDetail.image_original" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,eventDetail)">
                         </div>
@@ -62,7 +62,7 @@ export const template = `
                             <span class="entity-kind">{{ eventKindLabel(eventDetail.kind) }}</span>
                             <h1>{{ eventDetail.title }}</h1><p v-if="eventDetail.title_ja && eventDetail.title_ja !== eventDetail.title" class="entity-reading">{{ eventDetail.title_ja }}</p>
                             <activity-time v-if="eventSessionOptions.length > 1 || !selectedEventSession" :date="eventDetail.date" :end-date="eventDetail.end_date"></activity-time>
-                            <dl v-if="eventDetail.venue" class="entity-meta event-venue-meta"><div><dt>地点</dt><dd>{{ eventDetail.venue }}</dd></div></dl>
+                            <dl v-if="(selectedEventSession && selectedEventSession.venue) || eventDetail.venue" class="entity-meta event-venue-meta"><div><dt>地点</dt><dd>{{ (selectedEventSession && selectedEventSession.venue) || eventDetail.venue }}</dd></div></dl>
                             <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || eventDetail.eventunit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
                             <activity-time v-if="selectedEventSession" class="event-session-time" :date="selectedEventSession.date || eventDetail.date" :end-date="selectedEventSession.end_date" :doors-time="selectedEventSession.doors_time" :start-time="selectedEventSession.start_time" :end-time="selectedEventSession.end_time" :end-estimated="!!selectedEventSession.end_time_estimated" :broadcast-time="selectedEventSession.broadcast_time || selectedEventSession.broadcast"></activity-time>
                         </div>
@@ -71,14 +71,14 @@ export const template = `
                     <section class="entity-overview">
                         <dl><div><dt>形式</dt><dd>{{ eventModeLabel(eventDetail.mode) }}</dd></div><div v-if="eventSeriesName(eventDetail)"><dt>系列</dt><dd>{{ eventSeriesName(eventDetail) }}</dd></div></dl>
                         <p v-if="eventCurrentSummary">{{ eventCurrentSummary }}</p>
-                        <div v-if="selectedEventSession && ((selectedEventSession.image_preview || selectedEventSession.image) || selectedEventSession.summary_zh || selectedEventSession.summary)" class="event-session-context">
-                            <img v-if="selectedEventSession.image_preview || selectedEventSession.image" v-media-src="selectedEventSession.image_preview || selectedEventSession.image" :data-original="selectedEventSession.image_original || selectedEventSession.image" :alt="selectedEventSession.label || '当前场次'" loading="lazy">
+                        <div v-if="selectedEventSession && (eventSessionImage || eventSessionSummary)" class="event-session-context">
+                            <img v-if="eventSessionImage" v-media-src="eventSessionImage" :data-original="selectedEventSession.image_original || selectedEventSession.image" :alt="selectedEventSession.label || '当前场次'" loading="lazy">
                             <div class="event-session-context-copy">
                                 <b>{{ selectedEventSession.label || '当前场次' }}</b>
-                                <p v-if="selectedEventSession.summary_zh || selectedEventSession.summary">{{ selectedEventSession.summary_zh || selectedEventSession.summary }}</p>
+                                <p v-if="eventSessionSummary">{{ eventSessionSummary }}</p>
                             </div>
                         </div>
-                        <p v-if="eventDetail.schedule_status==='cancelled'" class="event-status-note">{{ eventDetail.status_note }} <a v-if="eventStatusNewsId(eventDetail)" class="text-link" :href="routes.news(eventStatusNewsId(eventDetail))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventDetail)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventDetail.status_source_url" class="text-link" :href="eventDetail.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
+                        <p v-if="eventCancellation" class="event-status-note">{{ eventCancellation.status_note }} <a v-if="eventStatusNewsId(eventCancellation)" class="text-link" :href="routes.news(eventStatusNewsId(eventCancellation))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventCancellation)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventCancellation.status_source_url" class="text-link" :href="eventCancellation.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
                     </section>
 
                     <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled' && (eventSessionTable(selectedEventSession) || (selectedEventSession.performances && selectedEventSession.performances.length))" class="entity-section">
@@ -100,7 +100,7 @@ export const template = `
                     </section>
 
                     <section class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">{{ eventDetail.schedule_status==='cancelled' ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">{{ eventCancellation ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-chip-list">
                             <component v-for="(cast,index) in eventVoiceCast" :is="cast.voice_actor_id ? 'a' : 'span'" :key="cast.voice_actor_id || ('external-' + cast.name + '-' + index)" class="performer-chip voice-chip" :style="{'--chip-color':characterColor(cast.character_id)}" :href="cast.voice_actor_id ? routes.voiceActors(cast.voice_actor_id) : undefined" @click="cast.voice_actor_id && internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
