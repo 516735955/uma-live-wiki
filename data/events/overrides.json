@@ -360,7 +360,8 @@
           "time_source": "official_announcement",
           "time_source_url": "https://umamusume.lantis.jp/news/769/",
           "time_precision": "minute",
-          "schedule_note": "官方预告PART1为11:00—14:00；Eventernote预计终演14:15，实际终演未确认。"
+          "schedule_note": "",
+          "schedule_source_note": "官方预告PART1为11:00—14:00；Eventernote原记录预计终演14:15。"
         }
       }
     },
@@ -621,7 +622,8 @@
           "time_source_url": "https://umamusume.lantis.jp/live/1432/",
           "source_time_text": "開場/開演時間：16:30/17:30 (予定)",
           "end_time_source_url": "https://www.eventernote.com/events/497787",
-          "schedule_note": "入场16:30、开演17:30由发行方公告确认。结束18:30来自Eventernote预计，官方未公布结束时刻。"
+          "schedule_note": "",
+          "schedule_source_note": "入场16:30、开演17:30见发行方公告；预计结束18:30见Eventernote。"
         }
       },
       "sources_add": [
@@ -2506,7 +2508,8 @@
           "time_source": "official_announcement",
           "time_source_url": "https://www.animax.co.jp/events/animaxmusix/",
           "time_precision": "minute",
-          "schedule_note": "现行官方活动页列DAY2预计21:00结束；2026年7月旧公告列20:30，保留为历史日程差异。赛马娘参加DAY2。"
+          "schedule_note": "赛马娘参加DAY2。",
+          "schedule_source_note": "现行官方活动页列DAY2预计21:00结束；2026年7月旧公告列20:30。"
         }
       },
       "image": "/uma_tools/img/event-covers/concert.svg",

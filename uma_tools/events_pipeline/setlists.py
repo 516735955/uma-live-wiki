@@ -74,6 +74,17 @@ def display_table(original, block, known_cast, identities):
             names = list(dict.fromkeys(name for entry in block['songs']
                                        if title_key(entry['name']) == title_key(song.get_text())
                                        for name in entry['performers']))
+            if not names:
+                count = re.search(r'全[员員]\s*[（(]\s*(\d+)人', performers.get_text())
+                regular_cast = list(dict.fromkeys(item['name'] for item in known_cast
+                                                 if item.get('name') and item.get('character_id')
+                                                 and not item.get('participation_label')))
+                if count and len(regular_cast) == int(count.group(1)):
+                    names = regular_cast
+            shown_characters = {identities.character_id(image.get('alt', ''))
+                                for image in performers.select('.perf-item img')}
+            names = [name for name in names
+                     if not roles.get(identities.voice_id(name), set()).intersection(shown_characters)]
             if names:
                 content += '<div class="performer-chip-list">%s</div>' % ''.join(person_chip(name) for name in names)
         else:

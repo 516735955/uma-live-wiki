@@ -701,6 +701,25 @@ DAY2：2024年3月31日（日）19:00頃開始予定
             [{"song": "Song A", "character_ids": ["specialweek", "silencesuzuka"]}],
         )
 
+    def test_unlisted_full_cast_rows_use_only_the_declared_regular_cast(self):
+        from events_pipeline.setlists import display_table
+        from bs4 import BeautifulSoup
+        identities = UPDATE_EVENTS.IdentityIndex(
+            [{'id': 'specialweek', 'zh': '特别周', 'cv': '和氣あず未', 'av': '/uma_avatars/SpecialWeek.png'},
+             {'id': 'tokaiteio', 'zh': '东海帝王', 'cv': 'Machico', 'av': '/uma_avatars/TokaiTeio.png'}],
+            [{'ja': '和氣あず未', 'zh': '和气杏未'}, {'ja': 'Machico', 'zh': 'Machico'}], {}, {}, {},
+        )
+        cast = [{'name': '和氣あず未', 'voice_actor_id': identities.voice_id('和氣あず未'), 'character_id': 'specialweek'},
+                {'name': 'Machico', 'voice_actor_id': identities.voice_id('Machico'), 'character_id': 'tokaiteio', 'participation_label': '嘉宾'}]
+        table = '<table><tr><td class="setlist-song">Opening</td><td class="setlist-perf">全员（1人）</td></tr></table>'
+        result = BeautifulSoup(display_table(table, {'songs': []}, cast, identities), 'html.parser')
+        self.assertEqual([node['alt'] for node in result.select('img')], ['特别周'])
+        self.assertNotIn('performer-chip-list', display_table(table.replace('1人', '2人'), {'songs': []}, cast, identities))
+        guest_table = table.replace('全员（1人）', '全员（1人）嘉宾：<span class="perf-item"><img alt="东海帝王"><span class="perf-name">东海帝王</span></span>')
+        guest_result = BeautifulSoup(display_table(guest_table, {'songs': [{'name': 'Opening', 'performers': ['和氣あず未', 'Machico']}]}, cast, identities), 'html.parser')
+        self.assertEqual([node['alt'] for node in guest_result.select('img')], ['东海帝王', '特别周'])
+        self.assertIn('嘉宾：', guest_result.get_text())
+
     def test_numbered_event_appearances_use_the_matching_session_date(self):
         built = UPDATE_EVENTS.build()
         event_id = "live-numbered-6th-event-2025-10-18"

@@ -56,7 +56,7 @@ export const template = `
                     <div class="entity-hero">
                         <div v-if="eventSessionOptions.length > 1 || eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-hero-controls">
                             <span v-if="eventCancellation || eventDetail.schedule_status==='partially_cancelled'" class="event-status-cancelled">{{ eventDetail.schedule_status==='cancelled' ? '已取消' : eventCancellation ? '本场已取消' : '部分场次取消' }}</span>
-                            <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :floating="true" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
+                            <ui-select v-if="eventSessionOptions.length > 1" class="event-session-select" :floating="true" :menu-min-width="260" menu-class="event-session-menu" :model-value="selectedEventSessionId" :label="eventDetail.unit_kind || '场次'" :options="eventSessionOptions" @change="selectEventSession"></ui-select>
                         </div>
                         <div class="entity-cover event-cover">
                             <img :key="selectedEventSessionId || eventDetail.id" v-media-src="eventSessionImage" :data-original="(selectedEventSession && (selectedEventSession.image_original || selectedEventSession.image)) || eventDetail.image_original || eventDetail.image" :alt="eventDetail.title" fetchpriority="high" @error="onEventImageError($event,selectedEventSession || eventDetail)">

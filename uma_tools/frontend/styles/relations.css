@@ -97,7 +97,11 @@
 .anime-unit-context-copy .entity-reading { margin: 0 0 8px; }
 .anime-unit-context-copy .entity-meta { margin-top: 10px; }
 .event-hero-controls { position: absolute; z-index: 3; top: 18px; right: 24px; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 10px; }
-.event-hero-controls .event-session-select { width: auto; min-width: 180px; max-width: 100%; margin: 0; }
+.event-hero-controls .event-session-select { width: max-content; min-width: min(290px, 100%); max-width: 100%; margin: 0; }
+.event-session-select .ui-select-trigger { flex: auto; height: auto; min-height: 44px; padding-block: 8px; }
+.event-session-select .ui-select-trigger > span { white-space: normal; word-break: keep-all; overflow-wrap: normal; text-overflow: clip; }
+.event-session-menu button > span { white-space: nowrap; }
+.event-session-menu button > svg { flex-shrink: 0; }
 .event-entity-detail > .entity-hero:has(.event-hero-controls) .entity-kind { margin-right: 210px; }
 .event-hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; margin-top: 12px; }
 .event-entity-detail .event-hero-facts > dl { display: contents; }

@@ -20,6 +20,8 @@
       options: { type: Array, default: function () { return []; } },
       label: { type: String, default: '' },
       floating: { type: Boolean, default: false },
+      menuMinWidth: { type: Number, default: 0 },
+      menuClass: { type: String, default: '' },
       ariaLabel: { type: String, default: '' }
     },
     emits: ['update:modelValue', 'change'],
@@ -81,7 +83,7 @@
           this.menuHeight = Math.max(40, Math.min(286, window.innerWidth <= 700 ? height * .52 : 286, this.menuAbove ? above : below));
           if (this.floating) {
             this.menuX = trigger.left;
-            this.menuWidth = trigger.width;
+            this.menuWidth = Math.max(trigger.width, this.menuMinWidth);
             this.menuY = this.menuAbove ? Math.max(top + 8, trigger.top - this.menuHeight - 7) : trigger.bottom + 7;
           }
           this.menuShift = 0;
@@ -172,7 +174,7 @@
           <span>{{ selectedOption.label }}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
-        <teleport to="body" :disabled="!floating"><div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :style="menuStyle" role="listbox" @keydown="onKeydown">
+        <teleport to="body" :disabled="!floating"><div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :class="menuClass" :style="menuStyle" role="listbox" @keydown="onKeydown">
           <button v-if="group" class="ui-select-back" type="button" @click="back">‹ {{ label }}　{{ group.label }}</button>
           <button v-for="(option,index) in visibleOptions" :id="listId+'-option-'+index" :key="String(option.value)" type="button" role="option" tabindex="-1" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
             <span>{{ option.label }}</span>
