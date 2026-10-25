@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-11T21:04:32+00:00",
+  "observed_at": "2026-10-25T08:59:35+00:00",
   "resources": [
     {
       "resource_id": "watch-s1-bilibili",
@@ -44,15 +44,15 @@
       "unit_ids": [],
       "url": "https://ani.gamer.com.tw/animeVideo.php?sn=21648",
       "final_url": "https://ani.gamer.com.tw/animeVideo.php?sn=21648",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": 403,
+      "status": "auth_or_region",
       "access": "free",
       "regions": [
         "TW",
         "HK",
         "MO"
       ],
-      "error": ""
+      "error": "Forbidden"
     },
     {
       "resource_id": "watch-s2-bilibili",
@@ -96,15 +96,15 @@
       "unit_ids": [],
       "url": "https://ani.gamer.com.tw/animeVideo.php?sn=42536",
       "final_url": "https://ani.gamer.com.tw/animeVideo.php?sn=42536",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": 403,
+      "status": "auth_or_region",
       "access": "free",
       "regions": [
         "TW",
         "HK",
         "MO"
       ],
-      "error": ""
+      "error": "Forbidden"
     },
     {
       "resource_id": "watch-umayon-bilibili",
@@ -149,13 +149,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
       "final_url": "https://www.youtube.com/watch?v=RKVWLnVqnP0",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-rttt-bilibili",
@@ -222,15 +222,15 @@
       "unit_ids": [],
       "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+Pretty+Derby+%E7%AC%AC%E4%B8%89%E5%AD%A3",
       "final_url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+Pretty+Derby+%E7%AC%AC%E4%B8%89%E5%AD%A3",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": 403,
+      "status": "auth_or_region",
       "access": "free",
       "regions": [
         "TW",
         "HK",
         "MO"
       ],
-      "error": ""
+      "error": "Forbidden"
     },
     {
       "resource_id": "watch-cingray-bilibili",
@@ -284,15 +284,15 @@
       "unit_ids": [],
       "url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+%E7%81%B0%E9%AB%AE%E7%81%B0%E5%A7%91%E5%A8%98",
       "final_url": "https://ani.gamer.com.tw/search.php?kw=%E8%B3%BD%E9%A6%AC%E5%A8%98+%E7%81%B0%E9%AB%AE%E7%81%B0%E5%A7%91%E5%A8%98",
-      "http_status": null,
-      "status": "transient",
+      "http_status": 403,
+      "status": "auth_or_region",
       "access": "free",
       "regions": [
         "TW",
         "HK",
         "MO"
       ],
-      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+      "error": "Forbidden"
     },
     {
       "resource_id": "watch-cingray-abema",
@@ -564,13 +564,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
       "final_url": "https://www.youtube.com/watch?v=36NHQCYjBvs",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-anime-umayuru-e06",
@@ -604,13 +604,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
       "final_url": "https://www.youtube.com/watch?v=uXauD1uRZy0",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-anime-umayuru-e08",
@@ -624,13 +624,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
       "final_url": "https://www.youtube.com/watch?v=u0LuV8HNd8k",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-anime-umayuru-e09",
@@ -724,13 +724,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
       "final_url": "https://www.youtube.com/watch?v=_XvzHdO7nrk",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-anime-umayuru-e14",
@@ -784,13 +784,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
       "final_url": "https://www.youtube.com/watch?v=Iz1xs-gZF-g",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-anime-umayuru-e17",
@@ -2657,13 +2657,13 @@
       ],
       "url": "https://www.youtube.com/watch?v=A42wNP1DJho",
       "final_url": "https://www.youtube.com/watch?v=A42wNP1DJho",
-      "http_status": 200,
-      "status": "reachable",
+      "http_status": null,
+      "status": "transient",
       "access": "free",
       "regions": [
         "global"
       ],
-      "error": ""
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
     },
     {
       "resource_id": "watch-official-anime-rttt-e04",
@@ -2759,6 +2759,24 @@
       "http_status": 200,
       "status": "reachable",
       "access": "free",
+      "regions": [],
+      "error": ""
+    },
+    {
+      "resource_id": "watch-auto-anime-umayuru-fullgate-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e04"
+      },
+      "work_id": "anime-umayuru-fullgate",
+      "unit_ids": [
+        "anime-umayuru-fullgate-e04"
+      ],
+      "url": "https://www.youtube.com/watch?v=qRdCSqwkg5M",
+      "final_url": "https://www.youtube.com/watch?v=qRdCSqwkg5M",
+      "http_status": 200,
+      "status": "reachable",
+      "access": null,
       "regions": [],
       "error": ""
     }

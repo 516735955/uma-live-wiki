@@ -8316,7 +8316,7 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-115f12d608",
+      "version_id": "song-228f943b49-v-8fbcc5f162",
       "release_id": "album-laca-9983",
       "version_label": "Anime Size",
       "label": "片尾曲",
@@ -8455,7 +8455,7 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-228f943b49",
+      "version_id": "song-228f943b49-v-b00ac0ccaa",
       "release_id": "album-laca-25098",
       "version_label": "",
       "label": "",
@@ -33133,6 +33133,104 @@
       "display_order": 17,
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e14"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-mihonobourbon-va-0169",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mihonobourbon",
+      "voice_actor_id": "va-0169",
+      "signature": "ミホノブルボン",
+      "display_order": 0,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-riceshower-va-0129",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "riceshower",
+      "voice_actor_id": "va-0129",
+      "signature": "ライスシャワー",
+      "display_order": 1,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-matikanetannhauser-va-0161",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "matikanetannhauser",
+      "voice_actor_id": "va-0161",
+      "signature": "マチカネタンホイザ",
+      "display_order": 2,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-sakuralaurel-va-0125",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakuralaurel",
+      "voice_actor_id": "va-0125",
+      "signature": "サクラローレル",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-samsonbig-va-0099",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "samsonbig",
+      "voice_actor_id": "va-0099",
+      "signature": "サムソンビッグ",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-royceandroyce-va-0120",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "royceandroyce",
+      "voice_actor_id": "va-0120",
+      "signature": "ロイスアンドロイス",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-sakurachitoseo-va-0083",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakurachitoseo",
+      "voice_actor_id": "va-0083",
+      "signature": "サクラチトセオー",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
       ]
     }
   ]

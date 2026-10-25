@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "build_id": "anime-049c306246220113",
-  "generated_at": "2026-10-13T00:00:00+08:00",
+  "build_id": "anime-2ef1074087f23bb2",
+  "generated_at": "2026-10-25T00:00:00+08:00",
   "coverage": {
     "works": 11,
     "units": 127,
     "released_units": 127,
     "scheduled_units": 0,
-    "watch_resources": 133,
-    "relations": 2053,
-    "staff_credits": 25405,
+    "watch_resources": 134,
+    "relations": 2060,
+    "staff_credits": 25422,
     "staff_people": 2894
   },
   "works": [
@@ -1213,19 +1213,57 @@
         "number": 4,
         "label": "第 4 话",
         "unit_type": "short",
-        "title_zh": "",
-        "title_ja": "",
-        "summary_zh": "樱花桂为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
-        "release_date": "",
+        "title_zh": "万圣节的准备！",
+        "title_ja": "ハロウィンのお支度！",
+        "summary_zh": "樱花桂冠为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
+        "release_date": "2026-10-18",
         "status": "released",
-        "stills": [],
+        "stills": [
+          {
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-01.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+          },
+          {
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-02.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/0fdc1dafef7d4b8ba299f64257970ccf/UFG_04_02.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+          },
+          {
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-03.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2d196806ca36410c9b4af65527c7db3e/UFG_04_03.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+          },
+          {
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-04.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/b75132df73b1482a9db1ea58e8bf0091/UFG_04_04.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+          },
+          {
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-05.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/333e7058cf324eb286cc7a4e8dd0f7eb/UFG_04_05.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+          }
+        ],
         "source_refs": [
-          "runtime-entity-localizations-anime-umayuru-fullgate-e04"
+          "runtime-entity-localizations-anime-umayuru-fullgate-e04",
+          "official-auto-anime-umayuru-fullgate-e04",
+          "official-fullgate-premiere",
+          "official-ending-anime-umayuru-fullgate-e04"
         ],
         "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
         "duration": "",
-        "dates": [],
-        "staff_status": "pending"
+        "dates": [
+          {
+            "label": "ぱかチューブっ！公开",
+            "date": "2026-10-18",
+            "display": "2026-10-18 21:00",
+            "timezone": "JST"
+          }
+        ],
+        "staff_status": "pending",
+        "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-01.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg"
       },
       "next_unit": null,
       "main_character_ids": []
@@ -3515,7 +3553,7 @@
       "number": 4,
       "label": "第 4 话",
       "unit_type": "short",
-      "title_zh": "强击，Build Up！",
+      "title_zh": "鹤丸刚志，锻炼起来！",
       "title_ja": "ツヨシ、びるどあっぷ！",
       "summary_zh": "鹤丸刚志想改善自己虚弱的体质。反复尝试之后，她终于获得了某种属于自己的强大。",
       "release_date": "2022-10-23",
@@ -4735,7 +4773,7 @@
       "number": 4,
       "label": "第 4 话",
       "unit_type": "episode",
-      "title_zh": "只属于我的",
+      "title_zh": "只属于我的光芒",
       "title_ja": "あたしだけの輝き",
       "summary_zh": "接连以第二、第三名惜败后，北部玄驹向优秀素质倾诉，意外发现身体强健是自己的长处。她请求训练员安排前所未有的强化训练。",
       "release_date": "2023-10-26",
@@ -8381,13 +8419,14 @@
       ],
       "source_refs": [
         "official-story-anime-umayuru-fullgate-e02",
-        "official-ending-anime-umayuru-fullgate-e02"
+        "official-ending-anime-umayuru-fullgate-e02",
+        "official-fullgate-premiere"
       ],
       "summary_ja": "聖蹄祭当日―ジェスチャーゲームで対戦するのはBNWとサクラチヨノオーら3強！\n同期の絆が、ハイレベルな戦いへと至らしめる！",
       "duration": "3分04秒",
       "dates": [
         {
-          "label": "YouTube公开",
+          "label": "ぱかチューブっ！公开",
           "date": "2026-10-04",
           "display": "2026-10-04 21:00",
           "timezone": "JST"
@@ -8438,13 +8477,14 @@
       ],
       "source_refs": [
         "official-story-anime-umayuru-fullgate-e03",
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "official-fullgate-premiere"
       ],
       "summary_ja": "ファンイベントに向けアート作品を作るウマ娘たちの前に、熱血ゴールドシップ師範代が登場！\n最も熱い作品を決める戦いが、今始まる―！",
       "duration": "3分04秒",
       "dates": [
         {
-          "label": "YouTube公开",
+          "label": "ぱかチューブっ！公开",
           "date": "2026-10-11",
           "display": "2026-10-11 21:00",
           "timezone": "JST"
@@ -8461,19 +8501,57 @@
       "number": 4,
       "label": "第 4 话",
       "unit_type": "short",
-      "title_zh": "",
-      "title_ja": "",
-      "summary_zh": "樱花桂为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
-      "release_date": "",
+      "title_zh": "万圣节的准备！",
+      "title_ja": "ハロウィンのお支度！",
+      "summary_zh": "樱花桂冠为了万圣节的变装大赛干劲十足。另一方面，为如何享受万圣节而烦恼的樱花千岁王，四处参观大家的准备情况。",
+      "release_date": "2026-10-18",
       "status": "released",
-      "stills": [],
+      "stills": [
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-01.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-02.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/0fdc1dafef7d4b8ba299f64257970ccf/UFG_04_02.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-03.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2d196806ca36410c9b4af65527c7db3e/UFG_04_03.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-04.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/b75132df73b1482a9db1ea58e8bf0091/UFG_04_04.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-05.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/333e7058cf324eb286cc7a4e8dd0f7eb/UFG_04_05.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+        }
+      ],
       "source_refs": [
-        "runtime-entity-localizations-anime-umayuru-fullgate-e04"
+        "runtime-entity-localizations-anime-umayuru-fullgate-e04",
+        "official-auto-anime-umayuru-fullgate-e04",
+        "official-fullgate-premiere",
+        "official-ending-anime-umayuru-fullgate-e04"
       ],
       "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
       "duration": "",
-      "dates": [],
-      "staff_status": "pending"
+      "dates": [
+        {
+          "label": "ぱかチューブっ！公开",
+          "date": "2026-10-18",
+          "display": "2026-10-18 21:00",
+          "timezone": "JST"
+        }
+      ],
+      "staff_status": "pending",
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg"
     }
   ],
   "watch_resources": [
@@ -12335,6 +12413,21 @@
       "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
       "source_ref": "official-story-anime-umayuru-fullgate-e03",
       "verified_at": "2026-10-12"
+    },
+    {
+      "id": "watch-auto-anime-umayuru-fullgate-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e04"
+      },
+      "url": "https://www.youtube.com/watch?v=qRdCSqwkg5M",
+      "platform": "youtube",
+      "authority": "official",
+      "status": "active",
+      "access": "free",
+      "verified_at": "2026-10-25",
+      "content_type": "full_episode",
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04"
     }
   ],
   "relations": [
@@ -20653,7 +20746,7 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-115f12d608",
+      "version_id": "song-228f943b49-v-8fbcc5f162",
       "release_id": "album-laca-9983",
       "version_label": "Anime Size",
       "label": "片尾曲",
@@ -20792,7 +20885,7 @@
       "relation_type": "uses_song",
       "target_type": "song",
       "target_id": "song-228f943b49",
-      "version_id": "song-228f943b49-v-228f943b49",
+      "version_id": "song-228f943b49-v-b00ac0ccaa",
       "release_id": "album-laca-25098",
       "version_label": "",
       "label": "",
@@ -45477,6 +45570,104 @@
       "display_order": 17,
       "evidence_refs": [
         "official-ending-anime-cinderella-gray-e14"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-mihonobourbon-va-0169",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mihonobourbon",
+      "voice_actor_id": "va-0169",
+      "signature": "ミホノブルボン",
+      "display_order": 0,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-riceshower-va-0129",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "riceshower",
+      "voice_actor_id": "va-0129",
+      "signature": "ライスシャワー",
+      "display_order": 1,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-matikanetannhauser-va-0161",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "matikanetannhauser",
+      "voice_actor_id": "va-0161",
+      "signature": "マチカネタンホイザ",
+      "display_order": 2,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-sakuralaurel-va-0125",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakuralaurel",
+      "voice_actor_id": "va-0125",
+      "signature": "サクラローレル",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-samsonbig-va-0099",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "samsonbig",
+      "voice_actor_id": "va-0099",
+      "signature": "サムソンビッグ",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-royceandroyce-va-0120",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "royceandroyce",
+      "voice_actor_id": "va-0120",
+      "signature": "ロイスアンドロイス",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e04-auto-cast-sakurachitoseo-va-0083",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e04",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "sakurachitoseo",
+      "voice_actor_id": "va-0083",
+      "signature": "サクラチトセオー",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e04"
       ]
     }
   ],
@@ -527191,6 +527382,281 @@
         "总作画监督"
       ],
       "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "原作",
+      "name": "Cygames",
+      "order": 0,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "roles": [
+        "原作"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "导演／角色设计／色彩设计／总作画监督",
+      "name": "宮嶋星矢",
+      "order": 1,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督・キャラクターデザイン・色彩設計・総作画監督",
+      "roles": [
+        "导演",
+        "角色设计",
+        "色彩设计",
+        "总作画监督"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "剧本总监",
+      "name": "三岳真希",
+      "order": 2,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-三岳真希",
+      "role_raw": "シナリオディレクター",
+      "roles": [
+        "剧本总监"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "剧本监修",
+      "name": "松野芽衣子",
+      "order": 3,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-松野芽衣子",
+      "role_raw": "シナリオ監修",
+      "roles": [
+        "剧本监修"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "剧本监修",
+      "name": "髙橋沙織",
+      "order": 3,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-髙橋沙織",
+      "role_raw": "シナリオ監修",
+      "roles": [
+        "剧本监修"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "系列构成",
+      "name": "市川十億衛門",
+      "order": 4,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-市川十億衛門",
+      "role_raw": "シリーズ構成",
+      "roles": [
+        "系列构成"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "脚本",
+      "name": "望月清一郎",
+      "order": 5,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-望月清一郎",
+      "role_raw": "脚本",
+      "roles": [
+        "脚本"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "角色设计监修",
+      "name": "橋野翼",
+      "order": 6,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-橋野翼",
+      "role_raw": "キャラクターデザイン監修",
+      "roles": [
+        "角色设计监修"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "角色设计监修",
+      "name": "兼髙瑞穂",
+      "order": 6,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-兼髙瑞穂",
+      "role_raw": "キャラクターデザイン監修",
+      "roles": [
+        "角色设计监修"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "美术监督",
+      "name": "山本陽一郎",
+      "order": 7,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-山本陽一郎",
+      "role_raw": "美術監督",
+      "roles": [
+        "美术监督"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "摄影监督",
+      "name": "大図佑",
+      "order": 8,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影監督",
+      "roles": [
+        "摄影监督"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "音乐",
+      "name": "田山里奈(イマジン)",
+      "order": 9,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "entity_type": "unresolved",
+      "role_raw": "音楽",
+      "roles": [
+        "音乐"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "音乐制片人",
+      "name": "本田晃弘",
+      "order": 10,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-本田晃弘",
+      "role_raw": "音楽プロデューサー",
+      "roles": [
+        "音乐制片人"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "音响监督",
+      "name": "神保直史",
+      "order": 11,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-神保直史",
+      "role_raw": "音響監督",
+      "roles": [
+        "音响监督"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "音响效果",
+      "name": "北方将実",
+      "order": 12,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "person_id": "staff-北方将実",
+      "role_raw": "音響効果",
+      "roles": [
+        "音响效果"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "音响制作",
+      "name": "REMAX",
+      "order": 13,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "organization": "REMAX",
+      "role_raw": "音響制作",
+      "roles": [
+        "音响制作"
+      ],
+      "group_raw": "",
+      "group": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "unit_id": "anime-umayuru-fullgate-e04",
+      "role": "动画制作",
+      "name": "AtoriE",
+      "order": 14,
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "auto_source": true,
+      "organization": "AtoriE",
+      "role_raw": "アニメーション制作",
+      "roles": [
+        "动画制作"
+      ],
+      "group_raw": "",
+      "group": ""
     }
   ],
   "people": [
@@ -529697,7 +530163,7 @@
         "剧本监修"
       ],
       "work_count": 3,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-境宗久",
@@ -530358,7 +530824,7 @@
         "剧本总监"
       ],
       "work_count": 2,
-      "unit_count": 7
+      "unit_count": 8
     },
     {
       "id": "staff-梶﨑聖賀",
@@ -530471,7 +530937,7 @@
         "角色设计监修"
       ],
       "work_count": 3,
-      "unit_count": 30
+      "unit_count": 31
     },
     {
       "id": "staff-白佐木和馬",
@@ -530573,7 +531039,7 @@
         "音乐"
       ],
       "work_count": 3,
-      "unit_count": 31
+      "unit_count": 32
     },
     {
       "id": "staff-神保直史",
@@ -530617,7 +531083,7 @@
         "音响监督"
       ],
       "work_count": 3,
-      "unit_count": 31
+      "unit_count": 32
     },
     {
       "id": "staff-宮嶋星矢",
@@ -530690,7 +531156,7 @@
         "作画监督"
       ],
       "work_count": 3,
-      "unit_count": 51
+      "unit_count": 52
     },
     {
       "id": "staff-髙橋沙織",
@@ -530706,7 +531172,7 @@
         "剧本监修"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-市川十億衛門",
@@ -530723,7 +531189,7 @@
         "脚本"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-兼髙瑞穂",
@@ -530739,7 +531205,7 @@
         "角色设计监修"
       ],
       "work_count": 1,
-      "unit_count": 3
+      "unit_count": 4
     },
     {
       "id": "staff-大図佑",
@@ -530806,7 +531272,7 @@
         "背景"
       ],
       "work_count": 3,
-      "unit_count": 51
+      "unit_count": 52
     },
     {
       "id": "staff-加藤慶久",
@@ -530870,7 +531336,7 @@
         "音响效果"
       ],
       "work_count": 3,
-      "unit_count": 31
+      "unit_count": 32
     },
     {
       "id": "staff-小島明日香",
@@ -557943,8 +558409,8 @@
       "roles": [
         "脚本"
       ],
-      "work_count": 1,
-      "unit_count": 7
+      "work_count": 2,
+      "unit_count": 8
     },
     {
       "id": "staff-鈴森ゆみ",
@@ -568675,7 +569141,7 @@
         "美术监督"
       ],
       "work_count": 1,
-      "unit_count": 2
+      "unit_count": 3
     },
     {
       "id": "staff-福盛博一",
@@ -588015,6 +588481,20 @@
       "label": "第 24 话·单集画面",
       "url": "https://umamusu.wiki/D_On_The_Beach?",
       "observed_at": "2026-10-13"
+    },
+    {
+      "id": "official-auto-anime-umayuru-fullgate-e04",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/4/",
+      "label": "官方剧集资料",
+      "kind": "official",
+      "observed_at": "2026-10-25"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e04",
+      "kind": "official_youtube",
+      "label": "第4话官方视频与公开时间",
+      "url": "https://www.youtube.com/watch?v=qRdCSqwkg5M",
+      "observed_at": "2026-10-25"
     }
   ]
 }

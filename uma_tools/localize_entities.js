@@ -49,7 +49,7 @@ function sourceRecords(root, options = {}) {
   }
   const units = readJson(path.join(data, 'anime/units.json'), {});
   for (const series of units.series || []) for (const [number, detail] of Object.entries(series.details || {})) {
-    if (detail.summary_ja) records.push({ key: `anime-episode:${series.work_id}:${number}`, entity_type: 'anime_episode', entity_id: `${series.work_id}:${number}`, file: 'units', work_id: series.work_id, number, summary_ja: detail.summary_ja, summary_zh: detail.summary_zh || '' });
+    if (detail.summary_ja || detail.title_ja) records.push({ key: `anime-episode:${series.work_id}:${number}`, entity_type: 'anime_episode', entity_id: `${series.work_id}:${number}`, file: 'units', work_id: series.work_id, number, summary_ja: detail.summary_ja || '', summary_zh: detail.summary_zh || '', ...(detail.title_ja ? { title_ja: detail.title_ja, title_zh: detail.title_zh || (series.titles_zh || [])[Number(number)-1] || '' } : {}) });
   }
   const detail = readWindow(path.join(data, 'character_detail_data.js'), 'CHAR_DETAIL');
   for (const [id, row] of Object.entries(detail)) {

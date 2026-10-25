@@ -1,8 +1,146 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-11T21:04:32+00:00",
+  "observed_at": "2026-10-25T08:59:35+00:00",
   "source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/",
   "units": [
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "number": 4,
+      "title_ja": "ハロウィンのお支度！",
+      "summary_ja": "ハロウィンの仮装コンテストに向け、張り切るサクラローレル。\n一方、ハロウィンの楽しみ方に悩むサクラチトセオーは準備の様子を見て回る―",
+      "cast": [
+        {
+          "fieldId": "cast_staff",
+          "title": "ミホノブルボン",
+          "name": "長谷川育美"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "ライスシャワー",
+          "name": "石見舞菜香"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "マチカネタンホイザ",
+          "name": "遠野ひかる"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "サクラローレル",
+          "name": "真野美月"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "サムソンビッグ",
+          "name": "根本京里"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "ロイスアンドロイス",
+          "name": "田辺留依"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "サクラチトセオー",
+          "name": "明智璃子"
+        }
+      ],
+      "staff": [
+        {
+          "fieldId": "cast_staff",
+          "title": "原作",
+          "name": "Cygames"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "監督・キャラクターデザイン・<br>色彩設計・総作画監督",
+          "name": "宮嶋星矢"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "シナリオディレクター",
+          "name": "三岳真希"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "シナリオ監修",
+          "name": "松野芽衣子<span class=\"is-PC\"> </span><br class=\"is-SP\">髙橋沙織"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "シリーズ構成",
+          "name": "市川十億衛門"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "脚本",
+          "name": "望月清一郎"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "キャラクターデザイン監修",
+          "name": "橋野翼<span class=\"is-PC\"> </span><br class=\"is-SP\">兼髙瑞穂"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "美術監督",
+          "name": "山本陽一郎"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "撮影監督",
+          "name": "大図佑"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "音楽",
+          "name": "田山里奈(イマジン)"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "音楽プロデューサー",
+          "name": "本田晃弘"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "音響監督",
+          "name": "神保直史"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "音響効果",
+          "name": "北方将実"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "音響制作",
+          "name": "REMAX"
+        },
+        {
+          "fieldId": "cast_staff",
+          "title": "アニメーション制作",
+          "name": "AtoriE"
+        }
+      ],
+      "stills": [
+        "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg",
+        "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/0fdc1dafef7d4b8ba299f64257970ccf/UFG_04_02.jpg",
+        "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/2d196806ca36410c9b4af65527c7db3e/UFG_04_03.jpg",
+        "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/b75132df73b1482a9db1ea58e8bf0091/UFG_04_04.jpg",
+        "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/333e7058cf324eb286cc7a4e8dd0f7eb/UFG_04_05.jpg"
+      ],
+      "youtube_id": "qRdCSqwkg5M",
+      "source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/4/",
+      "field_status": {
+        "title_ja": "observed",
+        "summary_ja": "observed",
+        "staff_ja": "unknown",
+        "cast": "observed",
+        "staff": "observed",
+        "music": "unknown",
+        "stills": "observed"
+      }
+    },
     {
       "work_id": "anime-umayuru-fullgate",
       "number": 3,

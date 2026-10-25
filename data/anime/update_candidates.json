@@ -1,12 +1,176 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-11T21:04:32+00:00",
+  "observed_at": "2026-10-25T08:59:35+00:00",
   "candidates": [
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-s1-bahamut",
+      "work_id": "anime-s1",
+      "unit_ids": [],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "auth_or_region",
+        "http_status": 403
+      },
+      "error": "Forbidden"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-s2-bahamut",
+      "work_id": "anime-s2",
+      "unit_ids": [],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "auth_or_region",
+        "http_status": 403
+      },
+      "error": "Forbidden"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anniversary-youtube",
+      "work_id": "anime-1st-anniversary",
+      "unit_ids": [
+        "anime-1st-anniversary-e01"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-s3-bahamut",
+      "work_id": "anime-s3",
+      "unit_ids": [],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "auth_or_region",
+        "http_status": 403
+      },
+      "error": "Forbidden"
+    },
     {
       "kind": "watch_resource_status_changed",
       "resource_id": "watch-cingray-bahamut",
       "work_id": "anime-cinderella-gray",
       "unit_ids": [],
+      "current": {
+        "status": "transient",
+        "http_status": null
+      },
+      "observed": {
+        "status": "auth_or_region",
+        "http_status": 403
+      },
+      "error": "Forbidden"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anime-umayuru-e05",
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e05"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anime-umayuru-e07",
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e07"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anime-umayuru-e08",
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e08"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anime-umayuru-e13",
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e13"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-anime-umayuru-e16",
+      "work_id": "anime-umayuru",
+      "unit_ids": [
+        "anime-umayuru-e16"
+      ],
+      "current": {
+        "status": "reachable",
+        "http_status": 200
+      },
+      "observed": {
+        "status": "transient",
+        "http_status": null
+      },
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    },
+    {
+      "kind": "watch_resource_status_changed",
+      "resource_id": "watch-official-anime-rttt-e03",
+      "work_id": "anime-rttt",
+      "unit_ids": [
+        "anime-rttt-e03"
+      ],
       "current": {
         "status": "reachable",
         "http_status": 200
@@ -21,7 +185,7 @@
   "observation_errors": [
     {
       "source": "watch-links",
-      "error": "1 link checks were transient or unknown"
+      "error": "7 link checks were transient or unknown"
     }
   ],
   "accepted_coverage": {
@@ -426,40 +590,40 @@
       }
     },
     "anime-umayuru-fullgate": {
-      "units": 3,
+      "units": 4,
       "fields": {
         "title_ja": {
-          "present": 3,
+          "present": 4,
           "confirmed_empty": 0,
           "unknown": 0
         },
         "summary_ja": {
-          "present": 3,
+          "present": 4,
           "confirmed_empty": 0,
           "unknown": 0
         },
         "music": {
           "present": 3,
           "confirmed_empty": 0,
-          "unknown": 0
+          "unknown": 1
         },
         "cast": {
-          "present": 3,
+          "present": 4,
           "confirmed_empty": 0,
           "unknown": 0
         },
         "staff": {
           "present": 3,
           "confirmed_empty": 0,
-          "unknown": 0
+          "unknown": 1
         },
         "official_watch": {
-          "present": 3,
+          "present": 4,
           "confirmed_empty": 0,
           "unknown": 0
         },
         "hq_stills": {
-          "present": 3,
+          "present": 4,
           "confirmed_empty": 0,
           "unknown": 0
         }

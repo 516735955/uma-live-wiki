@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-049c306246220113",
-  "generated_at": "2026-10-13T00:00:00+08:00",
+  "build_id": "anime-2ef1074087f23bb2",
+  "generated_at": "2026-10-25T00:00:00+08:00",
   "targets": {
     "event": {
       "eventernote-2018-03-25-3": [
@@ -6183,6 +6183,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-matikanetannhauser-va-0161",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネタンホイザ",
+          "voice_actor_id": "va-0161",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "meishodoto": [
@@ -12981,6 +12992,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-royceandroyce-va-0120",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ロイスアンドロイス",
+          "voice_actor_id": "va-0120",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "zankan_koukou": [
@@ -16072,6 +16094,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-riceshower-va-0129",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "mejiropalmer": [
@@ -16307,6 +16340,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-mihonobourbon-va-0169",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ミホノブルボン",
+          "voice_actor_id": "va-0169",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "hishiakebono": [
@@ -17135,6 +17179,45 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e14",
           "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "sakuralaurel": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-sakuralaurel-va-0125",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラローレル",
+          "voice_actor_id": "va-0125",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "samsonbig": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-samsonbig-va-0099",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サムソンビッグ",
+          "voice_actor_id": "va-0099",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "sakurachitoseo": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-sakurachitoseo-va-0083",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラチトセオー",
+          "voice_actor_id": "va-0083",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ]
     },
@@ -22898,6 +22981,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-matikanetannhauser-va-0161",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "マチカネタンホイザ",
+          "voice_actor_id": "va-0161",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0039": [
@@ -29806,6 +29900,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s3-e13",
           "work_id": "anime-s3"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-royceandroyce-va-0120",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ロイスアンドロイス",
+          "voice_actor_id": "va-0120",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0115": [
@@ -32897,6 +33002,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-riceshower-va-0129",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ライスシャワー",
+          "voice_actor_id": "va-0129",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0004": [
@@ -33132,6 +33248,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-mihonobourbon-va-0169",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ミホノブルボン",
+          "voice_actor_id": "va-0169",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0097": [
@@ -33962,6 +34089,45 @@
           "source_type": "anime_unit",
           "source_id": "anime-cinderella-gray-e14",
           "work_id": "anime-cinderella-gray"
+        }
+      ],
+      "va-0125": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-sakuralaurel-va-0125",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラローレル",
+          "voice_actor_id": "va-0125",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0099": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-samsonbig-va-0099",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サムソンビッグ",
+          "voice_actor_id": "va-0099",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0083": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-auto-cast-sakurachitoseo-va-0083",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サクラチトセオー",
+          "voice_actor_id": "va-0083",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
         }
       ]
     },

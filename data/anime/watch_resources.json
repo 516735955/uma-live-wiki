@@ -3859,6 +3859,21 @@
       "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
       "source_ref": "official-story-anime-umayuru-fullgate-e03",
       "verified_at": "2026-10-12"
+    },
+    {
+      "id": "watch-auto-anime-umayuru-fullgate-e04",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e04"
+      },
+      "url": "https://www.youtube.com/watch?v=qRdCSqwkg5M",
+      "platform": "youtube",
+      "authority": "official",
+      "status": "active",
+      "access": "free",
+      "verified_at": "2026-10-25",
+      "content_type": "full_episode",
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04"
     }
   ]
 }
