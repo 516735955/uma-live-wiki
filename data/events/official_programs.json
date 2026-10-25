@@ -1,17 +1,19 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-25T07:23:47+00:00",
+  "refreshed_at": "2026-10-25T21:31:55+00:00",
   "coverage": {
-    "official_youtube_refresh": "verified",
+    "official_youtube_refresh": "metadata_recheck_pending",
     "source_errors": [],
-    "metadata_recheck_pending": [],
+    "metadata_recheck_pending": [
+      "official video metadata unavailable: 402qxqFvifg: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
+    ],
     "expected_regular_episodes": 125,
     "records": 250,
     "source_verified_regular_episodes": 125,
     "metadata_pending_ids": [],
-    "metadata_candidate_count": 174,
-    "metadata_batch_count": 174,
+    "metadata_candidate_count": 3,
+    "metadata_batch_count": 3,
     "metadata_pending_video_ids": [],
     "pakatube_character_programs": 89,
     "official_special_programs": 30
@@ -877,7 +879,7 @@
       "date": "2026-04-18",
       "video_id": "RYLpUts_K74",
       "url": "https://www.youtube.com/watch?v=RYLpUts_K74",
-      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
       "duration": 352,
       "cast_status": "character_only",
       "cast": [],
@@ -894,7 +896,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771789.7442234,
+      "metadata_checked_at": 1792817257.0921142,
       "summary_translation_status": "stale"
     },
     {
@@ -9735,7 +9737,7 @@
       "media": [],
       "source_title": "「ぱかライブTV' #8」は10月24日20時に放送！新ウマ娘や新育成シナリオの情報をお届け！",
       "summary_translation_status": "stale",
-      "metadata_checked_at": 1792855101.2649095,
+      "metadata_checked_at": 1792817266.7713993,
       "broadcast_time": "20:00",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "announced",
@@ -16730,6 +16732,11 @@
           "kind": "official_youtube",
           "label": "官方 YouTube",
           "url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "节目公开时间变更追记",
+          "url": "https://umamusume.jp/news/detail?id=3424"
         }
       ],
       "media": [],

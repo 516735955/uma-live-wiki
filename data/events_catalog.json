@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T16:09:53+00:00",
+  "generated_at": "2026-10-25T21:36:30+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -3019,7 +3019,7 @@
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
       "image_source": {
         "kind": "fallback_pending_artwork",
         "url": "https://umamusume.lantis.jp/live/1432/",
@@ -4709,7 +4709,7 @@
           "id_aliases": [],
           "setlist_status": "none",
           "broadcast_date": "2026-10-24",
-          "source_time_text": "1792837749",
+          "source_time_text": "1792837800",
           "broadcast_time_zone": "Asia/Tokyo"
         }
       ],
@@ -8679,10 +8679,7 @@
           ],
           "cast": [],
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-09-11",
-          "publication_source_url": "https://www.youtube.com/watch?v=fTBGZ3_vA7w"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -8902,15 +8899,13 @@
             "katsuragiace"
           ],
           "cast": [],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM",
           "source_time_text": "1787997606",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-08-29",
-          "publication_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -9084,10 +9079,7 @@
           "broadcast_time_kind": "announced",
           "id_aliases": [],
           "setlist_status": "none",
-          "schedule_note": "原定19:00，官方8月28日18:30追记改为20:00公开。",
-          "published_time": "20:00",
-          "published_date": "2026-08-28",
-          "publication_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
+          "schedule_note": "原定19:00，官方8月28日18:30追记改为20:00公开。"
         }
       ],
       "media": [
@@ -12788,9 +12780,7 @@
           "source_time_text": "1782640241",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "broadcast_date": "2026-06-28",
-          "broadcast_time_zone": "Asia/Tokyo"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -17345,15 +17335,13 @@
             "epiphaneia"
           ],
           "cast": [],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw",
           "source_time_text": "1780740006",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-06-06",
-          "publication_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -19698,7 +19686,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
+      "image": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
       "summary": "目白善信与跳舞城赢得空气曲棍球双打比赛冠军，一起举杯庆祝。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -19852,10 +19840,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-04-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -20728,15 +20713,13 @@
             "victoirepisa"
           ],
           "cast": [],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE",
           "source_time_text": "1774173606",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-03-22",
-          "publication_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -20888,10 +20871,7 @@
           ],
           "cast": [],
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-03-01",
-          "publication_source_url": "https://www.youtube.com/watch?v=evayysKQ-mY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -21737,10 +21717,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2026-02-13",
-          "publication_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -22115,15 +22092,13 @@
             "mejiropalmer"
           ],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0",
           "source_time_text": "1769943606",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2026-02-01",
-          "publication_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -22508,15 +22483,13 @@
             "mejiropalmer"
           ],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40",
           "source_time_text": "1769857206",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2026-01-31",
-          "publication_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -24365,9 +24338,7 @@
           "source_time_text": "1766919311",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "broadcast_date": "2025-12-28",
-          "broadcast_time_zone": "Asia/Tokyo"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -25987,15 +25958,13 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg",
           "source_time_text": "1764154806",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2025-11-26",
-          "publication_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -26072,15 +26041,13 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY",
           "source_time_text": "1764068406",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2025-11-25",
-          "publication_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -26157,15 +26124,13 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM",
           "source_time_text": "1763982007",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2025-11-24",
-          "publication_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -27681,15 +27646,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
           "source_time_text": "1763114406",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-11-14",
-          "publication_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -32775,10 +32738,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-10-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -34428,10 +34388,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-09-12",
-          "publication_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -35949,15 +35906,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
           "source_time_text": "1754647206",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-08-08",
-          "publication_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -36031,15 +35986,13 @@
             "goldcity"
           ],
           "cast": [],
+          "broadcast_time": "18:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U",
           "source_time_text": "1754470806",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "18:00",
-          "published_date": "2025-08-06",
-          "publication_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -38915,9 +38868,7 @@
           "source_time_text": "1751540111",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "broadcast_date": "2025-07-03",
-          "broadcast_time_zone": "Asia/Tokyo"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -38997,15 +38948,13 @@
             "tamamocross"
           ],
           "cast": [],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI",
           "source_time_text": "1751104806",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-06-28",
-          "publication_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -39604,15 +39553,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
           "source_time_text": "1750413606",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-06-20",
-          "publication_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -44279,10 +44226,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-05-16",
-          "publication_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -45329,10 +45273,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-04-11",
-          "publication_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -47435,10 +47376,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-02-21",
-          "publication_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -47968,15 +47906,13 @@
             "currenchan"
           ],
           "cast": [],
+          "broadcast_time": "20:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM",
           "source_time_text": "1739530806",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "20:00",
-          "published_date": "2025-02-14",
-          "publication_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -48449,10 +48385,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2025-01-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -52838,10 +52771,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-12-13",
-          "publication_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -53727,15 +53657,13 @@
             "taninogimlet"
           ],
           "cast": [],
+          "broadcast_time": "18:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY",
           "source_time_text": "1732352406",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "18:00",
-          "published_date": "2024-11-23",
-          "publication_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -56517,10 +56445,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-11-15",
-          "publication_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -61870,10 +61795,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-10-11",
-          "publication_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -66610,10 +66532,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-09-06",
-          "publication_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -69259,10 +69178,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-08-16",
-          "publication_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -71364,10 +71280,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-07-13",
-          "publication_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -73786,10 +73699,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-06-14",
-          "publication_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -75613,10 +75523,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-05-09",
-          "publication_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -76561,10 +76468,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-04-19",
-          "publication_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -82324,10 +82228,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-03-15",
-          "publication_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -83967,15 +83868,13 @@
             "goldship"
           ],
           "cast": [],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk",
           "source_time_text": "1707991209",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-02-15",
-          "publication_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -88858,10 +88757,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2024-01-12",
-          "publication_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -90510,10 +90406,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-12-22",
-          "publication_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -92607,10 +92500,7 @@
           "time_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-11-22",
-          "publication_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -95104,15 +94994,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
           "source_time_text": "1697191207",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-10-13",
-          "publication_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -99824,15 +99712,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
           "source_time_text": "1693821612",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-09-04",
-          "publication_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -100967,15 +100853,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
           "source_time_text": "1691143209",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-08-04",
-          "publication_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -105649,15 +105533,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
           "source_time_text": "1686909609",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-06-16",
-          "publication_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -106109,15 +105991,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
           "source_time_text": "1683885611",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-05-12",
-          "publication_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -107342,15 +107222,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
           "source_time_text": "1681466407",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-04-14",
-          "publication_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -108745,15 +108623,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
           "source_time_text": "1679047210",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-03-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -109397,15 +109273,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
           "source_time_text": "1676628008",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-02-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -116270,15 +116144,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
           "source_time_text": "1673690410",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2023-01-14",
-          "publication_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -117720,15 +117592,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
           "source_time_text": "1671789611",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-12-23",
-          "publication_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -125145,15 +125015,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
           "source_time_text": "1666173611",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-10-19",
-          "publication_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -126336,15 +126204,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
           "source_time_text": "1663322412",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-09-16",
-          "publication_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -127418,15 +127284,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
           "source_time_text": "1661508012",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-08-26",
-          "publication_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -130444,15 +130308,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
           "source_time_text": "1657879210",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-07-15",
-          "publication_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -130974,15 +130836,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
           "source_time_text": "1655546441",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-06-18",
-          "publication_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -132244,15 +132104,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
           "source_time_text": "1652954413",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-05-19",
-          "publication_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -136645,15 +136503,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:01",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
           "source_time_text": "1650448866",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:01",
-          "published_date": "2022-04-20",
-          "publication_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -138367,15 +138223,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
           "source_time_text": "1647511211",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-03-17",
-          "publication_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -142570,15 +142424,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
           "source_time_text": "1645178413",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-02-18",
-          "publication_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -143713,15 +143565,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
           "source_time_text": "1642586413",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2022-01-19",
-          "publication_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -145365,15 +145215,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
           "source_time_text": "1640340013",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-12-24",
-          "publication_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -148106,15 +147954,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
           "source_time_text": "1636624813",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-11-11",
-          "publication_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -149459,15 +149305,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
           "source_time_text": "1634292014",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-10-15",
-          "publication_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -150469,15 +150313,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
           "source_time_text": "1632304814",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-09-22",
-          "publication_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -154013,15 +153855,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
           "source_time_text": "1629885613",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-08-25",
-          "publication_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -154920,15 +154760,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
           "source_time_text": "1627725613",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-07-31",
-          "publication_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -156348,15 +156186,13 @@
               ]
             }
           ],
+          "broadcast_time": "19:00",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
           "source_time_text": "1625220012",
           "broadcast_time_kind": "metadata",
           "id_aliases": [],
-          "setlist_status": "none",
-          "published_time": "19:00",
-          "published_date": "2021-07-02",
-          "publication_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE"
+          "setlist_status": "none"
         }
       ],
       "media": [
@@ -189708,5 +189544,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "21c21371918af6f8843d"
+  "build_id": "ba82871448ae9cf7c5be"
 }
