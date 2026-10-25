@@ -92,6 +92,108 @@
           ]
         }
       ]
+    },
+    {
+      "id": "stage-sprinters-story-2023-cancelled",
+      "title": "舞台《Sprinters’ Story》取消公演",
+      "date": "2023-01-16",
+      "end_date": "2023-01-26",
+      "kind": "onsite",
+      "mode": "onsite",
+      "venue": "品川プリンスホテル ステラボール",
+      "source_kind": "official_announcement",
+      "source_url": "https://umamusume-stage.com/news/0118a/",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "1月16日至17日取消公告",
+          "url": "https://umamusume-stage.com/news/0116a/"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "1月19日至26日取消公告",
+          "url": "https://umamusume-stage.com/news/0118a/"
+        }
+      ],
+      "thumbnail": "https://umamusume-stage.com/wp/wp-content/themes/umamusume_stage/images/kv_v2_pc_wide.jpg",
+      "summary": "由于公演相关人员身体不适及新冠感染，1月16日至17日的3场、1月19日至26日的12场演出取消。保留原定日期与开演时刻。",
+      "sessions": [
+        {
+          "date": "2023-01-16",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-17",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-17",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-19",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-19",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-20",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-21",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-21",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-22",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-22",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-23",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-24",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-24",
+          "label": "夜场",
+          "start_time": "18:00"
+        },
+        {
+          "date": "2023-01-26",
+          "label": "日场",
+          "start_time": "13:00"
+        },
+        {
+          "date": "2023-01-26",
+          "label": "夜场",
+          "start_time": "18:00"
+        }
+      ]
     }
   ],
   "stable_event_ids": {
@@ -262,25 +364,81 @@
       ]
     },
     "live-other-2023-01-15-1-15-18-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 18:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-15-1-15-13-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/15 13:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-27-1-27-18-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/27 18:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-28-1-28-13-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 13:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-28-1-28-18-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/28 18:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-29-1-29-13-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 13:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2023-01-29-1-29-18-00": {
-      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00"
+      "title": "舞台「ウマ娘 プリティーダービー」～Sprinters’ Story～ 1/29 18:00",
+      "venue": "品川プリンスホテル ステラボール",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "舞台官方公演日程",
+          "url": "https://umamusume-stage.com/sc_ticket/"
+        }
+      ]
     },
     "live-other-2019-04-14-1": {
       "title": "ぱかラジッ！ ～ウマ娘広報部～ 公開録音 平成最後のプレシャスプリティーパーティー 1部"
@@ -549,6 +707,477 @@
           "url": "https://ts7th.umamusume.jp/"
         }
       ]
+    },
+    "live-other-2024-02-25-2024-day2": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://pia-arena-mm.jp/event/3824.html"
+        }
+      ],
+      "date": "2024-02-24",
+      "end_date": "2024-02-24",
+      "session_patches": {
+        "live-other-2024-02-25-2024-day2-session-1": {
+          "date": "2024-02-24",
+          "end_date": "2024-02-24",
+          "time_source": "official_announcement",
+          "time_source_url": "https://pia-arena-mm.jp/event/3824.html",
+          "source_time_text": "2024年2月24日 15:00開場／16:00開演"
+        }
+      }
+    },
+    "live-other-2023-12-06-2023-fns-1": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://www.fujitv.co.jp/FNS/2023/"
+        }
+      ],
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-cd-2022-09-25-winning-live-07": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/320/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2022-09-25-winning-live-07-session-1": {
+          "broadcast_time": "18:30",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/320/",
+          "source_time_text": "2022-09-25 18:30 配信予定"
+        }
+      }
+    },
+    "live-cd-2022-07-17-winning-live-05-winning-live-06": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/386/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2022-07-17-winning-live-05-winning-live-06-session-1": {
+          "broadcast_time": "16:00",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/386/",
+          "source_time_text": "2022-07-17 16:00 配信予定"
+        }
+      }
+    },
+    "live-cd-2022-05-22-cd-winning-live-04": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/389/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2022-05-22-cd-winning-live-04-session-1": {
+          "broadcast_time": "18:30",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/389/",
+          "source_time_text": "2022-05-22 18:30 配信予定"
+        }
+      }
+    },
+    "live-cd-2022-04-02-cd-winning-live-03": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/discography/winning-live-03/"
+        }
+      ]
+    },
+    "live-other-2022-03-20-sp": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://www.014014.jp/news/4275"
+        }
+      ],
+      "date": "2022-03-21",
+      "end_date": "2022-03-21",
+      "source_date": "2022-03-20",
+      "session_patches": {
+        "live-other-2022-03-20-sp-session-1": {
+          "date": "2022-03-21",
+          "broadcast_time": "00:30",
+          "start_time": null,
+          "end_time": "01:20",
+          "time_source": "official_announcement",
+          "time_source_url": "https://www.014014.jp/news/4275",
+          "source_time_text": "2022年3月20日（日）24:30～25:20"
+        }
+      },
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-cd-2021-11-06-winning-live-02": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/441/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2021-11-06-winning-live-02-session-1": {
+          "broadcast_time": "18:30",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/441/",
+          "source_time_text": "2021-11-06 18:30 配信予定"
+        }
+      }
+    },
+    "live-cd-2021-11-06-starting-gate-unit-song-collection": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/441/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2021-11-06-starting-gate-unit-song-collection-session-1": {
+          "broadcast_time": "16:00",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/441/",
+          "source_time_text": "2021-11-06 16:00 配信予定"
+        }
+      }
+    },
+    "live-cd-2021-08-04-title-3968b924ad22": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/444/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2021-08-04-title-3968b924ad22-session-1": {
+          "broadcast_time": "20:00",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/444/",
+          "source_time_text": "2021-08-04 20:00 配信予定"
+        }
+      }
+    },
+    "live-cd-2021-04-04-winning-live-01": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/469/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2021-04-04-winning-live-01-session-1": {
+          "broadcast_time": "18:30",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/469/",
+          "source_time_text": "2021-04-04 18:30 配信予定"
+        }
+      }
+    },
+    "live-cd-2021-04-04-tv-season-2-animation-derby-season-2-vol": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "活动内容与日程公告",
+          "url": "https://umamusume.lantis.jp/live/469/"
+        }
+      ],
+      "session_patches": {
+        "live-cd-2021-04-04-tv-season-2-animation-derby-season-2-vol-session-1": {
+          "broadcast_time": "15:00",
+          "start_time": null,
+          "time_precision": "minute",
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/live/469/",
+          "source_time_text": "2021-04-04 15:00 配信予定"
+        }
+      }
+    },
+    "eventernote-2023-04-28": {
+      "session_patches": {
+        "eventernote-2023-04-28-session-1": {
+          "start_time": null,
+          "end_time": null,
+          "time_precision": "date",
+          "time_source_url": "https://www.eventernote.com/events/338560",
+          "source_time_text": "最終レース終了後、準備が出来次第",
+          "schedule_note": "末场比赛结束后，准备就绪即开始"
+        }
+      }
+    },
+    "eventernote-2026-09-20-2": {
+      "session_patches": {
+        "eventernote-2026-09-20-2-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2025-09-14": {
+      "session_patches": {
+        "eventernote-2025-09-14-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2024-09-15-2": {
+      "session_patches": {
+        "eventernote-2024-09-15-2-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2025-10-12-2": {
+      "session_patches": {
+        "eventernote-2025-10-12-2-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2025-10-12": {
+      "session_patches": {
+        "eventernote-2025-10-12-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2024-10-13-2": {
+      "session_patches": {
+        "eventernote-2024-10-13-2-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2024-10-13": {
+      "session_patches": {
+        "eventernote-2024-10-13-session-1": {
+          "start_time_estimated": true
+        }
+      }
+    },
+    "eventernote-2026-08-01": {
+      "venue": "Northern Horse Park · 主竞技场",
+      "venue_raw": "Northern Horse Park · 主竞技场",
+      "session_patches": {
+        "eventernote-2026-08-01-session-1": {
+          "venue": "Northern Horse Park · 主竞技场",
+          "venue_id": "venue-northern-horsepark-main-arena"
+        }
+      }
+    },
+    "eventernote-2026-08-01-2": {
+      "venue": "Northern Horse Park · Palazzo Vega 小马表演馆",
+      "venue_raw": "Northern Horse Park · Palazzo Vega 小马表演馆",
+      "session_patches": {
+        "eventernote-2026-08-01-2-session-1": {
+          "venue": "Northern Horse Park · Palazzo Vega 小马表演馆",
+          "venue_id": "venue-northern-horsepark-pony-hall"
+        }
+      }
+    },
+    "stage-sprinters-story-2023-cancelled": {
+      "schedule_status": "cancelled",
+      "status_note": "1月16日至17日3场及1月19日至26日12场公演因相关人员身体不适及新冠感染取消。",
+      "status_source_url": "https://umamusume-stage.com/news/0118a/"
+    },
+    "eventernote-2023-09-24": {
+      "image": "https://www.banei-keiba.or.jp/data/ed/000000/11/0000001155/D9IoFdWx1691641119_m.jpg",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "带广赛马官方活动公告",
+          "url": "https://www.banei-keiba.or.jp/ed_detail.php?id=1155"
+        }
+      ]
+    },
+    "eventernote-2023-09-24-2": {
+      "image": "https://www.banei-keiba.or.jp/data/ed/000000/11/0000001155/D9IoFdWx1691641119_m.jpg",
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "带广赛马官方活动公告",
+          "url": "https://www.banei-keiba.or.jp/ed_detail.php?id=1155"
+        }
+      ]
+    },
+    "all-night-nippon-gold-001": {
+      "session_patches": {
+        "all-night-nippon-gold-001-session-1": {
+          "broadcast_time": "22:00",
+          "end_time": "24:00",
+          "time_precision": "minute",
+          "time_source_url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方播出公告",
+          "url": "https://www.allnightnippon.com/umamusume/umamusume_blog/20260428-105161/"
+        }
+      ]
+    },
+    "all-night-nippon-gold-002": {
+      "session_patches": {
+        "all-night-nippon-gold-002-session-1": {
+          "broadcast_time": "22:00",
+          "end_time": "24:00",
+          "time_precision": "minute",
+          "time_source_url": "https://news.1242.com/article/549311"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方播出公告",
+          "url": "https://news.1242.com/article/549311"
+        }
+      ]
+    },
+    "all-night-nippon-gold-003": {
+      "session_patches": {
+        "all-night-nippon-gold-003-session-1": {
+          "broadcast_time": "22:00",
+          "end_time": "24:00",
+          "time_precision": "minute",
+          "time_source_url": "https://umamusume.jp/news/detail?id=3415"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_broadcaster",
+          "label": "节目官方播出公告",
+          "url": "https://umamusume.jp/news/detail?id=3415"
+        }
+      ]
+    },
+    "official-special-paka-space-5th-event-new-gate": {
+      "session_patches": {
+        "official-special-paka-space-5th-event-new-gate-session-1": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://umamusume.jp/news/detail?id=1855",
+          "schedule_note": "预计19:00左右开始"
+        },
+        "official-special-paka-space-5th-event-new-gate-session-2": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://umamusume.jp/news/detail?id=1855",
+          "schedule_note": "预计19:00左右开始"
+        }
+      }
+    },
+    "official-special-paka-space-5th-event-yell": {
+      "session_patches": {
+        "official-special-paka-space-5th-event-yell-session-1": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://umamusume.jp/news/detail?id=1768",
+          "schedule_note": "预计19:00左右开始"
+        },
+        "official-special-paka-space-5th-event-yell-session-2": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://umamusume.jp/news/detail?id=1768",
+          "schedule_note": "预计19:00左右开始"
+        }
+      }
+    },
+    "official-special-20221130-tv-extra-stage": {
+      "session_patches": {
+        "official-special-20221130-tv-extra-stage-session-1": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://www.youtube.com/watch?v=l87gSEs_6f4"
+        },
+        "official-special-20221130-tv-extra-stage-session-2": {
+          "broadcast_time": "19:00",
+          "time_source_url": "https://www.youtube.com/watch?v=l87gSEs_6f4"
+        }
+      }
+    },
+    "official-special-20250706-title-c9fd71d65c11": {
+      "date": "2025-07-07",
+      "end_date": "2025-07-14",
+      "session_patches": {
+        "official-special-20250706-title-c9fd71d65c11-session-1": {
+          "date": "2025-07-07",
+          "source_date": "2025-07-06",
+          "broadcast_time": "01:55",
+          "end_time": "02:20",
+          "time_source_url": "https://umamusume.jp/news/detail?id=2638",
+          "source_time_text": "25:55 ～ 26:20"
+        },
+        "official-special-20250706-title-c9fd71d65c11-session-2": {
+          "date": "2025-07-14",
+          "source_date": "2025-07-13",
+          "broadcast_time": "01:55",
+          "end_time": "02:20",
+          "time_source_url": "https://ameblo.jp/tsubaki-factory/entry-12916324488.html",
+          "source_time_text": "25:55 ～ 26:20"
+        }
+      },
+      "sources_add": [
+        {
+          "kind": "official_performer",
+          "label": "出演者官方播出告知",
+          "url": "https://ameblo.jp/tsubaki-factory/entry-12916324488.html"
+        }
+      ]
+    },
+    "live-other-2022-07-16-2022": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2022-01-01-cdtv-2021-2022": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2021-12-01-2021-fns": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2021-10-09-and-more-fes-2021": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2021-10-06-fns": {
+      "kind": "official_program",
+      "mode": "online"
+    },
+    "live-other-2021-07-17-title-120f9f043a5b": {
+      "kind": "official_program",
+      "mode": "online"
     }
   },
   "event_aliases": {

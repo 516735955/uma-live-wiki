@@ -2,13 +2,43 @@
   "schema_version": 1,
   "venues": [
     {
+      "id": "venue-northern-horsepark-main-arena",
+      "raw": "Northern Horse Park · 主竞技场",
+      "display": "Northern Horse Park · 主竞技场",
+      "name_zh": "Northern Horse Park · 主竞技场",
+      "name_ja": "ノーザンホースパーク メインアリーナ",
+      "city": "苫小牧",
+      "country": "日本",
+      "kind": "venue",
+      "normalization_status": "reviewed_display",
+      "aliases": ["ノーザンホースパーク メインアリーナ"],
+      "sources": ["https://www.northern-horsepark.jp/northernm_hs/nm-event/451961/"]
+    },
+    {
+      "id": "venue-northern-horsepark-pony-hall",
+      "raw": "Northern Horse Park · Palazzo Vega 小马表演馆",
+      "display": "Northern Horse Park · Palazzo Vega 小马表演馆",
+      "name_zh": "Northern Horse Park · Palazzo Vega 小马表演馆",
+      "name_ja": "ノーザンホースパーク パラッツォ・ベガ ポニーショー会場",
+      "city": "苫小牧",
+      "country": "日本",
+      "kind": "venue",
+      "normalization_status": "reviewed_display",
+      "aliases": ["ノーザンホースパーク パラッツォ・ベガ"],
+      "sources": ["https://www.northern-horsepark.jp/northernm_hs/nm-event/451961/"]
+    },
+    {
       "id": "venue-国内外各所-ライブビュ-イング等",
       "raw": "!_国内外各所 (ライブビューイング等)",
       "display": "国内外各地（直播观览等）",
       "name_zh": "国内外各地（直播观览等）",
       "name_ja": "!_国内外各所 (ライブビューイング等)",
       "city": "",
-      "normalization_status": "region_placeholder"
+      "normalization_status": "region_placeholder",
+      "kind": "region",
+      "aliases": [
+        "!_国内外各所 (ライブビューイング等)"
+      ]
     },
     {
       "id": "venue-東京都内某所",
@@ -17,7 +47,11 @@
       "name_zh": "东京市内某处",
       "name_ja": "!_東京都内某所",
       "city": "",
-      "normalization_status": "region_placeholder"
+      "normalization_status": "region_placeholder",
+      "kind": "region",
+      "aliases": [
+        "!_東京都内某所"
+      ]
     },
     {
       "id": "venue-関東近郊",
@@ -26,7 +60,11 @@
       "name_zh": "关东近郊",
       "name_ja": "!_関東近郊",
       "city": "",
-      "normalization_status": "region_placeholder"
+      "normalization_status": "region_placeholder",
+      "kind": "region",
+      "aliases": [
+        "!_関東近郊"
+      ]
     },
     {
       "id": "venue-akihabaraゲ-マ-ズ本店",
@@ -34,8 +72,21 @@
       "display": "秋叶原 Gamers 本店",
       "name_zh": "秋叶原 Gamers 本店",
       "name_ja": "AKIHABARAゲーマーズ本店",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "AKIHABARAゲーマーズ本店",
+        "秋叶原 Gamers 本店"
+      ],
+      "address_ja": "101-0021 東京都千代田区外神田１丁目１４－１７宝山中央通りビル",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/25518"
+        }
+      ]
     },
     {
       "id": "venue-aichi-sky-expo",
@@ -43,8 +94,20 @@
       "display": "Aichi Sky Expo（爱知天空展览馆）",
       "name_zh": "Aichi Sky Expo（爱知天空展览馆）",
       "name_ja": "Aichi Sky Expo",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "常滑",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "Aichi Sky Expo",
+        "Aichi Sky Expo（爱知天空展览馆）"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.aichiskyexpo.com/access/"
+        }
+      ]
     },
     {
       "id": "venue-es-con-field-hokkaido",
@@ -52,26 +115,75 @@
       "display": "ES CON FIELD HOKKAIDO（北海道棒球场）",
       "name_zh": "ES CON FIELD HOKKAIDO（北海道棒球场）",
       "name_ja": "ES CON FIELD HOKKAIDO",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "北广岛",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ES CON FIELD HOKKAIDO",
+        "ES CON FIELD HOKKAIDO（北海道棒球场）"
+      ],
+      "address_ja": "〒061-1116 北海道北広島市Fビレッジ1 エスコンフィールドHOKKAIDO",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/13986"
+        }
+      ]
     },
     {
       "id": "venue-fcgビル",
       "raw": "FCGビル",
-      "display": "FCG 大楼",
-      "name_zh": "FCG 大楼",
+      "display": "富士电视台总部大楼（FCG）",
+      "name_zh": "富士电视台总部大楼（FCG）",
       "name_ja": "FCGビル",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "FCGビル",
+        "FCG 大楼"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.fujitv.co.jp/company/info/gaiyo.html"
+        }
+      ]
     },
     {
-      "id": "venue-gmoアリ-ナさいたま",
+      "id": "venue-さいたまス-パ-アリ-ナ",
       "raw": "GMOアリーナさいたま",
       "display": "GMO 埼玉竞技场",
       "name_zh": "GMO 埼玉竞技场",
       "name_ja": "GMOアリーナさいたま",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "埼玉",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-gmoアリ-ナさいたま"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "GMOアリーナさいたま",
+        "GMO 埼玉竞技场",
+        "さいたまスーパーアリーナ"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://group.gmo/en/news/article/849/"
+        }
+      ],
+      "display_history": [
+        {
+          "before": "2026-04-01",
+          "display": "埼玉超级竞技场",
+          "name_ja": "さいたまスーパーアリーナ",
+          "source_url": "https://group.gmo/en/news/article/849/"
+        }
+      ]
     },
     {
       "id": "venue-new-pier-hall",
@@ -79,8 +191,22 @@
       "display": "NEW PIER HALL（新码头大厅）",
       "name_zh": "NEW PIER HALL（新码头大厅）",
       "name_ja": "NEW PIER HALL",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "NEW PIER HALL",
+        "NEW PIER HALL（新码头大厅）",
+        "NEW PIER HALL(ニューピアホール)"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/1286"
+        }
+      ],
+      "address_ja": "〒105-0022 東京都港区海岸1丁目11-1 ニューピア竹芝ノースタワー1F"
     },
     {
       "id": "venue-new-pier-hall",
@@ -88,26 +214,64 @@
       "display": "NEW PIER HALL（新码头大厅）",
       "name_zh": "NEW PIER HALL（新码头大厅）",
       "name_ja": "NEW PIER HALL(ニューピアホール)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "NEW PIER HALL(ニューピアホール)",
+        "NEW PIER HALL（新码头大厅）",
+        "NEW PIER HALL"
+      ],
+      "address_ja": "〒105-0022 東京都港区海岸1丁目11-1 ニューピア竹芝ノースタワー1F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/1286"
+        }
+      ]
     },
     {
       "id": "venue-nhkホ-ル",
       "raw": "NHKホール",
-      "display": "NHK Hall（NHK音乐厅）",
-      "name_zh": "NHK Hall（NHK音乐厅）",
+      "display": "NHK 音乐厅",
+      "name_zh": "NHK 音乐厅",
       "name_ja": "NHKホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "NHKホール",
+        "NHK Hall（NHK音乐厅）"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.nhkso.or.jp/NHKSO_2025_26_Season_Concert_Program.pdf"
+        }
+      ]
     },
     {
       "id": "venue-peacock-theater",
       "raw": "Peacock Theater",
-      "display": "Peacock Theater（孔雀剧院）",
-      "name_zh": "Peacock Theater（孔雀剧院）",
+      "display": "孔雀剧院（Peacock Theater）",
+      "name_zh": "孔雀剧院（Peacock Theater）",
       "name_ja": "Peacock Theater",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "洛杉矶",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "Peacock Theater",
+        "Peacock Theater（孔雀剧院）"
+      ],
+      "country": "美国",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.lalive.com/play/peacock-theater"
+        }
+      ]
     },
     {
       "id": "venue-tbs放送センタ",
@@ -115,26 +279,63 @@
       "display": "TBS 广播中心",
       "name_zh": "TBS 广播中心",
       "name_ja": "TBS放送センター",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TBS放送センター",
+        "TBS 广播中心"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.tbsact.co.jp/company/overview/"
+        }
+      ]
     },
     {
       "id": "venue-tft-hall-1000",
       "raw": "TFT HALL 1000",
-      "display": "TFT HALL 1000",
-      "name_zh": "TFT HALL 1000",
+      "display": "TFT 大楼 1000 号厅",
+      "name_zh": "TFT 大楼 1000 号厅",
       "name_ja": "TFT HALL 1000",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TFT HALL 1000"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://dmo-tokyo-odaiba.jp/en/facilities/detail.php?id=100024"
+        }
+      ]
     },
     {
       "id": "venue-the-grand-hall",
       "raw": "THE GRAND HALL",
-      "display": "THE GRAND HALL（大堂）",
-      "name_zh": "THE GRAND HALL（大堂）",
+      "display": "品川大礼堂（THE GRAND HALL）",
+      "name_zh": "品川大礼堂（THE GRAND HALL）",
       "name_ja": "THE GRAND HALL",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "THE GRAND HALL",
+        "THE GRAND HALL（大堂）",
+        "品川グランドホール"
+      ],
+      "address_ja": "〒108-0075 東京都港区港南2丁目16-4 品川グランドセントラルタワー3F 品川ザ・グランドホール",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/650"
+        }
+      ]
     },
     {
       "id": "venue-tohoシネマズすすきの",
@@ -142,8 +343,21 @@
       "display": "TOHO Cinemas 薄野",
       "name_zh": "TOHO Cinemas 薄野",
       "name_ja": "TOHOシネマズすすきの",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "札幌",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOHOシネマズすすきの",
+        "TOHO Cinemas 薄野"
+      ],
+      "address_ja": "〒064-0804 北海道札幌市中央区南４条西４丁目１番地１ COCONO SUSUKINO 5F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/16019"
+        }
+      ]
     },
     {
       "id": "venue-tohoシネマズ六本木ヒルズ",
@@ -151,8 +365,21 @@
       "display": "TOHO Cinemas 六本木新城",
       "name_zh": "TOHO Cinemas 六本木新城",
       "name_ja": "TOHOシネマズ六本木ヒルズ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOHOシネマズ六本木ヒルズ",
+        "TOHO Cinemas 六本木新城"
+      ],
+      "address_ja": "〒106-0032 東京都港区六本木6丁目10-2 六本木ヒルズけやき坂コンプレックス内 TOHOシネマズ 六本木ヒルズ",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/350"
+        }
+      ]
     },
     {
       "id": "venue-tohoシネマズ新宿",
@@ -160,8 +387,21 @@
       "display": "TOHO Cinemas 新宿",
       "name_zh": "TOHO Cinemas 新宿",
       "name_ja": "TOHOシネマズ新宿",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOHOシネマズ新宿",
+        "TOHO Cinemas 新宿"
+      ],
+      "address_ja": "〒160-0021 東京都新宿区歌舞伎町1丁目19-1 新宿東宝ビル3F TOHOシネマズ 新宿",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/4570"
+        }
+      ]
     },
     {
       "id": "venue-tohoシネマズ日比谷",
@@ -169,8 +409,21 @@
       "display": "TOHO Cinemas 日比谷",
       "name_zh": "TOHO Cinemas 日比谷",
       "name_ja": "TOHOシネマズ日比谷",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOHOシネマズ日比谷",
+        "TOHO Cinemas 日比谷"
+      ],
+      "address_ja": "〒100-0006 東京都千代田区有楽町1丁目1-2 東京ミッドタウン日比谷4F TOHOシネマズ 日比谷",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9064"
+        }
+      ]
     },
     {
       "id": "venue-tohoシネマズ日比谷-スクリ-ン12-旧-tohoシネマズスカラ座",
@@ -178,8 +431,21 @@
       "display": "TOHO Cinemas 日比谷 12号厅（原 TOHO Cinemas 斯卡拉座）",
       "name_zh": "TOHO Cinemas 日比谷 12号厅（原 TOHO Cinemas 斯卡拉座）",
       "name_ja": "TOHOシネマズ日比谷 スクリーン12 (旧 TOHOシネマズスカラ座)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOHOシネマズ日比谷 スクリーン12 (旧 TOHOシネマズスカラ座)",
+        "TOHO Cinemas 日比谷 12号厅（原 TOHO Cinemas 斯卡拉座）"
+      ],
+      "address_ja": "〒100-0006 東京都千代田区有楽町1丁目1-3 東京宝塚ビルB1F TOHOシネマズ 日比谷",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/2749"
+        }
+      ]
     },
     {
       "id": "venue-tokyo-dome-city-hall",
@@ -187,8 +453,20 @@
       "display": "TOKYO DOME CITY HALL（东京巨蛋城剧场）",
       "name_zh": "TOKYO DOME CITY HALL（东京巨蛋城剧场）",
       "name_ja": "TOKYO DOME CITY HALL",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TOKYO DOME CITY HALL",
+        "TOKYO DOME CITY HALL（东京巨蛋城剧场）"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.tokyo-dome.co.jp/tdc-hall/access/?shem=rimspwouoe"
+        }
+      ]
     },
     {
       "id": "venue-tsutaya三軒茶屋店",
@@ -196,8 +474,21 @@
       "display": "TSUTAYA 三轩茶屋店",
       "name_zh": "TSUTAYA 三轩茶屋店",
       "name_ja": "TSUTAYA三軒茶屋店",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TSUTAYA三軒茶屋店",
+        "TSUTAYA 三轩茶屋店"
+      ],
+      "address_ja": "〒154-0004 東京都世田谷区太子堂4丁目1-1 キャロットタワー2F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/2226"
+        }
+      ]
     },
     {
       "id": "venue-twtc-hall-1-台北世界貿易中心展覽一館-世貿一館-台北世界貿易センタ-展示ホ-ル1号館",
@@ -205,17 +496,42 @@
       "display": "TWTC 1号厅（台北世界贸易中心）",
       "name_zh": "TWTC 1号厅（台北世界贸易中心）",
       "name_ja": "TWTC Hall 1 台北世界貿易中心展覽一館(世貿一館)/台北世界貿易センター展示ホール1号館",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "台北",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "TWTC Hall 1 台北世界貿易中心展覽一館(世貿一館)/台北世界貿易センター展示ホール1号館",
+        "TWTC 1号厅（台北世界贸易中心）"
+      ],
+      "address_ja": "台北市信義區信義路五段5號",
+      "country": "台湾",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/2297"
+        }
+      ]
     },
     {
       "id": "venue-yokohama-landmark-hall",
       "raw": "Yokohama LANDMARK HALL",
-      "display": "横滨 Landmark Hall",
-      "name_zh": "横滨 Landmark Hall",
+      "display": "横滨地标大厦礼堂",
+      "name_zh": "横滨地标大厦礼堂",
       "name_ja": "Yokohama LANDMARK HALL",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "横滨",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "Yokohama LANDMARK HALL",
+        "横滨 Landmark Hall"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://landmarkhall.jp/access/"
+        }
+      ]
     },
     {
       "id": "venue-zepp-divercity",
@@ -223,17 +539,43 @@
       "display": "Zepp DiverCity 东京",
       "name_zh": "Zepp DiverCity 东京",
       "name_ja": "Zepp DiverCity",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "Zepp DiverCity",
+        "Zepp DiverCity 东京"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.zepp.co.jp/hall/divercity/"
+        }
+      ]
     },
     {
       "id": "venue-animate-hall-black",
       "raw": "animate hall BLACK",
-      "display": "animate hall BLACK（池袋）",
-      "name_zh": "animate hall BLACK（池袋）",
+      "display": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "name_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
       "name_ja": "animate hall BLACK",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "animate hall BLACK",
+        "animate hall BLACK（池袋）",
+        "アニメイト池袋本店 9F animate hall BLACK"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/13860"
+        }
+      ],
+      "address_ja": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店 北館9F"
     },
     {
       "id": "venue-うみかぜ公園",
@@ -241,8 +583,20 @@
       "display": "海风公园",
       "name_zh": "海风公园",
       "name_ja": "うみかぜ公園",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "横须贺",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "うみかぜ公園",
+        "海风公园"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html"
+        }
+      ]
     },
     {
       "id": "venue-さいたまス-パ-アリ-ナ",
@@ -250,8 +604,29 @@
       "display": "埼玉超级竞技场",
       "name_zh": "埼玉超级竞技场",
       "name_ja": "さいたまスーパーアリーナ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "埼玉",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "さいたまスーパーアリーナ",
+        "埼玉超级竞技场",
+        "GMOアリーナさいたま"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://group.gmo/en/news/article/849/"
+        }
+      ],
+      "display_history": [
+        {
+          "before": "2026-04-01",
+          "display": "埼玉超级竞技场",
+          "name_ja": "さいたまスーパーアリーナ",
+          "source_url": "https://group.gmo/en/news/article/849/"
+        }
+      ]
     },
     {
       "id": "venue-しんまちボ-ドウォ-ク-パラソルショップ",
@@ -259,8 +634,21 @@
       "display": "新町木板步道（阳伞商店区）",
       "name_zh": "新町木板步道（阳伞商店区）",
       "name_ja": "しんまちボードウォーク(パラソルショップ)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "德岛",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "しんまちボードウォーク(パラソルショップ)",
+        "新町木板步道（阳伞商店区）"
+      ],
+      "address_ja": "〒770-0911 徳島県徳島市東船場町1～2丁目 新町川ボードウォーク",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/1911"
+        }
+      ]
     },
     {
       "id": "venue-ぴあアリ-ナmm",
@@ -268,8 +656,21 @@
       "display": "Pia Arena MM",
       "name_zh": "Pia Arena MM",
       "name_ja": "ぴあアリーナMM",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "横滨",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ぴあアリーナMM",
+        "Pia Arena MM"
+      ],
+      "address_ja": "〒220-0012 神奈川県横浜市西区みなとみらい3丁目2-2 ぴあアリーナMM",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/11340"
+        }
+      ]
     },
     {
       "id": "venue-アニメイト新宿-旧店舗-移転済",
@@ -277,26 +678,69 @@
       "display": "Animate 新宿（旧店铺，已迁址）",
       "name_zh": "Animate 新宿（旧店铺，已迁址）",
       "name_ja": "アニメイト新宿(旧店舗/移転済)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "アニメイト新宿(旧店舗/移転済)",
+        "Animate 新宿（旧店铺，已迁址）"
+      ],
+      "address_ja": "〒160-0022 東京都新宿区新宿3丁目17-17",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/152"
+        }
+      ]
     },
     {
-      "id": "venue-アニメイト池袋本店-9f-animate-hall-black",
+      "id": "venue-animate-hall-black",
       "raw": "アニメイト池袋本店 9F animate hall BLACK",
-      "display": "Animate 池袋本店 9F animate hall BLACK",
-      "name_zh": "Animate 池袋本店 9F animate hall BLACK",
+      "display": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "name_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
       "name_ja": "アニメイト池袋本店 9F animate hall BLACK",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-アニメイト池袋本店-9f-animate-hall-black"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "アニメイト池袋本店 9F animate hall BLACK",
+        "Animate 池袋本店 9F animate hall BLACK",
+        "animate hall BLACK"
+      ],
+      "address_ja": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店 北館9F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/13860"
+        }
+      ]
     },
     {
       "id": "venue-アニメイト池袋本店-b2f-アニメイトシアタ",
       "raw": "アニメイト池袋本店 B2F アニメイトシアター",
-      "display": "Animate 池袋本店 B2F 动画剧场",
-      "name_zh": "Animate 池袋本店 B2F 动画剧场",
+      "display": "安利美特池袋本店北馆 B2F 剧场",
+      "name_zh": "安利美特池袋本店北馆 B2F 剧场",
       "name_ja": "アニメイト池袋本店 B2F アニメイトシアター",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "アニメイト池袋本店 B2F アニメイトシアター",
+        "Animate 池袋本店 B2F 动画剧场"
+      ],
+      "address_ja": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店B2F アニメイトシアター",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/13857"
+        }
+      ]
     },
     {
       "id": "venue-インテックス大阪-5号館",
@@ -304,8 +748,20 @@
       "display": "大阪国际展览中心 5号馆",
       "name_zh": "大阪国际展览中心 5号馆",
       "name_ja": "インテックス大阪 5号館",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "大阪",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "インテックス大阪 5号館",
+        "大阪国际展览中心 5号馆"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.intex-osaka.com/jp/"
+        }
+      ]
     },
     {
       "id": "venue-ディファ有明",
@@ -313,8 +769,20 @@
       "display": "Differ Ariake（有明）",
       "name_zh": "Differ Ariake（有明）",
       "name_ja": "ディファ有明",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ディファ有明",
+        "Differ Ariake（有明）"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://eplus.jp/sf/venue/1350210"
+        }
+      ]
     },
     {
       "id": "venue-ノ-ザンホ-スパ-ク",
@@ -322,8 +790,21 @@
       "display": "Northern Horse Park（北方马匹公园）",
       "name_zh": "Northern Horse Park（北方马匹公园）",
       "name_ja": "ノーザンホースパーク",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "苫小牧",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ノーザンホースパーク",
+        "Northern Horse Park（北方马匹公园）"
+      ],
+      "address_ja": "〒059-1361 北海道苫小牧市美沢114-7 ノーザンホースパーク",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/26701"
+        }
+      ]
     },
     {
       "id": "venue-belluna-dome",
@@ -331,8 +812,22 @@
       "display": "Belluna Dome（西武巨蛋）",
       "name_zh": "Belluna Dome（西武巨蛋）",
       "name_ja": "ベルーナドーム",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "所泽",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ベルーナドーム",
+        "Belluna Dome（西武巨蛋）",
+        "ベルーナドーム(西武ドーム)"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/38"
+        }
+      ],
+      "address_ja": "〒359-1196 埼玉県所沢市上山口2135 西武ドーム"
     },
     {
       "id": "venue-belluna-dome",
@@ -340,17 +835,43 @@
       "display": "Belluna Dome（西武巨蛋）",
       "name_zh": "Belluna Dome（西武巨蛋）",
       "name_ja": "ベルーナドーム(西武ドーム)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "所泽",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ベルーナドーム(西武ドーム)",
+        "Belluna Dome（西武巨蛋）",
+        "ベルーナドーム"
+      ],
+      "address_ja": "〒359-1196 埼玉県所沢市上山口2135 西武ドーム",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/38"
+        }
+      ]
     },
     {
       "id": "venue-ポ-トメッセなごや",
       "raw": "ポートメッセなごや",
-      "display": "Port Messe 名古屋",
-      "name_zh": "Port Messe 名古屋",
+      "display": "名古屋国际展览馆",
+      "name_zh": "名古屋国际展览馆",
       "name_ja": "ポートメッセなごや",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "名古屋",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ポートメッセなごや",
+        "Port Messe 名古屋"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://portmesse.com/access"
+        }
+      ]
     },
     {
       "id": "venue-マリンメッセ福岡b館",
@@ -358,8 +879,21 @@
       "display": "Marine Messe 福冈 B馆",
       "name_zh": "Marine Messe 福冈 B馆",
       "name_ja": "マリンメッセ福岡B館",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "福冈",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "マリンメッセ福岡B館",
+        "Marine Messe 福冈 B馆"
+      ],
+      "address_ja": "〒812-0031 福岡県福岡市博多区沖浜町2-1",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/7808"
+        }
+      ]
     },
     {
       "id": "venue-ユナイテッド-シネマ-アクアシティお台場",
@@ -367,8 +901,21 @@
       "display": "United Cinemas Aqua City 台场",
       "name_zh": "United Cinemas Aqua City 台场",
       "name_ja": "ユナイテッド・シネマ アクアシティお台場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ユナイテッド・シネマ アクアシティお台場",
+        "United Cinemas Aqua City 台场"
+      ],
+      "address_ja": "〒135-0091 東京都港区台場1丁目7-1 アクアシティお台場東エリア1F ユナイテッド・シネマアクアシティお台場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/6561"
+        }
+      ]
     },
     {
       "id": "venue-ラフォ-レミュ-ジアム六本木",
@@ -376,8 +923,20 @@
       "display": "Laforet Museum 六本木",
       "name_zh": "Laforet Museum 六本木",
       "name_ja": "ラフォーレミュージアム六本木",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "ラフォーレミュージアム六本木",
+        "Laforet Museum 六本木"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.timeout.jp/tokyo/ja/アート/ラフォーレミュージアム六本木"
+        }
+      ]
     },
     {
       "id": "venue-中山競馬場",
@@ -385,8 +944,21 @@
       "display": "中山赛马场",
       "name_zh": "中山赛马场",
       "name_ja": "中山競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "船桥",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "中山競馬場",
+        "中山赛马场"
+      ],
+      "address_ja": "〒273-0037 千葉県船橋市古作1丁目1-1 中山競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/913"
+        }
+      ]
     },
     {
       "id": "venue-伊香立公園",
@@ -394,8 +966,21 @@
       "display": "伊香立公园",
       "name_zh": "伊香立公园",
       "name_ja": "伊香立公園",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "大津",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "伊香立公園",
+        "伊香立公园"
+      ],
+      "address_ja": "〒520-0357 滋賀県大津市山百合の丘4-1 伊香立公園",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/18854"
+        }
+      ]
     },
     {
       "id": "venue-佐久市駒場公園",
@@ -403,8 +988,21 @@
       "display": "佐久市驹场公园",
       "name_zh": "佐久市驹场公园",
       "name_ja": "佐久市駒場公園",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "佐久",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "佐久市駒場公園",
+        "佐久市驹场公园"
+      ],
+      "address_ja": "〒385-0011 長野県佐久市猿久保字丸山55番地 駒場公園",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9643"
+        }
+      ]
     },
     {
       "id": "venue-佐賀競馬場",
@@ -412,17 +1010,50 @@
       "display": "佐贺赛马场",
       "name_zh": "佐贺赛马场",
       "name_ja": "佐賀競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "鸟栖",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "佐賀競馬場",
+        "佐贺赛马场"
+      ],
+      "address_ja": "〒841-0073 佐賀県鳥栖市江島町字西谷3256-228 佐賀競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9329"
+        }
+      ]
     },
     {
       "id": "venue-函館サ-モン-まるなまアリ-ナ",
       "raw": "函館サーモン・まるなまアリーナ",
-      "display": "函馆 Salmon Marunami Arena",
-      "name_zh": "函馆 Salmon Marunami Arena",
+      "display": "函馆 Salmon Marunami 竞技场",
+      "name_zh": "函馆 Salmon Marunami 竞技场",
       "name_ja": "函館サーモン・まるなまアリーナ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "函馆",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "函館サーモン・まるなまアリーナ",
+        "函馆 Salmon Marunami Arena"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.city.hakodate.hokkaido.jp/docs/2014040900082/"
+        }
+      ],
+      "display_history": [
+        {
+          "before": "2026-02-01",
+          "display": "函馆竞技场",
+          "name_ja": "函館アリーナ",
+          "source_url": "https://www.city.hakodate.hokkaido.jp/docs/2026010500031/file_contents/0123-02.pdf"
+        }
+      ]
     },
     {
       "id": "venue-台北世界貿易中心",
@@ -430,8 +1061,20 @@
       "display": "台北世界贸易中心",
       "name_zh": "台北世界贸易中心",
       "name_ja": "台北世界貿易中心",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "台北",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "台北世界貿易中心",
+        "台北世界贸易中心"
+      ],
+      "country": "台湾",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.twtc.com.tw/Floor1"
+        }
+      ]
     },
     {
       "id": "venue-名古屋競馬場",
@@ -439,17 +1082,47 @@
       "display": "名古屋赛马场",
       "name_zh": "名古屋赛马场",
       "name_ja": "名古屋競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "弥富",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "名古屋競馬場",
+        "名古屋赛马场"
+      ],
+      "address_ja": "〒498-0065 愛知県弥富市駒野町1 名古屋競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/2609"
+        }
+      ]
     },
     {
-      "id": "venue-品川グランドホ-ル",
+      "id": "venue-the-grand-hall",
       "raw": "品川グランドホール",
-      "display": "品川大堂",
-      "name_zh": "品川大堂",
+      "display": "品川大礼堂（THE GRAND HALL）",
+      "name_zh": "品川大礼堂（THE GRAND HALL）",
       "name_ja": "品川グランドホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-品川グランドホ-ル"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "品川グランドホール",
+        "品川大堂",
+        "THE GRAND HALL"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/650"
+        }
+      ],
+      "address_ja": "〒108-0075 東京都港区港南2丁目16-4 品川グランドセントラルタワー3F 品川ザ・グランドホール"
     },
     {
       "id": "venue-品川プリンスホテル-ステラボ-ル",
@@ -457,8 +1130,21 @@
       "display": "品川王子大饭店 Stella Ball",
       "name_zh": "品川王子大饭店 Stella Ball",
       "name_ja": "品川プリンスホテル ステラボール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "品川プリンスホテル ステラボール",
+        "品川王子大饭店 Stella Ball"
+      ],
+      "address_ja": "〒108-8611 東京都港区高輪4丁目10-30 品川ステラボール",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/61"
+        }
+      ]
     },
     {
       "id": "venue-園田競馬場",
@@ -466,8 +1152,21 @@
       "display": "园田赛马场",
       "name_zh": "园田赛马场",
       "name_ja": "園田競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "尼崎",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "園田競馬場",
+        "园田赛马场"
+      ],
+      "address_ja": "〒661-0951 兵庫県尼崎市田能2丁目1-1 園田競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9717"
+        }
+      ]
     },
     {
       "id": "venue-在线播出",
@@ -476,7 +1175,11 @@
       "name_zh": "在线播出",
       "name_ja": "在线播出",
       "city": "",
-      "normalization_status": "channel"
+      "normalization_status": "channel",
+      "kind": "channel",
+      "aliases": [
+        "在线播出"
+      ]
     },
     {
       "id": "venue-大井競馬場",
@@ -484,17 +1187,43 @@
       "display": "大井赛马场",
       "name_zh": "大井赛马场",
       "name_ja": "大井競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "大井競馬場",
+        "大井赛马场"
+      ],
+      "address_ja": "〒140-0012 東京都品川区勝島2丁目1-2 大井競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/735"
+        }
+      ]
     },
     {
       "id": "venue-大手町三井ホ-ル",
       "raw": "大手町三井ホール",
-      "display": "大手町三井 Hall",
-      "name_zh": "大手町三井 Hall",
+      "display": "大手町三井礼堂",
+      "name_zh": "大手町三井礼堂",
       "name_ja": "大手町三井ホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "大手町三井ホール",
+        "大手町三井 Hall"
+      ],
+      "address_ja": "〒100-0004 東京都千代田区大手町1丁目2-1 Otemachi One 3F 大手町三井ホール",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/12111"
+        }
+      ]
     },
     {
       "id": "venue-大阪城ホ-ル",
@@ -502,8 +1231,21 @@
       "display": "大阪城音乐厅",
       "name_zh": "大阪城音乐厅",
       "name_ja": "大阪城ホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "大阪",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "大阪城ホール",
+        "大阪城音乐厅"
+      ],
+      "address_ja": "〒540-0002 大阪府大阪市中央区大阪城3番1号 大阪城ホール",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/5"
+        }
+      ]
     },
     {
       "id": "venue-山野ホ-ル-貸出中止",
@@ -511,8 +1253,21 @@
       "display": "山野 Hall（已停止出租）",
       "name_zh": "山野 Hall（已停止出租）",
       "name_ja": "山野ホール(貸出中止)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "山野ホール(貸出中止)",
+        "山野 Hall（已停止出租）"
+      ],
+      "address_ja": "〒151-8539 東京都渋谷区代々木1丁目53-1 山野美容専門学校",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/245"
+        }
+      ]
     },
     {
       "id": "venue-帯広競馬場",
@@ -520,17 +1275,44 @@
       "display": "带广赛马场",
       "name_zh": "带广赛马场",
       "name_ja": "帯広競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "带广",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "帯広競馬場",
+        "带广赛马场"
+      ],
+      "address_ja": "〒080-0023 北海道帯広市西13条南9丁目 帯広競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/2085"
+        }
+      ]
     },
     {
       "id": "venue-幕張メッセ-国際展示場ホ-ル",
       "raw": "幕張メッセ 国際展示場ホール",
-      "display": "幕张国际展览馆大厅",
-      "name_zh": "幕张国际展览馆大厅",
+      "display": "幕张国际展览馆",
+      "name_zh": "幕张国际展览馆",
       "name_ja": "幕張メッセ 国際展示場ホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "千叶",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "幕張メッセ 国際展示場ホール",
+        "幕张国际展览馆大厅",
+        "幕張メッセ国際展示場"
+      ],
+      "address_ja": "〒261-0023 千葉県千葉市美浜区中瀬2丁目1",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/43"
+        }
+      ]
     },
     {
       "id": "venue-makuhari-event-hall",
@@ -538,8 +1320,21 @@
       "display": "幕张展览馆活动大厅",
       "name_zh": "幕张展览馆活动大厅",
       "name_ja": "幕張メッセイベントホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "千叶",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "幕張メッセイベントホール",
+        "幕张展览馆活动大厅",
+        "幕張メッセ・イベントホール"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.m-messe.co.jp/access/"
+        }
+      ]
     },
     {
       "id": "venue-makuhari-event-hall",
@@ -547,17 +1342,47 @@
       "display": "幕张展览馆活动大厅",
       "name_zh": "幕张展览馆活动大厅",
       "name_ja": "幕張メッセ・イベントホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "千叶",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "幕張メッセ・イベントホール",
+        "幕张展览馆活动大厅",
+        "幕張メッセイベントホール"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.m-messe.co.jp/access/"
+        }
+      ]
     },
     {
-      "id": "venue-幕張メッセ国際展示場",
+      "id": "venue-幕張メッセ-国際展示場ホ-ル",
       "raw": "幕張メッセ国際展示場",
       "display": "幕张国际展览馆",
       "name_zh": "幕张国际展览馆",
       "name_ja": "幕張メッセ国際展示場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "千叶",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-幕張メッセ国際展示場"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "幕張メッセ国際展示場",
+        "幕张国际展览馆",
+        "幕張メッセ 国際展示場ホール"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/43"
+        }
+      ],
+      "address_ja": "〒261-0023 千葉県千葉市美浜区中瀬2丁目1"
     },
     {
       "id": "venue-恵比寿ガ-デンホ-ル",
@@ -565,8 +1390,20 @@
       "display": "惠比寿花园大厅",
       "name_zh": "惠比寿花园大厅",
       "name_ja": "恵比寿ガーデンホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "恵比寿ガーデンホール",
+        "惠比寿花园大厅"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.sapporoholdings.jp/ir/event/meeting/pdf/mtg101_01_01.pdf"
+        }
+      ]
     },
     {
       "id": "venue-新宿住友ビル三角広場",
@@ -574,17 +1411,43 @@
       "display": "新宿住友大厦三角广场",
       "name_zh": "新宿住友大厦三角广场",
       "name_ja": "新宿住友ビル三角広場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "新宿住友ビル三角広場",
+        "新宿住友大厦三角广场"
+      ],
+      "address_ja": "〒160-0023 東京都新宿区西新宿2丁目6-1 新宿住友ビル 三角広場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/12716"
+        }
+      ]
     },
     {
       "id": "venue-新宿住友ホ-ル",
       "raw": "新宿住友ホール",
-      "display": "新宿住友 Hall",
-      "name_zh": "新宿住友 Hall",
+      "display": "新宿住友礼堂",
+      "name_zh": "新宿住友礼堂",
       "name_ja": "新宿住友ホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "新宿住友ホール",
+        "新宿住友 Hall"
+      ],
+      "address_ja": "〒160-0023 東京都新宿区西新宿2丁目6-1 新宿住友ビル",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/6758"
+        }
+      ]
     },
     {
       "id": "venue-新町橋東公園ステ-ジ",
@@ -592,8 +1455,21 @@
       "display": "新町桥东公园舞台",
       "name_zh": "新町桥东公园舞台",
       "name_ja": "新町橋東公園ステージ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "德岛",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "新町橋東公園ステージ",
+        "新町桥东公园舞台"
+      ],
+      "address_ja": "〒770-0911 徳島県徳島市東船場町1丁目",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/1147"
+        }
+      ]
     },
     {
       "id": "venue-日テレらんらんホ-ル",
@@ -601,8 +1477,20 @@
       "display": "日本电视台 Ran-Ran Hall",
       "name_zh": "日本电视台 Ran-Ran Hall",
       "name_ja": "日テレらんらんホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "川崎",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "日テレらんらんホール",
+        "日本电视台 Ran-Ran Hall"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.eventernote.com/places/3499"
+        }
+      ]
     },
     {
       "id": "venue-日本武道館",
@@ -610,8 +1498,21 @@
       "display": "日本武道馆",
       "name_zh": "日本武道馆",
       "name_ja": "日本武道館",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "日本武道館",
+        "日本武道馆"
+      ],
+      "address_ja": "〒102-8321 東京都千代田区北の丸公園2番3号",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/3"
+        }
+      ]
     },
     {
       "id": "venue-有明アリ-ナ",
@@ -619,8 +1520,21 @@
       "display": "有明体育馆",
       "name_zh": "有明体育馆",
       "name_ja": "有明アリーナ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "有明アリーナ",
+        "有明体育馆"
+      ],
+      "address_ja": "〒135-0063 東京都江東区有明1丁目11-1 有明アリーナ",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/11572"
+        }
+      ]
     },
     {
       "id": "venue-札幌シネマフロンティア",
@@ -628,8 +1542,21 @@
       "display": "札幌 Cinema Frontier",
       "name_zh": "札幌 Cinema Frontier",
       "name_ja": "札幌シネマフロンティア",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "札幌",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "札幌シネマフロンティア",
+        "札幌 Cinema Frontier"
+      ],
+      "address_ja": "〒060-0005 北海道札幌市中央区北5条西2丁目5 JRタワーステラプレイス7F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/893"
+        }
+      ]
     },
     {
       "id": "venue-東京ガ-デンシアタ",
@@ -637,8 +1564,21 @@
       "display": "东京花园剧场",
       "name_zh": "东京花园剧场",
       "name_ja": "東京ガーデンシアター",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "東京ガーデンシアター",
+        "东京花园剧场"
+      ],
+      "address_ja": "〒135-0063 東京都江東区有明2-1-6 東京ガーデンシアター",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/11813"
+        }
+      ]
     },
     {
       "id": "venue-東京ビッグサイト",
@@ -646,17 +1586,48 @@
       "display": "东京国际展示场",
       "name_zh": "东京国际展示场",
       "name_ja": "東京ビッグサイト",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "東京ビッグサイト",
+        "东京国际展示场",
+        "東京ビッグサイト(東京国際展示場)"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/438"
+        }
+      ],
+      "address_ja": "〒135-0063 東京都江東区有明3丁目11-1"
     },
     {
-      "id": "venue-東京ビッグサイト-東京国際展示場",
+      "id": "venue-東京ビッグサイト",
       "raw": "東京ビッグサイト(東京国際展示場)",
-      "display": "东京国际展示场（东京 Big Sight）",
-      "name_zh": "东京国际展示场（东京 Big Sight）",
+      "display": "东京国际展示场",
+      "name_zh": "东京国际展示场",
       "name_ja": "東京ビッグサイト(東京国際展示場)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-東京ビッグサイト-東京国際展示場"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "東京ビッグサイト(東京国際展示場)",
+        "东京国际展示场（东京 Big Sight）",
+        "東京ビッグサイト"
+      ],
+      "address_ja": "〒135-0063 東京都江東区有明3丁目11-1",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/438"
+        }
+      ]
     },
     {
       "id": "venue-東京国際フォ-ラム-ホ-ルc",
@@ -664,8 +1635,21 @@
       "display": "东京国际论坛 C厅",
       "name_zh": "东京国际论坛 C厅",
       "name_ja": "東京国際フォーラム ホールC",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "東京国際フォーラム ホールC",
+        "东京国际论坛 C厅"
+      ],
+      "address_ja": "〒100-0005 東京都千代田区丸の内3丁目5番1号",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/425"
+        }
+      ]
     },
     {
       "id": "venue-横浜アリ-ナ",
@@ -673,17 +1657,42 @@
       "display": "横滨体育馆",
       "name_zh": "横滨体育馆",
       "name_ja": "横浜アリーナ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "横滨",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "横浜アリーナ",
+        "横滨体育馆"
+      ],
+      "address_ja": "〒222-0033 神奈川県横浜市港北区新横浜3丁目10番地 横浜アリーナ",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/1"
+        }
+      ]
     },
     {
       "id": "venue-横浜ベイホ-ル",
       "raw": "横浜ベイホール",
-      "display": "横滨 Bay Hall",
-      "name_zh": "横滨 Bay Hall",
+      "display": "横滨海湾礼堂",
+      "name_zh": "横滨海湾礼堂",
       "name_ja": "横浜ベイホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "横滨",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "横浜ベイホール",
+        "横滨 Bay Hall"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://bayhall.jp/access/"
+        }
+      ]
     },
     {
       "id": "venue-武蔵野の森総合スポ-ツプラザ-メインアリ-ナ",
@@ -691,8 +1700,20 @@
       "display": "武藏野之森综合体育广场主竞技场",
       "name_zh": "武藏野之森综合体育广场主竞技场",
       "name_ja": "武蔵野の森総合スポーツプラザ・メインアリーナ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "调布",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "武蔵野の森総合スポーツプラザ・メインアリーナ",
+        "武藏野之森综合体育广场主竞技场"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.city.chofu.lg.jp/010010/p000015.html"
+        }
+      ]
     },
     {
       "id": "venue-江戸川区総合文化センタ-大ホ-ル",
@@ -700,8 +1721,20 @@
       "display": "江户川区综合文化中心大礼堂",
       "name_zh": "江户川区综合文化中心大礼堂",
       "name_ja": "江戸川区総合文化センター大ホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "江戸川区総合文化センター大ホール",
+        "江户川区综合文化中心大礼堂"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://edogawa-bunkacenter.jp/map/"
+        }
+      ]
     },
     {
       "id": "venue-浦和競馬場",
@@ -709,8 +1742,21 @@
       "display": "浦和赛马场",
       "name_zh": "浦和赛马场",
       "name_ja": "浦和競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "埼玉",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "浦和競馬場",
+        "浦和赛马场"
+      ],
+      "address_ja": "〒336-0016 埼玉県さいたま市南区大谷場1丁目8-42 浦和競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9715"
+        }
+      ]
     },
     {
       "id": "venue-烏丸半島芝生広場",
@@ -718,8 +1764,20 @@
       "display": "乌丸半岛草坪广场",
       "name_zh": "乌丸半岛草坪广场",
       "name_ja": "烏丸半島芝生広場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "草津",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "烏丸半島芝生広場",
+        "乌丸半岛草坪广场"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.biwako-visitors.jp/spot/detail/1836/"
+        }
+      ]
     },
     {
       "id": "venue-眉山山頂ステ-ジ",
@@ -727,8 +1785,20 @@
       "display": "眉山山顶舞台",
       "name_zh": "眉山山顶舞台",
       "name_ja": "眉山山頂ステージ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "德岛",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "眉山山頂ステージ",
+        "眉山山顶舞台"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.machiasobi.com/special/v31/machiasobi-sauna-basecamp/basecamp/index.html"
+        }
+      ]
     },
     {
       "id": "venue-眉山林間ステ-ジ",
@@ -736,17 +1806,48 @@
       "display": "眉山林间舞台",
       "name_zh": "眉山林间舞台",
       "name_ja": "眉山林間ステージ",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "德岛",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "眉山林間ステージ",
+        "眉山林间舞台",
+        "眉山林間ステージ(眉山山頂林間駐車場)"
+      ],
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/843"
+        }
+      ],
+      "address_ja": "〒770-0908 徳島県徳島市眉山町茂助ケ原20 眉山駐車場"
     },
     {
-      "id": "venue-眉山林間ステ-ジ-眉山山頂林間駐車場",
+      "id": "venue-眉山林間ステ-ジ",
       "raw": "眉山林間ステージ(眉山山頂林間駐車場)",
       "display": "眉山林间舞台（眉山山顶林间停车场）",
       "name_zh": "眉山林间舞台（眉山山顶林间停车场）",
       "name_ja": "眉山林間ステージ(眉山山頂林間駐車場)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "德岛",
+      "normalization_status": "reviewed_display",
+      "id_aliases": [
+        "venue-眉山林間ステ-ジ-眉山山頂林間駐車場"
+      ],
+      "kind": "venue",
+      "aliases": [
+        "眉山林間ステージ(眉山山頂林間駐車場)",
+        "眉山林间舞台（眉山山顶林间停车场）",
+        "眉山林間ステージ"
+      ],
+      "address_ja": "〒770-0908 徳島県徳島市眉山町茂助ケ原20 眉山駐車場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/843"
+        }
+      ]
     },
     {
       "id": "venue-科学技術館サイエンスホ-ル",
@@ -754,8 +1855,21 @@
       "display": "科学技术馆科学厅",
       "name_zh": "科学技术馆科学厅",
       "name_ja": "科学技術館サイエンスホール",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "东京",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "科学技術館サイエンスホール",
+        "科学技术馆科学厅"
+      ],
+      "address_ja": "〒102-0091 東京都千代田区北の丸公園2-1 科学技術館B2F",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/119"
+        }
+      ]
     },
     {
       "id": "venue-笠松競馬場",
@@ -763,8 +1877,21 @@
       "display": "笠松赛马场",
       "name_zh": "笠松赛马场",
       "name_ja": "笠松競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "笠松",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "笠松競馬場",
+        "笠松赛马场"
+      ],
+      "address_ja": "〒501-6191 岐阜県羽島郡笠松町若葉町12番地 笠松競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9707"
+        }
+      ]
     },
     {
       "id": "venue-舞浜アンフィシアタ",
@@ -772,8 +1899,21 @@
       "display": "舞滨圆形剧场",
       "name_zh": "舞滨圆形剧场",
       "name_ja": "舞浜アンフィシアター",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "浦安",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "舞浜アンフィシアター",
+        "舞滨圆形剧场"
+      ],
+      "address_ja": "〒279-8518 千葉県浦安市舞浜2-50 舞浜アンフィシアター",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/234"
+        }
+      ]
     },
     {
       "id": "venue-金沢競馬場",
@@ -781,8 +1921,21 @@
       "display": "金泽赛马场",
       "name_zh": "金泽赛马场",
       "name_ja": "金沢競馬場",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "金泽",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "金沢競馬場",
+        "金泽赛马场"
+      ],
+      "address_ja": "〒920-3105 石川県金沢市八田町西1番地 金沢競馬場",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/9706"
+        }
+      ]
     },
     {
       "id": "venue-駅前不動産スタジアム-鳥栖スタジアム",
@@ -790,8 +1943,21 @@
       "display": "站前不动产体育场（鸟栖体育场）",
       "name_zh": "站前不动产体育场（鸟栖体育场）",
       "name_ja": "駅前不動産スタジアム(鳥栖スタジアム)",
-      "city": "",
-      "normalization_status": "reviewed_display"
+      "city": "鸟栖",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": [
+        "駅前不動産スタジアム(鳥栖スタジアム)",
+        "站前不动产体育场（鸟栖体育场）"
+      ],
+      "address_ja": "〒841-0034 佐賀県鳥栖市京町812 鳥栖スタジアム",
+      "country": "日本",
+      "sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/5019"
+        }
+      ]
     }
   ]
 }

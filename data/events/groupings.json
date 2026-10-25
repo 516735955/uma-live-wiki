@@ -2,6 +2,28 @@
   "schema_version": 1,
   "groups": [
     {
+      "id": "onsite-kanazawa-2025-10-12",
+      "kind": "onsite_group",
+      "title": "金泽赛马联动谈话活动（2025年10月12日）",
+      "summary": "夏吉优子与奥野香耶参加金泽赛马场联动谈话，由耳目社铃木播报员主持。",
+      "source_urls": ["https://www.kanazawakeiba.com/event/info-32872/"],
+      "members": [
+        {"event_id": "eventernote-2025-10-12", "label": "第1回"},
+        {"event_id": "eventernote-2025-10-12-2", "label": "第2回"}
+      ]
+    },
+    {
+      "id": "onsite-thoroughbred-horse-show-2026",
+      "kind": "onsite_group",
+      "title": "Thoroughbred Horse Show：第二人生 · 特别谈话活动",
+      "summary": "Thoroughbred Horse Show 的两日特别谈话企划，由骑手、调教师及赛马娘出演声优登台交流。每日出演嘉宾不同。",
+      "source_urls": ["https://lac-dragon.com/thoroughbred-horseshow/#event"],
+      "members": [
+        {"event_id": "eventernote-2026-04-29", "label": "4月29日"},
+        {"event_id": "eventernote-2026-04-30", "label": "4月30日"}
+      ]
+    },
+    {
       "id": "program-boomerang-fu-2024-07",
       "kind": "series_arc",
       "title": "Boomerang Fu 五人游戏实况（2024年7月）",
@@ -33,6 +55,8 @@
     },
     {
       "id": "onsite-obihiro-2023-09-24",
+      "image": "https://www.banei-keiba.or.jp/data/ed/000000/11/0000001155/D9IoFdWx1691641119_m.jpg",
+      "image_source": {"kind": "official_shared_visual", "url": "https://www.banei-keiba.or.jp/ed_detail.php?id=1155"},
       "kind": "onsite_group",
       "title": "带广赛马联动谈话活动（2023年9月24日）",
       "members": [
@@ -321,6 +345,7 @@
       "image": "https://umamusume-stage.com/wp/wp-content/themes/umamusume_stage/images/kv_v2_pc_wide.jpg",
       "image_source": {"kind": "official_shared_visual", "url": "https://umamusume-stage.com/wp/wp-content/themes/umamusume_stage/images/kv_v2_pc_wide.jpg"},
       "members": [
+        {"event_id": "stage-sprinters-story-2023-cancelled", "label": "取消公演"},
         {
           "event_id": "live-other-2023-01-15-1-15-13-00",
           "role": "child",
