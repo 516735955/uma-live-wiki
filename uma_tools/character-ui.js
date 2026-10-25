@@ -57,6 +57,7 @@
       if (s === 'zh') { list = list.slice().sort(function (a, b) { return norm(a.zh).localeCompare(norm(b.zh), 'zh'); }); }
       else if (s === 'en') { list = list.slice().sort(function (a, b) { return norm(a.en).localeCompare(norm(b.en)); }); }
       else if (s === 'cv') { list = list.slice().sort(function (a, b) { return norm(a.cv_zh).localeCompare(norm(b.cv_zh), 'zh'); }); }
+      if (q && search && search.rank) list.sort(function (a,b) { return search.rank([a.zh,a.ja,a.en,a.aliases],input.value) - search.rank([b.zh,b.ja,b.en,b.aliases],input.value); });
       var pedigreeMeta = window.CHARACTER_PEDIGREE_META || {};
       var nonUmaIds = new Set(pedigreeMeta.non_uma || []);
       var umaCharacters = list.filter(function (c) { return c.role_type !== 'human' && !nonUmaIds.has(c.id); });
@@ -294,6 +295,7 @@
         return false;
       });
       const fragment = document.createDocumentFragment();
+      if (q && search && search.rank) list.sort(function (a,b) { return search.rank([a.zh,a.ja,a.kana,a.aliases],input.value) - search.rank([b.zh,b.ja,b.kana,b.aliases],input.value); });
       const available = new Set(data().map(voice => voice.id));
       for (const id of cards.keys()) if (!available.has(id)) cards.delete(id);
       list.forEach(function (v, i) {

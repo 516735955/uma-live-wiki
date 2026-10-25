@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const searchText = require('./search-text');
 let pinyin;
 let kuromoji;
 try { ({ pinyin } = require('pinyin-pro')); }
@@ -36,18 +37,10 @@ const KATA_PAIR = {'キャ':'kya','キュ':'kyu','キョ':'kyo','シャ':'sha','
 // unsuitable segmentation. Values include both spaced and compact search forms.
 const ROMAJI_OVERRIDES = {'繚乱縁舞':'ryouran enbu ryouranenbu'};
 function katakanaToRomaji(value) {
-  let text = String(value || ''), out = '';
-  for (let i=0; i<text.length; i++) {
-    const pair = text.slice(i, i+2);
-    if (KATA_PAIR[pair]) { out += KATA_PAIR[pair]; i++; continue; }
-    if (text[i] === 'ッ') { out += (KATA[text[i+1]] || '').charAt(0); continue; }
-    if (Object.prototype.hasOwnProperty.call(KATA, text[i])) out += KATA[text[i]];
-    else if (!/[゛゜]/.test(text[i])) out += /[\s　]/.test(text[i]) ? ' ' : text[i];
-  }
-  return out.replace(/\s+/g, ' ').trim().toLowerCase();
+  return searchText.kanaToRomaji(value);
 }
 function normalizeKey(value) {
-  return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]+/g, ' ').trim();
+  return searchText.normalize(value);
 }
 function collect(value, target = values) {
   if (typeof value === 'string') {
@@ -112,6 +105,17 @@ for (const text of values) {
     }
   }
   if ((item.pinyin && /[a-z]/.test(item.pinyin)) || item.romaji) items[normalizeKey(text)] = item;
+}
+// Person names use the maintained kana reading, not dictionary guesses about
+// individual kanji. Aliases retain their existing Chinese pronunciations.
+for (const actor of readValue('data/voice_actor_profiles.json').voice_actors || []) {
+  const identity = actor.identity || {};
+  if (!identity.kana) continue;
+  const reading = katakanaToRomaji(identity.kana).replace(/\s/g, '');
+  for (const value of [identity.zh, identity.ja, ...(identity.aliases || [])].filter(Boolean)) {
+    const key = normalizeKey(value);
+    items[key] = { ...(items[key] || {}), romaji: reading };
+  }
 }
 const contentHash = crypto.createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
 const document = { schema_version: 1, content_hash: contentHash, items };

@@ -10,7 +10,7 @@ const searchText = require('./search-text');
 const { createClassification } = require('./music-classification');
 const { projectEvents } = require('./event-presentation');
 
-const CATALOG_RESPONSE_SCHEMA = 10;
+const CATALOG_RESPONSE_SCHEMA = 11;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -677,7 +677,7 @@ class CatalogStore {
       if (time === 'announced' && eventTime) return false;
       return true;
     });
-    rows = rows.slice().sort((a, b) => String(b.data.sort_date || b.data.date || '').localeCompare(String(a.data.sort_date || a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
+    rows = rows.slice().sort((a, b) => (query ? searchText.rank([a.data.title,a.data.title_ja,a.data.title_aliases],query) - searchText.rank([b.data.title,b.data.title_ja,b.data.title_aliases],query) : 0) || String(b.data.sort_date || b.data.date || '').localeCompare(String(a.data.sort_date || a.data.date || '')) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 20));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
@@ -730,7 +730,7 @@ class CatalogStore {
     const store = await this.get();
     const query = musicSearchText(params.get('q'));
     let rows = query ? store.songRows.filter((row) => searchText.matchesIndex(row.search, query)) : store.songRows.slice();
-    rows.sort((a, b) => String(a.data.title).localeCompare(String(b.data.title), 'ja'));
+    rows.sort((a, b) => (query ? searchText.rank([a.data.title,a.data.aliases],query) - searchText.rank([b.data.title,b.data.aliases],query) : 0) || String(a.data.title).localeCompare(String(b.data.title), 'ja'));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 30));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
@@ -762,7 +762,7 @@ class CatalogStore {
       if (role && !(row.data.roles || []).some((item) => item.role === role)) return false;
       return true;
     });
-    rows = rows.slice().sort((a, b) => String(a.data.name).localeCompare(String(b.data.name), 'ja'));
+    rows = rows.slice().sort((a, b) => (query ? searchText.rank([a.data.name,a.data.identity,a.data.aliases],query) - searchText.rank([b.data.name,b.data.identity,b.data.aliases],query) : 0) || String(a.data.name).localeCompare(String(b.data.name), 'ja'));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 40));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
@@ -807,9 +807,9 @@ class CatalogStore {
       if (year && releaseYear(album.release) !== year) return false;
       return true;
     });
-    rows = rows.slice().sort((a, b) => sort === 'name'
+    rows = rows.slice().sort((a, b) => (query ? searchText.rank([a.data.name,a.data.aliases],query) - searchText.rank([b.data.name,b.data.aliases],query) : 0) || (sort === 'name'
       ? String(a.data.name).localeCompare(String(b.data.name), 'ja')
-      : String(b.data.release || '').localeCompare(String(a.data.release || '')) || String(a.data.name).localeCompare(String(b.data.name), 'ja'));
+      : String(b.data.release || '').localeCompare(String(a.data.release || '')) || String(a.data.name).localeCompare(String(b.data.name), 'ja')));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 30));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
@@ -855,6 +855,7 @@ class CatalogStore {
       if (!voices.length) return null;
     }
     if (params?.get('q')) voices = voices.filter(row => searchText.includes([row.identity, row.aliases, ...(row.roles || []).map(role => store.charactersById.get(role.character_id) || role)], params.get('q')));
+    if (params?.get('q')) voices = voices.slice().sort((a,b) => searchText.rank([a.identity,a.aliases],params.get('q')) - searchText.rank([b.identity,b.aliases],params.get('q')));
     if (params && params.get('scope') === 'index') voices = voices.map(row => ({id:row.id,identity:row.identity,photo:row.photo,roles:row.roles}));
     return { build_id: store.buildId, voice_actors: voices };
   }

@@ -14,7 +14,11 @@
     '體':'体','國':'国','會':'会','進':'进','現':'现','場':'场','學':'学','校':'校','發':'发',
     '聲':'声','優':'优','藝':'艺','術':'术','賽':'赛','車':'车','驛':'驿','關':'关','聯':'联',
     '線':'线','頁':'页','錄':'录','過':'过','門':'门','開':'开','問':'问','題':'题','對':'对',
-    '應':'应','廣':'广','島':'岛','濱':'滨','澤':'泽','邊':'边','莊':'庄','淺':'浅','慶':'庆'
+    '應':'应','廣':'广','島':'岛','濱':'滨','澤':'泽','邊':'边','莊':'庄','淺':'浅','慶':'庆',
+    '無':'无','別':'别','週':'周','驹':'驹','駒':'驹','誠':'诚','愛':'爱','麗':'丽','葉':'叶',
+    '華':'华','織':'织','紗':'纱','緒':'绪','紀':'纪','綾':'绫','穗':'穗','稻':'稻','夢':'梦',
+    '雲':'云','氣':'气','飛':'飞','鷹':'鹰','櫪':'枥','濤':'涛','勝':'胜','榮':'荣','亞':'亚',
+    '譽':'誉','輝':'辉','鑽':'钻','寶':'宝','魯':'鲁','齊':'齐','蘭':'兰','諾':'诺','達':'达'
   };
   // Small, offline terminology dictionary for the site's confirmed Chinese names.
   // Unknown Hanzi are deliberately left untouched instead of guessed.
@@ -60,7 +64,8 @@
   }
   function normalize(value) {
     return String(value == null ? '' : value).normalize('NFKC').toLowerCase()
-      .replace(/[馬黃東風鈴櫻龍麥樂體國會進現場學發聲優藝術賽車驛關聯線頁錄過門開問題對應廣島濱澤邊莊淺慶]/g, function (ch) { return TRADITIONAL[ch] || ch; })
+      .replace(/[\u3400-\u9fff]/g, function (ch) { return TRADITIONAL[ch] || ch; })
+      .replace(/[āīūēō]/g, function (ch) { return {ā:'aa',ī:'ii',ū:'uu',ē:'ee',ō:'ou'}[ch]; })
       .replace(/[‘’`]/g, "'").replace(/[‐‑‒–—−－]/g, '-')
       .replace(/[・･]/g, '·').replace(/[\s　]+/g, ' ').trim();
   }
@@ -71,6 +76,7 @@
       var pair = text.slice(i, i + 2);
       var pairMap = { キャ:'kya',キュ:'kyu',キョ:'kyo',シャ:'sha',シュ:'shu',ショ:'sho',チャ:'cha',チュ:'chu',チョ:'cho',ニャ:'nya',ニュ:'nyu',ニョ:'nyo',ヒャ:'hya',ヒュ:'hyu',ヒョ:'hyo',ミャ:'mya',ミュ:'myu',ミョ:'myo',リャ:'rya',リュ:'ryu',リョ:'ryo',ギャ:'gya',ギュ:'gyu',ギョ:'gyo',ジャ:'ja',ジュ:'ju',ジョ:'jo',ビャ:'bya',ビュ:'byu',ビョ:'byo',ピャ:'pya',ピュ:'pyu',ピョ:'pyo',ウィ:'wi',ウェ:'we',ウォ:'wo',ティ:'ti',ディ:'di',トゥ:'tu',ドゥ:'du',シェ:'she',ジェ:'je',チェ:'che',ファ:'fa',フィ:'fi',フェ:'fe',フォ:'fo' };
       if (pairMap[pair]) { out += pairMap[pair]; i++; continue; }
+      if (text[i] === 'ー') { out += (out.match(/[aeiou]$/) || [''])[0]; continue; }
       if (text[i] === 'ッ') { var next = KANA[text[i + 1]] || ''; out += next.charAt(0); continue; }
       if (Object.prototype.hasOwnProperty.call(KANA, text[i])) out += KANA[text[i]]; else if (text[i] !== '゛' && text[i] !== '゜') out += text[i];
     }
@@ -94,13 +100,13 @@
       var roman = kanaToRomaji(text), reading = pronunciationEntry(text); if (roman && roman !== text) out.push(roman); if (reading && reading.romaji) out.push(reading.romaji);
       var py = pinyin(text); if (py) { out.push(py); out.push(initials(text)); }
     });
-    return out.join(' ');
+    return out.map(function (text) { return text + ' ' + text.replace(/[\s·'\-]/g, ''); }).join(' ');
   }
   function variants(value) {
     var text = normalize(value), roman = kanaToRomaji(text), reading = pronunciationEntry(text), out = text ? [text] : [];
     if (roman && roman !== text) out.push(roman);
     if (reading && reading.romaji && out.indexOf(reading.romaji) === -1) out.push(reading.romaji);
-    return out;
+    return Array.from(new Set(out.concat(out.map(function (item) { return item.replace(/[\s·'\-]/g, ''); }))));
   }
   function includes(values, query) {
     var target = fields(values);
@@ -109,5 +115,18 @@
   function matchesIndex(index, query) {
     return variants(query).some(function (item) { return item && index.indexOf(item) !== -1; });
   }
-  return { normalize: normalize, kanaToRomaji: kanaToRomaji, fields: fields, includes: includes, matchesIndex: matchesIndex };
+  function rank(values, query) {
+    var q = normalize(query), list = [];
+    function add(value) {
+      if (Array.isArray(value)) value.forEach(add);
+      else if (value && typeof value === 'object') Object.values(value).forEach(add);
+      else if (value) list.push(normalize(value));
+    }
+    add(values);
+    if (list.includes(q)) return 0;
+    if (list.some(function (value) { return value.startsWith(q); })) return 1;
+    if (list.some(function (value) { return value.includes(q); })) return 2;
+    return includes(values, query) ? 3 : 4;
+  }
+  return { normalize: normalize, kanaToRomaji: kanaToRomaji, fields: fields, includes: includes, matchesIndex: matchesIndex, rank: rank };
 });
