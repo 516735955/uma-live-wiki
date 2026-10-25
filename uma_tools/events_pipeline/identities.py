@@ -285,6 +285,9 @@ class IdentityIndex:
             resolved = self.voice_by_alias.get(pipeline_text.fold_name(str(canonical)))
             if resolved:
                 self.voice_by_alias[pipeline_text.fold_name(str(alias))] = resolved
+                profile = next(item for item in profiles if item['id'] == resolved)
+                profile['identity']['aliases'] = sorted(set([*profile['identity']['aliases'], str(alias)]),
+                    key=lambda value: (value != profile['identity']['zh'], value))
         for alias, character_id in (self.overrides.get("character_aliases") or {}).items():
             if character_id in self.character_by_id:
                 self.character_by_alias[pipeline_text.fold_name(str(alias))] = str(character_id)

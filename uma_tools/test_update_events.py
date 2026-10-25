@@ -16,6 +16,28 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_credited_name_aliases_merge_without_resolving_guests_by_role(self):
+        identities = UPDATE_EVENTS.IdentityIndex(
+            [{'id': 'oguricap', 'zh': '小栗帽', 'ja': 'オグリキャップ', 'en': 'Oguri Cap', 'cv': '高柳知葉', 'cv_zh': '高柳知叶'}],
+            [{'zh': '高柳知叶', 'ja': '高柳知葉'}], {},
+            {'voice_aliases': {'Tomoyo Takayanagi': '高柳知葉'}},
+            {'voice_actors': [{'id': 'va-test', 'names': ['高柳知葉', '高柳知叶']}]},
+        )
+        cast = UPDATE_EVENTS.make_cast([
+            {'name': '高柳知葉', 'role': 'オグリキャップ', 'source_url': 'https://example.test/ja'},
+            {'name': 'Tomoyo Takayanagi', 'role': 'Oguri Cap', 'source_url': 'https://example.test/en'},
+            {'name': 'External Musician', 'role': '[Band]'},
+            {'name': 'Unregistered Guest', 'role': 'Oguri Cap'},
+        ], identities, 'official_announcement')
+        self.assertEqual(len(cast), 3)
+        actor = next(row for row in cast if row['voice_actor_id'])
+        self.assertEqual((actor['voice_actor_id'], actor['character_id']), ('va-test', 'oguricap'))
+        self.assertEqual({source['url'] for source in actor['evidence_sources']},
+                         {'https://example.test/ja', 'https://example.test/en'})
+        self.assertEqual({row['name'] for row in cast if not row['voice_actor_id']},
+                         {'External Musician', 'Unregistered Guest'})
+        self.assertIn('Tomoyo Takayanagi', identities.profile_by_id['va-test']['identity']['aliases'])
+
     def test_a_song_character_does_not_override_the_explicit_session_cast(self):
         class Identities:
             profiles = [{'id': 'va-a'}, {'id': 'va-b'}]
