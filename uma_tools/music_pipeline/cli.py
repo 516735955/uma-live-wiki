@@ -135,7 +135,7 @@ def main(argv: list[str] | None = None) -> int:
         unknown_override_refs = sorted({
             str(reference)
             for version_id, row in (overrides.get("versions") or {}).items()
-            for reference in [version_id, row.get("parent_version_id"), row.get("lyrics_from")]
+            for reference in [version_id, row.get("parent_version_id"), row.get("lyrics_from"), row.get("same_recording_as")]
             if reference and str(reference) not in known
         })
         if unknown_override_refs:

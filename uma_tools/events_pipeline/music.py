@@ -426,6 +426,10 @@ def build_song_catalog(
                 "lyrics_ref": version.get("lyrics_ref") or "",
                 "has_lyrics": bool(version.get("has_lyrics")),
                 "has_timing": bool(version.get("has_timing")),
+                **({
+                    "same_recording_as": version_overrides[version["id"]]["same_recording_as"],
+                    "recording_source_url": version_overrides[version["id"]].get("recording_source_url") or "",
+                } if (version_overrides.get(version["id"]) or {}).get("same_recording_as") else {}),
             })
         versions.sort(key=lambda row: (bool(row["version_label"]), row["version_label"], row["title"]))
         release_count = sum(version["release_count"] for version in versions)

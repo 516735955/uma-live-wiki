@@ -529,6 +529,42 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["song_id"], catalog["songs"][0]["id"])
         self.assertEqual(events[0]["sessions"][0]["performances"][0]["performance_variant"]["label"], "Short Ver.")
 
+    def test_same_recording_under_two_release_titles_keeps_published_ids(self):
+        identities = UPDATE_EVENTS.IdentityIndex([], [], {}, {}, {})
+        albums = [
+            {'name': 'Original album', 'catalog': 'ORIG-1', 'release': '2022-01-01',
+             'songs': [{'name': 'Original title', 'artist': 'Singer', 'url': 'original.mp3'}]},
+            {'name': 'Later album', 'catalog': 'LATER-1', 'release': '2023-01-01',
+             'songs': [{'name': 'Later title', 'artist': 'Singer', 'url': 'later.mp3'}]},
+        ]
+        original = UPDATE_EVENTS.build_song_catalog(albums[:1], [], identities, 'now')['songs'][0]
+        original_version_id = original['versions'][0]['id']
+        sources = {
+            'overrides': {
+                'song_versions': {'Later title': {
+                    'base': 'Original title', 'label': '同音源异名',
+                    'version_id': 'published-later-version', 'legacy_song_ids': ['published-later-song'],
+                }},
+                'versions': {'published-later-version': {
+                    'same_recording_as': original_version_id, 'recording_source_url': 'https://example.test/correction',
+                }},
+            },
+            'lyrics': {'versions': {original_version_id: {'lines': ['Original lyric']}}},
+        }
+        songs = UPDATE_EVENTS.build_song_catalog(albums, [], identities, 'now', music_sources=sources)['songs']
+        self.assertEqual(len(songs), 1)
+        song = songs[0]
+        self.assertEqual(song['id'], original['id'])
+        self.assertIn('published-later-song', song['legacy_ids'])
+        versions = {row['id']: row for row in song['versions']}
+        self.assertEqual(set(versions), {original_version_id, 'published-later-version'})
+        later = versions['published-later-version']
+        self.assertEqual(later['title'], 'Later title')
+        self.assertEqual(later['same_recording_as'], original_version_id)
+        self.assertEqual(later['recording_source_url'], 'https://example.test/correction')
+        self.assertFalse(later['has_lyrics'])
+        self.assertEqual(song['release_count'], 2)
+
     def test_song_version_override_folds_alias_into_base_work(self):
         class Identities:
             @staticmethod

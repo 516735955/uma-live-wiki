@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T11:14:46+00:00",
+  "generated_at": "2026-10-25T11:36:14+00:00",
   "coverage": {
-    "songs": 1043,
+    "songs": 1042,
     "versions": 2169,
     "albums": 115,
     "release_tracks": 2250,
@@ -163543,68 +163543,6 @@
       "has_lyrics": true
     },
     {
-      "id": "song-a3ae396f86",
-      "title": "もう 泣かないよ",
-      "aliases": [
-        "もう 泣かないよ"
-      ],
-      "legacy_ids": [],
-      "artists": [
-        "纯音乐"
-      ],
-      "character_ids": [],
-      "voice_actor_ids": [],
-      "released_character_ids": [],
-      "released_voice_actor_ids": [],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
-      "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-      "release_date": "2023-04-26",
-      "versions": [
-        {
-          "id": "song-a3ae396f86-v-a3ae396f86",
-          "title": "もう 泣かないよ",
-          "version_label": "",
-          "artists": [
-            "纯音乐"
-          ],
-          "releases": [
-            {
-              "album_id": "album-laca-9975",
-              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-              "release_date": "2023-04-26",
-              "catalog": "LACA-9975",
-              "type": "原声带",
-              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "track_number": 7,
-              "disc_number": 1,
-              "disc_track_number": 7,
-              "artist": "纯音乐",
-              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402410",
-              "image": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-              "instrumental": true,
-              "vocalists": []
-            }
-          ],
-          "performances": [],
-          "release_count": 1,
-          "performance_count": 0,
-          "instrumental": true,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
-        }
-      ],
-      "version_count": 1,
-      "release_count": 1,
-      "performance_count": 0,
-      "original_version_id": "song-a3ae396f86-v-a3ae396f86",
-      "creator_ids": [],
-      "has_lyrics": false
-    },
-    {
       "id": "song-7b0215b121",
       "title": "もっと、もっと",
       "aliases": [
@@ -227586,11 +227524,15 @@
       "id": "song-abfa828b92",
       "title": "新生・チーム＜シリウス＞",
       "aliases": [
+        "もう 泣かないよ",
         "新生・チーム＜シリウス＞"
       ],
-      "legacy_ids": [],
+      "legacy_ids": [
+        "song-a3ae396f86"
+      ],
       "artists": [
-        "多田彰文"
+        "多田彰文",
+        "纯音乐"
       ],
       "character_ids": [],
       "voice_actor_ids": [],
@@ -227635,10 +227577,47 @@
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
+        },
+        {
+          "id": "song-a3ae396f86-v-a3ae396f86",
+          "title": "もう 泣かないよ",
+          "version_label": "同音源异名（WINNING LIVE 12）",
+          "artists": [
+            "纯音乐"
+          ],
+          "releases": [
+            {
+              "album_id": "album-laca-9975",
+              "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
+              "release_date": "2023-04-26",
+              "catalog": "LACA-9975",
+              "type": "原声带",
+              "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "track_number": 7,
+              "disc_number": 1,
+              "disc_track_number": 7,
+              "artist": "纯音乐",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2045402410",
+              "image": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false,
+          "same_recording_as": "song-abfa828b92-v-120c3dd067",
+          "recording_source_url": "https://umamusume.lantis.jp/news/260/"
         }
       ],
-      "version_count": 1,
-      "release_count": 1,
+      "version_count": 2,
+      "release_count": 2,
       "performance_count": 0,
       "original_version_id": "song-abfa828b92-v-120c3dd067",
       "creator_ids": [],
@@ -257478,5 +257457,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "c75f4a75f7ed41180fc3"
+  "build_id": "3b7deabb23794963b839"
 }

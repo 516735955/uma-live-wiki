@@ -1,6 +1,14 @@
 {
   "schema_version": 1,
   "song_versions": {
+    "もう 泣かないよ": {
+      "base": "新生・チーム＜シリウス＞",
+      "label": "同音源异名（WINNING LIVE 12）",
+      "version_id": "song-a3ae396f86-v-a3ae396f86",
+      "legacy_song_ids": [
+        "song-a3ae396f86"
+      ]
+    },
     "奇跡（舞台剧中曲）": {
       "base": "奇跡",
       "label": "舞台剧中曲",
@@ -15,5 +23,10 @@
       ]
     }
   },
-  "versions": {}
+  "versions": {
+    "song-a3ae396f86-v-a3ae396f86": {
+      "same_recording_as": "song-abfa828b92-v-120c3dd067",
+      "recording_source_url": "https://umamusume.lantis.jp/news/260/"
+    }
+  }
 }
