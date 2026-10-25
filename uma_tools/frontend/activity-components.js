@@ -67,7 +67,7 @@ export const ActivityTime = {
       });
       const broadcast = rows.find((row) => row.label === '播出');
       return rows.filter((row) => row.label !== '公开' || !broadcast
-        || row.date !== broadcast.date || row.value !== broadcast.value);
+        || !row.date || !broadcast.date || row.date !== broadcast.date || row.value !== broadcast.value);
     },
     channelRows() {
       const seen = new Set();
