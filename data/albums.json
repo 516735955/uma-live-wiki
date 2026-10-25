@@ -455,11 +455,13 @@
   "songs": [
    {
     "name": "GIRLS' LEGEND U ―やっとみんな会えたね―",
-    "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉",
+    "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1942712672",
     "pic": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
     "disc_number": 1,
-    "disc_track_number": 1
+    "disc_track_number": 1,
+    "artist_original": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉",
+    "artist_source": "https://umamusume.lantis.jp/discography/winning-live-06/"
    },
    {
     "name": "URAファイナルズ!!",
@@ -1168,11 +1170,13 @@
    },
    {
     "name": "走れウマ娘",
-    "artist": "和氣あず未、高野麻里佳、Machico",
+    "artist": "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1942713073",
     "pic": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
     "disc_number": 2,
-    "disc_track_number": 51
+    "disc_track_number": 51,
+    "artist_original": "和氣あず未、高野麻里佳、Machico",
+    "artist_source": "https://umamusume.lantis.jp/discography/winning-live-06/"
    },
    {
     "name": "ぱかチューブっ！ですが、何か？",
@@ -5380,9 +5384,11 @@
    },
    {
     "name": "灰のmemoire (ED Size [3話Ver.])",
-    "artist": "篠原侑、春日さくら",
+    "artist": "近藤唯、春日さくら",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2704243989",
-    "pic": "https://p1.music.126.net/eGNhlQToops0qTK2FQ0F1w==/109951170977508114.jpg"
+    "pic": "https://p1.music.126.net/eGNhlQToops0qTK2FQ0F1w==/109951170977508114.jpg",
+    "artist_original": "篠原侑、春日さくら",
+    "artist_source": "https://umamusume.lantis.jp/discography/winning-live-27/"
    },
    {
     "name": "灰のmemoire (ED Size [4話Ver.])",
@@ -10429,7 +10435,7 @@
    },
    {
     "name": "うまぴょい伝説 (Game Size)",
-    "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、.山根 綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
+    "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、山根綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703864023",
     "pic": "https://p2.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
     "disc_number": 2,
@@ -11326,7 +11332,9 @@
    },
    {
     "name": "逃げ切りっ！Fallin' Love (YUC'e Remix)",
-    "artist": "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ",
+    "artist": "高野麻里佳、大和田仁美、長谷川育美、Lynn、長江里加",
+    "artist_original": "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ",
+    "artist_source": "https://cystore.com/Form/Product/ProductDetail.aspx?bid=_NoBrand&pid=4540774250851&shop=0",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703859241",
     "pic": "https://p2.music.126.net/giN4mvL8QY7hzXWCaHoXog==/109951170973856784.jpg"
    },
@@ -11374,7 +11382,9 @@
    },
    {
     "name": "走れウマ娘 (Shuhei Takahashi Remix)",
-    "artist": "和氣あず未、高野麻里佳、Machico",
+    "artist": "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美",
+    "artist_original": "和氣あず未、高野麻里佳、Machico",
+    "artist_source": "https://cystore.com/Form/Product/ProductDetail.aspx?bid=_NoBrand&pid=4540774250851&shop=0",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703859243",
     "pic": "https://p2.music.126.net/giN4mvL8QY7hzXWCaHoXog==/109951170973856784.jpg"
    },
@@ -11504,9 +11514,11 @@
   "songs": [
    {
     "name": "Fanfare for Future!",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=444548576",
-    "pic": "https://p1.music.126.net/iJ5Ik6aemj1tkkx4ngtnig==/18533367999280220.jpg"
+    "pic": "https://p1.music.126.net/iJ5Ik6aemj1tkkx4ngtnig==/18533367999280220.jpg",
+    "artist_original": "和氣あず未",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-01/"
    },
    {
     "name": "恋はダービー☆",
@@ -11668,9 +11680,11 @@
    },
    {
     "name": "ぼくらのブルーバードデイズ",
-    "artist": "大橋彩香",
+    "artist": "大橋彩香、木村千咲、上田瞳",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=455345698",
-    "pic": "https://p2.music.126.net/yLTDtjtNw_wXmNjcxh5Dcw==/109951166739972720.jpg"
+    "pic": "https://p2.music.126.net/yLTDtjtNw_wXmNjcxh5Dcw==/109951166739972720.jpg",
+    "artist_original": "大橋彩香",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-03/"
    }
   ],
   "neteaseAlbumId": "35139562",
@@ -11702,9 +11716,11 @@
    },
    {
     "name": "奇跡を信じて!",
-    "artist": "大坪由佳",
+    "artist": "大坪由佳、前田玲奈、巽悠衣子",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=466794423",
-    "pic": "https://p1.music.126.net/xCJ0uU8KlIoKbHftFMjJRA==/109951166739978238.jpg"
+    "pic": "https://p1.music.126.net/xCJ0uU8KlIoKbHftFMjJRA==/109951166739978238.jpg",
+    "artist_original": "大坪由佳",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-04/"
    },
    {
     "name": "鳥かごのロンリーバード",
@@ -11763,9 +11779,11 @@
   "songs": [
    {
     "name": "世界は僕らの言いなりさ",
-    "artist": "大西沙織",
+    "artist": "大西沙織、髙橋ミナミ、徳井青空",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=505267124",
-    "pic": "https://p2.music.126.net/OQf2J7TtshUcZymama3pTw==/109951166739984735.jpg"
+    "pic": "https://p2.music.126.net/OQf2J7TtshUcZymama3pTw==/109951166739984735.jpg",
+    "artist_original": "大西沙織",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-05/"
    },
    {
     "name": "帝笑歌劇〜讃えよ永久に〜",
@@ -12018,9 +12036,11 @@
    },
    {
     "name": "A・NO・NE",
-    "artist": "鬼頭明里",
+    "artist": "香坂さき、鬼頭明里、山本希望",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=862099097",
-    "pic": "https://p1.music.126.net/Fpw-VcnZ-aNMPR9IFjqUCw==/109951166739988466.jpg"
+    "pic": "https://p1.music.126.net/Fpw-VcnZ-aNMPR9IFjqUCw==/109951166739988466.jpg",
+    "artist_original": "鬼頭明里",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-08/"
    }
   ],
   "neteaseAlbumId": "71612647",
@@ -12128,9 +12148,11 @@
    },
    {
     "name": "青春が待ってる",
-    "artist": "橋本ちなみ",
+    "artist": "橋本ちなみ、土師亜文、大和田仁美",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=553546022",
-    "pic": "https://p2.music.126.net/6l4QiLMr2WvxjB4OnzVQNA==/109951166740008127.jpg"
+    "pic": "https://p2.music.126.net/6l4QiLMr2WvxjB4OnzVQNA==/109951166740008127.jpg",
+    "artist_original": "橋本ちなみ",
+    "artist_source": "https://catalog.bandainamcomusiclive.co.jp/release/67733/"
    }
   ],
   "neteaseAlbumId": "38391017",
@@ -12238,9 +12260,11 @@
    },
    {
     "name": "ユメゾラ",
-    "artist": "大空直美",
+    "artist": "大空直美、三澤紗千香、田中あいみ",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557584171",
-    "pic": "https://p1.music.126.net/YR5nQMGFDi-vIZjIxzCVyQ==/109951163288618546.jpg"
+    "pic": "https://p1.music.126.net/YR5nQMGFDi-vIZjIxzCVyQ==/109951163288618546.jpg",
+    "artist_original": "大空直美",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-10/"
    }
   ],
   "neteaseAlbumId": "38595061",
@@ -12348,9 +12372,11 @@
    },
    {
     "name": "春空BLUE",
-    "artist": "渡部優衣",
+    "artist": "渡部優衣、渡部恵子、近藤唯",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557583925",
-    "pic": "https://p2.music.126.net/GiuiSQy-_KNoIN-k0hBxjw==/109951166740004901.jpg"
+    "pic": "https://p2.music.126.net/GiuiSQy-_KNoIN-k0hBxjw==/109951166740004901.jpg",
+    "artist_original": "渡部優衣",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-11/"
    }
   ],
   "neteaseAlbumId": "38594303",
@@ -12449,9 +12475,11 @@
    },
    {
     "name": "Go This Way",
-    "artist": "小倉唯",
+    "artist": "小倉唯、津田美波、前田佳織里",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=571339684",
-    "pic": "https://p2.music.126.net/Pip6wtIyOxE1iQueR-MoOA==/109951166740013775.jpg"
+    "pic": "https://p2.music.126.net/Pip6wtIyOxE1iQueR-MoOA==/109951166740013775.jpg",
+    "artist_original": "小倉唯",
+    "artist_source": "https://umamusume.lantis.jp/discography/starting-gate-12/"
    },
    {
     "name": "うまぴょい伝説",
@@ -12485,9 +12513,11 @@
   "songs": [
    {
     "name": "ENDLESS DREAM!!",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=524148964",
-    "pic": "https://p1.music.126.net/AOUMupxsUG4ea9_RLG2z4w==/109951163088171373.jpg"
+    "pic": "https://p1.music.126.net/AOUMupxsUG4ea9_RLG2z4w==/109951163088171373.jpg",
+    "artist_original": "和氣あず未",
+    "artist_source": "https://umamusume.lantis.jp/discography/endless-dream%e3%80%90%e9%80%9a%e5%b8%b8%e7%9b%a4%e3%80%91/"
    },
    {
     "name": "ENDLESS DREAM!! (スペシャルウィーク Ver.)",
@@ -12524,9 +12554,11 @@
   "songs": [
    {
     "name": "Make debut!",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=554244296",
-    "pic": "https://p2.music.126.net/uT3YVA3upEmEbyrFRHVgng==/109951163266072953.jpg"
+    "pic": "https://p2.music.126.net/uT3YVA3upEmEbyrFRHVgng==/109951163266072953.jpg",
+    "artist_original": "和氣あず未",
+    "artist_source": "https://umamusume.lantis.jp/discography/make-debut/"
    },
    {
     "name": "七色の景色",
@@ -12569,9 +12601,11 @@
   "songs": [
    {
     "name": "グロウアップ・シャイン!",
-    "artist": "和氣あず未",
+    "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557579194",
-    "pic": "https://p2.music.126.net/Wmv_chI6iCeeYC3yUigL2Q==/109951163289005949.jpg"
+    "pic": "https://p2.music.126.net/Wmv_chI6iCeeYC3yUigL2Q==/109951163289005949.jpg",
+    "artist_original": "和氣あず未",
+    "artist_source": "https://umamusume.lantis.jp/discography/%e3%82%b0%e3%83%ad%e3%82%a6%e3%82%a2%e3%83%83%e3%83%97%e3%83%bb%e3%82%b7%e3%83%a3%e3%82%a4%e3%83%b3%ef%bc%81/"
    },
    {
     "name": "ありがとう、神様",
@@ -13227,11 +13261,11 @@
   "company": "Lantis",
   "songs": [
    {
-        "name": "わたしの印は大本命◎",
-        "source_name": "私の印は大本命◎",
-        "title_source_url": "https://umamusume.lantis.jp/news/503/",
-        "version_label": "ANIMATION DERBY 05 收录版",
-        "version_id": "song-935e0f8210-v-935e0f8210",
+    "name": "わたしの印は大本命◎",
+    "source_name": "私の印は大本命◎",
+    "title_source_url": "https://umamusume.lantis.jp/news/503/",
+    "version_label": "ANIMATION DERBY 05 收录版",
+    "version_id": "song-935e0f8210-v-935e0f8210",
     "artist": "和氣あず未",
     "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1309074007",
     "pic": "https://p2.music.126.net/FT67rs_XvAhfDD61ccw0Kw==/109951163545978549.jpg"

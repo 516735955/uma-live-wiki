@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T14:56:30+00:00",
+  "generated_at": "2026-10-25T15:32:43+00:00",
   "coverage": {
     "songs": 1041,
     "versions": 2169,
@@ -2409,8 +2409,7 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "香坂さき、鬼頭明里、山本希望",
-        "鬼頭明里"
+        "香坂さき、鬼頭明里、山本希望"
       ],
       "character_ids": [
         "daitakuhelios",
@@ -2458,7 +2457,7 @@
           "title": "A・NO・NE",
           "version_label": "",
           "artists": [
-            "鬼頭明里"
+            "香坂さき、鬼頭明里、山本希望"
           ],
           "releases": [
             {
@@ -2471,11 +2470,25 @@
               "track_number": 13,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "鬼頭明里",
+              "artist": "香坂さき、鬼頭明里、山本希望",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=862099097",
               "image": "https://p1.music.126.net/Fpw-VcnZ-aNMPR9IFjqUCw==/109951166739988466.jpg",
               "instrumental": false,
               "vocalists": [
+                {
+                  "voice_actor_id": "va-0176",
+                  "voice_actor_name": "香坂沙希",
+                  "character_id": "goldcity",
+                  "character": {
+                    "id": "goldcity",
+                    "name": "黄金城市",
+                    "name_ja": "ゴールドシチー",
+                    "name_en": "Gold City",
+                    "image": "/uma_official/goldcity.png",
+                    "color_main": "#245099",
+                    "color_sub": "#E63C5C"
+                  }
+                },
                 {
                   "voice_actor_id": "va-0185",
                   "voice_actor_name": "鬼头明里",
@@ -2488,6 +2501,20 @@
                     "image": "/uma_official/seiunsky.png",
                     "color_main": "#65D283",
                     "color_sub": "#F4DA40"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0063",
+                  "voice_actor_name": "山本希望",
+                  "character_id": "yukinobijin",
+                  "character": {
+                    "id": "yukinobijin",
+                    "name": "雪之美人",
+                    "name_ja": "ユキノビジン",
+                    "name_en": "Yukino Bijin",
+                    "image": "/uma_official/yukinobijin.png",
+                    "color_main": "#AF7E51",
+                    "color_sub": "#C8D8EB"
                   }
                 }
               ]
@@ -22615,7 +22642,7 @@
           "title": "ENDLESS DREAM!!",
           "version_label": "",
           "artists": [
-            "和氣あず未"
+            "和氣あず未、高野麻里佳、Machico"
           ],
           "releases": [
             {
@@ -22628,7 +22655,7 @@
               "track_number": 1,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "和氣あず未",
+              "artist": "和氣あず未、高野麻里佳、Machico",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=524148964",
               "image": "https://p1.music.126.net/AOUMupxsUG4ea9_RLG2z4w==/109951163088171373.jpg",
               "instrumental": false,
@@ -22645,6 +22672,34 @@
                     "image": "/uma_official/specialweek.png",
                     "color_main": "#EE6DCB",
                     "color_sub": "#FFDEF9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0003",
+                  "voice_actor_name": "Machico",
+                  "character_id": "tokaiteio",
+                  "character": {
+                    "id": "tokaiteio",
+                    "name": "东海帝王",
+                    "name_ja": "トウカイテイオー",
+                    "name_en": "Tokai Teio",
+                    "image": "/uma_official/tokaiteio.png",
+                    "color_main": "#3376D2",
+                    "color_sub": "#FF99D0"
                   }
                 }
               ]
@@ -27061,7 +27116,6 @@
       "legacy_ids": [],
       "artists": [
         "EFFY、下 智子",
-        "和氣あず未",
         "和氣あず未、高野麻里佳、Machico"
       ],
       "character_ids": [
@@ -27142,7 +27196,7 @@
           "title": "Fanfare for Future!",
           "version_label": "",
           "artists": [
-            "和氣あず未"
+            "和氣あず未、高野麻里佳、Machico"
           ],
           "releases": [
             {
@@ -27155,7 +27209,7 @@
               "track_number": 1,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "和氣あず未",
+              "artist": "和氣あず未、高野麻里佳、Machico",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=444548576",
               "image": "https://p1.music.126.net/iJ5Ik6aemj1tkkx4ngtnig==/18533367999280220.jpg",
               "instrumental": false,
@@ -27172,6 +27226,34 @@
                     "image": "/uma_official/specialweek.png",
                     "color_main": "#EE6DCB",
                     "color_sub": "#FFDEF9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0003",
+                  "voice_actor_name": "Machico",
+                  "character_id": "tokaiteio",
+                  "character": {
+                    "id": "tokaiteio",
+                    "name": "东海帝王",
+                    "name_ja": "トウカイテイオー",
+                    "name_en": "Tokai Teio",
+                    "image": "/uma_official/tokaiteio.png",
+                    "color_main": "#3376D2",
+                    "color_sub": "#FF99D0"
                   }
                 }
               ]
@@ -35789,8 +35871,8 @@
         "song-girls-legend-u-68f74d7b92"
       ],
       "artists": [
-        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉",
-        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織"
+        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織",
+        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織"
       ],
       "character_ids": [
         "admiregroove",
@@ -38516,7 +38598,7 @@
           "title": "GIRLS' LEGEND U ―やっとみんな会えたね―",
           "version_label": "やっとみんな会えたね",
           "artists": [
-            "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉"
+            "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織"
           ],
           "releases": [
             {
@@ -38529,7 +38611,7 @@
               "track_number": 1,
               "disc_number": 1,
               "disc_track_number": 1,
-              "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉",
+              "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1942712672",
               "image": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
               "instrumental": false,
@@ -38602,6 +38684,286 @@
                     "image": "/uma_official/oguricap.png",
                     "color_main": "#3A7AD2",
                     "color_sub": "#ECE7E7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0051",
+                  "voice_actor_name": "大桥彩香",
+                  "character_id": "vodka",
+                  "character": {
+                    "id": "vodka",
+                    "name": "伏特加",
+                    "name_ja": "ウオッカ",
+                    "name_en": "Vodka",
+                    "image": "/uma_official/vodka.png",
+                    "color_main": "#D4C200",
+                    "color_sub": "#3DD1D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0090",
+                  "voice_actor_name": "木村千咲",
+                  "character_id": "daiwascarlet",
+                  "character": {
+                    "id": "daiwascarlet",
+                    "name": "大和赤骥",
+                    "name_ja": "ダイワスカーレット",
+                    "name_en": "Daiwa Scarlet",
+                    "image": "/uma_official/daiwascarlet.png",
+                    "color_main": "#4F64D8",
+                    "color_sub": "#E73472"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0050",
+                  "voice_actor_name": "大坪由佳",
+                  "character_id": "taikishuttle",
+                  "character": {
+                    "id": "taikishuttle",
+                    "name": "大树快车",
+                    "name_ja": "タイキシャトル",
+                    "name_en": "Taiki Shuttle",
+                    "image": "/uma_official/taikishuttle.png",
+                    "color_main": "#73C032",
+                    "color_sub": "#FFAC42"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0035",
+                  "voice_actor_name": "前田玲奈",
+                  "character_id": "grasswonder",
+                  "character": {
+                    "id": "grasswonder",
+                    "name": "草上飞",
+                    "name_ja": "グラスワンダー",
+                    "name_en": "Grass Wonder",
+                    "image": "/uma_official/grasswonder.png",
+                    "color_main": "#3A34AC",
+                    "color_sub": "#E3493F"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0053",
+                  "voice_actor_name": "大西沙织",
+                  "character_id": "mejiromcqueen",
+                  "character": {
+                    "id": "mejiromcqueen",
+                    "name": "目白麦昆",
+                    "name_ja": "メジロマックイーン",
+                    "name_en": "Mejiro McQueen",
+                    "image": "/uma_official/mejiromcqueen.png",
+                    "color_main": "#00B5BE",
+                    "color_sub": "#DFC8E7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0180",
+                  "voice_actor_name": "高桥未奈美",
+                  "character_id": "elcondorpasa",
+                  "character": {
+                    "id": "elcondorpasa",
+                    "name": "神鹰",
+                    "name_ja": "エルコンドルパサー",
+                    "name_en": "El Condor Pasa",
+                    "image": "/uma_official/elcondorpasa.png",
+                    "color_main": "#DD4E31",
+                    "color_sub": "#EFDB28"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0118",
+                  "voice_actor_name": "田所梓",
+                  "character_id": "symbolirudolf",
+                  "character": {
+                    "id": "symbolirudolf",
+                    "name": "鲁道夫象征",
+                    "name_ja": "シンボリルドルフ",
+                    "name_en": "Symboli Rudolf",
+                    "image": "/uma_official/symbolirudolf.png",
+                    "color_main": "#1C7763",
+                    "color_sub": "#C6314B"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0173",
+                  "voice_actor_name": "青木瑠璃子",
+                  "character_id": "airgroove",
+                  "character": {
+                    "id": "airgroove",
+                    "name": "气槽",
+                    "name_ja": "エアグルーヴ",
+                    "name_en": "Air Groove",
+                    "image": "/uma_official/airgroove.png",
+                    "color_main": "#0092CB",
+                    "color_sub": "#FAE053"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0085",
+                  "voice_actor_name": "星谷美绪",
+                  "character_id": "mayanotopgun",
+                  "character": {
+                    "id": "mayanotopgun",
+                    "name": "摩耶重炮",
+                    "name_ja": "マヤノトップガン",
+                    "name_en": "Mayano Top Gun",
+                    "image": "/uma_official/mayanotopgun.png",
+                    "color_main": "#F57D38",
+                    "color_sub": "#FFC845"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0043",
+                  "voice_actor_name": "土师亚文",
+                  "character_id": "mejiroryan",
+                  "character": {
+                    "id": "mejiroryan",
+                    "name": "目白赖恩",
+                    "name_ja": "メジロライアン",
+                    "name_en": "Mejiro Ryan",
+                    "image": "/uma_official/mejiroryan.png",
+                    "color_main": "#14BAAE",
+                    "color_sub": "#7C4D3A"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0129",
+                  "voice_actor_name": "石见舞菜香",
+                  "character_id": "riceshower",
+                  "character": {
+                    "id": "riceshower",
+                    "name": "米浴",
+                    "name_ja": "ライスシャワー",
+                    "name_en": "Rice Shower",
+                    "image": "/uma_official/riceshower.png",
+                    "color_main": "#384A86",
+                    "color_sub": "#CA3E6D"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0008",
+                  "voice_actor_name": "上坂堇",
+                  "character_id": "agnestachyon",
+                  "character": {
+                    "id": "agnestachyon",
+                    "name": "爱丽速子",
+                    "name_ja": "アグネスタキオン",
+                    "name_en": "Agnes Tachyon",
+                    "image": "/uma_official/agnestachyon.png",
+                    "color_main": "#35B2B6",
+                    "color_sub": "#E2E868"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0113",
+                  "voice_actor_name": "渡部优衣",
+                  "character_id": "winningticket",
+                  "character": {
+                    "id": "winningticket",
+                    "name": "胜利奖券",
+                    "name_ja": "ウイニングチケット",
+                    "name_en": "Winning Ticket",
+                    "image": "/uma_official/winningticket.png",
+                    "color_main": "#DD3D5B",
+                    "color_sub": "#EDE233"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0007",
+                  "voice_actor_name": "三泽纱千香",
+                  "character_id": "sakurabakushino",
+                  "character": {
+                    "id": "sakurabakushino",
+                    "name": "樱花进王",
+                    "name_ja": "サクラバクシンオー",
+                    "name_en": "Sakura Bakushin O",
+                    "image": "/uma_official/sakurabakushino.png",
+                    "color_main": "#EE6FAB",
+                    "color_sub": "#F2D4D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0033",
+                  "voice_actor_name": "优木加奈",
+                  "character_id": "supercreek",
+                  "character": {
+                    "id": "supercreek",
+                    "name": "超级溪流",
+                    "name_ja": "スーパークリーク",
+                    "name_en": "Super Creek",
+                    "image": "/uma_official/supercreek.png",
+                    "color_main": "#5693DA",
+                    "color_sub": "#C8C9C7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0175",
+                  "voice_actor_name": "首藤志奈",
+                  "character_id": "haruurara",
+                  "character": {
+                    "id": "haruurara",
+                    "name": "春乌拉拉",
+                    "name_ja": "ハルウララ",
+                    "name_en": "Haru Urara",
+                    "image": "/uma_official/haruurara.png",
+                    "color_main": "#FA7395",
+                    "color_sub": "#EDE04B"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0078",
+                  "voice_actor_name": "新田日和",
+                  "character_id": "matikanefukukitaru",
+                  "character": {
+                    "id": "matikanefukukitaru",
+                    "name": "待兼福来",
+                    "name_ja": "マチカネフクキタル",
+                    "name_en": "Matikanefukukitaru",
+                    "image": "/uma_official/matikanefukukitaru.png",
+                    "color_main": "#3D89E9",
+                    "color_sub": "#F8A717"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0034",
+                  "voice_actor_name": "前田佳织里",
+                  "character_id": "nicenature",
+                  "character": {
+                    "id": "nicenature",
+                    "name": "优秀素质",
+                    "name_ja": "ナイスネイチャ",
+                    "name_en": "Nice Nature",
+                    "image": "/uma_official/nicenature.png",
+                    "color_main": "#28A959",
+                    "color_sub": "#B82720"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0027",
+                  "voice_actor_name": "佐伯伊织",
+                  "character_id": "kinghalo",
+                  "character": {
+                    "id": "kinghalo",
+                    "name": "圣王光环",
+                    "name_ja": "キングヘイロー",
+                    "name_en": "King Halo",
+                    "image": "/uma_official/kinghalo.png",
+                    "color_main": "#0E9451",
+                    "color_sub": "#1C57A5"
                   }
                 }
               ]
@@ -41658,7 +42020,6 @@
       "legacy_ids": [],
       "artists": [
         "小倉 唯、津田美波、前田佳織里",
-        "小倉唯",
         "小倉唯、津田美波、前田佳織里"
       ],
       "character_ids": [
@@ -41799,7 +42160,7 @@
           "title": "Go This Way",
           "version_label": "",
           "artists": [
-            "小倉唯"
+            "小倉唯、津田美波、前田佳織里"
           ],
           "releases": [
             {
@@ -41812,7 +42173,7 @@
               "track_number": 12,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "小倉唯",
+              "artist": "小倉唯、津田美波、前田佳織里",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=571339684",
               "image": "https://p2.music.126.net/Pip6wtIyOxE1iQueR-MoOA==/109951166740013775.jpg",
               "instrumental": false,
@@ -41829,6 +42190,34 @@
                     "image": "/uma_official/manhattancafe.png",
                     "color_main": "#494541",
                     "color_sub": "#E8DD4C"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0109",
+                  "voice_actor_name": "津田美波",
+                  "character_id": "airshakur",
+                  "character": {
+                    "id": "airshakur",
+                    "name": "空中神宫",
+                    "name_ja": "エアシャカール",
+                    "name_en": "Air Shakur",
+                    "image": "/uma_official/airshakur.png",
+                    "color_main": "#2459B4",
+                    "color_sub": "#E1E000"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0034",
+                  "voice_actor_name": "前田佳织里",
+                  "character_id": "nicenature",
+                  "character": {
+                    "id": "nicenature",
+                    "name": "优秀素质",
+                    "name_ja": "ナイスネイチャ",
+                    "name_en": "Nice Nature",
+                    "image": "/uma_official/nicenature.png",
+                    "color_main": "#28A959",
+                    "color_sub": "#B82720"
                   }
                 }
               ]
@@ -53194,7 +53583,7 @@
           "title": "Make debut!",
           "version_label": "",
           "artists": [
-            "和氣あず未"
+            "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織"
           ],
           "releases": [
             {
@@ -53207,7 +53596,7 @@
               "track_number": 1,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "和氣あず未",
+              "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=554244296",
               "image": "https://p2.music.126.net/uT3YVA3upEmEbyrFRHVgng==/109951163266072953.jpg",
               "instrumental": false,
@@ -53224,6 +53613,90 @@
                     "image": "/uma_official/specialweek.png",
                     "color_main": "#EE6DCB",
                     "color_sub": "#FFDEF9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0003",
+                  "voice_actor_name": "Machico",
+                  "character_id": "tokaiteio",
+                  "character": {
+                    "id": "tokaiteio",
+                    "name": "东海帝王",
+                    "name_ja": "トウカイテイオー",
+                    "name_en": "Tokai Teio",
+                    "image": "/uma_official/tokaiteio.png",
+                    "color_main": "#3376D2",
+                    "color_sub": "#FF99D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0051",
+                  "voice_actor_name": "大桥彩香",
+                  "character_id": "vodka",
+                  "character": {
+                    "id": "vodka",
+                    "name": "伏特加",
+                    "name_ja": "ウオッカ",
+                    "name_en": "Vodka",
+                    "image": "/uma_official/vodka.png",
+                    "color_main": "#D4C200",
+                    "color_sub": "#3DD1D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0090",
+                  "voice_actor_name": "木村千咲",
+                  "character_id": "daiwascarlet",
+                  "character": {
+                    "id": "daiwascarlet",
+                    "name": "大和赤骥",
+                    "name_ja": "ダイワスカーレット",
+                    "name_en": "Daiwa Scarlet",
+                    "image": "/uma_official/daiwascarlet.png",
+                    "color_main": "#4F64D8",
+                    "color_sub": "#E73472"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0053",
+                  "voice_actor_name": "大西沙织",
+                  "character_id": "mejiromcqueen",
+                  "character": {
+                    "id": "mejiromcqueen",
+                    "name": "目白麦昆",
+                    "name_ja": "メジロマックイーン",
+                    "name_en": "Mejiro McQueen",
+                    "image": "/uma_official/mejiromcqueen.png",
+                    "color_main": "#00B5BE",
+                    "color_sub": "#DFC8E7"
                   }
                 }
               ]
@@ -119010,9 +119483,9 @@
         "和氣あず未、衣川里佳、近藤 唯、高田憂希、塚田悠衣、秋奈、佳原萌枝、和泉風花、千賀光莉、髙橋美空、嶋野 花、海野水玉、香里有佐、華成 結、浅見春那",
         "和氣あず未、高柳知葉、上田 瞳、衣川里佳、大空直美、小倉 唯、上坂すみれ、立花日菜、矢野妃菜喜、真野美月、鈴代紗弓、夏吉ゆうこ、奥野香耶、藤本侑里、秋奈、小島菜々恵、佐藤榛夏、日笠陽子、芹澤 優、月城日花",
         "和氣あず未、高野麻里佳、Machico",
-        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、.山根 綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
         "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、大坪由佳、前田玲奈、大西沙織、髙橋ミナミ、田所あずさ、青木瑠璃子、星谷美緒、土師亜文、石見舞菜香、上坂すみれ、渡部優衣、三澤紗千香、優木かな、首藤志奈、新田ひより、前田佳織里、佐伯伊織",
         "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織",
+        "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、山根綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
         "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織、田所あずさ、前田佳織里、花井美春、田澤茉純、遠野ひかる、のぐちゆり、山根綺、長谷川育美、石見舞菜香、近藤唯、渡部恵子、渡部優衣、矢野妃菜喜、立花日菜、Lynn、星谷美緒、松嵜麗、青木瑠璃子、新田ひより、和多田美咲、鬼頭明里、前田玲奈、髙橋ミナミ、三澤紗千香、土師亜文、久保田ひかり、衣川里佳",
         "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織、高橋未奈美、前田玲奈、鬼頭明里、佐伯伊織、首藤志奈、田所あずさ、大坪由佳、青木瑠璃子、巽悠衣子、松井恵理子、Lynn、徳井青空、近藤唯、相坂優歌、高柳知葉、優木かな、大空直美、井上遥乃、渡部優衣、土師亜文、久保田ひかり、前田佳織里、藤野彩水、新田ひより、和多田美咲",
         "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織、髙橋ミナミ、前田玲奈、鬼頭明里、佐伯伊織、首藤志奈、田所あずさ、大坪由佳、青木瑠璃子、巽 悠衣子、松井恵理子、Lynn、徳井青空、近藤唯、相坂優歌、高柳知葉、優木かな、大空直美、井上遥乃、渡部優衣、土師亜文、久保田ひかり、前田佳織里、藤野彩水",
@@ -135739,7 +136212,7 @@
           "title": "うまぴょい伝説 (Game Size)",
           "version_label": "Game Size / 演唱版：LACA-9973",
           "artists": [
-            "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、.山根 綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ"
+            "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、山根綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ"
           ],
           "releases": [
             {
@@ -135752,7 +136225,7 @@
               "track_number": 31,
               "disc_number": 2,
               "disc_track_number": 7,
-              "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田 瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、.山根 綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
+              "artist": "和氣あず未、高野麻里佳、Machico、Lynn、高柳知葉、上田瞳、大橋彩香、木村千咲、前田玲奈、大西沙織、髙橋ミナミ、徳井青空、田所あずさ、青木瑠璃子、鈴木みのり、鬼頭明里、橋本ちなみ、星谷美緒、山本希望、上坂すみれ、井上遥乃、渡部優衣、津田美波、鈴木絵理、下地紫野、渡部恵子、首藤志奈、新田ひより、和多田美咲、佐伯伊織、遠野ひかる、山根綺、花井美春、ファイルーズあい、青山吉能、春川芽生、松岡美里、吉咲みゆ",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703864023",
               "image": "https://p2.music.126.net/JmobsJ7sENihQGtc8Atz0Q==/109951170973909368.jpg",
               "instrumental": false,
@@ -136189,6 +136662,20 @@
                     "image": "/uma_official/matikanetannhauser.png",
                     "color_main": "#0f8dce",
                     "color_sub": "#ee5b56"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0065",
+                  "voice_actor_name": "山根绮",
+                  "character_id": "daitakuhelios",
+                  "character": {
+                    "id": "daitakuhelios",
+                    "name": "大拓太阳神",
+                    "name_ja": "ダイタクヘリオス",
+                    "name_en": "Daitaku Helios",
+                    "image": "/uma_official/daitakuhelios.png",
+                    "color_main": "#5b64d5",
+                    "color_sub": "#fbe247"
                   }
                 },
                 {
@@ -160901,7 +161388,6 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "大橋彩香",
         "大橋彩香、木村千咲、上田 瞳",
         "大橋彩香、木村千咲、上田瞳"
       ],
@@ -160959,7 +161445,7 @@
           "title": "ぼくらのブルーバードデイズ",
           "version_label": "",
           "artists": [
-            "大橋彩香"
+            "大橋彩香、木村千咲、上田瞳"
           ],
           "releases": [
             {
@@ -160972,7 +161458,7 @@
               "track_number": 6,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "大橋彩香",
+              "artist": "大橋彩香、木村千咲、上田瞳",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=455345698",
               "image": "https://p2.music.126.net/yLTDtjtNw_wXmNjcxh5Dcw==/109951166739972720.jpg",
               "instrumental": false,
@@ -160989,6 +161475,34 @@
                     "image": "/uma_official/vodka.png",
                     "color_main": "#D4C200",
                     "color_sub": "#3DD1D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0090",
+                  "voice_actor_name": "木村千咲",
+                  "character_id": "daiwascarlet",
+                  "character": {
+                    "id": "daiwascarlet",
+                    "name": "大和赤骥",
+                    "name_ja": "ダイワスカーレット",
+                    "name_en": "Daiwa Scarlet",
+                    "image": "/uma_official/daiwascarlet.png",
+                    "color_main": "#4F64D8",
+                    "color_sub": "#E73472"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
                   }
                 }
               ]
@@ -175293,7 +175807,7 @@
           "title": "グロウアップ・シャイン!",
           "version_label": "",
           "artists": [
-            "和氣あず未"
+            "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織"
           ],
           "releases": [
             {
@@ -175306,7 +175820,7 @@
               "track_number": 1,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "和氣あず未",
+              "artist": "和氣あず未、高野麻里佳、Machico、大橋彩香、木村千咲、上田瞳、大西沙織",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557579194",
               "image": "https://p2.music.126.net/Wmv_chI6iCeeYC3yUigL2Q==/109951163289005949.jpg",
               "instrumental": false,
@@ -175323,6 +175837,90 @@
                     "image": "/uma_official/specialweek.png",
                     "color_main": "#EE6DCB",
                     "color_sub": "#FFDEF9"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0003",
+                  "voice_actor_name": "Machico",
+                  "character_id": "tokaiteio",
+                  "character": {
+                    "id": "tokaiteio",
+                    "name": "东海帝王",
+                    "name_ja": "トウカイテイオー",
+                    "name_en": "Tokai Teio",
+                    "image": "/uma_official/tokaiteio.png",
+                    "color_main": "#3376D2",
+                    "color_sub": "#FF99D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0051",
+                  "voice_actor_name": "大桥彩香",
+                  "character_id": "vodka",
+                  "character": {
+                    "id": "vodka",
+                    "name": "伏特加",
+                    "name_ja": "ウオッカ",
+                    "name_en": "Vodka",
+                    "image": "/uma_official/vodka.png",
+                    "color_main": "#D4C200",
+                    "color_sub": "#3DD1D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0090",
+                  "voice_actor_name": "木村千咲",
+                  "character_id": "daiwascarlet",
+                  "character": {
+                    "id": "daiwascarlet",
+                    "name": "大和赤骥",
+                    "name_ja": "ダイワスカーレット",
+                    "name_en": "Daiwa Scarlet",
+                    "image": "/uma_official/daiwascarlet.png",
+                    "color_main": "#4F64D8",
+                    "color_sub": "#E73472"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0053",
+                  "voice_actor_name": "大西沙织",
+                  "character_id": "mejiromcqueen",
+                  "character": {
+                    "id": "mejiromcqueen",
+                    "name": "目白麦昆",
+                    "name_ja": "メジロマックイーン",
+                    "name_en": "Mejiro McQueen",
+                    "image": "/uma_official/mejiromcqueen.png",
+                    "color_main": "#00B5BE",
+                    "color_sub": "#DFC8E7"
                   }
                 }
               ]
@@ -199368,7 +199966,6 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "大空直美",
         "大空直美、三澤紗千香、田中あいみ"
       ],
       "character_ids": [
@@ -199417,7 +200014,7 @@
           "title": "ユメゾラ",
           "version_label": "",
           "artists": [
-            "大空直美"
+            "大空直美、三澤紗千香、田中あいみ"
           ],
           "releases": [
             {
@@ -199430,7 +200027,7 @@
               "track_number": 13,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "大空直美",
+              "artist": "大空直美、三澤紗千香、田中あいみ",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557584171",
               "image": "https://p1.music.126.net/YR5nQMGFDi-vIZjIxzCVyQ==/109951163288618546.jpg",
               "instrumental": false,
@@ -199447,6 +200044,34 @@
                     "image": "/uma_official/tamamocross.png",
                     "color_main": "#3290D6",
                     "color_sub": "#C6DAE7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0007",
+                  "voice_actor_name": "三泽纱千香",
+                  "character_id": "sakurabakushino",
+                  "character": {
+                    "id": "sakurabakushino",
+                    "name": "樱花进王",
+                    "name_ja": "サクラバクシンオー",
+                    "name_en": "Sakura Bakushin O",
+                    "image": "/uma_official/sakurabakushino.png",
+                    "color_main": "#EE6FAB",
+                    "color_sub": "#F2D4D7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0117",
+                  "voice_actor_name": "田中爱美",
+                  "character_id": "bikopegasus",
+                  "character": {
+                    "id": "bikopegasus",
+                    "name": "微光飞驹",
+                    "name_ja": "ビコーペガサス",
+                    "name_en": "Biko Pegasus",
+                    "image": "/uma_official/bikopegasus.png",
+                    "color_main": "#E7396F",
+                    "color_sub": "#D162B8"
                   }
                 }
               ]
@@ -207348,7 +207973,6 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "大西沙織",
         "大西沙織、髙橋ミナミ、徳井青空"
       ],
       "character_ids": [
@@ -207397,7 +208021,7 @@
           "title": "世界は僕らの言いなりさ",
           "version_label": "",
           "artists": [
-            "大西沙織"
+            "大西沙織、髙橋ミナミ、徳井青空"
           ],
           "releases": [
             {
@@ -207410,7 +208034,7 @@
               "track_number": 1,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "大西沙織",
+              "artist": "大西沙織、髙橋ミナミ、徳井青空",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=505267124",
               "image": "https://p2.music.126.net/OQf2J7TtshUcZymama3pTw==/109951166739984735.jpg",
               "instrumental": false,
@@ -207427,6 +208051,34 @@
                     "image": "/uma_official/mejiromcqueen.png",
                     "color_main": "#00B5BE",
                     "color_sub": "#DFC8E7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0180",
+                  "voice_actor_name": "高桥未奈美",
+                  "character_id": "elcondorpasa",
+                  "character": {
+                    "id": "elcondorpasa",
+                    "name": "神鹰",
+                    "name_ja": "エルコンドルパサー",
+                    "name_en": "El Condor Pasa",
+                    "image": "/uma_official/elcondorpasa.png",
+                    "color_main": "#DD4E31",
+                    "color_sub": "#EFDB28"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0073",
+                  "voice_actor_name": "德井青空",
+                  "character_id": "tmoperao",
+                  "character": {
+                    "id": "tmoperao",
+                    "name": "好歌剧",
+                    "name_ja": "テイエムオペラオー",
+                    "name_en": "T.M. Opera O",
+                    "image": "/uma_official/tmoperao.png",
+                    "color_main": "#F271C4",
+                    "color_sub": "#FBE415"
                   }
                 }
               ]
@@ -217853,8 +218505,8 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "大坪由佳",
-        "大坪由佳、前田玲奈、巽 悠衣子"
+        "大坪由佳、前田玲奈、巽 悠衣子",
+        "大坪由佳、前田玲奈、巽悠衣子"
       ],
       "character_ids": [
         "fujikiseki",
@@ -217926,7 +218578,7 @@
           "title": "奇跡を信じて!",
           "version_label": "",
           "artists": [
-            "大坪由佳"
+            "大坪由佳、前田玲奈、巽悠衣子"
           ],
           "releases": [
             {
@@ -217939,7 +218591,7 @@
               "track_number": 2,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "大坪由佳",
+              "artist": "大坪由佳、前田玲奈、巽悠衣子",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=466794423",
               "image": "https://p1.music.126.net/xCJ0uU8KlIoKbHftFMjJRA==/109951166739978238.jpg",
               "instrumental": false,
@@ -217956,6 +218608,34 @@
                     "image": "/uma_official/taikishuttle.png",
                     "color_main": "#73C032",
                     "color_sub": "#FFAC42"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0035",
+                  "voice_actor_name": "前田玲奈",
+                  "character_id": "grasswonder",
+                  "character": {
+                    "id": "grasswonder",
+                    "name": "草上飞",
+                    "name_ja": "グラスワンダー",
+                    "name_en": "Grass Wonder",
+                    "image": "/uma_official/grasswonder.png",
+                    "color_main": "#3A34AC",
+                    "color_sub": "#E3493F"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0071",
+                  "voice_actor_name": "巽悠衣子",
+                  "character_id": "hishiamazon",
+                  "character": {
+                    "id": "hishiamazon",
+                    "name": "菱亚马逊",
+                    "name_ja": "ヒシアマゾン",
+                    "name_en": "Hishi Amazon",
+                    "image": "/uma_official/hishiamazon.png",
+                    "color_main": "#2185D0",
+                    "color_sub": "#E6453A"
                   }
                 }
               ]
@@ -228521,7 +229201,6 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "渡部優衣",
         "渡部優衣、渡部恵子、近藤 唯",
         "渡部優衣、渡部恵子、近藤唯"
       ],
@@ -228563,7 +229242,7 @@
           "title": "春空BLUE",
           "version_label": "",
           "artists": [
-            "渡部優衣"
+            "渡部優衣、渡部恵子、近藤唯"
           ],
           "releases": [
             {
@@ -228576,7 +229255,7 @@
               "track_number": 13,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "渡部優衣",
+              "artist": "渡部優衣、渡部恵子、近藤唯",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=557583925",
               "image": "https://p2.music.126.net/GiuiSQy-_KNoIN-k0hBxjw==/109951166740004901.jpg",
               "instrumental": false,
@@ -228593,6 +229272,34 @@
                     "image": "/uma_official/winningticket.png",
                     "color_main": "#DD3D5B",
                     "color_sub": "#EDE233"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0114",
+                  "voice_actor_name": "渡部惠子",
+                  "character_id": "naritataishin",
+                  "character": {
+                    "id": "naritataishin",
+                    "name": "成田大进",
+                    "name_ja": "ナリタタイシン",
+                    "name_en": "Narita Taishin",
+                    "image": "/uma_official/naritataishin.png",
+                    "color_main": "#E575CE",
+                    "color_sub": "#F3DD6D"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0158",
+                  "voice_actor_name": "近藤唯",
+                  "character_id": "biwahayahide",
+                  "character": {
+                    "id": "biwahayahide",
+                    "name": "琵琶晨光",
+                    "name_ja": "ビワハヤヒデ",
+                    "name_en": "Biwa Hayahide",
+                    "image": "/uma_official/biwahayahide.png",
+                    "color_main": "#B03D81",
+                    "color_sub": "#E776B6"
                   }
                 }
               ]
@@ -236219,8 +236926,8 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "篠原侑、春日さくら",
         "篠原侑、真名瀬日和",
+        "近藤唯、春日さくら",
         "高柳知葉、上田瞳、大西沙織、大空直美",
         "高柳知葉、上田瞳、大西沙織、鬼頭明里、大空直美、近藤唯、篠原侑、春日さくら、真名瀬日和",
         "鬼頭明里"
@@ -236680,7 +237387,7 @@
           "title": "灰のmemoire (ED Size [3話Ver.])",
           "version_label": "ED Size [3話Ver.]",
           "artists": [
-            "篠原侑、春日さくら"
+            "近藤唯、春日さくら"
           ],
           "releases": [
             {
@@ -236693,23 +237400,23 @@
               "track_number": 10,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "篠原侑、春日さくら",
+              "artist": "近藤唯、春日さくら",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2704243989",
               "image": "https://p1.music.126.net/eGNhlQToops0qTK2FQ0F1w==/109951170977508114.jpg",
               "instrumental": false,
               "vocalists": [
                 {
-                  "voice_actor_id": "va-0139",
-                  "voice_actor_name": "篠原侑",
-                  "character_id": "currenchan",
+                  "voice_actor_id": "va-0158",
+                  "voice_actor_name": "近藤唯",
+                  "character_id": "biwahayahide",
                   "character": {
-                    "id": "currenchan",
-                    "name": "真机伶",
-                    "name_ja": "カレンチャン",
-                    "name_en": "Curren Chan",
-                    "image": "/uma_official/currenchan.png",
-                    "color_main": "#F86669",
-                    "color_sub": "#47423E"
+                    "id": "biwahayahide",
+                    "name": "琵琶晨光",
+                    "name_ja": "ビワハヤヒデ",
+                    "name_en": "Biwa Hayahide",
+                    "image": "/uma_official/biwahayahide.png",
+                    "color_main": "#B03D81",
+                    "color_sub": "#E776B6"
                   }
                 },
                 {
@@ -249931,7 +250638,7 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "和氣あず未、高野麻里佳、Machico"
+        "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美"
       ],
       "character_ids": [
         "admirevega",
@@ -249993,6 +250700,7 @@
         "symbolikriss",
         "symbolirudolf",
         "taikishuttle",
+        "tamamocross",
         "taninogimlet",
         "tapdancecity",
         "tmoperao",
@@ -250027,6 +250735,7 @@
         "va-0049",
         "va-0050",
         "va-0051",
+        "va-0052",
         "va-0054",
         "va-0058",
         "va-0065",
@@ -250076,13 +250785,23 @@
         "va-0185"
       ],
       "released_character_ids": [
+        "akasakamisato",
+        "goldship",
+        "hayakawatazuna",
         "silencesuzuka",
         "specialweek",
-        "tokaiteio"
+        "tamamocross",
+        "tokaiteio",
+        "winningticket"
       ],
       "released_voice_actor_ids": [
         "va-0003",
+        "va-0009",
         "va-0040",
+        "va-0052",
+        "va-0082",
+        "va-0113",
+        "va-0151",
         "va-0184"
       ],
       "performed_character_ids": [
@@ -250235,7 +250954,7 @@
           "title": "走れウマ娘",
           "version_label": "",
           "artists": [
-            "和氣あず未、高野麻里佳、Machico"
+            "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美"
           ],
           "releases": [
             {
@@ -250248,7 +250967,7 @@
               "track_number": 81,
               "disc_number": 2,
               "disc_track_number": 51,
-              "artist": "和氣あず未、高野麻里佳、Machico",
+              "artist": "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1942713073",
               "image": "https://p1.music.126.net/imVuGJY4lKGhFNadbhDbSg==/109951170973879475.jpg",
               "instrumental": false,
@@ -250293,6 +251012,76 @@
                     "image": "/uma_official/tokaiteio.png",
                     "color_main": "#3376D2",
                     "color_sub": "#FF99D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0052",
+                  "voice_actor_name": "大空直美",
+                  "character_id": "tamamocross",
+                  "character": {
+                    "id": "tamamocross",
+                    "name": "玉藻十字",
+                    "name_ja": "タマモクロス",
+                    "name_en": "Tamamo Cross",
+                    "image": "/uma_official/tamamocross.png",
+                    "color_main": "#3290D6",
+                    "color_sub": "#C6DAE7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0113",
+                  "voice_actor_name": "渡部优衣",
+                  "character_id": "winningticket",
+                  "character": {
+                    "id": "winningticket",
+                    "name": "胜利奖券",
+                    "name_ja": "ウイニングチケット",
+                    "name_en": "Winning Ticket",
+                    "image": "/uma_official/winningticket.png",
+                    "color_main": "#DD3D5B",
+                    "color_sub": "#EDE233"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0151",
+                  "voice_actor_name": "藤井幸代",
+                  "character_id": "hayakawatazuna",
+                  "character": {
+                    "id": "hayakawatazuna",
+                    "name": "骏川手纲",
+                    "name_ja": "駿川たづな",
+                    "name_en": "Hayakawa Tazuna",
+                    "image": "/uma_official/hayakawatazuna.png",
+                    "color_main": "#44A705",
+                    "color_sub": "#F3CD00"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0082",
+                  "voice_actor_name": "明坂聪美",
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
                   }
                 }
               ]
@@ -250876,7 +251665,7 @@
           "title": "走れウマ娘 (Shuhei Takahashi Remix)",
           "version_label": "Shuhei Takahashi Remix",
           "artists": [
-            "和氣あず未、高野麻里佳、Machico"
+            "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美"
           ],
           "releases": [
             {
@@ -250889,7 +251678,7 @@
               "track_number": 10,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "和氣あず未、高野麻里佳、Machico",
+              "artist": "和氣あず未、高野麻里佳、Machico、上田瞳、大空直美、渡部優衣、藤井ゆきよ、明坂聡美",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703859243",
               "image": "https://p2.music.126.net/giN4mvL8QY7hzXWCaHoXog==/109951170973856784.jpg",
               "instrumental": false,
@@ -250934,6 +251723,76 @@
                     "image": "/uma_official/tokaiteio.png",
                     "color_main": "#3376D2",
                     "color_sub": "#FF99D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0052",
+                  "voice_actor_name": "大空直美",
+                  "character_id": "tamamocross",
+                  "character": {
+                    "id": "tamamocross",
+                    "name": "玉藻十字",
+                    "name_ja": "タマモクロス",
+                    "name_en": "Tamamo Cross",
+                    "image": "/uma_official/tamamocross.png",
+                    "color_main": "#3290D6",
+                    "color_sub": "#C6DAE7"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0113",
+                  "voice_actor_name": "渡部优衣",
+                  "character_id": "winningticket",
+                  "character": {
+                    "id": "winningticket",
+                    "name": "胜利奖券",
+                    "name_ja": "ウイニングチケット",
+                    "name_en": "Winning Ticket",
+                    "image": "/uma_official/winningticket.png",
+                    "color_main": "#DD3D5B",
+                    "color_sub": "#EDE233"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0151",
+                  "voice_actor_name": "藤井幸代",
+                  "character_id": "hayakawatazuna",
+                  "character": {
+                    "id": "hayakawatazuna",
+                    "name": "骏川手纲",
+                    "name_ja": "駿川たづな",
+                    "name_en": "Hayakawa Tazuna",
+                    "image": "/uma_official/hayakawatazuna.png",
+                    "color_main": "#44A705",
+                    "color_sub": "#F3CD00"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0082",
+                  "voice_actor_name": "明坂聪美",
+                  "character_id": "akasakamisato",
+                  "character": {
+                    "id": "akasakamisato",
+                    "name": "赤坂美聡",
+                    "name_ja": "赤坂美聡",
+                    "name_en": "Akasaka Misato",
+                    "image": "/uma_official/akasakamisato.png",
+                    "color_main": "#2A8E6E",
+                    "color_sub": "#D75938"
                   }
                 }
               ]
@@ -252005,7 +252864,8 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ"
+        "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ",
+        "高野麻里佳、大和田仁美、長谷川育美、Lynn、長江里加"
       ],
       "character_ids": [
         "currenchan",
@@ -252040,6 +252900,7 @@
         "va-0139",
         "va-0140",
         "va-0145",
+        "va-0168",
         "va-0169",
         "va-0184"
       ],
@@ -252054,6 +252915,7 @@
         "va-0001",
         "va-0049",
         "va-0070",
+        "va-0168",
         "va-0169",
         "va-0184"
       ],
@@ -252546,7 +253408,7 @@
           "title": "逃げ切りっ！Fallin' Love (YUC'e Remix)",
           "version_label": "YUC'e Remix",
           "artists": [
-            "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ"
+            "高野麻里佳、大和田仁美、長谷川育美、Lynn、長江里加"
           ],
           "releases": [
             {
@@ -252559,7 +253421,7 @@
               "track_number": 2,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "高野麻里佳、大和田仁美、長谷川育美、Lynn、嶺内ともみ",
+              "artist": "高野麻里佳、大和田仁美、長谷川育美、Lynn、長江里加",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2703859241",
               "image": "https://p2.music.126.net/giN4mvL8QY7hzXWCaHoXog==/109951170973856784.jpg",
               "instrumental": false,
@@ -252621,8 +253483,8 @@
                   }
                 },
                 {
-                  "voice_actor_id": "va-0070",
-                  "voice_actor_name": "岭内知美",
+                  "voice_actor_id": "va-0168",
+                  "voice_actor_name": "长江里加",
                   "character_id": "inesfujin",
                   "character": {
                     "id": "inesfujin",
@@ -255055,7 +255917,6 @@
       ],
       "legacy_ids": [],
       "artists": [
-        "橋本ちなみ",
         "橋本ちなみ、土師亜文、大和田仁美"
       ],
       "character_ids": [
@@ -255096,7 +255957,7 @@
           "title": "青春が待ってる",
           "version_label": "",
           "artists": [
-            "橋本ちなみ"
+            "橋本ちなみ、土師亜文、大和田仁美"
           ],
           "releases": [
             {
@@ -255109,7 +255970,7 @@
               "track_number": 13,
               "disc_number": null,
               "disc_track_number": null,
-              "artist": "橋本ちなみ",
+              "artist": "橋本ちなみ、土師亜文、大和田仁美",
               "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=553546022",
               "image": "https://p2.music.126.net/6l4QiLMr2WvxjB4OnzVQNA==/109951166740008127.jpg",
               "instrumental": false,
@@ -255126,6 +255987,34 @@
                     "image": "/uma_official/finemotion.png",
                     "color_main": "#20A95C",
                     "color_sub": "#EE5340"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0043",
+                  "voice_actor_name": "土师亚文",
+                  "character_id": "mejiroryan",
+                  "character": {
+                    "id": "mejiroryan",
+                    "name": "目白赖恩",
+                    "name_ja": "メジロライアン",
+                    "name_en": "Mejiro Ryan",
+                    "image": "/uma_official/mejiroryan.png",
+                    "color_main": "#14BAAE",
+                    "color_sub": "#7C4D3A"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0049",
+                  "voice_actor_name": "大和田仁美",
+                  "character_id": "smartfalcon",
+                  "character": {
+                    "id": "smartfalcon",
+                    "name": "醒目飞鹰",
+                    "name_ja": "スマートファルコン",
+                    "name_en": "Smart Falcon",
+                    "image": "/uma_official/smartfalcon.png",
+                    "color_main": "#F8587B",
+                    "color_sub": "#403A35"
                   }
                 }
               ]
@@ -257429,5 +258318,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "376f5b31a1f22b89a418"
+  "build_id": "277dbffd949e6e2580ed"
 }
