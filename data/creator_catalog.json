@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T05:09:58+00:00",
+  "generated_at": "2026-10-25T05:54:28+00:00",
   "coverage": {
-    "creators": 301,
-    "credited_works": 417,
-    "credited_versions": 1381
+    "creators": 305,
+    "credited_works": 423,
+    "credited_versions": 1388
   },
   "creators": [
     {
@@ -1864,21 +1864,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 1
+          "count": 3
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 1
+          "count": 3
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 1
+          "count": 3
         }
       ],
-      "work_count": 1,
-      "version_count": 1,
+      "work_count": 2,
+      "version_count": 3,
       "works": [
         {
           "song_id": "song-lady-g-donna-cc1740ca06",
@@ -1906,9 +1906,56 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-3f9e19a4e8",
+          "title": "繚乱縁舞",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-3f9e19a4e8-v-3f9e19a4e8",
+            "song-3f9e19a4e8-v-f3e639cff3"
+          ],
+          "versions": [
+            {
+              "id": "song-3f9e19a4e8-v-3f9e19a4e8",
+              "title": "繚乱縁舞",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-3f9e19a4e8-v-f3e639cff3",
+              "title": "繚乱縁舞 (Game Size)",
+              "version_label": "Game Size",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
+        {
+          "creator_id": "creator-amazuti-f3d624083a",
+          "name": "安部大希-amazuti-",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        },
         {
           "creator_id": "creator-b6d34cda6b",
           "name": "宝野聡史",
@@ -4946,6 +4993,58 @@
       ]
     },
     {
+      "id": "creator-rockwell-3d5145dc53",
+      "name": "Rockwell",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "arranger",
+          "label": "编曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-wild-dirt-1d4de2a661",
+          "title": "Wild-Dirt",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "arranger"
+          ],
+          "version_ids": [
+            "song-wild-dirt-1d4de2a661-v-1d4de2a661"
+          ],
+          "versions": [
+            {
+              "id": "song-wild-dirt-1d4de2a661-v-1d4de2a661",
+              "title": "Wild-Dirt",
+              "version_label": "",
+              "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-kenchang-97bf8cab1c",
+          "name": "kenchang",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-wild-dirt-1d4de2a661"
+          ]
+        }
+      ]
+    },
+    {
       "id": "creator-s-key-a-93b1b33177",
       "name": "S-KEY-A",
       "aliases": [],
@@ -5960,6 +6059,55 @@
           ]
         }
       ]
+    },
+    {
+      "id": "creator-takuma-a015fe0b54",
+      "name": "TAKUMA",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        },
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-42bd0bc92d",
+          "title": "スパートシンドローマー",
+          "cover": "/album_covers/10FEET-spurt.webp",
+          "release_date": "2025-10-08",
+          "album_name": "スパートシンドローマー",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-42bd0bc92d-v-42bd0bc92d"
+          ],
+          "versions": [
+            {
+              "id": "song-42bd0bc92d-v-42bd0bc92d",
+              "title": "スパートシンドローマー",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": []
     },
     {
       "id": "creator-taishi-2bc539d68c",
@@ -7718,6 +7866,65 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-beyond-the-future-aaed329475"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-kenchang-97bf8cab1c",
+      "name": "kenchang",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        },
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-wild-dirt-1d4de2a661",
+          "title": "Wild-Dirt",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-wild-dirt-1d4de2a661-v-1d4de2a661"
+          ],
+          "versions": [
+            {
+              "id": "song-wild-dirt-1d4de2a661-v-1d4de2a661",
+              "title": "Wild-Dirt",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-rockwell-3d5145dc53",
+          "name": "Rockwell",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-wild-dirt-1d4de2a661"
           ]
         }
       ]
@@ -9716,21 +9923,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 1
+          "count": 2
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 1
+          "count": 2
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 2
+          "count": 3
         }
       ],
-      "work_count": 2,
-      "version_count": 2,
+      "work_count": 3,
+      "version_count": 3,
       "works": [
         {
           "song_id": "song-beyond-the-finale-7429c4eae3",
@@ -9777,6 +9984,33 @@
               "title": "CAN'T STOP ワル上等！",
               "version_label": "",
               "roles": [
+                "arranger"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-405777870e",
+          "title": "将者必勝の所以",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-405777870e-v-405777870e"
+          ],
+          "versions": [
+            {
+              "id": "song-405777870e-v-405777870e",
+              "title": "将者必勝の所以",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer",
                 "arranger"
               ]
             }
@@ -26155,6 +26389,75 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-blaze-b4bd8fc766"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-amazuti-f3d624083a",
+      "name": "安部大希-amazuti-",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 2
+        },
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 2
+        }
+      ],
+      "work_count": 1,
+      "version_count": 2,
+      "works": [
+        {
+          "song_id": "song-3f9e19a4e8",
+          "title": "繚乱縁舞",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-3f9e19a4e8-v-3f9e19a4e8",
+            "song-3f9e19a4e8-v-f3e639cff3"
+          ],
+          "versions": [
+            {
+              "id": "song-3f9e19a4e8-v-3f9e19a4e8",
+              "title": "繚乱縁舞",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            },
+            {
+              "id": "song-3f9e19a4e8-v-f3e639cff3",
+              "title": "繚乱縁舞 (Game Size)",
+              "version_label": "Game Size",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-gak-amazuti-531b564671",
+          "name": "GAK-amazuti-",
+          "shared_version_count": 2,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
           ]
         }
       ]
@@ -55347,21 +55650,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 4
+          "count": 6
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 2
+          "count": 3
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 2
+          "count": 3
         }
       ],
-      "work_count": 4,
-      "version_count": 4,
+      "work_count": 6,
+      "version_count": 6,
       "works": [
         {
           "song_id": "song-2e51a450ee",
@@ -55462,9 +55765,69 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-a89d60e896",
+          "title": "ガブッと！",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist"
+          ],
+          "version_ids": [
+            "song-a89d60e896-v-a89d60e896"
+          ],
+          "versions": [
+            {
+              "id": "song-a89d60e896-v-a89d60e896",
+              "title": "ガブッと！",
+              "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-e55b39cb47",
+          "title": "雪解けの日のこと",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-e55b39cb47-v-e55b39cb47"
+          ],
+          "versions": [
+            {
+              "id": "song-e55b39cb47-v-e55b39cb47",
+              "title": "雪解けの日のこと",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
+        {
+          "creator_id": "creator-8ba66086c5",
+          "name": "長谷部翔",
+          "shared_version_count": 2,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-a89d60e896",
+            "song-close-my-eyes-c5c0332cb8"
+          ]
+        },
         {
           "creator_id": "creator-e2518d6bbc",
           "name": "佐藤 遥",
@@ -55477,15 +55840,6 @@
         {
           "creator_id": "creator-3c16a7a644",
           "name": "岩井彩夏",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-close-my-eyes-c5c0332cb8"
-          ]
-        },
-        {
-          "creator_id": "creator-8ba66086c5",
-          "name": "長谷部翔",
           "shared_version_count": 1,
           "shared_work_count": 1,
           "shared_song_ids": [
@@ -57156,16 +57510,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 35
+          "count": 36
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 34
+          "count": 35
         }
       ],
-      "work_count": 12,
-      "version_count": 37,
+      "work_count": 13,
+      "version_count": 38,
       "works": [
         {
           "song_id": "song-uma-summer-d7e35f6a48",
@@ -57706,6 +58060,31 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-a89d60e896",
+          "title": "ガブッと！",
+          "cover": "/album_covers/placeholder.webp",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-a89d60e896-v-a89d60e896"
+          ],
+          "versions": [
+            {
+              "id": "song-a89d60e896-v-a89d60e896",
+              "title": "ガブッと！",
+              "version_label": "",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -57767,6 +58146,16 @@
           "shared_song_ids": [
             "song-808c459e6c",
             "song-aee13bd730"
+          ]
+        },
+        {
+          "creator_id": "creator-4b1b6e971f",
+          "name": "菊池拓人",
+          "shared_version_count": 2,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-a89d60e896",
+            "song-close-my-eyes-c5c0332cb8"
           ]
         },
         {
@@ -57857,15 +58246,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-aee13bd730"
-          ]
-        },
-        {
-          "creator_id": "creator-4b1b6e971f",
-          "name": "菊池拓人",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-close-my-eyes-c5c0332cb8"
           ]
         }
       ]
@@ -59562,5 +59942,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "583fc59ee5a5e8bad7d3"
+  "build_id": "aeebe7b717edb0eac43e"
 }

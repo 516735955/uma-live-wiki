@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T05:09:58+00:00",
+  "generated_at": "2026-10-25T05:54:28+00:00",
   "coverage": {
     "songs": 1043,
     "versions": 2061,
     "albums": 115,
     "release_tracks": 2250,
     "live_performances": 1265,
-    "credited_songs": 417,
+    "credited_songs": 423,
     "lyric_songs": 249,
-    "credited_versions": 1381,
+    "credited_versions": 1388,
     "lyric_versions": 462
   },
   "songs": [
@@ -37467,7 +37467,7 @@
               "event_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
               "event_title": "NHK WORLD JAPAN presents SONGS OF TOKYO Festival 2021",
               "event_date": "2021-11-21",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival-session-1",
               "session_label": "本公演",
@@ -37504,7 +37504,7 @@
               "event_id": "live-other-2021-10-09-and-more-fes-2021",
               "event_title": "涩谷之音 and more FES.2021",
               "event_date": "2021-10-09",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-10-09-and-more-fes-2021-session-1",
               "session_label": "本公演",
@@ -39117,13 +39117,13 @@
             },
             {
               "event_id": "live-other-2024-02-25-2024-day2",
-              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第2日",
-              "event_date": "2024-02-25",
+              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第1日",
+              "event_date": "2024-02-24",
               "kind": "onsite",
               "series_id": "",
               "session_id": "live-other-2024-02-25-2024-day2-session-1",
               "session_label": "本公演",
-              "session_date": "2024-02-25",
+              "session_date": "2024-02-24",
               "performance_index": 3,
               "setlist_no": "3",
               "character_ids": [
@@ -53751,12 +53751,12 @@
             {
               "event_id": "live-other-2022-03-20-sp",
               "event_title": "Anison! Premium! 赛马娘×赛马特别节目",
-              "event_date": "2022-03-20",
-              "kind": "onsite",
+              "event_date": "2022-03-21",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2022-03-20-sp-session-1",
               "session_label": "本公演",
-              "session_date": "2022-03-20",
+              "session_date": "2022-03-21",
               "performance_index": 1,
               "setlist_no": "1",
               "character_ids": [
@@ -91355,13 +91355,13 @@
             },
             {
               "event_id": "live-other-2024-02-25-2024-day2",
-              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第2日",
-              "event_date": "2024-02-25",
+              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第1日",
+              "event_date": "2024-02-24",
               "kind": "onsite",
               "series_id": "",
               "session_id": "live-other-2024-02-25-2024-day2-session-1",
               "session_label": "本公演",
-              "session_date": "2024-02-25",
+              "session_date": "2024-02-24",
               "performance_index": 2,
               "setlist_no": "2",
               "character_ids": [
@@ -104149,12 +104149,12 @@
             {
               "event_id": "live-other-2022-03-20-sp",
               "event_title": "Anison! Premium! 赛马娘×赛马特别节目",
-              "event_date": "2022-03-20",
-              "kind": "onsite",
+              "event_date": "2022-03-21",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2022-03-20-sp-session-1",
               "session_label": "本公演",
-              "session_date": "2022-03-20",
+              "session_date": "2022-03-21",
               "performance_index": 3,
               "setlist_no": "3",
               "character_ids": [
@@ -110270,8 +110270,27 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-kenchang-97bf8cab1c"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-kenchang-97bf8cab1c"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-rockwell-3d5145dc53"
+            }
+          ],
+          "creator_ids": [
+            "creator-kenchang-97bf8cab1c",
+            "creator-rockwell-3d5145dc53"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -110281,7 +110300,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-wild-dirt-1d4de2a661-v-1d4de2a661",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-kenchang-97bf8cab1c",
+        "creator-rockwell-3d5145dc53"
+      ],
       "has_lyrics": false
     },
     {
@@ -115528,7 +115550,7 @@
             },
             {
               "event_id": "live-cd-2025-07-26-1-2",
-              "event_title": "动画『赛马娘 Cinderella Gray』第1季度完结主题曲 : 「∞」发售纪念上线活动【2部】",
+              "event_title": "动画《芦毛灰姑娘》第一季度片尾曲《∞》发售纪念活动·第2回",
               "event_date": "2025-07-26",
               "kind": "concert",
               "series_id": "",
@@ -115547,7 +115569,7 @@
             },
             {
               "event_id": "live-cd-2025-07-26-1-1",
-              "event_title": "动画『赛马娘 Cinderella Gray』第1季度完结主题曲 : 「∞」发售纪念上线活动【1部】",
+              "event_title": "动画《芦毛灰姑娘》第一季度片尾曲《∞》发售纪念活动·第1回",
               "event_date": "2025-07-26",
               "kind": "concert",
               "series_id": "",
@@ -131225,13 +131247,13 @@
             },
             {
               "event_id": "live-other-2024-02-25-2024-day2",
-              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第2日",
-              "event_date": "2024-02-25",
+              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第1日",
+              "event_date": "2024-02-24",
               "kind": "onsite",
               "series_id": "",
               "session_id": "live-other-2024-02-25-2024-day2-session-1",
               "session_label": "本公演",
-              "session_date": "2024-02-25",
+              "session_date": "2024-02-24",
               "performance_index": 5,
               "setlist_no": "5",
               "character_ids": [
@@ -131429,7 +131451,7 @@
               "event_id": "live-other-2023-12-06-2023-fns-1",
               "event_title": "2023 FNS歌謡祭 第1夜",
               "event_date": "2023-12-06",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2023-12-06-2023-fns-1-session-1",
               "session_label": "本公演",
@@ -132731,7 +132753,7 @@
               "event_id": "live-other-2022-07-16-2022",
               "event_title": "音乐之日2022",
               "event_date": "2022-07-16",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2022-07-16-2022-session-1",
               "session_label": "本公演",
@@ -133008,12 +133030,12 @@
             {
               "event_id": "live-other-2022-03-20-sp",
               "event_title": "Anison! Premium! 赛马娘×赛马特别节目",
-              "event_date": "2022-03-20",
-              "kind": "onsite",
+              "event_date": "2022-03-21",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2022-03-20-sp-session-1",
               "session_label": "本公演",
-              "session_date": "2022-03-20",
+              "session_date": "2022-03-21",
               "performance_index": 2,
               "setlist_no": "2",
               "character_ids": [
@@ -133217,7 +133239,7 @@
               "event_id": "live-other-2022-01-01-cdtv-2021-2022",
               "event_title": "CDTV特别篇：跨年Premium Live 2021→2022",
               "event_date": "2022-01-01",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2022-01-01-cdtv-2021-2022-session-1",
               "session_label": "本公演",
@@ -133302,7 +133324,7 @@
               "event_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
               "event_title": "NHK WORLD JAPAN presents SONGS OF TOKYO Festival 2021",
               "event_date": "2021-11-21",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival-session-1",
               "session_label": "本公演",
@@ -133401,7 +133423,7 @@
               "event_id": "live-other-2021-10-06-fns",
               "event_title": "FNS歌谣祭·秋：想再次欣赏的名曲与名演",
               "event_date": "2021-10-06",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-10-06-fns-session-1",
               "session_label": "本公演",
@@ -133583,7 +133605,7 @@
               "event_id": "live-other-2021-07-17-title-120f9f043a5b",
               "event_title": "涩谷之音",
               "event_date": "2021-07-17",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-07-17-title-120f9f043a5b-session-1",
               "session_label": "本公演",
@@ -164319,13 +164341,13 @@
             },
             {
               "event_id": "live-other-2024-02-25-2024-day2",
-              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第2日",
-              "event_date": "2024-02-25",
+              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第1日",
+              "event_date": "2024-02-24",
               "kind": "onsite",
               "series_id": "",
               "session_id": "live-other-2024-02-25-2024-day2-session-1",
               "session_label": "本公演",
-              "session_date": "2024-02-25",
+              "session_date": "2024-02-24",
               "performance_index": 4,
               "setlist_no": "4",
               "character_ids": [
@@ -169649,8 +169671,30 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-4b1b6e971f",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-8ba66086c5",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8ba66086c5",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-4b1b6e971f",
+            "creator-8ba66086c5"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -169660,7 +169704,10 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-a89d60e896-v-a89d60e896",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-4b1b6e971f",
+        "creator-8ba66086c5"
+      ],
       "has_lyrics": false
     },
     {
@@ -174868,8 +174915,21 @@
           "release_count": 1,
           "performance_count": 1,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-takuma-a015fe0b54"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-takuma-a015fe0b54"
+            }
+          ],
+          "creator_ids": [
+            "creator-takuma-a015fe0b54"
+          ],
           "lyrics_ref": "song-42bd0bc92d-v-42bd0bc92d",
           "has_lyrics": true,
           "has_timing": false
@@ -174879,7 +174939,9 @@
       "release_count": 1,
       "performance_count": 1,
       "original_version_id": "song-42bd0bc92d-v-42bd0bc92d",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-takuma-a015fe0b54"
+      ],
       "has_lyrics": true
     },
     {
@@ -175708,13 +175770,13 @@
             },
             {
               "event_id": "live-other-2024-02-25-2024-day2",
-              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第2日",
-              "event_date": "2024-02-25",
+              "event_title": "台场!! 超次元音乐祭 冬季音乐节2024 第1日",
+              "event_date": "2024-02-24",
               "kind": "onsite",
               "series_id": "",
               "session_id": "live-other-2024-02-25-2024-day2-session-1",
               "session_label": "本公演",
-              "session_date": "2024-02-25",
+              "session_date": "2024-02-24",
               "performance_index": 1,
               "setlist_no": "1",
               "character_ids": [
@@ -196987,7 +197049,7 @@
               "event_id": "live-other-2021-12-01-2021-fns",
               "event_title": "2021 FNS歌謡祭",
               "event_date": "2021-12-01",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-12-01-2021-fns-session-1",
               "session_label": "本公演",
@@ -197022,7 +197084,7 @@
               "event_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival",
               "event_title": "NHK WORLD JAPAN presents SONGS OF TOKYO Festival 2021",
               "event_date": "2021-11-21",
-              "kind": "onsite",
+              "kind": "official_program",
               "series_id": "",
               "session_id": "live-other-2021-11-21-nhk-world-japan-presents-songs-of-tokyo-festival-session-1",
               "session_label": "本公演",
@@ -216051,8 +216113,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-b115947141",
+              "institution": "Dream Monster"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-b115947141",
+              "institution": "Dream Monster"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-b115947141",
+              "institution": "Dream Monster"
+            }
+          ],
+          "creator_ids": [
+            "creator-b115947141"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -216062,7 +216145,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-405777870e-v-405777870e",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-b115947141"
+      ],
       "has_lyrics": false
     },
     {
@@ -243061,8 +243146,37 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-amazuti-f3d624083a"
+            },
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-amazuti-f3d624083a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            }
+          ],
+          "creator_ids": [
+            "creator-amazuti-f3d624083a",
+            "creator-gak-amazuti-531b564671"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -243094,8 +243208,37 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-amazuti-f3d624083a"
+            },
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-amazuti-f3d624083a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-gak-amazuti-531b564671"
+            }
+          ],
+          "creator_ids": [
+            "creator-amazuti-f3d624083a",
+            "creator-gak-amazuti-531b564671"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -243105,7 +243248,10 @@
       "release_count": 2,
       "performance_count": 0,
       "original_version_id": "song-3f9e19a4e8-v-3f9e19a4e8",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-amazuti-f3d624083a",
+        "creator-gak-amazuti-531b564671"
+      ],
       "has_lyrics": false
     },
     {
@@ -251214,8 +251360,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-4b1b6e971f",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-4b1b6e971f",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-4b1b6e971f",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-4b1b6e971f"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -251225,7 +251392,9 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-e55b39cb47-v-e55b39cb47",
-      "creator_ids": [],
+      "creator_ids": [
+        "creator-4b1b6e971f"
+      ],
       "has_lyrics": false
     },
     {
@@ -253611,5 +253780,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "583fc59ee5a5e8bad7d3"
+  "build_id": "aeebe7b717edb0eac43e"
 }
