@@ -113,6 +113,9 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertEqual(rows[0]['number'],3)
 
     def test_people_and_organizations_are_independent_and_unknown_names_stay_unclassified(self):
+        self.assertEqual(anime_credit_text.affiliated_person('田山里奈(イマジン)', {'田山里奈'}, {'イマジン'}), ('田山里奈', ['イマジン']))
+        self.assertEqual(anime_credit_text.affiliated_person('田山里奈（別名）', {'田山里奈'}, {'イマジン'}), ('田山里奈（別名）', []))
+        self.assertEqual(anime_credit_text.affiliated_person('別人(イマジン)', {'田山里奈'}, {'イマジン'}), ('別人(イマジン)', []))
         rows = anime_credit_text.staff_text_rows('協力：阿部憶人\n協力：岐阜県地方競馬組合', ['協力'])
         self.assertEqual([row['name'] for row in rows],['阿部憶人','岐阜県地方競馬組合'])
         self.assertEqual(anime_credit_text.entity_kind(rows[0],rows[0]['name'],{'阿部憶人'},set()),'person')
@@ -121,6 +124,27 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertEqual(anime_credit_text.entity_kind({'title':'制作協力'},'新しい個人',set(),set()),'unresolved')
         self.assertEqual(anime_credit_text.entity_kind({'title':'制作協力','@type':'Person'},'個人',set(),set()),'person')
         self.assertEqual(anime_credit_text.entity_kind({'title':'原作'},'既知の作者',{'既知の作者'},set()),'person')
+
+    def test_refresh_resolves_parenthesized_staff_affiliation_without_duplicate_credit(self):
+        previous = {'work_id': 'work', 'unit_id': 'work-e01', 'role': '音楽', 'name': '田山里奈(イマジン)',
+                    'auto_source': True, 'entity_type': 'unresolved'}
+        documents = {
+            'works': {'works': [{'id': 'work'}]},
+            'units': {'series': [{'work_id': 'work', 'released_count': 1}]},
+            'ending_credits': {'episodes': []}, 'source_registry': {'sources': []},
+            'staff': {'credits': [previous, {'name': 'イマジン', 'organization': 'イマジン'}]},
+            'people': {'people': [{'id': 'staff-rina', 'name': '田山里奈', 'aliases': []}]},
+        }
+        row = {'work_id': 'work', 'number': 1, 'title_ja': '第一話', 'source_url': 'https://example.test/1',
+               'staff': [{'title': '音楽', 'name': '田山里奈(イマジン)'}, {'title': '音楽', 'name': '田山里奈'}]}
+        source.publish_episode(row, documents, {}, {})
+        source.publish_episode(row, documents, {}, {})
+        self.assertEqual(len(documents['staff']['credits']), 2)
+        self.assertEqual(previous['person_id'], 'staff-rina')
+        self.assertEqual(previous['name'], '田山里奈')
+        self.assertEqual(previous['credited_name'], '田山里奈(イマジン)')
+        self.assertEqual(previous['institutions'], ['イマジン'])
+        self.assertNotIn('entity_type', previous)
 
     def test_ocr_requires_repeated_original_spellings_and_keeps_distinct_names(self):
         a={'kind':'staff','title':'原画','name':'楊烈駿','entity_type':'person'}

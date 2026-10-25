@@ -2,7 +2,19 @@
 import re
 import unicodedata
 from bs4 import BeautifulSoup
-from anime_labels import ROLES
+from anime_labels import ROLES, person_name_key
+
+
+def affiliated_person(name, known_people, organizations):
+    """Read a parenthesized affiliation only for a known person and institution."""
+    match = re.fullmatch(r'(.+?)\s*[（(]([^()（）]+)[）)]', name.strip())
+    if match:
+        people = {person_name_key(value) for value in known_people}
+        institutions = {person_name_key(value): value for value in organizations}
+        person, institution = match.group(1).strip(), match.group(2).strip()
+        if person_name_key(person) in people and person_name_key(institution) in institutions:
+            return person, [institutions[person_name_key(institution)]]
+    return name, []
 
 
 def staff_text_rows(markup, roles=()):

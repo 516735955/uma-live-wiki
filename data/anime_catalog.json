@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-2ef1074087f23bb2",
+  "build_id": "anime-d64485d93fe148e6",
   "generated_at": "2026-10-25T00:00:00+08:00",
   "coverage": {
     "works": 11,
@@ -527566,11 +527566,15 @@
       "work_id": "anime-umayuru-fullgate",
       "unit_id": "anime-umayuru-fullgate-e04",
       "role": "音乐",
-      "name": "田山里奈(イマジン)",
+      "name": "田山里奈",
       "order": 9,
       "source_ref": "official-auto-anime-umayuru-fullgate-e04",
       "auto_source": true,
-      "entity_type": "unresolved",
+      "person_id": "staff-田山里奈",
+      "credited_name": "田山里奈(イマジン)",
+      "institutions": [
+        "イマジン"
+      ],
       "role_raw": "音楽",
       "roles": [
         "音乐"
@@ -567442,7 +567446,7 @@
         "音乐"
       ],
       "work_count": 3,
-      "unit_count": 4
+      "unit_count": 5
     },
     {
       "id": "staff-植田能平",

@@ -102,7 +102,9 @@
 .anime-staff-institutions .credit-role-tag { max-width: 100%; overflow-wrap: break-word; white-space: normal; }
 .anime-staff-institutions { margin: 0; }
 .anime-credit-people { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; }
-.anime-staff-teams .text-link { color: var(--ui-cobalt-deep); font-size: .9rem; font-weight: 700; line-height: 1.6; text-decoration: none; overflow-wrap: break-word; transition: color 160ms ease; }
+.anime-staff-teams .anime-credit > a,
+.anime-staff-teams .anime-credit > span { font-size: .9rem; font-weight: 700; line-height: 1.6; overflow-wrap: break-word; }
+.anime-staff-teams .text-link { color: var(--ui-cobalt-deep); text-decoration: none; transition: color 160ms ease; }
 .anime-staff-teams .text-link:hover { color: var(--ui-orange-deep); }
 .anime-staff-participation { display: grid; gap: 8px; }
 .anime-staff-participation > div { display: grid; grid-template-columns: minmax(120px,180px) minmax(0,1fr); gap: 12px; align-items: start; }

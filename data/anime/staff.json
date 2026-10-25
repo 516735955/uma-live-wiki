@@ -352004,11 +352004,15 @@
       "work_id": "anime-umayuru-fullgate",
       "unit_id": "anime-umayuru-fullgate-e04",
       "role": "音楽",
-      "name": "田山里奈(イマジン)",
+      "name": "田山里奈",
       "order": 9,
       "source_ref": "official-auto-anime-umayuru-fullgate-e04",
       "auto_source": true,
-      "entity_type": "unresolved"
+      "person_id": "staff-田山里奈",
+      "credited_name": "田山里奈(イマジン)",
+      "institutions": [
+        "イマジン"
+      ]
     },
     {
       "work_id": "anime-umayuru-fullgate",

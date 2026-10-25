@@ -17,7 +17,7 @@ from sync_anime_assets import write_cover
 from collect_anime_official import collect_cingray, collect_fullgate, collect_season3
 from update_anime import observe_portal
 from anime_web import episode_records, work_metadata
-from anime_credit_text import staff_text_rows, entity_kind
+from anime_credit_text import staff_text_rows, entity_kind, affiliated_person
 
 DATA = ROOT / 'data/anime'
 
@@ -258,15 +258,19 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
         role = BeautifulSoup(staff.get('title', ''), 'html.parser').get_text('', strip=True)
         for name in BeautifulSoup(staff.get('name', ''), 'html.parser').get_text('\n', strip=True).splitlines():
             name = name.strip()
-            key = (uid, role_key(role), person_name_key(name), staff.get('group', ''))
-            previous = next((item for item in credits if (item.get('unit_id'), role_key(item.get('role', '')), person_name_key(item.get('name', '')), item.get('group', '')) == key), None) if key in existing else None
+            credited_name = name
+            known_names = {alias for person in people for alias in (person.get('name'), *person.get('aliases', [])) if alias}
+            name, institutions = affiliated_person(name, known_names, organizations)
+            keys = {(uid, role_key(role), person_name_key(value), staff.get('group', '')) for value in (name, credited_name)}
+            previous = next((item for item in credits if (item.get('unit_id'), role_key(item.get('role', '')), person_name_key(item.get('name', '')), item.get('group', '')) in keys), None) if keys.intersection(existing) else None
             if not name or not role or previous and (not previous.get('auto_source') or previous.get('entity_type') != 'unresolved'):
                 continue
             credit = previous or {'work_id': work_id, 'unit_id': uid, 'role': role, 'name': name, 'order': order, 'source_ref': evidence, 'auto_source': True}
+            if institutions:
+                credit.update(name=name, credited_name=credited_name, institutions=institutions)
             for field in ('group', 'source_time'):
                 if staff.get(field) is not None:
                     credit[field] = staff[field]
-            known_names = {alias for person in people for alias in (person.get('name'), *person.get('aliases', [])) if alias}
             kind = entity_kind(staff, name, known_names, organizations)
             if kind == 'organization':
                 credit['organization'] = name
@@ -285,7 +289,7 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
                 credit['entity_type'] = 'unresolved'
             if previous is None:
                 credits.append(credit)
-            existing.add(key)
+            existing.add((uid, role_key(role), person_name_key(name), staff.get('group', '')))
 
 
 def publish_episode_music(row, documents, songs):
