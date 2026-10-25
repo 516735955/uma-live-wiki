@@ -309,6 +309,19 @@ class NewsDatabase:
                     for row in self.db.execute('''SELECT a.key,v.original_title,v.translated_title
                         FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
                         WHERE v.translated_title!='' ''')}
+        if operation == 'search_documents':
+            rows = self.db.execute('''SELECT a.key,a.revision,v.original_title,v.translated_title,v.state,
+                    v.japanese_text,v.chinese_text,v.original
+                FROM articles a JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
+                WHERE a.key > ? ORDER BY a.key LIMIT ?''',
+                (str(args.get('after', '')), min(256, max(1, int(args.get('limit', 128)))))).fetchall()
+            documents = []
+            for row in rows:
+                item = dict(row)
+                detail = json.loads(item.pop('original')).get('detail') or {}
+                item['metadata'] = {key: detail.get(key, '') for key in ('post_at', 'update_at', 'image', 'type')}
+                documents.append(item)
+            return documents
         if operation == 'search':
             query = str(args.get('q', '')).strip().casefold()
             if not query:

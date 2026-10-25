@@ -6,6 +6,7 @@ exports.createService = function (deps) {
   let archiveRefreshRunning = false;
   let translationRunning = false;
   let indexRepresentation;
+  let archiveSearchIndex;
 
   function archiveSignature() {
     return [archive.file, archive.file + '-wal'].map(file => {
@@ -559,21 +560,40 @@ exports.createService = function (deps) {
     // Search the persisted bilingual archive as well. This is read-only: it
     // never fetches an article or starts translation work.
     try {
-      const archived = await archive.request('search', { q: query, limit: 200 });
+      const signature = archiveSignature();
+      if (!archiveSearchIndex || archiveSearchIndex.signature !== signature) {
+        const pending = (async () => {
+          const documents = [];
+          let after = '';
+          for (;;) {
+            const batch = await archive.request('search_documents', { after, limit: 128 });
+            if (!batch.length) break;
+            documents.push(...batch.map(row => ({ ...row, search: SearchText.fields([
+              row.original_title, row.translated_title, row.japanese_text, row.chinese_text
+            ]) })));
+            after = batch[batch.length - 1].key;
+          }
+          return documents;
+        })();
+        archiveSearchIndex = { signature, pending };
+      }
+      const archived = (await archiveSearchIndex.pending).filter(row => SearchText.matchesIndex(row.search, query));
+      const indexed = new Map((data.information_list || []).map(item => [String(item.announce_id), item]));
       const known = new Set(copy.information_list.map(item => String(item.announce_id)));
       for (const row of archived || []) {
         const key = String(row.key || '');
         const id = key.replace(/^official-/, '');
-        if (!id || known.has(id)) continue;
-        copy.information_list.push({
+        if (!id || known.has(id) || deps.newsContent.isRemoved(key)) continue;
+        copy.information_list.push(indexed.get(id) || {
           announce_id: id,
           title: row.original_title || id,
           title_zh: row.translated_title || '',
-          post_at: '', update_at: '', image: '', source: key.startsWith('official-') ? 'official' : 'lantis',
+          ...row.metadata, source: key.startsWith('official-') ? 'official' : 'lantis',
           archive_state: row.state || 'complete'
         });
+        known.add(id);
       }
-    } catch (error) { console.error('[news:archive:search]', error.message); }
+    } catch (error) { archiveSearchIndex = null; console.error('[news:archive:search]', error.message); }
     return copy;
   }
 

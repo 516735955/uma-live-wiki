@@ -8,6 +8,28 @@ from news_database import NewsDatabase, plain_text
 
 
 class ArchiveTextTests(unittest.TestCase):
+    def test_search_documents_keeps_metadata_and_pages_beyond_200(self):
+        with tempfile.TemporaryDirectory() as root:
+            archive = NewsDatabase(Path(root) / 'news.sqlite')
+            for index in range(205):
+                archive.put(f'official-{index:04}', {'detail': {
+                    'title': '标题', 'message': '<p>无声铃鹿</p>',
+                    'post_at': '2026-10-24 12:00:00', 'image': '/cover.jpg'
+                }}, owner='assistant')
+            rows = []
+            after = ''
+            while True:
+                batch = archive.dispatch('search_documents', {'after': after, 'limit': 128})
+                if not batch:
+                    break
+                rows.extend(batch)
+                after = batch[-1]['key']
+            self.assertEqual(len({row['key'] for row in rows}), 205)
+            self.assertEqual(rows[-1]['japanese_text'], '无声铃鹿')
+            self.assertEqual(rows[-1]['metadata']['post_at'], '2026-10-24 12:00:00')
+            self.assertEqual(rows[-1]['metadata']['image'], '/cover.jpg')
+            archive.db.close()
+
     def test_human_inline_translation_survives_source_serialization_and_old_pending_repair(self):
         with tempfile.TemporaryDirectory() as root:
             file = Path(root) / 'news.sqlite'
