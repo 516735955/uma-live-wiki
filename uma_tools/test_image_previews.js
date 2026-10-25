@@ -60,6 +60,17 @@ async function main() {
     assert(!remoteImage('https://example.com/photo.jpg'));
     assert(!remoteImage('https://www.81produce.co.jp:8080/photo.jpg'));
     assert(!remoteImage('https://www.81produce.co.jp/page.html'));
+    const media = require('./media-url');
+    const priorDocument = global.document, priorLocation = global.location;
+    try {
+      global.location = { href: 'http://localhost:8080/', origin: 'http://localhost:8080' };
+      global.document = { querySelector: () => null };
+      const local = new URL(media.preview('/uma_avatars/领衔.png', 160), location.href);
+      assert.strictEqual(new URL(local.searchParams.get('path'), location.href).searchParams.get('v'), 'local', 'local previews bypass the former unversioned cached URL');
+      global.document = { querySelector: () => ({ content: 'a'.repeat(40) }) };
+      const release = new URL(media.preview('/uma_avatars/领衔.png', 160), location.href);
+      assert.strictEqual(new URL(release.searchParams.get('path'), location.href).searchParams.get('v'), 'a'.repeat(40), 'published previews retain their actual release version');
+    } finally { global.document = priorDocument; global.location = priorLocation; }
     console.log('real image resizing, proportional dimensions, shared cache and restricted sources passed');
   } finally { fs.rmSync(directory, {recursive: true, force: true}); }
 }

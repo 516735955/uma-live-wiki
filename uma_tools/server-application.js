@@ -53,15 +53,19 @@ exports.createService = function (deps) {
           return deps.previewImage(identity, params.get('w'), original.read || (() => original.bytes), { signal: controller.signal, invalidate: original.invalidate });
         })()
           .then(({ bytes, extension, etag }) => {
+            const imagePath = params.get('path');
+            const version = imagePath && new URL(imagePath, 'http://local').searchParams.get('v');
+            const cacheControl = /^[a-f0-9]{40}$/.test(version || '')
+              ? 'public, max-age=3600' : 'public, max-age=0, must-revalidate';
             if (res.destroyed || res.writableEnded) return;
             if (etag && req.headers['if-none-match'] === etag) {
-              res.writeHead(304, { ETag: etag, 'Cache-Control': 'public, max-age=3600' });
+              res.writeHead(304, { ETag: etag, 'Cache-Control': cacheControl });
               return res.end();
             }
             res.writeHead(200, {
               "Content-Type": deps.MIME[extension],
               "Content-Length": bytes.length,
-              "Cache-Control": "public, max-age=3600",
+              "Cache-Control": cacheControl,
               ...(etag ? { ETag: etag } : {}),
             });
             res.end(bytes);
