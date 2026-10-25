@@ -691,13 +691,13 @@ export function createNavigation(deps) {
 
   const nextUpcomingHref = deps.computed(function () {
     const e = deps.nextUpcomingEvent.value;
-    return e ? deps.routes.events(e.id) : null;
+    return e ? deps.routes.events(e.id, e.session_id) : null;
   });
 
   function openNextUpcoming() {
     const e = deps.nextUpcomingEvent.value;
     if (!e) return;
-    deps.openEvent(e.id);
+    deps.openEvent(e.id, e.session_id);
   }
 
   function decodeHtml(s) {

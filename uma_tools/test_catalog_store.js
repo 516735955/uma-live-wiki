@@ -151,6 +151,13 @@ async function main() {
     const manifestFile = path.join(temporary, 'catalog_manifest.json');
     const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
     const expectedHome = await store.home();
+    assert.strictEqual(expectedHome.stats.events, eventList.total, 'home and directory count the same parent activities');
+    if (expectedHome.nextEvent?.session_id) {
+      const next = (await store.event(expectedHome.nextEvent.id)).event;
+      const session = next.sessions.find(row => row.id === expectedHome.nextEvent.session_id);
+      assert(session && session.schedule_status !== 'cancelled');
+      assert.strictEqual(expectedHome.nextEvent.date, session.date);
+    }
     manifest.home_stats = expectedHome.stats;
     fs.writeFileSync(manifestFile, JSON.stringify(manifest));
     const homeStore = new CatalogStore(temporary);
@@ -162,6 +169,20 @@ async function main() {
     assert.strictEqual(homeLoads, 1, 'concurrent cold home reads share one load');
     assert(summaries.every(summary => summary === summaries[0]));
     assert.deepStrictEqual((await homeStore.home()).stats, expectedHome.stats);
+    const eventFile = path.join(temporary, 'events_catalog.json');
+    const originalEvents = fs.readFileSync(eventFile, 'utf8');
+    const fixture = { build_id: manifest.build_id, events: [
+      { id: 'past', title: 'Earlier', date: '2000-01-01', sessions: [{ id: 'past-session', date: '2000-01-01' }] },
+      { id: 'cancelled', title: 'Cancelled', date: '2099-01-02', schedule_status: 'cancelled', sessions: [{ id: 'cancelled-session', date: '2099-01-02' }] },
+      { id: 'future', title: 'Next', date: '2099-01-03', sessions: [{ id: 'future-session', date: '2099-01-03' }] }
+    ], event_groups: [{ id: 'parent', kind: 'onsite_group', title: 'Series', members: [{event_id:'past'}, {event_id:'cancelled'}, {event_id:'future'}] }] };
+    fs.writeFileSync(eventFile, JSON.stringify(fixture));
+    const groupedHome = await new CatalogStore(temporary).home();
+    assert.strictEqual(groupedHome.stats.events, 1);
+    assert.strictEqual(groupedHome.nextEvent.id, 'parent');
+    assert.strictEqual(groupedHome.nextEvent.session_id, 'future-session');
+    assert.strictEqual(groupedHome.nextEvent.date, '2099-01-03');
+    fs.writeFileSync(eventFile, originalEvents);
     const editedStore = new CatalogStore(temporary);
     const before = await editedStore.voices();
     const filename = path.join(temporary, 'voice_actor_profiles.json');

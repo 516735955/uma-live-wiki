@@ -160,9 +160,21 @@ function eventSearchText(event, actors = new Map()) {
   ].filter(Boolean).join(' '));
 }
 
+function nextUpcomingEvent(events, today) {
+  return events.filter(event => event.schedule_status !== 'cancelled').flatMap(event => {
+    const sessions = event.sessions?.length ? event.sessions : [event];
+    return sessions.filter(session => session.schedule_status !== 'cancelled'
+      && businessDate.eventDate(session.end_date || session.date || event.end_date || event.date) >= today)
+      .map(session => ({ ...event, date: session.date || event.date,
+        end_date: session.end_date || session.date || event.end_date || event.date,
+        venue: session.venue || event.venue, session_id: session === event ? '' : session.id }));
+  }).sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
+}
+
 function eventSummary(event, searchText, image) {
   return {
     id: event.id,
+    ...(event.session_id ? { session_id: event.session_id } : {}),
     title: event.title,
     title_zh: event.title_zh || '',
     title_ja: event.title_ja || '',
@@ -616,10 +628,9 @@ class CatalogStore {
     }
     if (manifest.home_stats && manifest.build_id === catalog.build_id) {
       const today = businessDate.today();
-      const next = (catalog.events || []).filter(event =>
-        event.schedule_status !== 'cancelled' && businessDate.eventDate(event.end_date || event.date) >= today)
-        .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0];
-      const payload = { stats: manifest.home_stats, nextEvent: next ? eventSummary(next) : null };
+      const events = projectEvents(catalog.events || [], catalog.event_groups || []).events;
+      const next = nextUpcomingEvent(events, today);
+      const payload = { stats: { ...manifest.home_stats, events: events.length }, nextEvent: next ? eventSummary(next) : null };
       const revision = crypto.createHash('sha1').update(JSON.stringify(payload)).digest('hex').slice(0, 12);
       const value = { build_id: manifest.build_id + '-home1-' + revision, ...payload };
       this.homeSnapshot = { signature, value };
@@ -629,12 +640,7 @@ class CatalogStore {
     const events = store.eventsDoc.events || [];
     const liveEvents = events.filter((event) => event.kind === 'concert' && event.schedule_status !== 'cancelled');
     const today = businessDate.today();
-    const nextEvent = events
-      .filter((event) => {
-        const time = businessDate.eventDate(event.end_date || event.date);
-        return event.schedule_status !== 'cancelled' && time && time >= today;
-      })
-      .sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
+    const nextEvent = nextUpcomingEvent(store.eventRows.map(row => row.data), today);
     return {
       build_id: store.buildId,
       business_date: today,
@@ -645,7 +651,7 @@ class CatalogStore {
         performances: liveEvents.length,
         characters: Object.keys(store.appearancesDoc.characters || {}).length,
         voiceActors: (store.voicesDoc.voice_actors || []).length,
-        events: events.length
+        events: store.eventRows.length
       },
       nextEvent: nextEvent ? eventSummary(nextEvent) : null
     };
