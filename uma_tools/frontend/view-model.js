@@ -17,6 +17,7 @@ export function createViewModel(domains, routes) {
     notFound: domains.routing.notFound,
     routes,
     albumDetail: domains.albums.albumDetail,
+    albumHeading: domains.albums.albumHeading,
     liveView: domains.events.liveView,
     player: domains.player.player,
     navItems: domains.navigation.navItems,
