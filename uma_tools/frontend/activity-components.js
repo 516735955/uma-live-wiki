@@ -40,6 +40,8 @@ export const ActivityTime = {
     doorsTime: { type: String, default: '' }, startTime: { type: String, default: '' },
     endTime: { type: String, default: '' }, broadcastTime: { type: String, default: '' },
     endEstimated: { type: Boolean, default: false },
+    startEstimated: { type: Boolean, default: false },
+    note: { type: String, default: '' },
     label: { type: String, default: '时间' }, channels: { type: Array, default: () => [] },
   },
   computed: {
@@ -52,15 +54,17 @@ export const ActivityTime = {
     rows() {
       return [
         ['开场', this.doorsTime, this.date],
-        ['开演', this.startTime, this.date],
+        [this.startEstimated ? '预计开演' : '开演', this.startTime, this.date],
         [this.endEstimated ? '预计结束' : '结束', this.endTime, this.endDate || this.date],
         ['播出', this.broadcastTime && !this.startTime ? this.broadcastTime : '', this.date],
+        ['安排', this.note, ''],
       ].filter((row) => row[1]).map(([label, value, date]) => {
         const normalized = normalizeActivityTime(date, value);
         return { label, value: normalized.time || value, date: normalized.date || date };
       });
     },
     channelRows() {
+      const seen = new Set();
       return this.channels.map((channel) => {
         const parsed = parseScheduleDisplay(channel.display || channel.value || '');
         // A display string can carry the authoritative cross-day clock (24:00+).
@@ -80,7 +84,12 @@ export const ActivityTime = {
         };
       }).filter((row) => row.value || row.time)
         .sort((a, b) => (a.hasDate ? 0 : 1) - (b.hasDate ? 0 : 1) || a.sortDate.localeCompare(b.sortDate))
-        .filter((row, index, all) => index === 0 || `${row.label}|${row.value}|${row.time}` !== `${all[index - 1].label}|${all[index - 1].value}|${all[index - 1].time}`);
+        .filter((row) => {
+          const key = `${row.label}|${row.value}|${row.time}|${row.suffix}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
     },
     primaryChannel() { return this.channelRows[0] || null; },
     otherChannels() { return this.channelRows.slice(1); },

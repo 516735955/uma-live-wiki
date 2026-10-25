@@ -24,11 +24,10 @@ export function createEvents(deps) {
       const date = session.date || eventDetail.value.date || "日期待补";
       const time = session.start_time || session.broadcast_time || session.broadcast || "";
       const suffix = [date, time].filter(Boolean).join(" · ");
-      const kind = session.unit_kind || session.eventunit_kind || eventDetail.value.unit_kind || eventDetail.value.eventunit_kind || "场次";
-      const kindLabel = { 赛程: "赛程", 分集: "分集", 场次: "场次" }[kind] || kind;
+      const unitLabel = session.label === time ? '' : session.label || "第" + (index + 1) + "项";
       return {
         value: session.id,
-        label: [kindLabel, session.label || "第" + (index + 1) + "项", suffix]
+        label: [unitLabel, suffix, session.schedule_status === 'cancelled' && !unitLabel.includes('取消') ? '已取消' : '']
           .filter(Boolean)
           .join(" · "),
       };

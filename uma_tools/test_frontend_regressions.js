@@ -429,6 +429,17 @@ async function main() {
   delayedGraph = null;
   assert.strictEqual(app.animeError.value, '', 'an abandoned graph failure does not replace the current page with an error');
   assert.strictEqual(calls.filter(url => url.includes('scope=graph')).length, graphCalls, 'ordinary voice and anime lists never load the full relation graph');
+  location.href = 'http://localhost/zh-Hans/events/onsite-sprinters-story-2023/sessions/stage-sprinters-story-2023-cancelled-session-1';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.eventCancellation.value.schedule_status, 'cancelled', 'the rendered view model exposes selected-session cancellation');
+  assert.strictEqual(app.eventDetail.value.schedule_status, 'partially_cancelled');
+  assert.ok(app.eventSessionSummary.value.includes('取消'), 'the cancelled unit keeps its own explanation');
+  assert.ok(app.eventSessionImage, 'the rendered view model exposes child image handling');
+  const eventPage = {};
+  vm.runInNewContext(source('frontend/views/events.js').replace(/export const /g, 'var ') + ';this.bindings = bindings;', eventPage);
+  for (const name of ['eventCancellation', 'eventSessionSummary', 'eventSessionImage']) {
+    assert.ok(eventPage.bindings.includes(name), `${name} reaches the lazy-loaded page component`);
+  }
   console.log('frontend regressions passed');
 }
 
