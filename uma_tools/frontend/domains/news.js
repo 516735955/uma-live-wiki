@@ -305,6 +305,13 @@ export function createNews(deps) {
         el.remove();
         return;
       }
+      // Preserve source deletion marks before inline styles are removed.
+      const decoration = el.style && (el.style.textDecorationLine || el.style.textDecoration);
+      if (el.tagName !== "S" && /\bline-through\b/i.test(decoration || "")) {
+        const deleted = doc.createElement("s");
+        el.replaceWith(deleted);
+        deleted.appendChild(el);
+      }
       if (el.tagName === 'IMG' && !el.getAttribute('src') && el.getAttribute('data-src'))
         el.setAttribute('src', el.getAttribute('data-src'));
       if (el.tagName === 'SOURCE' && !el.getAttribute('srcset') && el.getAttribute('data-srcset'))
