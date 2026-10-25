@@ -345,6 +345,25 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "live-other-2022-11-19-animax-musix-2022": {
+      "sources_add": [
+        {
+          "kind": "official_announcement",
+          "label": "发行方演出公告",
+          "url": "https://umamusume.lantis.jp/news/769/"
+        }
+      ],
+      "session_patches": {
+        "live-other-2022-11-19-animax-musix-2022-session-1": {
+          "end_time": "14:00",
+          "end_time_estimated": true,
+          "time_source": "official_announcement",
+          "time_source_url": "https://umamusume.lantis.jp/news/769/",
+          "time_precision": "minute",
+          "schedule_note": "官方预告PART1为11:00—14:00；Eventernote预计终演14:15，实际终演未确认。"
+        }
+      }
+    },
     "live-other-2021-12-31-z-5": {
       "image": "https://www.momoclo.net/momoiroutagassen_5/images/main.jpg",
       "image_source": {
