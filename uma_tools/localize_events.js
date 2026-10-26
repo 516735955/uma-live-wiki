@@ -26,7 +26,7 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
   const translate = async text => {
     const normalized = terms.normalize(text);
     // Standard series names and known entity names need no network translation.
-    if (!/[\u3040-\u30ff]/.test(normalized)) return normalized;
+    if (!/[\u3040-\u30ff]/.test(normalized)) return { text: normalized, translator: normalized === text ? 'source' : 'glossary' };
     if (options.noApi) return '';
     service ||= require('./server-translation').createService({
       fs, path, crypto, https, ROOT: root, DATA_DIR: data,
@@ -35,7 +35,8 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 45000);
     try {
-      return await new Promise(resolve => service.translateTitle(text, resolve, controller.signal));
+      const result = await new Promise(resolve => service.translateTitle(text, resolve, controller.signal));
+      return { text: result, translator: 'baidu' };
     } finally { clearTimeout(timeout); }
   };
   let changed = 0;
@@ -52,16 +53,30 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
       const source = original[field + '_ja'];
       if (approved[field + '_zh'] && approved[field + '_ja'] === source) {
         next[field + '_zh'] = approved[field + '_zh'];
+        next[field + '_translator'] = approved[field + '_translator'] || approved.translator || 'assistant';
         continue;
       }
       if (!source) { next[field + '_zh'] = ''; continue; }
+      const reviewed = approved[field + '_zh'] ? approved : previous;
+      const owner = reviewed[field + '_translator'] || reviewed.translator;
+      if (reviewed[field + '_zh'] && reviewed[field + '_ja'] !== source &&
+          ['assistant', 'manual', 'reviewed'].includes(owner) && /[\u3040-\u30ff]/.test(terms.normalize(source))) {
+        next[field + '_ja'] = reviewed[field + '_ja'];
+        next[field + '_zh'] = reviewed[field + '_zh'];
+        next[field + '_translator'] = owner;
+        pending.push({ id: event.id, field, owner: 'assistant' });
+        continue;
+      }
       if (previous[field + '_ja'] === source && previous[field + '_zh']) continue;
-      const translated = await translate(source);
+      const result = await translate(source);
+      const translated = result && result.text;
       if (translated && !untranslatedJapanese(source, translated) && translationFactsMatch(source, translated)) {
         next[field + '_zh'] = translated;
+        next[field + '_translator'] = result.translator;
       } else {
         // Keep the old archived copy but do not apply it to changed source text.
         delete next[field + '_zh'];
+        delete next[field + '_translator'];
         pending.push({ id: event.id, field });
       }
     }
@@ -80,8 +95,8 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
       [path.join(root, 'uma_tools/update_events.py')], { cwd: root, stdio: 'inherit' });
   }
   const result = { events: events.length, changed, pending: pending.length,
-    deferredQuota: service && service.translationBlockCode === '54004' ? pending.length : 0,
-    deferredOwner: options.noApi ? pending.length : 0 };
+    deferredQuota: service && service.translationBlockCode === '54004' ? pending.filter(item => item.owner !== 'assistant').length : 0,
+    deferredOwner: options.noApi ? pending.length : pending.filter(item => item.owner === 'assistant').length };
   console.log('event localization:', JSON.stringify(result));
   return result;
 }
@@ -89,6 +104,6 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
 module.exports = { run };
 if (require.main === module) {
   run(undefined, { noApi: process.argv.includes('--no-api') })
-    .then(result => { if (result.pending > Math.max(result.deferredQuota, result.deferredOwner)) process.exitCode = 1; })
+    .then(result => { if (result.pending > result.deferredQuota + result.deferredOwner) process.exitCode = 1; })
     .catch(error => { console.error(error.message); process.exitCode = 1; });
 }

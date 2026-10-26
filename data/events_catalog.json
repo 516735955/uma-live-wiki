@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T21:36:30+00:00",
+  "generated_at": "2026-10-26T04:29:47+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -3755,6 +3755,8 @@
             }
           ],
           "broadcast_time": "22:00",
+          "broadcast_date": "2026-11-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "end_time": "24:00",
           "time_precision": "minute",
           "time_source_url": "https://umamusume.jp/news/detail?id=3528",
@@ -4703,14 +4705,14 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-10-24",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=YFsYv2UV8rU",
           "broadcast_time_kind": "announced",
           "id_aliases": [],
           "setlist_status": "none",
-          "broadcast_date": "2026-10-24",
-          "source_time_text": "1792837800",
-          "broadcast_time_zone": "Asia/Tokyo"
+          "source_time_text": "1792837749"
         }
       ],
       "media": [
@@ -6517,6 +6519,8 @@
             }
           ],
           "broadcast_time": "18:45",
+          "broadcast_date": "2026-10-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=0rKu9PQsHBk",
           "source_time_text": "1792230314",
@@ -7107,6 +7111,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-09-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=CHDZJgHuiGo",
           "broadcast_time_kind": "announced",
@@ -7290,6 +7296,8 @@
             }
           ],
           "broadcast_time": "22:00",
+          "broadcast_date": "2026-09-25",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://umamusume.jp/news/detail?id=3415",
           "broadcast_time_kind": "announced",
@@ -8678,6 +8686,10 @@
             "specialweek"
           ],
           "cast": [],
+          "time_precision": "minute",
+          "published_time": "19:00",
+          "published_date": "2026-09-11",
+          "publication_source_url": "https://www.youtube.com/watch?v=fTBGZ3_vA7w",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -8786,7 +8798,7 @@
       ],
       "venue_sources": [],
       "time_source": null,
-      "time_precision": null,
+      "time_precision": "minute",
       "title_ja": "【Among Us 3D】スペ、グラス、エル、スカイ、キング、ファレノの6人でゲーム実況だ！",
       "summary_ja": "スペ、グラス、エル、スカイ、キング、ファレノの6人が「Among Us 3D」をプレイしたぞ！ ってことでスカイ視点の動画をお届けしちゃうぜ！",
       "title_zh": "Among Us 3D 六人游戏实况",
@@ -8899,11 +8911,15 @@
             "katsuragiace"
           ],
           "cast": [],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2026-08-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM",
           "source_time_text": "1787997606",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2026-08-29",
+          "publication_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -9074,9 +9090,14 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-08-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://umamusume.jp/news/detail?id=3424",
           "broadcast_time_kind": "announced",
+          "published_time": "20:00",
+          "published_date": "2026-08-28",
+          "publication_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY",
           "id_aliases": [],
           "setlist_status": "none",
           "schedule_note": "原定19:00，官方8月28日18:30追记改为20:00公开。"
@@ -9582,6 +9603,8 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2026-08-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=604WzTEF4is",
           "broadcast_time_kind": "announced",
@@ -11632,6 +11655,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-07-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3343",
           "broadcast_time_kind": "announced",
@@ -12775,6 +12800,8 @@
             }
           ],
           "broadcast_time": "18:50",
+          "broadcast_date": "2026-06-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=CbCs_zfy4mk",
           "source_time_text": "1782640241",
@@ -13175,6 +13202,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-06-26",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3290",
           "broadcast_time_kind": "announced",
@@ -17335,11 +17364,15 @@
             "epiphaneia"
           ],
           "cast": [],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2026-06-06",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw",
           "source_time_text": "1780740006",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2026-06-06",
+          "publication_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -17674,6 +17707,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-05-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3241",
           "broadcast_time_kind": "announced",
@@ -18977,6 +19012,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-04-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3205",
           "broadcast_time_kind": "announced",
@@ -19686,7 +19723,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
+      "image": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
       "summary": "目白善信与跳舞城赢得空气曲棍球双打比赛冠军，一起举杯庆祝。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -19836,9 +19873,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2026-04-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2026-04-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -20631,6 +20673,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-03-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3147",
           "broadcast_time_kind": "announced",
@@ -20713,11 +20757,15 @@
             "victoirepisa"
           ],
           "cast": [],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2026-03-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE",
           "source_time_text": "1774173606",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2026-03-22",
+          "publication_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -20870,6 +20918,10 @@
             "almondeye"
           ],
           "cast": [],
+          "time_precision": "minute",
+          "published_time": "19:00",
+          "published_date": "2026-03-01",
+          "publication_source_url": "https://www.youtube.com/watch?v=evayysKQ-mY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -20978,7 +21030,7 @@
       ],
       "venue_sources": [],
       "time_source": null,
-      "time_precision": null,
+      "time_precision": "minute",
       "title_ja": "【Among Us 3D】アイ、ララ、ブラスト、ブーケ、ラヴズ、マルシュの6人でゲーム実況だ！",
       "summary_ja": "アイ、ララ、ブラスト、ブーケ、ラヴズ、マルシュの6人が「Among Us 3D」をプレイしたぞ！ ってことでラヴズ視点の動画をお届けしちゃうぜ！",
       "title_zh": "Among Us 3D 六人游戏实况",
@@ -21463,6 +21515,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-02-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3064",
           "broadcast_time_kind": "announced",
@@ -21713,9 +21767,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2026-02-13",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2026-02-13",
+          "publication_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -22092,11 +22151,15 @@
             "mejiropalmer"
           ],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2026-02-01",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0",
           "source_time_text": "1769943606",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2026-02-01",
+          "publication_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -22483,11 +22546,15 @@
             "mejiropalmer"
           ],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2026-01-31",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40",
           "source_time_text": "1769857206",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2026-01-31",
+          "publication_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -23312,6 +23379,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2026-01-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=3019",
           "broadcast_time_kind": "announced",
@@ -24333,6 +24402,8 @@
             }
           ],
           "broadcast_time": "19:55",
+          "broadcast_date": "2025-12-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=gIwX-jwD2Sk",
           "source_time_text": "1766919311",
@@ -24736,6 +24807,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-12-24",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2962",
           "broadcast_time_kind": "announced",
@@ -25882,6 +25955,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-11-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2913",
           "broadcast_time_kind": "announced",
@@ -25958,11 +26033,15 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2025-11-26",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg",
           "source_time_text": "1764154806",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2025-11-26",
+          "publication_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -26041,11 +26120,15 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2025-11-25",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY",
           "source_time_text": "1764068406",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2025-11-25",
+          "publication_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -26124,11 +26207,15 @@
           "songs": [],
           "character_ids": [],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2025-11-24",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM",
           "source_time_text": "1763982007",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2025-11-24",
+          "publication_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -27646,11 +27733,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2025-11-14",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
           "source_time_text": "1763114406",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2025-11-14",
+          "publication_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -28441,6 +28532,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-10-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2843",
           "broadcast_time_kind": "announced",
@@ -32734,9 +32827,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-10-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-10-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -33867,6 +33965,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-09-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2783",
           "broadcast_time_kind": "announced",
@@ -34384,9 +34484,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-09-12",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-09-12",
+          "publication_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -35765,6 +35870,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-08-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2706",
           "broadcast_time_kind": "announced",
@@ -35906,11 +36013,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2025-08-08",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
           "source_time_text": "1754647206",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2025-08-08",
+          "publication_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -35986,11 +36097,15 @@
             "goldcity"
           ],
           "cast": [],
-          "broadcast_time": "18:00",
+          "broadcast_date": "2025-08-06",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U",
           "source_time_text": "1754470806",
           "broadcast_time_kind": "metadata",
+          "published_time": "18:00",
+          "published_date": "2025-08-06",
+          "publication_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -36670,6 +36785,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-07-30",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2669",
           "broadcast_time_kind": "announced",
@@ -38863,6 +38980,8 @@
             }
           ],
           "broadcast_time": "19:55",
+          "broadcast_date": "2025-07-03",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=EtyMt8pfEf8",
           "source_time_text": "1751540111",
@@ -38948,11 +39067,15 @@
             "tamamocross"
           ],
           "cast": [],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2025-06-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI",
           "source_time_text": "1751104806",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2025-06-28",
+          "publication_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -39247,6 +39370,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-06-25",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2600",
           "broadcast_time_kind": "announced",
@@ -39553,11 +39678,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2025-06-20",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
           "source_time_text": "1750413606",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2025-06-20",
+          "publication_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -39852,6 +39981,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-05-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2570",
           "broadcast_time_kind": "announced",
@@ -44222,9 +44353,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-05-16",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-05-16",
+          "publication_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -45269,9 +45405,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-04-11",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-04-11",
+          "publication_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -46301,6 +46442,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-03-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2463",
           "broadcast_time_kind": "announced",
@@ -47163,6 +47306,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-02-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2391",
           "broadcast_time_kind": "announced",
@@ -47372,9 +47517,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-02-21",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-02-21",
+          "publication_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -47906,11 +48056,15 @@
             "currenchan"
           ],
           "cast": [],
-          "broadcast_time": "20:00",
+          "broadcast_date": "2025-02-14",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM",
           "source_time_text": "1739530806",
           "broadcast_time_kind": "metadata",
+          "published_time": "20:00",
+          "published_date": "2025-02-14",
+          "publication_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -48205,6 +48359,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2025-01-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2346",
           "broadcast_time_kind": "announced",
@@ -48381,9 +48537,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2025-01-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2025-01-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -50318,6 +50479,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-12-25",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2286",
           "broadcast_time_kind": "announced",
@@ -52767,9 +52930,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-12-13",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-12-13",
+          "publication_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -53579,6 +53747,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-11-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2233",
           "broadcast_time_kind": "announced",
@@ -53657,11 +53827,15 @@
             "taninogimlet"
           ],
           "cast": [],
-          "broadcast_time": "18:00",
+          "broadcast_date": "2024-11-23",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY",
           "source_time_text": "1732352406",
           "broadcast_time_kind": "metadata",
+          "published_time": "18:00",
+          "published_date": "2024-11-23",
+          "publication_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -56441,9 +56615,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-11-15",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-11-15",
+          "publication_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -57710,6 +57889,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-10-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2181",
           "broadcast_time_kind": "announced",
@@ -61791,9 +61972,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-10-11",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-10-11",
+          "publication_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -65078,6 +65264,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-09-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2140",
           "broadcast_time_kind": "announced",
@@ -66528,9 +66716,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-09-06",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-09-06",
+          "publication_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -68998,6 +69191,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-08-23",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2074",
           "broadcast_time_kind": "announced",
@@ -69174,9 +69369,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-08-16",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-08-16",
+          "publication_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -70840,6 +71040,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-07-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=2031",
           "broadcast_time_kind": "announced",
@@ -71276,9 +71478,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-07-13",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-07-13",
+          "publication_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -72423,6 +72630,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-06-24",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1990",
           "broadcast_time_kind": "announced",
@@ -73695,9 +73904,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-06-14",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-06-14",
+          "publication_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -74410,6 +74624,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-05-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1952",
           "broadcast_time_kind": "announced",
@@ -75519,9 +75735,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-05-09",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-05-09",
+          "publication_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -76255,6 +76476,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-04-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1907",
           "broadcast_time_kind": "announced",
@@ -76464,9 +76687,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-04-19",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-04-19",
+          "publication_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -77256,6 +77484,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-03-28",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1841",
           "broadcast_time_kind": "announced",
@@ -82224,9 +82454,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-03-15",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-03-15",
+          "publication_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -83287,6 +83522,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-02-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1781",
           "broadcast_time_kind": "announced",
@@ -83868,11 +84105,15 @@
             "goldship"
           ],
           "cast": [],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2024-02-15",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk",
           "source_time_text": "1707991209",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2024-02-15",
+          "publication_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -88544,6 +88785,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2024-01-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1732",
           "broadcast_time_kind": "announced",
@@ -88753,9 +88996,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2024-01-12",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2024-01-12",
+          "publication_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -89938,6 +90186,8 @@
             }
           ],
           "broadcast_time": "22:00",
+          "broadcast_date": "2023-12-27",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1682",
           "broadcast_time_kind": "announced",
@@ -90402,9 +90652,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2023-12-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2023-12-22",
+          "publication_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -92320,6 +92575,8 @@
             }
           ],
           "broadcast_time": "20:00",
+          "broadcast_date": "2023-11-29",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://umamusume.jp/news/detail?id=1638",
           "broadcast_time_kind": "announced",
@@ -92496,9 +92753,14 @@
             }
           ],
           "broadcast_time": "19:00",
+          "broadcast_date": "2023-11-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
           "broadcast_time_kind": "announced",
+          "published_time": "19:00",
+          "published_date": "2023-11-22",
+          "publication_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -94994,11 +95256,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-10-13",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
           "source_time_text": "1697191207",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-10-13",
+          "publication_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -99712,11 +99978,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-09-04",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
           "source_time_text": "1693821612",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-09-04",
+          "publication_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -100853,11 +101123,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-08-04",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
           "source_time_text": "1691143209",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-08-04",
+          "publication_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -105533,11 +105807,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-06-16",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
           "source_time_text": "1686909609",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-06-16",
+          "publication_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -105991,11 +106269,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-05-12",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
           "source_time_text": "1683885611",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-05-12",
+          "publication_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -107222,11 +107504,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-04-14",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
           "source_time_text": "1681466407",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-04-14",
+          "publication_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -108623,11 +108909,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-03-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
           "source_time_text": "1679047210",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-03-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -109273,11 +109563,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-02-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
           "source_time_text": "1676628008",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-02-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -116144,11 +116438,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2023-01-14",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
           "source_time_text": "1673690410",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2023-01-14",
+          "publication_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -117592,11 +117890,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-12-23",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
           "source_time_text": "1671789611",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-12-23",
+          "publication_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -125015,11 +125317,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-10-19",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
           "source_time_text": "1666173611",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-10-19",
+          "publication_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -126204,11 +126510,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-09-16",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
           "source_time_text": "1663322412",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-09-16",
+          "publication_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -127284,11 +127594,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-08-26",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
           "source_time_text": "1661508012",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-08-26",
+          "publication_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -130308,11 +130622,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-07-15",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
           "source_time_text": "1657879210",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-07-15",
+          "publication_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -130836,11 +131154,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-06-18",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
           "source_time_text": "1655546441",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-06-18",
+          "publication_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -132104,11 +132426,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-05-19",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
           "source_time_text": "1652954413",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-05-19",
+          "publication_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -136503,11 +136829,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:01",
+          "broadcast_date": "2022-04-20",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
           "source_time_text": "1650448866",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:01",
+          "published_date": "2022-04-20",
+          "publication_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -138223,11 +138553,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-03-17",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
           "source_time_text": "1647511211",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-03-17",
+          "publication_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -142424,11 +142758,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-02-18",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
           "source_time_text": "1645178413",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-02-18",
+          "publication_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -143565,11 +143903,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2022-01-19",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
           "source_time_text": "1642586413",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2022-01-19",
+          "publication_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -145215,11 +145557,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-12-24",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
           "source_time_text": "1640340013",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-12-24",
+          "publication_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -147954,11 +148300,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-11-11",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
           "source_time_text": "1636624813",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-11-11",
+          "publication_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -149305,11 +149655,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-10-15",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
           "source_time_text": "1634292014",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-10-15",
+          "publication_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -150313,11 +150667,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-09-22",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
           "source_time_text": "1632304814",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-09-22",
+          "publication_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -153855,11 +154213,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-08-25",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
           "source_time_text": "1629885613",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-08-25",
+          "publication_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -154760,11 +155122,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-07-31",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
           "source_time_text": "1627725613",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-07-31",
+          "publication_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -156186,11 +156552,15 @@
               ]
             }
           ],
-          "broadcast_time": "19:00",
+          "broadcast_date": "2021-07-02",
+          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
           "time_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
           "source_time_text": "1625220012",
           "broadcast_time_kind": "metadata",
+          "published_time": "19:00",
+          "published_date": "2021-07-02",
+          "publication_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -189544,5 +189914,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "ba82871448ae9cf7c5be"
+  "build_id": "11735b0ed62671d630e7"
 }

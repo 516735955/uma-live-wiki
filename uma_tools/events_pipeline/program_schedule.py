@@ -12,6 +12,14 @@ import unicodedata
 from typing import Any
 
 JST = _datetime.timezone(_datetime.timedelta(hours=9), name="Asia/Tokyo")
+SCHEDULE_FIELDS = ('broadcast_time', 'broadcast_date', 'broadcast_time_zone', 'broadcast_time_kind',
+                   'published_time', 'published_date', 'publication_source_url',
+                   'time_precision', 'time_source_url', 'source_time_text')
+
+
+def metadata_is_live(metadata: dict[str, Any]) -> bool:
+    return bool(metadata.get('was_live') or metadata.get('live_status') in {'was_live', 'is_live', 'is_upcoming'}
+                or metadata.get('live_start_timestamp') or metadata.get('startTimestamp'))
 
 _CLOCK = re.compile(r"(?<![\dA-Za-z])(?P<hour>\d{1,2})(?:時(?:(?P<half>半)|(?P<minute>\d{1,2})分?)?|:(?P<colon_minute>\d{2})(?!\d))(?:\s*(?:から|より|に|放送|配信|公開|開始))?")
 _BROADCAST_WORDS = re.compile(r"放送|配信|公開|生放送|ライブ|実況|stream|live", re.I)
@@ -109,7 +117,7 @@ def schedule_for_program(*, source_title: str = "", source_description: str = ""
     if metadata_schedule:
         # An ordinary uploaded video has a publication clock, not a broadcast
         # start. Preserve the distinction in source records as well as the UI.
-        if metadata and metadata.get('live_status') == 'not_live' and not metadata.get('was_live'):
+        if metadata and not metadata_is_live(metadata):
             return {'published_time': metadata_schedule['broadcast_time'],
                     'published_date': metadata_schedule['broadcast_date'],
                     'publication_source_url': metadata.get('webpage_url') or metadata.get('source_url') or source_url,

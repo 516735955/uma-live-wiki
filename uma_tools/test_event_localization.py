@@ -7,11 +7,42 @@ import unittest
 from unittest.mock import patch
 
 from event_localization import apply_localizations
-from publish_event_sources import preserve_collaborator_changes, parse_source
+from publish_event_sources import preserve_collaborator_changes, parse_source, merge_localizations
 from events_pipeline import program_discovery
 
 
 class EventLocalizationTests(unittest.TestCase):
+    def test_publication_keeps_reviewed_copy_and_actual_translator(self):
+        reviewed = {'records': {'manual': {'title_ja': '同じ原文', 'title_zh': '人工修正', 'translator': 'assistant'}}}
+        runtime = {'records': {
+            'manual': {'title_ja': '同じ原文', 'title_zh': '机器版本', 'title_translator': 'baidu'},
+            'source': {'summary_ja': '已是中文', 'summary_zh': '已是中文', 'summary_translator': 'source'},
+            'new': {'summary_ja': '新しい説明', 'summary_zh': '人工新译文', 'summary_translator': 'assistant'},
+            'legacy': {'title_ja': '不明な翻訳', 'title_zh': '旧缓存译文'},
+        }}
+        merge_localizations(reviewed, runtime)
+        self.assertEqual(reviewed['records']['manual']['title_zh'], '人工修正')
+        self.assertEqual(reviewed['records']['source']['summary_translator'], 'source')
+        self.assertEqual(reviewed['records']['new']['summary_translator'], 'assistant')
+        self.assertEqual(reviewed['records']['legacy']['title_translator'], 'unknown')
+
+    def test_stale_metadata_cannot_replace_fresh_fields_or_high_resolution_thumbnail(self):
+        from events_pipeline.program_merge import apply_additive_program_refresh
+        old = {'id': 'p', 'title': 'ぱかライブTV Vol.1', 'date': '2026-01-01', 'video_id': 'abcdefghijk',
+               'source_kind': 'official_youtube', 'metadata_checked_at': 200,
+               'thumbnail': 'https://i.ytimg.com/vi/abcdefghijk/maxresdefault.jpg', 'duration': 90,
+               'summary': '已核实简介', 'published_time': '19:00', 'manual_fields': ['title', 'published_time', 'cast'],
+               'cast': [{'name': '人工出演者'}]}
+        stale = {**old, 'metadata_checked_at': 100, 'summary': '旧简介', 'duration': 80,
+                 'thumbnail': 'https://i.ytimg.com/vi/abcdefghijk/hqdefault.jpg', 'title': '旧标题',
+                 'published_time': '18:00', 'cast': [{'name': '旧出演者'}]}
+        merged, _ = apply_additive_program_refresh({'programs': [old]}, {'programs': [stale]})
+        self.assertEqual(merged['programs'][0], old)
+        fresh = {**old, 'metadata_checked_at': 300, 'summary': '来源新简介', 'thumbnail': stale['thumbnail']}
+        merged, _ = apply_additive_program_refresh({'programs': [old]}, {'programs': [fresh]})
+        self.assertEqual(merged['programs'][0]['summary'], '来源新简介')
+        self.assertEqual(merged['programs'][0]['thumbnail'], old['thumbnail'])
+
     def test_complete_past_program_uses_listing_change_signal_and_expiry(self):
         existing = {'title': 'ぱかライブTV Vol.1', 'date': '2020-01-01', 'cast_status': 'verified',
                     'metadata_checked_at': program_discovery.pipeline_common.time.time()}

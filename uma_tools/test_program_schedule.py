@@ -38,6 +38,11 @@ class ProgramScheduleTest(unittest.TestCase):
         value = schedule_for_program(metadata={'release_timestamp': 0, 'live_status': 'not_live', 'webpage_url': 'https://example.test/video'})
         self.assertEqual(value['published_time'], '09:00')
         self.assertNotIn('broadcast_time', value)
+        legacy = schedule_for_program(metadata={'release_timestamp': 0, 'webpage_url': 'https://example.test/video'})
+        self.assertEqual(legacy['published_time'], '09:00')
+        self.assertNotIn('broadcast_time', legacy)
+        live = schedule_for_program(metadata={'release_timestamp': 0, 'was_live': True})
+        self.assertEqual(live['broadcast_time'], '09:00')
 
     def test_verified_metadata_is_jst(self):
         value = extract_metadata_time({"release_timestamp": datetime.datetime(2026, 10, 24, 11, tzinfo=datetime.timezone.utc).timestamp()})

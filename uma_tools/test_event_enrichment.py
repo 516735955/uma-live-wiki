@@ -4,6 +4,20 @@ from events_pipeline.event_enrichment import apply_groupings, apply_news_images,
 
 
 class EventEnrichmentTests(unittest.TestCase):
+    def test_known_publication_clocks_survive_an_empty_metadata_cache_rebuild(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import patch
+        from events_pipeline import program_discovery
+        from events_pipeline.build import build
+        with tempfile.TemporaryDirectory() as directory:
+            with patch.object(program_discovery, 'PROGRAM_METADATA_CACHE', Path(directory)):
+                catalog = build()['catalog']
+        for identifier in ('pakatube-20260911-among-us-3d-6', 'pakatube-20260301-among-us-3d-6', 'pakatube-20250628-2wlbgvgv2yi'):
+            event = next(e for e in catalog['events'] if e['id'] == identifier)
+            self.assertEqual(event['sessions'][0]['published_time'], '19:00')
+            self.assertTrue(event['sessions'][0]['publication_source_url'].startswith('https://www.youtube.com/watch?v='))
+
     def test_manual_session_correction_survives_source_time_refresh(self):
         rows = [{'id': 'e', 'title': '16:30', 'summary': '開演 16:30 終演 17:00',
                  'session_patches': {'s': {'date': '2024-02-24', 'start_time': None, 'end_time': None,

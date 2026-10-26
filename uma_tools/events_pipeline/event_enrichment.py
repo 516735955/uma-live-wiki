@@ -338,7 +338,7 @@ def apply_source_times(events: list[dict]) -> list[dict]:
 def apply_video_times(events: list[dict]) -> list[dict]:
     """Keep archived official upload clocks separate from live broadcast clocks."""
     from .program_discovery import PROGRAM_METADATA_CACHE, valid_video_metadata
-    from .program_schedule import extract_metadata_time
+    from .program_schedule import extract_metadata_time, metadata_is_live
     for event in events:
         sources = [item for item in event.get("sources") or [] if item.get("kind") == "official_youtube"]
         if len(event.get("sessions") or []) != 1:
@@ -356,15 +356,17 @@ def apply_video_times(events: list[dict]) -> list[dict]:
             if not schedule:
                 continue
             session = event["sessions"][0]
-            if metadata.get("was_live") or metadata.get("live_status") in {"was_live", "is_live", "is_upcoming"} or metadata.get("live_start_timestamp"):
+            manual = event.get('session_patches', {}).get(session.get('id'), {})
+            if metadata_is_live(metadata):
                 for key, value in schedule.items():
-                    if not session.get(key):
+                    if key not in session and key not in manual:
                         session[key] = value
             else:
-                session["published_time"] = schedule["broadcast_time"]
-                session["published_date"] = schedule["broadcast_date"]
-                session["publication_source_url"] = source["url"]
-                if session.get("broadcast_time_kind") == "metadata" and session.get("broadcast_time") == schedule["broadcast_time"]:
+                for key, value in (('published_time', schedule['broadcast_time']), ('published_date', schedule['broadcast_date']),
+                                   ('publication_source_url', source['url'])):
+                    if key not in manual:
+                        session.setdefault(key, value)
+                if 'broadcast_time' not in manual and session.get("broadcast_time_kind") == "metadata" and session.get("broadcast_time") == schedule["broadcast_time"]:
                     session.pop("broadcast_time", None)
                 if event.get("broadcast_time_kind") == "metadata" and event.get("broadcast_time") == schedule["broadcast_time"]:
                     event.pop("broadcast_time", None)

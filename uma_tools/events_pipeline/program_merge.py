@@ -26,6 +26,13 @@ def _field_is_manual(row: dict[str, pipeline_common.Any], field: str) -> bool:
     )
 
 
+def _thumbnail_downgrade(existing: str, discovered: str) -> bool:
+    pattern = r'https?://i\.ytimg\.com/vi(?:_webp)?/([^/]+)/(maxresdefault|sddefault|hqdefault|mqdefault|default)\.'
+    old, new = (pipeline_common.re.search(pattern, str(value or '')) for value in (existing, discovered))
+    quality = {'maxresdefault': 4, 'sddefault': 3, 'hqdefault': 2, 'mqdefault': 1, 'default': 0}
+    return bool(old and new and old[1] == new[1] and quality[new[2]] < quality[old[2]])
+
+
 def merge_program_list(field: str, existing: list[pipeline_common.Any], discovered: list[pipeline_common.Any]) -> list[pipeline_common.Any]:
     """Union additive evidence without rewriting an existing record."""
     if field == "sources":
@@ -111,11 +118,20 @@ def apply_additive_program_refresh(
             and (same_evidence or source_upgrade)
             and pipeline_common.PROGRAM_SOURCE_PRIORITY.get(str(discovered.get('source_kind') or ''), 0)
             >= pipeline_common.PROGRAM_SOURCE_PRIORITY.get(str(existing.get('source_kind') or ''), 0)
+            and not discovered.get('_metadata_stale')
+            and not (existing.get('metadata_checked_at') and discovered.get('metadata_checked_at')
+                     and discovered['metadata_checked_at'] < existing['metadata_checked_at'])
         )
         for field, discovered_value in discovered.items():
-            if field == "id":
+            if field == "id" or field.startswith('_metadata_'):
                 continue
             existing_value = existing.get(field)
+            if field in (existing.get('manual_fields') or []):
+                if pipeline_common.comparable(existing_value) != pipeline_common.comparable(discovered_value):
+                    conflicts.append({'id': program_id, 'field': field, 'existing': existing_value, 'discovered': discovered_value})
+                continue
+            if field == 'thumbnail' and _thumbnail_downgrade(existing_value, discovered_value):
+                continue
             if field in ("sources", "media"):
                 combined = merge_program_list(
                     field,

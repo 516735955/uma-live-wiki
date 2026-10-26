@@ -751,6 +751,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             "metadata_checked_at": metadata['_metadata_checked_at'],
             "thumbnail": metadata.get("thumbnail") or "", "duration": metadata.get("duration"),
             "cast_status": "character_only", "cast": [], "characters": [],
+            **pipeline_program_schedule.schedule_for_program(metadata=metadata, source_url=metadata.get('webpage_url') or f"https://www.youtube.com/watch?v={metadata['id']}"),
             "summary": pipeline_text.clean_text(description)[:500] or "角色出演节目。未将角色配音关系记作声优本人出演。",
             "source_kind": "official_youtube", "source_url": metadata.get("webpage_url") or f"https://www.youtube.com/watch?v={metadata['id']}",
             "media": media,
@@ -768,6 +769,8 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             "series_id": "official-special",
             "title": metadata.get("title") or "",
             "date": date,
+            **pipeline_program_schedule.schedule_for_program(source_title=metadata.get('title') or '', source_description=description,
+                                                            metadata=metadata, broadcast_date=date, source_url=url),
             "metadata_checked_at": metadata['_metadata_checked_at'],
             "video_id": metadata.get("id") or "",
             "url": url,
@@ -821,6 +824,9 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             for field in ("title", "date", "end_date", "video_id", "url", "thumbnail", "duration", "summary", "source_kind", "source_url", "schedule_status", "metadata_status", "metadata_checked_at"):
                 if program.get(field):
                     target[field] = program[field]
+        for field in pipeline_program_schedule.SCHEDULE_FIELDS:
+            if program.get(field) and (not target.get(field) or program_priority > target_priority):
+                target[field] = program[field]
         target["sources"] = list({(item.get("kind"), item.get("url")): item for item in [*target.get("sources", []), *implicit_sources(program)] if item.get("url")}.values())
         target["media"] = list({item.get("video_id") or item.get("url"): item for item in [*target.get("media", []), *program.get("media", [])] if item.get("video_id") or item.get("url")}.values())
         target["cast"] = list({(pipeline_text.fold_name(item.get("name") or ""), pipeline_text.fold_name(item.get("role") or "")): item for item in [*target.get("cast", []), *program.get("cast", [])] if item.get("name")}.values())

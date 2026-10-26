@@ -879,7 +879,7 @@
       "date": "2026-04-18",
       "video_id": "RYLpUts_K74",
       "url": "https://www.youtube.com/watch?v=RYLpUts_K74",
-      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/RYLpUts_K74/maxresdefault.jpg",
       "duration": 352,
       "cast_status": "character_only",
       "cast": [],
@@ -9737,7 +9737,7 @@
       "media": [],
       "source_title": "「ぱかライブTV' #8」は10月24日20時に放送！新ウマ娘や新育成シナリオの情報をお届け！",
       "summary_translation_status": "stale",
-      "metadata_checked_at": 1792817266.7713993,
+      "metadata_checked_at": 1792855101.2649095,
       "broadcast_time": "20:00",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "announced",
@@ -11027,13 +11027,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792772066.18006,
-      "broadcast_time": "19:00",
       "broadcast_date": "2024-02-15",
       "source_time_text": "1707991209",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk"
+      "time_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk",
+      "published_time": "19:00",
+      "published_date": "2024-02-15",
+      "publication_source_url": "https://www.youtube.com/watch?v=8On-r5Eeomk"
     },
     {
       "id": "pakatube-20240318-p6myBSMi6o0",
@@ -11463,13 +11465,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771914.388823,
-      "broadcast_time": "18:00",
       "broadcast_date": "2024-11-23",
       "source_time_text": "1732352406",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY"
+      "time_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY",
+      "published_time": "18:00",
+      "published_date": "2024-11-23",
+      "publication_source_url": "https://www.youtube.com/watch?v=XCHbHoT7oVY"
     },
     {
       "id": "pakatube-20241228-party-animals-4",
@@ -11569,13 +11573,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771892.626012,
-      "broadcast_time": "20:00",
       "broadcast_date": "2025-02-14",
       "source_time_text": "1739530806",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM"
+      "time_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM",
+      "published_time": "20:00",
+      "published_date": "2025-02-14",
+      "publication_source_url": "https://www.youtube.com/watch?v=mTXKWrDFLWM"
     },
     {
       "id": "pakatube-20250228-6HuEMtJfDmA",
@@ -11873,13 +11879,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771845.7719352,
-      "broadcast_time": "19:00",
       "broadcast_date": "2025-06-28",
       "source_time_text": "1751104806",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI"
+      "time_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI",
+      "published_time": "19:00",
+      "published_date": "2025-06-28",
+      "publication_source_url": "https://www.youtube.com/watch?v=2WLBGvgv2YI"
     },
     {
       "id": "pakatube-20250806-wb-shadowverse-worlds-beyond",
@@ -11913,13 +11921,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771849.5889328,
-      "broadcast_time": "18:00",
       "broadcast_date": "2025-08-06",
       "source_time_text": "1754470806",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U"
+      "time_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U",
+      "published_time": "18:00",
+      "published_date": "2025-08-06",
+      "publication_source_url": "https://www.youtube.com/watch?v=QZTFh0Npj2U"
     },
     {
       "id": "pakatube-20251009-4",
@@ -12018,13 +12028,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771832.9547207,
-      "broadcast_time": "20:00",
       "broadcast_date": "2025-11-24",
       "source_time_text": "1763982007",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM"
+      "time_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM",
+      "published_time": "20:00",
+      "published_date": "2025-11-24",
+      "publication_source_url": "https://www.youtube.com/watch?v=YMxjZF3gtoM"
     },
     {
       "id": "pakatube-20251125-shadow-corridor",
@@ -12058,13 +12070,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771818.1827374,
-      "broadcast_time": "20:00",
       "broadcast_date": "2025-11-25",
       "source_time_text": "1764068406",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY"
+      "time_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY",
+      "published_time": "20:00",
+      "published_date": "2025-11-25",
+      "publication_source_url": "https://www.youtube.com/watch?v=6kWw9Nn4dIY"
     },
     {
       "id": "pakatube-20251126-shadow-corridor",
@@ -12098,13 +12112,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771819.4976308,
-      "broadcast_time": "20:00",
       "broadcast_date": "2025-11-26",
       "source_time_text": "1764154806",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg"
+      "time_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg",
+      "published_time": "20:00",
+      "published_date": "2025-11-26",
+      "publication_source_url": "https://www.youtube.com/watch?v=GVBUPmeFIrg"
     },
     {
       "id": "pakatube-20260131-golf-world-4",
@@ -12138,13 +12154,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771814.2211027,
-      "broadcast_time": "20:00",
       "broadcast_date": "2026-01-31",
       "source_time_text": "1769857206",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40"
+      "time_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40",
+      "published_time": "20:00",
+      "published_date": "2026-01-31",
+      "publication_source_url": "https://www.youtube.com/watch?v=tQDO-uVCl40"
     },
     {
       "id": "pakatube-20260201-golf-world-4",
@@ -12178,13 +12196,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771814.823313,
-      "broadcast_time": "20:00",
       "broadcast_date": "2026-02-01",
       "source_time_text": "1769943606",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0"
+      "time_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0",
+      "published_time": "20:00",
+      "published_date": "2026-02-01",
+      "publication_source_url": "https://www.youtube.com/watch?v=fxXEJ_DEdW0"
     },
     {
       "id": "pakatube-20260301-among-us-3d-6",
@@ -12278,7 +12298,11 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771805.6093051
+      "metadata_checked_at": 1792771805.6093051,
+      "published_time": "19:00",
+      "published_date": "2026-03-01",
+      "publication_source_url": "https://www.youtube.com/watch?v=evayysKQ-mY",
+      "time_precision": "minute"
     },
     {
       "id": "pakatube-20260322-worm-up-4",
@@ -12312,13 +12336,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771796.384729,
-      "broadcast_time": "19:00",
       "broadcast_date": "2026-03-22",
       "source_time_text": "1774173606",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE"
+      "time_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE",
+      "published_time": "19:00",
+      "published_date": "2026-03-22",
+      "publication_source_url": "https://www.youtube.com/watch?v=NIHKw6g5urE"
     },
     {
       "id": "pakatube-20260606-peak-4",
@@ -12352,13 +12378,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771788.2498677,
-      "broadcast_time": "19:00",
       "broadcast_date": "2026-06-06",
       "source_time_text": "1780740006",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw"
+      "time_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw",
+      "published_time": "19:00",
+      "published_date": "2026-06-06",
+      "publication_source_url": "https://www.youtube.com/watch?v=RgbjXLqSORw"
     },
     {
       "id": "pakatube-20260607-peak-4",
@@ -12524,13 +12552,15 @@
       ],
       "sessions": [],
       "metadata_checked_at": 1792771765.9197278,
-      "broadcast_time": "19:00",
       "broadcast_date": "2026-08-29",
       "source_time_text": "1787997606",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
-      "time_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM"
+      "time_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM",
+      "published_time": "19:00",
+      "published_date": "2026-08-29",
+      "publication_source_url": "https://www.youtube.com/watch?v=31WoRmbeUvM"
     },
     {
       "id": "pakatube-20260830-r-e-p-o-4",
@@ -12657,7 +12687,11 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771761.475237
+      "metadata_checked_at": 1792771761.475237,
+      "published_time": "19:00",
+      "published_date": "2026-09-11",
+      "publication_source_url": "https://www.youtube.com/watch?v=fTBGZ3_vA7w",
+      "time_precision": "minute"
     },
     {
       "id": "pakatube-20261017-gang-beasts-a-4",
@@ -12939,14 +12973,16 @@
         }
       ],
       "metadata_checked_at": 1792772296.0687277,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-07-02",
       "source_time_text": "1625220012",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-07-02",
+      "publication_source_url": "https://www.youtube.com/watch?v=9r9YWhDqIDE"
     },
     {
       "id": "sokosoko-paka-live-tv-002",
@@ -13004,14 +13040,16 @@
         }
       ],
       "metadata_checked_at": 1792772295.673018,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-07-31",
       "source_time_text": "1627725613",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-07-31",
+      "publication_source_url": "https://www.youtube.com/watch?v=kPYoTH8KRW8"
     },
     {
       "id": "sokosoko-paka-live-tv-003",
@@ -13069,14 +13107,16 @@
         }
       ],
       "metadata_checked_at": 1792772284.671479,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-08-25",
       "source_time_text": "1629885613",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-08-25",
+      "publication_source_url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw"
     },
     {
       "id": "sokosoko-paka-live-tv-004",
@@ -13134,14 +13174,16 @@
         }
       ],
       "metadata_checked_at": 1792772287.3645177,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-09-22",
       "source_time_text": "1632304814",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-09-22",
+      "publication_source_url": "https://www.youtube.com/watch?v=6UTYrO9lFHM"
     },
     {
       "id": "sokosoko-paka-live-tv-005",
@@ -13199,14 +13241,16 @@
         }
       ],
       "metadata_checked_at": 1792772288.7221427,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-10-15",
       "source_time_text": "1634292014",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-10-15",
+      "publication_source_url": "https://www.youtube.com/watch?v=7lPxHiqI5i0"
     },
     {
       "id": "sokosoko-paka-live-tv-006",
@@ -13264,14 +13308,16 @@
         }
       ],
       "metadata_checked_at": 1792772273.400879,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-11-11",
       "source_time_text": "1636624813",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-11-11",
+      "publication_source_url": "https://www.youtube.com/watch?v=fwY396b2bGo"
     },
     {
       "id": "sokosoko-paka-live-tv-007",
@@ -13329,14 +13375,16 @@
         }
       ],
       "metadata_checked_at": 1792772278.1204054,
-      "broadcast_time": "19:00",
       "broadcast_date": "2021-12-24",
       "source_time_text": "1640340013",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2021-12-24",
+      "publication_source_url": "https://www.youtube.com/watch?v=bFeTcVeYggw"
     },
     {
       "id": "sokosoko-paka-live-tv-008",
@@ -13394,14 +13442,16 @@
         }
       ],
       "metadata_checked_at": 1792772269.4336545,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-01-19",
       "source_time_text": "1642586413",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-01-19",
+      "publication_source_url": "https://www.youtube.com/watch?v=pHRrr3IPpuI"
     },
     {
       "id": "sokosoko-paka-live-tv-009",
@@ -13459,14 +13509,16 @@
         }
       ],
       "metadata_checked_at": 1792772267.375639,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-02-18",
       "source_time_text": "1645178413",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-02-18",
+      "publication_source_url": "https://www.youtube.com/watch?v=XpTVCTBD6cI"
     },
     {
       "id": "sokosoko-paka-live-tv-010",
@@ -13524,14 +13576,16 @@
         }
       ],
       "metadata_checked_at": 1792774927.0524757,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-03-17",
       "source_time_text": "1647511211",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-03-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=F6ONB0JKO0o"
     },
     {
       "id": "sokosoko-paka-live-tv-011",
@@ -13589,14 +13643,16 @@
         }
       ],
       "metadata_checked_at": 1792772236.5503619,
-      "broadcast_time": "19:01",
       "broadcast_date": "2022-04-20",
       "source_time_text": "1650448866",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:01",
+      "published_date": "2022-04-20",
+      "publication_source_url": "https://www.youtube.com/watch?v=IRm0RuKU5CI"
     },
     {
       "id": "sokosoko-paka-live-tv-012",
@@ -13654,14 +13710,16 @@
         }
       ],
       "metadata_checked_at": 1792772235.763314,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-05-19",
       "source_time_text": "1652954413",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-05-19",
+      "publication_source_url": "https://www.youtube.com/watch?v=k0Z9FyiwXVU"
     },
     {
       "id": "sokosoko-paka-live-tv-013",
@@ -13719,14 +13777,16 @@
         }
       ],
       "metadata_checked_at": 1792772189.2806613,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-06-18",
       "source_time_text": "1655546441",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-06-18",
+      "publication_source_url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
     },
     {
       "id": "sokosoko-paka-live-tv-014",
@@ -13784,14 +13844,16 @@
         }
       ],
       "metadata_checked_at": 1792772178.6069582,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-07-15",
       "source_time_text": "1657879210",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-07-15",
+      "publication_source_url": "https://www.youtube.com/watch?v=4tNdgNujHGE"
     },
     {
       "id": "sokosoko-paka-live-tv-015",
@@ -13849,14 +13911,16 @@
         }
       ],
       "metadata_checked_at": 1792772178.088896,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-08-26",
       "source_time_text": "1661508012",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-08-26",
+      "publication_source_url": "https://www.youtube.com/watch?v=oik6grPHqtc"
     },
     {
       "id": "sokosoko-paka-live-tv-016",
@@ -13914,14 +13978,16 @@
         }
       ],
       "metadata_checked_at": 1792772179.3258178,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-09-16",
       "source_time_text": "1663322412",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-09-16",
+      "publication_source_url": "https://www.youtube.com/watch?v=yEsm4cbcyvE"
     },
     {
       "id": "sokosoko-paka-live-tv-017",
@@ -13979,14 +14045,16 @@
         }
       ],
       "metadata_checked_at": 1792772173.32843,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-10-19",
       "source_time_text": "1666173611",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-10-19",
+      "publication_source_url": "https://www.youtube.com/watch?v=uJi0ShuWnbY"
     },
     {
       "id": "sokosoko-paka-live-tv-018",
@@ -14044,14 +14112,16 @@
         }
       ],
       "metadata_checked_at": 1792772160.5930095,
-      "broadcast_time": "19:00",
       "broadcast_date": "2022-12-23",
       "source_time_text": "1671789611",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2022-12-23",
+      "publication_source_url": "https://www.youtube.com/watch?v=NcABqxdsgjM"
     },
     {
       "id": "sokosoko-paka-live-tv-019",
@@ -14117,14 +14187,16 @@
         }
       ],
       "metadata_checked_at": 1792772173.0572238,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-01-14",
       "source_time_text": "1673690410",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-01-14",
+      "publication_source_url": "https://www.youtube.com/watch?v=cpJjJUTexQQ"
     },
     {
       "id": "sokosoko-paka-live-tv-020",
@@ -14182,14 +14254,16 @@
         }
       ],
       "metadata_checked_at": 1792772148.138856,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-02-17",
       "source_time_text": "1676628008",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-02-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=uDmuOJbG4-k"
     },
     {
       "id": "sokosoko-paka-live-tv-021",
@@ -14255,14 +14329,16 @@
         }
       ],
       "metadata_checked_at": 1792772147.332892,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-03-17",
       "source_time_text": "1679047210",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-03-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=tY2y3Pj0x8Y"
     },
     {
       "id": "sokosoko-paka-live-tv-022",
@@ -14320,14 +14396,16 @@
         }
       ],
       "metadata_checked_at": 1792772133.7479436,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-04-14",
       "source_time_text": "1681466407",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-04-14",
+      "publication_source_url": "https://www.youtube.com/watch?v=JCZJ2QgEJhA"
     },
     {
       "id": "sokosoko-paka-live-tv-023",
@@ -14385,14 +14463,16 @@
         }
       ],
       "metadata_checked_at": 1792772117.77059,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-05-12",
       "source_time_text": "1683885611",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-05-12",
+      "publication_source_url": "https://www.youtube.com/watch?v=dkmXQiLzgzE"
     },
     {
       "id": "sokosoko-paka-live-tv-024",
@@ -14458,14 +14538,16 @@
         }
       ],
       "metadata_checked_at": 1792772117.8908179,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-06-16",
       "source_time_text": "1686909609",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-06-16",
+      "publication_source_url": "https://www.youtube.com/watch?v=5rbC0ltYmUg"
     },
     {
       "id": "sokosoko-paka-live-tv-025",
@@ -14531,14 +14613,16 @@
         }
       ],
       "metadata_checked_at": 1792772118.1418774,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-08-04",
       "source_time_text": "1691143209",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-08-04",
+      "publication_source_url": "https://www.youtube.com/watch?v=omVPOgL9zg4"
     },
     {
       "id": "sokosoko-paka-live-tv-026",
@@ -14596,14 +14680,16 @@
         }
       ],
       "metadata_checked_at": 1792772084.675308,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-09-04",
       "source_time_text": "1693821612",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-09-04",
+      "publication_source_url": "https://www.youtube.com/watch?v=oDH8tGlUe2w"
     },
     {
       "id": "sokosoko-paka-live-tv-027",
@@ -14676,14 +14762,16 @@
       ],
       "media": [],
       "metadata_checked_at": 1792772117.0787146,
-      "broadcast_time": "19:00",
       "broadcast_date": "2023-10-13",
       "source_time_text": "1697191207",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-10-13",
+      "publication_source_url": "https://www.youtube.com/watch?v=M_l8docDJwY"
     },
     {
       "id": "sokosoko-paka-live-tv-028",
@@ -14755,7 +14843,10 @@
       "time_precision": "hour",
       "broadcast_date": "2023-11-22",
       "time_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-11-22",
+      "publication_source_url": "https://www.youtube.com/watch?v=SgjpPQAZBUk"
     },
     {
       "id": "sokosoko-paka-live-tv-029",
@@ -14827,7 +14918,10 @@
       "time_precision": "hour",
       "broadcast_date": "2023-12-22",
       "time_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2023-12-22",
+      "publication_source_url": "https://www.youtube.com/watch?v=PwrpxjcWLHc"
     },
     {
       "id": "sokosoko-paka-live-tv-030",
@@ -14907,7 +15001,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-01-12",
       "time_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-01-12",
+      "publication_source_url": "https://www.youtube.com/watch?v=xFdnNY5QKwQ"
     },
     {
       "id": "sokosoko-paka-live-tv-031",
@@ -14987,7 +15084,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-03-15",
       "time_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-03-15",
+      "publication_source_url": "https://www.youtube.com/watch?v=aygKZ-C5Ibo"
     },
     {
       "id": "sokosoko-paka-live-tv-032",
@@ -15067,7 +15167,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-04-19",
       "time_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-04-19",
+      "publication_source_url": "https://www.youtube.com/watch?v=jE_tS1AXrpE"
     },
     {
       "id": "sokosoko-paka-live-tv-033",
@@ -15147,7 +15250,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-05-09",
       "time_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-05-09",
+      "publication_source_url": "https://www.youtube.com/watch?v=dHH09LrU0W8"
     },
     {
       "id": "sokosoko-paka-live-tv-034",
@@ -15227,7 +15333,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-06-14",
       "time_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-06-14",
+      "publication_source_url": "https://www.youtube.com/watch?v=yROD36Huu3E"
     },
     {
       "id": "sokosoko-paka-live-tv-035",
@@ -15299,7 +15408,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-07-13",
       "time_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-07-13",
+      "publication_source_url": "https://www.youtube.com/watch?v=Uk8Hi8u1KCA"
     },
     {
       "id": "sokosoko-paka-live-tv-036",
@@ -15371,7 +15483,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-08-16",
       "time_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-08-16",
+      "publication_source_url": "https://www.youtube.com/watch?v=y8ENTiVBOE4"
     },
     {
       "id": "sokosoko-paka-live-tv-037",
@@ -15451,7 +15566,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-09-06",
       "time_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-09-06",
+      "publication_source_url": "https://www.youtube.com/watch?v=NwVUbyLz3NA"
     },
     {
       "id": "sokosoko-paka-live-tv-038",
@@ -15523,7 +15641,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-10-11",
       "time_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-10-11",
+      "publication_source_url": "https://www.youtube.com/watch?v=tOsCVsCgb5g"
     },
     {
       "id": "sokosoko-paka-live-tv-039",
@@ -15595,7 +15716,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-11-15",
       "time_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-11-15",
+      "publication_source_url": "https://www.youtube.com/watch?v=II-L2QN9z6M"
     },
     {
       "id": "sokosoko-paka-live-tv-040",
@@ -15667,7 +15791,10 @@
       "time_precision": "hour",
       "broadcast_date": "2024-12-13",
       "time_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2024-12-13",
+      "publication_source_url": "https://www.youtube.com/watch?v=PcMHRobfh5s"
     },
     {
       "id": "sokosoko-paka-live-tv-041",
@@ -15739,7 +15866,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-01-17",
       "time_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-01-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg"
     },
     {
       "id": "sokosoko-paka-live-tv-042",
@@ -15819,7 +15949,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-02-21",
       "time_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-02-21",
+      "publication_source_url": "https://www.youtube.com/watch?v=_8twOlkRBkw"
     },
     {
       "id": "sokosoko-paka-live-tv-043",
@@ -15891,7 +16024,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-04-11",
       "time_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-04-11",
+      "publication_source_url": "https://www.youtube.com/watch?v=P5O7SWZwCZ8"
     },
     {
       "id": "sokosoko-paka-live-tv-044",
@@ -15963,7 +16099,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-05-16",
       "time_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-05-16",
+      "publication_source_url": "https://www.youtube.com/watch?v=yffmn8gBaj0"
     },
     {
       "id": "sokosoko-paka-live-tv-045",
@@ -16021,14 +16160,16 @@
         }
       ],
       "metadata_checked_at": 1792771851.9665384,
-      "broadcast_time": "19:00",
       "broadcast_date": "2025-06-20",
       "source_time_text": "1750413606",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-06-20",
+      "publication_source_url": "https://www.youtube.com/watch?v=MsE4sJxW1lA"
     },
     {
       "id": "sokosoko-paka-live-tv-046",
@@ -16158,14 +16299,16 @@
         }
       ],
       "metadata_checked_at": 1792774927.1805274,
-      "broadcast_time": "19:00",
       "broadcast_date": "2025-08-08",
       "source_time_text": "1754647206",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-08-08",
+      "publication_source_url": "https://www.youtube.com/watch?v=nYA3CObgLpY"
     },
     {
       "id": "sokosoko-paka-live-tv-048",
@@ -16237,7 +16380,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-09-12",
       "time_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-09-12",
+      "publication_source_url": "https://www.youtube.com/watch?v=JMy6FcJz8gk"
     },
     {
       "id": "sokosoko-paka-live-tv-049",
@@ -16309,7 +16455,10 @@
       "time_precision": "hour",
       "broadcast_date": "2025-10-17",
       "time_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-10-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=d3TidydxtoE"
     },
     {
       "id": "sokosoko-paka-live-tv-050",
@@ -16375,14 +16524,16 @@
         }
       ],
       "metadata_checked_at": 1792771835.8885658,
-      "broadcast_time": "19:00",
       "broadcast_date": "2025-11-14",
       "source_time_text": "1763114406",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "metadata",
       "time_precision": "minute",
       "time_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2025-11-14",
+      "publication_source_url": "https://www.youtube.com/watch?v=WxnZbl6Zdr0"
     },
     {
       "id": "sokosoko-paka-live-tv-051",
@@ -16534,7 +16685,10 @@
       "time_precision": "hour",
       "broadcast_date": "2026-02-13",
       "time_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2026-02-13",
+      "publication_source_url": "https://www.youtube.com/watch?v=tWKLV0KAM7U"
     },
     {
       "id": "sokosoko-paka-live-tv-053",
@@ -16606,7 +16760,10 @@
       "time_precision": "hour",
       "broadcast_date": "2026-04-17",
       "time_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "19:00",
+      "published_date": "2026-04-17",
+      "publication_source_url": "https://www.youtube.com/watch?v=jyMgyrfS4xY"
     },
     {
       "id": "sokosoko-paka-live-tv-054",
@@ -16748,7 +16905,10 @@
       "time_precision": "hour",
       "broadcast_date": "2026-08-28",
       "time_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY",
-      "summary_translation_status": "stale"
+      "summary_translation_status": "stale",
+      "published_time": "20:00",
+      "published_date": "2026-08-28",
+      "publication_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
     }
   ]
 }

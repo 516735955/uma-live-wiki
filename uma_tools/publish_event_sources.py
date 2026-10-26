@@ -71,22 +71,28 @@ def preserve_collaborator_changes(before: dict, collected: dict, latest: dict) -
     return json.loads(result.stdout)
 
 
+def merge_localizations(reviewed: dict, runtime: dict) -> None:
+    for event_id, record in runtime.get("records", {}).items():
+        target = reviewed.setdefault("records", {}).setdefault(event_id, {})
+        for field in ("title", "summary"):
+            if not record.get(field + "_zh"):
+                continue
+            if target.get(field + "_zh") and target.get(field + "_ja") == record.get(field + "_ja"):
+                continue
+            target[field + "_ja"] = record.get(field + "_ja", "")
+            target[field + "_zh"] = record[field + "_zh"]
+            source, translated = record.get(field + '_ja', ''), record[field + '_zh']
+            target[field + "_translator"] = record.get(field + '_translator') or record.get('translator') or (
+                'source' if source == translated and not re.search(r'[\u3040-\u30ff]', source) else 'unknown')
+
+
 def main() -> int:
     baseline = git("rev-parse", "HEAD")
     before = {name: revision_json(baseline, name) for name in SOURCES}
     collected = {name: parse_source(name, (ROOT / name).read_text(encoding="utf-8")) for name in SOURCES}
     runtime = ROOT / "data/auto_update/event_localizations.json"
     if runtime.exists():
-        for event_id, record in json.loads(runtime.read_text(encoding="utf-8")).get("records", {}).items():
-            target = collected[SOURCES[2]].setdefault("records", {}).setdefault(event_id, {})
-            for field in ("title", "summary"):
-                if not record.get(field + "_zh"):
-                    continue
-                if target.get(field + "_zh") and target.get(field + "_ja") == record.get(field + "_ja"):
-                    continue
-                target[field + "_ja"] = record.get(field + "_ja", "")
-                target[field + "_zh"] = record[field + "_zh"]
-                target[field + "_translator"] = "baidu"
+        merge_localizations(collected[SOURCES[2]], json.loads(runtime.read_text(encoding="utf-8")))
     # Preserve the collected result in a normal commit before following a
     # collaborator's newer main. This runs only in the clean CI checkout.
     for name in SOURCES:
@@ -107,7 +113,7 @@ def main() -> int:
         if not git("diff", "--cached", "--name-only"):
             print("No event data changes to publish.")
             return 0
-        date = dt.datetime.now(dt.timezone.utc).date().isoformat()
+        date = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date().isoformat()
         git("commit", "-m", f"chore(events): sync official programs and appearances {date}", capture=False)
         pushed = subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=ROOT)
         if pushed.returncode == 0:
