@@ -26,14 +26,13 @@ const section = (start, end) => {
   return source.slice(begin, finish < 0 ? boundary : finish).replace(/\bdeps\s*\./g, '');
 };
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
-const { mergeNews } = require('./news-content');
+const { mergeNews, extractLantisArticle } = require('./news-content');
 const { createTerms } = require('./translation-terms');
 const emptyTerms = createTerms([{ ja: 'トウカイテイオー', zh: '东海帝王' }]);
 
 async function main() {
-  const headlines = vm.createContext({});
-  vm.runInContext(section('function cleanHtml(', 'function extractInnercon('), headlines);
-  assert.strictEqual(headlines.cleanHtml('A &#038; B &#x1F40E;'), 'A & B 🐎', 'online Lantis headings decode numeric entities like the archive parser');
+  const headline = extractLantisArticle('<h2 class="newsin_title">A &#038; B &#x1F40E;</h2><div class="innercon"><p>本文</p></div><div class="ban_more"></div>', 'https://umamusume.lantis.jp/news/1/').title;
+  assert.strictEqual(headline, 'A & B 🐎', 'online Lantis headings decode numeric entities like the archive parser');
   const timers = [];
   const pages = [];
   const images = [];
