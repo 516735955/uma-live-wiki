@@ -7,10 +7,8 @@ import sys
 import subprocess
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 
-from bs4 import BeautifulSoup
 from news_database import NewsDatabase, plain_text
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,20 +32,14 @@ def source_article(item):
             raise ValueError('Official article incomplete')
         detail['url'] = 'https://umamusume.jp/news/detail?id=' + str(item['announce_id'])
         return key, data
-    soup = BeautifulSoup(body.decode('utf-8'), 'html.parser')
-    content = soup.select_one('.innercon')
-    title = soup.select_one('.newsin_title') or soup.title
-    if not content or not content.get_text(strip=True) or not title:
-        raise ValueError('Lantis article structure unrecognized')
-    for element in content.select('script,style,.ban_more'):
-        element.decompose()
-    for element in content.select('[src],[href]'):
-        for attr in ('src', 'href'):
-            if element.get(attr):
-                element[attr] = urllib.parse.urljoin(url, element[attr])
+    extracted = subprocess.run(
+        ['node', str(ROOT / 'uma_tools/news-content.js')],
+        input=json.dumps({'html': body.decode('utf-8'), 'url': url}, ensure_ascii=False),
+        capture_output=True, text=True, encoding='utf-8', timeout=15, check=True)
+    content = json.loads(extracted.stdout)
     return key, {'response_code': 1, 'detail': {
-        'announce_id': item['announce_id'], 'title': title.get_text(' ', strip=True),
-        'message': content.decode_contents(), 'post_at': item.get('post_at', ''),
+        'announce_id': item['announce_id'], 'title': content['title'],
+        'message': content['message'], 'post_at': item.get('post_at', ''),
         'source': 'lantis', 'url': url, 'image': item.get('image', '')}}
 
 

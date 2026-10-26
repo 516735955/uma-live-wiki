@@ -90,4 +90,39 @@ function absoluteArticleLinks(markup, base) {
   });
 }
 
-module.exports = { mergeNews, NewsContent, absoluteArticleLinks };
+function extractLantisArticle(body, url) {
+  const titleMatch = body.match(/<h2[^>]*class="newsin_title"[^>]*>([\s\S]*?)<\/h2>/i) || body.match(/<title>([^<]*)<\/title>/i);
+  const named = { nbsp: ' ', amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
+    copy: '©', reg: '®', hellip: '…', mdash: '—', ndash: '–', middot: '·',
+    laquo: '«', raquo: '»', yen: '¥', times: '×', plusmn: '±' };
+  const title = String(titleMatch?.[1] || '').replace(/<[^>]+>/g, '')
+    .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, value) => {
+      const point = /^x/i.test(value) ? parseInt(value.slice(1), 16) : Number(value);
+      return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : entity;
+    }).replace(/&([a-z][a-z0-9]+);/gi, (entity, name) => named[name.toLowerCase()] ?? entity).trim();
+  const open = body.match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\binnercon\b[^"']*\1[^>]*>/i);
+  const start = open ? open.index + open[0].length : 0;
+  const marker = open && body.slice(start).match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\bban_more\b[^"']*\1[^>]*>/i);
+  const inner = marker ? body.slice(start, start + marker.index).replace(/<\/div>\s*$/, '')
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '').trim() : '';
+  if (!title || !inner) throw new Error('unrecognized lantis article');
+  // Preserve source markup so both fetchers produce the same archived version.
+  return { title, message: absoluteArticleLinks(inner, url) };
+}
+
+module.exports = { mergeNews, NewsContent, absoluteArticleLinks, extractLantisArticle };
+
+if (require.main === module) {
+  let input = '';
+  process.stdin.setEncoding('utf8');
+  process.stdin.on('data', chunk => { input += chunk; });
+  process.stdin.on('end', () => {
+    try {
+      const { html, url } = JSON.parse(input);
+      process.stdout.write(JSON.stringify(extractLantisArticle(html, url)));
+    } catch (error) {
+      console.error(error.message);
+      process.exitCode = 1;
+    }
+  });
+}

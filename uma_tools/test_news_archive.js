@@ -10,6 +10,7 @@ async function main() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'uma-news-archive-'));
   let sourceCalls = 0, translationCalls = 0, service;
   const archive = new NewsArchive(directory);
+  const lantisHtml = fs.readFileSync(path.join(__dirname, 'fixtures/lantis-article.html'), 'utf8');
   try {
     const source = { detail: { announce_id: 1, title: 'ニュース', message: '<p>ニュース本文</p>' } };
     await archive.request('put', { key: 'official-1', data: source, owner: 'assistant' });
@@ -24,6 +25,7 @@ async function main() {
     service = require('./server-news').createService({ DATA_DIR: directory, path, fs, crypto,
       NO_AUTO_CRAWL: true, newsContent: { isRemoved: key => key === 'official-1568', apply: item => item, message: () => '', title: (_, existing) => existing || '' },
       httpsGet() { sourceCalls++; throw new Error('Visitor requested upstream source'); },
+      httpsGetHtml(url, callback) { callback(null, lantisHtml); },
       translateArticle() { translationCalls++; throw new Error('Visitor requested translation'); },
       sendJson(res, status, data, options) { res.status = status; res.data = data; res.options = options; } });
     service.start();
@@ -52,6 +54,17 @@ async function main() {
     }
     assert.strictEqual(sourceCalls, 0);
     assert.strictEqual(translationCalls, 0);
+    await service.handleLantisDetail(null, { archiveLoad: true }, new URLSearchParams('id=77'));
+    let extracted;
+    for (let attempt = 0; !extracted && attempt < 100; attempt++) {
+      extracted = await archive.request('get', { key: 'lantis-77' });
+      if (!extracted) await new Promise(done => setTimeout(done, 10));
+    }
+    assert(extracted, 'online source fetch is archived');
+    const local = require('child_process').execFileSync(process.env.PYTHON_BIN || (process.platform === 'win32' ? 'python' : 'python3'), ['-c',
+      "import json;from io import BytesIO;from unittest.mock import patch;from pathlib import Path;from archive_news import source_article\nwith patch('archive_news.urllib.request.urlopen',return_value=BytesIO(Path('fixtures/lantis-article.html').read_bytes())): print(json.dumps(source_article({'source':'lantis','announce_id':'lantis-77','url':'https://umamusume.lantis.jp/news/77/'})[1]['detail']))"],
+      { cwd: __dirname, encoding: 'utf8' });
+    for (const field of ['title', 'message']) assert.strictEqual(extracted.detail[field], JSON.parse(local)[field], 'local and online fetchers archive identical ' + field);
     console.log('persisted bilingual news reads bypass upstream and translation on every visit');
   } finally {
     service?.close();

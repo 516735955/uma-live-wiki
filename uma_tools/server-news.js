@@ -784,14 +784,11 @@ exports.createService = function (deps) {
               source: "lantis",
               url: url,
             };
-            const tm =
-              body.match(
-                /<h2[^>]*class="newsin_title"[^>]*>([\s\S]*?)<\/h2>/i,
-              ) || body.match(/<title>([^<]*)<\/title>/i);
-            if (tm) detail.title = cleanHtml(tm[1]).trim();
-            const inner = extractInnercon(body) || "";
-            if (!inner.trim()) return finish(502, { error: "unrecognized lantis article" });
-            detail.message = require('./news-content').absoluteArticleLinks(inner, url);
+            try {
+              Object.assign(detail, require('./news-content').extractLantisArticle(body, url));
+            } catch (_) {
+              return finish(502, { error: "unrecognized lantis article" });
+            }
             finish(200, { response_code: 1, detail });
           },
           0,
@@ -802,37 +799,6 @@ exports.createService = function (deps) {
     );
   }
 
-  function cleanHtml(s) {
-    const named = {
-      nbsp: " ", amp: "&", lt: "<", gt: ">", quot: '"', apos: "'",
-      copy: "©", reg: "®", hellip: "…", mdash: "—", ndash: "–",
-      middot: "·", laquo: "«", raquo: "»", yen: "¥", times: "×", plusmn: "±",
-    };
-    return String(s || "")
-      .replace(/<[^>]+>/g, "")
-      .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, value) => {
-        const point = /^x/i.test(value) ? parseInt(value.slice(1), 16) : Number(value);
-        return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : entity;
-      })
-      .replace(/&([a-z][a-z0-9]+);/gi, (entity, name) => named[name.toLowerCase()] ?? entity)
-      .trim();
-  }
-
-  function extractInnercon(body) {
-    const open = body.match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\binnercon\b[^"']*\1[^>]*>/i);
-    if (!open) return null;
-    const start = open.index + open[0].length;
-    // simpler: capture up to the ban_more nav which follows the content div
-    const marker = body.slice(start).match(/<div\b[^>]*\bclass\s*=\s*(["'])[^"']*\bban_more\b[^"']*\1[^>]*>/i);
-    if (marker) {
-      const endMarker = start + marker.index;
-      return body
-        .slice(start, endMarker)
-        .replace(/<\/div>\s*$/, "")
-        .trim();
-    }
-    return null;
-  }
   function start() {
     if (!(deps.AUTO_CRAWL_DISABLED ?? deps.NO_AUTO_CRAWL)) {
       setTimeout(refreshArchivedNews, 10000);

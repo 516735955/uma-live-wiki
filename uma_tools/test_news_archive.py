@@ -6,10 +6,37 @@ import sqlite3
 import sys
 from pathlib import Path
 import unittest
+from unittest.mock import patch
+from io import BytesIO
 from news_database import NewsDatabase
+from archive_news import source_article
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_local_fetch_preserves_online_markup_and_reviewed_revision(self):
+        fixture = Path(__file__).with_name('fixtures') / 'lantis-article.html'
+        with patch('archive_news.urllib.request.urlopen', return_value=BytesIO(fixture.read_bytes())):
+            key, source = source_article({'source': 'lantis', 'announce_id': 'lantis-77',
+                                          'url': 'https://example.com/news/77/'})
+        detail = source['detail']
+        self.assertEqual(key, 'lantis-77')
+        self.assertEqual(detail['title'], '発売 & 新情報')
+        self.assertIn('<br />', detail['message'])
+        self.assertIn('height="720"  src="https://example.com/cover.jpg" width="1280" />', detail['message'])
+        self.assertIn('href="https://example.com/news/info/?a=1&amp;b=2"', detail['message'])
+        self.assertIn('href="https://example.com/"', detail['message'])
+        self.assertNotIn('ban_more', detail['message'])
+        self.assertNotIn('ignored', detail['message'])
+        with tempfile.TemporaryDirectory() as directory:
+            archive = NewsDatabase(Path(directory) / 'news.sqlite')
+            archive.put(key, source, 'assistant')
+            archive.translate(key, 1, dict(detail, title_zh='发售信息', message_zh='<p>已审校译文</p>'), 'assistant')
+            current = archive.put(key, source)['detail']
+            self.assertEqual(current['archive_revision'], 1)
+            self.assertEqual(current['message_zh'], '<p>已审校译文</p>')
+            self.assertEqual(current['translator'], 'assistant')
+            archive.db.close()
+
     def test_background_result_cannot_replace_review_and_ambiguous_fragments_are_not_reused(self):
         with tempfile.TemporaryDirectory() as directory:
             file = Path(directory) / 'news.sqlite'
