@@ -202,7 +202,8 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
       }
       // Existing confirmed Chinese copy is accepted without a new API call;
       // names and manually curated copy are never machine-translated.
-      if (source[`${field}_zh`] && source[`${field}_zh`] !== sourceText && !previous[`${field}_ja`]) {
+      if (source[`${field}_zh`] && source[`${field}_zh`] !== sourceText &&
+          (!previous[`${field}_ja`] || (previous[`${field}_ja`] === sourceText && source[`${field}_zh`] !== previous[`${field}_zh`]))) {
         next[`${field}_ja`] = sourceText;
         next[`${field}_zh`] = source[`${field}_zh`];
         next[`${field}_translator`] = 'accepted';
