@@ -6636,7 +6636,7 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 4,
+      "released_count": 5,
       "date_blocks": [
         {
           "from": 1,
@@ -6883,13 +6883,58 @@
           ],
           "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e04-auto-01.webp",
           "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/3aedef5a60f04c0487a7619c5dae672a/UFG_04_01.jpg"
+        },
+        "5": {
+          "title_ja": "ショウ・うまスト・ゴー・オン！",
+          "summary_ja": "舞台の幕が（うっかり早く）上がったテイエムオペラオーたち。\n一座の悲劇（？）は怒濤の展開で（何がなんでも）フィナーレへと突き進む！",
+          "source_refs": [
+            "official-auto-anime-umayuru-fullgate-e05"
+          ],
+          "auto_source": true,
+          "stills": [
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-01.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/340882eee6cf42f69cf14dd82a8cad1b/UFG_05_01.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-02.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/615cb7ac48e54d0898339a0bafd62416/UFG_05_02.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-03.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/75da3f7d093d425891a18840d5acf305/UFG_05_03.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-04.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/6429c4c9d6854b61827c0f3fb6401e5e/UFG_05_04.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-05.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/f366721f9628405bb7075f375af7eb5f/UFG_05_05.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-06.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/e705150539df4a71a7fd71bdd8466e1b/UFG_05_06.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+            }
+          ],
+          "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-01.webp",
+          "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/340882eee6cf42f69cf14dd82a8cad1b/UFG_05_01.jpg",
+          "title_zh": "演出马不停蹄！",
+          "summary_zh": "好歌剧一行的舞台帷幕（不小心提早）拉开了。\n剧团的悲剧（？）随着接连不断的发展，（无论如何都要）一路冲向终幕！"
         }
       },
       "published_numbers": [
         1,
         2,
         3,
-        4
+        4,
+        5
       ]
     }
   ]

@@ -33232,6 +33232,104 @@
       "evidence_refs": [
         "official-auto-anime-umayuru-fullgate-e04"
       ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-silencesuzuka-va-0184",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "silencesuzuka",
+      "voice_actor_id": "va-0184",
+      "signature": "サイレンススズカ",
+      "display_order": 0,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-taikishuttle-va-0050",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "taikishuttle",
+      "voice_actor_id": "va-0050",
+      "signature": "タイキシャトル",
+      "display_order": 1,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-tmoperao-va-0073",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "tmoperao",
+      "voice_actor_id": "va-0073",
+      "signature": "テイエムオペラオー",
+      "display_order": 2,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-admirevega-va-0042",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "admirevega",
+      "voice_actor_id": "va-0042",
+      "signature": "アドマイヤベガ",
+      "display_order": 3,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-meishodoto-va-0039",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "meishodoto",
+      "voice_actor_id": "va-0039",
+      "signature": "メイショウドトウ",
+      "display_order": 4,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-naritatoproad-va-0012",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "naritatoproad",
+      "voice_actor_id": "va-0012",
+      "signature": "ナリタトップロード",
+      "display_order": 5,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e05-auto-cast-staygold-va-0098",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e05",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "staygold",
+      "voice_actor_id": "va-0098",
+      "signature": "ステイゴールド",
+      "display_order": 6,
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e05"
+      ]
     }
   ]
 }

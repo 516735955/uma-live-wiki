@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "build_id": "anime-d64485d93fe148e6",
+  "build_id": "anime-d55640b582464103",
   "generated_at": "2026-10-25T00:00:00+08:00",
   "targets": {
     "event": {
@@ -6361,6 +6361,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-meishodoto-va-0039",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メイショウドトウ",
+          "voice_actor_id": "va-0039",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "haruurara": [
@@ -8851,6 +8862,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-silencesuzuka-va-0184",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "mayanotopgun": [
@@ -9497,6 +9519,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-tmoperao-va-0073",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "yukinobijin": [
@@ -12461,6 +12494,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-naritatoproad-va-0012",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタトップロード",
+          "voice_actor_id": "va-0012",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "satonocrown": [
@@ -15826,6 +15870,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-admirevega-va-0042",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "narita_trainer": [
@@ -16858,6 +16913,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-taikishuttle-va-0050",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "eishinflash": [
@@ -17217,6 +17283,19 @@
           "voice_actor_id": "va-0083",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "staygold": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-staygold-va-0098",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ステイゴールド",
+          "voice_actor_id": "va-0098",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
           "work_id": "anime-umayuru-fullgate"
         }
       ]
@@ -23159,6 +23238,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-meishodoto-va-0039",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メイショウドトウ",
+          "voice_actor_id": "va-0039",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0151": [
@@ -25737,6 +25827,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-silencesuzuka-va-0184",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "サイレンススズカ",
+          "voice_actor_id": "va-0184",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0085": [
@@ -26383,6 +26484,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-tmoperao-va-0073",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "テイエムオペラオー",
+          "voice_actor_id": "va-0073",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0063": [
@@ -29369,6 +29481,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-naritatoproad-va-0012",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ナリタトップロード",
+          "voice_actor_id": "va-0012",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0164": [
@@ -32734,6 +32857,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-admirevega-va-0042",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アドマイヤベガ",
+          "voice_actor_id": "va-0042",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0044": [
@@ -33689,6 +33823,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-taikishuttle-va-0050",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タイキシャトル",
+          "voice_actor_id": "va-0050",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0154": [
@@ -34127,6 +34272,19 @@
           "voice_actor_id": "va-0083",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e04",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0098": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e05-auto-cast-staygold-va-0098",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ステイゴールド",
+          "voice_actor_id": "va-0098",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e05",
           "work_id": "anime-umayuru-fullgate"
         }
       ]
