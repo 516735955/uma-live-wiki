@@ -193,7 +193,8 @@ install -m 0644 "$RELEASE/deploy/nginx-uma-live-wiki.conf" "$ROOT/deploy/nginx-t
 install -m 0644 "$RELEASE/deploy/umamusume-update.service" /etc/systemd/system/umamusume-update.service
 install -m 0644 "$RELEASE/deploy/umamusume-update.timer" /etc/systemd/system/umamusume-update.timer
 systemctl daemon-reload
-systemctl enable --now umamusume-update.timer
+systemctl enable umamusume-update.timer
+systemctl restart umamusume-update.timer
 if crontab -l > "$WORK/root-cron" 2>/dev/null; then
   awk '!(/\/var\/www\/umamusume(\/|[[:space:]\042\047]|$)/ && /git pull/)' "$WORK/root-cron" > "$WORK/root-cron-next"
   crontab "$WORK/root-cron-next"
@@ -203,4 +204,4 @@ node "$RELEASE/deploy/cleanup-releases.js" "$ROOT" "$SHA" "$OLD"
 ACTIVATED=0
 MEDIA_PUBLISHED=0
 COMPLETE=1
-echo "Published $SHA on $PORT. Previous streams drain for up to 30 minutes; daily main deployment is scheduled at 04:00 Asia/Shanghai."
+echo "Published $SHA on $PORT. Previous streams drain for up to 30 minutes; new main commits are checked every 15 minutes."

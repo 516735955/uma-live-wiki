@@ -1,8 +1,8 @@
 [Unit]
-Description=Publish Uma Musume Live Wiki main daily at 04:00 China time
+Description=Check for new Uma Musume Live Wiki main commits every 15 minutes
 
 [Timer]
-OnCalendar=*-*-* 04:00:00 Asia/Shanghai
+OnCalendar=*-*-* *:07,22,37,52:00 Asia/Shanghai
 Persistent=true
 Unit=umamusume-update.service
 
