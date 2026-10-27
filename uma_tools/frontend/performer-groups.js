@@ -75,10 +75,10 @@ export function groupSetlistPerformers(html) {
 }
 
 export const PerformanceCast = {
-  props: { performance: {type:Object, required:true} },
+  props: { performance: {type:Object, required:true}, rowClass: {type:String, default:''} },
   setup(props) {
     const view = Vue.getCurrentInstance().proxy.$root;
     return {view, groups: Vue.computed(() => performanceGroups(props.performance, view.voiceProfiles))};
   },
-  template: `<div class="performance-groups"><div v-for="(group,index) in groups" :key="index" class="performer-chip-list compact performer-group" :data-performer-group="group[0].kind"><template v-for="(item,i) in group" :key="item.id || item.name+'-'+i"><a v-if="item.kind==='character'" class="performer-chip character-chip" :style="{'--chip-color':view.characterColor(item.id)}" :href="view.routes.characters(item.id)" @click="view.internalLink($event,()=>view.openCharacter(item.id))"><img v-if="view.characterPerformanceImage(item.id)" v-media-src="view.characterPerformanceImage(item.id)" alt=""><span>{{ view.characterName(item.id) }}</span></a><a v-else-if="item.kind==='voice'" class="performer-chip voice-chip" :href="view.routes.voiceActors(item.id)" @click="view.internalLink($event,()=>view.openVoice(item.id))"><img v-if="view.voicePhoto(item.id)" v-media-src="view.voicePhoto(item.id)" alt=""><span>{{ view.voiceName(item.id) }}</span></a><span v-else class="guest-performer">{{ item.name }}</span></template></div></div>`,
+  template: `<div class="performance-groups"><div v-for="(group,index) in groups" :key="index" class="performer-chip-list compact performer-group" :class="rowClass" :data-performer-group="group[0].kind"><template v-for="(item,i) in group" :key="item.id || item.name+'-'+i"><a v-if="item.kind==='character'" class="performer-chip character-chip" :style="{'--chip-color':view.characterColor(item.id)}" :href="view.routes.characters(item.id)" @click="view.internalLink($event,()=>view.openCharacter(item.id))"><img v-if="view.characterPerformanceImage(item.id)" v-media-src="view.characterPerformanceImage(item.id)" alt=""><span>{{ view.characterName(item.id) }}</span></a><a v-else-if="item.kind==='voice'" class="performer-chip voice-chip" :href="view.routes.voiceActors(item.id)" @click="view.internalLink($event,()=>view.openVoice(item.id))"><img v-if="view.voicePhoto(item.id)" v-media-src="view.voicePhoto(item.id)" alt=""><span>{{ view.voiceName(item.id) }}</span></a><span v-else class="guest-performer">{{ item.name }}</span></template></div></div>`,
 };

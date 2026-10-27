@@ -147,6 +147,7 @@
         white-space: normal;
         text-align: left;
     }
+    .song-performance-cast .guest-performer { min-width: 0; margin: 0; white-space: normal; overflow-wrap: anywhere; }
     .song-performance-cast .performer-chip span {
         min-width: 0;
         overflow-wrap: anywhere;
