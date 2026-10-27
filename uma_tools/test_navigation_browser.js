@@ -66,7 +66,7 @@ async function main() {
       const preserved=groupSetlistPerformers('<table><tbody><tr><td class="setlist-perf"><b>嘉宾：</b><a class="setlist-voice-link" data-voice-id="v">声优</a><span class="perf-item">角色</span><small>备注原文</small><span class="guest-performer">其他人</span></td></tr></tbody></table>');
       return {counts:groups.map(group=>group.length),preserved};
     });
-    assert.deepStrictEqual(projection.counts,[7,5,44]);
+    assert.deepStrictEqual(projection.counts,[7,5,43]);
     assert(projection.preserved.includes('嘉宾：') && projection.preserved.includes('备注原文'));
     const fallback = await page.evaluate(async()=>{
       const session=window.__uma_app.selectedEventSession, saved=session.setlist_html;
@@ -74,7 +74,9 @@ async function main() {
       const counts=[...document.querySelectorAll('.setlist-table tbody tr:last-child .performer-group')].map(row=>row.querySelectorAll('.performer-chip,.guest-performer').length);
       session.setlist_html=saved; await Vue.nextTick(); return counts;
     });
-    assert.deepStrictEqual(fallback,[7,5,44],'the structured fallback uses the same identity grouping');
+    assert.deepStrictEqual(fallback,[7,5,43],'the structured fallback uses the same identity grouping');
+    assert.strictEqual(await page.locator('.setlist-table tr:last-child .guest-performer').filter({hasText:/^伊藤美来$/}).count(),1);
+    assert.strictEqual(await page.locator('.setlist-table tr:last-child .guest-performer').filter({hasText:/大石昌良/}).count(),1);
     await page.evaluate(()=>window.umaNavigate('/zh-Hans/database/voice-actors/va-0008/events'));
     await page.locator('.history-list > .history-group-start').waitFor();
     const history = await page.evaluate(()=>window.__uma_app.voiceHistoryEvents.map(row=>({scope:row.participation_scope,date:row.date,id:row.event_id})));

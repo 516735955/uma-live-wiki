@@ -101,7 +101,8 @@
 .anime-staff-team-labelled { display: grid; grid-template-columns: minmax(120px,180px) minmax(0,1fr); align-items: start; gap: 12px; }
 .anime-staff-institutions .credit-role-tag { max-width: 100%; overflow-wrap: break-word; white-space: normal; }
 .anime-staff-institutions { margin: 0; }
-.anime-credit-people { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; }
+.anime-credit-people { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,9rem),1fr)); align-items: baseline; gap: 8px 18px; }
+.anime-credit-people > .anime-credit { min-width: 0; }
 .anime-staff-teams .anime-credit > a,
 .anime-staff-teams .anime-credit > span { font-size: .9rem; font-weight: 700; line-height: 1.6; overflow-wrap: break-word; }
 .anime-staff-teams .text-link { color: var(--ui-cobalt-deep); text-decoration: none; transition: color 160ms ease; }

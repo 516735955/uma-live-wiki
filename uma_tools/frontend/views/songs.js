@@ -72,7 +72,7 @@ export const template = `
                                 <dl class="credit-ledger">
                                     <div v-for="group in creditRoleGroups(songCreditVersions[0])" :key="group.role">
                                         <dt>{{ group.label }}</dt>
-                                        <dd><template v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><span v-if="index" class="credit-separator"> / </span><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></template></dd>
+                                        <dd class="credit-people"><span class="credit-person" v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></span></dd>
                                     </div>
                                 </dl>
                             </div>
@@ -82,7 +82,7 @@ export const template = `
                                 <dl class="credit-ledger">
                                     <div v-for="group in creditRoleGroups(version)" :key="group.role">
                                         <dt>{{ group.label }}</dt>
-                                        <dd><template v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><span v-if="index" class="credit-separator"> / </span><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></template></dd>
+                                        <dd class="credit-people"><span class="credit-person" v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></span></dd>
                                     </div>
                                 </dl>
                             </ui-disclosure>

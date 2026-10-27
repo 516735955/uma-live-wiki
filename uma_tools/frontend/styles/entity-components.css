@@ -179,9 +179,11 @@
         .setlist-frame .setlist-no { width: 46px; color: var(--text-3); font-variant-numeric: tabular-nums; }
         .setlist-frame .setlist-song { min-width: 260px; color: var(--text); font-weight: 850; }
         .setlist-frame .setlist-perf { min-width: 330px; }
+        @media(min-width:901px) {
+            .setlist-frame .setlist-table .setlist-perf { width: 65%; }
+            .setlist-frame .setlist-table:has(.setlist-src) .setlist-perf { width: 52%; }
+        }
         .performer-group + .performer-group { margin-top: 12px; }
-        .setlist-perf > .performer-group[data-performer-group="1"] { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
-        .setlist-perf > .performer-group[data-performer-group="1"] > .performer-chip-list { display: contents; }
         .identity-group-label { display: block; flex-basis: 100%; width: 100%; grid-column: 1 / -1; margin-bottom: 4px; color: var(--text-2); font-size: .85rem; font-weight: 700; }
         .history-list > .identity-group-label { margin: 24px 0 10px; }
         .setlist-song-link { color: var(--text); text-decoration: none; }

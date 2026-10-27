@@ -2,6 +2,7 @@
 import csv
 import html
 import re
+import unicodedata
 
 from auto_setlists import ALL_CAST_RE, normalized_title, canonical_match, parse_rows, session_label, song_table
 from . import identities as identity_tools
@@ -10,6 +11,27 @@ from .song_identity import clean_song, fold_song_key, table_performances, split_
 SHEET_URL = 'https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit'
 SOURCE_FILE = 'data/events/赛马娘LIVE歌单导出.csv'
 ALL_CAST = ALL_CAST_RE
+
+
+def performer_key(name, identities):
+    actor_id = identities.voice_id(name)
+    if actor_id:
+        return 'voice:' + actor_id
+    key = re.sub(r'\s+', '', unicodedata.normalize('NFKC', name)).replace('髙', '高')
+    if key in {'オーイシマサヨシ(大石昌良)', '大石昌良(オーイシマサヨシ)'}:
+        key = 'オーイシマサヨシ'
+    return 'person:' + key
+
+
+def unique_performers(names, identities):
+    seen = set()
+    result = []
+    for name in names:
+        key = performer_key(name, identities)
+        if key not in seen:
+            seen.add(key)
+            result.append(name)
+    return result
 
 
 def song_key(value, identities):
@@ -31,6 +53,7 @@ def curated_performances(table, performances, identities, cast):
         if selected:
             for field in ('voice_actor_ids', 'character_ids', 'guest_performers'):
                 row[field] = list(dict.fromkeys(value for item in selected for value in item.get(field, [])))
+            row['guest_performers'] = unique_performers(row.get('guest_performers', []), identities)
             row['full_cast'] = bool(full) or any(item.get('full_cast') for item in selected)
     return original
 
@@ -83,8 +106,12 @@ def display_table(original, block, known_cast, identities):
                     names = regular_cast
             shown_characters = {identities.character_id(image.get('alt', ''))
                                 for image in performers.select('.perf-item img')}
+            shown_people = {performer_key(chip.get_text(), identities)
+                            for chip in performers.select('.guest-performer')}
+            names = unique_performers(names, identities)
             names = [name for name in names
-                     if not roles.get(identities.voice_id(name), set()).intersection(shown_characters)]
+                     if performer_key(name, identities) not in shown_people
+                     and not roles.get(identities.voice_id(name), set()).intersection(shown_characters)]
             if names:
                 content += '<div class="performer-chip-list">%s</div>' % ''.join(person_chip(name) for name in names)
         else:
@@ -164,7 +191,7 @@ def apply_sheet(events, blocks, identities, eventernote=None):
         session_cast = []
         for song in block['songs']:
             full = any(ALL_CAST.fullmatch(name) for name in song['performers'])
-            singers = list(dict.fromkeys([name for name in song['performers'] if not ALL_CAST.fullmatch(name)] + (full_names if full else [])))
+            singers = unique_performers([name for name in song['performers'] if not ALL_CAST.fullmatch(name)] + (full_names if full else []), identities)
             rendered.append({**song, 'performers': singers})
             title = clean_song(song['name'])
             if not title:

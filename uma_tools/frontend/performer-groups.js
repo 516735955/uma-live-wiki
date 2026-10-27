@@ -1,4 +1,9 @@
 // Identity comes from existing character associations and voice-actor records.
+export function performerNameKey(name) {
+  const key = String(name || '').normalize('NFKC').replace(/[\s　]/g, '').replace(/髙/g, '高');
+  return ['オーイシマサヨシ(大石昌良)','大石昌良(オーイシマサヨシ)'].includes(key) ? 'オーイシマサヨシ' : key;
+}
+
 export function castGroups(cast) {
   return [0, 1, 2].map(kind => (cast || []).filter(row =>
     (row.character_id ? 0 : row.voice_actor_id ? 1 : 2) === kind)).filter(rows => rows.length);
@@ -6,7 +11,7 @@ export function castGroups(cast) {
 
 export function performanceGroups(performance, profiles) {
   const characters = performance.character_ids || [];
-  const voices = [], others = [], seen = new Set();
+  const voices = [], others = [], seen = new Set(), seenOthers = new Set();
   const known = new Map((profiles || []).map(profile => [profile.id, profile]));
   const normalize = name => String(name || '').replace(/[\s　]/g, '').replace(/髙/g, '高');
   const byName = new Map();
@@ -23,14 +28,16 @@ export function performanceGroups(performance, profiles) {
   (performance.guest_performers || []).forEach(name => {
     const profile = byName.get(normalize(name));
     if (profile) addVoice(profile.id);
-    else others.push({kind:'other', name});
+    else if (!seenOthers.has(performerNameKey(name))) {
+      seenOthers.add(performerNameKey(name)); others.push({kind:'other', name});
+    }
   });
   return [characters.map(id => ({kind:'character', id})), voices, others].filter(rows => rows.length);
 }
 
 // Project curated HTML into rows without rewriting its source or dropping notes.
 export function groupSetlistPerformers(html) {
-  if (!/class=["']setlist-perf["']/.test(html) || !/(?:guest-performer|setlist-voice-link)/.test(html)) return html;
+  if (!/class=["']setlist-perf["']/.test(html)) return html;
   const template = document.createElement('template');
   template.innerHTML = html;
   const selector = '.perf-item,.setlist-performer-link,.setlist-voice-link,.guest-performer';
@@ -55,18 +62,30 @@ export function groupSetlistPerformers(html) {
   }
   template.content.querySelectorAll('.setlist-perf').forEach(cell => {
     const seen = new Set();
-    cell.querySelectorAll('.setlist-voice-link').forEach(chip => {
-      const key = chip.dataset.voiceId + '|' + chip.textContent;
+    cell.querySelectorAll('.guest-performer').forEach(chip => {
+      if (/^(?:他出演キャスト全員|全体出演者|全出演者|全[员員])(?:[（(].*[）)])?$/.test(chip.textContent.trim()))
+        chip.className = 'performer-note';
+    });
+    cell.querySelectorAll(selector).forEach(chip => {
+      const key = chip.dataset.characterId ? 'character:' + chip.dataset.characterId
+        : chip.dataset.voiceId ? 'voice:' + chip.dataset.voiceId
+        : chip.matches('.guest-performer') ? 'person:' + performerNameKey(chip.textContent) : null;
+      if (!key) return;
       if (seen.has(key)) chip.remove();
       else seen.add(key);
     });
     const kinds = new Set([...cell.querySelectorAll(selector)].map(kind));
-    if (kinds.size < 2 && !kinds.has(1)) return;
+    if (!kinds.size) return;
     const groups = [0,1,2].filter(value => kinds.has(value)).map(value => {
       const row = document.createElement('div');
-      row.className = 'performer-group'; row.dataset.performerGroup = String(value);
+      row.className = 'performer-group performer-grid'; row.dataset.performerGroup = String(value);
       const projected = project(cell, value, 0);
       while (projected.firstChild) row.append(projected.firstChild);
+      [...row.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim()).forEach(node => {
+        const note = document.createElement('span'); note.className = 'performer-note';
+        node.replaceWith(note); note.append(node);
+      });
+      row.prepend(...row.querySelectorAll('.performer-note'));
       if (value === 1) {
         const label = document.createElement('span');
         label.className = 'identity-group-label'; label.textContent = '非马娘身份出演';

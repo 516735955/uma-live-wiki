@@ -419,6 +419,8 @@
 .credit-ledger dt { color: var(--ui-cobalt-deep); font-size: .78rem; font-weight: 900; }
 .credit-ledger dd { margin: 0; color: var(--ui-navy); font-size: .9rem; font-weight: 800; line-height: 1.65; }
 .credit-ledger .text-link { display: inline; width: auto; color: var(--ui-cobalt-deep); text-decoration: none; }
+.credit-ledger .credit-people { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,10rem),1fr)); gap: 10px 16px; }
+.credit-person { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; min-width: 0; overflow-wrap: anywhere; }
 
 .event-status-cancelled { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 6px; background: #b42332; color: #fff; font-size: .8rem; font-style: normal; font-weight: 800; white-space: nowrap; }
 .event-hero-status { position: absolute; z-index: 2; top: 16px; right: 16px; }

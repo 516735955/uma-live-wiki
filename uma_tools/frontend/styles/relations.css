@@ -149,6 +149,21 @@
 /* The setlist performer is the canonical person-link shape. */
 .performer-chip-list { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; margin-top: 15px; }
 .performer-chip-list.compact { gap: 6px 11px; margin-top: 0; }
+.performer-chip-list:not(.anime-cast-pair), .performer-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,10rem),1fr));
+    align-items: start; justify-items: start; gap: 10px 14px;
+}
+.performer-grid .performer-chip-list { display: contents; }
+:is(.performer-chip-list,.performer-grid) > :is(.performer-chip,.perf-item,.guest-performer) {
+    min-width: 0; max-width: 100%; margin: 0; white-space: normal; overflow-wrap: anywhere;
+}
+.performer-grid > :is(.perf-name,b,small), .performer-note { grid-column: 1 / -1; color: var(--text-2); }
+.performer-grid .perf-sep { display: none; }
+@media(max-width:600px) {
+    .performer-chip-list:not(.anime-cast-pair), .performer-grid {
+        grid-template-columns: repeat(auto-fill,minmax(min(100%,7rem),1fr));
+    }
+}
 .performer-chip,
 .perf-item,
 .setlist-performer-link {

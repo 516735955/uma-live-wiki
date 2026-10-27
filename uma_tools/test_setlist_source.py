@@ -19,6 +19,22 @@ class Identities:
 
 
 class GoogleSetlistTests(unittest.TestCase):
+    def test_full_cast_expansion_keeps_existing_people_once_and_retains_members(self):
+        table = ('<table><tbody><tr><td class="setlist-song">Finale</td>'
+                 '<td class="setlist-perf"><span class="guest-performer">伊藤美来</span>'
+                 '<span class="guest-performer">オーイシマサヨシ(大石昌良)</span>'
+                 '<small>全员 ※原备注</small></td></tr></tbody></table>')
+        block = {'songs': [{'name': 'Finale', 'performers': [
+            '伊藤美来', '大石昌良(オーイシマサヨシ)', 'MADKID', 'YUKI(MADKID)']}]}
+        rendered = display_table(table, block, [], Identities())
+        self.assertEqual(rendered.count('>伊藤美来<'), 1)
+        self.assertEqual(rendered.count('>オーイシマサヨシ(大石昌良)<'), 1)
+        self.assertNotIn('>大石昌良(オーイシマサヨシ)<', rendered)
+        self.assertIn('>MADKID<', rendered)
+        self.assertIn('>YUKI(MADKID)<', rendered)
+        self.assertIn('全员 ※原备注', rendered)
+        self.assertEqual(display_table(rendered, block, [], Identities()), rendered)
+
     def test_song_sheet_preserves_non_singing_session_guest(self):
         guest = {'voice_actor_id': 'va-a', 'character_id': 'char-a', 'name': '声优甲',
                  'role': '角色甲', 'evidence': 'official_announcement'}
