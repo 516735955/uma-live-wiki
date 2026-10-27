@@ -32,7 +32,10 @@
 
   function request(path, options) {
     const settings = options || {};
-    const cacheKey = settings.cacheKey || path;
+    const queryAt = path.indexOf('?');
+    const search = new URLSearchParams(queryAt < 0 ? '' : path.slice(queryAt + 1));
+    search.sort();
+    const cacheKey = settings.cacheKey || (queryAt < 0 ? path : path.slice(0, queryAt) + '?' + search);
     const maxAge = Number.isFinite(settings.maxAge) ? settings.maxAge : 5 * 60 * 1000;
     const now = Date.now();
     if (settings.signal && settings.signal.aborted) return Promise.reject(new DOMException('Aborted', 'AbortError'));
@@ -41,16 +44,23 @@
     });
     const cached = resolved.get(cacheKey);
     if (!settings.fresh && cached && Date.now() - cached.at < maxAge) return Promise.resolve(cached.data);
-    if (!settings.fresh && pending.has(cacheKey) && !pending.get(cacheKey).controller.signal.aborted)
-      return subscribe(pending.get(cacheKey), settings.signal);
+    if (!settings.fresh && pending.has(cacheKey) && !pending.get(cacheKey).controller.signal.aborted) {
+      const existing = pending.get(cacheKey);
+      const shared = subscribe(existing, settings.signal);
+      return existing.prefetch && !settings.prefetch ? shared.catch(error => {
+        if (settings.signal?.aborted) throw error;
+        return request(path, settings);
+      }) : shared;
+    }
     const controller = new AbortController();
     const startedGeneration = catalogGeneration;
     const cancel = function () { controller.abort(); };
     const timer = setTimeout(cancel, 25000);
-    const entry = { controller: controller, subscribers: 0, settled: false, promise: null };
-    const promise = fetch(path, {
+    const entry = { controller: controller, subscribers: 0, settled: false, promise: null, prefetch: !!settings.prefetch };
+    const fetchPath = settings.prefetch ? path + (path.includes('?') ? '&' : '?') + 'prefetch=1' : path;
+    const promise = fetch(fetchPath, {
       headers: { Accept: 'application/json' },
-      cache: settings.fresh || musicCatalog(path) ? 'no-cache' : 'default',
+      cache: settings.fresh || musicCatalog(path) || /^\/api\/(?:news-detail|lantis-detail)(?:\?|$)/.test(path) ? 'no-cache' : 'default',
       signal: controller.signal
     }).then(function (response) {
       if (!response.ok) throw new Error('HTTP ' + response.status);

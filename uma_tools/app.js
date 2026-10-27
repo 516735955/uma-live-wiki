@@ -2,6 +2,7 @@ import { registerComponents } from "/uma_tools/frontend/components.js";
 import { createViewModel } from "/uma_tools/frontend/view-model.js";
 import { registerPages } from "/uma_tools/frontend/pages.js";
 import { createDomains } from "/uma_tools/frontend/domains.js";
+import { installNavigationPrefetch } from '/uma_tools/frontend/navigation-prefetch.js';
 
 const { createApp, ref, reactive, computed, watch } = Vue;
 const api = window.UmaApi;
@@ -34,6 +35,7 @@ const umaApp = createApp({
     this.bindAudio();
     const self = this;
     window.__uma_app = this;
+    this.stopNavigationPrefetch = installNavigationPrefetch(api);
     let popRevision = 0;
     let restoreRevision = 0;
     let renderedRevision = 0;
@@ -125,6 +127,7 @@ const umaApp = createApp({
     syncPrepared();
     this.loadHomeSummaryIfNeeded();
   },
+  beforeUnmount() { this.stopNavigationPrefetch?.(); },
 });
 registerComponents(umaApp, routes);
 umaApp.directive('media-src', {

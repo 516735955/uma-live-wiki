@@ -95,7 +95,7 @@ export function createDomains(env) {
       env,
       domains,
       {
-        environment: ["LANG_PREFIX", "ref", "routes"],
+        environment: ["LANG_PREFIX", "ref", "routes", "watch"],
         navigation: [
           "activeTab",
           "dbView",
@@ -152,6 +152,7 @@ export function createDomains(env) {
           "loadNews",
           "newsDetail",
           "newsDetailBody",
+          "newsDetailLoading",
           "newsDetailRequest",
           "newsPage",
           "newsPageCount",

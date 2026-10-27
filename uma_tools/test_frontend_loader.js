@@ -7,6 +7,8 @@ const read = file => fs.readFileSync(file, 'utf8').replace(/\r\n?/g, '\n');
 // The VM supplies a DOM fixture and real Vue reactivity. Only module loading is
 // adapted; every state transition executes the same factory used by the browser.
 function loadFrontend(context) {
+  context.preloadPage = async () => {};
+  context.installNavigationPrefetch = () => () => {};
   const directory = path.join(__dirname, "frontend");
   const performers = read(path.join(directory, 'performer-groups.js')).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + performers + ';return {castGroups,performanceGroups,groupSetlistPerformers,PerformanceCast};})()', context));

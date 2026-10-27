@@ -129,7 +129,7 @@ export function createEvents(deps) {
     }
   }
 
-  function eventSessionTable(session) {
+  function renderSessionTable(session) {
     if (!session || !session.setlist_html) return "";
     const html = deps.fixAvatarSrc(deps.hideEncorePerf(session.setlist_html));
     // A generated table may contain only the column header when no song rows
@@ -137,6 +137,11 @@ export function createEvents(deps) {
     // hidden instead of rendering a misleading blank frame.
     if (!/<tbody\b[\s\S]*?<tr\b[\s\S]*?<\/tr>/i.test(html)) return "";
     return deps.linkSetlistSongs(html, session.performances);
+  }
+
+  const currentSessionTable = deps.computed(() => renderSessionTable(selectedEventSession.value));
+  function eventSessionTable(session) {
+    return session === selectedEventSession.value ? currentSessionTable.value : renderSessionTable(session);
   }
 
   const eventSeriesMap = deps.computed(function () {

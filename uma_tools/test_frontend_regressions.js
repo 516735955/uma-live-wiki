@@ -24,7 +24,7 @@ async function main() {
   const location = new URL('http://localhost/zh-Hans/music/songs');
   const window = {
     location, scrollTo() {}, requestAnimationFrame(callback) { callback(); },
-    dispatchEvent() {}, setTimeout, clearTimeout,
+    dispatchEvent() {}, addEventListener() {}, setTimeout, clearTimeout,
     CHAR_INDEX: [{ id: 'mock', name: 'Mock' }], CHAR_DETAIL: {}, UmaCharacterUi: { init() {} },
     HORSES: [{ id: 'mock-horse', zh: 'Mock Horse' }],
     UmaPlayer: require('./player-controller'), UmaRoutes: require('./route-utils'),
@@ -41,6 +41,11 @@ async function main() {
     async request(url) {
       calls.push(url);
       const parsed = new URL(url, location);
+      if (parsed.pathname === '/api/news-detail') {
+        const response = await newsDetail.promise;
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      }
       if (parsed.pathname === '/api/news-index') {
         newsCalls += 1;
         if (pendingNewsIndex) return pendingNewsIndex.promise;
@@ -70,7 +75,8 @@ async function main() {
   };
   const context = vm.createContext({
     window, history, URL, URLSearchParams, AbortController, setTimeout, clearTimeout,
-    CustomEvent: function () {}, console,
+    CustomEvent: function () {}, console, performance,
+    requestAnimationFrame: window.requestAnimationFrame,
     fetch(url) {
       if (url.startsWith('/api/news-detail')) return newsDetail.promise;
       newsCalls += 1;

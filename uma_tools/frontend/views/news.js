@@ -15,7 +15,7 @@ export const template = `
                 <h2 class="news-detail-title">{{ newsLanguage === 'ja' ? newsDetail.title : (newsDetail.title_zh || newsDetail.title) }}</h2>
                 <content-state v-if="newsError" state="error" subject="新闻正文" :retry="true" @retry="openNews(newsDetail.announce_id)"></content-state>
                 <content-state v-else-if="newsDetail.waiting_stopped" state="error" subject="新闻正文" reason="新闻正文读取超时" :retry="true" @retry="openNews(newsDetail.announce_id)"></content-state>
-                <content-state v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" state="loading" subject="新闻正文"></content-state>
+                <div v-else-if="newsDetailLoading || newsDetail.archive_state==='pending'" class="news-body-skeleton" role="status" aria-label="正在加载新闻正文" aria-busy="true"><span v-for="line in 6" :key="line" aria-hidden="true"></span></div>
                 <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh && newsDetail.translation_state==='pending'" state="loading" subject="中文译文"></content-state>
                 <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" state="uncollected" subject="中文译文"></content-state>
                 <div class="news-detail-body" :lang="newsLanguage==='ja'?'ja':'zh-Hans'" v-html="newsDetailBody"></div>

@@ -136,7 +136,11 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
     </header>
 
     <div class="container" v-if="!home">
-        <div v-if="!routeReady" class="ui-state loading">正在加载资料…</div>
+        <section v-if="!routeReady || navigationPending" class="route-placeholder" :class="{'route-placeholder-detail':routePendingAtomic}" aria-busy="true" role="status" :aria-label="routePendingTitle ? '正在打开'+routePendingTitle : '正在打开页面'">
+            <div v-if="routePendingAtomic" class="route-placeholder-hero"><span></span><div><b v-if="routePendingTitle">{{ routePendingTitle }}</b><i></i><i></i><i></i></div></div>
+            <div v-else class="route-placeholder-toolbar"><span></span><span></span></div>
+            <div class="music-card-grid route-placeholder-grid"><div v-for="i in (routePendingAtomic ? 4 : 8)" :key="i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div></div>
+        </section>
         <content-state v-else-if="routeError" state="error" subject="页面" :retry="true" @retry="retryCurrentRoute"></content-state>
         <section v-else-if="notFound" class="not-found-page" aria-labelledby="not-found-title">
             <span>404</span>
@@ -144,7 +148,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             <p>请从当前站点的正式栏目重新进入。</p>
             <button type="button" @click="navNavigate(routes.home())">返回首页</button>
         </section>
-        <template v-else>
+        <div v-else class="route-content" :class="{'route-content-enter':routeEntering}">
         <content-state v-if="navigationError" state="error" subject="页面资料" :retry="!!navigationRetry" @retry="navigationRetry()"></content-state>
         <nav v-if="breadcrumbItems.length" class="route-breadcrumb" aria-label="面包屑">
             <template v-for="(item,index) in breadcrumbItems" :key="index">
@@ -215,10 +219,11 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
         <div id="tab-legal-terms" v-if="activeTab==='legal-terms'" class="tab-content active">
             <legal-terms-page></legal-terms-page>
         </div>
-        </template>
+        </div>
 
     </div>
 
+    <div v-if="routeProgress" class="navigation-progress" role="progressbar" aria-label="页面加载中"><span></span></div>
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-main">

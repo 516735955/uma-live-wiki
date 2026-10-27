@@ -1,6 +1,50 @@
+import { preloadPage } from "/uma_tools/frontend/pages.js";
 /* routing state and behavior; external dependencies are explicit live ports. */
 export function createRouting(deps) {
   const routeReady = deps.ref(false);
+  const navigationPending = deps.ref(false);
+  const routeProgress = deps.ref(false);
+  const routeEntering = deps.ref(false);
+  const routePendingAtomic = deps.ref(false);
+  const routePendingTitle = deps.ref('');
+  let progressTimer, enterTimer, navigationStarted = 0;
+
+  function beginRouteFeedback(path, title = '') {
+    clearTimeout(progressTimer); clearTimeout(enterTimer);
+    navigationStarted = performance.now();
+    routeProgress.value = false; routeEntering.value = false;
+    navigationPending.value = true;
+    routePendingAtomic.value = path ? routeWillBeAtomic(path) : true;
+    routePendingTitle.value = title;
+    progressTimer = setTimeout(() => { if (navigationStarted) routeProgress.value = true; }, 120);
+  }
+
+  function finishRouteFeedback() {
+    if (!navigationStarted || !routeReady.value || navigationPending.value ||
+        (deps.activeTab.value === 'news' && deps.newsDetailLoading.value)) return;
+    const started = navigationStarted;
+    routeEntering.value = performance.now() - started > 100;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (started !== navigationStarted || navigationPending.value ||
+          (deps.activeTab.value === 'news' && deps.newsDetailLoading.value)) return;
+      clearTimeout(progressTimer);
+      routeProgress.value = false;
+      navigationStarted = 0;
+      enterTimer = setTimeout(() => { routeEntering.value = false; }, 180);
+    }));
+  }
+
+  function stageRoute(path, title) {
+    beginRouteFeedback(path, title);
+    const parts = new URL(path, window.location.origin).pathname.split('/').filter(Boolean).slice(1);
+    deps.home.value = parts.length === 0;
+    if (parts[0] === 'news') deps.activeTab.value = 'news';
+    else if (parts[0] === 'events') deps.activeTab.value = 'live';
+    else if (parts[0] === 'music' || parts[0] === 'database') {
+      deps.activeTab.value = 'database';
+      deps.dbView.value = ({'voice-actors':'voice',horses:'other'})[parts[1]] || parts[1] || 'index';
+    }
+  }
 
   const routeError = deps.ref("");
 
@@ -137,6 +181,10 @@ export function createRouting(deps) {
 
   function beginEntityNavigation() {
     const fromRoute = restoringRoute;
+    if (!fromRoute) {
+      beginRouteFeedback();
+      routeReady.value = false;
+    }
     if (!fromRoute)
       history.replaceState(
         Object.assign({}, history.state, { scrollY: window.scrollY }),
@@ -162,18 +210,20 @@ export function createRouting(deps) {
     );
   }
 
-  function applyCurrentRoute() {
+  function applyCurrentRoute(title = '') {
     const canonicalPath = deps.routes.resolve(currentUrlPath());
     if (canonicalPath !== currentUrlPath()) history.replaceState(history.state, '', canonicalPath);
     routeReady.value = false;
+    stageRoute(canonicalPath, title);
     routeError.value = "";
     const revision = ++navigationRevision.value;
     entityRequestRevision += 1;
     clearEntityDetails();
     const sourcePath = currentUrlPath();
-    return Promise.resolve(prepareCurrentRoute()).then(apply, function (error) {
+    let preparedEntityRevision;
+    return Promise.all([prepareCurrentRoute(), preloadPage(canonicalPath)]).then(apply).catch(function (error) {
       if (
-        revision === navigationRevision.value &&
+        (revision === navigationRevision.value || preparedEntityRevision === entityRequestRevision) &&
         sourcePath === currentUrlPath()
       ) {
         if (error?.message === "HTTP 404") {
@@ -181,6 +231,8 @@ export function createRouting(deps) {
           deps.activeTab.value = "not-found";
         } else routeError.value = "资料暂时无法载入，请重试。";
         routeReady.value = true;
+        navigationPending.value = false;
+        finishRouteFeedback();
       }
     });
     function apply() {
@@ -190,15 +242,25 @@ export function createRouting(deps) {
       ) {
         const pending = syncFromUrl();
         const requestRevision = entityRequestRevision;
+        preparedEntityRevision = requestRevision;
+        // News already has a title/date placeholder and its own body state.
+        if (/^\/zh-Hans\/news\/[^/]+/.test(sourcePath)) {
+          routeReady.value = true;
+          navigationPending.value = false;
+        }
         return Promise.resolve(pending).then(function () {
-          if (requestRevision === entityRequestRevision)
+          if (requestRevision === entityRequestRevision) {
             routeReady.value = true;
+            navigationPending.value = false;
+            clampLocalPages();
+            finishRouteFeedback();
+          }
         });
       }
     }
   }
 
-  function navigateTo(path, replace) {
+  function navigateTo(path, replace, title = '') {
     if (/^https?:/.test(path)) {
       const url = new URL(path);
       path = url.pathname + url.search;
@@ -222,7 +284,7 @@ export function createRouting(deps) {
         "",
         path,
       );
-    const pending = applyCurrentRoute();
+    const pending = applyCurrentRoute(title);
     deps.resetPageScroll();
     return pending;
   }
@@ -421,6 +483,11 @@ export function createRouting(deps) {
     if (deps.newsDetailRequest && deps.newsDetailRequest.path !== path)
       deps.cancelNewsDetailRequest();
     pendingEntitySource = false;
+    if (navigationPending.value && !restoringRoute) {
+      navigationPending.value = false;
+      routeReady.value = true;
+      finishRouteFeedback();
+    }
   }
 
   function syncFromUrl() {
@@ -825,6 +892,7 @@ export function createRouting(deps) {
   }
 
   function clampLocalPages() {
+    if (navigationPending.value || !routeReady.value) return;
     let changed = false;
     const music = deps.activeTab.value === "database";
     [
@@ -876,7 +944,18 @@ export function createRouting(deps) {
     });
     if (changed && !restoringRoute && !deps.isAtomicView()) pushUrl(true);
   }
-  function start() {}
+  function start() {
+    deps.watch(navigationError, error => {
+      if (!error) return;
+      navigationPending.value = false; routeReady.value = true; finishRouteFeedback();
+    });
+    deps.watch(notFound, missing => {
+      if (!missing) return;
+      navigationPending.value = false; routeReady.value = true; finishRouteFeedback();
+    });
+    deps.watch(() => deps.newsDetailLoading.value, finishRouteFeedback);
+    window.addEventListener('uma-page-rendered', finishRouteFeedback);
+  }
   return {
     start,
     applyCurrentRoute,
@@ -900,6 +979,11 @@ export function createRouting(deps) {
     retryCurrentRoute,
     routeError,
     routeReady,
+    navigationPending,
+    routeProgress,
+    routeEntering,
+    routePendingAtomic,
+    routePendingTitle,
     syncFromUrl,
   };
 }

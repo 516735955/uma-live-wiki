@@ -280,6 +280,16 @@ export function createNavigation(deps) {
   function internalLink(event, action) {
     if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
+    const anchor = event.currentTarget?.closest?.('a[href]');
+    if (anchor) {
+      const url = new URL(anchor.href, window.location.href);
+      const path = url.pathname + url.search;
+      if (url.origin === window.location.origin && path.startsWith('/zh-Hans/') && path !== window.location.pathname + window.location.search) {
+        closeNavGroup();
+        const title = anchor.querySelector('.music-card-copy b,.news-hero-title,.news-item-title')?.textContent.trim() || '';
+        return deps.navigateTo(path, false, title);
+      }
+    }
     action();
   }
 
@@ -480,10 +490,10 @@ export function createNavigation(deps) {
   }
 
   function resetPageScroll() {
-    window.scrollTo(0, 0);
+    window.scrollTo({top:0,left:0,behavior:'instant'});
     Vue.nextTick(function () {
       window.requestAnimationFrame(function () {
-        window.scrollTo(0, 0);
+        window.scrollTo({top:0,left:0,behavior:'instant'});
       });
     });
   }

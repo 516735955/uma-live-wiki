@@ -563,19 +563,15 @@ export function createNews(deps) {
     deps.pushUrl();
     const request = startNewsDetailRequest(id);
     if (!request) return newsDetailRequest && newsDetailRequest.promise;
-    const requestOptions = { cache: "no-cache" };
+    const requestOptions = { maxAge: 3000 };
     if (request.controller) requestOptions.signal = request.controller.signal;
     if (isLantis) {
       // Lantis CD-related item: crawl body via the proxy server.
       const item = newsDetail.value;
-      request.promise = fetch(
+      request.promise = deps.api.request(
         "/api/lantis-detail?id=" + encodeURIComponent(id),
         requestOptions,
       )
-        .then(function (r) {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r.json();
-        })
         .then(function (d) {
           if (!d || !d.detail || !d.detail.announce_id)
             throw new Error("no detail");
@@ -607,14 +603,10 @@ export function createNews(deps) {
         });
       return request.promise;
     }
-    request.promise = fetch(
+    request.promise = deps.api.request(
       "/api/news-detail?id=" + encodeURIComponent(id),
       requestOptions,
     )
-      .then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      })
       .then(function (d) {
         if (!d || !d.detail || !d.detail.announce_id)
           throw new Error("no detail");

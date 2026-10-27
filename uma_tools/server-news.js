@@ -53,6 +53,14 @@ exports.createService = function (deps) {
     }
   }
 
+  async function serveArchivedOnly(key, res) {
+    try {
+      if (deps.newsContent.isRemoved(key)) return deps.sendJson(res, 404, {error:'news not found'});
+      const data = await archive.request('get', {key});
+      deps.sendJson(res, data ? 200 : 404, data ? applyArticleEdits(data) : {error:'news not archived'}, {cacheControl:'no-store'});
+    } catch (_) { deps.sendJson(res, 503, {error:'news archive unavailable'}); }
+  }
+
   async function translateArchivedNews() {
     if (translationRunning || deps.NO_AUTO_CRAWL || deps.translationAvailable === false) return;
     translationRunning = true;
@@ -631,7 +639,7 @@ exports.createService = function (deps) {
       indexRepresentation = { source, signature, at: now, data: cached, options };
       const filtered = await filterNewsIndex(cached, params);
       deps.sendJson(res, 200, filtered, newsIndexOptions(filtered, params, options));
-      if (!deps.NO_AUTO_CRAWL) {
+      if (!deps.NO_AUTO_CRAWL && params?.get('prefetch') !== '1') {
         // CD相关 与官网新闻各自按需 TTL 补抓，互不牵制。
         ensureLantisFresh();
         if (Date.now() - newsIndexCache.at >= NEWS_TTL) {
@@ -645,7 +653,7 @@ exports.createService = function (deps) {
       }
       return;
     }
-    if (deps.NO_AUTO_CRAWL) {
+    if (deps.NO_AUTO_CRAWL || params?.get('prefetch') === '1') {
       deps.sendJson(res, 503, { error: "news snapshot unavailable" });
       return;
     }
@@ -687,7 +695,7 @@ exports.createService = function (deps) {
       deps.sendJson(res, 400, { error: "missing id" });
       return;
     }
-    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : serveArchivedArticle;
+    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : params.get('prefetch') === '1' ? serveArchivedOnly : serveArchivedArticle;
     serve(
       "official-" + id,
       res,
@@ -761,7 +769,7 @@ exports.createService = function (deps) {
     });
     const url =
       (it && it.url) || "https://umamusume.lantis.jp/news/" + digits + "/";
-    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : serveArchivedArticle;
+    const serve = res.archiveLoad ? (key, response, load) => fillArchive(key, load) : params.get('prefetch') === '1' ? serveArchivedOnly : serveArchivedArticle;
     serve(
       "lantis-" + digits,
       res,

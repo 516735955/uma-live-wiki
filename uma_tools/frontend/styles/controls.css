@@ -143,3 +143,23 @@ a:is(.album-card,.music-card-main,.creator-catalog-row,.event-catalog-row,.album
 .event-catalog-row:hover { background: #f7f9ff; box-shadow: none; transform: translateX(3px); }
 .event-catalog-row > svg,
 .relation-song-row svg { stroke: var(--ui-orange-deep); }
+.navigation-progress { position: fixed; z-index: 1200; inset: 0 0 auto; height: 3px; pointer-events: none; overflow: hidden; background: #3157ed18; }
+.navigation-progress span { display: block; width: 38%; height: 100%; background: var(--ui-orange,#ff8718); transform: translateX(-100%); animation: route-progress 1.15s ease-in-out infinite; }
+.route-placeholder { min-height: 440px; padding-top: 12px; }
+.route-placeholder-toolbar { display: flex; gap: 12px; margin-bottom: 24px; }
+.route-placeholder-toolbar span { height: 44px; border-radius: 8px; background: #e7e9f2; flex: 1; }
+.route-placeholder-toolbar span + span { max-width: 180px; }
+.route-placeholder-hero { min-height: 220px; display: flex; gap: 24px; padding: 24px; margin-bottom: 24px; border-radius: 12px; background: #fff; }
+.route-placeholder-hero > span { flex: 0 0 170px; border-radius: 8px; background: #e7e9f2; }
+.route-placeholder-hero > div { flex: 1; align-self: center; min-width: 0; }
+.route-placeholder-hero b { display: block; font-size: 1.4rem; margin-bottom: 20px; color: var(--text-1,#20283b); }
+.route-placeholder-hero i { display: block; height: 16px; max-width: 520px; margin: 14px 0; border-radius: 4px; background: #e7e9f2; }
+.route-placeholder-hero i:last-child { width: 55%; }
+.route-content-enter { animation: route-content-enter 180ms ease-out; }
+.news-body-skeleton { padding: 24px 0; min-height: 240px; }
+.news-body-skeleton span { display: block; height: 16px; margin: 20px 0; border-radius: 4px; background: #e7e9f2; }
+.news-body-skeleton span:nth-child(3n) { width: 70%; }
+@keyframes route-progress { to { transform: translateX(370%); } }
+@keyframes route-content-enter { from { opacity: .25; } to { opacity: 1; } }
+@media(max-width:600px) { .route-placeholder-hero { min-height: 180px; gap: 16px; padding: 16px; } .route-placeholder-hero > span { flex-basis: 84px; } .route-placeholder-hero b { font-size: 1.1rem; } }
+@media(prefers-reduced-motion:reduce) { .route-content-enter,.navigation-progress span { animation: none; } .navigation-progress span { width: 100%; transform: none; } }

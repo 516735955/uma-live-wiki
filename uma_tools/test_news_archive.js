@@ -22,12 +22,13 @@ async function main() {
       detail: { ...lantis.detail, title_zh: '发售新闻', message_zh: '<p>发售正文</p>' } });
     fs.writeFileSync(path.join(directory, 'news_snapshot.json'), JSON.stringify({ generated_at: new Date().toISOString(), information_list: [{ announce_id: 1, title: source.detail.title, title_zh: '旧标题' }] }));
     fs.writeFileSync(path.join(directory, 'lantis_news.json'), JSON.stringify([{id: 'lantis-2', title: lantis.detail.title}]));
-    service = require('./server-news').createService({ DATA_DIR: directory, path, fs, crypto,
+    const serviceOptions = { DATA_DIR: directory, path, fs, crypto,
       NO_AUTO_CRAWL: true, newsContent: { isRemoved: key => key === 'official-1568', apply: item => item, message: () => '', title: (_, existing) => existing || '' },
       httpsGet() { sourceCalls++; throw new Error('Visitor requested upstream source'); },
       httpsGetHtml(url, callback) { callback(null, lantisHtml); },
       translateArticle() { translationCalls++; throw new Error('Visitor requested translation'); },
-      sendJson(res, status, data, options) { res.status = status; res.data = data; res.options = options; } });
+      sendJson(res, status, data, options) { res.status = status; res.data = data; res.options = options; } };
+    service = require('./server-news').createService(serviceOptions);
     service.start();
     const index = {}, cd = {};
     await service.handleNewsIndex(index);
@@ -54,6 +55,20 @@ async function main() {
     }
     assert.strictEqual(sourceCalls, 0);
     assert.strictEqual(translationCalls, 0);
+    for (const [handler, id, expected] of [['handleNewsDetail','1',200], ['handleNewsDetail','987654',404], ['handleLantisDetail','lantis-2',200], ['handleLantisDetail','lantis-987654',404]]) {
+      const response = {};
+      await service[handler](null, response, new URLSearchParams({id,prefetch:'1'}));
+      for (let attempt=0; !response.data && attempt<100; attempt++) await new Promise(done=>setTimeout(done,10));
+      assert.strictEqual(response.status, expected, 'prefetch reads archived articles only');
+    }
+    assert.strictEqual(sourceCalls, 0, 'prefetch never starts an upstream source request');
+    assert.strictEqual(translationCalls, 0, 'prefetch never starts translation');
+    serviceOptions.NO_AUTO_CRAWL = false;
+    const prefetchedIndex = {};
+    await service.handleNewsIndex(prefetchedIndex,new URLSearchParams('prefetch=1'));
+    assert.strictEqual(prefetchedIndex.status,200);
+    assert.strictEqual(sourceCalls,0,'index prefetch does not refresh upstream sources');
+    serviceOptions.NO_AUTO_CRAWL = true;
     await service.handleLantisDetail(null, { archiveLoad: true }, new URLSearchParams('id=77'));
     let extracted;
     for (let attempt = 0; !extracted && attempt < 100; attempt++) {
