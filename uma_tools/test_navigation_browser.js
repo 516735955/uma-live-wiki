@@ -71,12 +71,12 @@ async function main() {
     const fallback = await page.evaluate(async()=>{
       const session=window.__uma_app.selectedEventSession, saved=session.setlist_html;
       session.setlist_html=''; await Vue.nextTick();
-      const counts=[...document.querySelectorAll('.setlist-table tbody tr:last-child .performer-group')].map(row=>row.children.length);
+      const counts=[...document.querySelectorAll('.setlist-table tbody tr:last-child .performer-group')].map(row=>row.querySelectorAll('.performer-chip,.guest-performer').length);
       session.setlist_html=saved; await Vue.nextTick(); return counts;
     });
     assert.deepStrictEqual(fallback,[7,5,44],'the structured fallback uses the same identity grouping');
     await page.evaluate(()=>window.umaNavigate('/zh-Hans/database/voice-actors/va-0008/events'));
-    await page.locator('.history-list > a.history-group-start').waitFor();
+    await page.locator('.history-list > .history-group-start').waitFor();
     const history = await page.evaluate(()=>window.__uma_app.voiceHistoryEvents.map(row=>({scope:row.participation_scope,date:row.date,id:row.event_id})));
     const boundary = history.findIndex(row=>row.scope==='voice');
     assert(boundary>0 && history.slice(boundary).every(row=>row.scope==='voice'));

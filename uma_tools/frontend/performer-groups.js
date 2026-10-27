@@ -61,12 +61,17 @@ export function groupSetlistPerformers(html) {
       else seen.add(key);
     });
     const kinds = new Set([...cell.querySelectorAll(selector)].map(kind));
-    if (kinds.size < 2) return;
+    if (kinds.size < 2 && !kinds.has(1)) return;
     const groups = [0,1,2].filter(value => kinds.has(value)).map(value => {
       const row = document.createElement('div');
       row.className = 'performer-group'; row.dataset.performerGroup = String(value);
       const projected = project(cell, value, 0);
       while (projected.firstChild) row.append(projected.firstChild);
+      if (value === 1) {
+        const label = document.createElement('span');
+        label.className = 'identity-group-label'; label.textContent = '非马娘身份出演';
+        row.prepend(label);
+      }
       return row;
     });
     cell.replaceChildren(...groups);
@@ -80,5 +85,5 @@ export const PerformanceCast = {
     const view = Vue.getCurrentInstance().proxy.$root;
     return {view, groups: Vue.computed(() => performanceGroups(props.performance, view.voiceProfiles))};
   },
-  template: `<div class="performance-groups"><div v-for="(group,index) in groups" :key="index" class="performer-chip-list compact performer-group" :class="rowClass" :data-performer-group="group[0].kind"><template v-for="(item,i) in group" :key="item.id || item.name+'-'+i"><a v-if="item.kind==='character'" class="performer-chip character-chip" :style="{'--chip-color':view.characterColor(item.id)}" :href="view.routes.characters(item.id)" @click="view.internalLink($event,()=>view.openCharacter(item.id))"><img v-if="view.characterPerformanceImage(item.id)" v-media-src="view.characterPerformanceImage(item.id)" alt=""><span>{{ view.characterName(item.id) }}</span></a><a v-else-if="item.kind==='voice'" class="performer-chip voice-chip" :href="view.routes.voiceActors(item.id)" @click="view.internalLink($event,()=>view.openVoice(item.id))"><img v-if="view.voicePhoto(item.id)" v-media-src="view.voicePhoto(item.id)" alt=""><span>{{ view.voiceName(item.id) }}</span></a><span v-else class="guest-performer">{{ item.name }}</span></template></div></div>`,
+  template: `<div class="performance-groups"><div v-for="(group,index) in groups" :key="index" class="performer-chip-list compact performer-group" :class="rowClass" :data-performer-group="group[0].kind"><span v-if="group[0].kind==='voice'" class="identity-group-label">非马娘身份出演</span><template v-for="(item,i) in group" :key="item.id || item.name+'-'+i"><a v-if="item.kind==='character'" class="performer-chip character-chip" :style="{'--chip-color':view.characterColor(item.id)}" :href="view.routes.characters(item.id)" @click="view.internalLink($event,()=>view.openCharacter(item.id))"><img v-if="view.characterPerformanceImage(item.id)" v-media-src="view.characterPerformanceImage(item.id)" alt=""><span>{{ view.characterName(item.id) }}</span></a><a v-else-if="item.kind==='voice'" class="performer-chip voice-chip" :href="view.routes.voiceActors(item.id)" @click="view.internalLink($event,()=>view.openVoice(item.id))"><img v-if="view.voicePhoto(item.id)" v-media-src="view.voicePhoto(item.id)" alt=""><span>{{ view.voiceName(item.id) }}</span></a><span v-else class="guest-performer">{{ item.name }}</span></template></div></div>`,
 };

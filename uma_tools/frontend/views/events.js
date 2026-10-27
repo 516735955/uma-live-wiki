@@ -98,6 +98,7 @@ export const template = `
                         <div class="section-toolbar"><span class="credit-role-tag">{{ eventCancellation ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-cast-groups">
                           <div v-for="(group,groupIndex) in eventVoiceCastGroups" :key="groupIndex" class="performer-chip-list performer-group">
+                            <span v-if="!group[0].character_id && group[0].voice_actor_id" class="identity-group-label">非马娘身份出演</span>
                             <component v-for="(cast,index) in group" :is="cast.voice_actor_id ? 'a' : 'span'" :key="cast.voice_actor_id || ('external-' + cast.name + '-' + index)" class="performer-chip voice-chip" :style="cast.character_id ? {'--chip-color':characterColor(cast.character_id)} : {}" :href="cast.voice_actor_id ? routes.voiceActors(cast.voice_actor_id) : undefined" @click="cast.voice_actor_id && internalLink($event, () => openVoice(cast.voice_actor_id))">
                                 <img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em>
                             </component>

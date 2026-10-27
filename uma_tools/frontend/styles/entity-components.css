@@ -182,7 +182,8 @@
         .performer-group + .performer-group { margin-top: 12px; }
         .setlist-perf > .performer-group[data-performer-group="1"] { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
         .setlist-perf > .performer-group[data-performer-group="1"] > .performer-chip-list { display: contents; }
-        .history-list > a.history-group-start { margin-top: 24px; border-top: 1px solid var(--surface-line); }
+        .identity-group-label { display: block; flex-basis: 100%; width: 100%; grid-column: 1 / -1; margin-bottom: 4px; color: var(--text-2); font-size: .85rem; font-weight: 700; }
+        .history-list > .identity-group-label { margin: 24px 0 10px; }
         .setlist-song-link { color: var(--text); text-decoration: none; }
         .setlist-song-link:hover { color: var(--brand-dark); }
         .perf-item,
