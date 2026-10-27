@@ -1,5 +1,6 @@
 import { ContentState } from "/uma_tools/frontend/content-state.js";
 import { ActivityTime, ActivityHistory } from "/uma_tools/frontend/activity-components.js";
+import { PerformanceCast } from "/uma_tools/frontend/performer-groups.js";
 
 export function registerComponents(umaApp, routes) {
   umaApp.component("ui-select", window.UmaUi.UiSelect);
@@ -10,6 +11,7 @@ export function registerComponents(umaApp, routes) {
   umaApp.component("content-state", ContentState);
   umaApp.component("activity-time", ActivityTime);
   umaApp.component("activity-history", ActivityHistory);
+  umaApp.component("performance-cast", PerformanceCast);
   umaApp.component("platform-mark", {
     props: { platform: String },
     // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.

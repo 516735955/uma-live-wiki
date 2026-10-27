@@ -1,3 +1,4 @@
+import { castGroups } from "/uma_tools/frontend/performer-groups.js";
 /* events state and behavior; external dependencies are explicit live ports. */
 export function createEvents(deps) {
   const eventSongs = deps.ref([]);
@@ -319,6 +320,8 @@ export function createEvents(deps) {
     const session = selectedEventSession.value;
     return [...new Set((session && session.character_ids) || (event && event.character_ids) || [])];
   });
+
+  const eventVoiceCastGroups = deps.computed(() => castGroups(eventVoiceCast.value));
 
   const eventUnscopedCast = deps.computed(function () {
     const event = eventDetail.value;
@@ -659,6 +662,7 @@ export function createEvents(deps) {
     eventTypeSelection,
     eventUnscopedCast,
     eventVoiceCast,
+    eventVoiceCastGroups,
     eventCharacterCast,
     eventYearOptions,
     eventYears,

@@ -231,10 +231,10 @@ export function createVoices(deps) {
     return groups;
   });
 
-  // Keep the same flat activity-record model as character pages. Year grouping
-  // is a presentation choice and must not change filtering or session labels.
   const voiceHistoryEvents = deps.computed(function () {
-    return voicePastByYear.value.flatMap(function (group) { return group.events; });
+    return voicePastByYear.value.flatMap(function (group) { return group.events; })
+      .sort((a,b) => Number(a.participation_scope === 'voice') - Number(b.participation_scope === 'voice')
+        || String(b.date || '').localeCompare(String(a.date || '')));
   });
 
   function openVoice(actorId) {

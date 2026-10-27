@@ -133,6 +133,14 @@ async function main() {
   assert(fallbacks.every((value) => value === snapshot), 'every concurrent reader keeps the last complete snapshot');
 
   const appearance = await store.appearance('character', 'specialweek');
+  const originalVoiceAppearance = JSON.stringify(snapshot.appearancesDoc.voice_actors['va-0008']);
+  const outsideRole = (await store.appearance('voice_actor','va-0008')).appearance;
+  const animaxId = 'live-other-2023-11-18-animax-musix-2023';
+  assert.strictEqual(outsideRole.events.find(row=>row.event_id===animaxId).participation_scope,'voice');
+  const machico = snapshot.voicesDoc.voice_actors.find(row=>row.identity.zh==='Machico');
+  const inRole = (await store.appearance('voice_actor',machico.id)).appearance;
+  assert.strictEqual(inRole.events.find(row=>row.event_id===animaxId).participation_scope,'uma');
+  assert.strictEqual(JSON.stringify(snapshot.appearancesDoc.voice_actors['va-0008']),originalVoiceAppearance,'display context never mutates the source appearance record');
   assert(appearance.appearance.songs.length > 0, 'known character songs are missing');
   appearance.songs.forEach((appearanceSong) => {
     appearanceSong.versions.forEach((version) => {

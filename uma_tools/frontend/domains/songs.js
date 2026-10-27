@@ -1,3 +1,4 @@
+import { groupSetlistPerformers } from "/uma_tools/frontend/performer-groups.js";
 /* songs state and behavior; external dependencies are explicit live ports. */
 export function createSongs(deps) {
   const songsById = deps.reactive({});
@@ -608,7 +609,7 @@ export function createSongs(deps) {
         );
       },
     );
-    return result.replace(/<img\b(?![^>]*\bdata-media-fallback)/gi, '<img data-media-fallback="/uma_tools/img/person-placeholder.svg"');
+    return groupSetlistPerformers(result.replace(/<img\b(?![^>]*\bdata-media-fallback)/gi, '<img data-media-fallback="/uma_tools/img/person-placeholder.svg"'));
   }
 
   const statSongs = deps.computed(function () {

@@ -8,6 +8,8 @@ const read = file => fs.readFileSync(file, 'utf8').replace(/\r\n?/g, '\n');
 // adapted; every state transition executes the same factory used by the browser.
 function loadFrontend(context) {
   const directory = path.join(__dirname, "frontend");
+  const performers = read(path.join(directory, 'performer-groups.js')).replace(/export (const|function) /g, '$1 ');
+  Object.assign(context, vm.runInContext('(function(){' + performers + ';return {castGroups,performanceGroups,groupSetlistPerformers,PerformanceCast};})()', context));
   const wiring = read(path.join(directory, "domains.js"));
   const labels = read(path.join(directory, 'anime-labels.js')).replace(/export function /g, 'function ');
   Object.assign(context, vm.runInContext('(function(){' + labels + ';return {animeFormatLabel,animeStatusLabel,animePlatformLabel};})()', context));

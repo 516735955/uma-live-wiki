@@ -875,9 +875,26 @@ class CatalogStore {
     const originalAppearance = table[id];
     const appearance = { ...originalAppearance, events: (originalAppearance.events || []).map(row => {
       const mapped = store.parentForChild.get(row.event_id);
-      if (!mapped) return row;
-      const session = mapped.parent.sessions.find(session => session.id === row.session_id) || mapped.parent.sessions.find(session => session.source_event_id === row.event_id);
-      return { ...row, parent_event_id: mapped.parent.id, parent_title: mapped.parent.title, child_label: session?.label || row.session_label, event_id: mapped.parent.id, session_id: row.session_id || mapped.session_id };
+      const event = mapped?.parent || store.eventsById.get(row.event_id);
+      const session = event?.sessions?.find(session => session.id === row.session_id)
+        || event?.sessions?.find(session => session.source_event_id === row.event_id)
+        || (event?.sessions?.length === 1 ? event.sessions[0] : null);
+      let scope = {};
+      if (type === 'voice_actor' && event) {
+        const cast = session?.cast || event.cast || [];
+        const matches = cast.filter(person => person.voice_actor_id === id);
+        if (matches.length) scope = {participation_scope: matches.some(person => person.character_id) ? 'uma' : 'voice'};
+        else {
+          const performances = session?.performances || event.performances || [];
+          const credits = performances.filter(performance => (performance.voice_actor_ids || []).includes(id));
+          if (credits.length) {
+            const roles = store.voicesDoc.voice_actors.find(voice => voice.id === id)?.roles || [];
+            scope = {participation_scope: credits.some(performance => roles.some(role => (performance.character_ids || []).includes(role.character_id))) ? 'uma' : 'voice'};
+          }
+        }
+      }
+      if (!mapped) return {...row, ...scope};
+      return { ...row, ...scope, parent_event_id: mapped.parent.id, parent_title: mapped.parent.title, child_label: session?.label || row.session_label, event_id: mapped.parent.id, session_id: row.session_id || mapped.session_id };
     }) };
     const songIds = new Set((appearance.songs || []).map((item) => item.song_id).filter(Boolean));
     const songs = Array.from(songIds)

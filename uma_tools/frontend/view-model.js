@@ -163,6 +163,7 @@ export function createViewModel(domains, routes) {
     activeMediaKey: domains.events.activeMediaKey,
     activateEventMedia: domains.events.activateEventMedia,
     eventVoiceCast: domains.events.eventVoiceCast,
+    eventVoiceCastGroups: domains.events.eventVoiceCastGroups,
     eventCharacterCast: domains.events.eventCharacterCast,
     eventUnscopedCast: domains.events.eventUnscopedCast,
     openEvent: domains.events.openEvent,

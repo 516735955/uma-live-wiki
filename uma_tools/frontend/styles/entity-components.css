@@ -179,6 +179,10 @@
         .setlist-frame .setlist-no { width: 46px; color: var(--text-3); font-variant-numeric: tabular-nums; }
         .setlist-frame .setlist-song { min-width: 260px; color: var(--text); font-weight: 850; }
         .setlist-frame .setlist-perf { min-width: 330px; }
+        .performer-group + .performer-group { margin-top: 12px; }
+        .setlist-perf > .performer-group[data-performer-group="1"] { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+        .setlist-perf > .performer-group[data-performer-group="1"] > .performer-chip-list { display: contents; }
+        .history-list > a.history-group-start { margin-top: 24px; border-top: 1px solid var(--surface-line); }
         .setlist-song-link { color: var(--text); text-decoration: none; }
         .setlist-song-link:hover { color: var(--brand-dark); }
         .perf-item,
