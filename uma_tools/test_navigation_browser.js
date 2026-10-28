@@ -141,6 +141,7 @@ async function main() {
     await page.setViewportSize({width:390,height:950});
     await page.evaluate(()=>window.umaNavigate('/zh-Hans/music/songs/song-f53f0c98a1/performances'));
     await page.locator('.song-performance-cast').first().waitFor();
+    assert.strictEqual(await page.locator('.song-performance-table .voice-chip,.song-performance-table .guest-performer,.song-performance-table .identity-group-label').count(),0,'song appearance records show Uma characters only');
     assert.strictEqual(await page.locator('.song-performance-cast').first().evaluate(row=>getComputedStyle(row).display),'grid','song appearance groups retain their existing mobile grid');
     await page.waitForFunction(()=>document.documentElement.scrollWidth<=innerWidth+1,null,{timeout:3000});
 

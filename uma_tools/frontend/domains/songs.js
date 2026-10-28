@@ -256,6 +256,7 @@ export function createSongs(deps) {
         rows.push({
           version: version,
           performance: performance,
+          character_ids: (performance.character_ids || []).filter(id => deps.findCharById?.(id)?.role_type !== 'human'),
           display_no: displayNo,
         });
       });

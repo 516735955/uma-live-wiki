@@ -106,13 +106,14 @@ export const template = `
                     </section>
 
                     <section v-else-if="songSection==='performances'" class="entity-section">
-                    <table v-if="songDetailPerformances.length" class="data-table">
-                        <thead><tr><th>日期</th><th>活动 / 场次</th><th>版本</th><th>出演者</th></tr></thead>
+                    <table v-if="songDetailPerformances.length" class="data-table song-performance-table">
+                        <colgroup><col style="width:13%"><col style="width:30%"><col style="width:12%"><col style="width:45%"></colgroup>
+                        <thead><tr><th>日期</th><th>活动 / 场次</th><th>版本</th><th>赛马娘角色</th></tr></thead>
                         <tbody><tr v-for="row in songDetailPerformances" :key="row.performance.session_id+'-'+row.performance.performance_index">
                             <td data-label="日期">{{ row.performance.session_date || row.performance.event_date || '—' }}</td>
                             <td data-label="活动 / 场次"><a class="text-link stacked" :href="row.performance.event_url" @click="internalLink($event, () => openEventUrl(row.performance.event_url))"><b>{{ row.performance.event_title }}</b><span class="secondary-line">{{ row.performance.session_label }}<template v-if="row.display_no">　第 {{ row.display_no }} 首</template></span></a></td>
                             <td data-label="版本">{{ (row.performance.performance_variant && (row.performance.performance_variant.label || row.performance.performance_variant.title)) || row.version.version_label || '原始版本' }}</td>
-                            <td data-label="出演者"><performance-cast :performance="row.performance" row-class="song-performance-cast"></performance-cast></td>
+                            <td data-label="赛马娘角色"><div v-if="row.character_ids.length" class="performer-chip-list compact song-performance-cast"><a v-for="characterId in row.character_ids" :key="characterId" class="performer-chip character-chip" :style="{'--chip-color':characterColor(characterId)}" :href="routes.characters(characterId)" @click="internalLink($event,()=>openCharacter(characterId))"><img v-if="characterPerformanceImage(characterId)" v-media-src="characterPerformanceImage(characterId)" alt=""><span>{{ characterName(characterId) }}</span></a></div><span v-else>—</span></td>
                         </tr></tbody>
                     </table>
                     <content-state v-else state="uncollected" subject="演出记录"></content-state>

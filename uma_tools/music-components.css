@@ -421,6 +421,10 @@
 .credit-ledger .text-link { display: inline; width: auto; color: var(--ui-cobalt-deep); text-decoration: none; }
 .credit-ledger .credit-people { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,10rem),1fr)); gap: 10px 16px; }
 .credit-person { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; min-width: 0; overflow-wrap: anywhere; }
+.song-performance-table { table-layout: fixed; width: 100%; }
+.song-performance-table td { vertical-align: top; overflow-wrap: anywhere; }
+.song-performance-table .song-performance-cast { width: 100%; min-width: 0; grid-template-columns: repeat(auto-fill,minmax(min(100%,7.5rem),1fr)); gap: 8px 12px; }
+@media(max-width:700px) { .song-performance-table colgroup { display: none; } }
 
 .event-status-cancelled { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 6px; background: #b42332; color: #fff; font-size: .8rem; font-style: normal; font-weight: 800; white-space: nowrap; }
 .event-hero-status { position: absolute; z-index: 2; top: 16px; right: 16px; }
