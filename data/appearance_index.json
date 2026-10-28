@@ -58172,6 +58172,19 @@
     "va-0112": {
       "events": [
         {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目",
+          "evidence": [
+            "official_youtube"
+          ]
+        },
+        {
           "event_id": "paka-live-tv-prime-008",
           "date": "2026-10-24",
           "end_date": "2026-10-24",
@@ -75143,6 +75156,19 @@
           ]
         },
         {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目",
+          "evidence": [
+            "official_youtube"
+          ]
+        },
+        {
           "event_id": "paka-live-tv-prime-007",
           "date": "2026-09-27",
           "end_date": "2026-09-27",
@@ -78416,6 +78442,19 @@
     },
     "va-0154": {
       "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目",
+          "evidence": [
+            "official_youtube"
+          ]
+        },
         {
           "event_id": "live-numbered-7th-event-2026-06-20",
           "date": "2026-06-21",
@@ -130661,6 +130700,16 @@
     },
     "eishinflash": {
       "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目"
+        },
         {
           "event_id": "pakatube-20261019-gang-beasts-c-4",
           "date": "2026-10-19",
@@ -183463,6 +183512,16 @@
           "session_label": "本场"
         },
         {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目"
+        },
+        {
           "event_id": "pakatube-20261019-gang-beasts-c-4",
           "date": "2026-10-19",
           "end_date": "2026-10-19",
@@ -183614,6 +183673,16 @@
     },
     "rulership": {
       "events": [
+        {
+          "event_id": "sokosoko-paka-live-tv-056",
+          "date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "title": "SokoSoko PakaLive TV Vol.56",
+          "kind": "official_program",
+          "series_id": "sokosoko-paka-live-tv",
+          "session_id": "sokosoko-paka-live-tv-056-session-1",
+          "session_label": "本期节目"
+        },
         {
           "event_id": "paka-live-tv-prime-008",
           "date": "2026-10-24",
@@ -186591,6 +186660,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-10-27T23:05:23+00:00",
-  "build_id": "8f69499f32408e6089e5"
+  "generated_at": "2026-10-28T23:20:59+00:00",
+  "build_id": "eb150f130b114546cb1e"
 }

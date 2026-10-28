@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-27T23:01:45+00:00",
+  "refreshed_at": "2026-10-28T23:17:36+00:00",
   "coverage": {
     "official_youtube_refresh": "metadata_recheck_pending",
     "source_errors": [],
@@ -9,11 +9,11 @@
       "official video metadata unavailable: 402qxqFvifg: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
     ],
     "expected_regular_episodes": 125,
-    "records": 250,
+    "records": 251,
     "source_verified_regular_episodes": 125,
     "metadata_pending_ids": [],
-    "metadata_candidate_count": 3,
-    "metadata_batch_count": 3,
+    "metadata_candidate_count": 4,
+    "metadata_batch_count": 4,
     "metadata_pending_video_ids": [],
     "pakatube_character_programs": 89,
     "official_special_programs": 30
@@ -16910,6 +16910,84 @@
       "published_time": "20:00",
       "published_date": "2026-08-28",
       "publication_source_url": "https://www.youtube.com/watch?v=M2tX0YZU0BY"
+    },
+    {
+      "id": "sokosoko-paka-live-tv-056",
+      "series_id": "sokosoko-paka-live-tv",
+      "title": "そこそこぱかライブTV Vol.56",
+      "source_title": "「そこそこぱかライブTV Vol.56」10月30日(金)19時公開！そこそこなトークをゆるりとお届け！",
+      "date": "2026-10-30",
+      "broadcast_time": "19:00",
+      "broadcast_time_zone": "Asia/Tokyo",
+      "broadcast_time_kind": "metadata",
+      "time_precision": "minute",
+      "broadcast_date": "2026-10-30",
+      "time_source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+      "end_date": "2026-10-30",
+      "video_id": "_OC7JG7D7w0",
+      "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+      "thumbnail": "https://i.ytimg.com/vi_webp/_OC7JG7D7w0/maxresdefault.webp",
+      "duration": null,
+      "cast_status": "verified",
+      "cast": [
+        {
+          "name": "藤野彩水",
+          "role": "エイシンフラッシュ"
+        },
+        {
+          "name": "菊池ゆりな",
+          "role": "ローズキングダム"
+        },
+        {
+          "name": "海野水玉",
+          "role": "ルーラーシップ"
+        }
+      ],
+      "characters": [],
+      "sessions": [
+        {
+          "label": "本期节目",
+          "date": "2026-10-30",
+          "cast": [
+            {
+              "name": "藤野彩水",
+              "role": "エイシンフラッシュ"
+            },
+            {
+              "name": "菊池ゆりな",
+              "role": "ローズキングダム"
+            },
+            {
+              "name": "海野水玉",
+              "role": "ルーラーシップ"
+            }
+          ],
+          "broadcast_time": "19:00",
+          "broadcast_time_zone": "Asia/Tokyo",
+          "broadcast_time_kind": "announced",
+          "time_precision": "minute",
+          "broadcast_date": "2026-10-30",
+          "source_time_text": "放送日時：2026年10月30日（金）19:00 ～ 予定"
+        }
+      ],
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の藤野彩水さん、菊池ゆりなさん、海野水玉さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこママみを感じた話」、「そこそこキセキ的な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、お題に書かれた言葉を麗しく例えるゲームにも挑戦！ ぜひお楽しみに！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=3532"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+        }
+      ],
+      "metadata_checked_at": 1793229446.816794,
+      "source_time_text": "1793354400",
+      "media": []
     }
   ]
 }

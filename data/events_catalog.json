@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T23:05:23+00:00",
+  "generated_at": "2026-10-28T23:20:59+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -12,17 +12,17 @@
     }
   },
   "coverage": {
-    "events": 511,
+    "events": 512,
     "by_kind": {
       "concert": 46,
-      "official_program": 267,
+      "official_program": 268,
       "onsite": 198
     },
     "by_mode": {
-      "online": 259,
+      "online": 260,
       "onsite": 252
     },
-    "official_programs": 250,
+    "official_programs": 251,
     "unresolved_cast_names": 0
   },
   "series": [
@@ -3019,7 +3019,7 @@
       "legacy_url": "",
       "image": "/uma_tools/img/event-covers/winning-live.svg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
       "image_source": {
         "kind": "fallback_pending_artwork",
         "url": "https://umamusume.lantis.jp/live/1432/",
@@ -3311,7 +3311,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 開場 16:30 開演 17:30 終演 18:30",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/494410"
         }
       ],
@@ -3326,7 +3326,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.jpg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/live/1413/",
@@ -3552,7 +3552,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 開場 16:30 開演 17:00 終演 19:00",
+          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/494412"
         }
       ],
@@ -3567,7 +3567,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8953_7.jpg",
       "summary": "为第6次大型演唱会《The New Frontier》Blu-ray 发售举办的谈话与放映活动，高柳知叶、奥野香耶、佳原萌枝、真名濑日和及松田飒水出演。",
-      "source_time_text": "開場 16:30 開演 17:00 終演 19:00",
+      "source_time_text": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-6th-event-the-new-frontier-blu-ray/",
@@ -4373,7 +4373,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント    開場 15:00 開演 16:00 終演 17:00 開場 15:00 開演 16:00 終演 17:00",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント    開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります 開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/490155"
         }
       ],
@@ -4388,7 +4388,7 @@
       "legacy_url": "",
       "image": "https://eventernote.s3.amazonaws.com/images/events/490155_s.jpg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 15:00 開演 16:00 終演 17:00",
+      "source_time_text": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [
         "『赛马娘 Pretty Derby』WINNING LIVE 35发售纪念活动"
       ],
@@ -4420,6 +4420,186 @@
       "summary_zh": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
       "localization_state": "complete",
       "display_title": "WINNING LIVE 35 发售纪念活动"
+    },
+    {
+      "id": "sokosoko-paka-live-tv-056",
+      "title": "SokoSoko PakaLive TV Vol.56",
+      "date": "2026-10-30",
+      "end_date": "2026-10-30",
+      "source_title": "「そこそこぱかライブTV Vol.56」10月30日(金)19時公開！そこそこなトークをゆるりとお届け！",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "sokosoko-paka-live-tv",
+      "venue": "在线播出",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0154",
+          "name": "藤野彩水",
+          "character_id": "eishinflash",
+          "role": "荣进闪耀",
+          "evidence": "official_youtube",
+          "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_youtube",
+              "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0147",
+          "name": "菊池友莉菜",
+          "character_id": "rosekingdom",
+          "role": "玫瑰帝国",
+          "evidence": "official_youtube",
+          "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_youtube",
+              "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0112",
+          "name": "海野水玉",
+          "character_id": "rulership",
+          "role": "统治地位",
+          "evidence": "official_youtube",
+          "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "official_youtube",
+              "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "sokosoko-paka-live-tv-056-session-1",
+          "label": "本期节目",
+          "date": "2026-10-30",
+          "songs": [],
+          "character_ids": [
+            "eishinflash",
+            "rosekingdom",
+            "rulership"
+          ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0154",
+              "name": "藤野彩水",
+              "character_id": "eishinflash",
+              "role": "荣进闪耀",
+              "evidence": "official_youtube",
+              "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_youtube",
+                  "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0147",
+              "name": "菊池友莉菜",
+              "character_id": "rosekingdom",
+              "role": "玫瑰帝国",
+              "evidence": "official_youtube",
+              "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_youtube",
+                  "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0112",
+              "name": "海野水玉",
+              "character_id": "rulership",
+              "role": "统治地位",
+              "evidence": "official_youtube",
+              "source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "official_youtube",
+                  "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+                }
+              ]
+            }
+          ],
+          "broadcast_time": "19:00",
+          "source_time_text": "放送日時：2026年10月30日（金）19:00 ～ 予定",
+          "time_precision": "minute",
+          "broadcast_time_kind": "announced",
+          "broadcast_date": "2026-10-30",
+          "broadcast_time_zone": "Asia/Tokyo",
+          "time_source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "id_aliases": [],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "label": "官方视频",
+          "video_id": "_OC7JG7D7w0",
+          "duration": null
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_announcement",
+          "label": "官方公告",
+          "url": "https://umamusume.jp/news/detail?id=3532"
+        },
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
+        }
+      ],
+      "legacy_url": "",
+      "image": "https://i.ytimg.com/vi_webp/_OC7JG7D7w0/maxresdefault.webp",
+      "summary": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の藤野彩水さん、菊池ゆりなさん、海野水玉さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこママみを感じた話」、「そこそこキセキ的な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、お題に書かれた言葉を麗しく例えるゲームにも挑戦！ ぜひお楽しみに！",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "venue_raw": "在线播出",
+      "venue_id": "",
+      "venue_zh": "在线播出",
+      "venue_ja": "在线播出",
+      "venue_city": "",
+      "venue_country": "",
+      "venue_aliases": [
+        "在线播出"
+      ],
+      "venue_sources": [],
+      "time_source": null,
+      "time_precision": "minute",
+      "title_ja": "そこそこぱかライブTV Vol.56",
+      "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の藤野彩水さん、菊池ゆりなさん、海野水玉さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこママみを感じた話」、「そこそこキセキ的な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、お題に書かれた言葉を麗しく例えるゲームにも挑戦！ ぜひお楽しみに！",
+      "title_zh": "SokoSoko PakaLive TV Vol.56",
+      "localization_state": "pending"
     },
     {
       "id": "paka-live-tv-prime-008",
@@ -189908,5 +190088,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "8f69499f32408e6089e5"
+  "build_id": "eb150f130b114546cb1e"
 }
