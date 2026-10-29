@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T23:20:59+00:00",
+  "generated_at": "2026-10-29T23:25:46+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -3311,7 +3311,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 開場 16:30 開演 17:30 終演 18:30",
           "time_source_url": "https://www.eventernote.com/events/494410"
         }
       ],
@@ -3326,7 +3326,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.jpg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/live/1413/",
@@ -3552,7 +3552,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
+          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 開場 16:30 開演 17:00 終演 19:00",
           "time_source_url": "https://www.eventernote.com/events/494412"
         }
       ],
@@ -3567,7 +3567,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8953_7.jpg",
       "summary": "为第6次大型演唱会《The New Frontier》Blu-ray 发售举办的谈话与放映活动，高柳知叶、奥野香耶、佳原萌枝、真名濑日和及松田飒水出演。",
-      "source_time_text": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
+      "source_time_text": "開場 16:30 開演 17:00 終演 19:00",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-6th-event-the-new-frontier-blu-ray/",
@@ -190088,5 +190088,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "eb150f130b114546cb1e"
+  "build_id": "460e4fa10efe2987fabc"
 }

@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-10-28T23:17:36+00:00",
+  "refreshed_at": "2026-10-29T23:22:05+00:00",
   "coverage": {
     "official_youtube_refresh": "metadata_recheck_pending",
     "source_errors": [],
     "metadata_recheck_pending": [
       "official video metadata unavailable: 402qxqFvifg: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
     ],
-    "expected_regular_episodes": 125,
+    "expected_regular_episodes": 126,
     "records": 251,
-    "source_verified_regular_episodes": 125,
+    "source_verified_regular_episodes": 126,
     "metadata_pending_ids": [],
     "metadata_candidate_count": 4,
     "metadata_batch_count": 4,
@@ -16985,7 +16985,7 @@
           "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
         }
       ],
-      "metadata_checked_at": 1793229446.816794,
+      "metadata_checked_at": 1793316116.8136792,
       "source_time_text": "1793354400",
       "media": []
     }
