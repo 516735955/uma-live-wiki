@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T23:02:52+00:00",
+  "generated_at": "2026-11-03T01:43:08+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -9967,7 +9967,7 @@
         }
       ],
       "stats": {
-        "events": 106,
+        "events": 107,
         "concerts": 24,
         "programs": 32,
         "songs": 28
@@ -11090,5 +11090,5 @@
       }
     }
   ],
-  "build_id": "6510e6db67a75ab4365b"
+  "build_id": "06b6dfdd7bfb019a7a6d"
 }

@@ -90963,6 +90963,19 @@
           ]
         },
         {
+          "event_id": "eventernote-2025-04-13",
+          "date": "2025-04-13",
+          "end_date": "2025-04-13",
+          "title": "名铁×《赛马娘 芦毛灰姑娘》彩绘列车发车仪式",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2025-04-13-session-1",
+          "session_label": "本场",
+          "evidence": [
+            "eventernote"
+          ]
+        },
+        {
           "event_id": "eventernote-2025-03-30-2",
           "date": "2025-03-30",
           "end_date": "2025-03-30",
@@ -105133,6 +105146,16 @@
           "series_id": "paka-live-tv",
           "session_id": "paka-live-tv-052-session-1",
           "session_label": "本公演"
+        },
+        {
+          "event_id": "eventernote-2025-04-13",
+          "date": "2025-04-13",
+          "end_date": "2025-04-13",
+          "title": "名铁×《赛马娘 芦毛灰姑娘》彩绘列车发车仪式",
+          "kind": "onsite",
+          "series_id": "",
+          "session_id": "eventernote-2025-04-13-session-1",
+          "session_label": "本场"
         },
         {
           "event_id": "eventernote-2025-03-30-2",
@@ -186740,6 +186763,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-11-01T23:02:52+00:00",
-  "build_id": "6510e6db67a75ab4365b"
+  "generated_at": "2026-11-03T01:43:08+00:00",
+  "build_id": "06b6dfdd7bfb019a7a6d"
 }

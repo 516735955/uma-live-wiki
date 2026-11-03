@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T23:02:52+00:00",
+  "generated_at": "2026-11-03T01:43:08+00:00",
   "coverage": {
     "songs": 1041,
     "versions": 2169,
@@ -135899,7 +135899,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3449096961",
               "image": "",
               "instrumental": false,
               "vocalists": []
@@ -151756,7 +151756,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "橋本ちなみ、松嵜 麗、篠原 侑、福原綾香、下地紫野、河井晴菜、藍原ことみ、亜咲花、春川芽生、福嶋晴菜、秋山実咲、小島菜々恵、芹澤 優、望月ゆみこ、野木 奏、石原夏織、星希成奏、海弓シュリ、浅見春那",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3449097873",
               "image": "",
               "instrumental": false,
               "vocalists": [
@@ -258339,5 +258339,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "6510e6db67a75ab4365b"
+  "build_id": "06b6dfdd7bfb019a7a6d"
 }
