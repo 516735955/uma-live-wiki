@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T09:24:55+00:00",
+  "generated_at": "2026-11-04T14:03:37+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -190064,6 +190064,7 @@
       "summary": "官方已宣布第6期计划于2027年3月播出；具体日期、时刻与出演阵容尚未公布。",
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
+      "scheduled_month": "2027-03",
       "summary_zh": "官方已宣布第6期计划于2027年3月播出；具体日期、时刻与出演阵容尚未公布。",
       "title_aliases": [],
       "id_aliases": [],
@@ -190123,6 +190124,7 @@
       "summary": "官方已宣布第5期计划于2027年1月播出；具体日期、时刻与出演阵容尚未公布。",
       "schedule_status": "announced_tba",
       "metadata_status": "announced_tba",
+      "scheduled_month": "2027-01",
       "summary_zh": "官方已宣布第5期计划于2027年1月播出；具体日期、时刻与出演阵容尚未公布。",
       "title_aliases": [],
       "id_aliases": [],
@@ -190359,5 +190361,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "86df2a61db180b59335c"
+  "build_id": "4bd7a8cdd1e6bf99b52b"
 }

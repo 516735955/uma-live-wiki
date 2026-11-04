@@ -24,7 +24,7 @@
         "CN"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
       "source_ref": "bilibili-licensed",
       "content_type": "series",
       "unit_ids": [
@@ -41,7 +41,12 @@
         "anime-s1-e11",
         "anime-s1-e12",
         "anime-s1-e13"
-      ]
+      ],
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider title identifies the requested series; existing access and region terms apply"
+      }
     },
     {
       "id": "watch-s1-bahamut",
@@ -70,7 +75,12 @@
       "status": "unverified",
       "verified_at": "2026-10-03",
       "source_ref": "bahamut-licensed",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "source_unavailable",
+        "evidence": "provider HTTP 403"
+      }
     },
     {
       "id": "watch-s2-bilibili",
@@ -141,7 +151,12 @@
       "status": "unverified",
       "verified_at": "2026-10-03",
       "source_ref": "bahamut-licensed",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "source_unavailable",
+        "evidence": "provider HTTP 403"
+      }
     },
     {
       "id": "watch-umayon-bilibili",
@@ -205,12 +220,17 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
       "source_ref": "official-youtube",
       "content_type": "full_episode",
       "unit_ids": [
         "anime-1st-anniversary-e01"
-      ]
+      ],
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-rttt-bilibili",
@@ -314,7 +334,12 @@
       "status": "unverified",
       "verified_at": "2026-10-03",
       "source_ref": "bahamut-licensed",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "unverified",
+        "evidence": "provider search page; direct-video verification does not apply"
+      }
     },
     {
       "id": "watch-cingray-bilibili",
@@ -339,7 +364,7 @@
         "CN"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
       "source_ref": "bilibili-licensed",
       "content_type": "series",
       "unit_ids": [
@@ -366,7 +391,12 @@
         "anime-cinderella-gray-e21",
         "anime-cinderella-gray-e22",
         "anime-cinderella-gray-e23"
-      ]
+      ],
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider title identifies the requested series; existing access and region terms apply"
+      }
     },
     {
       "id": "watch-cingray-bahamut",
@@ -395,7 +425,12 @@
       "status": "unverified",
       "verified_at": "2026-10-03",
       "source_ref": "bahamut-licensed",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "unverified",
+        "evidence": "provider search page; direct-video verification does not apply"
+      }
     },
     {
       "id": "watch-cingray-abema",
@@ -419,7 +454,12 @@
       ],
       "status": "unverified",
       "verified_at": "2026-10-03",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "unverified",
+        "evidence": "provider search page; direct-video verification does not apply"
+      }
     },
     {
       "id": "watch-movie-trailer-youtube",
@@ -444,7 +484,12 @@
       "status": "unverified",
       "verified_at": "2026-10-03",
       "source_ref": "official-youtube",
-      "content_type": "discovery"
+      "content_type": "discovery",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "unverified",
+        "evidence": "provider search page; direct-video verification does not apply"
+      }
     },
     {
       "id": "watch-s1-bnw-unext",
@@ -474,7 +519,12 @@
         "anime-s1-e14",
         "anime-s1-e15",
         "anime-s1-e16"
-      ]
+      ],
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "source_unavailable",
+        "evidence": "provider request failed"
+      }
     },
     {
       "id": "watch-movie-beginning-new-era-unext",
@@ -502,7 +552,12 @@
       "content_type": "full_episode",
       "unit_ids": [
         "anime-movie-beginning-new-era-e01"
-      ]
+      ],
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "source_unavailable",
+        "evidence": "provider request failed"
+      }
     },
     {
       "id": "watch-anime-umayuru-prettygray-e01",
@@ -526,8 +581,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-prettygray-e01"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-prettygray-e01",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-prettygray-e02",
@@ -551,8 +611,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-prettygray-e02"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-prettygray-e02",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-prettygray-e03",
@@ -576,8 +641,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-prettygray-e03"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-prettygray-e03",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-prettygray-e04",
@@ -601,8 +671,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-prettygray-e04"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-prettygray-e04",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-fullgate-e01",
@@ -626,8 +701,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-fullgate-e01"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-fullgate-e01",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e01",
@@ -651,8 +731,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e01"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e01",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e02",
@@ -676,8 +761,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e02"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e02",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e03",
@@ -701,8 +791,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e03"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e03",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e04",
@@ -726,8 +821,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e04"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e04",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e05",
@@ -751,8 +851,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e05"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e05",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e06",
@@ -776,8 +881,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e06"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e06",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e07",
@@ -801,8 +911,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e07"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e07",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e08",
@@ -826,8 +941,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e08"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e08",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e09",
@@ -851,8 +971,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e09"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e09",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e10",
@@ -876,8 +1001,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e10"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e10",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e11",
@@ -901,8 +1031,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e11"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e11",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e12",
@@ -926,8 +1061,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e12"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e12",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e13",
@@ -951,8 +1091,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e13"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e13",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e14",
@@ -976,8 +1121,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e14"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e14",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e15",
@@ -1001,8 +1151,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e15"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e15",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e16",
@@ -1026,8 +1181,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e16"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e16",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e17",
@@ -1051,8 +1211,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e17"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e17",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e18",
@@ -1076,8 +1241,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e18"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e18",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e19",
@@ -1101,8 +1271,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e19"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e19",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e20",
@@ -1126,8 +1301,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e20"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e20",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e21",
@@ -1151,8 +1331,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e21"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e21",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e22",
@@ -1176,8 +1361,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e22"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e22",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e23",
@@ -1201,8 +1391,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e23"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e23",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-anime-umayuru-e24",
@@ -1226,8 +1421,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-03",
-      "source_ref": "official-story-anime-umayuru-e24"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-umayuru-e24",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-bilibili-anime-s1-e01",
@@ -3708,8 +3908,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-04",
-      "source_ref": "official-story-anime-rttt-e01"
+      "verified_at": "2026-11-04T14:00:04.995159+00:00",
+      "source_ref": "official-story-anime-rttt-e01",
+      "availability_check": {
+        "checked_at": "2026-11-04T14:00:04.995159+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-official-anime-rttt-e02",
@@ -3733,8 +3938,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-04",
-      "source_ref": "official-story-anime-rttt-e02"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-rttt-e02",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-official-anime-rttt-e03",
@@ -3758,8 +3968,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-04",
-      "source_ref": "official-story-anime-rttt-e03"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-rttt-e03",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-official-anime-rttt-e04",
@@ -3783,8 +3998,13 @@
         "global"
       ],
       "status": "active",
-      "verified_at": "2026-10-04",
-      "source_ref": "official-story-anime-rttt-e04"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "source_ref": "official-story-anime-rttt-e04",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-rttt-official-series",
@@ -3828,7 +4048,13 @@
       "content_type": "full_episode",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=6bIi-H-4aHI",
-      "source_ref": "official-umayon-extra-preview"
+      "source_ref": "official-umayon-extra-preview",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      },
+      "verified_at": "2026-11-04T13:54:43.951482+00:00"
     },
     {
       "id": "watch-official-anime-umayuru-fullgate-e02",
@@ -3843,7 +4069,12 @@
       "access": "free",
       "url": "https://www.youtube.com/watch?v=COwezDS-R3s",
       "source_ref": "official-story-anime-umayuru-fullgate-e02",
-      "verified_at": "2026-10-05"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-official-anime-umayuru-fullgate-e03",
@@ -3858,7 +4089,12 @@
       "access": "free",
       "url": "https://www.youtube.com/watch?v=OuXP2GipwAE",
       "source_ref": "official-story-anime-umayuru-fullgate-e03",
-      "verified_at": "2026-10-12"
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-auto-anime-umayuru-fullgate-e04",
@@ -3871,9 +4107,14 @@
       "authority": "official",
       "status": "active",
       "access": "free",
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-04T13:54:43.951482+00:00",
       "content_type": "full_episode",
-      "source_ref": "official-auto-anime-umayuru-fullgate-e04"
+      "source_ref": "official-auto-anime-umayuru-fullgate-e04",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      }
     },
     {
       "id": "watch-auto-anime-umayuru-fullgate-e05",
@@ -3884,9 +4125,15 @@
       "url": "https://www.youtube.com/watch?v=9FwDmrbvdVQ",
       "platform": "youtube",
       "authority": "official",
-      "status": "unverified",
+      "status": "active",
       "content_type": "full_episode",
-      "source_ref": "official-auto-anime-umayuru-fullgate-e05"
+      "source_ref": "official-auto-anime-umayuru-fullgate-e05",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      },
+      "verified_at": "2026-11-04T13:54:43.951482+00:00"
     },
     {
       "id": "watch-auto-anime-umayuru-fullgate-e06",
@@ -3897,9 +4144,15 @@
       "url": "https://www.youtube.com/watch?v=lMIccHKAHao",
       "platform": "youtube",
       "authority": "official",
-      "status": "unverified",
+      "status": "active",
       "content_type": "full_episode",
-      "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+      "source_ref": "official-auto-anime-umayuru-fullgate-e06",
+      "availability_check": {
+        "checked_at": "2026-11-04T13:54:43.951482+00:00",
+        "status": "active",
+        "evidence": "provider oEmbed identifies the exact public video"
+      },
+      "verified_at": "2026-11-04T13:54:43.951482+00:00"
     }
   ]
 }
