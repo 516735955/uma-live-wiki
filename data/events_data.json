@@ -3,7 +3,7 @@
   "source": "https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC(gal%E2%80%99up!)/22274/events",
   "actor": "ウマ娘 プリティーダービー(gal’up!)",
   "count": 253,
-  "scraped_at": "2026-11-03",
+  "scraped_at": "2026-11-04",
   "source_failures": []
  },
  "events": [
@@ -95,13 +95,13 @@
   },
   {
    "date": "2026-12-05",
-   "date_zh": "2026-12-05 (土)",
+   "date_zh": "2026-12-05 (土)",
    "title": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント",
    "link": "https://www.eventernote.com/events/494412",
    "img": "https://eventernote.s3.amazonaws.com/images/events/494412_s.jpg",
    "venue": "ユナイテッド・シネマ アクアシティお台場",
    "venue_link": "https://www.eventernote.com/places/6561",
-   "times": "開場 16:30 開演 17:00 終演 19:00",
+   "times": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
    "actors": [
     {
      "name": "ウマ娘 プリティーダービー(gal’up!)",
@@ -421,13 +421,13 @@
   },
   {
    "date": "2026-11-07",
-   "date_zh": "2026-11-07 (土)",
+   "date_zh": "2026-11-07 (土)",
    "title": "『ウマ娘 プリティーダービー』WINNING LIVE 35発売記念イベント",
    "link": "https://www.eventernote.com/events/490155",
    "img": "https://eventernote.s3.amazonaws.com/images/events/490155_s.jpg",
    "venue": "NEW PIER HALL(ニューピアホール)",
    "venue_link": "https://www.eventernote.com/places/1286",
-   "times": "開場 15:00 開演 16:00 終演 17:00",
+   "times": "開場 15:00 開演 16:00 終演 17:00 ※終演時間はあくまでも目安になります",
    "actors": [
     {
      "name": "ウマ娘 プリティーダービー(gal’up!)",
@@ -14574,10 +14574,6 @@
      "url": "https://www.eventernote.com/actors/%E6%9D%91%E4%B8%8A%E3%81%BE%E3%81%AA%E3%81%A4/49414"
     },
     {
-     "name": "松尾洋一",
-     "url": "https://www.eventernote.com/actors/%E6%9D%BE%E5%B0%BE%E6%B4%8B%E4%B8%80/35039"
-    },
-    {
      "name": "山崎淳",
      "url": "https://www.eventernote.com/actors/%E5%B1%B1%E5%B4%8E%E6%B7%B3/38573"
     },
@@ -14728,6 +14724,10 @@
     {
      "name": "アニサマダンサーズ",
      "url": "https://www.eventernote.com/actors/%E3%82%A2%E3%83%8B%E3%82%B5%E3%83%9E%E3%83%80%E3%83%B3%E3%82%B5%E3%83%BC%E3%82%BA/47733"
+    },
+    {
+     "name": "松尾洋一",
+     "url": "https://www.eventernote.com/actors/%E6%9D%BE%E5%B0%BE%E6%B4%8B%E4%B8%80/35039"
     }
    ],
    "live": "/zh-Hans/live/other/35"
@@ -18429,10 +18429,6 @@
      "url": "https://www.eventernote.com/actors/%E6%9D%91%E4%B8%8A%E8%81%96/38572"
     },
     {
-     "name": "松尾洋一",
-     "url": "https://www.eventernote.com/actors/%E6%9D%BE%E5%B0%BE%E6%B4%8B%E4%B8%80/35039"
-    },
-    {
      "name": "山崎淳",
      "url": "https://www.eventernote.com/actors/%E5%B1%B1%E5%B4%8E%E6%B7%B3/38573"
     },
@@ -18491,6 +18487,10 @@
     {
      "name": "Atsuki(FIRE HORNS)",
      "url": "https://www.eventernote.com/actors/Atsuki%28FIRE%20HORNS%29/56257"
+    },
+    {
+     "name": "松尾洋一",
+     "url": "https://www.eventernote.com/actors/%E6%9D%BE%E5%B0%BE%E6%B4%8B%E4%B8%80/35039"
     }
    ],
    "live": "/zh-Hans/live/other/12"
