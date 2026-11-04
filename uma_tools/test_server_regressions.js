@@ -82,6 +82,8 @@ async function main() {
   const sensitive = vm.createContext({
     crypto, BAIDU_APPID: 'test', BAIDU_SECRET: 'test',
     currentTerms: () => emptyTerms,
+    translationKeyWithTerms: source => source,
+    translations: { get() { return ''; }, async set() {} },
     fetchTranslation: async () => { requestCount += 1; return { error_code: '20003' }; },
     https: { get(url, options, callback) {
       requestCount += 1;
@@ -202,9 +204,10 @@ async function main() {
   });
   vm.runInContext(section('function translateArticle(', 'function httpsGet('), completedArticles);
   completedArticles.translateArticle({ title: 'ニュース', message: '原文' }, null, (status, data) => { articleResult = { status, data }; });
-  bodyDone('译文');
-  assert.strictEqual(articleResult, undefined, 'an article waits for both title and body');
+  assert.strictEqual(bodyDone, undefined, 'the title is archived before body translation can reuse it');
   titleDone('新闻');
+  assert.strictEqual(articleResult, undefined, 'an article waits for both title and body');
+  bodyDone('译文');
   assert.strictEqual(articleResult.status, 200);
   assert.strictEqual(articleResult.data.detail.message_zh, '译文');
   completedArticles.translateArticle({ title: 'ニュース', message: '原文' }, null, (status, data) => { articleResult = { status, data }; });
