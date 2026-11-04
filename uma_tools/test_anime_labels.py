@@ -8,6 +8,16 @@ from import_anime_ending_credits import merge_music_credits
 
 
 class AnimeLabelTests(unittest.TestCase):
+    def test_complete_ending_supersedes_auto_rows_retained_by_live_merge(self):
+        from build_anime_catalog import accepted_staff
+        old = {'unit_id': 'work-e06', 'source_ref': 'official-auto-work-e06'}
+        verified = {**old, 'source_ref': 'verified-ending-copy-work-e06', 'auto_source': True}
+        manual = {**old, 'source_ref': 'collaborator-note'}
+        partial = {'unit_id': 'work-e05', 'source_ref': 'official-auto-work-e05'}
+        episodes = [{'work_id': 'work', 'number': 6, 'staff_status': 'complete', 'staff_groups': [{'role': '監督'}]},
+                    {'work_id': 'work', 'number': 5, 'staff_status': 'partial'}]
+        self.assertEqual(accepted_staff([old, verified, manual, partial], episodes), [verified, manual, partial])
+
     def test_incremental_episode_title_is_visible_before_chinese_translation(self):
         from build_anime_catalog import expand_units
         rows = expand_units([{'work_id':'work','count':6,'released_count':6,'published_numbers':[6],

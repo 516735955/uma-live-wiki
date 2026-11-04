@@ -25,6 +25,7 @@ SOURCE_FILES = (
     "watch_resources.json",
     "relations.json",
     "staff.json",
+    "ending_credits.json",
     "people.json",
     "source_registry.json",
     "overrides.json",
@@ -252,6 +253,17 @@ def validate(
         raise ValueError("anime data invalid:\n- " + "\n- ".join(errors))
 
 
+def accepted_staff(credits: list[dict[str, Any]], episodes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    complete_units = {f"{episode['work_id']}-e{int(episode['number']):02d}"
+                      for episode in episodes if episode.get("staff_status") == "complete"
+                      and episode.get("number") is not None and episode.get("staff_groups")}
+    # Live source merges can retain older CMS summaries. A complete ending roll
+    # replaces those automatic episode summaries without deleting their archive.
+    return [credit for credit in credits
+            if not (credit.get("unit_id") in complete_units and
+                    credit.get("source_ref") == "official-auto-" + credit["unit_id"])]
+
+
 def build() -> tuple[dict[str, Any], dict[str, Any]]:
     documents = {name: read_json(SOURCE_DIR / name) for name in SOURCE_FILES}
     works = list(documents["works.json"].get("works") or [])
@@ -264,7 +276,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
     relations = [{**row, "usage_type_raw": row["usage_type"], "usage_type": music_usage(row["usage_type"])}
                  if row.get("relation_type") == "uses_song" and row.get("usage_type") != music_usage(row.get("usage_type"))
                  else row for row in relations]
-    staff = list(documents["staff.json"].get("credits") or [])
+    staff = accepted_staff(list(documents["staff.json"].get("credits") or []),
+                           documents["ending_credits.json"].get("episodes") or [])
     people = list(documents["people.json"].get("people") or [])
     sources = list(documents["source_registry.json"].get("sources") or [])
     validate(works, units, resources, relations, staff, sources)
