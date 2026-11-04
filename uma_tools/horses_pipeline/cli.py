@@ -65,6 +65,8 @@ def main():
         state_path = pipeline_common.os.path.join(pipeline_common.DATA_DIR, 'auto_update', 'horse_profiles.json')
         profile_state = read_json(state_path, {'attempted_at': {}})
         attempts = profile_state.setdefault('attempted_at', {})
+        next_attempts = profile_state.setdefault('next_attempt_at', {})
+        retry_counts = profile_state.setdefault('retry_counts', {})
         with open(pipeline_common.OUT_DETAIL, encoding='utf-8') as handle:
             details = pipeline_common.json.loads(handle.read().split('=', 1)[1].strip().rstrip(';'))
         with open(pipeline_common.OUT_LIST, encoding='utf-8') as handle:
@@ -90,13 +92,21 @@ def main():
             record = details[horse['id']]
             record['cids'] = sorted(set(horse['cids']))
             missing = any(not record.get(field) for field in ('photo', 'intro')) or (pipeline_races.battle_count(record) and len(record.get('races', [])) < pipeline_races.battle_count(record))
-            if pipeline_common.time.time() - attempts.get(horse['id'], 0) >= (86400 if missing else 30 * 86400):
+            if (pipeline_common.time.time() >= next_attempts.get(horse['id'],0) and
+                    pipeline_common.time.time() - attempts.get(horse['id'], 0) >= (86400 if missing else 30 * 86400)):
                 attempts[horse['id']] = pipeline_common.time.time()
                 refreshed += 1
                 failures_before = len(pipeline_transport.failures)
                 incoming = pipeline_profiles.fetch_horse(horse, use_wiki=not args.no_wiki, use_jbis=not args.no_jbis)
                 if len(pipeline_transport.failures) > failures_before:
+                    pipeline_transport.failures[failures_before:] = [horse['id'] + ': ' + error for error in pipeline_transport.failures[failures_before:]]
                     attempts[horse['id']] -= 86400 - 3600
+                    count = min(9,retry_counts.get(horse['id'],0)+1)
+                    retry_counts[horse['id']] = count
+                    next_attempts[horse['id']] = pipeline_common.time.time()+min(7*86400,3600*2**(count-1))
+                else:
+                    retry_counts.pop(horse['id'],None)
+                    next_attempts.pop(horse['id'],None)
                 for field, value in (incoming.get('facts') or {}).items():
                     if value and not (record.setdefault('facts', {}).get(field)):
                         record['facts'][field] = value

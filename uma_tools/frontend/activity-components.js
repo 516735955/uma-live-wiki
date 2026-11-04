@@ -37,6 +37,7 @@ function formatClock(value, date) {
 export const ActivityTime = {
   props: {
     date: { type: String, default: '' }, endDate: { type: String, default: '' },
+    dateLabel: { type: String, default: '' },
     doorsTime: { type: String, default: '' }, startTime: { type: String, default: '' },
     endTime: { type: String, default: '' }, broadcastTime: { type: String, default: '' },
     broadcastDate: { type: String, default: '' },
@@ -48,7 +49,7 @@ export const ActivityTime = {
   },
   computed: {
     dateText() {
-      if (!this.date) return '日期待补';
+      if (!this.date) return this.dateLabel || '日期待补';
       const first = normalizeActivityTime(this.date, this.startTime || this.broadcastTime || this.doorsTime);
       const from = first.date || this.date;
       return this.endDate && this.endDate !== this.date ? `${from} — ${this.endDate}` : from;

@@ -18,6 +18,17 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_published_server_reuses_the_built_dictionary_without_runtime_dependencies(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'uma_tools').mkdir();(root/'release.json').write_text('{}')
+            for name in ['search-pronunciations.json','search-pronunciations-ui.js']:
+                (root/'uma_tools'/name).write_text('existing dictionary')
+            with patch.object(runner,'ROOT',root),patch.object(runner,'STATE',root/'state.json'), \
+                 patch.object(runner,'STEPS',[('search-pronunciations',['build_search_pronunciations.js'])]), \
+                 patch.dict(os.environ,{'GITHUB_ACTIONS':'false'}):
+                self.assertEqual(runner.run_updates(force=True,run=lambda *args,**kwargs:self.fail('published assets must not be regenerated online')),0)
+                self.assertIn('reused',json.loads(runner.STATE.read_text())['steps']['search-pronunciations']['message'])
+
     def test_breeding_records_match_existing_and_later_added_characters(self):
         markup = '''<div class="data-1__inner"><div class="data-1__root"><a href="/horse/1/">母</a></div>
         <div class="data-1__branch"><div class="data-1__item"><div><a href="/horse/2/">子</a></div><div>牡｜2025年｜<a href="/horse/3/">領銜</a></div></div></div>

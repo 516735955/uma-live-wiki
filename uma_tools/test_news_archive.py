@@ -13,6 +13,22 @@ from archive_news import source_article
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_archived_removed_source_backs_off_without_losing_bilingual_copy(self):
+        with tempfile.TemporaryDirectory() as directory:
+            archive = NewsDatabase(Path(directory) / 'news.sqlite')
+            archive.put('official-1', {'detail': {'title': '原題', 'message': '原文'}})
+            archive.translate('official-1', 1, {'title': '原題', 'message': '原文', 'title_zh': '中文标题', 'message_zh': '中文正文'}, 'assistant')
+            with patch('news_database.time.time', return_value=100):
+                archive.dispatch('source_failure', {'key': 'official-1', 'status': 404})
+                archive.dispatch('source_failure', {'key': 'official-2', 'status': 404})
+            self.assertEqual(archive.dispatch('source_status', {'key': 'official-1'})['next_at'], 100 + 7*86400)
+            self.assertEqual(archive.dispatch('source_status', {'key': 'official-2'})['next_at'], 100 + 3600)
+            self.assertEqual(archive.get('official-1')['detail']['message_zh'], '中文正文')
+            with patch('news_database.time.time', return_value=200):
+                archive.dispatch('source_failure', {'key': 'official-1', 'status': 503})
+            self.assertEqual(archive.dispatch('source_status', {'key': 'official-1'})['next_at'], 200 + 3600)
+            archive.db.close()
+
     def test_local_fetch_preserves_online_markup_and_reviewed_revision(self):
         fixture = Path(__file__).with_name('fixtures') / 'lantis-article.html'
         with patch('archive_news.urllib.request.urlopen', return_value=BytesIO(fixture.read_bytes())):

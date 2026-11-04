@@ -336,9 +336,18 @@ class NewsDatabase:
                 ORDER BY a.checked_at DESC LIMIT ?''', (like, like, like, like, limit)).fetchall()
             return [dict(row) for row in rows]
         if operation == 'source_failure':
+            now = time.time()
+            delay = 3600
+            old = self.db.execute('SELECT * FROM source_failures WHERE key=?', (args['key'],)).fetchone()
+            permanent = args.get('status') in (404, 410) or re.search(r'HTTP (?:404|410)\b', args.get('error', ''))
+            archived = self.get(args['key']) if permanent else None
+            detail = (archived or {}).get('detail', {})
+            if detail.get('translation_state') == 'complete' and detail.get('title_zh') and detail.get('message_zh'):
+                previous_delay = old['next_at'] - old['checked_at'] if old else 0
+                delay = min(30 * 86400, max(7 * 86400, previous_delay * 2))
             with self.db:
                 self.db.execute('INSERT OR REPLACE INTO source_failures(key,checked_at,next_at,error) VALUES(?,?,?,?)',
-                                (args['key'], time.time(), time.time()+3600, args.get('error', 'source unavailable')[:200]))
+                                (args['key'], now, now+delay, args.get('error', 'source unavailable')[:200]))
             return True
         if operation == 'source_status':
             row = self.db.execute('SELECT * FROM source_failures WHERE key=?', (args['key'],)).fetchone()

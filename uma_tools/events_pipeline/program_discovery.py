@@ -168,8 +168,8 @@ def public_watch_metadata(video_id: str, expected_channel: str = "") -> dict[str
     return result
 
 
-def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
-    """Use exact official feed publication times for prerecorded gameplay only."""
+def public_official_feed_metadata(video_id: str, expected_channel: str) -> dict:
+    """Read a specific official video's exact publication time and identity."""
     if not pipeline_common.re.fullmatch(r'UC[A-Za-z0-9_-]{22}', expected_channel):
         raise ValueError('official feed requires a known channel identity')
     if expected_channel not in _CHANNEL_FEEDS:
@@ -180,15 +180,16 @@ def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
             raise ValueError('official feed exceeds metadata limit')
         _CHANNEL_FEEDS[expected_channel] = raw
     ns = {'a':'http://www.w3.org/2005/Atom', 'yt':'http://www.youtube.com/xml/schemas/2015', 'm':'http://search.yahoo.com/mrss/'}
-    feed = _xml.fromstring(_CHANNEL_FEEDS[expected_channel])
+    try:
+        feed = _xml.fromstring(_CHANNEL_FEEDS[expected_channel])
+    except _xml.ParseError as error:
+        raise ValueError('official feed XML was incomplete') from error
     for entry in feed.findall('a:entry', ns):
         if entry.findtext('yt:videoId', namespaces=ns) != video_id: continue
         if entry.findtext('yt:channelId', namespaces=ns) != expected_channel:
             raise ValueError('official feed channel mismatch')
         title = entry.findtext('a:title', default='', namespaces=ns)
         description = entry.findtext('m:group/m:description', default='', namespaces=ns)
-        if '【ゲーム実況】' not in title or pipeline_common.re.search(r'生放送|生配信|ライブ配信|プレミア|(?:放送|配信|公開)(?:日時|予定)', title + description):
-            raise ValueError('feed publication does not establish a broadcast date')
         published = entry.findtext('a:published', default='', namespaces=ns)
         stamp = _datetime.datetime.fromisoformat(published.replace('Z', '+00:00'))
         if stamp.tzinfo is None: raise ValueError('official feed time has no timezone')
@@ -198,6 +199,15 @@ def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
                 'thumbnail':thumbnail.get('url', '') if thumbnail is not None else '',
                 'webpage_url':'https://www.youtube.com/watch?v='+video_id, 'metadata_origin':'official_channel_feed'}
     raise ValueError('video is outside the current official feed')
+
+
+def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
+    """Use feed publication as a broadcast time only for prerecorded gameplay."""
+    result = public_official_feed_metadata(video_id, expected_channel)
+    if '【ゲーム実況】' not in result['title'] or pipeline_common.re.search(
+            r'生放送|生配信|ライブ配信|プレミア|(?:放送|配信|公開)(?:日時|予定)', result['title'] + result['description']):
+        raise ValueError('feed publication does not establish a broadcast date')
+    return result
 
 
 def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, expected_channel: str = "") -> dict[str, pipeline_common.Any] | None:
@@ -673,6 +683,17 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         attempts = pipeline_common.read_json(attempts_file)
     except (OSError, ValueError):
         attempts = {}
+    deferred_video_ids = []
+    due_rows = []
+    for row in network_rows:
+        interval = 86400 if row['id'] in existing_video_ids else 3600
+        if row['id'] in attempts and pipeline_common.time.time()-attempts[row['id']] < interval:
+            deferred_video_ids.append(row['id'])
+            if row['id'] in existing_video_ids:
+                metadata_rechecks.append('metadata recheck deferred; accepted archive retained: ' + row['id'])
+        else:
+            due_rows.append(row)
+    network_rows = due_rows
     def priority(row):
         try:
             date_order = pipeline_common.dt.date.fromisoformat(row.get('approximate_date') or '').toordinal()
@@ -923,6 +944,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             "metadata_pending_ids": missing_ids,
             "metadata_candidate_count": len(candidates),
             "metadata_batch_count": len(candidate_rows),
+            "metadata_deferred_video_ids": deferred_video_ids,
             "metadata_pending_video_ids": pending_video_ids,
             "pakatube_character_programs": sum(row.get("series_id") == "pakatube-character-program" for row in ordered),
             "official_special_programs": sum(row.get("series_id") == "official-special" for row in ordered),

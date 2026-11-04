@@ -78,6 +78,22 @@ const { run } = require('./localize_entities');
   assert.strictEqual(calls, before, 'accepted corrections are retained while changed reviewed sources stay pending for manual review');
   const finalArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/auto_update/entity_localizations.json')));
   assert(finalArchive.pending.some(row => row.key === 'anime-work:w' && row.field === 'summary' && row.owner === 'assistant'));
+  const characterFile = path.join(root, 'data/character_detail_data.js');
+  const chineseCopy = '<p>她在『ゆこま旅馆』修业，待客温柔，正在努力成为女将。</p>';
+  fs.writeFileSync(characterFile, 'window.CHAR_DETAIL = '+JSON.stringify({ cn: { html: chineseCopy, language: 'ja' },
+    jp: { html: '<p>彼女は「ゆこま旅館」で修業しています。</p>', language: 'ja' } })+';');
+  const queueFile = path.join(root, 'data/auto_update/entity_localizations.json');
+  const queue = JSON.parse(fs.readFileSync(queueFile));
+  queue.records['character:cn'] = {entity_type:'character',summary_ja:chineseCopy,state:'pending'};
+  queue.pending.push({key:'character:cn',field:'summary',source:chineseCopy,owner:'assistant'});
+  fs.writeFileSync(queueFile,JSON.stringify(queue));
+  const fixes = await run(root, { noApi:true, scope:'characters', initialize:true, rebuild:false,
+    translate: async () => { throw new Error('Chinese copy must not call the provider'); } });
+  const fixedQueue = JSON.parse(fs.readFileSync(queueFile));
+  assert(!fixedQueue.pending.some(row=>row.key==='character:cn'));
+  assert.strictEqual(fixedQueue.records['character:cn'].state,'complete');
+  assert.strictEqual(fixedQueue.records['character:cn'].summary_zh,chineseCopy);
+  assert(fixedQueue.pending.some(row=>row.key==='character:jp'), 'actual Japanese prose still enters the manual queue');
   fs.rmSync(root, { recursive: true, force: true });
   console.log('entity localization fixtures: ok');
 })().catch(error => { console.error(error); process.exitCode = 1; });

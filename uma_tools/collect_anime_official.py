@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+from http.client import IncompleteRead
 from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
@@ -21,7 +23,7 @@ def fetch(url: str) -> str:
         try:
             with urllib.request.urlopen(request, timeout=25) as response:
                 return response.read().decode("utf-8")
-        except (OSError, urllib.error.URLError):
+        except (OSError, urllib.error.URLError, IncompleteRead):
             if attempt == 3:
                 raise
             time.sleep(attempt + 1)
@@ -123,6 +125,43 @@ def collect_season3() -> list[dict]:
     return rows
 
 
+def fullgate_publication(rows, existing=None, feed_reader=None, watch_reader=None):
+    from events_pipeline.program_discovery import public_official_feed_metadata, public_watch_metadata
+    feed_reader = feed_reader or public_official_feed_metadata
+    watch_reader = watch_reader or public_watch_metadata
+    channel = 'UCAWxPGGuIfWME2KTLUmSCHw'
+    existing = existing or {}
+    for row in rows:
+        accepted = existing.get(str(row['number']), {})
+        if re.fullmatch(r'\d{4}-\d{2}-\d{2}', accepted.get('release_date') or ''):
+            row.update({key: accepted[key] for key in ('release_date', 'dates', 'published_at', 'publication_source_url') if accepted.get(key)})
+            continue
+        if not re.fullmatch(r'[A-Za-z0-9_-]{11}', row.get('youtube_id') or ''):
+            row['date_status'] = 'source_unavailable'
+            continue
+        for read in (feed_reader, watch_reader):
+            try:
+                metadata = read(row['youtube_id'], channel)
+                if metadata.get('id') != row['youtube_id'] or metadata.get('channel_id') != channel:
+                    raise ValueError('episode publication identity mismatch')
+                stamp = dt.datetime.fromtimestamp(metadata['release_timestamp'], dt.timezone.utc)
+                if stamp > dt.datetime.now(dt.timezone.utc):
+                    raise ValueError('episode has not been published yet')
+                local = stamp.astimezone(dt.timezone(dt.timedelta(hours=9)))
+                origin = ('https://www.youtube.com/feeds/videos.xml?channel_id=' + channel
+                          if metadata.get('metadata_origin') == 'official_channel_feed' else metadata['webpage_url'])
+                row.update(release_date=local.date().isoformat(), published_at=stamp.isoformat(),
+                           publication_source_url=origin,
+                           dates=[{'label':'ぱかチューブっ！公开','date':local.date().isoformat(),
+                                   'display':local.strftime('%Y-%m-%d %H:%M'),'timezone':'JST','source_url':origin}])
+                break
+            except (OSError, ValueError, KeyError, TypeError):
+                continue
+        else:
+            row['date_status'] = 'source_unavailable'
+    return rows
+
+
 def collect_fullgate() -> list[dict]:
     site = "https://umamusume.jp/contents/anime/umayuru-fullgate/"
     html = fetch(site)
@@ -133,13 +172,19 @@ def collect_fullgate() -> list[dict]:
     node = fetch(urllib.parse.urljoin(app_url, node_path))
     domain = re.search(r'serviceDomain:[\w$]+\.serviceDomain\|\|`([^`]+)`', node).group(1)
     key = re.search(r'apiKey:[\w$]+\.apiKey\|\|`([^`]+)`', node).group(1)
-    return [{"work_id": "anime-umayuru-fullgate", "number": item["no"],
+    rows = [{"work_id": "anime-umayuru-fullgate", "number": item["no"],
              "title_ja": item["title"], "summary_ja": item.get("text", ""),
              "cast": item.get("cast", []), "staff": item.get("staff", []),
              "stills": [image["url"] for image in item.get("images", [])],
              "youtube_id": item.get("movie_id", ""),
              "source_url": site + "episodes/" + str(item["no"]) + "/"}
             for item in cms(domain, key, "episodes")["contents"]]
+    units_file = Path(__file__).resolve().parents[1] / 'data/anime/units.json'
+    existing = {}
+    if units_file.exists():
+        existing = next((series.get('details', {}) for series in json.loads(units_file.read_text(encoding='utf-8'))['series']
+                         if series['work_id'] == 'anime-umayuru-fullgate'), {})
+    return fullgate_publication(rows, existing)
 
 
 def collect() -> list[dict]:

@@ -8,6 +8,13 @@ from import_anime_ending_credits import merge_music_credits
 
 
 class AnimeLabelTests(unittest.TestCase):
+    def test_empty_episode_date_does_not_erase_an_accepted_date_block(self):
+        from build_anime_catalog import expand_units
+        rows=expand_units([{'work_id':'work','count':1,'released_count':1,
+                           'date_blocks':[{'from':1,'to':1,'dates':['2026-10-25']}],
+                           'details':{'1':{'release_date':''}}}],{'work':{'id':'work'}})
+        self.assertEqual(rows[0]['release_date'],'2026-10-25')
+
     def test_complete_ending_supersedes_auto_rows_retained_by_live_merge(self):
         from build_anime_catalog import accepted_staff
         old = {'unit_id': 'work-e06', 'source_ref': 'official-auto-work-e06'}

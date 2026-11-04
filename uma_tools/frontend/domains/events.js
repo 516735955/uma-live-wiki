@@ -250,6 +250,10 @@ export function createEvents(deps) {
   }
 
   function eventDateLabel(event) {
+    if (event && !event.date && /^\d{4}-\d{2}$/.test(event.scheduled_month || '')) {
+      const [year, month] = event.scheduled_month.split('-');
+      return `${year}年${Number(month)}月`;
+    }
     if (!event || !event.date)
       return event && event.schedule_status === "announced_tba"
         ? "官方待公布"

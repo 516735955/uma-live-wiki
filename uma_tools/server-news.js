@@ -24,7 +24,7 @@ exports.createService = function (deps) {
     })
       .then(async ({ status, data }) => {
         if (status === 0) return;
-        if (status !== 200) return archive.request('source_failure', { key, error: 'upstream article HTTP ' + status });
+        if (status !== 200) return archive.request('source_failure', { key, status, error: 'upstream article HTTP ' + status });
         await archive.request('put', { key, data, owner: 'baidu' });
       }).catch(error => console.error('[news:archive]', error.message))
       .finally(() => archiveLoads.delete(key));

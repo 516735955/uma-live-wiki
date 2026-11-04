@@ -213,6 +213,7 @@ def refresh_voice_actor_details(*, persist=True) -> dict[str, pipeline_common.An
     state_path = pipeline_common.DATA_DIR / 'auto_update' / 'voice_profiles.json'
     state = read_json(state_path, {'attempted_at': {}})
     attempts = state.setdefault('attempted_at', {})
+    retry_state = state.setdefault('retries', {})
     characters = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "character_index_data.js", "CHAR_INDEX")
     voice_list = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "voice_list_data.js", "VA_LIST")
     photos = pipeline_common.read_window_data(pipeline_common.DATA_DIR / "va_photos_data.js", "VA_PHOTOS")
@@ -305,6 +306,7 @@ def refresh_voice_actor_details(*, persist=True) -> dict[str, pipeline_common.An
     profiles_to_fetch = [
         profile for profile in identities.profiles
         if pipeline_text.fold_name(str((profile.get("identity") or {}).get("ja") or "")) not in accepted_lookups
+        and pipeline_common.time.time() >= retry_state.get((profile.get('identity') or {}).get('ja') or '',{}).get('next_at',0)
         and pipeline_common.time.time() - attempts.get((profile.get('identity') or {}).get('ja') or '', 0) >= 86400
     ]
     profiles_to_fetch.sort(key=lambda profile: attempts.get(profile['identity'].get('ja') or '', 0))
@@ -319,6 +321,14 @@ def refresh_voice_actor_details(*, persist=True) -> dict[str, pipeline_common.An
             attempts[lookup] = pipeline_common.time.time() - (86400 - 3600 if retryable else 0)
             if retryable:
                 source_errors.append('voice profile source unavailable: ' + lookup)
+                count = min(9,retry_state.get(lookup,{}).get('attempts',0)+1)
+                urls = [item['url'] for item in record.get('sources',[]) if item.get('url')]
+                if record.get('official_profile'): urls.append(record['official_profile'])
+                retry_state[lookup] = {'attempts':count,'next_at':pipeline_common.time.time()+min(7*86400,3600*2**(count-1)),
+                                      'source_urls':list(dict.fromkeys(urls)),
+                                      'lookup_url':'https://ja.wikipedia.org/wiki/'+pipeline_common.urllib.parse.quote(lookup)}
+            else:
+                retry_state.pop(lookup,None)
             state['source_errors'] = source_errors
             merged = apply_additive_voice_detail_refresh({'records': previous_details}, {'records': records})
             if persist:

@@ -182,7 +182,9 @@ def main():
     attempts = state.setdefault('attempted_at', {})
     next_attempts = state.setdefault('next_attempt_at', {})
     complete = {(row['work_id'],int(row['number'])) for row in documents['ending_credits']['episodes']
-                if row.get('staff_status') == 'complete' and row.get('cast_status') == 'complete'}
+                if row.get('staff_status') == 'complete' and row.get('cast_status') in (None, 'complete')}
+    # Legacy curated full rolls predate cast_status. Missing cast metadata stays
+    # available for review; it does not justify downloading the same full roll again.
     known_units = {f"{series['work_id']}-e{int(number):02d}":(series['work_id'],int(number))
                    for series in documents['units']['series'] for number in series.get('published_numbers',range(1,int(series.get('released_count',0))+1))}
     jobs = [row for row in documents['watch_resources']['resources'] if row.get('authority') == 'official'

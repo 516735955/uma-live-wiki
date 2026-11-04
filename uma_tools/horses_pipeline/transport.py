@@ -67,7 +67,7 @@ def http_get(url, binary=False, timeout=12):
         for use_proxy in order:
             remaining = request_deadline - pipeline_common.time.monotonic()
             if remaining <= 0:
-                failures.append('horse update time budget exhausted')
+                failures.append('horse update time budget exhausted: ' + url)
                 raise RuntimeError('horse update time budget exhausted')
             try:
                 with _opener(use_proxy).open(_request(url), timeout=min(timeout, remaining)) as resp:
@@ -96,5 +96,5 @@ def http_get(url, binary=False, timeout=12):
                 last_error = exc
                 continue
         pipeline_common.time.sleep(1 + attempt * 2)
-    failures.append(str(last_error))
+    failures.append(url + ': ' + str(last_error))
     raise RuntimeError(repr(last_error))

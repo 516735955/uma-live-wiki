@@ -114,10 +114,20 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
     pending_dependencies = set(state.get('pending_dependencies', []))
     results = []
     executed = set()
+    github_owner = os.environ.get('GITHUB_ACTIONS') == 'true'
     for name, arguments in STEPS:
         if only and name not in only:
             continue
         previous = state['steps'].get(name, {})
+        if name == 'search-pronunciations' and not github_owner and (ROOT/'release.json').exists() and not only:
+            outputs = [ROOT/'uma_tools/search-pronunciations.json',ROOT/'uma_tools/search-pronunciations-ui.js']
+            if all(file.is_file() and file.stat().st_size>2 for file in outputs):
+                state['steps'][name] = {**previous,'status':'ok','changed':False,
+                                       'message':'Published pronunciation mapping reused; generation belongs to GitHub builds.'}
+                pending_dependencies.discard(name)
+                state['pending_dependencies'] = sorted(pending_dependencies)
+                write_json(STATE,state)
+                continue
         dependencies = {
             'pedigree-source': {'characters'}, 'horse-profiles': {'pedigree-source'},
             'pedigree-build': {'characters', 'pedigree-source'}, 'voice-profiles': {'characters'},
@@ -135,7 +145,6 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         started = clock()
         before = output_contents(name)
         try:
-            github_owner = os.environ.get('GITHUB_ACTIONS') == 'true'
             # Activity translation belongs to Actions. News and entity
             # descriptions share the production archive/cache owner.
             read_archive_only = (name == 'event-localization' and not github_owner) or (name == 'entity-localization' and github_owner)
@@ -148,6 +157,10 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
             ok = completed.returncode == 0
             lines = (completed.stdout if ok else completed.stderr or completed.stdout).strip().splitlines()
             message = lines[-1][:500] if lines else ('complete' if ok else 'source update failed')
+            if name == 'setlists' and not ok and 'sheet-sync:' in message:
+                report = read_json(ROOT/'data/events/sheet_apply_report.json',{})
+                if report.get('source')=='github-main' and report.get('primary_source_available') is False:
+                    message = 'Google source unavailable; existing GitHub setlists retained: ' + message
         except (OSError, subprocess.TimeoutExpired) as error:
             ok, message = False, type(error).__name__
         finished = clock()

@@ -181,6 +181,7 @@ function eventSummary(event, searchText, image) {
     date: event.date,
     end_date: event.end_date,
     schedule_status: event.schedule_status,
+    scheduled_month: event.scheduled_month,
     status_source_url: event.status_source_url,
     status_note: event.status_note,
     kind: event.kind,

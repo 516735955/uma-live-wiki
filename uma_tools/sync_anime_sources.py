@@ -180,8 +180,11 @@ def publish_episode(row, documents, characters, voices, *, save_image=write_cove
     evidence = 'official-auto-' + uid
     evidence = source(documents, evidence, row['source_url'], '官方剧集资料')['id']
     detail = series.setdefault('details', {}).setdefault(str(number), {})
-    fill_empty(detail, {key: row.get(key) for key in ('title_ja', 'summary_ja', 'release_date')})
+    fill_empty(detail, {key: row.get(key) for key in ('title_ja', 'summary_ja', 'release_date', 'dates', 'published_at', 'publication_source_url')})
     detail['source_refs'] = list(dict.fromkeys([*detail.get('source_refs', []), evidence]))
+    if row.get('publication_source_url'):
+        ref = source(documents, 'official-published-' + uid, row['publication_source_url'], '官方频道视频精确发布时间')['id']
+        detail['source_refs'] = list(dict.fromkeys([*detail['source_refs'], ref]))
     if number > int(series.get('released_count', 0)):
         series['released_count'] = number
         series['count'] = max(number, int(series.get('count', 0)))
@@ -450,6 +453,8 @@ def main():
             for row in sorted(rows, key=lambda item: int(item['number'])):
                 publish_episode(row, documents, characters, voices, save_image=save)
                 publish_episode_music(row, documents, songs)
+                if row.get('date_status') == 'source_unavailable':
+                    errors.append(label + ':published-date:' + str(row['number']))
         except Exception as error:
             errors.append(label)
             print('anime source unavailable:', label, type(error).__name__, flush=True)

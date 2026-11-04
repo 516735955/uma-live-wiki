@@ -131,7 +131,7 @@ python3 "$RELEASE/uma_tools/update_events.py"
 if [ ! -f "$RELEASE/data/auto_update/entity_localizations.json" ]; then
   node "$RELEASE/uma_tools/localize_entities.js" --initialize --no-api
 fi
-if ! timeout 300 python3 "$RELEASE/uma_tools/sync_event_images.py"; then
+if ! timeout 120 python3 "$RELEASE/uma_tools/sync_event_images.py" --missing-only; then
   echo 'Event artwork prefetch incomplete; retaining verified cached artwork and local default covers.'
 fi
 python3 "$RELEASE/uma_tools/build_anime_catalog.py"

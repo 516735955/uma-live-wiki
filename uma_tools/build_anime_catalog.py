@@ -120,6 +120,7 @@ def expand_units(series_rows: list[dict[str, Any]], works_by_id: dict[str, dict[
                 "stills": [],
                 "source_refs": list(series.get("source_refs") or []),
                 **detail,
+                "release_date": detail.get("release_date") or date_for(number, list(series.get("date_blocks") or [])),
                 "title_zh": title_zh,
                 "title_ja": title_ja,
             })

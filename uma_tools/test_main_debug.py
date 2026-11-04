@@ -80,7 +80,7 @@ class MainDebugTests(unittest.TestCase):
             def geturl(self):
                 return 'https://example.test/series/1'
         resource = {'url': 'https://example.test/series/1', 'platform': 'bilibili'}
-        for title, expected in [('Login', 'source_unavailable'), ('Provider', 'source_unavailable'), ('赛马娘 第二季', 'active')]:
+        for title, expected in [('Login', 'source_unavailable'), ('Provider', 'unverified'), ('赛马娘 第二季', 'active')]:
             with patch.object(watch.urllib.request, 'urlopen', return_value=Response(('<title>' + title + '</title>').encode())):
                 self.assertEqual(watch.check_resource(resource)[0], expected)
 

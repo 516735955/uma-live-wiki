@@ -36,6 +36,8 @@ function hasJapaneseDescription(html) {
   const description = String(html || '')
     .replace(/<span\b[^>]*\blang=["']ja["'][^>]*>[\s\S]*?<\/span>/gi, '')
     .replace(/<[^>]+>/g, ' ');
+  const prose = description.replace(/[『「“][^』」”]{1,50}[』」”]/g, '');
+  if (!hasJapanese(prose) && /[她们的与为将这]/.test(prose)) return false;
   return hasJapanese(description);
 }
 
@@ -248,6 +250,15 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
     else if (Object.keys(next).some(key => key.endsWith('_zh') && next[key])) next.state = 'complete';
     if (JSON.stringify(previous) !== JSON.stringify(next)) changed++;
     records[source.key] = next;
+  }
+  if (inScope('character')) {
+    const characters = readWindow(path.join(root, 'data/character_detail_data.js'), 'CHAR_DETAIL');
+    for (const [id, row] of Object.entries(characters)) {
+      const key = `character:${id}`, previous = records[key];
+      if (!previous || handledKeys.has(key) || hasJapaneseDescription(row.html) || previous.summary_ja !== row.html) continue;
+      records[key] = { ...previous, summary_zh: row.html, summary_translator: 'accepted', state: 'complete' };
+      if (JSON.stringify(records[key]) !== JSON.stringify(previous)) changed++;
+    }
   }
   fs.mkdirSync(path.dirname(file), { recursive: true });
   const temporary = `${file}.${process.pid}.tmp`;

@@ -15,6 +15,7 @@ import warnings
 from pathlib import Path
 
 from PIL import Image, ImageFile, ImageOps
+from knowledge_io import bounded_read
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -65,7 +66,7 @@ def fetch(url: str) -> bytes:
         request = urllib.request.Request(request_url, headers={"User-Agent": "UmaLiveWiki/1.0", "Accept": "image/*"})
         try:
             with urllib.request.urlopen(request, timeout=12) as response:
-                payload = response.read(8 * 1024 * 1024 + 1)
+                payload = bounded_read(response, limit=8*1024*1024, deadline=time.monotonic()+12)
             break
         except urllib.error.HTTPError as error:
             last_error = error
@@ -78,7 +79,8 @@ def fetch(url: str) -> bytes:
     return payload
 
 
-def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = None) -> dict:
+def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = None,
+        *, missing_only=False, limit=12, budget_seconds=90) -> dict:
     catalog = json.loads((root / "data/events_catalog.json").read_text(encoding="utf-8"))
     state_file = root / "data/auto_update/event_images.json"
     cache = root / "uma_tools/img/event-cache"
@@ -87,9 +89,17 @@ def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = Non
     except (FileNotFoundError, json.JSONDecodeError):
         state = {"schema_version": 1, "items": {}}
     items = dict(state.get("items") or {})
+    errors = dict(state.get('failures') or {})
     source_cache: dict[str, bytes] = {}
-    updated = failed = 0
-    for event in catalog.get("events", []):
+    updated = failed = checked = deferred = 0
+    candidates = []
+    deadline = time.monotonic() + budget_seconds
+    def checkpoint():
+        payload = {**state, 'items':items, 'failures':errors,
+                   'last_run':{'updated':updated,'failed':failed,'deferred':deferred}}
+        atomic(state_file, (json.dumps(payload,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
+    events = sorted(catalog.get('events',[]),key=lambda event:str(event.get('date') or ''),reverse=True)
+    for event in events:
         event_id, source = str(event.get("id") or ""), str(event.get("image") or "")
         if event_ids is not None and event_id not in event_ids:
             continue
@@ -106,11 +116,22 @@ def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = Non
                     # nginx must be able to serve these public image files too.
                     file.chmod(0o644)
         checked_at = float(old.get("checked_at", old.get("fetched_at", 0)) or 0) if old else 0
-        if (not force and old and old.get("source_image") == source
-                and all(cached_file(key).is_file() for key in ("image_url", "hero_image_url", "original_url"))
-                and checked_at > 0
-                and time.time() - checked_at < REFRESH_AFTER_SECONDS):
+        complete = bool(old and old.get('source_image') == source and
+                        all(cached_file(key).is_file() for key in ('image_url','hero_image_url','original_url')))
+        if not force and complete and (missing_only or (checked_at > 0 and time.time()-checked_at < REFRESH_AFTER_SECONDS)):
             continue
+        previous_error = errors.get(event_id,{})
+        if not force and previous_error.get('source_image') == source and previous_error.get('next_at',0)>time.time():
+            deferred += 1
+            continue
+        candidates.append((complete,event))
+    candidates.sort(key=lambda item:item[0])
+    for _,event in candidates:
+        event_id,source=event['id'],event['image']
+        if checked>=limit or time.monotonic()>=deadline:
+            deferred += 1
+            continue
+        checked += 1
         try:
             original = source_cache.get(source)
             if original is None:
@@ -130,19 +151,29 @@ def run(root: Path = ROOT, force: bool = False, event_ids: set[str] | None = Non
             atomic(hero_path, hero, public=True)
             items[event_id] = {"source_image": source, "image_url": "/uma_tools/img/" + str(small_path.relative_to(root / "uma_tools/img")), "hero_image_url": "/uma_tools/img/" + str(hero_path.relative_to(root / "uma_tools/img")), "original_url": "/uma_tools/img/" + str(original_path.relative_to(root / "uma_tools/img")), "sha256": hashlib.sha256(original).hexdigest()}
             items[event_id]["checked_at"] = time.time()
+            errors.pop(event_id,None)
             updated += 1
         except Exception as error:
             failed += 1
+            previous = errors.get(event_id,{})
+            count = min(9,previous.get('attempts',0)+1) if previous.get('source_image')==source else 1
+            errors[event_id]={'source_image':source,'error':str(error)[:250],'attempts':count,
+                              'checked_at':time.time(),'next_at':time.time()+min(7*86400,3600*2**(count-1))}
             print(f"event image retained: {event_id}: {error}")
-    payload = {"schema_version": 1, "items": items}
-    atomic(state_file, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
-    return {"updated": updated, "failed": failed, "total": len(items)}
+        checkpoint()
+    checkpoint()
+    return {"updated": updated, "failed": failed, "deferred":deferred,"total": len(items)}
 
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--missing-only", action="store_true", help="reuse complete cached artwork during publication")
+    parser.add_argument("--limit", type=int, default=12)
     parser.add_argument("--event-id", action="append", help="refresh only the selected event or parent IDs")
     args = parser.parse_args()
-    print(json.dumps(run(force=args.force, event_ids=set(args.event_id) if args.event_id else None), ensure_ascii=False))
+    result = run(force=args.force, event_ids=set(args.event_id) if args.event_id else None,
+                 missing_only=args.missing_only, limit=max(1,args.limit))
+    print(json.dumps(result, ensure_ascii=False))
+    raise SystemExit(bool(result['failed'] or result['deferred']))
