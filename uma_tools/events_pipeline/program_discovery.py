@@ -9,6 +9,7 @@ from . import program_schedule as pipeline_program_schedule
 import sqlite3
 import datetime as _datetime
 from html.parser import HTMLParser
+import xml.etree.ElementTree as _xml
 
 
 PAKATUBE_MOVIE_INDEX = "https://pakatube.umamusume.jp/data/movie.json"
@@ -18,6 +19,7 @@ METADATA_TTL_UPCOMING = 60 * 60
 METADATA_TTL_UNDATED = 24 * 60 * 60
 METADATA_TTL_PUBLISHED = 7 * 24 * 60 * 60
 METADATA_ERRORS: dict[str, str] = {}
+_CHANNEL_FEEDS: dict[str, bytes] = {}
 EXTERNAL_OFFICIAL_CHANNELS = (
     # The source is restricted to explicit Uma/collaboration titles below;
     # this is not a general-purpose partner-channel crawler.
@@ -166,6 +168,38 @@ def public_watch_metadata(video_id: str, expected_channel: str = "") -> dict[str
     return result
 
 
+def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
+    """Use exact official feed publication times for prerecorded gameplay only."""
+    if not pipeline_common.re.fullmatch(r'UC[A-Za-z0-9_-]{22}', expected_channel):
+        raise ValueError('official feed requires a known channel identity')
+    if expected_channel not in _CHANNEL_FEEDS:
+        url = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + expected_channel
+        with pipeline_common.urllib.request.urlopen(url, timeout=15) as response:
+            raw = response.read(2_000_001)
+        if len(raw) > 2_000_000:
+            raise ValueError('official feed exceeds metadata limit')
+        _CHANNEL_FEEDS[expected_channel] = raw
+    ns = {'a':'http://www.w3.org/2005/Atom', 'yt':'http://www.youtube.com/xml/schemas/2015', 'm':'http://search.yahoo.com/mrss/'}
+    feed = _xml.fromstring(_CHANNEL_FEEDS[expected_channel])
+    for entry in feed.findall('a:entry', ns):
+        if entry.findtext('yt:videoId', namespaces=ns) != video_id: continue
+        if entry.findtext('yt:channelId', namespaces=ns) != expected_channel:
+            raise ValueError('official feed channel mismatch')
+        title = entry.findtext('a:title', default='', namespaces=ns)
+        description = entry.findtext('m:group/m:description', default='', namespaces=ns)
+        if '【ゲーム実況】' not in title or pipeline_common.re.search(r'生放送|生配信|ライブ配信|プレミア|(?:放送|配信|公開)(?:日時|予定)', title + description):
+            raise ValueError('feed publication does not establish a broadcast date')
+        published = entry.findtext('a:published', default='', namespaces=ns)
+        stamp = _datetime.datetime.fromisoformat(published.replace('Z', '+00:00'))
+        if stamp.tzinfo is None: raise ValueError('official feed time has no timezone')
+        thumbnail = entry.find('m:group/m:thumbnail', ns)
+        return {'id':video_id, 'channel_id':expected_channel, 'title':title, 'description':description,
+                'release_timestamp':stamp.timestamp(), 'release_raw':published, 'release_precision':'second',
+                'thumbnail':thumbnail.get('url', '') if thumbnail is not None else '',
+                'webpage_url':'https://www.youtube.com/watch?v='+video_id, 'metadata_origin':'official_channel_feed'}
+    raise ValueError('video is outside the current official feed')
+
+
 def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, expected_channel: str = "") -> dict[str, pipeline_common.Any] | None:
     """Read verified metadata cache first; failed fetches are never cached."""
     cache_file = PROGRAM_METADATA_CACHE / f"{video_id}.json"
@@ -221,6 +255,13 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, e
         return metadata
     except (OSError, ValueError, TimeoutError, AttributeError) as error:
         reasons.append('official watch page: ' + str(error)[:180])
+    try:
+        metadata = public_game_feed_metadata(video_id, expected_channel)
+        pipeline_common.atomic_json(cache_file, metadata)
+        METADATA_ERRORS.pop(video_id, None)
+        return metadata
+    except (OSError, ValueError, TimeoutError, _xml.ParseError) as error:
+        reasons.append('official gameplay feed: ' + str(error)[:180])
     METADATA_ERRORS[video_id] = '; '.join(reasons)
     if stale:
         stale['_metadata_stale'] = True

@@ -95,6 +95,7 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
       [path.join(root, 'uma_tools/update_events.py')], { cwd: root, stdio: 'inherit' });
   }
   const result = { events: events.length, changed, pending: pending.length,
+    translationUsage: service?.translationUsage || { requests: 0, characters: 0 },
     deferredQuota: service && service.translationBlockCode === '54004' ? pending.filter(item => item.owner !== 'assistant').length : 0,
     deferredOwner: options.noApi ? pending.length : pending.filter(item => item.owner === 'assistant').length };
   console.log('event localization:', JSON.stringify(result));

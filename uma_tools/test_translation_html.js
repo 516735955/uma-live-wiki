@@ -13,7 +13,7 @@ async function main() {
   const previous = [process.env.BAIDU_APPID, process.env.BAIDU_SECRET];
   process.env.BAIDU_APPID = process.env.BAIDU_SECRET = 'fixture';
   try {
-    async function article(message, destination, { fragments = {}, seed = {} } = {}) {
+    async function article(message, destination, { fragments = {}, seed = {}, title = 'ニュース', title_zh = '新闻' } = {}) {
       const queries = [];
       class Cache {
         constructor() { this.values = { ...seed }; }
@@ -45,7 +45,7 @@ async function main() {
       });
       const data = await new Promise((resolve, reject) => {
         const deadline = setTimeout(() => reject(new Error('article callback missing')), 5000);
-        service.translateArticle({ title: 'ニュース', title_zh: '新闻', message, archive_fragments: fragments },
+        service.translateArticle({ title, title_zh, message, archive_fragments: fragments },
           new AbortController().signal, (status, result) => { clearTimeout(deadline); resolve(result.detail); });
       });
       return { data, queries };
@@ -61,7 +61,16 @@ async function main() {
       { fragments: { '&#12362;&#30693;&#12425;&#12379;': '通知' } });
     assert.strictEqual(reused.queries.length, 0, 'existing reviewed fragments work across entity decoding');
     assert.strictEqual(reused.data.message_zh, '<p>通知</p>');
+    const acceptedName = await article('<p>・シンパシー</p>', null,
+      { fragments: { '・シンパシー': '・シンパシー' } });
+    assert.strictEqual(acceptedName.queries.length, 0, 'accepted unchanged names in the bilingual archive are not billed again');
     const failed = await article('<p>お知らせ</p>', null);
+    const repeated = await article('<p>お知らせ</p><p>お知らせ</p>', '通知');
+    assert.deepStrictEqual(repeated.queries, ['お知らせ'], 'repeated article paragraphs consume one provider translation');
+    assert.strictEqual(repeated.data.message_zh, '<p>通知</p><p>通知</p>');
+    const sharedTitle = await article('<h2>お知らせ</h2>', '通知', {title:'お知らせ', title_zh:''});
+    assert.strictEqual(sharedTitle.queries.length, 1, 'the body reuses a title archived during the same update');
+    assert.strictEqual(sharedTitle.data.message_zh, '<h2>通知</h2>');
     assert.strictEqual(failed.data.translation_state, 'partial');
     assert.strictEqual(failed.data.message_zh, '<p>お知らせ</p>', 'upstream failure preserves the source and remains retryable');
     const message = '<p>お知らせ</p>';

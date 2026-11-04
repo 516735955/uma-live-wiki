@@ -83,6 +83,11 @@ async function main() {
       assert.strictEqual(await get(makePersistentService()), '新增说明');
       assert.strictEqual(successfulCalls, 1, 'a successful provider result survives service recreation and repeated collection');
       assert(fs.existsSync(path.join(diskRoot, 'data/auto_update/trans_cache.json')), 'translation is stored on disk before returning');
+      const invalid = service => new Promise(resolve => service.translateTitle('新しい2件', resolve, new AbortController().signal));
+      assert.strictEqual(await invalid(first), '新しい2件');
+      assert.strictEqual(await invalid(first), '新しい2件');
+      assert.strictEqual(await invalid(makePersistentService()), '新しい2件');
+      assert.strictEqual(successfulCalls, 2, 'a rejected numeric result is retained for repair without paying again for unchanged text');
     } finally { fs.rmSync(diskRoot, { recursive: true, force: true }); }
 
     let quotaCalls = 0;
@@ -98,6 +103,10 @@ async function main() {
     const restarted = serviceFor(dataDir, {}, () => { quotaCalls++; });
     await new Promise(resolve => restarted.translateTitle('新しい別のタイトル', resolve, new AbortController().signal));
     assert.strictEqual(quotaCalls, 1, 'quota exhaustion also survives process recreation');
+    fs.unlinkSync(path.join(dataDir, 'auto_update/translation_status.json'));
+    assert.strictEqual(restarted.translationAvailable, true, 'an explicit balance-restored action resumes the existing service');
+    await new Promise(resolve => restarted.translateTitle('新しい別のタイトル', resolve, new AbortController().signal));
+    assert.strictEqual(quotaCalls, 2, 'resume makes one real attempt and persists a new quota failure if necessary');
     console.log('translation cache version reuse and persistent 54004 blocking passed');
   } finally {
     if (dataDir) fs.rmSync(dataDir, { recursive: true, force: true });

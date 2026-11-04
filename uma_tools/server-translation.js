@@ -41,6 +41,16 @@ exports.createService = function (deps) {
     if (blockedCode === '54004') blockedUntil = Infinity;
   } catch (_) {}
 
+  function refreshTranslationStatus() {
+    try {
+      const status = JSON.parse(deps.fs.readFileSync(statusFile, 'utf8'));
+      blockedCode = String(status.code || '');
+      blockedUntil = blockedCode === '54004' ? Infinity : Number(status.blocked_until || 0);
+    } catch (error) {
+      if (error.code === 'ENOENT') { blockedCode = ''; blockedUntil = 0; }
+    }
+  }
+
   const translations = new deps.TranslationCache(
     TRANS_CACHE_FILE,
     deps.path.join(__dirname, "trans_cache.json"),
@@ -106,11 +116,14 @@ exports.createService = function (deps) {
     new (require("./translation-queue").TranslationQueue)();
 
   let nextTranslationAt = 0;
+  const translationUsage = { requests: 0, characters: 0 };
 
   function fetchTranslation(text, signal) {
+    refreshTranslationStatus();
     if (Date.now() < blockedUntil) return Promise.resolve(null);
     const result = translationScheduler.run(
       async (signal) => {
+        refreshTranslationStatus();
         if ((signal && signal.aborted) || Date.now() < blockedUntil) return null;
         const delay = nextTranslationAt - Date.now();
         if (delay > 0)
@@ -188,6 +201,8 @@ exports.createService = function (deps) {
             signal.addEventListener("abort", abort, { once: true });
             if (signal.aborted) abort();
           }
+          translationUsage.requests++;
+          translationUsage.characters += Array.from(text).length;
           request.end(form);
         });
       },
@@ -199,13 +214,15 @@ exports.createService = function (deps) {
 
   function translateOne(text, attempt, signal, terms = currentTerms()) {
     if (signal && signal.aborted) return Promise.resolve("");
+    const rejectedKey = 'rejected:' + translationKeyWithTerms(text, terms);
+    if (translations.get(rejectedKey)) return Promise.resolve('');
     const known = terms.protect(text);
     if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
       return Promise.resolve(known.restore(known.text));
     return new Promise((resolve) => {
       const protectedText = terms.protect(text);
       fetchTranslation(protectedText.text, signal)
-        .then((j) => {
+        .then(async (j) => {
           try {
             if (j && j.trans_result && j.trans_result.length) {
               const t = j.trans_result
@@ -215,20 +232,18 @@ exports.createService = function (deps) {
                 .join("");
               const restored = protectedText.restore(t);
               const rating = text.match(/^★+/);
-              const candidate = rating ? restored.replace(/^★+/, rating[0]) : restored;
+              const candidate = restored && (rating ? restored.replace(/^★+/, rating[0]) : restored);
               const {
                 translationFactsMatch,
                 starFactsMatch,
                 untranslatedJapanese,
               } = require("./translation-facts");
-              resolve(
-                  candidate &&
+              const accepted = candidate &&
                   translationFactsMatch(protectedText.text, t) &&
                   starFactsMatch(text, candidate) &&
-                  !untranslatedJapanese(protectedText.text, t)
-                  ? candidate
-                  : "",
-              );
+                  !untranslatedJapanese(protectedText.text, t);
+              if (!accepted) await translations.set(rejectedKey, JSON.stringify({ source: text, candidate: restored || t }));
+              resolve(accepted ? candidate : '');
               return;
             }
             const code = j && j.error_code;
@@ -323,11 +338,16 @@ exports.createService = function (deps) {
     );
     const text = protectedLines.map((line) => line.text).join("\n");
     if (text.length > 950 || Buffer.byteLength(text) > 5500) return fallback();
+    const rejectedBatchKey = 'rejected:batch:' + deps.crypto.createHash('sha256').update(text).digest('hex');
+    if (translations.get(rejectedBatchKey)) return fallback();
     fetchTranslation(text, signal)
-      .then((j) => {
+      .then(async (j) => {
         try {
           if (j && j.trans_result && j.trans_result.length) {
-            if (j.trans_result.length !== lines.length) return fallback();
+            if (j.trans_result.length !== lines.length) {
+              await translations.set(rejectedBatchKey, JSON.stringify({ sources: lines, candidates: j.trans_result }));
+              return fallback();
+            }
             const out = [];
             let dirty = false;
             for (let i = 0; i < lines.length; i++) {
@@ -362,6 +382,7 @@ exports.createService = function (deps) {
                 }
               }
               if (!value) {
+                await translations.set('rejected:' + translationKeyWithTerms(lines[i], terms), JSON.stringify({ source: lines[i], candidate: j.trans_result[i].dst }));
                 value = lines[i];
                 dirty = true;
               }
@@ -444,7 +465,9 @@ exports.createService = function (deps) {
     }
     // Limits apply to the protected query, not to the shorter original Japanese.
     const translated = new Map();
+    let dirty = false;
     runs.forEach((run) => {
+      const archived = Object.hasOwn(archivedFragments, run.text) || Object.hasOwn(archivedFragments, run.archiveText);
       let cachedFragment = archivedFragments[run.text] || archivedFragments[run.archiveText] || translations.get(
         "fragment:" + (terms.protect(run.text).count
           ? "terms_" + terms.revision + ":" + run.text
@@ -457,19 +480,27 @@ exports.createService = function (deps) {
       if (cachedFragment) {
         const { translationFactsMatch, untranslatedJapanese } = require('./translation-facts');
         const normalized = terms.normalize(cachedFragment);
-        cachedFragment = normalized && normalized !== run.text && translationFactsMatch(run.text, normalized) && !untranslatedJapanese(run.text, normalized) ? normalized : '';
+        cachedFragment = normalized && translationFactsMatch(run.text, normalized) &&
+          ((archived && normalized === run.text) || (normalized !== run.text && !untranslatedJapanese(run.text, normalized))) ? normalized : '';
       }
       if (cachedFragment) translated.set(run, terms.normalize(cachedFragment));
       else {
         const known = terms.protect(run.text);
         if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
           translated.set(run, known.restore(known.text));
+        else if (translations.get('rejected:' + translationKeyWithTerms(run.text, terms))) {
+          translated.set(run, run.text);
+          dirty = true;
+        }
       }
     });
     const chunks = [];
+    const uniqueRuns = new Map();
     let cur = [];
     runs.forEach(function (r) {
       if (translated.has(r)) return;
+      if (uniqueRuns.has(r.text)) return;
+      uniqueRuns.set(r.text, r);
       const query = cur
         .concat(r)
         .map(
@@ -486,7 +517,6 @@ exports.createService = function (deps) {
       cur.push(r);
     });
     if (cur.length) chunks.push(cur);
-    let dirty = false;
     await Promise.all(chunks.map(chunk => new Promise(resolve => {
       translateBatchLines(
         chunk.map(function (r) {
@@ -517,7 +547,11 @@ exports.createService = function (deps) {
       );
     })));
       if (signal && signal.aborted) return { value: '', dirty: true };
-      const textNodes = new Map();
+    runs.forEach(run => {
+      if (!translated.has(run) && uniqueRuns.has(run.text))
+        translated.set(run, translated.get(uniqueRuns.get(run.text)));
+    });
+    const textNodes = new Map();
       runs.forEach((run) =>
         textNodes.set(
           run.idx,
@@ -556,22 +590,8 @@ exports.createService = function (deps) {
       detail.translation_state = incomplete ? "partial" : "complete";
       finish(200, { response_code: 1, detail });
     };
-    if (detail.title_zh || !detail.title) complete();
-    else
-      translateTitle(
-        detail.title,
-        (zh) => {
-          detail.title_zh =
-            zh && !(zh === detail.title && /[\u3040-\u30ff]/.test(detail.title))
-              ? zh
-              : "";
-          if (!detail.title_zh) incomplete = true;
-          complete();
-        },
-        signal,
-      );
-    if (detail.message_zh || !detail.message) complete();
-    else
+    const translateBody = () => {
+      if (detail.message_zh || !detail.message) return complete();
       translateHtmlMessage(
         detail.message,
         (zh, dirty) => {
@@ -587,9 +607,18 @@ exports.createService = function (deps) {
         signal,
         detail.archive_fragments,
       );
+    };
+    if (detail.title_zh || !detail.title) { complete(); translateBody(); }
+    else translateTitle(detail.title, zh => {
+      detail.title_zh = zh && !(zh === detail.title && /[\u3040-\u30ff]/.test(detail.title)) ? zh : '';
+      if (!detail.title_zh) incomplete = true;
+      complete();
+      translateBody();
+    }, signal);
   }
   return { newsContent, translateTitle, translateArticle,
     translateHtmlMessage,
-    get translationBlockCode() { return blockedCode; },
-    get translationAvailable() { return !!BAIDU_APPID && !!BAIDU_SECRET && blockedCode !== '54004' && Date.now() >= blockedUntil; } };
+    get translationUsage() { return { ...translationUsage }; },
+    get translationBlockCode() { refreshTranslationStatus(); return blockedCode; },
+    get translationAvailable() { refreshTranslationStatus(); return !!BAIDU_APPID && !!BAIDU_SECRET && blockedCode !== '54004' && Date.now() >= blockedUntil; } };
 };

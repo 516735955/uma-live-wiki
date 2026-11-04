@@ -4,9 +4,7 @@
   "refreshed_at": "2026-11-04T00:03:18+00:00",
   "coverage": {
     "official_youtube_refresh": "metadata_recheck_pending",
-    "source_errors": [
-      "official video metadata unavailable: O3WWZLtIJ2M: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
-    ],
+    "source_errors": [],
     "metadata_recheck_pending": [
       "official video metadata unavailable: cZnOzZNlxwU: default: missing channel; android: missing channel; official watch page: public watch date unavailable",
       "official video metadata unavailable: aygKZ-C5Ibo: default: missing date; android: missing channel,date; official watch page: public watch date unavailable",
@@ -72,15 +70,13 @@
       "official video metadata unavailable: uzS-RG5f6UY: default: missing channel; android: missing channel; official watch page: public watch date unavailable"
     ],
     "expected_regular_episodes": 126,
-    "records": 252,
+    "records": 253,
     "source_verified_regular_episodes": 126,
     "metadata_pending_ids": [],
     "metadata_candidate_count": 177,
     "metadata_batch_count": 70,
-    "metadata_pending_video_ids": [
-      "O3WWZLtIJ2M"
-    ],
-    "pakatube_character_programs": 90,
+    "metadata_pending_video_ids": [],
+    "pakatube_character_programs": 91,
     "official_special_programs": 30
   },
   "programs": [
@@ -17098,6 +17094,44 @@
       "metadata_checked_at": 1793316116.8136792,
       "source_time_text": "1793354400",
       "media": []
+    },
+    {
+      "id": "pakatube-20261030-gang-beasts",
+      "series_id": "pakatube-character-program",
+      "title": "【Gang Beasts最強決定戦｜エキシビション】キングとスペ、グラス、エル、スカイ、ファレノのエキシビションマッチを特別公開だ！【ゲーム実況】",
+      "date": "2026-10-30",
+      "video_id": "O3WWZLtIJ2M",
+      "url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+      "metadata_checked_at": 1793783404.6501062,
+      "thumbnail": "https://i4.ytimg.com/vi/O3WWZLtIJ2M/hqdefault.jpg",
+      "duration": null,
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "published_time": "18:00",
+      "published_date": "2026-10-30",
+      "publication_source_url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+      "time_precision": "minute",
+      "source_time_text": "1793350801.0",
+      "summary": "オマエら！ 明日はついに第1回トレセン学園『Gang Beasts』最強決定戦だな！ と、その前に！ スーパーシードのキングと、リーグGで戦ったスペ、グラス、エル、スカイ、ファレノのエキシビションマッチを特別に公開だ！",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+          "label": "官方视频",
+          "video_id": "O3WWZLtIJ2M",
+          "duration": null,
+          "image": "https://i4.ytimg.com/vi/O3WWZLtIJ2M/hqdefault.jpg"
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M"
+        }
+      ]
     }
   ]
 }

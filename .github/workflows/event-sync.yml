@@ -3,7 +3,12 @@ name: event-sync
 on:
   schedule:
     - cron: '17 19 * * *' # 每天北京时间03:17；发布器每15分钟检查已完成的main提交
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      resume_translation:
+        description: Clear the saved quota pause after restoring the API balance
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -43,7 +48,14 @@ jobs:
       - name: Discover, reconcile and localize incremental event data
         id: collect
         continue-on-error: true
-        run: python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images entity-localization
+        env:
+          RESUME_TRANSLATION: ${{ inputs.resume_translation }}
+        run: |
+          if [ "$RESUME_TRANSLATION" = 'true' ]; then
+            python uma_tools/sync_knowledge.py --resume-translation --force --only catalogs event-localization entity-localization
+            exit
+          fi
+          python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images entity-localization
       - name: Verify complete usable catalogs
         run: |
           python -m unittest discover -s uma_tools -p 'test_event_localization.py'

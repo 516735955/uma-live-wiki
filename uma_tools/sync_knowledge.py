@@ -182,6 +182,7 @@ def main():
     parser.add_argument('--force', action='store_true', help='run selected steps without waiting for their daily deadline')
     parser.add_argument('--only', nargs='+', choices=[name for name, _ in STEPS])
     parser.add_argument('--status', action='store_true', help='print the latest state without starting network requests')
+    parser.add_argument('--resume-translation', action='store_true', help='clear the saved quota pause once after the API balance is restored')
     args = parser.parse_args()
     if args.status:
         import json
@@ -191,6 +192,8 @@ def main():
         if not acquired:
             print('knowledge update already running')
             return 0
+        if args.resume_translation:
+            (STATE.parent / 'translation_status.json').unlink(missing_ok=True)
         return bool(run_updates(force=args.force, only=args.only))
 
 

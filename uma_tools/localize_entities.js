@@ -66,6 +66,8 @@ function sourceRecords(root, options = {}) {
         const original = (row[`${field}_zh`] || [])[index] === text
           ? (row[`${field}_ja`] || [])[index]
           : (hasJapanese(text) ? text : (row[`${field}_ja`] || [])[index]);
+        const withoutNames = String(text).replace(/[（(][^()（）]*[）)]/g, '');
+        if (hasJapanese(text) && !hasJapanese(withoutNames) && /[是的由与将]/.test(withoutNames)) return;
         if (original && hasJapanese(original)) records.push({ key: `horse:${id}:${field}:${index}`, entity_type: 'horse', entity_id: id, field, index, summary_ja: original, summary_zh: !hasJapanese(text) ? text : '' });
       });
     }
@@ -97,7 +99,9 @@ function createTranslator(root, noApi) {
       });
     } finally { clearTimeout(timeout); }
   }
-  return { terms, translate, get quotaPaused() { return service && service.translationBlockCode === '54004'; } };
+  return { terms, translate,
+    get translationUsage() { return service?.translationUsage || { requests: 0, characters: 0 }; },
+    get quotaPaused() { return service && service.translationBlockCode === '54004'; } };
 }
 
 function writeWindow(file, name, value) {
@@ -254,6 +258,7 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
     [path.join(root, 'uma_tools/build_anime_catalog.py')], { cwd: root, stdio: 'inherit' });
   const pendingAutomatic = pending.filter(item => item.owner !== 'assistant').length;
   return { entities: Object.keys(records).length, changed, pending: pending.length, pendingAutomatic,
+    translationUsage: translator.translationUsage || { requests: 0, characters: 0 },
     deferredQuota: translator.quotaPaused ? pendingAutomatic : 0,
     deferredOwner: options.noApi ? pendingAutomatic : 0 };
 }

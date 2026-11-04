@@ -12,6 +12,18 @@ from events_pipeline import program_discovery
 
 
 class EventLocalizationTests(unittest.TestCase):
+    def test_official_gameplay_feed_keeps_exact_time_and_channel(self):
+        channel = 'UC' + 'a' * 22
+        raw = f'''<feed xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://www.youtube.com/xml/schemas/2015">
+        <entry><yt:videoId>abcdefghijk</yt:videoId><yt:channelId>{channel}</yt:channelId>
+        <title>【ゲーム実況】新作</title><published>2026-10-30T09:00:01+00:00</published></entry></feed>'''.encode()
+        with patch.dict(program_discovery._CHANNEL_FEEDS, {channel:raw}, clear=True):
+            row = program_discovery.public_game_feed_metadata('abcdefghijk', channel)
+            self.assertEqual(program_discovery._approximate_date(row), '2026-10-30')
+            self.assertEqual(row['release_raw'], '2026-10-30T09:00:01+00:00')
+            with self.assertRaises(ValueError): program_discovery.public_game_feed_metadata('another-id', channel)
+        with patch.dict(program_discovery._CHANNEL_FEEDS, {channel:raw.replace('【ゲーム実況】'.encode(), '【生放送】'.encode())}, clear=True):
+            with self.assertRaises(ValueError): program_discovery.public_game_feed_metadata('abcdefghijk', channel)
     def test_publication_keeps_reviewed_copy_and_actual_translator(self):
         reviewed = {'records': {'manual': {'title_ja': '同じ原文', 'title_zh': '人工修正', 'translator': 'assistant'}}}
         runtime = {'records': {
