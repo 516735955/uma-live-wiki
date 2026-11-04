@@ -6636,7 +6636,7 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 5,
+      "released_count": 6,
       "date_blocks": [
         {
           "from": 1,
@@ -6852,7 +6852,7 @@
               "timezone": "JST"
             }
           ],
-          "staff_status": "pending",
+          "staff_status": "complete",
           "release_date": "2026-10-18",
           "stills": [
             {
@@ -6888,7 +6888,8 @@
           "title_ja": "ショウ・うまスト・ゴー・オン！",
           "summary_ja": "舞台の幕が（うっかり早く）上がったテイエムオペラオーたち。\n一座の悲劇（？）は怒濤の展開で（何がなんでも）フィナーレへと突き進む！",
           "source_refs": [
-            "official-auto-anime-umayuru-fullgate-e05"
+            "official-auto-anime-umayuru-fullgate-e05",
+            "official-ending-anime-umayuru-fullgate-e05"
           ],
           "auto_source": true,
           "stills": [
@@ -6926,7 +6927,100 @@
           "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e05-auto-01.webp",
           "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/340882eee6cf42f69cf14dd82a8cad1b/UFG_05_01.jpg",
           "title_zh": "演出马不停蹄！",
-          "summary_zh": "好歌剧一行的舞台帷幕（不小心提早）拉开了。\n剧团的悲剧（？）随着接连不断的发展，（无论如何都要）一路冲向终幕！"
+          "summary_zh": "好歌剧一行的舞台帷幕（不小心提早）拉开了。\n剧团的悲剧（？）随着接连不断的发展，（无论如何都要）一路冲向终幕！",
+          "staff_status": "complete",
+          "music_cues": [
+            {
+              "title": "ゆるゆるSAMBA",
+              "usage_type": "ending",
+              "credits": [
+                {
+                  "role": "作词／作曲／编曲",
+                  "names": [
+                    "Lucas Nainemoutou"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-lucas-nainemoutou-2d8686f23a"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-umayuru-fullgate-e05"
+              ],
+              "source_time": 168
+            }
+          ]
+        },
+        "6": {
+          "title_ja": "オグリの減量大作戦！",
+          "title_zh": "小栗帽减重大作战！",
+          "summary_zh": "比赛前吃得太多的小栗帽，能在伙伴们的帮助下减下体重吗？玉藻十字又能不能吐槽得过来呢！？",
+          "summary_ja": "レース前に食べ過ぎてしまったオグリキャップ。\n仲間たちはオグリを減量させられるのか！？タマモクロスのツッコミは追いつくのか―！？",
+          "source_refs": [
+            "official-auto-anime-umayuru-fullgate-e06",
+            "official-ending-anime-umayuru-fullgate-e06"
+          ],
+          "auto_source": true,
+          "stills": [
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-01.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/c16e71585a1443b681006190f5ed28b7/UFG_06_01.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-02.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/4149450a9c924170a665214718376096/UFG_06_02.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-03.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/4cd334c4899940c280e0d1184f638780/UFG_06_03.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-04.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/a60f1abb17164850b9d9517b8e30b40f/UFG_06_04.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-05.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/8d59a97582614e5a92c2152c76b67921/UFG_06_05.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-06.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/bf60b37d9bac4839a08f37681c5ff028/UFG_06_06.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            }
+          ],
+          "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-01.webp",
+          "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/c16e71585a1443b681006190f5ed28b7/UFG_06_01.jpg",
+          "staff_status": "complete",
+          "music_cues": [
+            {
+              "title": "ゆるゆるSAMBA",
+              "usage_type": "ending",
+              "credits": [
+                {
+                  "role": "作词／作曲／编曲",
+                  "names": [
+                    "Lucas Nainemoutou"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-lucas-nainemoutou-2d8686f23a"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-umayuru-fullgate-e06"
+              ],
+              "source_time": 168
+            }
+          ]
         }
       },
       "published_numbers": [
@@ -6934,7 +7028,8 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ]
     }
   ]

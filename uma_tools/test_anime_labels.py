@@ -8,6 +8,12 @@ from import_anime_ending_credits import merge_music_credits
 
 
 class AnimeLabelTests(unittest.TestCase):
+    def test_incremental_episode_title_is_visible_before_chinese_translation(self):
+        from build_anime_catalog import expand_units
+        rows = expand_units([{'work_id':'work','count':6,'released_count':6,'published_numbers':[6],
+                              'titles_ja':['旧标题'], 'details':{'6':{'title_ja':'新しいタイトル'}}}], {'work':{'id':'work'}})
+        self.assertEqual(rows[0]['title_ja'], '新しいタイトル')
+        self.assertEqual(rows[0]['title_zh'], '新しいタイトル')
     def test_music_duties_merge_without_merging_different_institutions(self):
         composer = {"role": "作曲", "names": ["原署名"], "creator_ids": ["one"], "institutions": ["MONACA"]}
         combined = {**composer, "role": "作曲／编曲", "names": ["规范姓名"]}

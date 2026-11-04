@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T00:05:16+00:00",
+  "generated_at": "2026-11-04T09:18:54+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -12,17 +12,17 @@
     }
   },
   "coverage": {
-    "events": 514,
+    "events": 515,
     "by_kind": {
       "concert": 46,
-      "official_program": 269,
+      "official_program": 270,
       "onsite": 199
     },
     "by_mode": {
-      "online": 261,
+      "online": 262,
       "onsite": 253
     },
-    "official_programs": 252,
+    "official_programs": 253,
     "unresolved_cast_names": 0
   },
   "series": [
@@ -4423,7 +4423,7 @@
     },
     {
       "id": "pakatube-20261031-gang-beasts",
-      "title": "【Gang Beasts最強決定戦】アルダン、ブーケ、フラッシュ、ロゴ、ミラ子、ローレル、グラス、キングが最強の称号をかけて勝負だ！【ゲーム実況】",
+      "title": "Gang Beasts 最强决战",
       "date": "2026-10-31",
       "end_date": "2026-10-31",
       "kind": "official_program",
@@ -4488,7 +4488,7 @@
       ],
       "legacy_url": "",
       "image": "https://i.ytimg.com/vi_webp/9AD3u2dxkMQ/maxresdefault.webp",
-      "summary": "オマエら！ 第1回トレセン学園『Gang Beasts』最強決定戦がついに始まったぞ！ 果たして最強の称号を手にするのは誰だ！",
+      "summary": "特雷森学园首届 Gang Beasts 最强决战开幕！目白阿尔丹、机伶金花、荣进闪耀、标志名驹、菱钻奇宝、樱花桂冠、草上飞、圣王光环展开较量，谁能夺得最强称号？",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "title_aliases": [],
@@ -4509,7 +4509,9 @@
       "time_precision": "minute",
       "title_ja": "【Gang Beasts最強決定戦】アルダン、ブーケ、フラッシュ、ロゴ、ミラ子、ローレル、グラス、キングが最強の称号をかけて勝負だ！【ゲーム実況】",
       "summary_ja": "オマエら！ 第1回トレセン学園『Gang Beasts』最強決定戦がついに始まったぞ！ 果たして最強の称号を手にするのは誰だ！",
-      "localization_state": "pending"
+      "title_zh": "Gang Beasts 最强决战",
+      "summary_zh": "特雷森学园首届 Gang Beasts 最强决战开幕！目白阿尔丹、机伶金花、荣进闪耀、标志名驹、菱钻奇宝、樱花桂冠、草上飞、圣王光环展开较量，谁能夺得最强称号？",
+      "localization_state": "complete"
     },
     {
       "id": "sokosoko-paka-live-tv-056",
@@ -4690,6 +4692,92 @@
       "summary_ja": "不定期配信の番組「そこそこぱかライブTV」！ 「ぱかライブTV」とは雰囲気を変えて、ウマ娘のキャストの皆さんが “そこそこ” なトークをゆるりとお届けします！ 今回は全員がそこそこぱかライブTV初出走の藤野彩水さん、菊池ゆりなさん、海野水玉さんの3人がそこそこウラ話をお届け！ それぞれが演じるウマ娘の話や「そこそこママみを感じた話」、「そこそこキセキ的な話」など、“そこそこ”なトークをゆるりとお送りします！ さらに、お題に書かれた言葉を麗しく例えるゲームにも挑戦！ ぜひお楽しみに！",
       "title_zh": "SokoSoko PakaLive TV Vol.56",
       "summary_zh": "不定期播出的 SokoSoko PakaLive TV 与 PakaLive TV 的风格不同，由赛马娘出演声优轻松畅聊。本期由首次参加节目的藤野彩水、菊池友莉菜、海野水玉三人分享幕后趣事，聊聊各自饰演的赛马娘，以及“有点感受到母性关怀的故事”“有点奇迹般的故事”等话题。三人还将挑战用优美的比喻描述题目词语的游戏，敬请期待！",
+      "localization_state": "complete"
+    },
+    {
+      "id": "pakatube-20261030-gang-beasts",
+      "title": "Gang Beasts 表演赛",
+      "date": "2026-10-30",
+      "end_date": "2026-10-30",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "pakatube-character-program",
+      "venue": "在线播出",
+      "cast_status": "character_only",
+      "cast": [],
+      "character_ids": [
+        "phalaenopsis",
+        "seiunsky",
+        "grasswonder",
+        "kinghalo",
+        "elcondorpasa",
+        "specialweek"
+      ],
+      "sessions": [
+        {
+          "id": "pakatube-20261030-gang-beasts-session-1",
+          "label": "本期节目",
+          "date": "2026-10-30",
+          "songs": [],
+          "character_ids": [
+            "phalaenopsis",
+            "seiunsky",
+            "grasswonder",
+            "kinghalo",
+            "elcondorpasa",
+            "specialweek"
+          ],
+          "cast": [],
+          "time_precision": "minute",
+          "source_time_text": "1793350801.0",
+          "published_time": "18:00",
+          "published_date": "2026-10-30",
+          "publication_source_url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+          "id_aliases": [],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M",
+          "label": "官方视频",
+          "video_id": "O3WWZLtIJ2M",
+          "duration": null,
+          "image": "https://i4.ytimg.com/vi/O3WWZLtIJ2M/hqdefault.jpg"
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=O3WWZLtIJ2M"
+        }
+      ],
+      "legacy_url": "",
+      "image": "https://i4.ytimg.com/vi/O3WWZLtIJ2M/hqdefault.jpg",
+      "summary": "特雷森学园首届 Gang Beasts 最强决战将在明天开幕。在正式比赛前，先特别公开超级种子选手圣王光环与G组参赛选手特别周、草上飞、神鹰、星云天空、蝴蝶兰的表演赛！",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "venue_raw": "在线播出",
+      "venue_id": "",
+      "venue_zh": "在线播出",
+      "venue_ja": "在线播出",
+      "venue_city": "",
+      "venue_country": "",
+      "venue_aliases": [
+        "在线播出"
+      ],
+      "venue_sources": [],
+      "time_source": null,
+      "time_precision": "minute",
+      "title_ja": "【Gang Beasts最強決定戦｜エキシビション】キングとスペ、グラス、エル、スカイ、ファレノのエキシビションマッチを特別公開だ！【ゲーム実況】",
+      "summary_ja": "オマエら！ 明日はついに第1回トレセン学園『Gang Beasts』最強決定戦だな！ と、その前に！ スーパーシードのキングと、リーグGで戦ったスペ、グラス、エル、スカイ、ファレノのエキシビションマッチを特別に公開だ！",
+      "title_zh": "Gang Beasts 表演赛",
+      "summary_zh": "特雷森学园首届 Gang Beasts 最强决战将在明天开幕。在正式比赛前，先特别公开超级种子选手圣王光环与G组参赛选手特别周、草上飞、神鹰、星云天空、蝴蝶兰的表演赛！",
       "localization_state": "complete"
     },
     {
@@ -190271,5 +190359,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "9959bb7ee61bed636ec1"
+  "build_id": "86df2a61db180b59335c"
 }

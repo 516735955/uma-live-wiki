@@ -81,10 +81,15 @@ def frame_signatures(lines, roles, people, organizations, characters, voices):
     accepted = [line['text'] for line in lines if line['confidence'] >= 85]
     if lines and all('top' in line for line in lines):
         known = {re.sub(r'\s+', '', role):role for role in roles}
+        inline = re.compile(r'^(?:' + '|'.join(re.escape(role) for role in sorted(roles, key=len, reverse=True)) + r')(?:\s+|[：:])\S')
         staff = []
         for column in (0, 1):
             active, bottom, height = '', 0, 1
             for line in sorted((line for line in lines if line['column']==column),key=lambda row:(row['top'],row['left'])):
+                if line['confidence'] >= 85 and inline.match(line['text']):
+                    staff.extend(staff_text_rows(line['text'], roles))
+                    active = ''
+                    continue
                 role = known.get(re.sub(r'\s+', '', line['text']))
                 if role and line['confidence'] >= 85:
                     active, bottom, height = role, line['bottom'], max(1,line['bottom']-line['top'])
@@ -146,14 +151,14 @@ def extract(resource, directory, run=command, recognize=ocr_image):
     video = select_video(metadata,end-start)
     with range_source(video['url'],{**metadata.get('http_headers',{}),**video.get('http_headers',{})}) as local:
         run(['ffmpeg','-nostdin','-v','error','-rw_timeout','15000000','-ss',str(start),'-i',local,
-             '-t',str(end-start),'-an','-vf','fps=1/2,scale=-2:720','-frames:v','90',
+             '-t',str(end-start),'-an','-vf','fps=2,scale=-2:720','-frames:v','340',
              str(directory/'frame-%03d.png')],timeout=240)
     observations = []
     for index, frame in enumerate(sorted(directory.glob('frame-*.png'))):
         if time.monotonic() - started >= 480:
             break
         try:
-            observations.append((start + index * 2, frame, recognize(frame)))
+            observations.append((start + index * .5, frame, recognize(frame)))
         except subprocess.TimeoutExpired:
             continue
     return observations

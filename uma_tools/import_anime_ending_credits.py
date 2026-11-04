@@ -169,6 +169,7 @@ def main():
                 if row["evidence_refs"] == [signature_ref] and not any(c.get("evidence_refs") for c in matches):
                     row.pop("evidence_refs")
                 existing.update(row)
+                existing.pop("auto_source", None)
                 for key in ("organization", "person_id"):
                     if key not in row:
                         existing.pop(key, None)
@@ -186,7 +187,7 @@ def main():
             checked_sources = {ref, *(s.get("source_ref", ref) for s in signatures)}
             obsolete = [c for c in credits if c.get("unit_id") == unit
                         and not work_scope
-                        and (c.get("source_ref", "").startswith("staff-transcript-") or
+                        and (c.get("source_ref", "").startswith(("staff-transcript-", "official-auto-" + unit)) or
                              c.get("source_ref") in checked_sources and
                              (role_key(c["role"], c.get("group", "")), identity_key(c), group_label(c.get("group", "")))
                              not in checked_staff)]
@@ -290,7 +291,8 @@ def main():
             creator_ids = [creator_names[normalized(name)] for name in names]
             cue_roles = {"作詞": ("lyricist",), "作曲": ("composer",), "編曲": ("arranger",),
                          "作詞・作曲": ("lyricist", "composer"),
-                         "作曲・編曲": ("composer", "arranger")}.get(cue["role"], ())
+                "作曲・編曲": ("composer", "arranger"),
+                "作詞・作曲・編曲": ("lyricist", "composer", "arranger")}.get(cue["role"], ())
             for creator_id in creator_ids:
                 creator = next(row for row in creators if row["id"] == creator_id)
                 creator["anime_music"] = True

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-d55640b582464103",
-  "generated_at": "2026-10-25T00:00:00+08:00",
+  "build_id": "anime-9a1b2674ce2ea478",
+  "generated_at": "2026-11-04T00:00:00+08:00",
   "targets": {
     "event": {
       "eventernote-2018-03-25-3": [
@@ -699,6 +699,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e17",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-tamamocross-va-0052",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タマモクロス",
+          "voice_actor_id": "va-0052",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "oguricap": [
@@ -1130,6 +1141,17 @@
           "source_type": "anime_work",
           "source_id": "anime-rttt",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-oguricap-va-0179",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "goldship": [
@@ -9800,6 +9822,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-inarione-va-0018",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "agnesdigital": [
@@ -15192,6 +15225,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-supercreek-va-0033",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "dicta_striker": [
@@ -15493,6 +15537,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-goldcity-va-0176",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "mrcb": [
@@ -17298,6 +17353,19 @@
           "source_id": "anime-umayuru-fullgate-e05",
           "work_id": "anime-umayuru-fullgate"
         }
+      ],
+      "bamboomemory": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-bamboomemory-va-0150",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "バンブーメモリー",
+          "voice_actor_id": "va-0150",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
+        }
       ]
     },
     "voice_actor": {
@@ -17576,6 +17644,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e17",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-tamamocross-va-0052",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "タマモクロス",
+          "voice_actor_id": "va-0052",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0179": [
@@ -18007,6 +18086,17 @@
           "source_type": "anime_work",
           "source_id": "anime-rttt",
           "work_id": "anime-rttt"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-oguricap-va-0179",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "オグリキャップ",
+          "voice_actor_id": "va-0179",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0009": [
@@ -26765,6 +26855,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-inarione-va-0018",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イナリワン",
+          "voice_actor_id": "va-0018",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0165": [
@@ -32179,6 +32280,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-supercreek-va-0033",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "スーパークリーク",
+          "voice_actor_id": "va-0033",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-auto-afa298a8ba3a": [
@@ -32480,6 +32592,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-movie-beginning-new-era-e01",
           "work_id": "anime-movie-beginning-new-era"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-goldcity-va-0176",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "ゴールドシチー",
+          "voice_actor_id": "va-0176",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0055": [
@@ -34285,6 +34408,19 @@
           "voice_actor_id": "va-0098",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e05",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0150": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e06-auto-cast-bamboomemory-va-0150",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "バンブーメモリー",
+          "voice_actor_id": "va-0150",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e06",
           "work_id": "anime-umayuru-fullgate"
         }
       ]
@@ -37156,6 +37292,17 @@
           "voice_actor_id": "",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e03",
+          "work_id": "anime-umayuru-fullgate"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e04-ending-music-song-aed14a1a3a-v-2954ef1177",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e04",
           "work_id": "anime-umayuru-fullgate"
         }
       ],

@@ -103,6 +103,9 @@ def expand_units(series_rows: list[dict[str, Any]], works_by_id: dict[str, dict[
             label = str(labels.get(key) or unit_label(unit_type, number))
             title_ja = str(titles_ja[number - 1]) if number <= len(titles_ja) else ""
             title_zh = str(titles_zh[number - 1]) if number <= len(titles_zh) else (title_ja or label)
+            detail = (series.get("details") or {}).get(key, {})
+            title_ja = str(detail.get("title_ja") or title_ja)
+            title_zh = str(detail.get("title_zh") or (titles_zh[number - 1] if number <= len(titles_zh) else "") or title_ja or label)
             unit_id = f"{work_id}-e{number:02d}"
             units.append({
                 "id": unit_id,
@@ -110,14 +113,14 @@ def expand_units(series_rows: list[dict[str, Any]], works_by_id: dict[str, dict[
                 "number": number,
                 "label": label,
                 "unit_type": unit_type,
-                "title_zh": title_zh,
-                "title_ja": title_ja,
                 "summary_zh": "",
                 "release_date": date_for(number, list(series.get("date_blocks") or [])),
                 "status": "released",
                 "stills": [],
                 "source_refs": list(series.get("source_refs") or []),
-                **(series.get("details") or {}).get(key, {}),
+                **detail,
+                "title_zh": title_zh,
+                "title_ja": title_ja,
             })
     return units
 

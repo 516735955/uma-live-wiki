@@ -15,6 +15,11 @@ from events_pipeline import program_discovery
 
 
 class AnimeIngestTests(unittest.TestCase):
+    def test_ending_inline_signature_keeps_its_own_role(self):
+        lines = [{'text':text,'confidence':99,'left':20,'top':index*30,'bottom':index*30+20,'column':0}
+                 for index,text in enumerate(['脚本  日高勝郎','絵コンテ  ささきみつる'])]
+        rows = credits.frame_signatures(lines, {'脚本','絵コンテ'}, set(), set(), {}, {})
+        self.assertEqual([(row['title'],row['name']) for row in rows], [('脚本','日高勝郎'),('絵コンテ','ささきみつる')])
     def test_ending_source_failure_retries_after_one_hour_and_recovers_to_daily_refresh(self):
         state = {'attempted_at': {}}
         documents = {name: {} for name in ('works','relations','asset_sources')}
@@ -192,7 +197,8 @@ class AnimeIngestTests(unittest.TestCase):
         from contextlib import nullcontext
         with tempfile.TemporaryDirectory() as directory, patch.object(credits,'range_source',return_value=nullcontext('http://127.0.0.1/video')):
             rows=credits.extract({'url':'https://example.test/official'},Path(directory),run=run,recognize=lambda path:[{'text':'監督 山本健','confidence':99}])
-            self.assertEqual([row[0] for row in rows],[150,152])
+            self.assertEqual([row[0] for row in rows],[150,150.5])
+        self.assertIn('fps=2,scale=-2:720', calls[1])
         self.assertIn('-ss',calls[1])
         self.assertIn('-t',calls[1])
         self.assertEqual(list(Path(directory).glob('*')),[])
