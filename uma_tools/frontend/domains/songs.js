@@ -27,6 +27,12 @@ export function createSongs(deps) {
 
   const songDbQuery = deps.ref("");
 
+  const songSearchQueuing = deps.ref(false);
+
+  const songSearchQueueNotice = deps.ref("");
+
+  let songSearchQueueNoticeTimer = 0;
+
   const songTotal = deps.ref(0);
 
   let songListRevision = 0;
@@ -349,6 +355,56 @@ export function createSongs(deps) {
     if (row) deps.addSongTrack(songDetail.value, row.version, row.release);
   }
 
+  function notifySongQueue(message) {
+    songSearchQueueNotice.value = message;
+    if (songSearchQueueNoticeTimer) clearTimeout(songSearchQueueNoticeTimer);
+    songSearchQueueNoticeTimer = setTimeout(function () {
+      songSearchQueueNotice.value = "";
+      songSearchQueueNoticeTimer = 0;
+    }, 3200);
+  }
+
+  function addSongSearchResults() {
+    if (songSearchQueuing.value) return;
+    const query = songDbQuery.value;
+    songSearchQueuing.value = true;
+    if (songSearchQueueNoticeTimer) {
+      clearTimeout(songSearchQueueNoticeTimer);
+      songSearchQueueNoticeTimer = 0;
+    }
+    songSearchQueueNotice.value = "";
+    return deps.api
+      .request(
+        "/api/catalog/songs" +
+          deps.api.query({ q: query, page: 1, page_size: 5000 }),
+      )
+      .then(function (data) {
+        const tracks = (data.items || [])
+          .map(function (song) {
+            const row = deps.playableSongRelease(song);
+            return row
+              ? deps.buildReleasePlayerTrack(song, row.version, row.release)
+              : null;
+          })
+          .filter(Boolean);
+        if (!tracks.length) {
+          notifySongQueue("没有可播放的歌曲");
+          return;
+        }
+        deps.playerController.enqueueTracks(
+          tracks,
+          query ? "搜索：" + query : "全部歌曲",
+        );
+        notifySongQueue("已加入 " + tracks.length + " 首");
+      })
+      .catch(function () {
+        notifySongQueue("加入失败，请重试");
+      })
+      .finally(function () {
+        songSearchQueuing.value = false;
+      });
+  }
+
   function toggleRelationSong(songId) {
     expandedRelationSongId.value =
       expandedRelationSongId.value === songId ? "" : songId;
@@ -644,6 +700,7 @@ export function createSongs(deps) {
   return {
     start,
     addSongPrimary,
+    addSongSearchResults,
     expandedRelationSongId,
     expandedSongCreditId,
     expandedSongReleaseId,
@@ -682,6 +739,8 @@ export function createSongs(deps) {
     songLyricVersionOptions,
     songLyricVersions,
     songLyricsApplicable,
+    songSearchQueueNotice,
+    songSearchQueuing,
     songSection,
     songSingerLabel,
     songTotal,

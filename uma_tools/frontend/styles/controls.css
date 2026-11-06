@@ -12,6 +12,30 @@ a:is(.album-card,.music-card-main,.creator-catalog-row,.event-catalog-row,.album
     flex-wrap: wrap;
 }
 .archive-toolbar.compact { max-width: 820px; margin-bottom: 18px; }
+.archive-toolbar > .archive-queue-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 46px;
+    padding: 0 18px;
+    border: 1px solid #cbd1e1;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ui-cobalt-deep);
+    font: inherit;
+    font-weight: 750;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease;
+}
+.archive-toolbar > .archive-queue-button:not(:disabled):hover {
+    border-color: var(--ui-orange);
+    color: var(--ui-orange);
+    box-shadow: 0 0 0 3px rgba(245,130,32,.13);
+}
+.archive-toolbar > .archive-queue-button:disabled { opacity: .55; cursor: default; }
+.archive-toolbar > .archive-queue-button svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .ui-search,
 .ui-select-control {
     min-height: 46px;

@@ -446,6 +446,11 @@ async function main() {
   for (const name of ['eventCancellation', 'eventSessionSummary', 'eventSessionImage']) {
     assert.ok(eventPage.bindings.includes(name), `${name} reaches the lazy-loaded page component`);
   }
+  const songsPage = {};
+  vm.runInNewContext(source('frontend/views/songs.js').replace(/export const /g, 'var ') + ';this.bindings = bindings;', songsPage);
+  for (const name of songsPage.bindings) {
+    assert.ok(name in app, `${name} resolves on the root view model`);
+  }
   console.log('frontend regressions passed');
 }
 

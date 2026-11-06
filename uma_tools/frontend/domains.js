@@ -247,6 +247,7 @@ export function createDomains(env) {
         ],
         player: [
           "addSongTrack",
+          "buildReleasePlayerTrack",
           "isActive",
           "playableSongRelease",
           "playerController",
