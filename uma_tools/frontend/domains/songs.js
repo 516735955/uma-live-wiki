@@ -395,7 +395,12 @@ export function createSongs(deps) {
           tracks,
           query ? "搜索：" + query : "全部歌曲",
         );
-        notifySongQueue("已加入 " + tracks.length + " 首");
+        const total = (data.items || []).length;
+        notifySongQueue(
+          total > tracks.length
+            ? "已加入 " + tracks.length + "/" + total + " 首"
+            : "已加入 " + tracks.length + " 首",
+        );
       })
       .catch(function () {
         notifySongQueue("加入失败，请重试");

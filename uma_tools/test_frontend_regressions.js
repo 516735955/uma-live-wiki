@@ -173,6 +173,24 @@ async function main() {
   const isolatedAlbums = context.createAlbums({...context.Vue,songsById:indexedSongs,songCatalog:context.Vue.ref({songs:[]})});
   isolatedAlbums.albumDetail.value={id:'wanted',name:'同名'};
   assert.strictEqual(isolatedAlbums.albumTrackSongId({name:'Song'},0), 'Song', 'a conflicting album ID cannot resolve the other album song identity');
+  const queuedBlocks = [];
+  const queueAllSongs = context.createSongs({...context.Vue,
+    eventSongs: context.Vue.ref([]),
+    api:{query:()=>'?q=x&page=1&page_size=5000',request:async()=>({items:[
+      {id:'with-audio',title:'A',playable:{audio_url:'a.mp3',version_id:'va',version_title:'A'}},
+      {id:'no-audio',title:'B'},
+    ]})},
+    playableSongRelease:(song)=>window.UmaCatalog.playableRecording(song),
+    buildReleasePlayerTrack:(song,version,release)=>({id:song.id,versionId:version.id,url:release.audio_url,name:song.title}),
+    playerController:{enqueueTracks:(tracks,label)=>{queuedBlocks.push({tracks,label});return Promise.resolve(true);}},
+  });
+  queueAllSongs.songDbQuery.value='爱';
+  await queueAllSongs.addSongSearchResults();
+  assert.strictEqual(queuedBlocks.length, 1, 'one search queues one player block');
+  assert.strictEqual(queuedBlocks[0].tracks.length, 1, 'songs without audio stay out of the queue');
+  assert.strictEqual(queuedBlocks[0].label, '搜索：爱', 'queued block keeps the active search context');
+  assert.strictEqual(queueAllSongs.songSearchQueueNotice.value, '已加入 1/2 首', 'the notice explains skipped unplayable results');
+  assert.strictEqual(queueAllSongs.songSearchQueuing.value, false);
 
   const vocalists = [{voice_actor_id:'other-a'}, {voice_actor_id:'current'}, {voice_actor_id:'other-b'}];
   assert.deepStrictEqual(Array.from(app.relationReleaseVocalists({vocalists}, 'voice_actor', 'current'), row => row.voice_actor_id),
