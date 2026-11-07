@@ -208,6 +208,11 @@
       playLabel: { type: String, default: '播放' },
       addLabel: { type: String, default: '加入播放列表' },
       size: { type: String, default: 'regular' },
+      addOnly: { type: Boolean, default: false },
+      labelled: { type: Boolean, default: false },
+      busy: { type: Boolean, default: false },
+      disabled: { type: Boolean, default: false },
+      notice: { type: String, default: '' },
       playing: { type: Boolean, default: false }
     },
     emits: ['play', 'add'],
@@ -215,17 +220,19 @@
     beforeUnmount() { cancelAdded(this); },
     methods: {
       add() {
+        if (this.busy || this.disabled) return;
         this.$emit('add');
-        flashAdded(this, added => { this.added = added; });
+        if (!this.labelled) flashAdded(this, added => { this.added = added; });
       }
     },
     template: `
-      <span class="entity-actions" :class="'entity-actions-' + size">
-        <button class="entity-action entity-action-play" type="button" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" :title="playing?'暂停':playLabel" @click.stop="$emit('play')">
+      <span class="entity-actions" :class="['entity-actions-' + size, {'entity-actions-labelled':labelled}]">
+        <button v-if="!addOnly" class="entity-action entity-action-play" type="button" :disabled="disabled || busy" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" :title="playing?'暂停':playLabel" @click.stop="$emit('play')">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="playing?'M7 5h4v14H7zM14 5h4v14h-4z':'m8 5 11 7-11 7z'"/></svg>
         </button>
-        <button class="entity-action entity-action-add" :class="{'entity-action-added':added}" type="button" :aria-label="added?'已加入播放列表':addLabel" :title="added?'已加入播放列表':addLabel" @click.stop="add">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="added?'m5 12 4 4 10-10':'M12 5v14M5 12h14'"/></svg>
+        <button class="entity-action entity-action-add" :class="{'entity-action-added':labelled ? notice.startsWith('已加入') : added}" type="button" :disabled="disabled || busy" :aria-busy="busy" :aria-label="labelled ? (busy ? '加入中…' : (notice || addLabel)) : (added?'已加入播放列表':addLabel)" :title="$attrs.title || (added?'已加入播放列表':addLabel)" @click.stop="add">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="(labelled ? notice.startsWith('已加入') : added)?'m5 12 4 4 10-10':'M12 5v14M5 12h14'"/></svg>
+          <span v-if="labelled" aria-live="polite">{{ busy ? '加入中…' : (notice || addLabel) }}</span>
         </button>
       </span>`
   };

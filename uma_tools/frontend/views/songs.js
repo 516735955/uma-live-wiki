@@ -5,7 +5,7 @@ export const template = `
             <template v-if="!songDetail">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="songDbQuery" aria-label="搜索曲名、版本、创作者或歌词" placeholder="搜索曲名、版本、创作者或歌词" autocomplete="off"><button v-if="songDbQuery" type="button" @click.prevent="songDbQuery=''" aria-label="清空搜索">×</button></label>
-                    <button class="archive-queue-button" type="button" :disabled="songSearchQueuing || songCatalogLoading || !songTotal" :title="songDbQuery ? '把当前搜索结果全部加入播放列表（仅可播放曲目）' : '把全部歌曲加入播放列表（仅可播放曲目）'" @click="addSongSearchResults"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>{{ songSearchQueuing ? '加入中…' : (songSearchQueueNotice || '全部加入播放列表') }}</span></button>
+                    <entity-actions add-only labelled add-label="全部加入播放列表" :busy="songSearchQueuing" :disabled="songCatalogLoading || !songTotal" :notice="songSearchQueueNotice" :title="songDbQuery ? '把当前搜索结果全部加入播放列表（仅可播放曲目）' : '把全部歌曲加入播放列表（仅可播放曲目）'" @add="addSongSearchResults"></entity-actions>
                 </div>
                 <div id="songArchiveTop" class="music-card-grid song-card-grid">
                     <template v-if="songCatalogLoading && !songCatalog.songs.length">

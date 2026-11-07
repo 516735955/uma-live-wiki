@@ -192,6 +192,46 @@ async function main() {
   assert.strictEqual(queueAllSongs.songSearchQueueNotice.value, '已加入 1/2 首', 'the notice explains skipped unplayable results');
   assert.strictEqual(queueAllSongs.songSearchQueuing.value, false);
 
+  function queueFixture(request, enqueueTracks) {
+    return context.createSongs({...context.Vue,
+      eventSongs:context.Vue.ref([]), api:{query:p=>'?' + new URLSearchParams(p),request},
+      playableSongRelease:song=>window.UmaCatalog.playableRecording(song),
+      buildReleasePlayerTrack:(song,version,release)=>({id:song.id,url:release.audio_url}),
+      playerController:{enqueueTracks},
+    });
+  }
+  const pagedBlocks = [];
+  const pagedQueue = queueFixture(async url=>{
+    const page = Number(new URL(url,'http://localhost').searchParams.get('page'));
+    return {page,total:3,build_id:'one',items:[{id:'song-'+page,playable:{audio_url:page+'.mp3'}}]};
+  },async tracks=>{pagedBlocks.push(tracks);return true;});
+  await pagedQueue.addSongSearchResults();
+  assert.deepStrictEqual(Array.from(pagedBlocks[0],t=>t.id),['song-1','song-2','song-3'],'all pages enqueue once in catalog order');
+  let failedEnqueues = 0;
+  const failedQueue = queueFixture(async url=>{
+    if (url.includes('page=2')) throw new Error('page unavailable');
+    return {page:1,total:2,items:[{id:'one',playable:{audio_url:'a.mp3'}}]};
+  },()=>{failedEnqueues++;return true;});
+  await failedQueue.addSongSearchResults();
+  assert.strictEqual(failedEnqueues,0,'a later page failure never enqueues partial results');
+  assert.strictEqual(failedQueue.songSearchQueueNotice.value,'加入失败，请重试');
+  const pendingPage = deferred();
+  const changedQueue = queueFixture(()=>pendingPage.promise,()=>{failedEnqueues++;return true;});
+  const changedWork = changedQueue.addSongSearchResults();
+  changedQueue.songDbQuery.value='new query';
+  pendingPage.resolve({items:[{id:'old',playable:{audio_url:'a.mp3'}}]});
+  await changedWork;
+  assert.strictEqual(failedEnqueues,0,'a search change cancels the old request');
+  const enqueueResult = deferred();
+  const awaitingQueue = queueFixture(async()=>({items:[{id:'one',playable:{audio_url:'a.mp3'}}]}),()=>enqueueResult.promise);
+  const awaitingWork = awaitingQueue.addSongSearchResults();
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.strictEqual(awaitingQueue.songSearchQueuing.value,true,'the button stays busy until the player accepts the block');
+  assert.strictEqual(awaitingQueue.songSearchQueueNotice.value,'');
+  enqueueResult.resolve(false);
+  await awaitingWork;
+  assert.strictEqual(awaitingQueue.songSearchQueueNotice.value,'加入失败，请重试','player rejection never reports success');
+
   const vocalists = [{voice_actor_id:'other-a'}, {voice_actor_id:'current'}, {voice_actor_id:'other-b'}];
   assert.deepStrictEqual(Array.from(app.relationReleaseVocalists({vocalists}, 'voice_actor', 'current'), row => row.voice_actor_id),
     ['current', 'other-a', 'other-b'], 'person recordings keep the whole ensemble with the current person first');

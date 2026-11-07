@@ -377,6 +377,19 @@
     transition: color 160ms ease,background 160ms ease,border-color 160ms ease;
 }
 .entity-actions-hero .entity-action { width: 44px; height: 44px; }
+.entity-actions-labelled .entity-action-add {
+    display: inline-flex;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.entity-action:disabled { opacity: .55; cursor: default; }
 .entity-actions-compact { margin-top: 0; }
 .entity-actions-compact .entity-action { width: 36px; height: 36px; }
 .entity-action svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }

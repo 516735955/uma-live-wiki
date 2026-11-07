@@ -364,22 +364,44 @@ export function createSongs(deps) {
     }, 3200);
   }
 
-  function addSongSearchResults() {
+  async function addSongSearchResults() {
     if (songSearchQueuing.value) return;
     const query = songDbQuery.value;
+    const pathname = window.location.pathname;
+    const current = () => songDbQuery.value === query && window.location.pathname === pathname;
     songSearchQueuing.value = true;
     if (songSearchQueueNoticeTimer) {
       clearTimeout(songSearchQueueNoticeTimer);
       songSearchQueueNoticeTimer = 0;
     }
     songSearchQueueNotice.value = "";
-    return deps.api
-      .request(
-        "/api/catalog/songs" +
-          deps.api.query({ q: query, page: 1, page_size: 5000 }),
-      )
-      .then(function (data) {
-        const tracks = (data.items || [])
+    try {
+      const songs = [];
+      const seen = new Set();
+      let buildId, total, received = 0;
+      for (let page = 1; ; page++) {
+        const data = await deps.api.request("/api/catalog/songs" +
+          deps.api.query({ q: query, page, page_size: 500 }));
+        if (!current()) return;
+        if (!Array.isArray(data.items) || (data.page != null && data.page !== page)) throw new Error("Invalid song page");
+        if (page === 1) {
+          buildId = data.build_id;
+          total = data.total == null ? data.items.length : data.total;
+        } else if (data.build_id !== buildId || data.total !== total) {
+          notifySongQueue("结果已更新，请重试");
+          return;
+        }
+        if (!Number.isSafeInteger(total) || total < 0 || (!data.items.length && received < total)) throw new Error("Incomplete song results");
+        received += data.items.length;
+        for (const song of data.items) {
+          if (!song.id || seen.has(song.id)) throw new Error("Duplicate song result");
+          seen.add(song.id);
+          songs.push(song);
+        }
+        if (received >= total) break;
+      }
+      if (received !== total) throw new Error("Unexpected song count");
+      const tracks = songs
           .map(function (song) {
             const row = deps.playableSongRelease(song);
             return row
@@ -391,23 +413,22 @@ export function createSongs(deps) {
           notifySongQueue("没有可播放的歌曲");
           return;
         }
-        deps.playerController.enqueueTracks(
+        const accepted = await deps.playerController.enqueueTracks(
           tracks,
           query ? "搜索：" + query : "全部歌曲",
         );
-        const total = (data.items || []).length;
+        if (!current()) return;
+        if (accepted === false) throw new Error("Queue rejected");
         notifySongQueue(
           total > tracks.length
             ? "已加入 " + tracks.length + "/" + total + " 首"
             : "已加入 " + tracks.length + " 首",
         );
-      })
-      .catch(function () {
-        notifySongQueue("加入失败，请重试");
-      })
-      .finally(function () {
-        songSearchQueuing.value = false;
-      });
+    } catch (_) {
+      if (current()) notifySongQueue("加入失败，请重试");
+    } finally {
+      songSearchQueuing.value = false;
+    }
   }
 
   function toggleRelationSong(songId) {
