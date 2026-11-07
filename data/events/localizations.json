@@ -2,6 +2,15 @@
   "schema_version": 1,
   "source": "data/events_catalog.json",
   "records": {
+    "official-special-20261106-title-6f3c9adfaf14": {
+      "title_ja": "【ウマ娘の日常】「爽籟の日和」編",
+      "title_zh": "赛马娘的日常：秋风清响",
+      "title_translator": "assistant",
+      "summary_ja": "ヤマニンゼファー、サクラバクシンオー、ミホノブルボン、セイウンスカイがニシノフラワーを待つ。",
+      "summary_zh": "也文摄辉、樱花进王、美浦波旁和青云天空聚在一起，等西野花到来。",
+      "summary_translator": "assistant",
+      "summary_sources": ["https://x.com/pakatube/status/2118615015838429673"]
+    },
     "eventernote-2027-02-06": {
       "title_ja": "『ウマ娘 プリティーダービー』WINNING LIVE 37 発売記念イベント",
       "title_zh": "《赛马娘 Pretty Derby》WINNING LIVE 37 发售纪念活动",

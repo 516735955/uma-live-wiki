@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T01:55:50+00:00",
+  "generated_at": "2026-11-07T02:52:21+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -12,17 +12,17 @@
     }
   },
   "coverage": {
-    "events": 515,
+    "events": 516,
     "by_kind": {
       "concert": 46,
-      "official_program": 270,
+      "official_program": 271,
       "onsite": 199
     },
     "by_mode": {
-      "online": 262,
+      "online": 263,
       "onsite": 253
     },
-    "official_programs": 253,
+    "official_programs": 254,
     "unresolved_cast_names": 0
   },
   "series": [
@@ -4420,6 +4420,92 @@
       "summary_zh": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
       "localization_state": "complete",
       "display_title": "WINNING LIVE 35 发售纪念活动"
+    },
+    {
+      "id": "official-special-20261106-title-6f3c9adfaf14",
+      "title": "赛马娘的日常：秋风清响",
+      "date": "2026-11-06",
+      "end_date": "2026-11-06",
+      "kind": "official_program",
+      "mode": "online",
+      "series_id": "official-special",
+      "venue": "在线播出",
+      "cast_status": "character_only",
+      "cast": [],
+      "character_ids": [
+        "sakurabakushino",
+        "yamaninzephyr",
+        "nishinoflower",
+        "seiunsky",
+        "mihonobourbon"
+      ],
+      "sessions": [
+        {
+          "id": "official-special-20261106-title-6f3c9adfaf14-session-1",
+          "label": "本期节目",
+          "date": "2026-11-06",
+          "songs": [],
+          "character_ids": [
+            "sakurabakushino",
+            "yamaninzephyr",
+            "nishinoflower",
+            "seiunsky",
+            "mihonobourbon"
+          ],
+          "cast": [],
+          "time_precision": "day",
+          "published_date": "2026-11-06",
+          "publication_source_url": "https://x.com/pakatube/status/2118615015838429673",
+          "id_aliases": [],
+          "setlist_status": "none"
+        }
+      ],
+      "media": [
+        {
+          "url": "https://www.youtube.com/watch?v=pseR2_Kt6fU",
+          "label": "官方视频",
+          "video_id": "pseR2_Kt6fU",
+          "duration": null
+        }
+      ],
+      "sources": [
+        {
+          "kind": "official_youtube",
+          "label": "官方 YouTube",
+          "url": "https://www.youtube.com/watch?v=pseR2_Kt6fU"
+        },
+        {
+          "kind": "official_social",
+          "label": "官方发布帖",
+          "url": "https://x.com/pakatube/status/2118615015838429673"
+        }
+      ],
+      "legacy_url": "",
+      "image": "https://i.ytimg.com/vi/pseR2_Kt6fU/hqdefault.jpg",
+      "summary": "也文摄辉、樱花进王、美浦波旁和青云天空聚在一起，等西野花到来。",
+      "schedule_status": "scheduled",
+      "metadata_status": "complete",
+      "title_aliases": [],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "venue_raw": "在线播出",
+      "venue_id": "",
+      "venue_zh": "在线播出",
+      "venue_ja": "在线播出",
+      "venue_city": "",
+      "venue_country": "",
+      "venue_aliases": [
+        "在线播出"
+      ],
+      "venue_sources": [],
+      "time_source": null,
+      "time_precision": "day",
+      "title_ja": "【ウマ娘の日常】「爽籟の日和」編",
+      "summary_ja": "ヤマニンゼファー、サクラバクシンオー、ミホノブルボン、セイウンスカイがニシノフラワーを待つ。",
+      "title_zh": "赛马娘的日常：秋风清响",
+      "summary_zh": "也文摄辉、樱花进王、美浦波旁和青云天空聚在一起，等西野花到来。",
+      "localization_state": "complete"
     },
     {
       "id": "pakatube-20261031-gang-beasts",
@@ -190355,5 +190441,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "1b7059a739790e9df239"
+  "build_id": "eb304980dc9d4e8267dd"
 }

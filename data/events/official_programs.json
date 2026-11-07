@@ -4,9 +4,7 @@
   "refreshed_at": "2026-11-06T23:47:16+00:00",
   "coverage": {
     "official_youtube_refresh": "metadata_recheck_pending",
-    "source_errors": [
-      "official video metadata unavailable: pseR2_Kt6fU: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official gameplay feed: HTTP Error 404: Not Found"
-    ],
+    "source_errors": [],
     "metadata_recheck_pending": [
       "metadata recheck deferred; accepted archive retained: fxXEJ_DEdW0",
       "metadata recheck deferred; accepted archive retained: fwY396b2bGo",
@@ -1256,6 +1254,29 @@
       "media": [],
       "metadata_checked_at": 1792771749.2495234,
       "summary_translation_status": "stale"
+    },
+    {
+      "id": "official-special-20261106-title-6f3c9adfaf14",
+      "series_id": "official-special",
+      "title": "【ウマ娘の日常】「爽籟の日和」編",
+      "date": "2026-11-06",
+      "published_date": "2026-11-06",
+      "time_precision": "day",
+      "publication_source_url": "https://x.com/pakatube/status/2118615015838429673",
+      "video_id": "pseR2_Kt6fU",
+      "url": "https://www.youtube.com/watch?v=pseR2_Kt6fU",
+      "thumbnail": "https://i.ytimg.com/vi/pseR2_Kt6fU/hqdefault.jpg",
+      "cast_status": "character_only",
+      "cast": [],
+      "characters": [],
+      "sessions": [],
+      "summary": "ヤマニンゼファー、サクラバクシンオー、ミホノブルボン、セイウンスカイがニシノフラワーを待つ。",
+      "source_kind": "official_youtube",
+      "source_url": "https://www.youtube.com/watch?v=pseR2_Kt6fU",
+      "sources": [
+        {"kind": "official_youtube", "label": "官方 YouTube", "url": "https://www.youtube.com/watch?v=pseR2_Kt6fU"},
+        {"kind": "official_social", "label": "官方发布帖", "url": "https://x.com/pakatube/status/2118615015838429673"}
+      ]
     },
     {
       "id": "official-special-20261017-re-dive",

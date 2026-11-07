@@ -201,10 +201,10 @@ def public_official_feed_metadata(video_id: str, expected_channel: str) -> dict:
     raise ValueError('video is outside the current official feed')
 
 
-def public_game_feed_metadata(video_id: str, expected_channel: str) -> dict:
-    """Use feed publication as a broadcast time only for prerecorded gameplay."""
+def public_prerecorded_feed_metadata(video_id: str, expected_channel: str) -> dict:
+    """Use publication metadata only for prerecorded videos with a known format."""
     result = public_official_feed_metadata(video_id, expected_channel)
-    if '【ゲーム実況】' not in result['title'] or pipeline_common.re.search(
+    if not any(label in result['title'] for label in ('【ゲーム実況】', '【ウマ娘の日常】')) or pipeline_common.re.search(
             r'生放送|生配信|ライブ配信|プレミア|(?:放送|配信|公開)(?:日時|予定)', result['title'] + result['description']):
         raise ValueError('feed publication does not establish a broadcast date')
     return result
@@ -266,12 +266,12 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, e
     except (OSError, ValueError, TimeoutError, AttributeError) as error:
         reasons.append('official watch page: ' + str(error)[:180])
     try:
-        metadata = public_game_feed_metadata(video_id, expected_channel)
+        metadata = public_prerecorded_feed_metadata(video_id, expected_channel)
         pipeline_common.atomic_json(cache_file, metadata)
         METADATA_ERRORS.pop(video_id, None)
         return metadata
     except (OSError, ValueError, TimeoutError, _xml.ParseError) as error:
-        reasons.append('official gameplay feed: ' + str(error)[:180])
+        reasons.append('official prerecorded feed: ' + str(error)[:180])
     METADATA_ERRORS[video_id] = '; '.join(reasons)
     if stale:
         stale['_metadata_stale'] = True
