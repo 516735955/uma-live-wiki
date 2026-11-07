@@ -39,7 +39,7 @@ class AnimeIngestTests(unittest.TestCase):
         documents={key:{} for key in ('works','units','relations','staff','people','source_registry','watch_resources','asset_sources','ending_credits')}
         episode={'work_id':'work','number':1,'staff_status':'complete','cast':[]}
         documents.update(units={'series':[{'work_id':'work','released_count':1,'published_numbers':[1]}]},
-                         staff={'credits':[]},people={'people':[]},ending_credits={'episodes':[episode]},
+                         staff={'credits':[]},relations={'relations':[]},people={'people':[]},ending_credits={'episodes':[episode]},
                          watch_resources={'resources':[{'authority':'official','content_type':'full_episode','status':'active',
                              'scope':{'id':'work-e01'},'url':'https://example.test/episode'}]})
         def read(file,*args):
@@ -53,6 +53,21 @@ class AnimeIngestTests(unittest.TestCase):
             extract.assert_not_called()
             self.assertNotIn('cast_status',episode, 'unverified cast must not be marked complete')
 
+    def test_reviewed_unit_with_archived_staff_and_cast_skips_the_video(self):
+        docs = {
+            'ending_credits': {'episodes': []},
+            'units': {'series': [{'work_id':'work', 'published_numbers':[1],
+                                  'details': {'1': {'staff_status':'complete', 'cast_status':'complete'}}}]},
+            'staff': {'credits': [{'unit_id':'work-e01', 'role':'脚本', 'name':'作者'}]},
+            'relations': {'relations': [{'source_type':'anime_unit', 'source_id':'work-e01',
+                                         'relation_type':'credited_cast'}]},
+            'watch_resources': {'resources': [{'authority':'official', 'content_type':'full_episode',
+                                               'status':'active', 'scope':{'id':'work-e01'}}]},
+        }
+        self.assertEqual(credits.ending_jobs(docs, {}, {}, 100000)[0], [])
+        docs['relations']['relations'].clear()
+        self.assertEqual(len(credits.ending_jobs(docs, {}, {}, 100000)[0]), 1)
+
     def test_ending_inline_signature_keeps_its_own_role(self):
         lines = [{'text':text,'confidence':99,'left':20,'top':index*30,'bottom':index*30+20,'column':0}
                  for index,text in enumerate(['脚本  日高勝郎','絵コンテ  ささきみつる'])]
@@ -60,9 +75,9 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertEqual([(row['title'],row['name']) for row in rows], [('脚本','日高勝郎'),('絵コンテ','ささきみつる')])
     def test_ending_source_failure_retries_after_one_hour_and_recovers_to_daily_refresh(self):
         state = {'attempted_at': {}}
-        documents = {name: {} for name in ('works','relations','asset_sources')}
+        documents = {name: {} for name in ('works','asset_sources')}
         documents.update(units={'series':[{'work_id':'work','released_count':1}]},
-                         staff={'credits':[]}, people={'people':[]}, source_registry={'sources':[]},
+                         staff={'credits':[]}, relations={'relations':[]}, people={'people':[]}, source_registry={'sources':[]},
                          ending_credits={'episodes':[]}, voice_actor_profiles={'voice_actors':[]},
                          watch_resources={'resources':[{'authority':'official','content_type':'full_episode',
                            'status':'active','scope':{'id':'work-e01'},'url':'https://example.test/episode'}]})

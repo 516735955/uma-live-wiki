@@ -171,6 +171,30 @@ def cleanup_interrupted():
             shutil.rmtree(directory)
 
 
+def ending_jobs(documents, attempts, next_attempts, now):
+    complete = {(row['work_id'],int(row['number'])) for row in documents['ending_credits']['episodes']
+                if row.get('staff_status') == 'complete' and row.get('cast_status') in (None, 'complete')}
+    # Legacy curated full rolls predate cast_status. Missing cast metadata stays
+    # available for review; it does not justify downloading the same full roll again.
+    known_units = {f"{series['work_id']}-e{int(number):02d}":(series['work_id'],int(number))
+                   for series in documents['units']['series'] for number in series.get('published_numbers',range(1,int(series.get('released_count',0))+1))}
+    staff_units = {row.get('unit_id') for row in documents['staff']['credits']}
+    cast_units = {row.get('source_id') for row in documents['relations']['relations']
+                  if row.get('source_type') == 'anime_unit' and row.get('relation_type') == 'credited_cast'}
+    details = {series['work_id']:series.get('details', {}) for series in documents['units']['series']}
+    for unit_id in known_units.keys() & staff_units & cast_units:
+        work_id, number = known_units[unit_id]
+        detail = details[work_id].get(str(number), {})
+        if detail.get('staff_status') == detail.get('cast_status') == 'complete':
+            complete.add((work_id, number))
+    jobs = [row for row in documents['watch_resources']['resources'] if row.get('authority') == 'official'
+            and row.get('content_type') == 'full_episode' and row.get('status') == 'active'
+            and row.get('scope',{}).get('id') in known_units and known_units[row['scope']['id']] not in complete
+            and now >= next_attempts.get(row['scope']['id'], attempts.get(row['scope']['id'],0) + 86400)]
+    jobs.sort(key=lambda row:attempts.get(row['scope']['id'],0))
+    return jobs, known_units
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', action='store_true')
@@ -181,17 +205,7 @@ def main():
     state = read_json(STATE, {'attempted_at':{}})
     attempts = state.setdefault('attempted_at', {})
     next_attempts = state.setdefault('next_attempt_at', {})
-    complete = {(row['work_id'],int(row['number'])) for row in documents['ending_credits']['episodes']
-                if row.get('staff_status') == 'complete' and row.get('cast_status') in (None, 'complete')}
-    # Legacy curated full rolls predate cast_status. Missing cast metadata stays
-    # available for review; it does not justify downloading the same full roll again.
-    known_units = {f"{series['work_id']}-e{int(number):02d}":(series['work_id'],int(number))
-                   for series in documents['units']['series'] for number in series.get('published_numbers',range(1,int(series.get('released_count',0))+1))}
-    jobs = [row for row in documents['watch_resources']['resources'] if row.get('authority') == 'official'
-            and row.get('content_type') == 'full_episode' and row.get('status') == 'active'
-            and row.get('scope',{}).get('id') in known_units and known_units[row['scope']['id']] not in complete
-            and time.time() >= next_attempts.get(row['scope']['id'], attempts.get(row['scope']['id'],0) + 86400)]
-    jobs.sort(key=lambda row:attempts.get(row['scope']['id'],0))
+    jobs, known_units = ending_jobs(documents, attempts, next_attempts, time.time())
     if jobs and any(not shutil.which(tool) for tool in ('yt-dlp','ffmpeg','tesseract')):
         raise RuntimeError('ending collector requires yt-dlp, ffmpeg and tesseract')
     roles = set(ROLES) | {row['role'] for row in documents['staff']['credits']}
@@ -201,7 +215,7 @@ def main():
     voices = unique_names(read_json(ROOT / 'data/voice_actor_profiles.json')['voice_actors'],lambda row:[person_name_key(row['identity'].get('ja',''))])
     cleanup_interrupted()
     failures = []
-    network_failed = False
+    youtube_unavailable = False
     def checkpoint():
         if not args.dry_run:
             for name in names:
@@ -212,8 +226,8 @@ def main():
         attempts[uid] = time.time()
         next_attempts[uid] = attempts[uid] + 86400
         try:
-            if network_failed and re.search(r'youtube\.com|youtu\.be', resource['url']):
-                raise ValueError('public video network unavailable in this update; retry later')
+            if youtube_unavailable and re.search(r'youtube\.com|youtu\.be', resource['url']):
+                raise ValueError('YouTube unavailable in this update; retry later')
             with tempfile.TemporaryDirectory(prefix='job-',dir=TEMP) as directory:
                 observations = extract(resource, Path(directory))
                 signatures = consensus([(position,frame,frame_signatures(lines,roles,people,organizations,characters,voices))
@@ -250,8 +264,8 @@ def main():
             failures.append(uid)
             next_attempts[uid] = time.time() + 3600
             reason = error_reason(error)
-            if 'network' in reason and re.search(r'youtube\.com|youtu\.be', resource['url']):
-                network_failed = True
+            if ('network' in reason or 'bot challenge' in reason) and re.search(r'youtube\.com|youtu\.be', resource['url']):
+                youtube_unavailable = True
             print('ending source retryable:',uid,type(error).__name__,reason,flush=True)
         checkpoint()
     if not jobs:

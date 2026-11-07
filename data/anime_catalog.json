@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-a513ad7b9793d1fb",
-  "generated_at": "2026-11-04T00:00:00+08:00",
+  "build_id": "anime-4d94859e7cbcc020",
+  "generated_at": "2026-11-07T00:00:00+08:00",
   "coverage": {
     "works": 11,
     "units": 129,
@@ -4184,7 +4184,8 @@
       "stills": [],
       "source_refs": [
         "official-story-anime-umayuru-e21",
-        "official-ending-anime-umayuru-e21"
+        "official-ending-anime-umayuru-e21",
+        "verified-ending-copy-anime-umayuru-e21"
       ],
       "title_ja": "ファイン屋ちゃんねる！",
       "summary_ja": "ラーメン系ウマチューバ―になりたいファインモーション。 いつも通り付き合わされるエアシャカールだが…",
@@ -4202,6 +4203,7 @@
         }
       ],
       "staff_status": "complete",
+      "cast_status": "complete",
       "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e21.webp",
       "cover_original": "https://i.ytimg.com/vi/HmRbWlbXtIY/maxresdefault.jpg",
       "cover_source_ref": "official-story-anime-umayuru-e21",
@@ -4254,7 +4256,8 @@
       "stills": [],
       "source_refs": [
         "official-story-anime-umayuru-e23",
-        "official-ending-anime-umayuru-e23"
+        "official-ending-anime-umayuru-e23",
+        "verified-ending-copy-anime-umayuru-e23"
       ],
       "title_ja": "Shall we ダービー？",
       "summary_ja": "お城の中を散歩中のアグネスデジタル。 そこにシンボリルドルフ、シリウスシンボリ、 シンボリクリスエスの三王子が次々とやって来て…",
@@ -4272,6 +4275,7 @@
         }
       ],
       "staff_status": "complete",
+      "cast_status": "complete",
       "cover": "/uma_tools/img/anime/episodes/anime-umayuru-e23.webp",
       "cover_original": "https://i.ytimg.com/vi/lS54NCyHxko/maxresdefault.jpg",
       "cover_source_ref": "official-story-anime-umayuru-e23",
@@ -588887,6 +588891,22 @@
       "url": "https://www.youtube.com/watch?v=lS54NCyHxko",
       "label": "うまゆる 第23話 公式映像片尾",
       "observed_at": "2026-10-03"
+    },
+    {
+      "id": "verified-ending-copy-anime-umayuru-e21",
+      "kind": "public_video_copy",
+      "label": "原片片尾逐帧核对副本",
+      "url": "https://www.bilibili.com/video/BV16kek6VEBN/?t=3756",
+      "observed_at": "2026-11-07",
+      "note": "仅用于核对本集片尾署名；官方观看入口不变。"
+    },
+    {
+      "id": "verified-ending-copy-anime-umayuru-e23",
+      "kind": "public_video_copy",
+      "label": "原片片尾逐帧核对副本",
+      "url": "https://www.bilibili.com/video/BV16kek6VEBN/?t=4116",
+      "observed_at": "2026-11-07",
+      "note": "仅用于核对本集片尾署名；官方观看入口不变。"
     },
     {
       "id": "official-story-anime-rttt-e01",
