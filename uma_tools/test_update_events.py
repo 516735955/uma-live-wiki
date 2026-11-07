@@ -16,6 +16,21 @@ SPEC.loader.exec_module(UPDATE_EVENTS)
 
 
 class EventPipelineTest(unittest.TestCase):
+    def test_archive_empty_guest_marker_is_not_a_person(self):
+        from events_pipeline import archives
+        def rows(source, caption):
+            if caption != 'PakaLive TV Dash Volumes':
+                return []
+            return [
+                ['8', 'Nov 1, 2026', '', '', '', 'N/A'],
+                ['9', 'Nov 2, 2026', '', '', '', 'Takeshi Itazu (Guest)'],
+            ]
+        with mock.patch.object(archives.pipeline_common, 'fetch_text_url', return_value=''), \
+             mock.patch.object(archives, 'wiki_table_rows', side_effect=rows):
+            programs = archives.historical_programs()
+        self.assertEqual(programs[0]['cast'], [])
+        self.assertEqual(programs[1]['cast'][0]['name'], '板津雄志')
+
     def test_credited_name_aliases_merge_without_resolving_guests_by_role(self):
         identities = UPDATE_EVENTS.IdentityIndex(
             [{'id': 'oguricap', 'zh': '小栗帽', 'ja': 'オグリキャップ', 'en': 'Oguri Cap', 'cv': '高柳知葉', 'cv_zh': '高柳知叶'}],

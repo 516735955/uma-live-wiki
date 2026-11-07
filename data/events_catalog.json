@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T23:50:17+00:00",
+  "generated_at": "2026-11-07T01:55:50+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -4931,22 +4931,6 @@
               "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "N/A",
-          "character_id": "",
-          "role": "现实嘉宾",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "unresolved_cast",
-          "resolution": "unresolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
-            }
-          ]
         }
       ],
       "character_ids": [],
@@ -7345,22 +7329,6 @@
             {
               "kind": "official_youtube",
               "url": "https://www.youtube.com/watch?v=CHDZJgHuiGo"
-            }
-          ]
-        },
-        {
-          "voice_actor_id": "",
-          "name": "N/A",
-          "character_id": "",
-          "role": "现实嘉宾",
-          "evidence": "community_archive",
-          "source_url": "https://umamusu.wiki/PakaLive_TV_Dash",
-          "person_type": "unresolved_cast",
-          "resolution": "unresolved",
-          "evidence_sources": [
-            {
-              "kind": "community_archive",
-              "url": "https://umamusu.wiki/PakaLive_TV_Dash"
             }
           ]
         }
@@ -190387,5 +190355,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "4790c641d5365463a0aa"
+  "build_id": "1b7059a739790e9df239"
 }

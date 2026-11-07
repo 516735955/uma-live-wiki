@@ -206,7 +206,7 @@ def historical_programs() -> list[dict[str, pipeline_common.Any]]:
         date = wiki_archive_date(cells[1])
         cast = historical_cast(" ".join(cells[3:5]), characters, pipeline_common.PAKALIVE_ARCHIVE_PAGES["paka-live-tv-prime"])
         guest_text = plain_wikitext(cells[5])
-        if guest_text:
+        if guest_text and guest_text.casefold() not in {"n/a", "na", "none", "-", "—"}:
             guest_name = pipeline_common.re.split(r"\s*\(", guest_text, maxsplit=1)[0].strip()
             guest_map = {"Takeshi Itazu": "板津雄志", "Koichi Tsunoda": "角田晃一", "Naohide Fukuhara": "福原直英", "Tomoki Kondo": "近藤智樹", "Keita Matsumoto": "松本圭太", "Asakawa": "浅川"}
             cast.append({
