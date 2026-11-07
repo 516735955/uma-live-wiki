@@ -10,6 +10,10 @@ const { createService } = require('./server-translation');
 const { splitHtmlText } = require('./html-text');
 
 async function main() {
+  const { translationFactsMatch } = require('./translation-facts');
+  assert(translationFactsMatch('【11/6 18:40追記】', '【11/618:40补充】'), 'a source date/time boundary survives omitted whitespace');
+  assert(!translationFactsMatch('【11/6 18:40追記】', '【11/618:41补充】'), 'changed minutes are still rejected');
+  assert(!translationFactsMatch('11/6 12:00', '11/61 2:00'), 'a different date and hour are not accepted');
   const previous = [process.env.BAIDU_APPID, process.env.BAIDU_SECRET];
   process.env.BAIDU_APPID = process.env.BAIDU_SECRET = 'fixture';
   try {
