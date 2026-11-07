@@ -119,6 +119,15 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         if only and name not in only:
             continue
         previous = state['steps'].get(name, {})
+        if name == 'setlists' and not github_owner and not only and (ROOT/'release.json').exists():
+            export = ROOT/'data/events/赛马娘LIVE歌单导出.csv'
+            if export.is_file() and export.stat().st_size > 0:
+                state['steps'][name] = {'status':'ok', 'changed':False,
+                                        'message':'Published Google sheet export reused; upstream refresh runs in GitHub sheet-sync.'}
+                pending_dependencies.discard(name)
+                state['pending_dependencies'] = sorted(pending_dependencies)
+                write_json(STATE,state)
+                continue
         if name == 'search-pronunciations' and not github_owner and (ROOT/'release.json').exists() and not only:
             outputs = [ROOT/'uma_tools/search-pronunciations.json',ROOT/'uma_tools/search-pronunciations-ui.js']
             if all(file.is_file() and file.stat().st_size>2 for file in outputs):

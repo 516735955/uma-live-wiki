@@ -18,6 +18,16 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_published_site_uses_the_sheet_snapshot_without_requesting_google(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder); (root/'data/events').mkdir(parents=True); (root/'release.json').write_text('{}')
+            (root/'data/events/赛马娘LIVE歌单导出.csv').write_text('2026-11-07,Concert,,\n,,M1. Song,Cast\n', encoding='utf-8')
+            with patch.object(runner,'ROOT',root),patch.object(runner,'STATE',root/'state.json'), \
+                 patch.object(runner,'STEPS',[('setlists',['auto_setlists.py'])]), \
+                 patch.dict(os.environ,{'GITHUB_ACTIONS':'false'}):
+                self.assertEqual(runner.run_updates(run=lambda *a,**kw:self.fail('published site must reuse sheet-sync export')),0)
+                self.assertIn('sheet-sync',json.loads(runner.STATE.read_text())['steps']['setlists']['message'])
+
     def test_published_server_reuses_the_built_dictionary_without_runtime_dependencies(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/'uma_tools').mkdir();(root/'release.json').write_text('{}')

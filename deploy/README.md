@@ -90,7 +90,7 @@ python3 uma_tools/sync_knowledge.py --force --only characters pedigree-source pe
 
 Python 依赖为 Pillow、beautifulsoup4 与 openpyxl；片尾还需要 FFmpeg、Tesseract 与支持当前公开视频协议的 yt-dlp。发布脚本会检查并安装，旧发行包的 yt-dlp 会用官方发行版更新。日文模型免费按需缓存。普通本地预览仍使用 `--no-crawl`，不会后台修改源数据。
 
-Google 歌单表在服务器不可达时，读取已有 GitHub `sheet-sync` 工作流发布到 main 的资料；直连 GitHub 不可达时使用同仓库的 CDN 副本。备用入口同样只补唯一匹配、出演角色映射一致的空歌单，不替换线上已有歌单、日期或名单。
+GitHub 的 `sheet-sync` 工作流读取 Google 歌单表并将导出发布到 main。线上例行采集复用随版本发布的导出，Google 来源失败由该工作流报告；本地仍可显式运行 `--only setlists` 刷新。只补唯一匹配且出演角色映射一致的空歌单，已有歌单、日期和名单保持原样。
 
 ## 验证
 
