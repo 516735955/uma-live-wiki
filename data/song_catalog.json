@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T09:47:38+00:00",
+  "generated_at": "2026-11-09T11:32:12+00:00",
   "coverage": {
-    "songs": 1042,
-    "versions": 2172,
+    "songs": 1043,
+    "versions": 2173,
     "albums": 116,
     "release_tracks": 2253,
-    "live_performances": 1265,
+    "live_performances": 1270,
     "credited_songs": 423,
     "lyric_songs": 248,
     "credited_versions": 1446,
@@ -2916,16 +2916,19 @@
         "duramente",
         "efforia",
         "epiphaneia",
+        "fusaichipandora",
         "logotype",
         "naritabrian",
         "phalaenopsis",
         "rulership",
+        "shinkowindy",
         "specialweek",
         "titleholder",
         "transcend",
         "victoirepisa"
       ],
       "voice_actor_ids": [
+        "va-0032",
         "va-0036",
         "va-0040",
         "va-0041",
@@ -2938,7 +2941,8 @@
         "va-0155",
         "va-0158",
         "va-0177",
-        "va-0181"
+        "va-0181",
+        "va-0183"
       ],
       "released_character_ids": [
         "biwahayahide",
@@ -2970,8 +2974,22 @@
         "va-0177",
         "va-0181"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "efforia",
+        "epiphaneia",
+        "fusaichipandora",
+        "phalaenopsis",
+        "shinkowindy",
+        "titleholder"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0032",
+        "va-0036",
+        "va-0110",
+        "va-0149",
+        "va-0177",
+        "va-0183"
+      ],
       "cover": "https://p2.music.126.net/L6L3GR6iPtqKBt-G0Sy1aA==/109951173885999309.jpg",
       "release_date": "2026-09-09",
       "versions": [
@@ -3183,9 +3201,39 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "eventernote-2026-11-07",
+              "event_title": "WINNING LIVE 35 发售纪念活动",
+              "event_date": "2026-11-07",
+              "kind": "onsite",
+              "series_id": "winning-live-release",
+              "session_id": "eventernote-2026-11-07-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-07",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [
+                "shinkowindy",
+                "fusaichipandora",
+                "epiphaneia",
+                "efforia",
+                "titleholder",
+                "phalaenopsis"
+              ],
+              "voice_actor_ids": [
+                "va-0032",
+                "va-0036",
+                "va-0110",
+                "va-0149",
+                "va-0177",
+                "va-0183"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-07?session=eventernote-2026-11-07-session-1"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [
             {
@@ -3464,7 +3512,7 @@
       ],
       "version_count": 2,
       "release_count": 2,
-      "performance_count": 0,
+      "performance_count": 1,
       "original_version_id": "song-beyond-754159999d-v-754159999d",
       "creator_ids": [
         "creator-momiken-cc1b998de7",
@@ -7718,8 +7766,12 @@
       "released_voice_actor_ids": [
         "va-0183"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "shinkowindy"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0183"
+      ],
       "cover": "https://p2.music.126.net/L6L3GR6iPtqKBt-G0Sy1aA==/109951173885999309.jpg",
       "release_date": "2026-09-09",
       "versions": [
@@ -7763,9 +7815,29 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "eventernote-2026-11-07",
+              "event_title": "WINNING LIVE 35 发售纪念活动",
+              "event_date": "2026-11-07",
+              "kind": "onsite",
+              "series_id": "winning-live-release",
+              "session_id": "eventernote-2026-11-07-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-07",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [
+                "shinkowindy"
+              ],
+              "voice_actor_ids": [
+                "va-0183"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-07?session=eventernote-2026-11-07-session-1"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [
             {
@@ -7798,7 +7870,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 0,
+      "performance_count": 1,
       "original_version_id": "song-can-t-stop-216f7dd1eb-v-216f7dd1eb",
       "creator_ids": [
         "creator-229e95369a",
@@ -120202,6 +120274,7 @@
         "dreamjourney",
         "duramente",
         "durandal",
+        "efforia",
         "eishinflash",
         "elcondorpasa",
         "epiphaneia",
@@ -120268,6 +120341,7 @@
         "oguricap",
         "orfevre",
         "otonashietsuko",
+        "phalaenopsis",
         "reddesire",
         "rheinkraft",
         "riceshower",
@@ -120282,6 +120356,7 @@
         "satonodiamond",
         "seekingthepearl",
         "seiunsky",
+        "shinkowindy",
         "silencesuzuka",
         "siriussymboli",
         "smartfalcon",
@@ -120412,6 +120487,7 @@
         "va-0107",
         "va-0108",
         "va-0109",
+        "va-0110",
         "va-0111",
         "va-0112",
         "va-0113",
@@ -120471,10 +120547,12 @@
         "va-0174",
         "va-0175",
         "va-0176",
+        "va-0177",
         "va-0179",
         "va-0180",
         "va-0181",
         "va-0182",
+        "va-0183",
         "va-0184",
         "va-0185"
       ],
@@ -120550,6 +120628,35 @@
             }
           ],
           "performances": [
+            {
+              "event_id": "eventernote-2026-11-07",
+              "event_title": "WINNING LIVE 35 发售纪念活动",
+              "event_date": "2026-11-07",
+              "kind": "onsite",
+              "series_id": "winning-live-release",
+              "session_id": "eventernote-2026-11-07-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-07",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [
+                "shinkowindy",
+                "fusaichipandora",
+                "epiphaneia",
+                "efforia",
+                "titleholder",
+                "phalaenopsis"
+              ],
+              "voice_actor_ids": [
+                "va-0032",
+                "va-0036",
+                "va-0110",
+                "va-0149",
+                "va-0177",
+                "va-0183"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-07?session=eventernote-2026-11-07-session-1"
+            },
             {
               "event_id": "live-other-2026-09-19-2026",
               "event_title": "长野 Aniera Festa 2026",
@@ -126630,7 +126737,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 159,
+          "performance_count": 160,
           "instrumental": false,
           "credits": [],
           "creator_ids": [],
@@ -153899,7 +154006,7 @@
       ],
       "version_count": 120,
       "release_count": 129,
-      "performance_count": 159,
+      "performance_count": 160,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
         "creator-cygames-f5bc529953",
@@ -164324,8 +164431,12 @@
       "released_voice_actor_ids": [
         "va-0032"
       ],
-      "performed_character_ids": [],
-      "performed_voice_actor_ids": [],
+      "performed_character_ids": [
+        "fusaichipandora"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0032"
+      ],
       "cover": "https://p2.music.126.net/L6L3GR6iPtqKBt-G0Sy1aA==/109951173885999309.jpg",
       "release_date": "2026-09-09",
       "versions": [
@@ -164369,9 +164480,29 @@
               ]
             }
           ],
-          "performances": [],
+          "performances": [
+            {
+              "event_id": "eventernote-2026-11-07",
+              "event_title": "WINNING LIVE 35 发售纪念活动",
+              "event_date": "2026-11-07",
+              "kind": "onsite",
+              "series_id": "winning-live-release",
+              "session_id": "eventernote-2026-11-07-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-07",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [
+                "fusaichipandora"
+              ],
+              "voice_actor_ids": [
+                "va-0032"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-07?session=eventernote-2026-11-07-session-1"
+            }
+          ],
           "release_count": 1,
-          "performance_count": 0,
+          "performance_count": 1,
           "instrumental": false,
           "credits": [
             {
@@ -164403,7 +164534,7 @@
       ],
       "version_count": 1,
       "release_count": 1,
-      "performance_count": 0,
+      "performance_count": 1,
       "original_version_id": "song-50ec8f087e-v-50ec8f087e",
       "creator_ids": [
         "creator-e2518d6bbc"
@@ -256900,6 +257031,75 @@
       "has_lyrics": false
     },
     {
+      "id": "song-supernova-a9b6e2a469",
+      "title": "革新的⇔Supernova",
+      "aliases": [
+        "革新的⇔Supernova"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "epiphaneia"
+      ],
+      "voice_actor_ids": [
+        "va-0036"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "epiphaneia"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0036"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-supernova-a9b6e2a469-v-a9b6e2a469",
+          "title": "革新的⇔Supernova",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "eventernote-2026-11-07",
+              "event_title": "WINNING LIVE 35 发售纪念活动",
+              "event_date": "2026-11-07",
+              "kind": "onsite",
+              "series_id": "winning-live-release",
+              "session_id": "eventernote-2026-11-07-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-07",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [
+                "epiphaneia"
+              ],
+              "voice_actor_ids": [
+                "va-0036"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-07?session=eventernote-2026-11-07-session-1"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 1,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 1,
+      "original_version_id": "song-supernova-a9b6e2a469-v-a9b6e2a469",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
       "id": "song-8b6bf81728",
       "title": "響け、ファンファーレ！",
       "aliases": [
@@ -258811,5 +259011,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "35fdf33813207dc2c4c9"
+  "build_id": "11c53f02038f46b12353"
 }

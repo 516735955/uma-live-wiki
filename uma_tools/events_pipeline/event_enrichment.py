@@ -274,6 +274,18 @@ def apply_news_images(events: list[dict], snapshot: dict | None = None) -> list[
     return output
 
 
+def default_event_session(event: dict) -> dict:
+    return {
+        "id": f"{event.get('id', 'event')}-session-1",
+        "label": "本场",
+        "date": event.get("date") or "",
+        "songs": [],
+        "character_ids": list(event.get("character_ids") or []),
+        "cast": list(event.get("cast") or []),
+        "setlist_status": "none",
+    }
+
+
 def apply_source_times(events: list[dict]) -> list[dict]:
     """Promote explicitly published clock times without deriving an end time."""
     patterns = {field: common.re.compile(rf"(?:{labels})\s*([0-3]?\d|4[0-7]):([0-5]\d)", common.re.I)
@@ -291,15 +303,7 @@ def apply_source_times(events: list[dict]) -> list[dict]:
             source_text = f"{source_text} {archived_item['times']}"
         title_match = title_time.search(str(row.get("title") or ""))
         if not row.get("sessions") and (any(pattern.search(source_text) for pattern in patterns.values()) or title_match):
-            row["sessions"] = [{
-                "id": f"{row.get('id', 'event')}-session-1",
-                "label": "本场",
-                "date": row.get("date") or "",
-                "songs": [],
-                "character_ids": list(row.get("character_ids") or []),
-                "cast": list(row.get("cast") or []),
-                "setlist_status": "none",
-            }]
+            row["sessions"] = [default_event_session(row)]
         multiple = len(row.get("sessions") or []) > 1
         for session in row.get("sessions") or []:
             child = dict(session)

@@ -17250,7 +17250,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -17504,6 +17505,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-07",
             "live-other-2025-12-31-9",
             "live-cd-2025-11-15-winning-live-29",
             "live-numbered-6th-event-2025-10-18",
@@ -17513,7 +17515,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-e05b91c506",
@@ -17588,6 +17590,17 @@
           "performances": 2
         },
         {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-girls-legend-u-a4a797abe1",
           "name": "GIRLS' LEGEND U",
           "event_ids": [
@@ -17639,6 +17652,17 @@
           ],
           "version_ids": [
             "song-unite-01e9fce749-v-01e9fce749"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-50ec8f087e",
+          "name": "やっぱあたし天才じゃんねっ♡",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-50ec8f087e-v-50ec8f087e"
           ],
           "performances": 1
         },
@@ -21278,7 +21302,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -21394,6 +21419,19 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07",
+            "live-cd-2026-08-15-winning-live-31",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-voltage-cb8dbfb97b",
           "name": "VOLTAGE",
           "event_ids": [
@@ -21402,18 +21440,6 @@
           ],
           "version_ids": [
             "song-voltage-cb8dbfb97b-v-cb8dbfb97b"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-cd-2026-08-15-winning-live-31",
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 3
         },
@@ -21447,6 +21473,17 @@
           ],
           "version_ids": [
             "song-amprefire-b503e6653a-v-b503e6653a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
           ],
           "performances": 1
         },
@@ -21502,6 +21539,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-supernova-a9b6e2a469",
+          "name": "革新的⇔Supernova",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-supernova-a9b6e2a469-v-a9b6e2a469"
           ],
           "performances": 1
         }
@@ -57773,7 +57821,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -57856,7 +57905,30 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0111": {
       "events": [
@@ -76249,7 +76321,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -76322,6 +76395,29 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-everlasting-beats-3a805703a6",
           "name": "Everlasting BEATS",
           "event_ids": [
@@ -76340,17 +76436,6 @@
           ],
           "version_ids": [
             "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
         }
@@ -90491,7 +90576,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -90535,7 +90621,30 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0178": {
       "events": [],
@@ -94878,7 +94987,8 @@
           "session_id": "eventernote-2026-11-07-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         }
       ],
@@ -94956,7 +95066,41 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-can-t-stop-216f7dd1eb",
+          "name": "CAN'T STOP ワル上等！",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-can-t-stop-216f7dd1eb-v-216f7dd1eb"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "va-0184": {
       "events": [
@@ -133735,7 +133879,41 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-can-t-stop-216f7dd1eb",
+          "name": "CAN'T STOP ワル上等！",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-can-t-stop-216f7dd1eb-v-216f7dd1eb"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "sweeptosho": {
       "events": [
@@ -174542,6 +174720,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-07",
             "live-other-2025-12-31-9",
             "live-cd-2025-11-15-winning-live-29",
             "live-numbered-6th-event-2025-10-18",
@@ -174551,7 +174730,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 6
+          "performances": 7
         },
         {
           "song_id": "song-e05b91c506",
@@ -174626,6 +174805,17 @@
           "performances": 2
         },
         {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-girls-legend-u-a4a797abe1",
           "name": "GIRLS' LEGEND U",
           "event_ids": [
@@ -174677,6 +174867,17 @@
           ],
           "version_ids": [
             "song-unite-01e9fce749-v-01e9fce749"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-50ec8f087e",
+          "name": "やっぱあたし天才じゃんねっ♡",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-50ec8f087e-v-50ec8f087e"
           ],
           "performances": 1
         },
@@ -183304,6 +183505,19 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07",
+            "live-cd-2026-08-15-winning-live-31",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 4
+        },
+        {
           "song_id": "song-voltage-cb8dbfb97b",
           "name": "VOLTAGE",
           "event_ids": [
@@ -183312,18 +183526,6 @@
           ],
           "version_ids": [
             "song-voltage-cb8dbfb97b-v-cb8dbfb97b"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-cd-2026-08-15-winning-live-31",
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 3
         },
@@ -183357,6 +183559,17 @@
           ],
           "version_ids": [
             "song-amprefire-b503e6653a-v-b503e6653a"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
           ],
           "performances": 1
         },
@@ -183412,6 +183625,17 @@
           ],
           "version_ids": [
             "song-461862b933-v-461862b933"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-supernova-a9b6e2a469",
+          "name": "革新的⇔Supernova",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-supernova-a9b6e2a469-v-a9b6e2a469"
           ],
           "performances": 1
         }
@@ -184314,7 +184538,30 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "titleholder": {
       "events": [
@@ -184387,6 +184634,29 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-everlasting-beats-3a805703a6",
           "name": "Everlasting BEATS",
           "event_ids": [
@@ -184405,17 +184675,6 @@
           ],
           "version_ids": [
             "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
         }
@@ -184545,7 +184804,30 @@
           "releases": 2
         }
       ],
-      "performed_songs": []
+      "performed_songs": [
+        {
+          "song_id": "song-beyond-754159999d",
+          "name": "Beyond",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-beyond-754159999d-v-754159999d"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-07"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 1
+        }
+      ]
     },
     "winmarilyn": {
       "events": [
@@ -187065,6 +187347,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-11-09T09:47:38+00:00",
-  "build_id": "35fdf33813207dc2c4c9"
+  "generated_at": "2026-11-09T11:32:12+00:00",
+  "build_id": "11c53f02038f46b12353"
 }

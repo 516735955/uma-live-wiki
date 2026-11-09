@@ -19,6 +19,20 @@ class Identities:
 
 
 class GoogleSetlistTests(unittest.TestCase):
+    def test_sheet_uses_the_default_session_for_a_confirmed_single_date(self):
+        date = '2026-11-07'
+        event = {'id': 'eventernote-2026-11-07', 'title': '企划完整标题',
+                 'title_aliases': ['WINNING LIVE 35 発売記念イベント'],
+                 'date': date, 'end_date': date, 'sessions': [], 'sources': [],
+                 'cast': [{'voice_actor_id': 'va-a', 'character_id': 'char-a', 'name': '声优甲'}]}
+        block = {'title': 'WINNING LIVE 35 発売記念イベント@NEW PIER HALL', 'date': date,
+                 'songs': [{'no': '1', 'name': 'Song', 'performers': ['Actor A']}]}
+        multiple = {**copy.deepcopy(event), 'id': 'other', 'end_date': '2026-11-08'}
+        self.assertEqual(apply_sheet([multiple], [block], Identities()), [])
+        self.assertEqual(apply_sheet([event, multiple], [block], Identities()),
+                         [('eventernote-2026-11-07', 'eventernote-2026-11-07-session-1')])
+        self.assertEqual(event['sessions'][0]['performances'][0]['character_ids'], ['char-a'])
+
     def test_full_cast_expansion_keeps_existing_people_once_and_retains_members(self):
         table = ('<table><tbody><tr><td class="setlist-song">Finale</td>'
                  '<td class="setlist-perf"><span class="guest-performer">伊藤美来</span>'

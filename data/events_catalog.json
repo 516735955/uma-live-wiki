@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T09:47:38+00:00",
+  "generated_at": "2026-11-09T11:32:12+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -4176,6 +4176,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -4192,6 +4196,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -4208,6 +4216,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -4224,6 +4236,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -4240,6 +4256,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -4256,6 +4276,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/490155"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -4266,8 +4290,21 @@
           "id": "eventernote-2026-11-07-session-1",
           "label": "本场",
           "date": "2026-11-07",
-          "songs": [],
-          "character_ids": [],
+          "songs": [
+            "Beyond",
+            "革新的⇔Supernova",
+            "CAN'T STOP ワル上等！",
+            "やっぱあたし天才じゃんねっ♡",
+            "うまぴょい伝説"
+          ],
+          "character_ids": [
+            "shinkowindy",
+            "fusaichipandora",
+            "epiphaneia",
+            "efforia",
+            "titleholder",
+            "phalaenopsis"
+          ],
           "cast": [
             {
               "voice_actor_id": "va-0183",
@@ -4282,6 +4319,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -4298,6 +4339,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -4314,6 +4359,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -4330,6 +4379,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -4346,6 +4399,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -4362,11 +4419,123 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/490155"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             }
           ],
-          "setlist_status": "none",
+          "setlist_status": "verified",
+          "performances": [
+            {
+              "song": "Beyond",
+              "setlist_no": "1",
+              "voice_actor_ids": [
+                "va-0032",
+                "va-0036",
+                "va-0110",
+                "va-0149",
+                "va-0177",
+                "va-0183"
+              ],
+              "character_ids": [
+                "shinkowindy",
+                "fusaichipandora",
+                "epiphaneia",
+                "efforia",
+                "titleholder",
+                "phalaenopsis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-beyond-754159999d",
+              "version_id": "song-beyond-754159999d-v-754159999d",
+              "song_title": "Beyond",
+              "id": "eventernote-2026-11-07-session-1:song-beyond-754159999d-v-754159999d"
+            },
+            {
+              "song": "革新的⇔Supernova",
+              "setlist_no": "2",
+              "voice_actor_ids": [
+                "va-0036"
+              ],
+              "character_ids": [
+                "epiphaneia"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-supernova-a9b6e2a469",
+              "version_id": "song-supernova-a9b6e2a469-v-a9b6e2a469",
+              "song_title": "革新的⇔Supernova",
+              "id": "eventernote-2026-11-07-session-1:song-supernova-a9b6e2a469-v-a9b6e2a469"
+            },
+            {
+              "song": "CAN'T STOP ワル上等！",
+              "setlist_no": "3",
+              "voice_actor_ids": [
+                "va-0183"
+              ],
+              "character_ids": [
+                "shinkowindy"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-can-t-stop-216f7dd1eb",
+              "version_id": "song-can-t-stop-216f7dd1eb-v-216f7dd1eb",
+              "song_title": "CAN'T STOP ワル上等！",
+              "id": "eventernote-2026-11-07-session-1:song-can-t-stop-216f7dd1eb-v-216f7dd1eb"
+            },
+            {
+              "song": "やっぱあたし天才じゃんねっ♡",
+              "setlist_no": "4",
+              "voice_actor_ids": [
+                "va-0032"
+              ],
+              "character_ids": [
+                "fusaichipandora"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-50ec8f087e",
+              "version_id": "song-50ec8f087e-v-50ec8f087e",
+              "song_title": "やっぱあたし天才じゃんねっ♡",
+              "id": "eventernote-2026-11-07-session-1:song-50ec8f087e-v-50ec8f087e"
+            },
+            {
+              "song": "うまぴょい伝説",
+              "setlist_no": "5",
+              "voice_actor_ids": [
+                "va-0032",
+                "va-0036",
+                "va-0110",
+                "va-0149",
+                "va-0177",
+                "va-0183"
+              ],
+              "character_ids": [
+                "shinkowindy",
+                "fusaichipandora",
+                "epiphaneia",
+                "efforia",
+                "titleholder",
+                "phalaenopsis"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説",
+              "id": "eventernote-2026-11-07-session-1:song-228f943b49-v-228f943b49"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">Beyond</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/shinkowindy.png\" alt=\"新光风\"><span class=\"perf-name\">新光风</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/房一潘多拉.png\" alt=\"房一潘多拉\"><span class=\"perf-name\">房一潘多拉</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/efforia.png\" alt=\"乐透心\"><span class=\"perf-name\">乐透心</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/领衔.png\" alt=\"领衔\"><span class=\"perf-name\">领衔</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/phalaenopsis.png\" alt=\"蝴蝶兰\"><span class=\"perf-name\">蝴蝶兰</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">革新的⇔Supernova</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">CAN&#x27;T STOP ワル上等！</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/shinkowindy.png\" alt=\"新光风\"><span class=\"perf-name\">新光风</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">やっぱあたし天才じゃんねっ♡</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/房一潘多拉.png\" alt=\"房一潘多拉\"><span class=\"perf-name\">房一潘多拉</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/shinkowindy.png\" alt=\"新光风\"><span class=\"perf-name\">新光风</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/房一潘多拉.png\" alt=\"房一潘多拉\"><span class=\"perf-name\">房一潘多拉</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/efforia.png\" alt=\"乐透心\"><span class=\"perf-name\">乐透心</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/领衔.png\" alt=\"领衔\"><span class=\"perf-name\">领衔</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/phalaenopsis.png\" alt=\"蝴蝶兰\"><span class=\"perf-name\">蝴蝶兰</span></span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "WINNING LIVE 35 発売記念イベント@NEW PIER HALL(東京・港区)"
+          },
           "doors_time": "15:00",
           "start_time": "16:00",
           "end_time": "17:00",
@@ -4383,6 +4552,11 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/490155"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "",
@@ -4390,11 +4564,12 @@
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
       "source_time_text": "開場 15:00 開演 16:00 終演 17:00",
       "title_aliases": [
+        "WINNING LIVE 35 発売記念イベント",
         "『赛马娘 Pretty Derby』WINNING LIVE 35发售纪念活动"
       ],
       "id_aliases": [],
       "legacy_aliases": [],
-      "setlist_status": "none",
+      "setlist_status": "verified",
       "venue_raw": "NEW PIER HALL(ニューピアホール)",
       "venue_id": "venue-new-pier-hall",
       "venue_zh": "NEW PIER HALL（新码头大厅）",
@@ -190449,5 +190624,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "35fdf33813207dc2c4c9"
+  "build_id": "11c53f02038f46b12353"
 }

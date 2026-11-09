@@ -6,6 +6,7 @@ import unicodedata
 
 from auto_setlists import ALL_CAST_RE, normalized_title, canonical_match, parse_rows, session_label, song_table
 from . import identities as identity_tools
+from .event_enrichment import default_event_session
 from .song_identity import clean_song, fold_song_key, table_performances, split_song_version
 
 SHEET_URL = 'https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit'
@@ -150,18 +151,30 @@ def merge_numbered_sources(events):
     return events
 
 
+def matches_single_date(event, date):
+    return (date and not event.get('sessions') and event.get('date') == date
+            and (event.get('end_date') or date) == date
+            and event.get('schedule_status') != 'cancelled')
+
+
 def apply_sheet(events, blocks, identities, eventernote=None):
     applied = []
     for block in blocks:
+        can_create_session = session_label(block['title']) == '本公演' and any(
+            clean_song(song['name']) and song['performers'] for song in block['songs']
+        )
         event = canonical_match(block, events)
         if event is None:
             matches = [row for row in events if (any(normalized_title(title) == normalized_title(block['title'])
                                                      for title in [row['title'], *row.get('title_aliases', [])]))
-                       and any(session.get('date') == block['date'] for session in row.get('sessions', []))]
+                       and (any(session.get('date') == block['date'] for session in row.get('sessions', []))
+                            or (can_create_session and matches_single_date(row, block['date'])))]
             if len(matches) != 1:
                 continue
             event = matches[0]
         sessions = [session for session in event.get('sessions', []) if session.get('date') == block['date']]
+        if can_create_session and matches_single_date(event, block['date']):
+            sessions = event['sessions'] = [default_event_session(event)]
         if len(sessions) > 1:
             sessions = [session for session in sessions if session.get('label') == session_label(block['title'])]
         if len(sessions) != 1:
