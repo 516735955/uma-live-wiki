@@ -186,7 +186,29 @@
     font-size: .76rem;
 }
 .audio-quality .ui-select-trigger > svg { width: 13px; height: 13px; stroke: currentColor; }
-.audio-quality .ui-select-menu { right: -1px; left: auto; width: 214px; }
+.audio-quality .ui-select-menu { right: -1px; left: auto; width: 228px; }
+.audio-quality-option {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.audio-quality-name { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.audio-quality-code,
+.audio-quality-current {
+    flex: none;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+.audio-quality-code { color: var(--ui-cobalt-deep); background: #e9efff; }
+.audio-quality-current { color: #813800; background: #ffead6; }
+.audio-quality .selected :is(.audio-quality-code,.audio-quality-current) { color: #fff; background: rgba(255,255,255,.22); }
 .audio-volume { display: flex; flex: 1; min-width: 0; align-items: center; gap: 3px; }
 .audio-volume .audio-control { flex: none; width: 34px; height: 34px; }
 .audio-volume input { width: 100%; min-width: 46px; height: 24px; margin: 0; background: transparent; accent-color: var(--ui-orange); cursor: pointer; }

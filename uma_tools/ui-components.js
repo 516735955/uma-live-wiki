@@ -179,7 +179,7 @@
         <teleport to="body" :disabled="!floating"><div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :class="menuClass" :style="menuStyle" role="listbox" @keydown="onKeydown">
           <button v-if="group" class="ui-select-back" type="button" @click="back">‹ {{ label }}　{{ group.label }}</button>
           <button v-for="(option,index) in visibleOptions" :id="listId+'-option-'+index" :key="String(option.value)" type="button" role="option" tabindex="-1" :disabled="option.disabled" :aria-selected="String(option.value)===String(modelValue)" :class="{selected:String(option.value)===String(modelValue),active:index===activeIndex}" @pointerenter="activeIndex=index" @click="choose(option)">
-            <span>{{ option.label }}</span>
+            <slot name="option" :option="option"><span>{{ option.label }}</span></slot>
             <svg v-if="option.children" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
             <svg v-else-if="String(option.value)===String(modelValue)" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg>
           </button>
@@ -263,10 +263,14 @@
         return ({ list: '列表循环', one: '单曲循环', shuffle: '随机播放' })[this.player.playbackMode] || '列表循环';
       },
       qualityLabels: function () {
-        return { auto: '自动', standard: '标准 128 kbps', exhigh: '极高 HQ 320 kbps', lossless: '无损 SQ', hires: 'Hi-Res' };
+        return { auto: '自动', standard: '标准', exhigh: '极高', lossless: '无损', hires: '高解析度无损' };
+      },
+      qualityTags: function () {
+        return { exhigh: 'HQ', lossless: 'SQ', hires: 'Hi-Res' };
       },
       qualityBadge: function () {
-        return ({ standard: '标准', exhigh: 'HQ', lossless: 'SQ', hires: 'Hi-Res' })[this.player.actualQuality] || '音质';
+        const actual = this.player.actualQuality;
+        return this.qualityTags[actual] || this.qualityLabels[actual] || '音质';
       },
       qualityAriaLabel: function () {
         const actual = this.qualityLabels[this.player.actualQuality];
@@ -276,7 +280,7 @@
         const options = [{ value: 'auto', label: this.qualityLabels.auto }];
         if (this.player.qualityOptions.length) {
           return options.concat(this.player.qualityOptions.map(value => ({
-            value, label: this.qualityLabels[value] + (value === this.player.actualQuality ? '（当前）' : '')
+            value, label: this.qualityLabels[value], tag: this.qualityTags[value], current: value === this.player.actualQuality
           })));
         }
         options.push({
@@ -489,7 +493,14 @@
               <span>{{ formatTime(player.duration) }}</span>
             </div>
             <div class="audio-output-controls">
-              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)"></ui-select>
+              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)">
+                <template #option="{ option }">
+                  <span class="audio-quality-option">
+                    <span class="audio-quality-name">{{ option.label }}<span v-if="option.tag" class="audio-quality-code">{{ option.tag }}</span></span>
+                    <span v-if="option.current" class="audio-quality-current">当前</span>
+                  </span>
+                </template>
+              </ui-select>
               <div class="audio-volume">
                 <button class="audio-control" type="button" :aria-label="player.muted?'取消静音':'静音'" :title="player.muted?'取消静音':'静音'" @click="$emit('toggle-mute')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9z"/><path v-if="!player.muted && player.volume>0" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/><path v-else d="m17 9 5 6M22 9l-5 6"/></svg></button>
                 <input type="range" min="0" max="1" step="0.05" :value="player.muted?0:player.volume" aria-label="音量" @input="$emit('volume',Number($event.target.value))">
