@@ -91,7 +91,7 @@ def main():
         if not any(s["id"] == ref for s in sources):
             sources.append({"id": ref, "kind": episode.get("source_kind", "official"),
                             "label": "作品版原始片尾职员表" if work_scope else "单集原始片尾职员表", "url": episode["url"],
-                            "observed_at": documents["ending_credits"]["observed_at"]})
+                            "observed_at": episode.get("verified_at") or documents["ending_credits"]["observed_at"]})
         signatures = list(episode.get("staff", []))
         for block in episode.get("staff_groups", []):
             common = {key: block[key] for key in ("role", "time", "group", "institutions", "source_ref") if key in block}
