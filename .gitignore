@@ -39,3 +39,8 @@ data/events/sheet_apply_report.json
 data/events/program_refresh_report.json
 data/auto_update/
 .impeccable/config.json
+
+# docs 只跟踪全站内容规范和路线图
+/docs/*
+!/docs/content-states.md
+!/docs/ROADMAP.md

@@ -1,59 +1,22 @@
 # 赛马娘演出综合站
 
-连接歌曲、专辑、演出、角色、声优和原型马的中文资料站。前端使用浏览器版 Vue 3，Node 服务提供静态页面和按页目录接口，Python 工具维护源数据与生成目录。无需构建。
+**从一首歌、一场演出，找到它背后的角色、声优与作品。**
 
-[在线站点](https://umamusumelivewiki.top/) · [产品范围](PRODUCT.md) · [设计规范](DESIGN.md) · [内容状态规范](docs/content-states.md) · [ROADMAP](docs/ROADMAP.md)
+赛马娘演出综合站是爱好者共同维护的中文资料站。这里串联现场歌单、录音与专辑、动画逐集资料、角色和声优履历，也记录作品背后的真实竞赛与原型马。
 
-## 本地启动
+[**进入网站**](https://umamusumelivewiki.top/)
 
-需要 Node.js 18 或更新版本：
+## 从这里开始
 
-```bash
-node uma_tools/server.js --no-crawl
-```
+- [**看演出**](https://umamusumelivewiki.top/zh-Hans/events)　按活动和场次查阵容、现场曲目及相关节目。
+- [**听音乐**](https://umamusumelivewiki.top/zh-Hans/music/songs)　从歌曲查录音版本、演唱者和收录专辑。可播放的录音支持加入队列和切换音质。
+- [**读动画资料**](https://umamusumelivewiki.top/zh-Hans/database/anime)　从作品或单集查角色、制作人员、音乐与观看入口。
+- [**认识角色和声优**](https://umamusumelivewiki.top/zh-Hans/database/characters)　沿人物履历找到共同出演、歌曲和作品，也可以从[声优目录](https://umamusumelivewiki.top/zh-Hans/database/voice-actors)反查。
+- [**查原型马**](https://umamusumelivewiki.top/zh-Hans/database/horses)　查看原型档案、成绩和血统，顺着档案回到对应角色。
+- [**看新闻**](https://umamusumelivewiki.top/zh-Hans/news)　浏览企划公告、活动消息和音乐发行资讯。
 
-打开 http://localhost:8080/。指定端口和站点目录：
+## 参与共建
 
-```bash
-node uma_tools/server.js 8091 . --no-crawl
-```
+发现漏项或错误，可以通过[资料订正](https://umamusumelivewiki.top/zh-Hans/contribute/fix)提供对应页面和来源。本站为爱好者维护的非官方资料站，角色图片、音乐和影像资料的权利归各权利方。
 
-普通预览关闭后台抓取，不写入数据。生产服务启用自动刷新，具体行为见 [部署说明](deploy/README.md)。
-
-## 目录分工
-
-| 位置 | 内容 |
-|---|---|
-| `赛马娘LIVE相关.html` | 页面模板 |
-| [uma_tools](uma_tools/README.md) | 前端、API、抓取和校验工具 |
-| [data](data/README.md) | 人工源数据、生成目录、运行快照 |
-| [deploy](deploy/README.md) | 当前站点的更新与部署验证 |
-| `album_covers/`、`uma_avatars/`、`uma_moe/`、`uma_official/`、`uma_va/`、`video_thumbs/` | 图片资源 |
-
-## 常用维护
-
-```bash
-python3 uma_tools/update_events.py
-python3 uma_tools/update_events.py --check
-npm --prefix uma_tools run test:catalog
-npm --prefix uma_tools run test:player
-npm --prefix uma_tools run test:regressions
-```
-
-Python 3 命令在 Windows 可使用 `python`；服务和专辑合并工具支持 `PYTHON_BIN`。角色图片处理需要 Pillow；Excel 镜像同步可选安装 openpyxl。
-
-资料更新只需提交人工源文件；CI 和发布流程先生成目录，再验证实际加载与关联关系，不要求维护者手工提交整组派生快照。本地预览前执行相应生成器；音乐资料单独调整可使用 `update_events.py --music-only`。`--check` 用于手工确认本地目录是否已更新。精调歌单、角色映射和已确认署名在源文件维护，不直接修改生成目录。
-
-浏览器检查验证搜索结果、清空恢复和节点复用，并记录搜索耗时。共享 CI 机器不使用固定毫秒数决定功能是否通过；在固定性能环境中可设置 `UMA_SEARCH_P95_MS=200` 启用明确的 p95 预算。
-
-## 协作与发布
-
-开始新批次先阅读 [docs/ROADMAP.md](docs/ROADMAP.md) 与相关实施计划，核对用户最新决定和实际功能。用户明确要做的加入，部分完成只留剩余工作，交付验证后删除，取消的移除。需求状态变化与本批提交同步；准备 PR 时核对剩余工作，PR 描述说明对应主题、验证与未交付事项；合并及必要发布核验后删除最后收口。详细步骤见 ROADMAP 的“与 PR 交付结合”，PR 使用仓库模板。路线图不留完成日志、根目录入口或聊天副本。并行修改前读取最新文件，只更新所属主题并保留其他任务内容。
-
-普通功能通过分支和 PR 合入 main，提交描述明确说明目标、验证和行为影响。页面交互优先复用现有组件，视觉规则遵循 DESIGN.md。发布工具自动生成前端资源地址并更新页面、懒加载和 iframe 引用，不手工维护 `?v=`。
-
-翻译配置读取环境变量 `BAIDU_APPID` / `BAIDU_SECRET`，其次读取 `uma_tools/baidu.conf.json`。未配置时保留日文，不影响其他页面。
-
-新闻人工订正在 `uma_tools/news-overrides.json` 维护，不写入机器缓存。术语直接复用角色与声优的日中名称，自动更新不覆盖人工订正。
-
-站点由爱好者共同维护，角色图片、音乐资料和视频参考官网及相关公开资源。
+[内容规范](docs/content-states.md) · [路线图](docs/ROADMAP.md) · [开发与维护](uma_tools/README.md)

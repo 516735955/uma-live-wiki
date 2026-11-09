@@ -1,5 +1,20 @@
 # 运行与维护工具
 
+## 本地预览
+
+在仓库根目录使用 Node.js 22，与 GitHub 检查环境一致。
+
+```bash
+node uma_tools/server.js --no-crawl
+```
+
+预览地址为 [localhost:8080](http://localhost:8080/)。运行 `node uma_tools/server.js 8091 . --no-crawl` 可指定端口和站点目录。需要验证新资料时，先运行下文对应的生成器。
+
+## 项目文档
+
+- [内容规范](../docs/content-states.md) 和[路线图](../docs/ROADMAP.md)是 `docs/` 中的仓库文档。阶段计划、调试记录、设计样稿与验收清单保留在本地，按目录的 Git 忽略规则管理。
+- [产品范围](../PRODUCT.md)和[设计规范](../DESIGN.md)记录全站规则。[数据说明](../data/README.md)和[部署说明](../deploy/README.md)分别记录数据与服务的维护方式。
+
 ## 前端
 
 | 文件 | 职责 |
@@ -27,6 +42,8 @@
 
 `translation-terms.js` 从角色索引和声优资料取得统一名称，保护专名后调用百度 API，再恢复中文名。标记缺失或重复的结果不入缓存；HTML 标签和链接不参与翻译。`translation-cache.js` 合并单条结果，不用旧内存整份覆盖磁盘。人工订正独立于缓存；无需逐条审核新闻。后台补译每轮最多 20 条，交互请求优先。
 
+百度翻译配置读取环境变量 `BAIDU_APPID` 和 `BAIDU_SECRET`，其次读取本地 `uma_tools/baidu.conf.json`。缺少配置时保留来源原文。
+
 正文使用 POST 分批翻译，批次按保护后的文本长度划分。文章原文取得后立即可读，译文在后台补齐；页面有界轮询进度。部分译文和来源原文不缓存成完整翻译，失败片段保持可重试。标题与正文共同核对数字、小数、时刻和星级。新闻订正绑定原文内容，原文更新后不套用旧正文订正。
 
 `news-images.js` 缓存官网与 Lantis 新闻原图；`/api/news-image?url=…&w=480` 返回压缩预览，省略 `w` 返回原图。`/api/image?path=…&w=480` 为本站媒体生成等比例 WebP 预览，宽度归并为 160、480、960、1440，不放大源图。编码使用已有 Pillow，最多两个并发，预览缓存上限 128 MiB，原图缓存默认 256 MiB（`NEWS_IMAGE_CACHE_BYTES`）。页面按显示场景选择预览，新闻正文使用响应式候选；查看器在选中图片后读取原图。缓存不改写照片、封面或源数据。首页使用提前加载的 AVIF 背景，保留 WebP 兼容版本。
@@ -35,12 +52,7 @@
 
 实际 API 小样本检查：`node uma_tools/smoke_translation.js`。该命令不修改缓存，只输出原文和译文。
 
-```bash
-node uma_tools/server.js --no-crawl
-node uma_tools/server.js
-```
-
-第二条启用后台源刷新，会更新 data。日志和抓取运行状态为本地产物。部署行为见 [deploy/README.md](../deploy/README.md)。
+`node uma_tools/server.js` 启用后台刷新并更新数据。日志和抓取状态保存在运行目录。生产发布与数据同步见[部署说明](../deploy/README.md)。
 
 ## 数据维护入口
 
