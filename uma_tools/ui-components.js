@@ -22,9 +22,10 @@
       floating: { type: Boolean, default: false },
       menuMinWidth: { type: Number, default: 0 },
       menuClass: { type: String, default: '' },
-      ariaLabel: { type: String, default: '' }
+      ariaLabel: { type: String, default: '' },
+      triggerLabel: { type: String, default: '' }
     },
-    emits: ['update:modelValue', 'change'],
+    emits: ['update:modelValue', 'change', 'open'],
     data: function () {
       sequence += 1;
       return { open: false, activeIndex: -1, groupValue: null, menuShift: 0, menuAbove: false, menuHeight: 286, menuX: 0, menuY: 0, menuWidth: 0, listId: 'ui-select-' + sequence };
@@ -123,6 +124,7 @@
       toggle: function () {
         if (this.open) { this.close(); return; }
         this.open = true;
+        this.$emit('open');
         this.group = this.options.find(option => (option.children || []).some(child => String(child.value) === String(this.modelValue))) || null;
         this.activeIndex = this.initialIndex();
         this.positionMenu();
@@ -171,7 +173,7 @@
       <div class="ui-select-control" :class="{open:open}">
         <span v-if="label" class="ui-select-label">{{ label }}</span>
         <button ref="trigger" class="ui-select-trigger" type="button" role="combobox" aria-autocomplete="none" aria-haspopup="listbox" :aria-label="ariaLabel || label" :aria-expanded="open" :aria-controls="listId" :aria-activedescendant="open && activeIndex>=0 ? listId+'-option-'+activeIndex : undefined" @click="toggle" @keydown="onKeydown">
-          <span>{{ selectedOption.label }}</span>
+          <span>{{ triggerLabel || selectedOption.label }}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
         </button>
         <teleport to="body" :disabled="!floating"><div ref="menu" v-show="open" :id="listId" class="ui-select-menu" :class="menuClass" :style="menuStyle" role="listbox" @keydown="onKeydown">
@@ -238,10 +240,11 @@
   };
 
   const AudioDock = {
+    components: { UiSelect },
     props: {
       player: { type: Object, required: true }
     },
-    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'quality', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
+    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'quality', 'quality-open', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
     data: function () { return { draggingIndex: -1, pointerId: null, titleOverflow: false, artistOverflow: false, resizeObserver: null }; },
     computed: {
       current: function () { return this.player.current || null; },
@@ -261,6 +264,26 @@
       },
       qualityLabels: function () {
         return { auto: '自动', standard: '标准 128 kbps', exhigh: '极高 HQ 320 kbps', lossless: '无损 SQ', hires: 'Hi-Res' };
+      },
+      qualityBadge: function () {
+        return ({ standard: '标准', exhigh: 'HQ', lossless: 'SQ', hires: 'Hi-Res' })[this.player.actualQuality] || '音质';
+      },
+      qualityAriaLabel: function () {
+        const actual = this.qualityLabels[this.player.actualQuality];
+        return actual ? '播放音质，当前' + actual : '播放音质';
+      },
+      qualityMenuOptions: function () {
+        const options = [{ value: 'auto', label: this.qualityLabels.auto }];
+        if (this.player.qualityOptions.length) {
+          return options.concat(this.player.qualityOptions.map(value => ({
+            value, label: this.qualityLabels[value] + (value === this.player.actualQuality ? '（当前）' : '')
+          })));
+        }
+        options.push({
+          value: 'quality-status', disabled: true,
+          label: this.player.qualityLoading ? '正在检查可用音质' : '暂无其他可选音质'
+        });
+        return options;
       },
       statusText: function () {
         return ({
@@ -414,15 +437,6 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
             </button>
           </header>
-          <div v-if="current && (player.actualQuality || player.qualityOptions.length)" class="audio-quality">
-            <label>音质
-              <select aria-label="播放音质" :value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" @change="$emit('quality',$event.target.value)">
-                <option value="auto">自动</option>
-                <option v-for="level in player.qualityOptions" :key="level" :value="level">{{ qualityLabels[level] }}</option>
-              </select>
-            </label>
-            <span v-if="player.actualQuality">当前 {{ qualityLabels[player.actualQuality] }}</span>
-          </div>
           <div ref="queueList" class="audio-queue" role="list" aria-label="播放列表">
             <div v-for="(track,index) in player.queue" :key="track.id+'-'+index" class="audio-queue-row" :class="{active:index===player.queueIndex,dragging:index===draggingIndex}" role="listitem" :data-index="index" :aria-current="index===player.queueIndex?'true':undefined">
               <button class="audio-queue-drag" type="button" aria-label="拖动调整顺序" title="拖动调整顺序" @pointerdown="startDrag($event,index)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h8M6 10h8M6 15h8"/></svg></button>
@@ -474,9 +488,12 @@
               <input type="range" min="0" :max="player.duration || 0" step="0.1" :value="player.currentTime" :disabled="!current || !player.duration" aria-label="播放进度" :aria-valuetext="formatTime(player.currentTime)+' / '+formatTime(player.duration)" @input="onSeek">
               <span>{{ formatTime(player.duration) }}</span>
             </div>
-            <div class="audio-volume">
-              <button class="audio-control" type="button" :aria-label="player.muted?'取消静音':'静音'" :title="player.muted?'取消静音':'静音'" @click="$emit('toggle-mute')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9z"/><path v-if="!player.muted && player.volume>0" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/><path v-else d="m17 9 5 6M22 9l-5 6"/></svg></button>
-              <input type="range" min="0" max="1" step="0.05" :value="player.muted?0:player.volume" aria-label="音量" @input="$emit('volume',Number($event.target.value))">
+            <div class="audio-output-controls">
+              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)"></ui-select>
+              <div class="audio-volume">
+                <button class="audio-control" type="button" :aria-label="player.muted?'取消静音':'静音'" :title="player.muted?'取消静音':'静音'" @click="$emit('toggle-mute')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9z"/><path v-if="!player.muted && player.volume>0" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/><path v-else d="m17 9 5 6M22 9l-5 6"/></svg></button>
+                <input type="range" min="0" max="1" step="0.05" :value="player.muted?0:player.volume" aria-label="音量" @input="$emit('volume',Number($event.target.value))">
+              </div>
             </div>
             <button ref="queueToggle" class="audio-queue-toggle" type="button" :class="{active:player.panelOpen}" aria-label="播放列表" title="播放列表" :aria-expanded="player.panelOpen" @click="$emit('toggle-panel')">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>

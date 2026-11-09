@@ -49,14 +49,27 @@
 @media (min-width: 701px) and (max-width: 1100px) {
     .audio-dock-inner {
         padding-inline: 16px;
-        grid-template-columns: 48px minmax(120px,1fr) auto minmax(100px,.7fr) 72px 42px 30px;
+        grid-template-columns: 48px minmax(110px,1fr) auto minmax(130px,.7fr) 148px 42px 30px;
         gap: 7px;
     }
     .audio-cover { width: 48px; height: 48px; }
     .audio-control { width: 38px; height: 38px; }
     .audio-control-primary { width: 48px; height: 48px; }
-    .audio-dock-progress { grid-template-columns: 34px minmax(64px,1fr) 34px; gap: 5px; }
+    .audio-dock-progress { grid-template-columns: 34px minmax(44px,1fr) 34px; gap: 5px; }
+    .audio-output-controls { gap: 4px; }
+    .audio-volume input { min-width: 36px; }
     .audio-queue-toggle { width: 42px; height: 42px; }
+}
+
+@media (min-width: 701px) and (max-width: 840px) {
+    .audio-dock-inner {
+        padding-inline: 12px;
+        grid-template-columns: 48px minmax(74px,1fr) auto minmax(90px,.7fr) 148px 42px 30px;
+        gap: 4px;
+    }
+    .audio-control { width: 32px; }
+    .audio-control-primary { width: 46px; }
+    .audio-dock-progress { grid-template-columns: 29px minmax(20px,1fr) 29px; }
 }
 
 @media (max-width: 700px) {
@@ -114,7 +127,7 @@
     }
     .audio-cover { grid-column: 1; grid-row: 1; width: 42px; height: 42px; }
     .audio-cover > .audio-playing-bars { right: 2px; bottom: 2px; transform: scale(.82); transform-origin: right bottom; }
-    .audio-dock-copy { grid-column: 2; grid-row: 1; }
+    .audio-dock-copy { grid-column: 2; grid-row: 1; padding-right: 103px; }
     .audio-title { font-size: .78rem; }
     .audio-dock-vocalists,
     .audio-dock-artist { font-size: .75rem; }
@@ -133,7 +146,9 @@
     }
     .audio-dock-progress > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .audio-dock-progress input { height: 20px; }
-    .audio-volume { position: absolute; top: 13px; right: 42px; }
+    .audio-output-controls { position: absolute; top: 9px; right: calc(max(10px,env(safe-area-inset-right)) + 33px); gap: 4px; }
+    .audio-quality.ui-select-control { flex-basis: 64px; width: 64px; }
+    .audio-quality .ui-select-trigger { height: 41px; }
     .audio-volume input { display: none; }
     .audio-volume .audio-control { width: 32px; height: 32px; }
     .audio-queue-toggle { grid-column: 3; grid-row: 2; width: 38px; height: 38px; justify-self: end; }

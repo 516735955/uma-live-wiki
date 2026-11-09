@@ -124,6 +124,7 @@
       muted: restored ? restored.muted : false,
       quality: restored ? restored.quality : 'auto',
       qualityOptions: [],
+      qualityLoading: false,
       actualQuality: '',
       sourceStatus: '',
       currentTime: restored ? restored.currentTime : 0,
@@ -313,6 +314,7 @@
       clearStableTimer();
       if (!recovery) retryCount = 0;
       if (!recovery?.qualityChange) state.qualityOptions = [];
+      state.qualityLoading = false;
       state.actualQuality = '';
       state.sourceStatus = '';
       intendedPlay = autoplay !== false;
@@ -335,7 +337,7 @@
       persist(true);
       const result = autoplay ? requestPlay() : Promise.resolve(true);
       const generation = sourceGeneration;
-      refreshAudioInfo(state.panelOpen, source, generation);
+      refreshAudioInfo(false, source, generation);
       // Next-track metadata must not compete with an unbuffered current track.
       Promise.resolve(result).then(function () { if (generation === sourceGeneration) updatePositionState(); });
       return result;
@@ -346,6 +348,7 @@
       const trackUrl = state.current.url;
       const requested = source || proxyUrl(trackUrl, state.quality);
       const active = generation ?? sourceGeneration;
+      if (includeLevels) state.qualityLoading = true;
       Promise.resolve(describeAudio(requested, includeLevels)).then(info => {
         if (!info || active !== sourceGeneration) return;
         state.sourceStatus = info.status;
@@ -358,7 +361,13 @@
           state.qualityOptions = info.levels.filter(level => AUDIO_QUALITIES.includes(level) && level !== 'auto' &&
             (flacSupported || !['lossless', 'hires'].includes(level)));
         }
-      }).catch(() => {});
+      }).catch(() => {}).finally(() => {
+        if (includeLevels && active === sourceGeneration) state.qualityLoading = false;
+      });
+    }
+
+    function loadQualityOptions() {
+      if (!state.qualityLoading && !state.qualityOptions.length) refreshAudioInfo(true);
     }
 
     function setQuality(quality) {
@@ -682,7 +691,6 @@
       if (state.current || state.queue.length) {
         state.visible = true;
         state.panelOpen = true;
-        refreshAudioInfo(true);
       }
     }
     function closePanel() { state.panelOpen = false; }
@@ -904,6 +912,7 @@
       seekBy: seekBy,
       setVolume: setVolume,
       setQuality: setQuality,
+      loadQualityOptions: loadQualityOptions,
       toggleMute: toggleMute,
       retry: retry,
       cyclePlaybackMode: cyclePlaybackMode,

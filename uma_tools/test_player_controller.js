@@ -117,7 +117,7 @@ async function run() {
     })
   });
   await quality.controller.setQueue([track('a'), track('b')], 0, 'album', false);
-  quality.controller.openPanel();
+  quality.controller.loadQualityOptions();
   await Promise.resolve();
   quality.audio.metadata(240);
   quality.controller.seekTo(58);

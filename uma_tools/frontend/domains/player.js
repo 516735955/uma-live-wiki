@@ -297,5 +297,6 @@ export function createPlayer(deps) {
     togglePlayerMute,
     togglePlayerPanel,
     setPlayerQuality: playerController.setQuality,
+    loadPlayerQualities: playerController.loadQualityOptions,
   };
 }

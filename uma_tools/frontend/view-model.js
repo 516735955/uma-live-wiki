@@ -68,6 +68,7 @@ export function createViewModel(domains, routes) {
     skipPlayer: domains.player.skipPlayer,
     setPlayerVolume: domains.player.setPlayerVolume,
     setPlayerQuality: domains.player.setPlayerQuality,
+    loadPlayerQualities: domains.player.loadPlayerQualities,
     togglePlayerMute: domains.player.togglePlayerMute,
     nextSong: domains.songs.nextSong,
     prevSong: domains.songs.prevSong,
