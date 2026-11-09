@@ -32,7 +32,8 @@
     }).filter(Boolean);
   }
 
-  const AUDIO_QUALITIES = ['auto', 'standard', 'exhigh', 'lossless', 'hires'];
+  const AUDIO_QUALITIES = ['standard', 'exhigh', 'lossless', 'hires'];
+  const DEFAULT_QUALITY = 'exhigh';
 
   function normalizeTrack(track) {
     if (!track || !track.url) return null;
@@ -88,7 +89,7 @@
         playbackMode: PLAYBACK_MODES.includes(parsed.playbackMode) ? parsed.playbackMode : 'list',
         volume: clamp(parsed.volume == null ? 1 : parsed.volume, 0, 1),
         muted: !!parsed.muted,
-        quality: AUDIO_QUALITIES.includes(parsed.quality) ? parsed.quality : 'auto'
+        quality: AUDIO_QUALITIES.includes(parsed.quality) ? parsed.quality : DEFAULT_QUALITY
       };
     } catch (error) {
       return null;
@@ -122,7 +123,7 @@
       playbackMode: restored ? restored.playbackMode : 'list',
       volume: restored ? restored.volume : 1,
       muted: restored ? restored.muted : false,
-      quality: restored ? restored.quality : 'auto',
+      quality: restored ? restored.quality : DEFAULT_QUALITY,
       qualityOptions: [],
       qualityLoading: false,
       actualQuality: '',
@@ -352,13 +353,13 @@
       Promise.resolve(describeAudio(requested, includeLevels)).then(info => {
         if (!info || active !== sourceGeneration) return;
         state.sourceStatus = info.status;
-        state.actualQuality = info.actual;
+        if (AUDIO_QUALITIES.includes(info.actual)) state.actualQuality = info.actual;
         if (info.status === 'preview') knownPreviews.add(trackUrl);
         if (info.status === 'full') knownPreviews.delete(trackUrl);
         if (includeLevels && Array.isArray(info.levels)) {
           const audio = getAudio();
           const flacSupported = typeof audio?.canPlayType !== 'function' || Boolean(audio.canPlayType('audio/flac'));
-          state.qualityOptions = info.levels.filter(level => AUDIO_QUALITIES.includes(level) && level !== 'auto' &&
+          state.qualityOptions = info.levels.filter(level => AUDIO_QUALITIES.includes(level) &&
             (flacSupported || !['lossless', 'hires'].includes(level)));
         }
       }).catch(() => {}).finally(() => {
@@ -372,7 +373,7 @@
 
     function setQuality(quality) {
       if (!state.current || state.quality === quality ||
-          (quality !== 'auto' && !state.qualityOptions.includes(quality))) return;
+          (quality !== DEFAULT_QUALITY && !state.qualityOptions.includes(quality))) return;
       const resumeTime = state.currentTime;
       const autoplay = intendedPlay;
       state.quality = quality;

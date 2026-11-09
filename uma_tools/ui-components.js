@@ -263,30 +263,22 @@
         return ({ list: '列表循环', one: '单曲循环', shuffle: '随机播放' })[this.player.playbackMode] || '列表循环';
       },
       qualityLabels: function () {
-        return { auto: '自动', standard: '标准', exhigh: '极高', lossless: '无损', hires: '高解析度无损' };
+        return { standard: '标准', exhigh: '极高', lossless: '无损', hires: '高解析度无损' };
       },
       qualityTags: function () {
-        return { exhigh: 'HQ', lossless: 'SQ', hires: 'Hi-Res' };
+        return { standard: 'LQ', exhigh: 'HQ', lossless: 'SQ', hires: 'Hi-Res' };
       },
       qualityBadge: function () {
-        const actual = this.player.actualQuality;
-        return this.qualityTags[actual] || this.qualityLabels[actual] || '音质';
+        return this.qualityTags[this.player.actualQuality || this.player.quality];
       },
       qualityAriaLabel: function () {
-        const actual = this.qualityLabels[this.player.actualQuality];
-        return actual ? '播放音质，当前' + actual : '播放音质';
+        return '播放音质，' + (this.player.actualQuality ? '当前 ' : '目标 ') + this.qualityBadge;
       },
       qualityMenuOptions: function () {
-        const options = [{ value: 'auto', label: this.qualityLabels.auto }];
-        if (this.player.qualityOptions.length) {
-          return options.concat(this.player.qualityOptions.map(value => ({
-            value, label: this.qualityLabels[value], tag: this.qualityTags[value], current: value === this.player.actualQuality
-          })));
-        }
-        options.push({
-          value: 'quality-status', disabled: true,
-          label: this.player.qualityLoading ? '正在检查可用音质' : '暂无其他可选音质'
-        });
+        const options = Object.keys(this.qualityLabels)
+          .filter(value => value === 'exhigh' || this.player.qualityOptions.includes(value))
+          .map(value => ({ value, label: this.qualityLabels[value], tag: this.qualityTags[value], current: value === this.player.actualQuality }));
+        if (this.player.qualityLoading) options.push({ value: 'quality-status', disabled: true, label: '正在检查可用音质' });
         return options;
       },
       statusText: function () {
@@ -493,7 +485,7 @@
               <span>{{ formatTime(player.duration) }}</span>
             </div>
             <div class="audio-output-controls">
-              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)">
+              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.quality" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)">
                 <template #option="{ option }">
                   <span class="audio-quality-option">
                     <span class="audio-quality-name">{{ option.label }}<span v-if="option.tag" class="audio-quality-code">{{ option.tag }}</span></span>

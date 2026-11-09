@@ -571,7 +571,7 @@ export function createSongs(deps) {
         : source.hostname === 'api.injahow.cn' && source.pathname === '/meting/' &&
           source.searchParams.get('server') === 'netease' && source.searchParams.get('type') === 'url'
           ? source.searchParams.get('id') : '';
-      if (/^\d{1,16}$/.test(id || '')) return '/api/audio?' + new URLSearchParams({ track: id, quality: quality || 'auto' });
+      if (/^\d{1,16}$/.test(id || '')) return '/api/audio?' + new URLSearchParams({ track: id, quality: quality || 'exhigh' });
     } catch (error) {}
     if (url.indexOf("/api/audio") === 0) return url;
     if (url.indexOf(location.origin) === 0) return url;

@@ -25,7 +25,7 @@
     margin: 0 auto;
     padding: 10px clamp(16px,2.5vw,40px);
     display: grid;
-    grid-template-columns: 52px minmax(160px,1fr) auto minmax(180px,.72fr) minmax(162px,.42fr) 46px 34px;
+    grid-template-columns: 52px minmax(160px,1fr) auto minmax(180px,.72fr) minmax(170px,.42fr) 46px 34px;
     align-items: center;
     gap: clamp(8px,1.35vw,18px);
 }
@@ -168,9 +168,9 @@
 .audio-dock-progress input:focus-visible { outline: 2px solid #ffd19a; outline-offset: 1px; }
 .audio-output-controls { display: flex; min-width: 0; align-items: center; gap: 8px; }
 .audio-quality.ui-select-control {
-    flex: 0 0 68px;
-    width: 68px;
-    min-width: 0;
+    flex: 0 0 auto;
+    width: max-content;
+    min-width: 76px;
     min-height: 0;
     border-color: rgba(255,255,255,.5);
     border-radius: 8px;
@@ -186,6 +186,7 @@
     font-size: .76rem;
 }
 .audio-quality .ui-select-trigger > svg { width: 13px; height: 13px; stroke: currentColor; }
+.audio-quality .ui-select-trigger > span { flex: none; }
 .audio-quality .ui-select-menu { right: -1px; left: auto; width: 228px; }
 .audio-quality-option {
     display: flex;

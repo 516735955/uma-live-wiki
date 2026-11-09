@@ -117,6 +117,8 @@ async function run() {
     })
   });
   await quality.controller.setQueue([track('a'), track('b')], 0, 'album', false);
+  assert.match(quality.audio.src, /quality=exhigh$/, 'HQ is the default request');
+  assert.equal(quality.state.actualQuality, 'lossless', 'the reported source quality may differ from the requested quality');
   quality.controller.loadQualityOptions();
   await Promise.resolve();
   quality.audio.metadata(240);
@@ -128,6 +130,13 @@ async function run() {
   assert.equal(quality.state.current.id, 'a');
   assert.equal(quality.state.queue.length, 2);
   assert.equal(quality.state.actualQuality, 'hires');
+  await quality.controller.setQuality('exhigh');
+  assert.match(quality.audio.src, /quality=exhigh$/, 'HQ remains selectable when the source falls back to another quality');
+
+  const previousAuto = setup(new FakeStorage({
+    'uma-live-player-v2': JSON.stringify({ queue: [track('a')], current: track('a'), quality: 'auto' })
+  }));
+  assert.equal(previousAuto.state.quality, 'exhigh', 'saved automatic settings migrate to HQ');
 
   const normalized = normalizeTrack(track('a'));
   assert.equal(normalized.vocalists[0].id, 'va-a', 'voice actor IDs are normalized for clickable credits');
