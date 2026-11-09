@@ -88,7 +88,12 @@ async function main() {
     await page.locator('.album-card').first().waitFor();
     await page.waitForFunction(() => [...document.querySelectorAll('.album-card img')].slice(0,6)
       .every(img => img.complete && img.naturalWidth > 0));
-    assert(/31[–-]60\s*\/\s*115/.test(await page.locator('.ui-pager').innerText()));
+    const albumResponse = await page.request.get(base+'/api/catalog/albums?page=2');
+    assert(albumResponse.ok());
+    const albums = await albumResponse.json();
+    assert.strictEqual(albums.items.length,30);
+    const albumPager = await page.locator('.ui-pager').innerText();
+    assert(new RegExp('31[–-]60\\s*/\\s*'+albums.total+'\\b').test(albumPager));
     await page.goto(base+'/zh-Hans/events');
     await page.locator('.event-catalog-cover img').first().waitFor();
     await page.waitForFunction(() => [...document.querySelectorAll('.event-catalog-cover img')].slice(0,3)
