@@ -16,6 +16,22 @@ from events_pipeline import program_discovery
 
 
 class AnimeIngestTests(unittest.TestCase):
+    def test_complete_legacy_staff_and_existing_cast_are_reused(self):
+        units = ['work-e13', 'work-e14']
+        documents = {
+            'ending_credits': {'episodes': []},
+            'units': {'series': [{'work_id': 'work', 'published_numbers': [13, 14],
+                                  'details': {'13': {'staff_status': 'complete'},
+                                              '14': {'staff_status': 'complete', 'cast_status': 'partial'}}}]},
+            'staff': {'credits': [{'unit_id': unit} for unit in units]},
+            'relations': {'relations': [{'source_type': 'anime_unit', 'source_id': unit,
+                                          'relation_type': 'credited_cast'} for unit in units]},
+            'watch_resources': {'resources': [{'authority': 'official', 'content_type': 'full_episode',
+                                               'status': 'active', 'scope': {'id': unit}} for unit in units]}
+        }
+        jobs, _ = credits.ending_jobs(documents, {}, {}, 172800)
+        self.assertEqual([row['scope']['id'] for row in jobs], ['work-e14'])
+
     def test_episode_publication_uses_exact_identity_and_keeps_curated_dates(self):
         from collect_anime_official import fullgate_publication
         channel='UCAWxPGGuIfWME2KTLUmSCHw'

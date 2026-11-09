@@ -185,7 +185,7 @@ def ending_jobs(documents, attempts, next_attempts, now):
     for unit_id in known_units.keys() & staff_units & cast_units:
         work_id, number = known_units[unit_id]
         detail = details[work_id].get(str(number), {})
-        if detail.get('staff_status') == detail.get('cast_status') == 'complete':
+        if detail.get('staff_status') == 'complete' and detail.get('cast_status') in (None, 'complete'):
             complete.add((work_id, number))
     jobs = [row for row in documents['watch_resources']['resources'] if row.get('authority') == 'official'
             and row.get('content_type') == 'full_episode' and row.get('status') == 'active'
