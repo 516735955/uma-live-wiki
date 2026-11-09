@@ -101,6 +101,7 @@ class AlbumImportTests(unittest.TestCase):
         self.assertEqual(album['cover'], 'curated')
         self.assertEqual(album['songs'][0]['artist'], 'manual')
         self.assertTrue(album['songs'][0]['url'])
+        self.assertEqual(album['songs'][0]['pic'], 'curated')
 
     def test_versions_remain_distinct(self):
         for left, right in [
@@ -123,6 +124,8 @@ class AlbumImportTests(unittest.TestCase):
             songs = auto_albums.build_songs(tracks, 'cover')
         self.assertTrue(songs[0]['url'])
         self.assertEqual([song['url'] for song in songs[1:]], ['', '', ''])
+        self.assertEqual([song['netease_id'] for song in songs], ['1', '2', '3', '4'])
+        self.assertEqual([song['duration_ms'] for song in songs], [180000] * 4)
         self.assertEqual(len(songs), 4)
 
 

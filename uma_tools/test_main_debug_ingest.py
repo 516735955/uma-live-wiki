@@ -127,7 +127,7 @@ class IngestRegressionTests(unittest.TestCase):
                 auto_albums.netease_search('Album')
         with patch.object(auto_albums, 'netease_search', return_value=(None, 0)), patch.object(auto_albums.time, 'sleep'):
             self.assertEqual(auto_albums.enrich_entry({'name': 'Album'}), 'no_match')
-        entry = {'name': 'Album', 'count': '1 曲', 'cover': 'cover', 'neteaseAlbumId': '1', 'songs': [{'name': 'Song', 'url': 'manual'}]}
+        entry = {'name': 'Album', 'count': '1 曲', 'cover': 'cover', 'neteaseAlbumId': '1', 'songs': [{'name': 'Song', 'url': 'manual', 'pic': 'manual cover'}]}
         with patch.object(auto_albums, 'netease_search', return_value=({'id': 1}, 100)), patch.object(auto_albums, 'netease_detail', return_value={'songs': [{'name': 'Song'}]}), patch.object(auto_albums, 'full_audio_ids', return_value=set()), patch.object(auto_albums.time, 'sleep'):
             self.assertEqual(auto_albums.enrich_entry(entry), 'unchanged')
 

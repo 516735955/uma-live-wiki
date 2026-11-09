@@ -22,8 +22,9 @@ LOG_FILE = os.path.join(BASE, 'albums_auto.log')
 MICROCMS_URL = 'https://6azuq3sitt-aw4monxblm4y4x0oos66.microcms.io/api/v1/goods'
 MICROCMS_KEY = 'xCZfLPNnbazeFHih87prlh1pomFsB1LFq6qZ'
 NO_IMAGE = 'https://tis9kp3e0c.user-space.cdn.idcfcloud.net/bc/images/common/no_image.jpg'
+PLACEHOLDER_COVERS = {None, '', NO_IMAGE, '/album_covers/placeholder.webp'}
 NETEASE_SEARCH = 'https://music.163.com/api/search/get/web'
-NETEASE_ALBUM = 'https://music.163.com/api/album/'
+NETEASE_ALBUM = 'https://music.163.com/api/v1/album/'
 METING = 'https://api.injahow.cn/meting/?server=netease&type=url&id='
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
 
@@ -216,10 +217,10 @@ def netease_detail(album_id):
     alb = (j or {}).get('album') or {}
     if not isinstance(j, dict) or j.get('code', 200) != 200:
         raise RuntimeError('NetEase album detail is temporarily unavailable')
-    tracks = alb.get('songs') or []
+    tracks = (j or {}).get('songs') or alb.get('songs') or []
     if not tracks:
         return None
-    return alb
+    return dict(alb, songs=tracks)
 
 
 def full_audio_ids(tracks):
@@ -241,32 +242,59 @@ def build_songs(tracks, cover):
     out = []
     for t in tracks:
         arts = [a.get('name', '') for a in (t.get('ar') or t.get('artists') or [])]
-        out.append({
+        track_id = t.get('id')
+        duration = t.get('dt') or t.get('duration')
+        track = {
             'name': t.get('name'),
             'artist': u'、'.join(a for a in arts if a),
-            'url': METING + str(t.get('id')) if t.get('id') in playable else '',
-            'pic': cover})
+            'url': METING + str(track_id) if track_id in playable else '',
+            'pic': cover}
+        if track_id:
+            track['netease_id'] = str(track_id)
+        if duration:
+            track['duration_ms'] = duration
+        out.append(track)
     return out
+
+
+def is_placeholder_cover(image):
+    return image in PLACEHOLDER_COVERS or bool(re.search(
+        r'comingsoon|no[_-]?image|placeholder', urllib.parse.urlsplit(image).path, re.I))
+
+
+def fill_album_cover(album, image):
+    if is_placeholder_cover(image):
+        return False
+    changed = False
+    if is_placeholder_cover(album.get('cover')):
+        album['cover'] = image
+        changed = True
+    for track in album.get('songs') or []:
+        if is_placeholder_cover(track.get('pic')):
+            track['pic'] = album['cover']
+            changed = True
+    return changed
 
 
 def enrich_entry(ent):
     before = json.dumps(ent, ensure_ascii=False, sort_keys=True)
-    title = ent.get('name') or ''
-    best, score = netease_search(title)
-    time.sleep(SLEEP_AFTER_CALL)
-    if not best:
-        return 'no_match'
-    alb = netease_detail(best.get('id'))
+    album_id = ent.get('neteaseAlbumId')
+    if not album_id:
+        best, _ = netease_search(ent.get('name') or '')
+        time.sleep(SLEEP_AFTER_CALL)
+        if not best:
+            return 'no_match'
+        album_id = best.get('id')
+    alb = netease_detail(album_id)
     if not alb:
         return 'no_match'
     tracks = alb.get('songs') or []
     cover = alb.get('picUrl') or alb.get('blurPicUrl') or ent.get('cover') or ''
     if not ent.get('count'):
         ent['count'] = str(len(tracks)) + u' 曲'
-    if cover and not ent.get('cover'):
-        ent['cover'] = cover
+    fill_album_cover(ent, cover)
     if not ent.get('neteaseAlbumId'):
-        ent['neteaseAlbumId'] = str(best.get('id'))
+        ent['neteaseAlbumId'] = str(album_id)
     incoming = build_songs(tracks, cover)
     if ent.get('songs'):
         existing_counts = {}
@@ -278,8 +306,16 @@ def enrich_entry(ent):
             by_name.setdefault(norm_key(track['name']), []).append(track)
         for track in ent['songs']:
             matches = by_name.get(norm_key(track.get('name')), [])
-            if existing_counts.get(norm_key(track.get('name'))) == 1 and len(matches) == 1 and not track.get('url') and matches[0].get('url'):
-                track['url'] = matches[0]['url']
+            if existing_counts.get(norm_key(track.get('name'))) != 1 or len(matches) != 1:
+                continue
+            match = matches[0]
+            if track.get('netease_id') and str(track['netease_id']) != match.get('netease_id'):
+                continue
+            if track.get('url') and track['url'] not in (match['url'], '/api/audio?track=' + match.get('netease_id', '')):
+                continue
+            for field in ('url', 'netease_id', 'duration_ms'):
+                if not track.get(field) and match.get(field):
+                    track[field] = match[field]
     else:
         ent['songs'] = incoming
     return 'changed' if before != json.dumps(ent, ensure_ascii=False, sort_keys=True) else 'unchanged'
@@ -317,7 +353,7 @@ def main():
     log('== albums auto ==')
     changed = False
     existing = set(core_title_key(a.get('name', '')) for a in albums)
-    catalogs = set(a.get('catalog') or '' for a in albums if a.get('catalog'))
+    catalogs = {a['catalog']: a for a in albums if a.get('catalog')}
 
     # 1) 官网新商品 -> 占位
     goods = get_official_goods()
@@ -344,11 +380,13 @@ def main():
             continue
         html = g.get('html') or ''
         catalog, release, company = parse_goods_meta(html)
-        if core_title_key(title) in existing or (catalog and catalog in catalogs):
-            continue
-        html = g.get('html') or ''
-        catalog, release, company = parse_goods_meta(html)
         img = (g.get('image') or {}).get('url') or NO_IMAGE
+        if catalog in catalogs:
+            if fill_album_cover(catalogs[catalog], img):
+                changed = True
+            continue
+        if core_title_key(title) in existing:
+            continue
         entry = {
             'name': title,
             'count': '',
@@ -362,7 +400,7 @@ def main():
         albums.append(entry)
         existing.add(core_title_key(title))
         if catalog:
-            catalogs.add(catalog)
+            catalogs[catalog] = entry
         added += 1
         log('新增占位: %s (%s)' % (title, release or '?'))
         # 已发售的新登记条目，马上补全
