@@ -4,6 +4,7 @@ function numericFacts(value) {
   const normalized = String(value || '').normalize('NFKC')
     .replace(/[−﹣]/g, '-')
     .replace(/(?<=\d)[,，](?=\d{3}(?:\D|$))/g, '')
+    .replace(/(\d{1,2})月\s*(\d{1,2})日\s*(\d{1,2}:\d{2})/g, '$1/$2 $3')
     .replace(/(\d{1,2}\/\d{1,2})\s+(\d{1,2}:\d{2})/g, '$1 | $2');
   // Normalize a date immediately followed by a time; preserve every other
   // numeric boundary as well as meaningful decimal/time separators.

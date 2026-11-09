@@ -176,4 +176,6 @@ if __name__ == "__main__":
     result = run(force=args.force, event_ids=set(args.event_id) if args.event_id else None,
                  missing_only=args.missing_only, limit=max(1,args.limit))
     print(json.dumps(result, ensure_ascii=False))
-    raise SystemExit(bool(result['failed'] or result['deferred']))
+    # Routine runs intentionally process a bounded batch. Explicit refreshes
+    # and publication prefetch still report unfinished requested artwork.
+    raise SystemExit(bool(result['failed'] or (result['deferred'] and (args.missing_only or args.event_id))))

@@ -10,7 +10,7 @@ const searchText = require('./search-text');
 const { createClassification } = require('./music-classification');
 const { projectEvents } = require('./event-presentation');
 
-const CATALOG_RESPONSE_SCHEMA = 11;
+const CATALOG_RESPONSE_SCHEMA = 12;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -293,7 +293,7 @@ function songSummarySearchText(song, music) {
   ].join(' '));
 }
 
-function songSummary(song, searchText, music) {
+function songSummary(song, music) {
   return {
     id: song.id,
     ambiguous_aliases: song.ambiguous_aliases || [],
@@ -534,9 +534,15 @@ class CatalogStore {
       return { data: event, summary: eventSummary(event, search), search };
     });
     const songRows = songs.map((song) => {
-      const search = searchText.fields([songSearchText(song, music), song.title, song.aliases, song.artists, ...(song.character_ids || []).map(id => charactersById.get(id)), ...(song.voice_actor_ids || []).map(id => actorsById.get(id)?.identity)]);
-      const summary = songSummary(song, search, music);
-      summary.artist_names = (song.voice_actor_ids || []).map((id) => {
+      const vocalists = (song.versions || []).flatMap(version =>
+        (version.releases || []).flatMap(release => release.vocalists || []));
+      const summary = songSummary({
+        ...song,
+        character_ids: song.released_character_ids || [...new Set(vocalists.map(row => row.character_id).filter(Boolean))],
+        voice_actor_ids: song.released_voice_actor_ids || [...new Set(vocalists.map(row => row.voice_actor_id).filter(Boolean))]
+      }, music);
+      const search = searchText.fields([songSearchText(song, music), song.title, song.aliases, song.artists, ...summary.character_ids.map(id => charactersById.get(id)), ...summary.voice_actor_ids.map(id => actorsById.get(id)?.identity)]);
+      summary.artist_names = summary.voice_actor_ids.map((id) => {
         const actor = actorsById.get(id);
         return actor && actor.identity && (actor.identity.zh || actor.identity.ja);
       }).filter(Boolean);
@@ -722,7 +728,7 @@ class CatalogStore {
     const songs = Array.from(versionsBySong, ([songId, versionIds]) => {
       const song = store.songsById.get(songId);
       if (!song) return null;
-      return Object.assign(songSummary(song, '', store.music), {
+      return Object.assign(songSummary(song, store.music), {
         versions: (song.versions || []).filter((version) => versionIds.has(version.id)).map((version) => ({
           id: version.id, title: version.title, version_label: version.version_label, instrumental: !!version.instrumental,
           releases: (version.releases || []).filter((release) => release.audio_url).slice(0, 1)
@@ -843,7 +849,7 @@ class CatalogStore {
     const songs = (album.songs || []).map((track, index) => {
       // A title is not an identity. Album and track position identify the release.
       const song = store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
-      return song ? { ...songSummary(song, '', store.music), versions: (song.versions || []).map(version => ({
+      return song ? { ...songSummary(song, store.music), versions: (song.versions || []).map(version => ({
         id: version.id, title: version.title, version_label: version.version_label, instrumental: !!version.instrumental,
         releases: (version.releases || []).filter(release => release.album_id === stableAlbumId(album))
       })).filter(version => version.releases.length) } : null;

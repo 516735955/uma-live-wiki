@@ -52,7 +52,8 @@ class EventLocalizationTests(unittest.TestCase):
                  'published_time': '18:00', 'cast': [{'name': '旧出演者'}]}
         merged, _ = apply_additive_program_refresh({'programs': [old]}, {'programs': [stale]})
         self.assertEqual(merged['programs'][0], old)
-        fresh = {**old, 'metadata_checked_at': 300, 'summary': '来源新简介', 'thumbnail': stale['thumbnail']}
+        fresh = {**old, 'metadata_checked_at': 300, 'summary': '来源新简介',
+                 'thumbnail': 'https://i2.ytimg.com/vi/abcdefghijk/hqdefault.jpg'}
         merged, _ = apply_additive_program_refresh({'programs': [old]}, {'programs': [fresh]})
         self.assertEqual(merged['programs'][0]['summary'], '来源新简介')
         self.assertEqual(merged['programs'][0]['thumbnail'], old['thumbnail'])

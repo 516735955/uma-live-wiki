@@ -27,7 +27,7 @@ def _field_is_manual(row: dict[str, pipeline_common.Any], field: str) -> bool:
 
 
 def _thumbnail_downgrade(existing: str, discovered: str) -> bool:
-    pattern = r'https?://i\.ytimg\.com/vi(?:_webp)?/([^/]+)/(maxresdefault|sddefault|hqdefault|mqdefault|default)\.'
+    pattern = r'https?://i\d*\.ytimg\.com/vi(?:_webp)?/([^/]+)/(maxresdefault|sddefault|hqdefault|mqdefault|default)\.'
     old, new = (pipeline_common.re.search(pattern, str(value or '')) for value in (existing, discovered))
     quality = {'maxresdefault': 4, 'sddefault': 3, 'hqdefault': 2, 'mqdefault': 1, 'default': 0}
     return bool(old and new and old[1] == new[1] and quality[new[2]] < quality[old[2]])

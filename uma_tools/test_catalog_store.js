@@ -75,6 +75,11 @@ async function main() {
   const songList = await store.songs(new URLSearchParams('page_size=5000'));
   assert.strictEqual(songList.total, snapshot.songRows.length);
   assert(songList.items.every((song) => !song.versions && !song.performances), 'song list leaked detail payloads');
+  for (const q of ['松田飒水', '松田颯水']) {
+    const recordings = await store.songs(new URLSearchParams({q, page_size:5000}));
+    assert(recordings.items.some(row => row.title === 'Gold-Recollection'));
+    assert(!recordings.items.some(row => row.title === 'BLOW my GALE'), 'a live appearance alone is not a recording credit');
+  }
   const song = await store.song(songList.items[0].id);
   assert(song && song.song && Array.isArray(song.song.versions), 'song detail is incomplete');
   const girlsLegend = await store.song('song-girls-legend-u-a4a797abe1');

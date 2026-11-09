@@ -14,6 +14,8 @@ async function main() {
   assert(translationFactsMatch('【11/6 18:40追記】', '【11/618:40补充】'), 'a source date/time boundary survives omitted whitespace');
   assert(!translationFactsMatch('【11/6 18:40追記】', '【11/618:41补充】'), 'changed minutes are still rejected');
   assert(!translationFactsMatch('11/6 12:00', '11/61 2:00'), 'a different date and hour are not accepted');
+  assert(translationFactsMatch('11/10 12:00', '11月10日12:00'), 'equivalent Chinese dates with times are accepted');
+  assert(!translationFactsMatch('11/11 11:59', '11/11:59'), 'an omitted hour or day is still rejected');
   const previous = [process.env.BAIDU_APPID, process.env.BAIDU_SECRET];
   process.env.BAIDU_APPID = process.env.BAIDU_SECRET = 'fixture';
   try {

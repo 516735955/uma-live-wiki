@@ -35,6 +35,17 @@ class AnimeIngestTests(unittest.TestCase):
         self.assertNotIn('release_date',rows[0])
         self.assertEqual(rows[0]['date_status'],'source_unavailable')
 
+        def unavailable(*args):
+            raise OSError('video metadata unavailable')
+
+        official = 'https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/'
+        rows = fullgate_publication([{'number':7, 'youtube_id':'iRmhghaZ94A', 'source_url':official,
+                                      'official_page_published_at':'2026-11-07T15:05:04.883Z'}],
+                                    feed_reader=unavailable, watch_reader=unavailable)
+        self.assertEqual(rows[0]['release_date'], '2026-11-08')
+        self.assertEqual(rows[0]['dates'][0]['source_url'], official)
+        self.assertNotIn('published_at', rows[0])
+
     def test_legacy_verified_staff_is_not_downloaded_again_for_missing_cast_flag(self):
         documents={key:{} for key in ('works','units','relations','staff','people','source_registry','watch_resources','asset_sources','ending_credits')}
         episode={'work_id':'work','number':1,'staff_status':'complete','cast':[]}

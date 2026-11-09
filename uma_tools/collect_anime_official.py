@@ -158,7 +158,18 @@ def fullgate_publication(rows, existing=None, feed_reader=None, watch_reader=Non
             except (OSError, ValueError, KeyError, TypeError):
                 continue
         else:
-            row['date_status'] = 'source_unavailable'
+            # The official episode page establishes a calendar date when the
+            # video metadata is unavailable.
+            try:
+                stamp = dt.datetime.fromisoformat(row.get('official_page_published_at') or '')
+                if stamp.tzinfo is None or stamp > dt.datetime.now(dt.timezone.utc):
+                    raise ValueError('episode page has no valid publication timestamp')
+                date = stamp.astimezone(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+                origin = row['source_url']
+                row.update(release_date=date, publication_source_url=origin,
+                           dates=[{'label':'官网单集公开','date':date,'timezone':'JST','source_url':origin}])
+            except (ValueError, KeyError, TypeError):
+                row['date_status'] = 'source_unavailable'
     return rows
 
 
@@ -177,6 +188,7 @@ def collect_fullgate() -> list[dict]:
              "cast": item.get("cast", []), "staff": item.get("staff", []),
              "stills": [image["url"] for image in item.get("images", [])],
              "youtube_id": item.get("movie_id", ""),
+             "official_page_published_at": item.get("publishedAt", ""),
              "source_url": site + "episodes/" + str(item["no"]) + "/"}
             for item in cms(domain, key, "episodes")["contents"]]
     units_file = Path(__file__).resolve().parents[1] / 'data/anime/units.json'

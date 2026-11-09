@@ -4,6 +4,7 @@ import json
 import subprocess
 import tempfile
 import unittest
+from urllib.error import HTTPError
 from pathlib import Path
 from unittest.mock import patch
 from PIL import Image
@@ -100,7 +101,9 @@ class IngestRegressionTests(unittest.TestCase):
         def run(args, **kwargs):
             calls.append(args)
             return subprocess.CompletedProcess(args, 0, json.dumps({'id': 'abcdefghijk', 'availability': 'subscriber_only'}), '')
-        result = watch.check_resource({'url': 'https://youtu.be/abcdefghijk', 'platform': 'youtube'}, run=run)
+        denied = HTTPError('https://www.youtube.com/oembed', 401, 'Unauthorized', {}, None)
+        with patch.object(watch.urllib.request, 'urlopen', side_effect=denied):
+            result = watch.check_resource({'url': 'https://youtu.be/abcdefghijk', 'platform': 'youtube'}, run=run)
         self.assertEqual(result[0], 'membership')
         self.assertIn('https://www.youtube.com/watch?v=abcdefghijk', calls[0])
 
