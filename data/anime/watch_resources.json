@@ -4153,6 +4153,19 @@
         "evidence": "provider oEmbed identifies the exact public video"
       },
       "verified_at": "2026-11-04T13:54:43.951482+00:00"
+    },
+    {
+      "id": "watch-auto-anime-umayuru-fullgate-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e07"
+      },
+      "url": "https://www.youtube.com/watch?v=iRmhghaZ94A",
+      "platform": "youtube",
+      "authority": "official",
+      "status": "unverified",
+      "content_type": "full_episode",
+      "source_ref": "official-auto-anime-umayuru-fullgate-e07"
     }
   ]
 }

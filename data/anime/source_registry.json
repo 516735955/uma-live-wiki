@@ -3690,6 +3690,14 @@
       "note": "仅用于核对本集片尾署名；官方观看入口不变。"
     },
     {
+      "id": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "kind": "public_video_copy",
+      "label": "原片片尾逐帧核对副本",
+      "url": "https://www.bilibili.com/video/BV1BPWJ6yExv/",
+      "observed_at": "2026-11-09",
+      "note": "仅用于核对本集片尾署名；官方观看入口不变。"
+    },
+    {
       "id": "official-ending-anime-umayuru-fullgate-e05",
       "kind": "official",
       "label": "单集原始片尾职员表",
@@ -3715,6 +3723,20 @@
       "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWxPGGuIfWME2KTLUmSCHw",
       "label": "官方频道视频精确发布时间",
       "kind": "official",
+      "observed_at": "2026-11-04"
+    },
+    {
+      "id": "official-auto-anime-umayuru-fullgate-e07",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/",
+      "label": "官方剧集资料",
+      "kind": "official",
+      "observed_at": "2026-11-09"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e07",
+      "kind": "official",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.youtube.com/watch?v=iRmhghaZ94A",
       "observed_at": "2026-11-04"
     }
   ]

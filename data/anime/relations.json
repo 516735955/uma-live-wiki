@@ -33450,6 +33450,118 @@
       "evidence_refs": [
         "official-ending-anime-umayuru-fullgate-e04"
       ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejiromcqueen-va-0053",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiromcqueen",
+      "voice_actor_id": "va-0053",
+      "signature": "メジロマックイーン",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejiroryan-va-0043",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiroryan",
+      "voice_actor_id": "va-0043",
+      "signature": "メジロライアン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-inesfujin-va-0168",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "inesfujin",
+      "voice_actor_id": "va-0168",
+      "signature": "アイネスフウジン",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejirodober-va-0014",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejirodober",
+      "voice_actor_id": "va-0014",
+      "signature": "メジロドーベル",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-ikunodictus-va-0119",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "ikunodictus",
+      "voice_actor_id": "va-0119",
+      "signature": "イクノディクタス",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejirobright-va-0054",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejirobright",
+      "voice_actor_id": "va-0054",
+      "signature": "メジロブライト",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-ending-cue-song-samba-de76f4b524-ending",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-samba-de76f4b524",
+      "usage_type": "ending",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e07"
+      ],
+      "version_id": "song-samba-de76f4b524-v-9e18a75a52",
+      "release_id": "album-lzc-3673",
+      "version_label": "Anime Size"
     }
   ]
 }

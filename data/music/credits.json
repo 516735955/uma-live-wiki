@@ -1,6 +1,91 @@
 {
   "schema_version": 1,
   "versions": {
+    "song-samba-de76f4b524-v-de76f4b524": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "producer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "official_production",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000001315.000005593.html",
+      "source_catalog": "LZC-3673",
+      "manual": true
+    },
+    "song-samba-de76f4b524-v-9e18a75a52": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "producer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "official_production",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000001315.000005593.html",
+      "source_catalog": "LZC-3673",
+      "manual": true,
+      "supplemental_sources": [
+        {
+          "source": "official_ending",
+          "source_url": "https://www.youtube.com/watch?v=iRmhghaZ94A"
+        }
+      ]
+    },
+    "song-samba-de76f4b524-v-431403595a": {
+      "credits": [
+        {
+          "role": "composer",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "arranger",
+          "name": "Lucas Nainemoutou",
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+        },
+        {
+          "role": "producer",
+          "name": "本田晃弘",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "official_production",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000001315.000005593.html",
+      "source_catalog": "LZC-3673",
+      "manual": true
+    },
     "song-you-aim-a-5686752029-v-5686752029": {
       "credits": [
         {

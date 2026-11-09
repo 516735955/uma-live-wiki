@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T23:00:16+00:00",
+  "generated_at": "2026-11-09T06:57:58+00:00",
   "coverage": {
     "creators": 305,
-    "credited_works": 422,
-    "credited_versions": 1443
+    "credited_works": 423,
+    "credited_versions": 1446
   },
   "creators": [
     {
@@ -2982,21 +2982,21 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 9
+          "count": 12
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 44
+          "count": 47
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 21
+          "count": 24
         }
       ],
-      "work_count": 13,
-      "version_count": 47,
+      "work_count": 14,
+      "version_count": 50,
       "works": [
         {
           "song_id": "song-66e8f91931",
@@ -3639,9 +3639,69 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-samba-de76f4b524",
+          "title": "ゆるゆるSAMBA",
+          "cover": "/album_covers/LZC-3673.webp",
+          "release_date": "2026-10-26",
+          "album_name": "アニメ『うまゆる ふるげ～と！』第2弾主題歌「ゆるゆるSAMBA」",
+          "roles": [
+            "lyricist",
+            "composer",
+            "arranger"
+          ],
+          "version_ids": [
+            "song-samba-de76f4b524-v-431403595a",
+            "song-samba-de76f4b524-v-9e18a75a52",
+            "song-samba-de76f4b524-v-de76f4b524"
+          ],
+          "versions": [
+            {
+              "id": "song-samba-de76f4b524-v-de76f4b524",
+              "title": "ゆるゆるSAMBA",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-samba-de76f4b524-v-9e18a75a52",
+              "title": "ゆるゆるSAMBA (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-samba-de76f4b524-v-431403595a",
+              "title": "ゆるゆるSAMBA (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "lyricist",
+                "composer",
+                "arranger"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
+        {
+          "creator_id": "creator-eaf94340d3",
+          "name": "本田晃弘",
+          "shared_version_count": 28,
+          "shared_work_count": 3,
+          "shared_song_ids": [
+            "song-a6384dba1c",
+            "song-atono-grand-re-ort-d03d9e06bf",
+            "song-samba-de76f4b524"
+          ]
+        },
         {
           "creator_id": "creator-647bf144a4",
           "name": "東大路憲太",
@@ -3656,16 +3716,6 @@
         {
           "creator_id": "creator-3e35bf54dc",
           "name": "千葉 梓",
-          "shared_version_count": 25,
-          "shared_work_count": 2,
-          "shared_song_ids": [
-            "song-a6384dba1c",
-            "song-atono-grand-re-ort-d03d9e06bf"
-          ]
-        },
-        {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
           "shared_version_count": 25,
           "shared_work_count": 2,
           "shared_song_ids": [
@@ -35329,11 +35379,11 @@
         {
           "role": "producer",
           "label": "制作",
-          "count": 3
+          "count": 6
         }
       ],
-      "work_count": 18,
-      "version_count": 190,
+      "work_count": 19,
+      "version_count": 193,
       "works": [
         {
           "song_id": "song-228f943b49",
@@ -37476,6 +37526,47 @@
               ]
             }
           ]
+        },
+        {
+          "song_id": "song-samba-de76f4b524",
+          "title": "ゆるゆるSAMBA",
+          "cover": "/album_covers/LZC-3673.webp",
+          "release_date": "2026-10-26",
+          "album_name": "アニメ『うまゆる ふるげ～と！』第2弾主題歌「ゆるゆるSAMBA」",
+          "roles": [
+            "producer"
+          ],
+          "version_ids": [
+            "song-samba-de76f4b524-v-431403595a",
+            "song-samba-de76f4b524-v-9e18a75a52",
+            "song-samba-de76f4b524-v-de76f4b524"
+          ],
+          "versions": [
+            {
+              "id": "song-samba-de76f4b524-v-de76f4b524",
+              "title": "ゆるゆるSAMBA",
+              "version_label": "",
+              "roles": [
+                "producer"
+              ]
+            },
+            {
+              "id": "song-samba-de76f4b524-v-9e18a75a52",
+              "title": "ゆるゆるSAMBA (Anime Size)",
+              "version_label": "Anime Size",
+              "roles": [
+                "producer"
+              ]
+            },
+            {
+              "id": "song-samba-de76f4b524-v-431403595a",
+              "title": "ゆるゆるSAMBA (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "producer"
+              ]
+            }
+          ]
         }
       ],
       "collaborators": [
@@ -37503,6 +37594,17 @@
           ]
         },
         {
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
+          "name": "Lucas Nainemoutou",
+          "shared_version_count": 28,
+          "shared_work_count": 3,
+          "shared_song_ids": [
+            "song-a6384dba1c",
+            "song-atono-grand-re-ort-d03d9e06bf",
+            "song-samba-de76f4b524"
+          ]
+        },
+        {
           "creator_id": "creator-9f5bcba5ee",
           "name": "丹下めえな",
           "shared_version_count": 60,
@@ -37510,16 +37612,6 @@
           "shared_song_ids": [
             "song-29e836f0da",
             "song-548d6d3907"
-          ]
-        },
-        {
-          "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
-          "name": "Lucas Nainemoutou",
-          "shared_version_count": 25,
-          "shared_work_count": 2,
-          "shared_song_ids": [
-            "song-a6384dba1c",
-            "song-atono-grand-re-ort-d03d9e06bf"
           ]
         },
         {
@@ -60583,5 +60675,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "c5616bac70d6a606cea1"
+  "build_id": "f380078ac86408e6a928"
 }

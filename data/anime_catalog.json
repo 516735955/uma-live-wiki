@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "build_id": "anime-4d94859e7cbcc020",
-  "generated_at": "2026-11-07T00:00:00+08:00",
+  "build_id": "anime-7f26640f0c9b2a2d",
+  "generated_at": "2026-11-09T00:00:00+08:00",
   "coverage": {
     "works": 11,
-    "units": 129,
-    "released_units": 129,
+    "units": 130,
+    "released_units": 130,
     "scheduled_units": 0,
-    "watch_resources": 136,
-    "relations": 2074,
-    "staff_credits": 25537,
-    "staff_people": 2897
+    "watch_resources": 137,
+    "relations": 2081,
+    "staff_credits": 25603,
+    "staff_people": 2922
   },
   "works": [
     {
@@ -1205,71 +1205,68 @@
         }
       ],
       "cover_original": "https://umamusu.wiki/w/images/2/21/UmayuruFullGate-AnimePromoCover.png",
-      "unit_count": 6,
-      "released_count": 6,
+      "unit_count": 7,
+      "released_count": 7,
       "latest_unit": {
-        "id": "anime-umayuru-fullgate-e06",
+        "id": "anime-umayuru-fullgate-e07",
         "work_id": "anime-umayuru-fullgate",
-        "number": 6,
-        "label": "第 6 话",
+        "number": 7,
+        "label": "第 7 话",
         "unit_type": "short",
-        "summary_zh": "比赛前吃得太多的小栗帽，能在伙伴们的帮助下减下体重吗？玉藻十字又能不能吐槽得过来呢！？",
-        "release_date": "2026-11-01",
+        "summary_zh": "为了迎接生日的奶奶，为选择礼物而烦恼的梅吉罗家的各位。回顾回忆，大家选择的礼物是？",
+        "release_date": "2026-11-08",
         "status": "released",
         "stills": [
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-01.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/c16e71585a1443b681006190f5ed28b7/UFG_06_01.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           },
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-02.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/4149450a9c924170a665214718376096/UFG_06_02.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-02.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/33394b79007f4e6ea3e027099b988897/UFG_07_02.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           },
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-03.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/4cd334c4899940c280e0d1184f638780/UFG_06_03.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-03.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/1eee95c787424c7fb002f3f8b49ff58b/UFG_07_03.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           },
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-04.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/a60f1abb17164850b9d9517b8e30b40f/UFG_06_04.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-04.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/07cfacda207740f482aa520b0be1f0ae/UFG_07_04.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           },
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-05.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/8d59a97582614e5a92c2152c76b67921/UFG_06_05.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-05.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cfeebc95ced24b62a4ca40412b1fa2b1/UFG_07_05.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           },
           {
-            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-06.webp",
-            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/bf60b37d9bac4839a08f37681c5ff028/UFG_06_06.jpg",
-            "source_ref": "official-auto-anime-umayuru-fullgate-e06"
+            "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-06.webp",
+            "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/858592ff95f440fd9e3c105c573a41e9/UFG_07_06.jpg",
+            "source_ref": "official-auto-anime-umayuru-fullgate-e07"
           }
         ],
         "source_refs": [
-          "official-auto-anime-umayuru-fullgate-e06",
-          "official-ending-anime-umayuru-fullgate-e06",
-          "official-published-anime-umayuru-fullgate-e06"
+          "official-auto-anime-umayuru-fullgate-e07",
+          "official-ending-anime-umayuru-fullgate-e07"
         ],
-        "title_ja": "オグリの減量大作戦！",
-        "title_zh": "小栗帽减重大作战！",
-        "summary_ja": "レース前に食べ過ぎてしまったオグリキャップ。\n仲間たちはオグリを減量させられるのか！？タマモクロスのツッコミは追いつくのか―！？",
-        "auto_source": true,
-        "published_at": "2026-11-01T12:00:07+00:00",
-        "publication_source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWxPGGuIfWME2KTLUmSCHw",
+        "title_ja": "おばあさまへ",
+        "summary_ja": "誕生日を迎えるおばあさまのため、プレゼント選びに悩むメジロ家の面々。\n思い出を振り返りながら、一同が選んだ贈り物とは―？",
         "dates": [
           {
             "label": "ぱかチューブっ！公开",
-            "date": "2026-11-01",
-            "display": "2026-11-01 21:00",
+            "date": "2026-11-08",
             "timezone": "JST",
-            "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWxPGGuIfWME2KTLUmSCHw"
+            "source_url": "https://x.com/uma_musu/status/2119399943517708632"
           }
         ],
-        "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e06-auto-01.webp",
-        "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/c16e71585a1443b681006190f5ed28b7/UFG_06_01.jpg",
+        "publication_source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/",
+        "auto_source": true,
+        "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+        "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+        "title_zh": "去奶奶家",
         "staff_status": "complete",
         "music_cues": [
           {
@@ -1289,9 +1286,10 @@
             ],
             "institutions": [],
             "source_refs": [
-              "official-ending-anime-umayuru-fullgate-e06"
+              "official-ending-anime-umayuru-fullgate-e07"
             ],
-            "source_time": 168
+            "source_time": 169,
+            "song_id": "song-samba-de76f4b524"
           }
         ]
       },
@@ -8762,6 +8760,92 @@
           "source_time": 168
         }
       ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07",
+      "work_id": "anime-umayuru-fullgate",
+      "number": 7,
+      "label": "第 7 话",
+      "unit_type": "short",
+      "summary_zh": "为了迎接生日的奶奶，为选择礼物而烦恼的梅吉罗家的各位。回顾回忆，大家选择的礼物是？",
+      "release_date": "2026-11-08",
+      "status": "released",
+      "stills": [
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-02.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/33394b79007f4e6ea3e027099b988897/UFG_07_02.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-03.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/1eee95c787424c7fb002f3f8b49ff58b/UFG_07_03.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-04.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/07cfacda207740f482aa520b0be1f0ae/UFG_07_04.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-05.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cfeebc95ced24b62a4ca40412b1fa2b1/UFG_07_05.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        },
+        {
+          "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-06.webp",
+          "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/858592ff95f440fd9e3c105c573a41e9/UFG_07_06.jpg",
+          "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+        }
+      ],
+      "source_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ],
+      "title_ja": "おばあさまへ",
+      "summary_ja": "誕生日を迎えるおばあさまのため、プレゼント選びに悩むメジロ家の面々。\n思い出を振り返りながら、一同が選んだ贈り物とは―？",
+      "dates": [
+        {
+          "label": "ぱかチューブっ！公开",
+          "date": "2026-11-08",
+          "timezone": "JST",
+          "source_url": "https://x.com/uma_musu/status/2119399943517708632"
+        }
+      ],
+      "publication_source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/",
+      "auto_source": true,
+      "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+      "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+      "title_zh": "去奶奶家",
+      "staff_status": "complete",
+      "music_cues": [
+        {
+          "title": "ゆるゆるSAMBA",
+          "usage_type": "ed",
+          "credits": [
+            {
+              "role": "作词／作曲／编曲",
+              "names": [
+                "Lucas Nainemoutou"
+              ],
+              "institutions": [],
+              "creator_ids": [
+                "creator-lucas-nainemoutou-2d8686f23a"
+              ]
+            }
+          ],
+          "institutions": [],
+          "source_refs": [
+            "official-ending-anime-umayuru-fullgate-e07"
+          ],
+          "source_time": 169,
+          "song_id": "song-samba-de76f4b524"
+        }
+      ]
     }
   ],
   "watch_resources": [
@@ -12917,6 +13001,19 @@
         "evidence": "provider oEmbed identifies the exact public video"
       },
       "verified_at": "2026-11-04T13:54:43.951482+00:00"
+    },
+    {
+      "id": "watch-auto-anime-umayuru-fullgate-e07",
+      "scope": {
+        "type": "unit",
+        "id": "anime-umayuru-fullgate-e07"
+      },
+      "url": "https://www.youtube.com/watch?v=iRmhghaZ94A",
+      "platform": "youtube",
+      "authority": "official",
+      "status": "unverified",
+      "content_type": "full_episode",
+      "source_ref": "official-auto-anime-umayuru-fullgate-e07"
     }
   ],
   "relations": [
@@ -46376,6 +46473,119 @@
       "evidence_refs": [
         "official-ending-anime-umayuru-fullgate-e04"
       ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejiromcqueen-va-0053",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiromcqueen",
+      "voice_actor_id": "va-0053",
+      "signature": "メジロマックイーン",
+      "display_order": 0,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejiroryan-va-0043",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejiroryan",
+      "voice_actor_id": "va-0043",
+      "signature": "メジロライアン",
+      "display_order": 1,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-inesfujin-va-0168",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "inesfujin",
+      "voice_actor_id": "va-0168",
+      "signature": "アイネスフウジン",
+      "display_order": 2,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejirodober-va-0014",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejirodober",
+      "voice_actor_id": "va-0014",
+      "signature": "メジロドーベル",
+      "display_order": 3,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-ikunodictus-va-0119",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "ikunodictus",
+      "voice_actor_id": "va-0119",
+      "signature": "イクノディクタス",
+      "display_order": 4,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-auto-cast-mejirobright-va-0054",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "credited_cast",
+      "target_type": "character",
+      "target_id": "mejirobright",
+      "voice_actor_id": "va-0054",
+      "signature": "メジロブライト",
+      "display_order": 5,
+      "label": "",
+      "evidence_refs": [
+        "official-auto-anime-umayuru-fullgate-e07",
+        "official-ending-anime-umayuru-fullgate-e07"
+      ]
+    },
+    {
+      "id": "anime-umayuru-fullgate-e07-ending-cue-song-samba-de76f4b524-ending",
+      "source_type": "anime_unit",
+      "source_id": "anime-umayuru-fullgate-e07",
+      "relation_type": "uses_song",
+      "target_type": "song",
+      "target_id": "song-samba-de76f4b524",
+      "usage_type": "ed",
+      "label": "",
+      "evidence_refs": [
+        "official-ending-anime-umayuru-fullgate-e07"
+      ],
+      "version_id": "song-samba-de76f4b524-v-9e18a75a52",
+      "release_id": "album-lzc-3673",
+      "version_label": "Anime Size",
+      "usage_type_raw": "ending"
     }
   ],
   "staff": [
@@ -530422,6 +530632,1070 @@
         "出品"
       ],
       "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 0,
+      "role": "导演",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 154,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "監督",
+      "roles": [
+        "导演"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 1,
+      "role": "原作",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 157,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "Cygames",
+      "role_raw": "原作",
+      "roles": [
+        "原作"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 2,
+      "role": "剧本总监",
+      "group": "",
+      "name": "三岳真希",
+      "source_time": 157,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-三岳真希",
+      "role_raw": "シナリオディレクター",
+      "roles": [
+        "剧本总监"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 3,
+      "role": "剧本监修",
+      "group": "",
+      "name": "松野芽衣子",
+      "source_time": 157,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-松野芽衣子",
+      "role_raw": "シナリオ監修",
+      "roles": [
+        "剧本监修"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 4,
+      "role": "剧本监修",
+      "group": "",
+      "name": "髙橋沙織",
+      "source_time": 157,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-髙橋沙織",
+      "role_raw": "シナリオ監修",
+      "roles": [
+        "剧本监修"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 5,
+      "role": "系列构成",
+      "group": "",
+      "name": "市川十億衛門",
+      "source_time": 157,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-市川十億衛門",
+      "role_raw": "シリーズ構成",
+      "roles": [
+        "系列构成"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 6,
+      "role": "脚本",
+      "group": "",
+      "name": "木原梨花",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-木原梨花",
+      "role_raw": "脚本",
+      "roles": [
+        "脚本"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 7,
+      "role": "分镜",
+      "group": "",
+      "name": "金子剣",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-金子剣",
+      "role_raw": "絵コンテ",
+      "roles": [
+        "分镜"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 8,
+      "role": "角色设计监修",
+      "group": "",
+      "name": "橋野翼",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-橋野翼",
+      "role_raw": "キャラクターデザイン監修",
+      "roles": [
+        "角色设计监修"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 9,
+      "role": "角色设计监修",
+      "group": "",
+      "name": "兼髙瑞穂",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-兼髙瑞穂",
+      "role_raw": "キャラクターデザイン監修",
+      "roles": [
+        "角色设计监修"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 10,
+      "role": "角色设计",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "キャラクターデザイン",
+      "roles": [
+        "角色设计"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 11,
+      "role": "角色设计",
+      "group": "",
+      "name": "よよよ",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-よよよ",
+      "role_raw": "キャラクターデザイン",
+      "roles": [
+        "角色设计"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 12,
+      "role": "总作画监督／色彩设计",
+      "group": "",
+      "name": "宮嶋星矢",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "総作画監督・色彩設計",
+      "roles": [
+        "总作画监督",
+        "色彩设计"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 13,
+      "role": "动画演出",
+      "group": "",
+      "name": "佐々木瑞樹",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-佐々木瑞樹",
+      "role_raw": "演出",
+      "roles": [
+        "动画演出"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 14,
+      "role": "作画监督",
+      "group": "",
+      "name": "余凪白",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-余凪白",
+      "role_raw": "作画監督",
+      "roles": [
+        "作画监督"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 15,
+      "role": "作画监督",
+      "group": "",
+      "name": "齊藤香子",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-齊藤香子",
+      "role_raw": "作画監督",
+      "roles": [
+        "作画监督"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 16,
+      "role": "作画监督",
+      "group": "",
+      "name": "阿保鬼申",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-阿保鬼申",
+      "role_raw": "作画監督",
+      "roles": [
+        "作画监督"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 17,
+      "role": "原画",
+      "group": "",
+      "name": "近藤アユミ",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-近藤アユミ",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 18,
+      "role": "原画",
+      "group": "",
+      "name": "前田理子",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-前田理子",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 19,
+      "role": "原画",
+      "group": "",
+      "name": "宮原光明",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-宮原光明",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 20,
+      "role": "原画",
+      "group": "",
+      "name": "鈴木克弥",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-鈴木克弥",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 21,
+      "role": "原画",
+      "group": "",
+      "name": "北岡真実",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-北岡真実",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 22,
+      "role": "第二原画",
+      "group": "",
+      "name": "丁志偉",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-丁志偉",
+      "role_raw": "第二原画",
+      "roles": [
+        "第二原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 23,
+      "role": "第二原画",
+      "group": "",
+      "name": "楊彪",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-楊彪",
+      "role_raw": "第二原画",
+      "roles": [
+        "第二原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 24,
+      "role": "第二原画",
+      "group": "",
+      "name": "曾凡亮",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-曾凡亮",
+      "role_raw": "第二原画",
+      "roles": [
+        "第二原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 25,
+      "role": "第二原画",
+      "group": "",
+      "name": "艾己稲",
+      "source_time": 162,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-艾己稲",
+      "role_raw": "第二原画",
+      "roles": [
+        "第二原画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 26,
+      "role": "中间动画检查",
+      "group": "",
+      "name": "佐々木瑞樹",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-佐々木瑞樹",
+      "role_raw": "動画検査",
+      "roles": [
+        "中间动画检查"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 27,
+      "role": "中间动画",
+      "group": "",
+      "name": "王鑫",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-王鑫",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 28,
+      "role": "中间动画",
+      "group": "",
+      "name": "陳思語",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-陳思語",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 29,
+      "role": "中间动画",
+      "group": "",
+      "name": "粟敦月",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-粟敦月",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 30,
+      "role": "中间动画",
+      "group": "",
+      "name": "文钰婕",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-文钰婕",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 31,
+      "role": "中间动画",
+      "group": "",
+      "name": "董安琪",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-董安琪",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 32,
+      "role": "中间动画",
+      "group": "",
+      "name": "熊志雄",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-熊志雄",
+      "role_raw": "動画",
+      "roles": [
+        "中间动画"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 33,
+      "role": "仕上",
+      "group": "",
+      "name": "呉城",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-呉城",
+      "role_raw": "仕上",
+      "roles": [
+        "仕上"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 34,
+      "role": "仕上",
+      "group": "",
+      "name": "倪志傑",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-倪志傑",
+      "role_raw": "仕上",
+      "roles": [
+        "仕上"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 35,
+      "role": "仕上",
+      "group": "",
+      "name": "龔静",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-龔静",
+      "role_raw": "仕上",
+      "roles": [
+        "仕上"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 36,
+      "role": "仕上",
+      "group": "",
+      "name": "錢小敏",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-錢小敏",
+      "role_raw": "仕上",
+      "roles": [
+        "仕上"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 37,
+      "role": "仕上",
+      "group": "",
+      "name": "李瑞傑",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-李瑞傑",
+      "role_raw": "仕上",
+      "roles": [
+        "仕上"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 38,
+      "role": "制作统筹",
+      "group": "",
+      "name": "畑田裕太",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-畑田裕太",
+      "role_raw": "制作進行",
+      "roles": [
+        "制作统筹"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 39,
+      "role": "背景",
+      "group": "",
+      "name": "studio Moonriver",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "studio Moonriver",
+      "role_raw": "背景",
+      "roles": [
+        "背景"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 40,
+      "role": "摄影监督",
+      "group": "",
+      "name": "大図佑",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影監督",
+      "roles": [
+        "摄影监督"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 41,
+      "role": "剪辑",
+      "group": "",
+      "name": "早島苫",
+      "source_time": 164,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-早島苫",
+      "role_raw": "編集",
+      "roles": [
+        "剪辑"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 42,
+      "role": "音乐",
+      "group": "",
+      "name": "うまゆる音楽製作委員会",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "うまゆる音楽製作委員会",
+      "role_raw": "音楽",
+      "roles": [
+        "音乐"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 43,
+      "role": "音乐制片人",
+      "group": "",
+      "name": "本田晃弘",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-本田晃弘",
+      "role_raw": "音楽プロデューサー",
+      "roles": [
+        "音乐制片人"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 44,
+      "role": "录音／调音",
+      "group": "",
+      "name": "沼田陽由里",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-沼田陽由里",
+      "role_raw": "録音・調整",
+      "roles": [
+        "录音",
+        "调音"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 45,
+      "role": "录音助理／调音助理",
+      "group": "",
+      "name": "小林丈晃",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-小林丈晃",
+      "role_raw": "録音・調整助手",
+      "roles": [
+        "录音助理",
+        "调音助理"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 46,
+      "role": "音响监督",
+      "group": "",
+      "name": "神保直史",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-神保直史",
+      "role_raw": "音響監督",
+      "roles": [
+        "音响监督"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 47,
+      "role": "音响效果",
+      "group": "",
+      "name": "北方将実",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-北方将実",
+      "role_raw": "音響効果",
+      "roles": [
+        "音响效果"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 48,
+      "role": "录音室",
+      "group": "",
+      "name": "美星",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "美星",
+      "role_raw": "録音スタジオ",
+      "roles": [
+        "录音室"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 49,
+      "role": "台本制作",
+      "group": "",
+      "name": "NSP",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "NSP",
+      "role_raw": "台本製作",
+      "roles": [
+        "台本制作"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 50,
+      "role": "音响制作制片人",
+      "group": "",
+      "name": "小木曽悠太",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-小木曽悠太",
+      "credited_name": "小木曾悠太",
+      "role_raw": "音響制作プロデューサー",
+      "roles": [
+        "音响制作制片人"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 51,
+      "role": "音响制作",
+      "group": "",
+      "name": "REMAX",
+      "source_time": 168,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "REMAX",
+      "role_raw": "音響制作",
+      "roles": [
+        "音响制作"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 52,
+      "role": "分镜",
+      "group": "片尾动画",
+      "name": "宮嶋星矢",
+      "source_time": 175,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-宮嶋星矢",
+      "role_raw": "絵コンテ",
+      "roles": [
+        "分镜"
+      ],
+      "group_raw": "エンディングアニメーション制作"
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 53,
+      "role": "原画",
+      "group": "片尾动画",
+      "name": "よよよ",
+      "source_time": 175,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-よよよ",
+      "role_raw": "原画",
+      "roles": [
+        "原画"
+      ],
+      "group_raw": "エンディングアニメーション制作"
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 54,
+      "role": "中间动画／上色",
+      "group": "片尾动画",
+      "name": "Studio ArcLine",
+      "source_time": 175,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "Studio ArcLine",
+      "role_raw": "動画・仕上げ",
+      "roles": [
+        "中间动画",
+        "上色"
+      ],
+      "group_raw": "エンディングアニメーション制作"
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 55,
+      "role": "背景",
+      "group": "片尾动画",
+      "name": "studio Moonriver",
+      "source_time": 175,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "studio Moonriver",
+      "role_raw": "背景",
+      "roles": [
+        "背景"
+      ],
+      "group_raw": "エンディングアニメーション制作"
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 56,
+      "role": "摄影",
+      "group": "片尾动画",
+      "name": "大図佑",
+      "source_time": 175,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-大図佑",
+      "role_raw": "撮影",
+      "roles": [
+        "摄影"
+      ],
+      "group_raw": "エンディングアニメーション制作"
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 57,
+      "role": "企划协力",
+      "group": "",
+      "name": "「ウマ娘 プリティーダービー」ゲーム開発・運営チーム",
+      "source_time": 176,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "「ウマ娘 プリティーダービー」ゲーム開発・運営チーム",
+      "role_raw": "企画協力",
+      "roles": [
+        "企划协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 58,
+      "role": "协力",
+      "group": "",
+      "name": "阿部憶人",
+      "source_time": 176,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-阿部憶人",
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 59,
+      "role": "协力",
+      "group": "",
+      "name": "久保武史",
+      "source_time": 176,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-久保武史",
+      "institutions": [
+        "ゲームアディクト"
+      ],
+      "role_raw": "協力",
+      "roles": [
+        "协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 60,
+      "role": "制片人",
+      "group": "",
+      "name": "片田悠介",
+      "source_time": 176,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-片田悠介",
+      "role_raw": "プロデューサー",
+      "roles": [
+        "制片人"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 61,
+      "role": "动画制片人",
+      "group": "",
+      "name": "青木泰寛",
+      "source_time": 178,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-青木泰寛",
+      "role_raw": "アニメーションプロデューサー",
+      "roles": [
+        "动画制片人"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 62,
+      "role": "助理制片人",
+      "group": "",
+      "name": "渡邉杏奈",
+      "source_time": 178,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "person_id": "staff-渡邉杏奈",
+      "role_raw": "アシスタントプロデューサー",
+      "roles": [
+        "助理制片人"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 63,
+      "role": "动画制作",
+      "group": "",
+      "name": "AtoriE",
+      "source_time": 178,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "AtoriE",
+      "role_raw": "アニメーション制作",
+      "roles": [
+        "动画制作"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 64,
+      "role": "动画制作协力",
+      "group": "",
+      "name": "スタジオてくてく",
+      "source_time": 178,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "スタジオてくてく",
+      "role_raw": "アニメーション制作協力",
+      "roles": [
+        "动画制作协力"
+      ],
+      "group_raw": ""
+    },
+    {
+      "work_id": "anime-umayuru-fullgate",
+      "source_ref": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "order": 65,
+      "role": "出品",
+      "group": "",
+      "name": "Cygames",
+      "source_time": 181,
+      "unit_id": "anime-umayuru-fullgate-e07",
+      "organization": "Cygames",
+      "role_raw": "製作",
+      "roles": [
+        "出品"
+      ],
+      "group_raw": ""
     }
   ],
   "people": [
@@ -532924,14 +534198,15 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "脚本",
         "剧本监修"
       ],
       "work_count": 3,
-      "unit_count": 9
+      "unit_count": 10
     },
     {
       "id": "staff-境宗久",
@@ -533589,13 +534864,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "剧本总监"
       ],
       "work_count": 2,
-      "unit_count": 10
+      "unit_count": 11
     },
     {
       "id": "staff-梶﨑聖賀",
@@ -533705,13 +534981,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "角色设计监修"
       ],
       "work_count": 3,
-      "unit_count": 33
+      "unit_count": 34
     },
     {
       "id": "staff-白佐木和馬",
@@ -533808,7 +535085,8 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "creator_id": "creator-eaf94340d3",
       "roles": [
@@ -533816,7 +535094,7 @@
         "音乐"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-神保直史",
@@ -533857,13 +535135,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "音响监督"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-宮嶋星矢",
@@ -533925,7 +535204,8 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "导演",
@@ -533939,7 +535219,7 @@
         "作画监督"
       ],
       "work_count": 3,
-      "unit_count": 54
+      "unit_count": 55
     },
     {
       "id": "staff-髙橋沙織",
@@ -533952,13 +535232,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "剧本监修"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-市川十億衛門",
@@ -533971,14 +535252,15 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "系列构成",
         "脚本"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-兼髙瑞穂",
@@ -533991,13 +535273,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "角色设计监修"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-大図佑",
@@ -534058,7 +535341,8 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "摄影监督",
@@ -534067,7 +535351,7 @@
         "背景"
       ],
       "work_count": 3,
-      "unit_count": 54
+      "unit_count": 55
     },
     {
       "id": "staff-加藤慶久",
@@ -534128,13 +535412,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "音响效果"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-小島明日香",
@@ -543850,14 +545135,16 @@
         "official-ending-anime-cinderella-gray-e15",
         "official-ending-anime-cinderella-gray-e07",
         "official-ending-anime-rttt-film",
-        "official-ending-anime-cinderella-gray-e11"
+        "official-ending-anime-cinderella-gray-e11",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "原画",
-        "第二原画"
+        "第二原画",
+        "分镜"
       ],
-      "work_count": 4,
-      "unit_count": 10
+      "work_count": 5,
+      "unit_count": 11
     },
     {
       "id": "staff-松原一之",
@@ -560668,7 +561955,8 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "alias_ids": [
         "staff-阿部億人"
@@ -560677,7 +561965,7 @@
         "协力"
       ],
       "work_count": 9,
-      "unit_count": 89
+      "unit_count": 90
     },
     {
       "id": "staff-久保武史",
@@ -560775,13 +562063,14 @@
         "official-ending-anime-umayuru-fullgate-e01",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "协力"
       ],
       "work_count": 9,
-      "unit_count": 89
+      "unit_count": 90
     },
     {
       "id": "staff-山中一孝",
@@ -561310,14 +562599,15 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "角色设计",
         "原画"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-早島苫",
@@ -561329,13 +562619,14 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "剪辑"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-沼田陽由里",
@@ -561347,14 +562638,15 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "录音",
         "调音"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-小林丈晃",
@@ -561366,14 +562658,15 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "录音助理",
         "调音助理"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-小木曽悠太",
@@ -561418,14 +562711,15 @@
         "official-ending-anime-umayuru-prettygray-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "音响制作制片人",
         "音响制作负责"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-雛田ゆいち",
@@ -561528,7 +562822,8 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "制片人",
@@ -561536,7 +562831,7 @@
         "联机剪辑管理"
       ],
       "work_count": 3,
-      "unit_count": 34
+      "unit_count": 35
     },
     {
       "id": "staff-青木泰寛",
@@ -561596,14 +562891,15 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "动画制片人",
         "助理制片人"
       ],
       "work_count": 3,
-      "unit_count": 54
+      "unit_count": 55
     },
     {
       "id": "staff-渡邉杏奈",
@@ -561615,13 +562911,14 @@
         "official-ending-anime-umayuru-fullgate-e03",
         "verified-ending-copy-anime-umayuru-fullgate-e04",
         "verified-ending-copy-anime-umayuru-fullgate-e05",
-        "verified-ending-copy-anime-umayuru-fullgate-e06"
+        "verified-ending-copy-anime-umayuru-fullgate-e06",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "助理制片人"
       ],
       "work_count": 1,
-      "unit_count": 6
+      "unit_count": 7
     },
     {
       "id": "staff-長野新平",
@@ -587684,13 +588981,14 @@
       "name": "木原梨花",
       "aliases": [],
       "source_refs": [
-        "official-ending-anime-umayuru-fullgate-e03"
+        "official-ending-anime-umayuru-fullgate-e03",
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
       ],
       "roles": [
         "脚本"
       ],
       "work_count": 1,
-      "unit_count": 1
+      "unit_count": 2
     },
     {
       "id": "staff-楊烈瞬",
@@ -587748,6 +589046,332 @@
       ],
       "work_count": 1,
       "unit_count": 2
+    },
+    {
+      "id": "staff-佐々木瑞樹",
+      "name": "佐々木瑞樹",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "动画演出",
+        "中间动画检查"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-余凪白",
+      "name": "余凪白",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "作画监督"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-齊藤香子",
+      "name": "齊藤香子",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "作画监督"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-阿保鬼申",
+      "name": "阿保鬼申",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "作画监督"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-近藤アユミ",
+      "name": "近藤アユミ",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-前田理子",
+      "name": "前田理子",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-宮原光明",
+      "name": "宮原光明",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-鈴木克弥",
+      "name": "鈴木克弥",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-北岡真実",
+      "name": "北岡真実",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-丁志偉",
+      "name": "丁志偉",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "第二原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-楊彪",
+      "name": "楊彪",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "第二原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-曾凡亮",
+      "name": "曾凡亮",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "第二原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-艾己稲",
+      "name": "艾己稲",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "第二原画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-王鑫",
+      "name": "王鑫",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-陳思語",
+      "name": "陳思語",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-粟敦月",
+      "name": "粟敦月",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-文钰婕",
+      "name": "文钰婕",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-董安琪",
+      "name": "董安琪",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-熊志雄",
+      "name": "熊志雄",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "中间动画"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-呉城",
+      "name": "呉城",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "仕上"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-倪志傑",
+      "name": "倪志傑",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "仕上"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-龔静",
+      "name": "龔静",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "仕上"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-錢小敏",
+      "name": "錢小敏",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "仕上"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-李瑞傑",
+      "name": "李瑞傑",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "仕上"
+      ],
+      "work_count": 1,
+      "unit_count": 1
+    },
+    {
+      "id": "staff-畑田裕太",
+      "name": "畑田裕太",
+      "aliases": [],
+      "source_refs": [
+        "verified-ending-copy-anime-umayuru-fullgate-e07"
+      ],
+      "roles": [
+        "制作统筹"
+      ],
+      "work_count": 1,
+      "unit_count": 1
     }
   ],
   "sources": [
@@ -591440,6 +593064,14 @@
       "note": "仅用于核对本集片尾署名；官方观看入口不变。"
     },
     {
+      "id": "verified-ending-copy-anime-umayuru-fullgate-e07",
+      "kind": "public_video_copy",
+      "label": "原片片尾逐帧核对副本",
+      "url": "https://www.bilibili.com/video/BV1BPWJ6yExv/",
+      "observed_at": "2026-11-09",
+      "note": "仅用于核对本集片尾署名；官方观看入口不变。"
+    },
+    {
       "id": "official-ending-anime-umayuru-fullgate-e05",
       "kind": "official",
       "label": "单集原始片尾职员表",
@@ -591465,6 +593097,20 @@
       "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWxPGGuIfWME2KTLUmSCHw",
       "label": "官方频道视频精确发布时间",
       "kind": "official",
+      "observed_at": "2026-11-04"
+    },
+    {
+      "id": "official-auto-anime-umayuru-fullgate-e07",
+      "url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/",
+      "label": "官方剧集资料",
+      "kind": "official",
+      "observed_at": "2026-11-09"
+    },
+    {
+      "id": "official-ending-anime-umayuru-fullgate-e07",
+      "kind": "official",
+      "label": "单集原始片尾职员表",
+      "url": "https://www.youtube.com/watch?v=iRmhghaZ94A",
       "observed_at": "2026-11-04"
     }
   ]

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "build_id": "anime-4d94859e7cbcc020",
-  "generated_at": "2026-11-07T00:00:00+08:00",
+  "build_id": "anime-7f26640f0c9b2a2d",
+  "generated_at": "2026-11-09T00:00:00+08:00",
   "targets": {
     "event": {
       "eventernote-2018-03-25-3": [
@@ -2245,6 +2245,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejiromcqueen-va-0053",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "seiunsky": [
@@ -2680,6 +2691,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-prettygray-e02",
           "work_id": "anime-umayuru-prettygray"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejirobright-va-0054",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロブライト",
+          "voice_actor_id": "va-0054",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "tsurumarutsuyoshi": [
@@ -12075,6 +12097,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-ikunodictus-va-0119",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イクノディクタス",
+          "voice_actor_id": "va-0119",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "sakurabakushino": [
@@ -16553,6 +16586,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e11",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejiroryan-va-0043",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロライアン",
+          "voice_actor_id": "va-0043",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "mejirodober": [
@@ -16588,6 +16632,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e10",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejirodober-va-0014",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロドーベル",
+          "voice_actor_id": "va-0014",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "naritabrian": [
@@ -17152,6 +17207,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e15",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-inesfujin-va-0168",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アイネスフウジン",
+          "voice_actor_id": "va-0168",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "bikopegasus": [
@@ -19190,6 +19256,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejiromcqueen-va-0053",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロマックイーン",
+          "voice_actor_id": "va-0053",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0185": [
@@ -19625,6 +19702,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-prettygray-e02",
           "work_id": "anime-umayuru-prettygray"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejirobright-va-0054",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロブライト",
+          "voice_actor_id": "va-0054",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0172": [
@@ -29130,6 +29218,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-1st-anniversary-e01",
           "work_id": "anime-1st-anniversary"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-ikunodictus-va-0119",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "イクノディクタス",
+          "voice_actor_id": "va-0119",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0007": [
@@ -33608,6 +33707,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-umayon-e11",
           "work_id": "anime-umayon"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejiroryan-va-0043",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロライアン",
+          "voice_actor_id": "va-0043",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0014": [
@@ -33643,6 +33753,17 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e10",
           "work_id": "anime-s1"
+        },
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-mejirodober-va-0014",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "メジロドーベル",
+          "voice_actor_id": "va-0014",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ],
       "va-0155": [
@@ -34421,6 +34542,19 @@
           "voice_actor_id": "va-0150",
           "source_type": "anime_unit",
           "source_id": "anime-umayuru-fullgate-e06",
+          "work_id": "anime-umayuru-fullgate"
+        }
+      ],
+      "va-0168": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-auto-cast-inesfujin-va-0168",
+          "relation_type": "credited_cast",
+          "label": "",
+          "usage_type": "",
+          "signature": "アイネスフウジン",
+          "voice_actor_id": "va-0168",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
           "work_id": "anime-umayuru-fullgate"
         }
       ]
@@ -40525,6 +40659,19 @@
           "source_type": "anime_unit",
           "source_id": "anime-s1-e16",
           "work_id": "anime-s1"
+        }
+      ],
+      "song-samba-de76f4b524": [
+        {
+          "relation_id": "anime-umayuru-fullgate-e07-ending-cue-song-samba-de76f4b524-ending",
+          "relation_type": "uses_song",
+          "label": "",
+          "usage_type": "ed",
+          "signature": "",
+          "voice_actor_id": "",
+          "source_type": "anime_unit",
+          "source_id": "anime-umayuru-fullgate-e07",
+          "work_id": "anime-umayuru-fullgate"
         }
       ]
     },

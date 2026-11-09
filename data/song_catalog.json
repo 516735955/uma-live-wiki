@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T23:00:16+00:00",
+  "generated_at": "2026-11-09T06:57:58+00:00",
   "coverage": {
-    "songs": 1041,
-    "versions": 2169,
-    "albums": 115,
-    "release_tracks": 2250,
+    "songs": 1042,
+    "versions": 2172,
+    "albums": 116,
+    "release_tracks": 2253,
     "live_performances": 1265,
-    "credited_songs": 422,
+    "credited_songs": 423,
     "lyric_songs": 248,
-    "credited_versions": 1443,
+    "credited_versions": 1446,
     "lyric_versions": 472
   },
   "songs": [
@@ -165447,6 +165447,478 @@
       "has_lyrics": false
     },
     {
+      "id": "song-samba-de76f4b524",
+      "title": "ゆるゆるSAMBA",
+      "aliases": [
+        "ゆるゆるSAMBA",
+        "ゆるゆるSAMBA (Anime Size)",
+        "ゆるゆるSAMBA (Off Vocal)"
+      ],
+      "legacy_ids": [],
+      "artists": [
+        "Instrumental",
+        "高野麻里佳、井上遥乃、高田憂希、藍原ことみ、田中あいみ、久保田ひかり、大西綺華、松田颯水"
+      ],
+      "character_ids": [
+        "bamboomemory",
+        "bikopegasus",
+        "inarione",
+        "mejirobright",
+        "mejirodober",
+        "shinkowindy",
+        "silencesuzuka",
+        "staygold"
+      ],
+      "voice_actor_ids": [
+        "va-0014",
+        "va-0018",
+        "va-0054",
+        "va-0098",
+        "va-0117",
+        "va-0150",
+        "va-0183",
+        "va-0184"
+      ],
+      "released_character_ids": [
+        "bamboomemory",
+        "bikopegasus",
+        "inarione",
+        "mejirobright",
+        "mejirodober",
+        "shinkowindy",
+        "silencesuzuka",
+        "staygold"
+      ],
+      "released_voice_actor_ids": [
+        "va-0014",
+        "va-0018",
+        "va-0054",
+        "va-0098",
+        "va-0117",
+        "va-0150",
+        "va-0183",
+        "va-0184"
+      ],
+      "performed_character_ids": [],
+      "performed_voice_actor_ids": [],
+      "cover": "/album_covers/LZC-3673.webp",
+      "release_date": "2026-10-26",
+      "versions": [
+        {
+          "id": "song-samba-de76f4b524-v-de76f4b524",
+          "title": "ゆるゆるSAMBA",
+          "version_label": "",
+          "artists": [
+            "高野麻里佳、井上遥乃、高田憂希、藍原ことみ、田中あいみ、久保田ひかり、大西綺華、松田颯水"
+          ],
+          "releases": [
+            {
+              "album_id": "album-lzc-3673",
+              "album_name": "アニメ『うまゆる ふるげ～と！』第2弾主題歌「ゆるゆるSAMBA」",
+              "release_date": "2026-10-26",
+              "catalog": "LZC-3673",
+              "type": "单曲",
+              "cover": "/album_covers/LZC-3673.webp",
+              "track_number": 1,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "高野麻里佳、井上遥乃、高田憂希、藍原ことみ、田中あいみ、久保田ひかり、大西綺華、松田颯水",
+              "audio_url": "",
+              "image": "/album_covers/LZC-3673.webp",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0018",
+                  "voice_actor_name": "井上遥乃",
+                  "character_id": "inarione",
+                  "character": {
+                    "id": "inarione",
+                    "name": "稻荷一",
+                    "name_ja": "イナリワン",
+                    "name_en": "Inari One",
+                    "image": "/uma_official/inarione.png",
+                    "color_main": "#AE419E",
+                    "color_sub": "#EC86D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0183",
+                  "voice_actor_name": "高田忧希",
+                  "character_id": "shinkowindy",
+                  "character": {
+                    "id": "shinkowindy",
+                    "name": "新光风",
+                    "name_ja": "シンコウウインディ",
+                    "name_en": "Shinko Windy",
+                    "image": "/uma_official/shinkowindy.png",
+                    "color_main": "#63666A",
+                    "color_sub": "#6F2678"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0150",
+                  "voice_actor_name": "蓝原琴美",
+                  "character_id": "bamboomemory",
+                  "character": {
+                    "id": "bamboomemory",
+                    "name": "青竹回忆",
+                    "name_ja": "バンブーメモリー",
+                    "name_en": "Bamboo Memory",
+                    "image": "/uma_official/bamboomemory.png",
+                    "color_main": "#366965",
+                    "color_sub": "#2D2926"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0117",
+                  "voice_actor_name": "田中爱美",
+                  "character_id": "bikopegasus",
+                  "character": {
+                    "id": "bikopegasus",
+                    "name": "微光飞驹",
+                    "name_ja": "ビコーペガサス",
+                    "name_en": "Biko Pegasus",
+                    "image": "/uma_official/bikopegasus.png",
+                    "color_main": "#E7396F",
+                    "color_sub": "#D162B8"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0014",
+                  "voice_actor_name": "久保田光",
+                  "character_id": "mejirodober",
+                  "character": {
+                    "id": "mejirodober",
+                    "name": "目白多伯",
+                    "name_ja": "メジロドーベル",
+                    "name_en": "Mejiro Dober",
+                    "image": "/uma_official/mejirodober.png",
+                    "color_main": "#19B49E",
+                    "color_sub": "#6F3B42"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0054",
+                  "voice_actor_name": "大西绮华",
+                  "character_id": "mejirobright",
+                  "character": {
+                    "id": "mejirobright",
+                    "name": "目白光明",
+                    "name_ja": "メジロブライト",
+                    "name_en": "Mejiro Bright",
+                    "image": "/uma_official/mejirobright.png",
+                    "color_main": "#45C5C1",
+                    "color_sub": "#9F5F54"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0098",
+                  "voice_actor_name": "松田飒水",
+                  "character_id": "staygold",
+                  "character": {
+                    "id": "staygold",
+                    "name": "黄金旅程",
+                    "name_ja": "ステイゴールド",
+                    "name_en": "Stay Gold",
+                    "image": "/uma_official/staygold.png",
+                    "color_main": "#bfb33e",
+                    "color_sub": "#49699c"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "producer",
+              "role_label": "制作",
+              "creator_id": "creator-eaf94340d3"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        },
+        {
+          "id": "song-samba-de76f4b524-v-9e18a75a52",
+          "title": "ゆるゆるSAMBA (Anime Size)",
+          "version_label": "Anime Size",
+          "artists": [
+            "高野麻里佳、井上遥乃、高田憂希、藍原ことみ、田中あいみ、久保田ひかり、大西綺華、松田颯水"
+          ],
+          "releases": [
+            {
+              "album_id": "album-lzc-3673",
+              "album_name": "アニメ『うまゆる ふるげ～と！』第2弾主題歌「ゆるゆるSAMBA」",
+              "release_date": "2026-10-26",
+              "catalog": "LZC-3673",
+              "type": "单曲",
+              "cover": "/album_covers/LZC-3673.webp",
+              "track_number": 3,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "高野麻里佳、井上遥乃、高田憂希、藍原ことみ、田中あいみ、久保田ひかり、大西綺華、松田颯水",
+              "audio_url": "",
+              "image": "/album_covers/LZC-3673.webp",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0184",
+                  "voice_actor_name": "高野麻里佳",
+                  "character_id": "silencesuzuka",
+                  "character": {
+                    "id": "silencesuzuka",
+                    "name": "无声铃鹿",
+                    "name_ja": "サイレンススズカ",
+                    "name_en": "Silence Suzuka",
+                    "image": "/uma_official/silencesuzuka.png",
+                    "color_main": "#29BD70",
+                    "color_sub": "#FFCE48"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0018",
+                  "voice_actor_name": "井上遥乃",
+                  "character_id": "inarione",
+                  "character": {
+                    "id": "inarione",
+                    "name": "稻荷一",
+                    "name_ja": "イナリワン",
+                    "name_en": "Inari One",
+                    "image": "/uma_official/inarione.png",
+                    "color_main": "#AE419E",
+                    "color_sub": "#EC86D0"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0183",
+                  "voice_actor_name": "高田忧希",
+                  "character_id": "shinkowindy",
+                  "character": {
+                    "id": "shinkowindy",
+                    "name": "新光风",
+                    "name_ja": "シンコウウインディ",
+                    "name_en": "Shinko Windy",
+                    "image": "/uma_official/shinkowindy.png",
+                    "color_main": "#63666A",
+                    "color_sub": "#6F2678"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0150",
+                  "voice_actor_name": "蓝原琴美",
+                  "character_id": "bamboomemory",
+                  "character": {
+                    "id": "bamboomemory",
+                    "name": "青竹回忆",
+                    "name_ja": "バンブーメモリー",
+                    "name_en": "Bamboo Memory",
+                    "image": "/uma_official/bamboomemory.png",
+                    "color_main": "#366965",
+                    "color_sub": "#2D2926"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0117",
+                  "voice_actor_name": "田中爱美",
+                  "character_id": "bikopegasus",
+                  "character": {
+                    "id": "bikopegasus",
+                    "name": "微光飞驹",
+                    "name_ja": "ビコーペガサス",
+                    "name_en": "Biko Pegasus",
+                    "image": "/uma_official/bikopegasus.png",
+                    "color_main": "#E7396F",
+                    "color_sub": "#D162B8"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0014",
+                  "voice_actor_name": "久保田光",
+                  "character_id": "mejirodober",
+                  "character": {
+                    "id": "mejirodober",
+                    "name": "目白多伯",
+                    "name_ja": "メジロドーベル",
+                    "name_en": "Mejiro Dober",
+                    "image": "/uma_official/mejirodober.png",
+                    "color_main": "#19B49E",
+                    "color_sub": "#6F3B42"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0054",
+                  "voice_actor_name": "大西绮华",
+                  "character_id": "mejirobright",
+                  "character": {
+                    "id": "mejirobright",
+                    "name": "目白光明",
+                    "name_ja": "メジロブライト",
+                    "name_en": "Mejiro Bright",
+                    "image": "/uma_official/mejirobright.png",
+                    "color_main": "#45C5C1",
+                    "color_sub": "#9F5F54"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0098",
+                  "voice_actor_name": "松田飒水",
+                  "character_id": "staygold",
+                  "character": {
+                    "id": "staygold",
+                    "name": "黄金旅程",
+                    "name_ja": "ステイゴールド",
+                    "name_en": "Stay Gold",
+                    "image": "/uma_official/staygold.png",
+                    "color_main": "#bfb33e",
+                    "color_sub": "#49699c"
+                  }
+                }
+              ]
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "producer",
+              "role_label": "制作",
+              "creator_id": "creator-eaf94340d3"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        },
+        {
+          "id": "song-samba-de76f4b524-v-431403595a",
+          "title": "ゆるゆるSAMBA (Off Vocal)",
+          "version_label": "Off Vocal",
+          "artists": [
+            "Instrumental"
+          ],
+          "releases": [
+            {
+              "album_id": "album-lzc-3673",
+              "album_name": "アニメ『うまゆる ふるげ～と！』第2弾主題歌「ゆるゆるSAMBA」",
+              "release_date": "2026-10-26",
+              "catalog": "LZC-3673",
+              "type": "单曲",
+              "cover": "/album_covers/LZC-3673.webp",
+              "track_number": 2,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "Instrumental",
+              "audio_url": "",
+              "image": "/album_covers/LZC-3673.webp",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+            },
+            {
+              "role": "producer",
+              "role_label": "制作",
+              "creator_id": "creator-eaf94340d3"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3",
+            "creator-lucas-nainemoutou-2d8686f23a"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 3,
+      "release_count": 3,
+      "performance_count": 0,
+      "original_version_id": "song-samba-de76f4b524-v-de76f4b524",
+      "creator_ids": [
+        "creator-eaf94340d3",
+        "creator-lucas-nainemoutou-2d8686f23a"
+      ],
+      "has_lyrics": false
+    },
+    {
       "id": "song-happy-days-01845306a9",
       "title": "ゆるパカHAPPY DAYS！",
       "aliases": [
@@ -258339,5 +258811,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "c5616bac70d6a606cea1"
+  "build_id": "f380078ac86408e6a928"
 }

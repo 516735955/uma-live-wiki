@@ -6640,7 +6640,7 @@
       "work_id": "anime-umayuru-fullgate",
       "count": 26,
       "unit_type": "short",
-      "released_count": 6,
+      "released_count": 7,
       "date_blocks": [
         {
           "from": 1,
@@ -7035,6 +7035,86 @@
               "source_time": 168
             }
           ]
+        },
+        "7": {
+          "title_ja": "おばあさまへ",
+          "summary_ja": "誕生日を迎えるおばあさまのため、プレゼント選びに悩むメジロ家の面々。\n思い出を振り返りながら、一同が選んだ贈り物とは―？",
+          "release_date": "2026-11-08",
+          "dates": [
+            {
+              "label": "ぱかチューブっ！公开",
+              "date": "2026-11-08",
+              "timezone": "JST",
+              "source_url": "https://x.com/uma_musu/status/2119399943517708632"
+            }
+          ],
+          "publication_source_url": "https://umamusume.jp/contents/anime/umayuru-fullgate/episodes/7/",
+          "source_refs": [
+            "official-auto-anime-umayuru-fullgate-e07",
+            "official-ending-anime-umayuru-fullgate-e07"
+          ],
+          "auto_source": true,
+          "stills": [
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-02.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/33394b79007f4e6ea3e027099b988897/UFG_07_02.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-03.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/1eee95c787424c7fb002f3f8b49ff58b/UFG_07_03.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-04.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/07cfacda207740f482aa520b0be1f0ae/UFG_07_04.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-05.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/cfeebc95ced24b62a4ca40412b1fa2b1/UFG_07_05.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            },
+            {
+              "url": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-06.webp",
+              "original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/858592ff95f440fd9e3c105c573a41e9/UFG_07_06.jpg",
+              "source_ref": "official-auto-anime-umayuru-fullgate-e07"
+            }
+          ],
+          "cover": "/uma_tools/img/anime/stills/anime-umayuru-fullgate-e07-auto-01.webp",
+          "cover_original": "https://images.microcms-assets.io/assets/599aba6b37a24c4ab72a21ef0a43c585/46ef606f8e1b40b1b86ad42b846562e2/UFG_07_01.jpg",
+          "title_zh": "去奶奶家",
+          "summary_zh": "为了迎接生日的奶奶，为选择礼物而烦恼的梅吉罗家的各位。回顾回忆，大家选择的礼物是？",
+          "staff_status": "complete",
+          "music_cues": [
+            {
+              "title": "ゆるゆるSAMBA",
+              "usage_type": "ending",
+              "credits": [
+                {
+                  "role": "作词／作曲／编曲",
+                  "names": [
+                    "Lucas Nainemoutou"
+                  ],
+                  "institutions": [],
+                  "creator_ids": [
+                    "creator-lucas-nainemoutou-2d8686f23a"
+                  ]
+                }
+              ],
+              "institutions": [],
+              "source_refs": [
+                "official-ending-anime-umayuru-fullgate-e07"
+              ],
+              "source_time": 169,
+              "song_id": "song-samba-de76f4b524"
+            }
+          ]
         }
       },
       "published_numbers": [
@@ -7043,7 +7123,8 @@
         3,
         4,
         5,
-        6
+        6,
+        7
       ]
     }
   ]

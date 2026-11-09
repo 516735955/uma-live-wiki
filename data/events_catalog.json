@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T23:00:16+00:00",
+  "generated_at": "2026-11-09T06:57:58+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -1195,7 +1195,7 @@
           "label": "预选F组",
           "date": "2026-10-22",
           "date_end": "2026-10-22",
-          "image": "https://i2.ytimg.com/vi/EfR9hcHGE5o/hqdefault.jpg"
+          "image": "https://i.ytimg.com/vi_webp/EfR9hcHGE5o/maxresdefault.webp"
         },
         {
           "event_id": "pakatube-20261023-gang-beasts-g-5",
@@ -4545,6 +4545,7 @@
             "logotype"
           ],
           "cast": [],
+          "broadcast_time": "18:00",
           "broadcast_date": "2026-10-31",
           "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
@@ -4575,7 +4576,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i2.ytimg.com/vi/9AD3u2dxkMQ/hqdefault.jpg",
+      "image": "https://i.ytimg.com/vi_webp/9AD3u2dxkMQ/maxresdefault.webp",
       "summary": "特雷森学园首届 Gang Beasts 最强决战开幕！目白阿尔丹、机伶金花、荣进闪耀、标志名驹、菱钻奇宝、樱花桂冠、草上飞、圣王光环展开较量，谁能夺得最强称号？",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -5367,7 +5368,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i2.ytimg.com/vi/EfR9hcHGE5o/hqdefault.jpg",
+      "image": "https://i.ytimg.com/vi_webp/EfR9hcHGE5o/maxresdefault.webp",
       "summary": "第一届特雷森学园 Gang Beasts 最强决定战预选F组，千明代表、樱花桂冠、葛城王牌、吹波糖四人争夺晋级资格。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -190448,5 +190449,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "c5616bac70d6a606cea1"
+  "build_id": "f380078ac86408e6a928"
 }
