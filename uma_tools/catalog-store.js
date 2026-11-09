@@ -29,6 +29,7 @@ const MUSIC_SOURCE_FILES = [
 ];
 const CHARACTER_INDEX_FILE = 'character_index_data.js';
 const EVENT_IMAGE_MAP = 'auto_update/event_images.json';
+const VENUE_PROFILE_FILE = 'events/venue_profiles.json';
 const EVENT_KIND_COVERS = {
   concert: '/uma_tools/img/event-covers/concert.svg',
   official_program: '/uma_tools/img/event-covers/official-program.svg',
@@ -185,7 +186,7 @@ function venueMetaFromEvent(event) {
   };
 }
 
-function venuesFromRows(eventRows) {
+function venuesFromRows(eventRows, profiles) {
   const map = new Map();
   eventRows.forEach((row) => {
     const event = row.data;
@@ -204,6 +205,12 @@ function venuesFromRows(eventRows) {
       Object.assign(entry, venueMetaFromEvent(event));
     }
   });
+  if (profiles) {
+    map.forEach((entry) => {
+      const profile = profiles[String(entry.id)];
+      if (profile) entry.profile = profile;
+    });
+  }
   return map;
 }
 
@@ -430,8 +437,10 @@ class CatalogStore {
     const stats = await Promise.all(CATALOG_FILES.concat(MUSIC_SOURCE_FILES, CHARACTER_INDEX_FILE).map((name) => fs.promises.stat(path.join(this.dataDir, name))));
     const pending = await fs.promises.stat(path.join(this.dataDir, 'auto_update/catalog_pending.json')).catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
     const eventImages = await fs.promises.stat(path.join(this.dataDir, EVENT_IMAGE_MAP)).catch(() => null);
+    const venueProfiles = await fs.promises.stat(path.join(this.dataDir, VENUE_PROFILE_FILE)).catch(() => null);
     const anime = await fs.promises.stat(path.join(this.dataDir, 'anime_catalog.json')).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
     this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published') + ':' + (eventImages ? eventImages.mtimeMs + ':' + eventImages.size : 'no-event-images');
+    this.checkedSignature += ':' + (venueProfiles ? venueProfiles.mtimeMs + ':' + venueProfiles.size : 'no-venue-profiles');
     this.checkedSignature += ':' + (anime ? anime.mtimeMs + ':' + anime.size : 'no-anime');
     this.signatureCheckedAt = Date.now();
     return this.checkedSignature;
@@ -483,6 +492,8 @@ class CatalogStore {
     const lyricsDoc = JSON.parse(texts[8]);
     const timingsDoc = JSON.parse(texts[9]);
     const animeText = await fs.promises.readFile(path.join(this.dataDir, 'anime_catalog.json'), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
+    const venueProfileText = await fs.promises.readFile(path.join(this.dataDir, VENUE_PROFILE_FILE), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
+    const venueProfiles = (JSON.parse(venueProfileText).profiles) || {};
     const classifyAlbum = createClassification(JSON.parse(animeText), songsDoc.songs || [], albumWork);
     const music = {
       creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
@@ -501,7 +512,7 @@ class CatalogStore {
       throw new Error('catalog revision mismatch');
     }
     let sourceRevision = crypto.createHash('sha1')
-      .update(texts.join('\u0000') + animeText)
+      .update(texts.join('\u0000') + animeText + venueProfileText)
       .digest('hex')
       .slice(0, 12);
 
@@ -605,6 +616,7 @@ class CatalogStore {
       }))),
       charactersById,
       eventRows,
+      venueProfiles,
       songRows,
       creatorRows,
       music,
@@ -755,7 +767,7 @@ class CatalogStore {
     const store = snapshot || await this.get();
     const venueId = String(id || '').trim();
     if (!venueId) return null;
-    const byId = venuesFromRows(store.eventRows);
+    const byId = venuesFromRows(store.eventRows, store.venueProfiles);
     const meta = byId.get(venueId);
     if (!meta) return null;
     const events = store.eventRows
@@ -772,7 +784,7 @@ class CatalogStore {
     const store = await this.get();
     params = params || new URLSearchParams();
     const query = normalize(params.get('q') || '');
-    let rows = Array.from(venuesFromRows(store.eventRows).values());
+    let rows = Array.from(venuesFromRows(store.eventRows, store.venueProfiles).values());
     if (query) rows = rows.filter((row) => searchText.matchesIndex(searchText.fields([row.name, row.name_zh, row.name_ja, row.name_raw, row.aliases, row.city]), query));
     rows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja') || String(a.id).localeCompare(String(b.id)));
     const total = rows.length;
@@ -781,7 +793,7 @@ class CatalogStore {
     const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
     return {
       build_id: store.buildId,
-      items: rows.slice((page - 1) * pageSize, page * pageSize),
+      items: rows.slice((page - 1) * pageSize, page * pageSize).map(({ profile, ...item }) => item),
       total,
       page,
       page_size: pageSize

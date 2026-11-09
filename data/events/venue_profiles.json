@@ -1,0 +1,1312 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-09",
+ "profiles": {
+  "venue-aichi-sky-expo": {
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/Aichi_Sky_Expo",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/Aichi_Sky_Expo"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-akihabaraゲ-マ-ズ本店": {
+   "address": "101-0021 東京都千代田区外神田１丁目１４－１７宝山中央通りビル",
+   "address_source": "eventernote",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/25518"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-animate-hall-black": {
+   "address": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店 北館9F",
+   "address_source": "eventernote",
+   "capacity": 250,
+   "capacity_text": "最大250席",
+   "phone": "03-3988-1351",
+   "official_url": "https://www.animate.co.jp/shop/ikebukuro/",
+   "seat_map_url": "https://www.animate.co.jp/shop/ikebukuro/floor/",
+   "access": "池袋駅東口徒歩5分\n2023年3月16日オープン\n黒を基調にした会場。座席数 最大250席。ライブや上映会・トークショーなどのイベントを実施予定。\n＜フロア構成＞\n9F　animate hall BLACK (250席)\nhttps://www.eventernote.com/places/13860\n9F　animate hall WHITE (150席)\nhttps://www.eventernote.com/places/11766\n8F　Space Galleria\n7F　animate ONLY SHOP\n6F　CD・DVD/Blu-ray・ゲーム\n5F　キャラクターグッズ\n4F　キャラクターグッズ\n3F　マンガ・画材\n2F　マンガ\n1F　キャラクターグッズ・Gratte\nB2F　アニメイトシアター (208席)\nhttps://www.eventernote.com/places/13857",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/13860"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-belluna-dome": {
+   "address": "〒359-1196 埼玉県所沢市上山口2135 西武ドーム",
+   "address_source": "eventernote",
+   "capacity": 40000,
+   "capacity_text": "40,000人(アリーナ使用時最大) / 31,552人(野球開催時)",
+   "phone": "04-2925-1141",
+   "official_url": "https://bellunadome.seibulions.co.jp/",
+   "seat_map_url": "https://seat.seibulions.jp/#/seat",
+   "access": "＜アクセス＞\n・「西武球場前駅」下車すぐ\nhttps://www.seibulions.jp/stadium/access/\n＜駐車場＞\n収容台数:630台 \n(ブルーパーキング:200台)\n(レッドパーキング:320台)\n(グリーンパーキング:110台)\nhttps://www.seibulions.jp/stadium/access/parking.html\n＜ネーミングライツ＞\n・インボイスSEIBUドーム(2005年3月1日～2006年12月31日)\n・グッドウィルドーム(2007年1月1日～2008年1月8日)\n・西武プリンスドーム(2015年3月1日～2017年2月28日)\n・メットライフドーム(2017年3月1日～2022年2月28日)\n・ベルーナドーム(2022年3月1日～2027年2月28日)\n※ 西武狭山線・西武池袋線は、イベント開催に伴い臨時電車を運転いたします。",
+   "latitude": 35.76850128173828,
+   "longitude": 139.4205017089844,
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%BC%E3%83%8A%E3%83%89%E3%83%BC%E3%83%A0",
+   "wikipedia_en": "https://en.wikipedia.org/wiki/Belluna_Dome",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/38"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%BC%E3%83%8A%E3%83%89%E3%83%BC%E3%83%A0"
+    },
+    {
+     "kind": "wikipedia_en",
+     "url": "https://en.wikipedia.org/wiki/Belluna_Dome"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-es-con-field-hokkaido": {
+   "address": "〒061-1116 北海道北広島市Fビレッジ1 エスコンフィールドHOKKAIDO",
+   "address_source": "eventernote",
+   "capacity": 35000,
+   "capacity_text": "約35,000人",
+   "official_url": "https://www.hkdballpark.com/",
+   "seat_map_url": "https://www.hkdballpark.com/map/esconfield/",
+   "access": "JR千歳線「北広島駅」より徒歩約19分\n北広島駅・新札幌駅・野幌駅・新千歳空港・札幌駅より往復シャトルバス運行\nhttps://www.hkdballpark.com/access/bus/\n2023年3月14日オープン\nネーミングライツ\nES CON FIELD HOKKAIDO 2020年1月～",
+   "latitude": 42.98972320556641,
+   "longitude": 141.5494384765625,
+   "description_ja": "ES CON FIELD HOKKAIDO（エスコンフィールド ほっかいどう）は、北海道北広島市共栄に建設中である屋根開閉式のドーム球場。 プロ野球・北海道日本ハムファイターズの新本拠地として2023年3月にオープンする予定。開閉式の屋根を持ち、収容能力は35,000人（席数は約30,000席）。スタジアムを含めたHOKKAIDO BALLPARK F VILLAGE（ほっかいどうボールパーク エフビレッジ）の一部を成し、パーク内には他に宿泊施設・商業施設・レストラン・マンションが建設される。 ここでは、当球場の所在地であるFビレッジについても記述する。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/ES_CON_FIELD_HOKKAIDO",
+   "wikipedia_en": "https://en.wikipedia.org/wiki/Es_Con_Field_Hokkaido",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/13986"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/ES_CON_FIELD_HOKKAIDO"
+    },
+    {
+     "kind": "wikipedia_en",
+     "url": "https://en.wikipedia.org/wiki/Es_Con_Field_Hokkaido"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-fcgビル": {
+   "address": "東京都港区台場二丁目4番8号",
+   "address_source": "wikipedia",
+   "official_url": "https://www.fujitv.co.jp/gotofujitv/index.html",
+   "latitude": 35.62694549560547,
+   "longitude": 139.77444458007812,
+   "description_ja": "FCGビル（エフシージービル）は、東京都港区台場にあるビル。フジ・メディア・ホールディングス（旧・フジテレビジョン、2008年に持株会社化。以下、FMHD）が保有し、フジテレビジョンのほかBSフジをはじめとするフジサンケイグループ (Fujisankei Communications Group) の企業が本社・スタジオ等を置いている。フジテレビ本社ビル、ないしフジテレビ本社屋とも呼ばれる。 土地については東京都から借地契約を結んでいたが、2018年3月にFMHDが約140億円で取得した（同社の有価証券報告書より）。2013年3月31日の年間貸借料は、7億3800万円だった。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/FCG%E3%83%93%E3%83%AB",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/FCG%E3%83%93%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-makuhari-event-hall": {
+   "address": "千葉県千葉市美浜区中瀬二丁目1",
+   "address_source": "wikipedia",
+   "official_url": "https://www.m-messe.co.jp/",
+   "latitude": 35.64833450317383,
+   "longitude": 140.03472900390625,
+   "description_ja": "幕張メッセ（まくはりめっせ、英：Makuhari Messe）は、千葉県千葉市美浜区の幕張新都心に位置する日本国内第2位の規模を有する複合コンベンション施設。国際展示場の正式名称は千葉県日本コンベンションセンター国際展示場。 日本国内の優秀な建築作品として第32回及び第40回BCS賞（建築業協会賞）、IAITAクォーターナリオ賞、第5回千葉県建築文化賞等を受賞している。運営管理者は株式会社幕張メッセ。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E3%83%A1%E3%83%83%E3%82%BB",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E3%83%A1%E3%83%83%E3%82%BB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-new-pier-hall": {
+   "address": "〒105-0022 東京都港区海岸1丁目11-1 ニューピア竹芝ノースタワー1F",
+   "address_source": "eventernote",
+   "capacity": 796,
+   "capacity_text": "796席",
+   "phone": "03-3578-0041",
+   "official_url": "http://www.newpier-hall.jp/",
+   "seat_map_url": "http://www.newpier-hall.jp/pdf/4-1_seminar_t.pdf",
+   "access": "座席順 : 数字が前、アルファベットが後ろ\n＜アクセス＞\n・ゆりかもめ 竹芝駅より徒歩2分\n・JR線 / 東京モノレール 浜松町駅 北口より徒歩7分\n・都営地下鉄大江戸線 大門駅 B1出口より徒歩8分\n・都営地下鉄浅草線 大門駅 B1出口より徒歩8分\nhttp://www.newpier-hall.jp/visitor/#visitorConts",
+   "description_ja": "NEW PIER HALL（ニューピアホール）は、東京都港区海岸1丁目（ニューピア竹芝ノースタワー内）にある多目的ホールである。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/NEW_PIER_HALL",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/1286"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/NEW_PIER_HALL"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-nhkホ-ル": {
+   "address": "東京都渋谷区神南2丁目2番1号",
+   "address_source": "wikipedia",
+   "capacity": 3800,
+   "capacity_text": "3800",
+   "official_url": "http://www.nhk-sc.or.jp/nhk_hall/",
+   "latitude": 35.66634750366211,
+   "longitude": 139.69737243652344,
+   "description_ja": "NHKホール（エヌエイチケイホール、英語：NHK Hall）は、東京都渋谷区に位置する多目的ホール。建築設計は日建設計である。1972年（昭和47年）11月に完成し、1973年（昭和48年）6月20日に運用開始（テレビの公開録画では、それ以前からすでに使用開始）した。現在のものは2代目で、初代NHKホールはNHK東京放送会館内に存在していた。日本放送協会（NHK）の関連法人である一般財団法人NHKサービスセンターが運営を行っている。 NHK交響楽団（N響）の本拠地となっているホールでもある。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/NHK%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/NHK%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-northern-horsepark-main-arena": {
+   "official_url": "https://www.northern-horsepark.jp/",
+   "latitude": 42.778751373291016,
+   "longitude": 141.7387237548828,
+   "description_ja": "ノーザンホースパーク（Northern Horse Park）は、北海道苫小牧市字美沢にある社台グループの体験型公園・テーマパーク。株式会社ノーザンホースパークが運営している。1989年（平成元年）7月開園。広さは478,982 m2。 「馬と大地と人との絆」をテーマにしているように、乗馬・馬車・ハッピー ポニーショーなどの馬のアトラクション、蹄鉄に装飾するホースシュースタンド作りなどの体験プログラムのほか、家族で楽しめる各種イベント、レストラン、馬グッズを集めた売店などが用意されている。毎年7月に行なわれる競走馬のセリ市場、セレクトセールの会場でもある。2007年にバーベキューハウス「バックヤードグリル」が、2011年にチャペル & パーティレストラン「ディアド ブエナビスタ」がオープンした。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-northern-horsepark-pony-hall": {
+   "updated": "2026-11-09"
+  },
+  "venue-peacock-theater": {
+   "address": "777 Chick Hearn Court",
+   "address_source": "wikipedia",
+   "official_url": "https://www.peacocktheater.com",
+   "wikipedia_en": "https://en.wikipedia.org/wiki/Peacock_Theater",
+   "sources": [
+    {
+     "kind": "wikipedia_en",
+     "url": "https://en.wikipedia.org/wiki/Peacock_Theater"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tbs放送センタ": {
+   "address": "東京都港区赤坂5丁目3−6",
+   "address_source": "wikipedia",
+   "latitude": 35.6717643737793,
+   "longitude": 139.73446655273438,
+   "description_ja": "TBS放送センター（ティービーエスほうそうセンター）は、東京都港区赤坂にあるビル。所有者はTBSホールディングス。TBSテレビとTBSラジオの本社オフィス及びスタジオを有する。建物の延床面積は、在京キー局の社屋のなかでは、FCGビルと日本テレビタワーに次ぎ、3番目の広さである。通称『ビッグハット』。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/TBS%E6%94%BE%E9%80%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/TBS%E6%94%BE%E9%80%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tft-hall-1000": {
+   "updated": "2026-11-09"
+  },
+  "venue-the-grand-hall": {
+   "address": "〒108-0075 東京都港区港南2丁目16-4 品川グランドセントラルタワー3F 品川ザ・グランドホール",
+   "address_source": "eventernote",
+   "capacity": 484,
+   "capacity_text": "最大484席",
+   "phone": "03-5463-9971",
+   "official_url": "https://tg-hall.com/",
+   "seat_map_url": "https://tg-hall.com/download#theater",
+   "access": "JR「品川駅」港南口より徒歩3分\n京急「品川駅」より徒歩8分",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/THE_GRAND_HALL",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/650"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/THE_GRAND_HALL"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tohoシネマズすすきの": {
+   "address": "〒064-0804 北海道札幌市中央区南４条西４丁目１番地１ COCONO SUSUKINO 5F",
+   "address_source": "eventernote",
+   "phone": "050-6868-5075",
+   "official_url": "https://hlo.tohotheater.jp/net/schedule/089/TNPI2000J01.do",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/16019"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tohoシネマズ六本木ヒルズ": {
+   "address": "〒106-0032 東京都港区六本木6丁目10-2 六本木ヒルズけやき坂コンプレックス内 TOHOシネマズ 六本木ヒルズ",
+   "address_source": "eventernote",
+   "phone": "050-6868-5024",
+   "official_url": "https://hlo.tohotheater.jp/net/schedule/009/TNPI2000J01.do",
+   "access": "＜アクセス＞\n・東京メトロ日比谷線「六本木駅」出口1C 徒歩3分\n・都営大江戸線「六本木駅」 出口3 徒歩6分\n・都営大江戸線「麻布十番駅」 出口7 徒歩8分\n・東京メトロ千代田線「乃木坂駅」出口5 徒歩10分\n・東京メトロ南北線「麻布十番駅」出口4 徒歩11分\nhttps://www.tohotheater.jp/theater/009/access.html",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%83%92%E3%83%AB%E3%82%BA",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/350"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%83%92%E3%83%AB%E3%82%BA"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tohoシネマズ新宿": {
+   "address": "〒160-0021 東京都新宿区歌舞伎町1丁目19-1 新宿東宝ビル3F TOHOシネマズ 新宿",
+   "address_source": "eventernote",
+   "phone": "050-6868-5063",
+   "official_url": "https://hlo.tohotheater.jp/net/schedule/076/TNPI2000J01.do",
+   "access": "＜アクセス＞\n・JR新宿駅東口から徒歩5分\n・西武新宿線「西武新宿駅」から徒歩3分\nhttps://www.tohotheater.jp/theater/076/access.html",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%96%B0%E5%AE%BF",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/4570"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%96%B0%E5%AE%BF"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tohoシネマズ日比谷": {
+   "address": "〒100-0006 東京都千代田区有楽町1丁目1-2 東京ミッドタウン日比谷4F TOHOシネマズ 日比谷",
+   "address_source": "eventernote",
+   "phone": "050-6868-5068",
+   "official_url": "https://hlo.tohotheater.jp/net/schedule/081/TNPI2000J01.do",
+   "access": "＜スクリーン1～11＞ \n東京都千代田区有楽町1丁目1-2 東京ミッドタウン日比谷4F\n＜スクリーン12・13＞\n東京都千代田区有楽町1丁目1-3 東京宝塚ビルB1F\nスクリーン12 (旧 スカラ座)\nhttps://www.eventernote.com/places/2749\nスクリーン13 (旧 みゆき座)\nhttps://www.eventernote.com/places/5422\n＜アクセス＞\n・東京メトロ日比谷線「日比谷駅」A4出口\n・東京メトロ千代田線「日比谷駅」A4出口\n・東京メトロ丸ノ内線・銀座線「銀座駅」C1出口\n・東京メトロ有楽町線「有楽町駅」D4出口\n※地下通路で日比谷線 A4出口からもお越しいただけます。\n・JR「有楽町駅」中央西口\nhttps://www.tohotheater.jp/theater/081/access.html",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%97%A5%E6%AF%94%E8%B0%B7",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9064"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%97%A5%E6%AF%94%E8%B0%B7"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tohoシネマズ日比谷-スクリ-ン12-旧-tohoシネマズスカラ座": {
+   "address": "〒100-0006 東京都千代田区有楽町1丁目1-3 東京宝塚ビルB1F TOHOシネマズ 日比谷",
+   "address_source": "eventernote",
+   "capacity": 489,
+   "capacity_text": "489席",
+   "phone": "050-6868-5068",
+   "official_url": "https://hlo.tohotheater.jp/net/schedule/081/TNPI2000J01.do",
+   "access": "スクリーン1〜11\nhttps://www.eventernote.com/places/9064\nスクリーン13 (旧 みゆき座) ※同住所\nhttps://www.eventernote.com/places/5422\n2000年12月16日 日比谷スカラ座 建替オープン\n2009年2月3日 TOHOシネマズスカラ座に改称\n2018年3月29日 TOHOシネマズ日比谷 スクリーン12に改称\n＜アクセス＞\n・東京メトロ日比谷線「日比谷駅」A4出口\n・東京メトロ千代田線「日比谷駅」A4出口\n・東京メトロ丸ノ内線・銀座線「銀座駅」C1出口\n・東京メトロ有楽町線「有楽町駅」D4出口\n※地下通路で日比谷線 A4出口からもお越しいただけます。\n・JR「有楽町駅」中央西口\nhttps://www.tohotheater.jp/theater/081/access.html\nTOHOシネマズ日比谷 スクリーン12・13は東京宝塚ビル地下にございます\n案内図→https://www.tohotheater.jp/pdf/hibiya_screens.pdf",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/2749"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tokyo-dome-city-hall": {
+   "official_url": "https://www.tokyo-dome.co.jp/tdc-hall/",
+   "latitude": 35.70302963256836,
+   "longitude": 139.7547912597656,
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/TOKYO_DOME_CITY_HALL",
+   "wikipedia_en": "https://en.wikipedia.org/wiki/Tokyo_Dome_City_Hall",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/TOKYO_DOME_CITY_HALL"
+    },
+    {
+     "kind": "wikipedia_en",
+     "url": "https://en.wikipedia.org/wiki/Tokyo_Dome_City_Hall"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-tsutaya三軒茶屋店": {
+   "address": "〒154-0004 東京都世田谷区太子堂4丁目1-1 キャロットタワー2F",
+   "address_source": "eventernote",
+   "phone": "03-5431-7788",
+   "official_url": "https://store-tsutaya.tsite.jp/storelocator/detail/2214.html",
+   "access": "＜アクセス＞\n・東急田園都市線・世田谷線「三軒茶屋駅」直結、徒歩1分",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/2226"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-twtc-hall-1-台北世界貿易中心展覽一館-世貿一館-台北世界貿易センタ-展示ホ-ル1号館": {
+   "address": "台北市信義區信義路五段5號",
+   "address_source": "eventernote",
+   "official_url": "http://www.twtc.com.tw/",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/2297"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-yokohama-landmark-hall": {
+   "updated": "2026-11-09"
+  },
+  "venue-zepp-divercity": {
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/Zepp_DiverCity",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/Zepp_DiverCity"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-うみかぜ公園": {
+   "official_url": "http://www.nissan-nics.co.jp/umikaze",
+   "latitude": 35.27646255493164,
+   "longitude": 139.68350219726562,
+   "description_ja": "うみかぜ公園は、神奈川県横須賀市平成町にある横須賀市の港湾緑地である。横須賀新港の南東約1.5kmの海沿いに立地しており、猿島や東京湾を間近に見ることができる。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%BF%E3%81%8B%E3%81%9C%E5%85%AC%E5%9C%92",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%BF%E3%81%8B%E3%81%9C%E5%85%AC%E5%9C%92"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-さいたまス-パ-アリ-ナ": {
+   "address": "埼玉県さいたま市中央区新都心8",
+   "address_source": "wikipedia",
+   "capacity": 22500,
+   "capacity_text": "アリーナモード：約22,500人",
+   "official_url": "https://www.saitama-arena.co.jp/arena/%7C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+   "description_ja": "さいたまスーパーアリーナ（英: Saitama Super Arena）は、埼玉県さいたま市中央区にある多目的アリーナ。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-しんまちボ-ドウォ-ク-パラソルショップ": {
+   "address": "〒770-0911 徳島県徳島市東船場町1～2丁目 新町川ボードウォーク",
+   "address_source": "eventernote",
+   "phone": "088-621-5232(徳島市観光課)",
+   "official_url": "https://www.city.tokushima.tokushima.jp/kankou/keikan/board_walk.html",
+   "access": "新町川水際公園の対岸にある全長350mの遊歩道。",
+   "latitude": 34.07051467895508,
+   "longitude": 134.5489959716797,
+   "description_ja": "しんまちボードウォークは徳島県徳島市の中心部を流れる新町川河岸に設置されたボードウォーク（木の遊歩道）である。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%93%E3%81%BE%E3%81%A1%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/1911"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%93%E3%81%BE%E3%81%A1%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ぴあアリ-ナmm": {
+   "address": "〒220-0012 神奈川県横浜市西区みなとみらい3丁目2-2 ぴあアリーナMM",
+   "address_source": "eventernote",
+   "capacity": 12141,
+   "capacity_text": "最大12,141人",
+   "phone": "045-211-4143",
+   "official_url": "https://pia-arena-mm.jp/",
+   "seat_map_url": "https://pia-arena-mm.jp/seatmap/index.html",
+   "access": "・みなとみらい線\n　「みなとみらい駅」 1番出口より徒歩7分\n　「新高島駅」 2番出口より徒歩8分\n・JR線\n　「桜木町駅」東口(北改札)より徒歩7分\n　　正面エスカレーターを昇っていただき動く歩道から2Fペデストリアンデッキをご利用ください\n　「横浜駅」 東口より徒歩18分\n※当会場には駐車場・駐輪場のご用意がございません。ご来場の際は公共交通機関のご利用をお願いいたします。\n1Fコインロッカー\n数量654個（普通510個 / 大型144個）\n料金 普通 400円 / 大型 700円",
+   "latitude": 35.45572280883789,
+   "longitude": 139.62852478027344,
+   "description_ja": "ぴあアリーナMM（ぴあアリーナエムエム）は、神奈川県横浜市西区みなとみらいにある音楽専用アリーナ。ぴあ株式会社が運営する。正式名称決定前の仮称は「ぴあMMアリーナ」。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%81%B4%E3%81%82%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8AMM",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/11340"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%81%B4%E3%81%82%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8AMM"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-アニメイト新宿-旧店舗-移転済": {
+   "address": "〒160-0022 東京都新宿区新宿3丁目17-17",
+   "address_source": "eventernote",
+   "capacity": 250,
+   "capacity_text": "250人(スタンディング) / 150席(座席指定)",
+   "phone": "03-5919-4321",
+   "official_url": "https://www.animate.co.jp/shop/shinjuku/",
+   "access": "2020年5月17日営業終了\nB2F アニメイトホールSHINJUKU\nhttps://www.eventernote.com/places/8847\nアニメイト新宿\nhttps://www.eventernote.com/places/12293",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/152"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-アニメイト池袋本店-b2f-アニメイトシアタ": {
+   "address": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店B2F アニメイトシアター",
+   "address_source": "eventernote",
+   "capacity": 208,
+   "capacity_text": "着席208名 立席340名",
+   "phone": "03-3988-1351",
+   "official_url": "https://www.animate.co.jp/theater/",
+   "seat_map_url": "https://www.animate.co.jp/theater/",
+   "access": "池袋駅東口より徒歩5分\nアニメイト池袋本店の地下に多目的ホール「アニメイトシアター」が新設。座席数は着席最大208席、舞台や朗読劇、トークショーなど様々な演目を多数公演予定です。舞台施設は、アニメイトでは初となります。\n＜フロア構成＞\n9F　animate hall BLACK (250席)\nhttps://www.eventernote.com/places/13860\n9F　animate hall WHITE (150席)\nhttps://www.eventernote.com/places/11766\n8F　Space Galleria\n7F　animate ONLY SHOP\n6F　CD・DVD/Blu-ray・ゲーム\n5F　キャラクターグッズ\n4F　キャラクターグッズ\n3F　マンガ・画材\n2F　マンガ\n1F　キャラクターグッズ・Gratte\nB2F　アニメイトシアター (208席)\nhttps://www.eventernote.com/places/13857",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/13857"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-インテックス大阪-5号館": {
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%86%E3%83%83%E3%82%AF%E3%82%B9%E5%A4%A7%E9%98%AA",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%86%E3%83%83%E3%82%AF%E3%82%B9%E5%A4%A7%E9%98%AA"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ディファ有明": {
+   "address": "東京都江東区有明一丁目3-25",
+   "address_source": "wikipedia",
+   "official_url": "http://www.differ.co.jp/%7Ctitle=%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E6%9C%89%E6%98%8E%7Cdate=20180716122318",
+   "latitude": 35.63872146606445,
+   "longitude": 139.78921508789062,
+   "description_ja": "ディファ有明（ディファありあけ）は、東京都江東区有明でかつて営業していたホール。「日本初の格闘技専用アリーナ」と銘打ち2000年にオープン。2018年6月30日に営業を終了した。 土地所有者である東武鉄道は、ディファ有明跡地を「東武有明フィールド」（とうぶありあけフィールド）として、当初は2020年春に開業予定としていたが、新型コロナウィルス感染症拡大の影響で延期となり、2020年夏より供用を開始している。 2016年12月までプロレスリング・ノアが本社と道場、合宿所を置いていた。 バブル期に存在したライブハウス・ディスコのMZA有明（エムザありあけ）は改装前の同一の建物である。MZA有明についてもこの項目で述べる。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E6%9C%89%E6%98%8E",
+   "wikipedia_en": "https://en.wikipedia.org/wiki/Differ_Ariake",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E6%9C%89%E6%98%8E"
+    },
+    {
+     "kind": "wikipedia_en",
+     "url": "https://en.wikipedia.org/wiki/Differ_Ariake"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ノ-ザンホ-スパ-ク": {
+   "address": "〒059-1361 北海道苫小牧市美沢114-7 ノーザンホースパーク",
+   "address_source": "eventernote",
+   "phone": "0144-58-2116",
+   "official_url": "https://www.northern-horsepark.jp/",
+   "seat_map_url": "https://www.northern-horsepark.jp/guide/park_map/",
+   "access": "新千歳空港より無料シャトルバス運行\nhttps://www.northern-horsepark.jp/access/",
+   "latitude": 42.778751373291016,
+   "longitude": 141.7387237548828,
+   "description_ja": "ノーザンホースパーク（Northern Horse Park）は、北海道苫小牧市字美沢にある社台グループの体験型公園・テーマパーク。株式会社ノーザンホースパークが運営している。1989年（平成元年）7月開園。広さは478,982 m2。 「馬と大地と人との絆」をテーマにしているように、乗馬・馬車・ハッピー ポニーショーなどの馬のアトラクション、蹄鉄に装飾するホースシュースタンド作りなどの体験プログラムのほか、家族で楽しめる各種イベント、レストラン、馬グッズを集めた売店などが用意されている。毎年7月に行なわれる競走馬のセリ市場、セレクトセールの会場でもある。2007年にバーベキューハウス「バックヤードグリル」が、2011年にチャペル & パーティレストラン「ディアド ブエナビスタ」がオープンした。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/26701"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ポ-トメッセなごや": {
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%81%AA%E3%81%94%E3%82%84",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%81%AA%E3%81%94%E3%82%84"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-マリンメッセ福岡b館": {
+   "address": "〒812-0031 福岡県福岡市博多区沖浜町2-1",
+   "address_source": "eventernote",
+   "capacity": 6000,
+   "capacity_text": "6,000人",
+   "phone": "092-262-5111",
+   "official_url": "https://www.marinemesse.or.jp/messe-b/",
+   "access": "2021年4月1日オープン\n＜アクセス(バス)＞\nhttps://www.marinemesse.or.jp/messe-b/access/#bus\n博多駅→(博多駅西日本シティ銀行前Fのりば)\n・西鉄バス(88番「中央ふ頭」行：約15分)→「マリンメッセ前」下車すぐ\n天神地区→(天神ソラリアステージ前2Aのりば)\n・西鉄バス(80番「中央ふ頭」行：約12分)→「マリンメッセ前」下車すぐ\nマリンメッセ福岡A館についてはこちら\nhttps://www.eventernote.com/places/657",
+   "description_ja": "マリンメッセ福岡（マリンメッセふくおか）は、福岡県福岡市博多区沖浜町にある福岡市立のコンサートホール・コンベンションセンター。一般財団法人福岡コンベンションセンターが指定管理者として運営している。2019年10月1日に旧「マリンメッセ福岡」は「マリンメッセ福岡A館」に改称し、2021年4月に「マリンメッセ福岡B館」が開館した。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E7%A6%8F%E5%B2%A1",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/7808"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E7%A6%8F%E5%B2%A1"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ユナイテッド-シネマ-アクアシティお台場": {
+   "address": "〒135-0091 東京都港区台場1丁目7-1 アクアシティお台場東エリア1F ユナイテッド・シネマアクアシティお台場",
+   "address_source": "eventernote",
+   "capacity": 13,
+   "capacity_text": "13スクリーン 計2,838席",
+   "phone": "0570-783-804",
+   "official_url": "https://www.unitedcinemas.jp/odaiba/index.html",
+   "seat_map_url": "https://www.unitedcinemas.jp/odaiba/about_facilities.html",
+   "access": "ゆりかもめ「台場駅」より徒歩1分\nりんかい線「東京テレポート駅」より徒歩6分\n2000年4月22日 シネマメディアージュ 開館\n2017年2月23日 シネマメディアージュ 閉館\n2017年4月29日 ユナイテッド・シネマ アクアシティお台場 開館\nシネマメディアージュ(旧施設)\nhttps://www.eventernote.com/places/453",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/6561"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-ラフォ-レミュ-ジアム六本木": {
+   "updated": "2026-11-09"
+  },
+  "venue-中山競馬場": {
+   "address": "〒273-0037 千葉県船橋市古作1丁目1-1 中山競馬場",
+   "address_source": "eventernote",
+   "phone": "047-334-2222",
+   "official_url": "https://www.jra.go.jp/facilities/race/nakayama/",
+   "seat_map_url": "https://www.jra.go.jp/facilities/race/nakayama/rcmap/index.html",
+   "access": "・JR船橋法典駅から専用地下道（動く歩道設置）で徒歩約10分\n注記：専用地下道の通行可能時間は、開門から17時20分です\nなお、JR船橋法典駅の臨時改札口は8時00分から17時30分まで開設されます\n・JR西船橋駅からバスで約15分、徒歩で約30分\n・京成東中山駅からはバスで約10分、徒歩で約20分",
+   "description_ja": "中山競馬場（なかやまけいばじょう、英：Nakayama Racecourse）は、千葉県船橋市（一部市川市）にある中央競馬の競馬場。施行者ならびに管理者は日本中央競馬会である。日本の4大競馬主場（中山競馬場、東京競馬場、阪神競馬場、京都競馬場）の一つ。競馬ファンの間では単に中山でも通用する。 有馬記念（GI）が有名で国際セリ名簿基準委員会（ICSC）によるランクでは平地競走が最上位のパートI。国際競馬統括機関連盟（IFHA）が公表した「世界のトップ100GIレース」では2020年世界第10位、日本国内第4位に位置付けられている（ジャパンカップが世界第3位、日本第1位）。 1レースの売上過去最高額は約875億円となりギネス世界記録に登録されている。GI競走は有馬記念のほか皐月賞やスプリンターズステークス、ホープフルステークスが開催される。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/913"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-伊香立公園": {
+   "address": "〒520-0357 滋賀県大津市山百合の丘4-1 伊香立公園",
+   "address_source": "eventernote",
+   "phone": "077-598-2262",
+   "official_url": "https://otsukoen.org/ikadachi-park/",
+   "access": "堅田駅3番バスのりばより\n江若交通バス 51・54・57・59系統「堅田葛川線」乗車\n「伊香立診療所前」下車 徒歩約2分",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/18854"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-佐久市駒場公園": {
+   "address": "〒385-0011 長野県佐久市猿久保字丸山55番地 駒場公園",
+   "address_source": "eventernote",
+   "phone": "0267-68-1399",
+   "official_url": "https://komabapark-saku.jp/",
+   "seat_map_url": "https://komabapark-saku.jp/facility/",
+   "access": "JR小海線「北中込駅」より徒歩約15分\n北陸新幹線「佐久平駅」よりタクシー約10分",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9643"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-佐賀競馬場": {
+   "address": "〒841-0073 佐賀県鳥栖市江島町字西谷3256-228 佐賀競馬場",
+   "address_source": "eventernote",
+   "phone": "0942-83-4538",
+   "official_url": "https://www.sagakeiba.net/",
+   "seat_map_url": "https://www.sagakeiba.net/guide/",
+   "access": "鳥栖駅前バス停より\n西鉄バス43系統 目達原・神埼駅通り行き 乗車\n「競馬場前」下車\nJR新鳥栖駅よりタクシー約10分",
+   "latitude": 33.349361419677734,
+   "longitude": 130.47085571289062,
+   "description_ja": "佐賀競馬場（さがけいばじょう Saga Racecourse）は、佐賀県鳥栖市にある地方競馬の競馬場である。佐賀県競馬組合によって、現在は年間を通して中央競馬と同じ土曜・日曜を中心に競馬が開催されている。オッズパーク加盟競馬場。 本項では併設されている中央競馬の場外勝馬投票券発売所であるJ-PLACE鳥栖（佐賀競馬場スタンド1階）（ジェイ・プレイスとす さがけいばじょうスタンド1かい）についても記述する。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9329"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-函館サ-モン-まるなまアリ-ナ": {
+   "updated": "2026-11-09"
+  },
+  "venue-台北世界貿易中心": {
+   "official_url": "http://www.ticc.com.tw/",
+   "description_ja": "台北世界貿易中心（台北世界貿易センター、たいぺいせかいぼうえきセンター）は、台北市の信義開発区に位置するコンベンション・商業施設の名称。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%8F%B0%E5%8C%97%E4%B8%96%E7%95%8C%E8%B2%BF%E6%98%93%E4%B8%AD%E5%BF%83",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%8F%B0%E5%8C%97%E4%B8%96%E7%95%8C%E8%B2%BF%E6%98%93%E4%B8%AD%E5%BF%83"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-名古屋競馬場": {
+   "address": "〒498-0065 愛知県弥富市駒野町1 名古屋競馬場",
+   "address_source": "eventernote",
+   "phone": "0570-007-221",
+   "official_url": "https://www.nagoyakeiba.com/",
+   "seat_map_url": "https://www.nagoyakeiba.com/guide/information.html",
+   "access": "近鉄蟹江駅・名古屋駅(名鉄バスセンター4階21番乗り場)より無料シャトルバス運行\n(名古屋競馬開催日のみ)\n2022年3月22日 移転オープン",
+   "latitude": 35.11277770996094,
+   "longitude": 136.866943359375,
+   "description_ja": "名古屋競馬場（なごやけいばじょう/英: Nagoya Racecourse）は、愛知県弥富市駒野町1番地にある地方競馬の競馬場である。キャッチフレーズは「金シャチけいばNAGOYA」（きんシャチけいばなごや）。かつては名古屋市港区にあったが、2022年4月に愛知県弥富市へ移転した。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/2609"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-品川プリンスホテル-ステラボ-ル": {
+   "address": "〒108-8611 東京都港区高輪4丁目10-30 品川ステラボール",
+   "address_source": "eventernote",
+   "capacity": 1884,
+   "capacity_text": "1,884人(スタンディング) / 876席(シーティング)",
+   "phone": "03-3440-1111",
+   "official_url": "https://www.princehotels.co.jp/shinagawa/stellarball/",
+   "seat_map_url": "https://www.princehotels.co.jp/shinagawa/stellarball/floor.html",
+   "access": "＜アクセス＞\n・品川駅高輪口より徒歩5分\nhttps://www.princehotels.co.jp/shinagawa/stellarball/access.html\n※ご来場の際はいちょう坂映画館入口よりお入りください。\n＜キャパシティ＞\n・1Fスタンディング 1,758人\n・1Fシート 750人\n・2Fテラス＋VIP席 126人",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/61"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-園田競馬場": {
+   "address": "〒661-0951 兵庫県尼崎市田能2丁目1-1 園田競馬場",
+   "address_source": "eventernote",
+   "phone": "06-6491-0601",
+   "official_url": "https://www.sonoda-himeji.jp/",
+   "seat_map_url": "https://www.sonoda-himeji.jp/guide/so-facility/",
+   "access": "無料バスのご案内\n阪急電鉄園田駅\n阪急電鉄園田駅北西側約50ｍ＜専用バス乗り場＞ ～ 園田競馬場【所要時間約5分】\nデイ競馬\n午前9：45から随時運行\nサマー競馬\n午前11：30から随時運行\nナイター競馬\n午後1：30から随時運行\n※変更になる場合があります\n阪神電車尼崎駅～●JR尼崎駅＜園田競馬開催日のみ＞\n阪神電車尼崎駅＜北出口バスターミナル5番のりば＞ ～ JR尼崎駅南側バスターミナル～園田競馬場\nhttps://www.sonoda-himeji.jp/resources/pdfs/fanbus/2024/1730859715_a49e33b024178b7f4dbb.pdf\n阪急電鉄園田駅 徒歩約25分",
+   "description_ja": "園田競馬場（そのだけいばじょう　Sonoda Racecourse）は、兵庫県尼崎市にある地方競馬の競馬場である。主催者は兵庫県競馬組合。2005年8月よりD-Net（地方競馬の統一電話投票システム）に加盟した。 かつては「アラブのメッカ」と呼ばれ、楠賞全日本アラブ優駿を開催するなどしてきたが、現在ではアラブ系単独のレースは行われていない。全盛期に比べると売り上げが減少しているが、インターネット投票の導入等で現在は持ち直している。 2012年9月に照明塔が設置され、ナイター開催が可能になってから2020年の姫路競馬場再開までは、兵庫県競馬は園田単独での開催が続いていた。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%9C%92%E7%94%B0%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9717"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%9C%92%E7%94%B0%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-大井競馬場": {
+   "address": "〒140-0012 東京都品川区勝島2丁目1-2 大井競馬場",
+   "address_source": "eventernote",
+   "phone": "03-3763-2151",
+   "official_url": "https://www.tokyocitykeiba.com/",
+   "access": "＜アクセス＞\n・東京モノレール「大井競馬場前駅」より徒歩2分(※区間快速停車)\n・京浜急行「立会川駅」より徒歩12分(※エアポート急行停車)\nhttps://www.tokyocitykeiba.com/access/\n・首都高速1号羽田線「鈴ヶ森IC」から440m\n・首都高速1号羽田線「勝島IC」から500m\n・首都高速湾岸線「大井南IC」から1.1km",
+   "description_ja": "大井競馬場（おおいけいばじょう、Ohi Racecourse）は、東京都品川区勝島にある地方競馬の競馬場である。施設は東京都競馬株式会社の所有で、特別区競馬組合が賃借し「東京シティ競馬 (TCK)」の愛称で競馬を施行している。川崎競馬場（神奈川県川崎市）、浦和競馬場（埼玉県さいたま市）、船橋競馬場（千葉県船橋市）と共に南関東公営競馬を構成する。SPAT4加盟。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BA%95%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/735"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BA%95%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-大手町三井ホ-ル": {
+   "address": "〒100-0004 東京都千代田区大手町1丁目2-1 Otemachi One 3F 大手町三井ホール",
+   "address_source": "eventernote",
+   "capacity": 638,
+   "capacity_text": "最大638席",
+   "phone": "03-5962-9570",
+   "official_url": "https://otemachi-hall.jp/website/",
+   "seat_map_url": "https://otemachi-hall.jp/pdf/layout/entertainment/sekiban_560.pdf",
+   "access": "C4・C5出口直結(※C5出口は日曜日、ビル入口閉鎖中)\n東京メトロ\n千代田線「大手町」駅直結 徒歩約2分\n丸ノ内線「大手町」駅直結 徒歩約5分\n半蔵門線「大手町」駅直結 徒歩約5分\n東西線「大手町」駅直結 徒歩約9分、「竹橋」駅 徒歩約2分\n都営三田線「大手町」駅直結 徒歩約6分\nJR「東京」駅丸の内中央口地下道直結 徒歩約12分\n2020年6月オープン",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%89%8B%E7%94%BA%E4%B8%89%E4%BA%95%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/12111"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%89%8B%E7%94%BA%E4%B8%89%E4%BA%95%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-大阪城ホ-ル": {
+   "address": "〒540-0002 大阪府大阪市中央区大阪城3番1号 大阪城ホール",
+   "address_source": "eventernote",
+   "capacity": 16000,
+   "capacity_text": "16,000人(センターステージ形式) / 11,200人(エンドステージ形式)",
+   "phone": "0570-034-533",
+   "official_url": "https://www.osaka-johall.com/",
+   "seat_map_url": "https://www.osaka-johall.com/seat/",
+   "access": "＜アクセス＞\n・JR大阪環状線「大阪城公園駅」より徒歩5分\n・地下鉄長堀鶴見緑地線「大阪ビジネスパーク駅」1番出口より徒歩5分",
+   "latitude": 34.68944549560547,
+   "longitude": 135.52972412109375,
+   "description_ja": "大阪城ホール（おおさかじょうホール、Osaka-Jo Hall）は、大阪府大阪市中央区の大阪城公園内にある多目的アリーナ。 正式名称は大阪城国際文化スポーツホール（おおさかじょうこくさいぶんかスポーツホール）であるが、通称の大阪城ホールが一般的となっており、運営主体の名称も株式会社大阪城ホールである。略称は城ホール（じょうホール）、または、城ホ（じょうホ）。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%9F%8E%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/5"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%9F%8E%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-山野ホ-ル-貸出中止": {
+   "address": "〒151-8539 東京都渋谷区代々木1丁目53-1 山野美容専門学校",
+   "address_source": "eventernote",
+   "capacity": 800,
+   "capacity_text": "800席 (固定276席＋可動524席)",
+   "phone": "03-3379-0381",
+   "official_url": "https://www.yamanohall.com/",
+   "seat_map_url": "https://www.yamanohall.com/common/pdf/zumen_11.pdf",
+   "access": "2024年12月7日\n山野ホール等の貸し出し中止について \n平素は格別のお引き立てをいただき、厚く御礼申し上げます。 \nこのたび、当学校法人が所有する山野ホールを含めた一部学苑施設において、安全性にかかる法令上の疑義があることが認められましたので、当該施設の貸し出しを中止することを決定しました。\n関係者の皆様には、多大なご迷惑をおかけすることとなり、深くお詫び申し上げます。 \n今後、しかるべき調査を行い、適切に対応させていただく所存です。何卒ご理解いただきたく、お願い申し上げます。 \n学校法人山野学苑 \n＜アクセス＞\n・小田急線「南新宿駅」より徒歩すぐ\n・JR山手線・総武線「代々木駅」北口より徒歩約1分\n・都営大江戸線「代々木駅」A3出口より徒歩約1分\n・各線「新宿駅」より徒歩約5分\nホール入口は山野美容専門学校ビル右横のビル裏側に抜ける通路を進み、下に降りるエスカレータ(または階段)を降りた先にあります。",
+   "latitude": 35.684165954589844,
+   "longitude": 139.6999969482422,
+   "description_ja": "山野ホール（やまのホール）は、東京都渋谷区代々木に所在するホール。山野美容専門学校の施設の講堂教室である。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/245"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-帯広競馬場": {
+   "address": "〒080-0023 北海道帯広市西13条南9丁目 帯広競馬場",
+   "address_source": "eventernote",
+   "phone": "0155-34-0825",
+   "official_url": "https://banei-keiba.or.jp/",
+   "seat_map_url": "https://banei-keiba.or.jp/sv_spot.php",
+   "access": "JR帯広駅南口よりタクシー約7分\n帯広駅バスターミナル12番乗り場より十勝バス 乗車\nとかち帯広空港より空港連絡バス 乗車\n「帯広競馬場前」停留場 下車",
+   "description_ja": "帯広競馬場（おびひろけいばじょう Obihiro Racecourse）は、北海道帯広市にあるばんえい競馬の競馬場である。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%B8%AF%E5%BA%83%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/2085"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%B8%AF%E5%BA%83%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-幕張メッセ-国際展示場ホ-ル": {
+   "address": "〒261-0023 千葉県千葉市美浜区中瀬2丁目1",
+   "address_source": "eventernote",
+   "phone": "043-296-0001",
+   "official_url": "https://www.m-messe.co.jp/facility/",
+   "access": "＜アクセス＞\n・JR京葉線「海浜幕張駅」より徒歩約10～15分\n・JR京葉線「幕張豊砂駅」より徒歩約20分\n・海浜幕張駅からイオンモール行きバスで4分 現金170円(ICカード168円)\n・JR/京成電鉄「幕張本郷駅」からバスで約17分 「タウンセンター」「幕張メッセ（東口）」「幕張メッセ中央」下車\n・幕張メッセ駐車場 普通車5,500台収容 8:00〜23:00 1000円/1日（このほか、周辺駐車場あり）\n国際展示場1-8ホール 54,000m² (6,750m²×8ホール)\n国際展示場9-11ホール 18,000m²\n幕張メッセ イベントホール\nhttps://www.eventernote.com/places/42\n幕張メッセ 国際会議場 コンベンションホール\nhttps://www.eventernote.com/places/9892\n幕張メッセ 屋外展示場\nhttps://www.eventernote.com/places/6336",
+   "latitude": 35.64833450317383,
+   "longitude": 140.03472900390625,
+   "description_ja": "幕張メッセ（まくはりめっせ、英：Makuhari Messe）は、千葉県千葉市美浜区の幕張新都心に位置する日本国内第2位の規模を有する複合コンベンション施設。国際展示場の正式名称は千葉県日本コンベンションセンター国際展示場。 日本国内の優秀な建築作品として第32回及び第40回BCS賞（建築業協会賞）、IAITAクォーターナリオ賞、第5回千葉県建築文化賞等を受賞している。運営管理者は株式会社幕張メッセ。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E3%83%A1%E3%83%83%E3%82%BB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/43"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E3%83%A1%E3%83%83%E3%82%BB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-恵比寿ガ-デンホ-ル": {
+   "updated": "2026-11-09"
+  },
+  "venue-新宿住友ビル三角広場": {
+   "address": "〒160-0023 東京都新宿区西新宿2丁目6-1 新宿住友ビル 三角広場",
+   "address_source": "eventernote",
+   "capacity": 2000,
+   "capacity_text": "最大2,000人",
+   "phone": "050-3112-5050",
+   "official_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/",
+   "seat_map_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/#space",
+   "access": "都営大江戸線「都庁前」駅直結\n丸ノ内線「西新宿」駅 徒歩4分\n「新宿」駅 徒歩8分",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/12716"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-新宿住友ホ-ル": {
+   "address": "〒160-0023 東京都新宿区西新宿2丁目6-1 新宿住友ビル",
+   "address_source": "eventernote",
+   "phone": "03-3344-6983",
+   "official_url": "https://www.bellesalle.co.jp/shisetsu/shinjuku/shinjukusumitomohall/",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/6758"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-新町橋東公園ステ-ジ": {
+   "address": "〒770-0911 徳島県徳島市東船場町1丁目",
+   "address_source": "eventernote",
+   "official_url": "https://commons.nicovideo.jp/material/nc216082",
+   "access": "＜アクセス＞\n・JR徳島駅から徒歩6分\nJR徳島駅から道なりに南下するとあります。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%96%B0%E7%94%BA%E6%A9%8B%E6%9D%B1%E5%85%AC%E5%9C%92",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/1147"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E7%94%BA%E6%A9%8B%E6%9D%B1%E5%85%AC%E5%9C%92"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-日テレらんらんホ-ル": {
+   "address": "〒214-0006 神奈川県川崎市多摩区菅仙谷4丁目 日テレらんらんホール",
+   "address_source": "eventernote",
+   "capacity": 1000,
+   "capacity_text": "1,000席",
+   "phone": "044-966-1135",
+   "access": "＜アクセス＞\n・京王よみうりランド駅下車\n　・ゴンドラ「スカイシャトル」で5～10分\n　・もしくは小田急バスで5分\n・読売ランド前駅下車 \n　・小田急バスで10分",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%97%A5%E3%83%86%E3%83%AC%E3%82%89%E3%82%93%E3%82%89%E3%82%93%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/3499"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E3%83%86%E3%83%AC%E3%82%89%E3%82%93%E3%82%89%E3%82%93%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-日本武道館": {
+   "address": "〒102-8321 東京都千代田区北の丸公園2番3号",
+   "address_source": "eventernote",
+   "capacity": 14501,
+   "capacity_text": "14,501席 (アリーナ2,946席＋1階3,199席＋2・3階7,876席＋3階立見480席)",
+   "phone": "03-3216-5100",
+   "official_url": "https://www.nipponbudokan.or.jp/",
+   "seat_map_url": "https://www.nipponbudokan.or.jp/pdf/about/2007.pdf",
+   "access": "＜アクセス＞\n・東京メトロ東西線・半蔵門線・都営新宿線「九段下駅」2番出口より徒歩5分\nhttps://www.nipponbudokan.or.jp/about/access\n※九段下駅混雑時は、坂を下った4番出口もご利用になれます。お帰りの際も駅周辺混雑時は、歩道橋を渡り、1番又は3番出口を利用すると便利です。",
+   "latitude": 35.693111419677734,
+   "longitude": 139.74935913085938,
+   "description_ja": "日本武道館（にっぽんぶどうかん、Nippon Budōkan）は、東京都千代田区北の丸公園2-3にある武道館。日本伝統の武道を普及奨励し、心身錬磨の大道場としての役割を担うことを設立趣旨とする。日本武道協議会加盟。武道以外の屋内競技場、多目的ホールとしても利用される。管理運営者は公益財団法人日本武道館。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/3"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-有明アリ-ナ": {
+   "address": "〒135-0063 東京都江東区有明1丁目11-1 有明アリーナ",
+   "address_source": "eventernote",
+   "capacity": 15000,
+   "capacity_text": "約15,000席",
+   "phone": "03-5500-7201",
+   "official_url": "https://ariake-arena.tokyo/",
+   "seat_map_url": "https://ariake-arena.tokyo/floor/",
+   "access": "〇東京臨海新交通ゆりかもめ\n　「新豊洲駅」下車………………徒歩約8分\n　「有明テニスの森駅」下車……徒歩約8分\n〇東京臨海高速鉄道りんかい線\n　「国際展示場駅」下車…………徒歩約17分\n　「東雲駅」下車…………………徒歩約17分\n〇東京BRT(東京都心と臨海副都心を結ぶバス・ラピッド・トランジット路線)\n「有明テニスの森」停留場…………徒歩約8分",
+   "latitude": 35.6435546875,
+   "longitude": 139.79425048828125,
+   "description_ja": "有明アリーナ（ありあけアリーナ、英: Ariake Arena）は、日本の東京都江東区有明一丁目に所在する屋内競技施設、コンサート・イベント施設（アリーナ）である。 2020年東京オリンピックおよびパラリンピックの競技会場として、2017年（平成29年）4月21日着工、2019年（令和元年）12月9日竣工。2022年（令和4年）8月20日、国内初の公共施設等運営事業（コンセッション方式）によるスポーツ・文化拠点として再開業した。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/11572"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-札幌シネマフロンティア": {
+   "address": "〒060-0005 北海道札幌市中央区北5条西2丁目5 JRタワーステラプレイス7F",
+   "address_source": "eventernote",
+   "capacity": 12,
+   "capacity_text": "（12スクリーン）2,705",
+   "phone": "011-209-5400",
+   "official_url": "https://www.cinemafrontier.net/cgi-bin/pc/index.cgi",
+   "latitude": 43.06805419921875,
+   "longitude": 141.35122680664062,
+   "description_ja": "札幌シネマフロンティア（さっぽろシネマフロンティア、Sapporo Cinema Frontier）は、札幌駅の駅ビル札幌ステラプレイスセンター7階に位置する複合施設型シネマコンプレックス。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/893"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-東京ガ-デンシアタ": {
+   "address": "〒135-0063 東京都江東区有明2-1-6 東京ガーデンシアター",
+   "address_source": "eventernote",
+   "capacity": 8000,
+   "capacity_text": "約8,000人",
+   "official_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/",
+   "seat_map_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/visitor/floor/",
+   "access": "ゆりかもめ「有明駅」2B出口から徒歩4分\nゆりかもめ「有明テニスの森駅」2A出口から徒歩5分\nりんかい線「国際展示場駅」A出口から徒歩7分",
+   "latitude": 35.638221740722656,
+   "longitude": 139.79214477539062,
+   "description_ja": "東京ガーデンシアター（とうきょうガーデンシアター）は、東京都江東区有明の有明ガーデンにある、最大収容人数約8,000人を誇る東京及び日本最大の劇場型イベントホール。日本武道館と同規模のイベント会場として建設された。ライブ開催期間には、ミュージシャンの楽曲が関連施設に流れるようにもなっている。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/11813"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-東京ビッグサイト": {
+   "address": "〒135-0063 東京都江東区有明3丁目11-1",
+   "address_source": "eventernote",
+   "capacity": 126300,
+   "capacity_text": "最大126,300人 東１ホール 9,500人 東２ホール 9,100人 東３ホール 9,500人 東４ホール 9,500人 東５ホール 9,100人 東６ホール 9,500人 東７ホール 12,800人 東８ホール 3,300人 西１ホール 9,700人 西２ホール 9,700人 西３ホール 5,100人 西４ホール 7,500人 南１ホール 5,500人 南２ホール 5,500人 南３ホール 5,500人 南４ホール 5,500人",
+   "phone": "03-5530-1111",
+   "official_url": "https://www.bigsight.jp/",
+   "access": "東展示棟1－8ホール(1F)\n西展示棟1・2ホール(1F)、3・4ホール(4F)\n南展示棟1・2ホール(1F)、3・4ホール(4F)\n青海展示棟(閉館)についてはこちら\nhttps://www.eventernote.com/places/10013\n＜アクセス＞\n・りんかい線 国際展示場駅より徒歩7分\n・ゆりかもめ 東京ビッグサイト駅より徒歩3分\n・東京BRT 国際展示場より徒歩7分\n・都営バス 東京ビッグサイト下車\n・水上バス 東京ビッグサイト下船 徒歩2分（不定期運航）\nhttps://www.bigsight.jp/visitor/access/",
+   "description_ja": "株式会社東京ビッグサイト（とうきょうビッグサイト、Tokyo Big Sight Inc.）は、東京都江東区有明に本社を置く、各種施設の管理及び運営を行う日本の企業である。また「東京ビッグサイト」は、当社が運営する東京国際展示場の愛称としても知られる。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%93%E3%83%83%E3%82%B0%E3%82%B5%E3%82%A4%E3%83%88",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/438"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%93%E3%83%83%E3%82%B0%E3%82%B5%E3%82%A4%E3%83%88"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-東京国際フォ-ラム-ホ-ルc": {
+   "address": "〒100-0005 東京都千代田区丸の内3丁目5番1号",
+   "address_source": "eventernote",
+   "capacity": 1502,
+   "capacity_text": "1,502席 (1階739席＋2階363席＋3階400席)",
+   "phone": "03-5221-9000",
+   "official_url": "https://www.t-i-forum.co.jp/visitors/facilities/c/",
+   "seat_map_url": "https://www.t-i-forum.co.jp/visitors/facilities/c/seat/",
+   "access": "＜アクセス＞\nJR線\n・有楽町駅より徒歩1分\n・東京駅より徒歩5分 (京葉線東京駅とB1F地下コンコースにて連絡)\n地下鉄\n・有楽町線「有楽町駅」(B1F地下コンコースにて連絡）\n・千代田線「二重橋前駅」より徒歩5分/「日比谷駅」より徒歩7分\n・丸ノ内線「銀座駅」より徒歩5分\n・銀座線「銀座駅」より徒歩7分/「京橋駅」より徒歩7分\n・三田線「日比谷駅」より徒歩5分",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/425"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-横浜アリ-ナ": {
+   "address": "〒222-0033 神奈川県横浜市港北区新横浜3丁目10番地 横浜アリーナ",
+   "address_source": "eventernote",
+   "capacity": 17000,
+   "capacity_text": "約17,000人",
+   "phone": "045-474-4000",
+   "official_url": "https://www.yokohama-arena.co.jp/",
+   "seat_map_url": "https://www.yokohama-arena.co.jp/seatguide/",
+   "access": "横浜市営地下鉄ブルーライン・相鉄新横浜線・東急新横浜線「新横浜駅」出口7・出口8より徒歩4分\nJR横浜線「新横浜駅」北口より徒歩5分\nJR東海道新幹線「新横浜駅」東口より徒歩5分",
+   "description_ja": "横浜アリーナ（よこはまアリーナ、Yokohama Arena）は、神奈川県横浜市港北区新横浜にある多目的ホール。1989年4月1日に開館した。株式会社横浜アリーナ（設立：1986年、親会社：西武鉄道）が管理および運営を行う。 略称は「横アリ」。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/1"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-横浜ベイホ-ル": {
+   "address": "横浜市中区新山下3-4-17",
+   "address_source": "wikipedia",
+   "capacity": 1100,
+   "capacity_text": "1100",
+   "official_url": "http://www.bayhall.jp/",
+   "description_ja": "横浜ベイホール（Yokohama Bay Hall）は、神奈川県横浜市中区新山下にあるライブハウスである。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%83%99%E3%82%A4%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%83%99%E3%82%A4%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-武蔵野の森総合スポ-ツプラザ-メインアリ-ナ": {
+   "address": "東京都調布市飛田給一丁目1番地の41外",
+   "address_source": "wikipedia",
+   "official_url": "https://www.musamori-plaza.com/",
+   "description_ja": "武蔵野の森総合スポーツプラザ（むさしののもりそうごうスポーツプラザ）は、東京都調布市に所在する屋内体育館および屋内プールである。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E8%94%B5%E9%87%8E%E3%81%AE%E6%A3%AE%E7%B7%8F%E5%90%88%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%97%E3%83%A9%E3%82%B6",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E8%94%B5%E9%87%8E%E3%81%AE%E6%A3%AE%E7%B7%8F%E5%90%88%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%97%E3%83%A9%E3%82%B6"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-江戸川区総合文化センタ-大ホ-ル": {
+   "address": "東京都江戸川区中央4-14-1",
+   "address_source": "wikipedia",
+   "official_url": "http://edogawa-bunkacenter.jp/",
+   "latitude": 35.711082458496094,
+   "longitude": 139.86825561523438,
+   "description_ja": "江戸川区総合文化センター（えどがわくそうごうぶんかセンター）は、江戸川区が設置管理運営するホール。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+   "sources": [
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-浦和競馬場": {
+   "address": "〒336-0016 埼玉県さいたま市南区大谷場1丁目8-42 浦和競馬場",
+   "address_source": "eventernote",
+   "phone": "048-881-1551",
+   "official_url": "https://www.urawa-keiba.jp/",
+   "access": "＜アクセス＞\n・JR「南浦和駅」東口から競馬場正門まで徒歩15分\n・JR「南浦和駅」東口から競馬場正門まで無料送迎バスで5分\n・JR「浦和駅」東口から競馬場北門まで徒歩15分\n・東京外環自動車道「外環浦和IC」から2.2km",
+   "latitude": 35.91164016723633,
+   "longitude": 139.69580078125,
+   "description_ja": "浦和競馬場（うらわけいばじょう Urawa Racecourse）は、埼玉県さいたま市南区大谷場一丁目に所在する地方競馬の競馬場である。主催者は埼玉県浦和競馬組合（埼玉県とさいたま市で構成される一部事務組合）。SPAT4加盟競馬場。船橋競馬場、大井競馬場、川崎競馬場と共に南関東公営競馬を構成する。 本項では併設されている中央競馬の場外勝馬投票券発売所であるウインズ浦和（浦和競馬場内）についても記述する。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9715"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-烏丸半島芝生広場": {
+   "updated": "2026-11-09"
+  },
+  "venue-眉山山頂ステ-ジ": {
+   "updated": "2026-11-09"
+  },
+  "venue-眉山林間ステ-ジ": {
+   "address": "〒770-0908 徳島県徳島市眉山町茂助ケ原20 眉山駐車場",
+   "address_source": "eventernote",
+   "official_url": "https://www.city.tokushima.tokushima.jp/smph/shisetsu/park/bizan.html",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/843"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-科学技術館サイエンスホ-ル": {
+   "address": "〒102-0091 東京都千代田区北の丸公園2-1 科学技術館B2F",
+   "address_source": "eventernote",
+   "capacity": 410,
+   "capacity_text": "410席",
+   "phone": "03-3212-8485",
+   "official_url": "https://event-jsf.jp/science_hall",
+   "seat_map_url": "https://event-jsf.jp/wp-content/uploads/shall_seat.pdf",
+   "access": "＜アクセス＞\n・東京メトロ東西線「竹橋駅」1b出口より徒歩7分\n・東京メトロ東西線/半蔵門線・都営新宿線「九段下駅」より徒歩9分\nhttps://event-jsf.jp/access\n科学技術館1F 展示・イベントホール\nhttps://www.eventernote.com/places/4943",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6%E6%8A%80%E8%A1%93%E9%A4%A8%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%BC%E3%83%AB",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/119"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6%E6%8A%80%E8%A1%93%E9%A4%A8%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%BC%E3%83%AB"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-笠松競馬場": {
+   "address": "〒501-6191 岐阜県羽島郡笠松町若葉町12番地 笠松競馬場",
+   "address_source": "eventernote",
+   "phone": "058-387-3278",
+   "official_url": "https://www.kasamatsu-keiba.com/",
+   "seat_map_url": "https://www.kasamatsu-keiba.com/facilities",
+   "access": "名鉄「笠松駅」より徒歩3分",
+   "description_ja": "笠松競馬場（かさまつけいばじょう、Kasamatsu Racecourse）は、岐阜県羽島郡笠松町（一部施設は同郡岐南町にまたがる）にある地方競馬の競馬場である。 1935年（昭和10年）、恵那郡中津町（現：中津川市）に存在した中津競馬場を笠松町に移転したのが前身。戦前、岐阜県には各務原競馬場、が存在していたが1938年（昭和13年）に笠松競馬場に統合されている。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E6%9D%BE%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9707"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E6%9D%BE%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-舞浜アンフィシアタ": {
+   "address": "〒279-8518 千葉県浦安市舞浜2-50 舞浜アンフィシアター",
+   "address_source": "eventernote",
+   "capacity": 2170,
+   "capacity_text": "2,170席",
+   "phone": "047-381-3898",
+   "official_url": "https://www.maihama-amphitheater.jp/",
+   "seat_map_url": "https://www.shiki.jp/theatres/1573/#seating",
+   "access": "JR京葉線・武蔵野線「舞浜駅」南口からイクスピアリ館内、ディズニーアンバサダーホテルを経由し徒歩約10分",
+   "latitude": 35.63258361816406,
+   "longitude": 139.88922119140625,
+   "description_ja": "舞浜アンフィシアター（まいはまアンフィシアター）は、千葉県浦安市舞浜の東京ディズニーリゾート（TDR）内にある多目的ホールである。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E8%88%9E%E6%B5%9C%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/234"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E6%B5%9C%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-金沢競馬場": {
+   "address": "〒920-3105 石川県金沢市八田町西1番地 金沢競馬場",
+   "address_source": "eventernote",
+   "capacity": 15000,
+   "capacity_text": "15,000人",
+   "phone": "076-258-5761",
+   "official_url": "https://www.kanazawakeiba.com/",
+   "seat_map_url": "https://www.kanazawakeiba.com/facilities/",
+   "access": "「金沢駅」金沢港口(西口)より無料ファンバス運行\nhttps://www.kanazawakeiba.com/facilities/fan-bus/",
+   "description_ja": "金沢競馬場（かなざわけいばじょう Kanazawa Racecourse）は、石川県金沢市八田町西にある地方競馬の競馬場。石川県（石川県競馬事業局）と金沢市がそれぞれ別々に主催者として開催している。通称は金沢競馬。オッズパーク、D-Net加盟競馬場。",
+   "wikipedia_ja": "https://ja.wikipedia.org/wiki/%E9%87%91%E6%B2%A2%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/9706"
+    },
+    {
+     "kind": "wikipedia_ja",
+     "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E6%B2%A2%E7%AB%B6%E9%A6%AC%E5%A0%B4"
+    }
+   ],
+   "updated": "2026-11-09"
+  },
+  "venue-駅前不動産スタジアム-鳥栖スタジアム": {
+   "address": "〒841-0034 佐賀県鳥栖市京町812 鳥栖スタジアム",
+   "address_source": "eventernote",
+   "capacity": 24130,
+   "capacity_text": "24,130人",
+   "phone": "0942-85-7332",
+   "official_url": "https://www.city.tosu.lg.jp/soshiki/12/1166.html",
+   "seat_map_url": "https://www.city.tosu.lg.jp/uploaded/attachment/1379.pdf",
+   "access": "JR鳥栖駅より徒歩約3分\nネーミングライツ\nベストアメニティスタジアム 2008年1月1日～2018年12月31日\n駅前不動産スタジアム 2019年2月1日～",
+   "sources": [
+    {
+     "kind": "eventernote_place",
+     "url": "https://www.eventernote.com/places/5019"
+    }
+   ],
+   "updated": "2026-11-09"
+  }
+ }
+}

@@ -492,6 +492,9 @@ async function main() {
   location.href = 'http://localhost/zh-Hans/database/venues/' + encodeURIComponent('venue-new-pier-hall');
   await app.applyCurrentRoute();
   assert(app.venueDetail.value && app.venueDetail.value.name_zh, 'direct venue detail restores from the API');
+  assert(app.venueDetail.value.profile && app.venueDetail.value.profile.address, 'venue detail merges the curated venue profile');
+  assert(app.venueCapacityLabel(app.venueDetail.value), 'the venue capacity label renders');
+  assert(app.venueDetail.value.profile.wikipedia_ja, 'the venue profile links its Wikipedia article');
   assert(app.venueEvents.value.length && app.venueEvents.value.every(row => row.id), 'a venue lists the events held there');
   location.href = 'http://localhost/zh-Hans/database/venues';
   await app.applyCurrentRoute();

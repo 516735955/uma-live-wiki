@@ -32,3 +32,12 @@
 .venue-map-link:hover { color: var(--ui-orange-deep); }
 .venue-table td:first-child a { color: var(--ui-cobalt-deep); font-weight: 800; text-decoration: none; }
 .venue-table td:first-child a:hover { color: var(--ui-orange-deep); }
+
+.venue-facts dd { line-height: 1.6; }
+.venue-facts dd a { color: var(--ui-cobalt-deep); font-weight: 750; text-decoration: none; }
+.venue-facts dd a:hover { color: var(--ui-orange-deep); }
+.venue-meta-note { color: var(--text-3); font-size: .72rem; font-weight: 600; }
+.venue-profile-links { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.venue-text-section .section-toolbar { margin-bottom: 8px; }
+.venue-description { margin: 0; color: var(--text-2); font-size: .88rem; line-height: 1.85; }
+.venue-access { margin: 0; color: var(--text-2); font-size: .84rem; line-height: 1.8; white-space: pre-line; overflow-wrap: anywhere; }

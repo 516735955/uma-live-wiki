@@ -462,6 +462,8 @@ export function createViewModel(domains, routes) {
     retryVenues: domains.venues.retryVenues,
     venueLabel: domains.venues.venueLabel,
     venueAliasRows: domains.venues.venueAliasRows,
+    venueCapacityLabel: domains.venues.venueCapacityLabel,
+    venueLinkHost: domains.venues.venueLinkHost,
     venueMapUrl: domains.venues.venueMapUrl,
     venueQueryLabel: domains.venues.venueQueryLabel,
     venueSourceLabel: domains.venues.venueSourceLabel,

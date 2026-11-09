@@ -145,7 +145,31 @@ export function createVenues(deps) {
     return (name + city).trim();
   }
 
+  function venueCapacityLabel(venue) {
+    const profile = venue && venue.profile;
+    if (!profile) return '';
+    const text = String(profile.capacity_text || '').trim();
+    if (!text) return profile.capacity ? Number(profile.capacity).toLocaleString('zh-CN') : '';
+    return text.split(/[(（]/)[0].split(/\s+/)[0];
+  }
+
+  function venueLinkHost(url) {
+    try {
+      return new URL(url).host.replace(/^www\./, '');
+    } catch (error) {
+      return '';
+    }
+  }
+
   function venueMapUrl(venue) {
+    const profile = venue && venue.profile;
+    if (profile && Number.isFinite(profile.latitude) && Number.isFinite(profile.longitude))
+      return (
+        'https://www.google.com/maps/search/?api=1&query=' +
+        profile.latitude +
+        ',' +
+        profile.longitude
+      );
     const label = venueQueryLabel(venue);
     return label
       ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(label)
@@ -167,8 +191,11 @@ export function createVenues(deps) {
     const kind = String(source && source.kind || '').toLowerCase();
     return ({
       eventernote: 'Eventernote',
+      eventernote_place: 'Eventernote',
+      wikipedia_ja: '日文维基百科',
+      wikipedia_en: '英文维基百科',
       official: '官方',
-      venue_directory: '会场目录',
+      venue_directory: 'Eventernote 会场资料',
       venue_reference: '官方访问指南',
     })[kind] || kind;
   }
@@ -216,7 +243,9 @@ export function createVenues(deps) {
     venueEvents,
     venueEventsExpanded,
     venueAliasRows,
+    venueCapacityLabel,
     venueLabel,
+    venueLinkHost,
     venueMapUrl,
     venuePage,
     venuePageCount,

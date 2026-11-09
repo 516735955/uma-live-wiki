@@ -1,4 +1,4 @@
-export const bindings = ["venuesList","venuesError","venuesTotal","venuesPerPage","venueDetail","venueEvents","venueEventRows","venueEventsExpanded","toggleVenueEvents","venueQuery","venuePage","venuePageCount","venuePageStart","venuePageEnd","venuePageList","setVenuePage","goVenuePage","openVenue","retryVenues","venueLabel","venueAliasRows","venueMapUrl","venueQueryLabel","venueSourceLabel","eventKindLabel","eventDateLabel","eventModeLabel","eventSeriesName","routes","internalLink"];
+export const bindings = ["venuesList","venuesError","venuesTotal","venuesPerPage","venueDetail","venueEvents","venueEventRows","venueEventsExpanded","toggleVenueEvents","venueQuery","venuePage","venuePageCount","venuePageStart","venuePageEnd","venuePageList","setVenuePage","goVenuePage","openVenue","retryVenues","venueLabel","venueAliasRows","venueCapacityLabel","venueLinkHost","venueMapUrl","venueQueryLabel","venueSourceLabel","eventKindLabel","eventDateLabel","eventModeLabel","eventSeriesName","routes","internalLink"];
 export const template = `
             <section v-if="!venueDetail" class="venue-db-section entity-section">
                 <div class="archive-toolbar">
@@ -39,13 +39,35 @@ export const template = `
                         <p v-if="venueMapUrl(venueDetail)" class="horse-badge-line"><a class="horse-badge venue-map-link" :href="venueMapUrl(venueDetail)" target="_blank" rel="noopener">🗺 在 Google 地图打开 ↗</a></p>
                     </div>
                 </div>
-                <dl class="entity-meta detail-meta horse-meta">
+                <dl class="entity-meta detail-meta horse-meta venue-facts">
+                    <div v-if="venueDetail.profile && venueDetail.profile.updated"><dt>最后更新</dt><dd>{{ venueDetail.profile.updated }}</dd></div>
+                    <div><dt>举办活动数</dt><dd>{{ venueDetail.event_count }}</dd></div>
+                    <div v-if="venueCapacityLabel(venueDetail)"><dt>容量</dt><dd>{{ venueCapacityLabel(venueDetail) }} <small class="venue-meta-note">官方标称，演唱会布局可能低于此数</small></dd></div>
+                    <div v-if="venueDetail.country"><dt>国家/地区</dt><dd>{{ venueDetail.country }}</dd></div>
+                    <div v-if="venueDetail.city"><dt>城市</dt><dd>{{ venueDetail.city }}</dd></div>
+                    <div v-if="venueDetail.profile && venueDetail.profile.address"><dt>地址</dt><dd>{{ venueDetail.profile.address }}</dd></div>
+                    <div v-if="venueDetail.profile && venueDetail.profile.phone"><dt>电话</dt><dd>{{ venueDetail.profile.phone }}</dd></div>
+                    <div v-if="venueDetail.profile && venueDetail.profile.official_url"><dt>官方网站</dt><dd><a :href="venueDetail.profile.official_url" target="_blank" rel="noopener">{{ venueLinkHost(venueDetail.profile.official_url) }} ↗</a></dd></div>
+                    <div v-if="venueDetail.profile && (venueDetail.profile.wikipedia_ja || venueDetail.profile.wikipedia_en)"><dt>维基百科</dt><dd class="venue-profile-links"><a v-if="venueDetail.profile.wikipedia_ja" :href="venueDetail.profile.wikipedia_ja" target="_blank" rel="noopener">日文 ↗</a><a v-if="venueDetail.profile.wikipedia_en" :href="venueDetail.profile.wikipedia_en" target="_blank" rel="noopener">英文 ↗</a></dd></div>
                     <div v-if="venueDetail.name && venueDetail.name !== (venueDetail.name_zh || venueDetail.name_ja)"><dt>登记名称</dt><dd>{{ venueDetail.name }}</dd></div>
                     <div v-if="venueDetail.name_raw && venueDetail.name_raw !== venueDetail.name"><dt>原始名称</dt><dd>{{ venueDetail.name_raw }}</dd></div>
                     <div v-if="venueAliasRows(venueDetail).length"><dt>别名</dt><dd>{{ venueAliasRows(venueDetail).join('、') }}</dd></div>
                     <div v-if="venueDetail.last_date"><dt>最后有活动</dt><dd>{{ venueDetail.last_date }}</dd></div>
-                    <div v-if="(venueDetail.sources || []).length"><dt>数据来源</dt><dd>{{ venueDetail.sources.map(venueSourceLabel).join('、') }}</dd></div>
+                    <div v-if="(venueDetail.sources || []).length"><dt>会场来源</dt><dd>{{ venueDetail.sources.map(venueSourceLabel).join('、') }}</dd></div>
+                    <div v-if="venueDetail.profile && (venueDetail.profile.sources || []).length"><dt>资料出处</dt><dd class="venue-profile-links"><a v-for="(source,index) in venueDetail.profile.sources" :key="index" :href="source.url" target="_blank" rel="noopener">{{ venueSourceLabel(source) }} ↗</a></dd></div>
                 </dl>
+                <section v-if="venueDetail.profile && venueDetail.profile.description_ja" class="entity-section venue-text-section">
+                    <div class="section-toolbar"><span class="credit-role-tag">简介</span><span class="venue-meta-note">来源：日文维基百科</span></div>
+                    <p class="venue-description">{{ venueDetail.profile.description_ja }}</p>
+                </section>
+                <section v-else-if="venueDetail.profile && venueDetail.profile.description_en" class="entity-section venue-text-section">
+                    <div class="section-toolbar"><span class="credit-role-tag">简介</span><span class="venue-meta-note">来源：英文维基百科</span></div>
+                    <p class="venue-description">{{ venueDetail.profile.description_en }}</p>
+                </section>
+                <section v-if="venueDetail.profile && venueDetail.profile.access" class="entity-section venue-text-section">
+                    <div class="section-toolbar"><span class="credit-role-tag">交通 / 会场信息</span><span class="venue-meta-note">来源：Eventernote</span></div>
+                    <p class="venue-access">{{ venueDetail.profile.access }}</p>
+                </section>
                 <section class="entity-section">
                     <div class="section-toolbar"><span class="credit-role-tag">在此举办的活动</span></div>
                     <content-state v-if="!venueEventRows(venueEvents).length" state="uncollected" subject="活动记录"></content-state>
