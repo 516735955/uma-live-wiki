@@ -9,6 +9,7 @@ const businessDate = require('./business-date');
 const searchText = require('./search-text');
 const { createClassification } = require('./music-classification');
 const { projectEvents } = require('./event-presentation');
+const { neteaseTrackId } = require('./netease-audio');
 
 const CATALOG_RESPONSE_SCHEMA = 12;
 
@@ -563,6 +564,10 @@ class CatalogStore {
       appearancesDoc,
       voicesDoc,
       albums: albumRows,
+      audioTracks: new Map(albumRows.flatMap(album => (album.songs || []).flatMap(track => {
+        const id = neteaseTrackId(track.url);
+        return id ? [[id, { url: track.url, duration: Number(track.duration_ms) || 0 }]] : [];
+      }))),
       charactersById,
       eventRows,
       songRows,

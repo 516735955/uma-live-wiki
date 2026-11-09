@@ -241,7 +241,7 @@
     props: {
       player: { type: Object, required: true }
     },
-    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
+    emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'quality', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
     data: function () { return { draggingIndex: -1, pointerId: null, titleOverflow: false, artistOverflow: false, resizeObserver: null }; },
     computed: {
       current: function () { return this.player.current || null; },
@@ -259,10 +259,13 @@
       modeLabel: function () {
         return ({ list: '列表循环', one: '单曲循环', shuffle: '随机播放' })[this.player.playbackMode] || '列表循环';
       },
+      qualityLabels: function () {
+        return { auto: '自动', standard: '标准 128 kbps', exhigh: '极高 HQ 320 kbps', lossless: '无损 SQ', hires: 'Hi-Res' };
+      },
       statusText: function () {
         return ({
           loading: '正在载入', playing: '播放中', paused: '已暂停', buffering: '正在缓冲',
-          ended: '播放结束', error: this.player.error || '试听暂时无法播放'
+          ended: '播放结束', error: this.player.error || '音源暂时无法播放'
         })[this.player.status] || '';
       },
       queuePosition: function () {
@@ -411,6 +414,15 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
             </button>
           </header>
+          <div v-if="current && (player.actualQuality || player.qualityOptions.length)" class="audio-quality">
+            <label>音质
+              <select aria-label="播放音质" :value="player.qualityOptions.includes(player.quality) ? player.quality : 'auto'" @change="$emit('quality',$event.target.value)">
+                <option value="auto">自动</option>
+                <option v-for="level in player.qualityOptions" :key="level" :value="level">{{ qualityLabels[level] }}</option>
+              </select>
+            </label>
+            <span v-if="player.actualQuality">当前 {{ qualityLabels[player.actualQuality] }}</span>
+          </div>
           <div ref="queueList" class="audio-queue" role="list" aria-label="播放列表">
             <div v-for="(track,index) in player.queue" :key="track.id+'-'+index" class="audio-queue-row" :class="{active:index===player.queueIndex,dragging:index===draggingIndex}" role="listitem" :data-index="index" :aria-current="index===player.queueIndex?'true':undefined">
               <button class="audio-queue-drag" type="button" aria-label="拖动调整顺序" title="拖动调整顺序" @pointerdown="startDrag($event,index)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h8M6 10h8M6 15h8"/></svg></button>
@@ -431,7 +443,7 @@
               <span v-if="current && playing" class="audio-playing-bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </div>
             <div class="audio-dock-copy">
-              <button class="audio-title-link" type="button" :disabled="!current || !current.songId" @click="openSong(current)"><span ref="titleViewport" class="audio-overflow-viewport" :class="{'is-overflowing':titleOverflow}"><b class="audio-title audio-overflow-track">{{ current ? current.name : '播放列表' }}</b></span></button>
+              <button class="audio-title-link" type="button" :disabled="!current || !current.songId" @click="openSong(current)"><span ref="titleViewport" class="audio-overflow-viewport" :class="{'is-overflowing':titleOverflow}"><b class="audio-title audio-overflow-track">{{ current ? current.name : '播放列表' }}<small v-if="player.sourceStatus === 'preview'" class="audio-preview">试听</small></b></span></button>
               <div ref="artistViewport" class="audio-overflow-viewport audio-artist-viewport" :class="{'is-overflowing':artistOverflow}">
                 <div v-if="current && current.vocalists.length" class="audio-dock-vocalists audio-overflow-track" aria-label="演唱声优">
                   <template v-for="vocalist in current.vocalists" :key="vocalist.id || vocalist.name">

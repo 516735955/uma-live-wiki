@@ -53,13 +53,13 @@ export const template = `
                             <template #title><b>{{ version.title }}</b></template>
                             <template #subtitle>{{ version.version_label || '原始版本' }}</template>
                             <table v-if="version.releases.length" class="data-table">
-                                <thead><tr><th>#</th><th>专辑</th><th>发售日</th><th>歌手</th><th>试听</th></tr></thead>
+                                <thead><tr><th>#</th><th>专辑</th><th>发售日</th><th>歌手</th><th>播放</th></tr></thead>
                                 <tbody><tr v-for="release in version.releases" :key="release.album_id+'-'+release.track_number" :class="{'anime-selected-release':songLinkVersion===version.id && songLinkRelease===release.album_id}">
                                     <td data-label="#">{{ release.track_number }}</td>
                                     <td data-label="专辑"><a class="album-inline" :href="release.album_id ? routes.albums(release.album_id) : routes.query(routes.albums(),{q:release.album_name})" @click="internalLink($event, () => openAlbumFromSong({version:version,release:release}))"><img v-media-src="coverThumb(release.cover,96)" alt="" @error="onCatalogImageError($event)"><span><b>{{ release.album_name }}</b><span class="secondary-line">{{ release.catalog || release.type }}</span></span></a></td>
                                     <td data-label="发售日">{{ release.release_date || '—' }}</td>
                                     <td data-label="歌手"><div v-if="release.vocalists.length" class="performer-chip-list compact"><a v-for="vocalist in release.vocalists" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':(vocalist.character && vocalist.character.color_main) || '#3157ed'}" :href="routes.voiceActors(vocalist.voice_actor_id)" @click="internalLink($event, () => openVoice(vocalist.voice_actor_id))"><img v-if="voicePhoto(vocalist.voice_actor_id)" v-media-src="voicePhoto(vocalist.voice_actor_id)" alt=""><span>{{ voiceName(vocalist.voice_actor_id,vocalist.voice_actor_name) }}</span></a></div><span v-else-if="releaseSingerLabel(version,release)">{{ releaseSingerLabel(version,release) }}</span><span v-else>—</span></td>
-                                    <td data-label="试听"><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playSongRelease({version:version,release:release})" @add="addSongTrack(songDetail,version,release)"></entity-actions><span v-else>—</span></td>
+                                    <td data-label="播放"><entity-actions v-if="release.audio_url" size="compact" :playing="isActive(release.audio_url)" @play="playSongRelease({version:version,release:release})" @add="addSongTrack(songDetail,version,release)"></entity-actions><span v-else>—</span></td>
                                 </tr></tbody>
                             </table>
                         </ui-disclosure>

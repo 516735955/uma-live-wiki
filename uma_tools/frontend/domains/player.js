@@ -14,6 +14,14 @@ export function createPlayer(deps) {
       return audio.value;
     },
     proxyUrl: deps.proxySongUrl,
+    describeAudio: async function (source, includeLevels) {
+      const url = new URL(source, location.origin);
+      if (url.origin !== location.origin || url.pathname !== '/api/audio' || !url.searchParams.has('track')) return null;
+      url.searchParams.set('info', '1');
+      if (includeLevels) url.searchParams.set('levels', '1');
+      const response = await fetch(url);
+      return response.ok ? response.json() : null;
+    },
     storage: playerStorage,
   });
 
@@ -288,5 +296,6 @@ export function createPlayer(deps) {
     skipPlayer,
     togglePlayerMute,
     togglePlayerPanel,
+    setPlayerQuality: playerController.setQuality,
   };
 }

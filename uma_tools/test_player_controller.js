@@ -108,6 +108,27 @@ function setup(storage, random, options) {
 }
 
 async function run() {
+  const quality = setup(null, null, {
+    proxyUrl: (url, level) => url + '?quality=' + level,
+    describeAudio: async (url, levels) => ({
+      actual: url.endsWith('hires') ? 'hires' : 'lossless',
+      status: 'full',
+      levels: levels ? ['lossless', 'hires'] : []
+    })
+  });
+  await quality.controller.setQueue([track('a'), track('b')], 0, 'album', false);
+  quality.controller.openPanel();
+  await Promise.resolve();
+  quality.audio.metadata(240);
+  quality.controller.seekTo(58);
+  await quality.controller.setQuality('hires');
+  quality.audio.metadata(240);
+  assert.equal(quality.audio.currentTime, 58, 'quality changes keep the playback position');
+  assert.equal(quality.audio.paused, true, 'quality changes keep a paused track paused');
+  assert.equal(quality.state.current.id, 'a');
+  assert.equal(quality.state.queue.length, 2);
+  assert.equal(quality.state.actualQuality, 'hires');
+
   const normalized = normalizeTrack(track('a'));
   assert.equal(normalized.vocalists[0].id, 'va-a', 'voice actor IDs are normalized for clickable credits');
   assert.equal(normalized.versionId, 'version-a', 'recording version identity is kept for synchronized lyrics');
@@ -258,7 +279,7 @@ async function run() {
   rejected.audio.rejectPlay = true;
   assert.equal(await rejected.controller.playTrack(track('x')), false);
   assert.equal(rejected.state.status, 'error');
-  assert.match(rejected.state.error, /\u8bd5\u542c\u542f\u52a8\u5931\u8d25/);
+  assert.match(rejected.state.error, /播放启动失败/);
 
   const snapshot = {
     current: track('saved'),

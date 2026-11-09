@@ -1,7 +1,7 @@
 export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
 bindings.push("musicPeopleError", "loadMusicPeople");
 bindings.push("relSeries", "relSeriesList");
-bindings.push("albumHeading");
+bindings.push("albumHeading", "albumStreamingLinks");
 export const template = `
             <content-state v-if="albumsError" state="error" subject="专辑资料" :retry="true" @retry="loadAlbums()"></content-state>
             <template v-if="!albumDetail">
@@ -44,7 +44,7 @@ export const template = `
                         <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
                     </section>
                     <section class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">曲目</span><div v-if="albumDetail.songs.length" class="entity-section-actions"><span>{{ albumDetail.songs.length }} 首</span></div></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">曲目</span><div v-if="albumDetail.songs.length" class="entity-section-actions"><a v-for="link in albumStreamingLinks" :key="link.url" class="text-link" :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a><span>{{ albumDetail.songs.length }} 首</span></div></div>
                         <div v-if="albumDetail.songs.length" class="album-track-list">
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
                                 <span>{{ String(index+1).padStart(2,'0') }}</span>

@@ -32,6 +32,8 @@
     }).filter(Boolean);
   }
 
+  const AUDIO_QUALITIES = ['auto', 'standard', 'exhigh', 'lossless', 'hires'];
+
   function normalizeTrack(track) {
     if (!track || !track.url) return null;
     const name = String(track.name || track.title || '未命名曲目');
@@ -85,7 +87,8 @@
         visible: parsed.visible !== false,
         playbackMode: PLAYBACK_MODES.includes(parsed.playbackMode) ? parsed.playbackMode : 'list',
         volume: clamp(parsed.volume == null ? 1 : parsed.volume, 0, 1),
-        muted: !!parsed.muted
+        muted: !!parsed.muted,
+        quality: AUDIO_QUALITIES.includes(parsed.quality) ? parsed.quality : 'auto'
       };
     } catch (error) {
       return null;
@@ -97,6 +100,7 @@
     const reactive = options.reactive || function (value) { return value; };
     const getAudio = options.getAudio || function () { return null; };
     const proxyUrl = options.proxyUrl || function (url) { return url; };
+    const describeAudio = options.describeAudio;
     const random = options.random || Math.random;
     const schedule = options.setTimeout || setTimeout;
     const cancelSchedule = options.clearTimeout || clearTimeout;
@@ -118,6 +122,10 @@
       playbackMode: restored ? restored.playbackMode : 'list',
       volume: restored ? restored.volume : 1,
       muted: restored ? restored.muted : false,
+      quality: restored ? restored.quality : 'auto',
+      qualityOptions: [],
+      actualQuality: '',
+      sourceStatus: '',
       currentTime: restored ? restored.currentTime : 0,
       duration: 0,
       buffered: 0,
@@ -130,6 +138,7 @@
     let shuffleHistory = [];
     let prefetchAudio = null;
     let sourceGeneration = 0;
+    const knownPreviews = new Set();
     let intendedPlay = false;
     let recoveryTimer = null;
     let stableTimer = null;
@@ -181,7 +190,8 @@
           visible: state.visible,
           playbackMode: state.playbackMode,
           volume: state.volume,
-          muted: state.muted
+          muted: state.muted,
+          quality: state.quality
         }));
       } catch (error) {}
     }
@@ -230,7 +240,7 @@
       try {
         prefetchAudio = new Audio();
         prefetchAudio.preload = 'metadata';
-        prefetchAudio.src = proxyUrl(track.url);
+        prefetchAudio.src = proxyUrl(track.url, state.quality);
         if (typeof prefetchAudio.load === 'function') prefetchAudio.load();
       } catch (error) { prefetchAudio = null; }
     }
@@ -258,7 +268,7 @@
       const audio = getAudio();
       if (audio) audio.pause();
       state.status = 'error';
-      state.error = message || '试听暂时无法播放，请稍后重试。';
+      state.error = message || '音源暂时无法播放，请稍后重试。';
       persist(true);
     }
 
@@ -274,7 +284,7 @@
       let result;
       try { result = audio.play(); }
       catch (error) {
-        markError('浏览器未能启动试听，请重试。');
+        markError('浏览器未能启动播放，请重试。');
         return Promise.resolve(false);
       }
       // Initial play can remain pending without emitting waiting/stalled.
@@ -289,7 +299,7 @@
       }).catch(function (error) {
         if (generation !== sourceGeneration) return false;
         if (error && error.name === 'AbortError') return false;
-        markError('试听启动失败，请检查网络后重试。');
+        markError('播放启动失败，请检查网络后重试。');
         return false;
       });
     }
@@ -302,6 +312,9 @@
       clearRecoveryTimer();
       clearStableTimer();
       if (!recovery) retryCount = 0;
+      if (!recovery?.qualityChange) state.qualityOptions = [];
+      state.actualQuality = '';
+      state.sourceStatus = '';
       intendedPlay = autoplay !== false;
       state.error = '';
       const resumeTime = recovery ? Math.max(0, Number(recovery.resumeTime) || 0) : 0;
@@ -315,15 +328,46 @@
       audio.volume = state.volume;
       audio.muted = state.muted;
       audio.preload = 'auto';
-      audio.src = proxyUrl(state.current.url);
+      const source = proxyUrl(state.current.url, state.quality);
+      audio.src = source;
       if (typeof audio.load === 'function') audio.load();
       updateMediaSession();
       persist(true);
       const result = autoplay ? requestPlay() : Promise.resolve(true);
       const generation = sourceGeneration;
+      refreshAudioInfo(state.panelOpen, source, generation);
       // Next-track metadata must not compete with an unbuffered current track.
       Promise.resolve(result).then(function () { if (generation === sourceGeneration) updatePositionState(); });
       return result;
+    }
+
+    function refreshAudioInfo(includeLevels, source, generation) {
+      if (!describeAudio || !state.current) return;
+      const trackUrl = state.current.url;
+      const requested = source || proxyUrl(trackUrl, state.quality);
+      const active = generation ?? sourceGeneration;
+      Promise.resolve(describeAudio(requested, includeLevels)).then(info => {
+        if (!info || active !== sourceGeneration) return;
+        state.sourceStatus = info.status;
+        state.actualQuality = info.actual;
+        if (info.status === 'preview') knownPreviews.add(trackUrl);
+        if (info.status === 'full') knownPreviews.delete(trackUrl);
+        if (includeLevels && Array.isArray(info.levels)) {
+          const audio = getAudio();
+          const flacSupported = typeof audio?.canPlayType !== 'function' || Boolean(audio.canPlayType('audio/flac'));
+          state.qualityOptions = info.levels.filter(level => AUDIO_QUALITIES.includes(level) && level !== 'auto' &&
+            (flacSupported || !['lossless', 'hires'].includes(level)));
+        }
+      }).catch(() => {});
+    }
+
+    function setQuality(quality) {
+      if (!state.current || state.quality === quality ||
+          (quality !== 'auto' && !state.qualityOptions.includes(quality))) return;
+      const resumeTime = state.currentTime;
+      const autoplay = intendedPlay;
+      state.quality = quality;
+      return loadCurrent(autoplay, { resumeTime, qualityChange: true });
     }
 
     function uniqueTracks(tracks) {
@@ -340,7 +384,7 @@
       const selected = raw[clamp(selectedIndex, 0, Math.max(0, raw.length - 1))];
       const playable = uniqueTracks(raw);
       if (!playable.length) {
-        markError('当前列表没有可试听的曲目。');
+        markError('当前列表没有可播放的曲目。');
         return Promise.resolve(false);
       }
       let index = selected ? playable.findIndex(function (track) { return track.id === selected.id; }) : -1;
@@ -405,7 +449,7 @@
       state.queue.splice(insertAt, 0, normalized);
       state.queueIndex = insertAt;
       state.current = normalized;
-      state.contextLabel = state.queue.length === 1 ? (normalized.sourceContext || '单曲试听') : '播放列表';
+      state.contextLabel = state.queue.length === 1 ? (normalized.sourceContext || '单曲播放') : '播放列表';
       state.visible = true;
       state.panelOpen = false;
       shuffleHistory = [];
@@ -634,7 +678,13 @@
       persist(true);
     }
 
-    function openPanel() { if (state.current || state.queue.length) { state.visible = true; state.panelOpen = true; } }
+    function openPanel() {
+      if (state.current || state.queue.length) {
+        state.visible = true;
+        state.panelOpen = true;
+        refreshAudioInfo(true);
+      }
+    }
     function closePanel() { state.panelOpen = false; }
     function togglePanel() { state.panelOpen ? closePanel() : openPanel(); }
 
@@ -651,7 +701,7 @@
       const audio = getAudio();
       if (!audio || !state.current || !intendedPlay) return;
       if (retryCount >= retryDelays.length) {
-        markError('试听连接多次中断，请点击重试。');
+        markError('播放连接多次中断，请点击重试。');
         return;
       }
       const generation = sourceGeneration;
@@ -780,7 +830,7 @@
       on('seeked', function () { state.currentTime = audio.currentTime || 0; lastProgressTime = state.currentTime; lastProgressAt = now(); if (intendedPlay) scheduleStallCheck('seeked'); persist(true); });
       on('error', function () {
         if (intendedPlay && state.current) recoverPlayback('error');
-        else markError('试听资源暂时无法载入，请稍后重试。');
+        else markError('音源暂时无法载入，请稍后重试。');
       });
       on('abort', function () {
         if (intendedPlay && state.current && state.status !== 'loading') recoverPlayback('abort');
@@ -841,6 +891,7 @@
       bind: bind,
       destroy: destroy,
       isPlaying: isPlaying,
+      isKnownPreview: url => knownPreviews.has(url),
       playTrack: playTrack,
       setQueue: setQueue,
       enqueueTracks: enqueueTracks,
@@ -852,6 +903,7 @@
       seekTo: seekTo,
       seekBy: seekBy,
       setVolume: setVolume,
+      setQuality: setQuality,
       toggleMute: toggleMute,
       retry: retry,
       cyclePlaybackMode: cyclePlaybackMode,

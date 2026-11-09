@@ -259,7 +259,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
     <audio ref="audio" id="audioPlayer" preload="metadata"></audio>
     <audio-dock :player="player"
         @toggle-play="togglePlay" @previous="prevSong" @next="nextSong" @seek="seek" @skip="skipPlayer"
-        @volume="setPlayerVolume" @toggle-mute="togglePlayerMute"
+        @volume="setPlayerVolume" @toggle-mute="togglePlayerMute" @quality="setPlayerQuality"
         @play-at="playQueueAt" @toggle-panel="togglePlayerPanel" @close-panel="closePlayerPanel"
         @cycle-mode="cyclePlayerMode" @dismiss="dismissPlayer" @retry="retryPlayer"
         @remove-item="removeQueueItem" @move-item="moveQueueItem" @clear="clearQueue" @open-voice="openVoice" @open-song="openPlayerSong"></audio-dock>

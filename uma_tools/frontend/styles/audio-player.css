@@ -241,6 +241,28 @@
 .audio-panel-head h2 { font-size: .96rem; font-weight: 900; }
 .audio-panel-head h2 { margin-right: auto; }
 .audio-panel-head h2 em { margin-left: 5px; color: #667397; font-size: .75rem; font-style: normal; }
+.audio-panel:has(.audio-quality) { grid-template-rows: auto auto minmax(0,1fr); }
+.audio-quality {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 15px;
+    border-bottom: 1px solid var(--ui-line);
+    color: #536080;
+    font-size: .78rem;
+}
+.audio-quality label { display: flex; align-items: center; gap: 8px; }
+.audio-quality select {
+    min-height: 32px;
+    padding: 2px 7px;
+    border: 1px solid var(--ui-line);
+    border-radius: 7px;
+    color: var(--ui-cobalt-deep);
+    background: #fff;
+    font: inherit;
+}
+.audio-preview { margin-left: .4em; color: #ffcc98; font-size: .72rem; }
 .audio-panel-clear { min-height: 34px; margin-right: 4px; padding: 0 10px; border: 0; border-radius: 17px; color: #536080; background: transparent; font: inherit; font-size: .75rem; font-weight: 800; cursor: pointer; }
 .audio-panel-clear:hover { color: var(--ui-orange-deep); background: #fff0e2; }
 .audio-panel-clear:disabled { opacity: .4; cursor: default; }

@@ -1,3 +1,5 @@
+const { LEVELS, neteaseCdn } = require('./netease-audio');
+
 // audio service. Dependencies are explicit live ports.
 exports.createService = function (deps) {
   const AUDIO_UA =
@@ -81,7 +83,7 @@ exports.createService = function (deps) {
       cb(new Error("bad url"));
       return null;
     }
-    if (!isAllowedAudioUrl(u.href)) {
+    if (!isAllowedAudioUrl(u.href) || (headers.Cookie && (!neteaseCdn(u.href) || u.protocol !== 'https:'))) {
       cb(new Error("audio host not allowed"));
       return null;
     }
@@ -119,14 +121,44 @@ exports.createService = function (deps) {
     return pref;
   }
 
-  function handleAudioProxy(req, res, params) {
-    const target = params.get("url");
+  async function handleAudioProxy(req, res, params) {
+    let target = params.get("url");
+    let selected = null;
+    if (params.has('track')) {
+      const id = params.get('track');
+      const quality = params.get('quality') || 'auto';
+      const info = params.get('info') === '1';
+      if (!/^\d{1,16}$/.test(id) || !['auto', ...LEVELS].includes(quality)) {
+        res.writeHead(400);
+        return res.end('invalid recording or quality');
+      }
+      const track = await deps.catalogAudioTrack(id).catch(() => null);
+      if (res.destroyed) return;
+      if (!track) {
+        res.writeHead(404);
+        return res.end('recording not in catalog');
+      }
+      selected = await deps.neteaseAudio.lookup(id, quality, track.duration, info, info && params.get('levels') === '1').catch(() => null);
+      if (res.destroyed) return;
+      const fallback = ['auto', 'exhigh'].includes(quality) && isAllowedAudioUrl(track.url) ? track.url : '';
+      if (info) {
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+        return res.end(JSON.stringify(selected ? {
+          actual: selected.actual, status: selected.status, duration: selected.duration, levels: selected.levels
+        } : { actual: '', status: fallback ? 'unknown' : 'unavailable', duration: 0, levels: [] }));
+      }
+      target = selected?.url || fallback;
+      if (!target) {
+        res.writeHead(404, { 'Cache-Control': 'no-store' });
+        return res.end('recording unavailable');
+      }
+    }
     if (!target || !isAllowedAudioUrl(target)) {
       res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
       res.end("bad audio url");
       return;
     }
-    const candidates = metingCandidates(target);
+    const candidates = selected ? [target] : metingCandidates(target);
     let idx = 0;
     let activeUpstream = null;
     let activeResponse = null;
@@ -141,6 +173,7 @@ exports.createService = function (deps) {
     function tryNext() {
       if (clientClosed) return;
       if (idx >= candidates.length) {
+        clearTimeout(deadline);
         try {
           res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8" });
           res.end("audio proxy failed");
@@ -152,6 +185,7 @@ exports.createService = function (deps) {
         "User-Agent": AUDIO_UA,
         Referer: "https://music.163.com/",
       };
+      if (selected?.cookie) headers.Cookie = selected.cookie;
       if (req.headers.range) headers.Range = req.headers.range;
       audioFetchOnce(
         url,
@@ -186,7 +220,7 @@ exports.createService = function (deps) {
           }
           const h = {
             "Access-Control-Allow-Origin": "*",
-            "Cache-Control": "private, max-age=3600",
+            "Cache-Control": selected ? "private, no-store" : "private, max-age=3600",
           };
           if (r.headers["content-type"])
             h["Content-Type"] = r.headers["content-type"];

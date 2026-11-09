@@ -6,6 +6,7 @@ const crypto = require("crypto");
 const zlib = require("zlib");
 const { pipeline } = require("stream");
 const { CatalogStore } = require("./catalog-store");
+const { createNetEaseAudio } = require("./netease-audio");
 const { AnimeStore } = require("./anime-store");
 const { mergeNews, NewsContent } = require("./news-content");
 const { TranslationCache } = require("./translation-cache");
@@ -74,6 +75,11 @@ services.news = require("./server-news").createService({
 });
 services.audio = require("./server-audio").createService({
   http, https, pipeline,
+  catalogAudioTrack: async id => (await catalogStore.get()).audioTracks.get(id),
+  neteaseAudio: createNetEaseAudio({
+    sessionFile: process.env.UMA_NETEASE_SESSION_FILE ||
+      (process.env.NEWS_RUNTIME_DIR && path.join(process.env.NEWS_RUNTIME_DIR, 'netease-audio-session'))
+  })
 });
 services.scheduler = require("./server-scheduler").createService({
   path, PYTHON_BIN,

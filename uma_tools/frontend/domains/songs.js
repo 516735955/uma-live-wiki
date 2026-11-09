@@ -404,7 +404,7 @@ export function createSongs(deps) {
       const tracks = songs
           .map(function (song) {
             const row = deps.playableSongRelease(song);
-            return row
+            return row && !deps.playerController.isKnownPreview?.(row.release.audio_url)
               ? deps.buildReleasePlayerTrack(song, row.version, row.release)
               : null;
           })
@@ -563,8 +563,16 @@ export function createSongs(deps) {
       expandedSongCreditId.value === versionId ? "" : versionId;
   }
 
-  function proxySongUrl(url) {
+  function proxySongUrl(url, quality) {
     if (!url) return url;
+    try {
+      const source = new URL(url, location.origin);
+      const id = source.origin === location.origin && source.pathname === '/api/audio' ? source.searchParams.get('track')
+        : source.hostname === 'api.injahow.cn' && source.pathname === '/meting/' &&
+          source.searchParams.get('server') === 'netease' && source.searchParams.get('type') === 'url'
+          ? source.searchParams.get('id') : '';
+      if (/^\d{1,16}$/.test(id || '')) return '/api/audio?' + new URLSearchParams({ track: id, quality: quality || 'auto' });
+    } catch (error) {}
     if (url.indexOf("/api/audio") === 0) return url;
     if (url.indexOf(location.origin) === 0) return url;
     if (/^https?:\/\//i.test(url))
