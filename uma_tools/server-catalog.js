@@ -111,6 +111,10 @@ exports.createService = function (deps) {
           params.get("id"),
           params.get("legacy"),
         );
+      else if (urlPath === "/api/catalog/venues")
+        result = await deps.catalogStore.venues(params);
+      else if (urlPath === "/api/catalog/venue")
+        result = await deps.catalogStore.venue(params.get("id"));
       else if (urlPath === "/api/catalog/songs")
         result = await deps.catalogStore.songs(params);
       else if (urlPath === "/api/catalog/song")

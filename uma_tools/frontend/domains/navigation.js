@@ -36,6 +36,7 @@ export function createNavigation(deps) {
                 anime: "anime",
                 staff: "staff",
                 other: "other",
+                venues: "venues",
               }[initialDatabaseSection] || "characters";
 
   const initialTab =
@@ -215,6 +216,7 @@ export function createNavigation(deps) {
       icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>',
       children: [
         { key: "horses", label: "原型马", path: deps.routes.horses() },
+        { key: "venues", label: "会场", path: deps.routes.venues() },
         { key: "other", label: "其他", path: deps.routes.other() },
       ],
     },
@@ -444,7 +446,10 @@ export function createNavigation(deps) {
           ["characters", "voice", "anime", "staff"].includes(dbView.value))
       );
     if (key === "database")
-      return activeTab.value === "database" && dbView.value === "other";
+      return (
+        activeTab.value === "database" &&
+        (dbView.value === "other" || dbView.value === "venues")
+      );
     return activeTab.value === key;
   }
 
@@ -483,6 +488,7 @@ export function createNavigation(deps) {
       deps.charDetail.value ||
       deps.voiceDetail.value ||
       deps.horseDetail.value ||
+      deps.venueDetail.value ||
       deps.staffDetail.value ||
       deps.animeDetail.value ||
       deps.animeUnitDetail.value
@@ -556,6 +562,18 @@ export function createNavigation(deps) {
             deps.horseDetail.value.zh ||
             deps.horseDetail.value.en ||
             deps.horseDetail.value.id,
+        },
+      ]);
+    if (deps.venueDetail.value)
+      return items.concat([
+        { label: "资料库" },
+        { label: "会场", path: deps.routes.venues() },
+        {
+          label:
+            deps.venueDetail.value.name_zh ||
+            deps.venueDetail.value.name ||
+            deps.venueDetail.value.name_ja ||
+            deps.venueDetail.value.id,
         },
       ]);
     if (deps.charDetail.value)
@@ -777,6 +795,7 @@ export function createNavigation(deps) {
                 creators: "创作者",
                 anime: "动漫",
                 staff: "制作人员",
+                venues: "会场",
                 other:
                   deps.otherSection.value === "horses" ? "原型马" : "资料库",
               }[dbView.value]

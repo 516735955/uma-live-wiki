@@ -137,6 +137,10 @@ export function createRouting(deps) {
           : deps.loadHorsesListData(deps.listParamsFromUrl()),
         deps.loadCharacterIndexData(),
       ]);
+    if (sub === "venues")
+      return seg.length > 2
+        ? deps.loadVenueData(decodeURIComponent(seg[2]))
+        : deps.loadVenuesListData(deps.listParamsFromUrl());
     return Promise.resolve();
   }
 
@@ -157,6 +161,10 @@ export function createRouting(deps) {
     if (except !== "voice") deps.voiceDetail.value = null;
     if (except !== "staff") deps.staffDetail.value = null;
     if (except !== "horse") deps.horseDetail.value = null;
+    if (except !== "venue") {
+      deps.venueDetail.value = null;
+      deps.venueEvents.value = [];
+    }
     if (except !== "anime") {
       deps.animeDetail.value = null;
       deps.animeUnitDetail.value = null;
@@ -172,7 +180,7 @@ export function createRouting(deps) {
       /^\/news\/[^/]+$/.test(clean) ||
       /^\/events\/[^/]+(?:\/sessions\/[^/]+)?$/.test(clean) ||
       /^\/music\/(?:songs|albums|creators)\/[^/]+(?:\/[^/]+)?$/.test(clean) ||
-      /^\/database\/(?:characters|voice-actors|horses|staff)\/[^/]+(?:\/[^/]+)?$/.test(
+      /^\/database\/(?:characters|voice-actors|horses|venues|staff)\/[^/]+(?:\/[^/]+)?$/.test(
         clean,
       ) ||
       /^\/database\/anime\/[^/]+(?:\/episodes\/[^/]+)?$/.test(clean)
@@ -424,6 +432,14 @@ export function createRouting(deps) {
               page: deps.staffDetail.value ? "" : deps.staffPage.value,
             },
           );
+        } else if (deps.dbView.value === "venues") {
+          if (deps.venueDetail.value)
+            path = deps.routes.venues(deps.venueDetail.value.id);
+          else
+            path = deps.routes.query(deps.routes.venues(), {
+              q: deps.venueQuery.value,
+              page: deps.venuePage.value,
+            });
         } else if (deps.dbView.value === "other") {
           if (
             !deps.horseDetail.value &&
@@ -517,6 +533,8 @@ export function createRouting(deps) {
       deps.songDetail.value = null;
       deps.creatorDetail.value = null;
       deps.horseDetail.value = null;
+      deps.venueDetail.value = null;
+      deps.venueEvents.value = [];
       deps.animeDetail.value = null;
       deps.animeUnitDetail.value = null;
       deps.staffDetail.value = null;
@@ -841,6 +859,32 @@ export function createRouting(deps) {
         if (seg[2] && !deps.horseDetail.value && window.HORSES_DETAIL) reject();
       } else if (
         first === "database" &&
+        seg[1] === "venues" &&
+        seg.length <= 3
+      ) {
+        deps.activeTab.value = "database";
+        deps.dbView.value = "venues";
+        if (seg[2]) {
+          deps.venueDetail.value =
+            (window.VENUES_DETAIL &&
+              window.VENUES_DETAIL[decodeURIComponent(seg[2])]) ||
+            null;
+          deps.venueEvents.value =
+            (window.VENUES_EVENTS &&
+              window.VENUES_EVENTS[decodeURIComponent(seg[2])]) ||
+            [];
+          if (!deps.venueDetail.value) reject();
+        } else {
+          deps.venueQuery.value = url.searchParams.get("q") || "";
+          deps.venuePage.value = Math.max(
+            1,
+            parseInt(url.searchParams.get("page") || "1", 10) || 1,
+          );
+          if (!deps.venuesList.value.length)
+            deps.loadVenuesListData({ q: deps.venueQuery.value, page: deps.venuePage.value }).catch(() => {});
+        }
+      } else if (
+        first === "database" &&
         seg[1] === "relationships" &&
         seg.length === 2
       ) {
@@ -927,6 +971,12 @@ export function createRouting(deps) {
         music &&
           deps.dbView.value === "other" &&
           deps.otherSection.value === "horses",
+      ],
+      [
+        deps.venuePage,
+        deps.venuePageCount,
+        deps.routes.venues(),
+        music && deps.dbView.value === "venues",
       ],
       [
         deps.relPage,

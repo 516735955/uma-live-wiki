@@ -172,6 +172,41 @@ function nextUpcomingEvent(events, today) {
   }).sort((a, b) => String(a.date).localeCompare(String(b.date)))[0] || null;
 }
 
+function venueMetaFromEvent(event) {
+  return {
+    name: String(event.venue || ''),
+    name_zh: String(event.venue_zh || ''),
+    name_ja: String(event.venue_ja || ''),
+    name_raw: String(event.venue_raw || ''),
+    aliases: Array.isArray(event.venue_aliases) ? event.venue_aliases : [],
+    city: String(event.venue_city || ''),
+    country: String(event.venue_country || ''),
+    sources: Array.isArray(event.venue_sources) ? event.venue_sources : []
+  };
+}
+
+function venuesFromRows(eventRows) {
+  const map = new Map();
+  eventRows.forEach((row) => {
+    const event = row.data;
+    const id = String(event.venue_id || '').trim();
+    if (!id) return;
+    let entry = map.get(id);
+    const date = String(event.end_date || event.date || '');
+    if (!entry) {
+      entry = { id, ...venueMetaFromEvent(event), event_count: 0, session_count: 0, last_date: '' };
+      map.set(id, entry);
+    }
+    entry.event_count += 1;
+    entry.session_count += Math.max(1, (event.sessions || []).length);
+    if (date > entry.last_date) {
+      entry.last_date = date;
+      Object.assign(entry, venueMetaFromEvent(event));
+    }
+  });
+  return map;
+}
+
 function eventSummary(event, searchText, image) {
   return {
     id: event.id,
@@ -710,6 +745,43 @@ class CatalogStore {
         .map(series => ({...series, kinds: [series.kind]})),
       years: Array.from(new Set(store.eventRows.flatMap(row => [row.data.date, ...(row.data.sessions || []).map(session => session.date)]).filter(Boolean).map(releaseYear))).sort().reverse(),
       items: rows.slice((page - 1) * pageSize, page * pageSize).map((row) => row.summary),
+      total,
+      page,
+      page_size: pageSize
+    };
+  }
+
+  async venue(id, snapshot) {
+    const store = snapshot || await this.get();
+    const venueId = String(id || '').trim();
+    if (!venueId) return null;
+    const byId = venuesFromRows(store.eventRows);
+    const meta = byId.get(venueId);
+    if (!meta) return null;
+    const events = store.eventRows
+      .filter(({ data: event }) => String(event.venue_id || '').trim() === venueId)
+      .map(({ summary }) => {
+        const { search_text, ...item } = summary;
+        return item;
+      });
+    events.sort((a, b) => String(b.end_date || b.date || '').localeCompare(String(a.end_date || a.date || '')) || String(a.title).localeCompare(String(b.title), 'ja'));
+    return { build_id: store.buildId, venue: meta, events, total: events.length };
+  }
+
+  async venues(params) {
+    const store = await this.get();
+    params = params || new URLSearchParams();
+    const query = normalize(params.get('q') || '');
+    let rows = Array.from(venuesFromRows(store.eventRows).values());
+    if (query) rows = rows.filter((row) => searchText.matchesIndex(searchText.fields([row.name, row.name_zh, row.name_ja, row.name_raw, row.aliases, row.city]), query));
+    rows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja') || String(a.id).localeCompare(String(b.id)));
+    const total = rows.length;
+    const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 30));
+    const pageCount = Math.max(1, Math.ceil(total / pageSize));
+    const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
+    return {
+      build_id: store.buildId,
+      items: rows.slice((page - 1) * pageSize, page * pageSize),
       total,
       page,
       page_size: pageSize

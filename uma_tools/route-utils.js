@@ -130,6 +130,7 @@
     staff: function (id) { return prefix + '/database/staff' + (id ? '/' + part(id) : ''); },
     other: function () { return prefix + '/database/other'; },
     horses: function (id) { return prefix + '/database/horses' + (id ? '/' + part(id) : ''); },
+    venues: function (id) { return prefix + '/database/venues' + (id ? '/' + part(id) : ''); },
     jockeys: function (id) { return prefix + '/database/jockeys' + (id ? '/' + part(id) : ''); },
     relationships: function () { return prefix + '/database/relationships'; },
     videos: function () { return prefix + '/resources/videos'; },

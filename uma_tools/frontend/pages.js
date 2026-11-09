@@ -10,6 +10,7 @@ const pages = {
   anime: "/uma_tools/frontend/views/anime.js",
   staff: "/uma_tools/frontend/views/staff.js",
   horses: "/uma_tools/frontend/views/horses.js",
+  venues: "/uma_tools/frontend/views/venues.js",
   links: "/uma_tools/frontend/views/links.js",
   "contribute-fix": "/uma_tools/frontend/views/contribute-fix.js",
   "contribute-contact": "/uma_tools/frontend/views/contribute-contact.js",

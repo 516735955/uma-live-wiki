@@ -53,6 +53,8 @@ async function main() {
       }
       if (parsed.pathname === '/api/catalog/songs') return store.songs(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/events') return store.events(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/venues') return store.venues(parsed.searchParams);
+      if (parsed.pathname === '/api/catalog/venue') return store.venue(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/event') return store.event(parsed.searchParams.get('id'));
       if (parsed.pathname === '/api/catalog/albums') return store.albums(parsed.searchParams);
       if (parsed.pathname === '/api/catalog/creators') return store.creators(parsed.searchParams);
@@ -481,6 +483,20 @@ async function main() {
   await app.retryAnime();
   assert.strictEqual(app.staffDetail.value.id, 'staff-ump', 'legacy person links survive detail failure and retry');
 
+  location.href = 'http://localhost/zh-Hans/database/venues';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.dbView.value, 'venues', 'the venues route opens the venue archive');
+  assert(app.venuesList.value.length > 10, 'the venue archive aggregates event venue fields');
+  const venueItem = app.venuesList.value.find(venue => venue.id === 'venue-new-pier-hall');
+  assert(venueItem && venueItem.event_count > 0, 'shared venue ids group across events');
+  location.href = 'http://localhost/zh-Hans/database/venues/' + encodeURIComponent('venue-new-pier-hall');
+  await app.applyCurrentRoute();
+  assert(app.venueDetail.value && app.venueDetail.value.name_zh, 'direct venue detail restores from the API');
+  assert(app.venueEvents.value.length && app.venueEvents.value.every(row => row.id), 'a venue lists the events held there');
+  location.href = 'http://localhost/zh-Hans/database/venues';
+  await app.applyCurrentRoute();
+  assert.strictEqual(app.venueDetail.value, null, 'returning clears the venue detail');
+
   const graphCalls = calls.filter(url => url.includes('scope=graph')).length;
   delayedGraph = deferred();
   location.href = 'http://localhost/zh-Hans/database/voice-actors';
@@ -507,6 +523,11 @@ async function main() {
   const songsPage = {};
   vm.runInNewContext(source('frontend/views/songs.js').replace(/export const /g, 'var ') + ';this.bindings = bindings;', songsPage);
   for (const name of songsPage.bindings) {
+    assert.ok(name in app, `${name} resolves on the root view model`);
+  }
+  const venuePage = {};
+  vm.runInNewContext(source('frontend/views/venues.js').replace(/export const /g, 'var ') + ';this.bindings = bindings;', venuePage);
+  for (const name of venuePage.bindings) {
     assert.ok(name in app, `${name} resolves on the root view model`);
   }
   console.log('frontend regressions passed');

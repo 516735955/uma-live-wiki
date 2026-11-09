@@ -9,6 +9,7 @@ import { createNews } from "/uma_tools/frontend/domains/news.js";
 import { createCreators } from "/uma_tools/frontend/domains/creators.js";
 import { createVoices } from "/uma_tools/frontend/domains/voices.js";
 import { createHorses } from "/uma_tools/frontend/domains/horses.js";
+import { createVenues } from "/uma_tools/frontend/domains/venues.js";
 import { createAnime } from "/uma_tools/frontend/domains/anime.js";
 import { createStaff } from "/uma_tools/frontend/domains/staff.js";
 export function createDomains(env) {
@@ -50,6 +51,7 @@ export function createDomains(env) {
           "openEvent",
         ],
         horses: ["horseDetail", "otherSection", "renderCharBlood"],
+        venues: ["venueDetail"],
         news: ["newsDetail", "newsTitle"],
         player: ["playerController"],
         songs: ["songDetail", "songSection"],
@@ -216,6 +218,16 @@ export function createDomains(env) {
           "loadPedigreeMeta",
           "otherSection",
           "renderCharBlood",
+        ],
+        venues: [
+          "loadVenueData",
+          "loadVenuesListData",
+          "venueDetail",
+          "venueEvents",
+          "venuePage",
+          "venuePageCount",
+          "venueQuery",
+          "venuesList",
         ],
         songs: [
           "loadSongCatalog",
@@ -444,6 +456,30 @@ export function createDomains(env) {
           "charSection",
           "findCharById",
           "loadCharacterUi",
+        ],
+      },
+    ),
+  );
+  domains.venues = createVenues(
+    ports(
+      env,
+      domains,
+      {
+        navigation: [
+          "activeTab",
+          "dbView",
+          "pagerList",
+          "resetPageScroll",
+          "routeSegments",
+        ],
+        environment: ["api", "computed", "ref", "routes", "watch"],
+        routing: [
+          "beginEntityNavigation",
+          "clearEntityDetails",
+          "currentUrlPath",
+          "navigationRevision",
+          "pushUrl",
+          "restoringRoute",
         ],
       },
     ),
