@@ -1,6 +1,5 @@
 export const bindings = ["venuesList","venuesError","venuesTotal","venuesPerPage","venueDetail","venueEvents","venueEventRows","venueEventsExpanded","toggleVenueEvents","venueQuery","venuePage","venuePageCount","venuePageStart","venuePageEnd","venuePageList","setVenuePage","goVenuePage","openVenue","retryVenues","venueLabel","venueAliasRows","venueMapUrl","venueQueryLabel","venueSourceLabel","eventKindLabel","eventDateLabel","eventModeLabel","eventSeriesName","routes","internalLink"];
 export const template = `
-            <nav class="entity-tabs" aria-label="资料库栏目"><a :class="{active:!venueDetail}" :href="routes.venues()" @click="internalLink($event, () => {})">会场资料</a></nav>
             <section v-if="!venueDetail" class="venue-db-section entity-section">
                 <div class="archive-toolbar">
                     <label class="ui-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" v-model.trim="venueQuery" aria-label="搜索会场名称、地区…" placeholder="搜索会场名称、地区…" autocomplete="off"></label>
