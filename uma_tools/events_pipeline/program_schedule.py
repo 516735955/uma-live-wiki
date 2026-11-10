@@ -24,6 +24,7 @@ def metadata_is_live(metadata: dict[str, Any]) -> bool:
 _CLOCK = re.compile(r"(?<![\dA-Za-z])(?P<hour>\d{1,2})(?:時(?:(?P<half>半)|(?P<minute>\d{1,2})分?)?|:(?P<colon_minute>\d{2})(?!\d))(?:\s*(?:から|より|に|放送|配信|公開|開始))?")
 _BROADCAST_WORDS = re.compile(r"放送|配信|公開|生放送|ライブ|実況|stream|live", re.I)
 _NOISE_WORDS = re.compile(r"chapter|チャプター|締切|期限|応募|抽選|受付|購入|販売|終了|メンテ", re.I)
+_RECURRING_BROADCAST = re.compile(r"毎(?:週|月|日|[月火水木金土日]曜)|(?:every|weekly)\s+(?:week|day|monday|tuesday|wednesday|thursday|friday|saturday|sunday)", re.I)
 
 
 def _clock(hour: Any, minute: Any = None) -> str | None:
@@ -56,7 +57,7 @@ def _attach_date(schedule: dict[str, str] | None, broadcast_date: str = "") -> d
 
 def _extract_from_text(text: str, *, require_context: bool) -> dict[str, str] | None:
     for line in unicodedata.normalize('NFKC', str(text or "")).splitlines():
-        if _NOISE_WORDS.search(line) or (require_context and not _BROADCAST_WORDS.search(line)):
+        if _NOISE_WORDS.search(line) or _RECURRING_BROADCAST.search(line) or (require_context and not _BROADCAST_WORDS.search(line)):
             continue
         for match in _CLOCK.finditer(line):
             # Avoid matching image dimensions, URLs, IDs, or ordinary dates.

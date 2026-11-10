@@ -19,6 +19,18 @@ export function createEvents(deps) {
 
   const selectedEventSessionId = deps.ref("");
 
+  function eventVenueLinks(event, session) {
+    if (!event) return [];
+    const current = session ? [session] : (event.sessions || []).length ? event.sessions : [null];
+    const places = new Map();
+    for (const item of current) {
+      const label = item?.venue || event.venue || '';
+      const id = item?.venue_id ?? ((!item?.venue || item.venue === event.venue) ? event.venue_id || '' : '');
+      if (label && !places.has(id || label)) places.set(id || label, { id, label });
+    }
+    return [...places.values()];
+  }
+
   const eventSessionOptions = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
     return sessions.map(function (session, index) {
@@ -699,6 +711,7 @@ export function createEvents(deps) {
     playEventTrack,
     selectEventSession,
     selectedEventSession,
+    eventVenueLinks,
     selectedEventSessionId,
     setEventsPage,
   };

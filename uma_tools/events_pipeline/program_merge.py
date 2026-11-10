@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from . import common as pipeline_common
-from .program_text import program_identity
+from .program_text import program_identity, program_summary_body
 
 
 def value_is_present(value: pipeline_common.Any) -> bool:
@@ -132,6 +132,15 @@ def apply_additive_program_refresh(
                 continue
             if field == 'thumbnail' and _thumbnail_downgrade(existing_value, discovered_value):
                 continue
+            if field == "summary" and existing_value and discovered_value:
+                old_body, new_body = map(program_summary_body, (existing_value, discovered_value))
+                if old_body and (
+                    old_body == new_body
+                    or not new_body
+                    or (len(discovered_value) >= 500 and old_body.startswith(new_body))
+                    or (new_body.endswith(("...", "…")) and old_body.startswith(new_body.rstrip(".…")))
+                ):
+                    continue
             if field in ("sources", "media"):
                 combined = merge_program_list(
                     field,

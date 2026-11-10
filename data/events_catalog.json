@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T02:16:09+00:00",
+  "generated_at": "2026-11-10T09:00:07+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -19,8 +19,8 @@
       "onsite": 199
     },
     "by_mode": {
-      "online": 263,
-      "onsite": 253
+      "online": 272,
+      "onsite": 244
     },
     "official_programs": 254,
     "unresolved_cast_names": 0
@@ -4720,12 +4720,8 @@
             "logotype"
           ],
           "cast": [],
-          "broadcast_date": "2026-10-31",
-          "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "minute",
-          "time_source_url": "https://www.youtube.com/watch?v=9AD3u2dxkMQ",
           "source_time_text": "1793437200",
-          "broadcast_time_kind": "metadata",
           "published_time": "18:00",
           "published_date": "2026-10-31",
           "publication_source_url": "https://www.youtube.com/watch?v=9AD3u2dxkMQ",
@@ -45914,7 +45910,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "",
-      "venue": "名鉄岐阜駅",
+      "venue": "名铁岐阜站",
       "cast_status": "verified",
       "cast": [
         {
@@ -45986,6 +45982,21 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "venue_raw": "名鉄岐阜駅",
+      "venue_id": "venue-meitetsu-gifu-station",
+      "venue_zh": "名铁岐阜站",
+      "venue_ja": "名鉄岐阜駅",
+      "venue_city": "岐阜",
+      "venue_country": "日本",
+      "venue_aliases": [
+        "名鉄岐阜駅",
+        "名鉄岐阜",
+        "Meitetsu Gifu Station"
+      ],
+      "venue_sources": [
+        "https://www.meitetsu.co.jp/pr/meitetsu_umamusume/",
+        "https://www.meitetsu.co.jp/train/station_info/line01/station/1253.html"
+      ],
       "time_source": "eventernote",
       "time_precision": "minute",
       "title_ja": "名鉄×アニメ『ウマ娘 シンデレラグレイ』「アニメ『ウマ娘 シンデレラグレイ』ラッピング電車」出発式",
@@ -66044,8 +66055,8 @@
       "cast": [],
       "character_ids": [
         "cesario",
-        "sweeptosho",
         "rheinkraft",
+        "sweeptosho",
         "kinghalo"
       ],
       "sessions": [
@@ -66056,8 +66067,8 @@
           "songs": [],
           "character_ids": [
             "cesario",
-            "sweeptosho",
             "rheinkraft",
+            "sweeptosho",
             "kinghalo"
           ],
           "cast": [],
@@ -66082,7 +66093,7 @@
       ],
       "legacy_url": "",
       "image": "https://i.ytimg.com/vi_webp/ARfzZaN_GBw/maxresdefault.webp",
-      "summary": "「Gang Beasts」ゲーム実況第2部も今回で最後だ！ ってことでお約束のクラフト・シーザリオ・スイープVSキングの3対1をやっちゃうぜ！ 最後まで見てくれよな！ ▼前編はここから見られるぞ！ • 【Gang Beasts ゲーム実況第2部】クラフト、シーザリオ、キング、スイープの... ▼中編はこっちだ！ • 【Gang Beasts ゲーム実況第2部】クラフト、シーザリオ、キング、スイープの... ▼ゲーム実況動画の再生リストもあるぞ！ • ゲーム実況動画",
+      "summary": "第二部实况的最后一期，莱茵力量、西沙里奥、东商变革三人组队挑战圣王光环。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
       "title_aliases": [],
@@ -66110,9 +66121,10 @@
       "time_source": null,
       "time_precision": null,
       "title_ja": "【Gang Beasts ゲーム実況第2部】クラフト、シーザリオ、キング、スイープの4人でゲーム実況だ！【後編】",
-      "summary_ja": "「Gang Beasts」ゲーム実況第2部も今回で最後だ！ ってことでお約束のクラフト・シーザリオ・スイープVSキングの3対1をやっちゃうぜ！ 最後まで見てくれよな！ ▼前編はここから見られるぞ！ • 【Gang Beasts ゲーム実況第2部】クラフト、シーザリオ、キング、スイープの... ▼中編はこっちだ！ • 【Gang Beasts ゲーム実況第2部】クラフト、シーザリオ、キング、スイープの... ▼ゲーム実況動画の再生リストもあるぞ！ • ゲーム実況動画",
+      "summary_ja": "「Gang Beasts」ゲーム実況第2部も今回で最後だ！ ってことでお約束のクラフト・シーザリオ・スイープVSキングの3対1をやっちゃうぜ！ 最後まで見てくれよな！ ▼前編はここから見られるぞ！",
       "title_zh": "【Gang Beasts 第二部】莱茵力量、西沙里奥、圣王光环、东商变革游戏实况 下篇",
-      "localization_state": "pending"
+      "summary_zh": "第二部实况的最后一期，莱茵力量、西沙里奥、东商变革三人组队挑战圣王光环。",
+      "localization_state": "complete"
     },
     {
       "id": "live-other-2024-09-22-2024-day2",
@@ -126371,7 +126383,7 @@
       "date": "2022-09-25",
       "end_date": "2022-09-25",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -129792,7 +129804,7 @@
       "date": "2022-07-17",
       "end_date": "2022-07-17",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -132612,7 +132624,7 @@
       "date": "2022-05-22",
       "end_date": "2022-05-22",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -137820,7 +137832,7 @@
       "date": "2022-04-02",
       "end_date": "2022-04-02",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -149068,7 +149080,7 @@
       "date": "2021-11-06",
       "end_date": "2021-11-06",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -149483,7 +149495,7 @@
       "date": "2021-11-06",
       "end_date": "2021-11-06",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "starting-gate-release",
       "venue": "",
       "cast_status": "verified",
@@ -155342,7 +155354,7 @@
       "date": "2021-08-04",
       "end_date": "2021-08-04",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "anime-release-events",
       "venue": "",
       "cast_status": "verified",
@@ -157892,7 +157904,7 @@
       "date": "2021-04-04",
       "end_date": "2021-04-04",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "winning-live-release",
       "venue": "",
       "cast_status": "verified",
@@ -158313,7 +158325,7 @@
       "date": "2021-04-04",
       "end_date": "2021-04-04",
       "kind": "onsite",
-      "mode": "onsite",
+      "mode": "online",
       "series_id": "anime-release-events",
       "venue": "",
       "cast_status": "verified",
@@ -161132,12 +161144,6 @@
               ]
             }
           ],
-          "broadcast_time": "21:54",
-          "broadcast_date": "2020-08-11",
-          "broadcast_time_zone": "Asia/Tokyo",
-          "time_precision": "minute",
-          "time_source_url": "https://www.youtube.com/watch?v=ytqhmfhd6aY",
-          "broadcast_time_kind": "announced",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -161185,7 +161191,7 @@
       ],
       "venue_sources": [],
       "time_source": null,
-      "time_precision": "minute",
+      "time_precision": null,
       "title_ja": "アニメ「うまよん」特別企画 オーディオコメンタリーリレー第１回",
       "summary_ja": "第1話『40点下!トレセン学園追試特別』を出演キャストの映像と共にオーディオコメンタリーが楽しめます！ 出演 スペシャルウィーク役 和氣あず未 サイレンススズカ役 高野麻里佳 トウカイテイオー役 Machico 今後も一部のエピソードを公開予定！ ぜひ、ご期待ください！ 【放送情報】 TOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送 ※放送日時は予告なく変更になる可能性がございます。",
       "title_zh": "动画「四格马娘」特别企划 音频评论接力第１回",
@@ -177873,7 +177879,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "starting-gate-release",
-      "venue": "",
+      "venue": "秋叶原 Gamers 本店",
       "cast_status": "verified",
       "cast": [
         {
@@ -178010,6 +178016,22 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
+      "venue_raw": "AKIHABARAゲーマーズ本店",
+      "venue_id": "venue-akihabaraゲ-マ-ズ本店",
+      "venue_zh": "秋叶原 Gamers 本店",
+      "venue_ja": "AKIHABARAゲーマーズ本店",
+      "venue_city": "东京",
+      "venue_country": "日本",
+      "venue_aliases": [
+        "AKIHABARAゲーマーズ本店",
+        "秋叶原 Gamers 本店"
+      ],
+      "venue_sources": [
+        {
+          "kind": "venue_directory",
+          "url": "https://www.eventernote.com/places/25518"
+        }
+      ],
       "time_source": "eventernote",
       "time_precision": "minute",
       "title_ja": "「STARTING GATE！―ウマ娘プリティーダービー―」2巻発売記念 トークショー&お渡し会",
@@ -190629,5 +190651,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "24362e8fc018d60cabf8"
+  "build_id": "a2e9fea79b428ddefab8"
 }

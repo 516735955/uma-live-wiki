@@ -345,6 +345,9 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "eventernote-2018-02-25": {
+      "venue": "AKIHABARAゲーマーズ本店"
+    },
     "live-other-2022-11-19-animax-musix-2022": {
       "sources_add": [
         {
@@ -1830,6 +1833,7 @@
       }
     },
     "live-cd-2022-09-25-winning-live-07": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -1856,6 +1860,7 @@
       }
     },
     "live-cd-2022-07-17-winning-live-05-winning-live-06": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -1882,6 +1887,7 @@
       }
     },
     "live-cd-2022-05-22-cd-winning-live-04": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -1908,6 +1914,7 @@
       }
     },
     "live-cd-2022-04-02-cd-winning-live-03": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -1949,6 +1956,7 @@
       "mode": "online"
     },
     "live-cd-2021-11-06-winning-live-02": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -1975,6 +1983,7 @@
       }
     },
     "live-cd-2021-11-06-starting-gate-unit-song-collection": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -2001,6 +2010,7 @@
       }
     },
     "live-cd-2021-08-04-title-3968b924ad22": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -2027,6 +2037,7 @@
       }
     },
     "live-cd-2021-04-04-winning-live-01": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",
@@ -2053,6 +2064,7 @@
       }
     },
     "live-cd-2021-04-04-tv-season-2-animation-derby-season-2-vol": {
+      "mode": "online",
       "sources_add": [
         {
           "kind": "official_announcement",

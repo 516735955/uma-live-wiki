@@ -20,12 +20,17 @@ const {run} = require('./localize_events');
       {id:'source', title:'中文标题', summary:'保留人工说明和备注。'},
       {id:'cached', title_ja:'過去の番組', summary_ja:'説明です'},
       {id:'changed', title:'已改原文', summary_ja:'変更された新しい説明'},
+      {id:'deferred', title:'更新标题', summary_ja:'新しい紹介文'},
     ]});
     write('events/localizations.json', {records:{reviewed:{title_ja:'番組の紹介', title_zh:'人工标题', summary_ja:'紹介です', summary_zh:'人工介绍', translator:'assistant'}, changed:{summary_ja:'古い説明', summary_zh:'原人工修订说明', summary_translator:'assistant'}}});
-    write('auto_update/event_localizations.json', {records:{cached:{title_ja:'過去の番組', title_zh:'已有标题', title_translator:'baidu', summary_ja:'説明です', summary_zh:'已有介绍', summary_translator:'baidu'}, changed:{summary_ja:'変更された新しい説明', summary_zh:'缓存机器改写', summary_translator:'baidu'}}});
+    write('auto_update/event_localizations.json', {records:{
+      cached:{title_ja:'過去の番組', title_zh:'已有标题', title_translator:'baidu', summary_ja:'説明です', summary_zh:'已有介绍', summary_translator:'baidu'},
+      changed:{summary_ja:'変更された新しい説明', summary_zh:'缓存机器改写', summary_translator:'baidu'},
+      deferred:{summary_ja:'以前の紹介文', summary_zh:'之前的介绍', summary_translator:'baidu'},
+    }});
     const first = await run(root, {noApi:true, rebuild:false});
-    assert.equal(first.pending, 1);
-    assert.equal(first.deferredOwner, 1);
+    assert.equal(first.pending, 2);
+    assert.equal(first.deferredOwner, 2);
     const records = JSON.parse(fs.readFileSync(path.join(root, 'data/auto_update/event_localizations.json'))).records;
     assert.equal(records.reviewed.title_zh, '人工标题');
     assert.equal(records.reviewed.summary_translator, 'assistant');
@@ -34,6 +39,8 @@ const {run} = require('./localize_events');
     assert.equal(records.cached.title_translator, 'baidu');
     assert.equal(records.changed.summary_zh, '原人工修订说明', 'a machine cache cannot replace the reviewed archive after source changes');
     assert.equal(records.changed.summary_ja, '古い説明', 'the retained translation stays bound to its original source');
+    assert.equal(records.deferred.summary_ja, '以前の紹介文');
+    assert.equal(records.deferred.summary_zh, '之前的介绍', 'a deferred translation keeps the previous source and copy');
     assert.equal(JSON.parse(fs.readFileSync(path.join(root, 'data/events/localizations.json'))).records.changed.summary_zh, '原人工修订说明');
     assert.equal((await run(root, {noApi:true, rebuild:false})).changed, 0);
     console.log('Event translation provenance, reviewed copy and offline cache replay passed.');

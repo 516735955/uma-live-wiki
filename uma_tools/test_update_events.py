@@ -396,6 +396,23 @@ DAY2：2024年3月31日（日）19:00頃開始予定
         self.assertEqual(row["title"], "ぱかライブTV' #8")
         self.assertEqual(row["source_title"], discovered["programs"][0]["source_title"])
 
+    def test_program_refresh_keeps_summary_when_only_video_link_cards_change(self):
+        body = "第2部も今回で最後だ！"
+        original = body + " ▼前編はここから見られるぞ！ https://youtu.be/EG7l_G9ByXs"
+        link_card = " ▼前編はここから見られるぞ！ • 【ゲーム実況第2部】前編..."
+        program = {"id": "test", "video_id": "EG7l_G9ByXs", "source_kind": "official_youtube"}
+        existing = {"programs": [{**program, "summary": original}]}
+        discovered = {"programs": [{**program, "summary": body + link_card}]}
+        merged, _ = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        self.assertEqual(merged["programs"][0]["summary"], original)
+        self.assertNotIn("summary_translation_status", merged["programs"][0])
+
+        revised = "追加対戦が決定！" + link_card
+        discovered["programs"][0]["summary"] = revised
+        merged, _ = UPDATE_EVENTS.apply_additive_program_refresh(existing, discovered)
+        self.assertEqual(merged["programs"][0]["summary"], revised)
+        self.assertEqual(merged["programs"][0]["summary_translation_status"], "stale")
+
     def test_program_refresh_keeps_reviewed_title_against_official_discovery(self):
         existing = {"programs": [{
             "id": "paka-live-tv-prime-008", "title": "人工确认标题",

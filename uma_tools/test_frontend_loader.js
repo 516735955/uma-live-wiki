@@ -22,6 +22,8 @@ function loadFrontend(context) {
   const contentStateSource = read(path.join(directory, 'content-state.js'))
     .replace('export const ContentState', 'const ContentState');
   context.ContentState = vm.runInContext('(function(){' + contentStateSource + ';return ContentState;})()', context, { filename: 'content-state.js' });
+  const venueMapSource = read(path.join(directory, 'venue-map.js')).replace('export const VenueMap', 'const VenueMap');
+  context.VenueMap = vm.runInContext('(function(){' + venueMapSource + ';return VenueMap;})()', context, { filename: 'venue-map.js' });
   const activitySource = read(path.join(directory, 'activity-components.js')).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + activitySource + ';return {ActivityTime,ActivityHistory};})()', context, { filename: 'activity-components.js' }));
   const imports = Array.from(

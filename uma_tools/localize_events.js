@@ -74,9 +74,12 @@ async function run(root = path.resolve(__dirname, '..'), options = {}) {
         next[field + '_zh'] = translated;
         next[field + '_translator'] = result.translator;
       } else {
-        // Keep the old archived copy but do not apply it to changed source text.
-        delete next[field + '_zh'];
-        delete next[field + '_translator'];
+        // Keep the last archived source and translation together for later reuse.
+        if (previous[field + '_zh']) next[field + '_ja'] = previous[field + '_ja'];
+        else {
+          delete next[field + '_zh'];
+          delete next[field + '_translator'];
+        }
         pending.push({ id: event.id, field });
       }
     }

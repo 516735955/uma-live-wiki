@@ -5,6 +5,7 @@ export function createVenues(deps) {
   const venuesTotal = deps.ref(0);
 
   const venuesError = deps.ref("");
+  const venuesLoading = deps.ref(true);
 
   const venueDetail = deps.ref(null);
 
@@ -18,12 +19,13 @@ export function createVenues(deps) {
 
   const venuesPerPage = 30;
 
-  let venuesListPromise = null;
-
   let venuesListRevision = 0;
+  let venueSearchTimer;
 
   function loadVenuesListData(params) {
+    window.clearTimeout(venueSearchTimer);
     venuesError.value = "";
+    venuesLoading.value = true;
     const revision = ++venuesListRevision;
     const requested = params || {
       q: venueQuery.value,
@@ -32,10 +34,10 @@ export function createVenues(deps) {
     };
     const query = {
       q: requested.q || "",
-      page: requested.page || venuePage.value,
+      page: Math.max(1, Number(requested.page) || 1),
       page_size: venuesPerPage,
     };
-    venuesListPromise = deps.api
+    return deps.api
       .request("/api/catalog/venues" + deps.api.query(query))
       .then(function (data) {
         if (revision !== venuesListRevision) return;
@@ -47,12 +49,13 @@ export function createVenues(deps) {
       })
       .catch(function () {
         if (revision === venuesListRevision) {
-          venuesListPromise = null;
           venuesError.value = "会场目录暂时无法载入，请重试。";
         }
         throw new Error("venues list load failed");
+      })
+      .finally(function () {
+        if (revision === venuesListRevision) venuesLoading.value = false;
       });
-    return venuesListPromise;
   }
 
   function loadVenueData(id) {
@@ -102,14 +105,6 @@ export function createVenues(deps) {
     return Math.max(1, Math.ceil(venuesTotal.value / venuesPerPage));
   });
 
-  const venuePageStart = deps.computed(function () {
-    return venuesTotal.value ? (venuePage.value - 1) * venuesPerPage + 1 : 0;
-  });
-
-  const venuePageEnd = deps.computed(function () {
-    return Math.min(venuePage.value * venuesPerPage, venuesTotal.value);
-  });
-
   const venuePageList = deps.computed(function () {
     return deps.pagerList(venuePage.value, venuePageCount.value);
   });
@@ -127,8 +122,13 @@ export function createVenues(deps) {
   }
 
   function venueEventRows(events) {
-    const rows = (events || []).filter(row => row && row.id);
+    const rows = (events || []).map(row => ({ ...row, event_id: row.id, parent_title: row.title_zh || row.title }));
     return venueEventsExpanded.value ? rows : rows.slice(0, 10);
+  }
+
+  function venueActivityLabel(event) {
+    const status = { cancelled: '已取消', partially_cancelled: '部分场次取消' }[event.schedule_status];
+    return [event.session_count > 1 ? event.session_count + ' 场' : '', status].filter(Boolean).join('，');
   }
 
   function toggleVenueEvents() {
@@ -136,71 +136,81 @@ export function createVenues(deps) {
   }
 
   function venueLabel(venue) {
-    return String(venue && (venue.name_zh || venue.name || venue.name_ja) || '').trim();
+    return String(venue && (venue.display_name || venue.name_zh || venue.name || venue.name_ja) || '').trim();
   }
 
-  function venueQueryLabel(venue) {
-    const name = venueLabel(venue);
-    const city = venue && venue.city ? ' ' + venue.city : '';
-    return (name + city).trim();
+  function venueLocation(venue) {
+    return Array.from(new Set([venue.country, venue.city].filter(Boolean))).join(' ');
+  }
+
+  function venueOriginalName(venue) {
+    return venue.localization?.name_original || venue.name_ja || venue.name_en || venue.name_raw || '';
+  }
+
+  function venueNameKey(value) {
+    return String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+  }
+
+  function venueEnglishName(venue) {
+    const name = venue.name_en || '';
+    return [venueLabel(venue), venueOriginalName(venue)].some(value => venueNameKey(value) === venueNameKey(name)) ? '' : name;
   }
 
   function venueCapacityLabel(venue) {
+    const localized = venue?.localization?.capacity_zh?.[0];
+    if (localized) return localized.split(/[（(]/)[0].trim();
     const profile = venue && venue.profile;
-    if (!profile) return '';
-    const text = String(profile.capacity_text || '').trim();
-    if (!text) return profile.capacity ? Number(profile.capacity).toLocaleString('zh-CN') : '';
-    return text.split(/[(（]/)[0].split(/\s+/)[0];
+    if (!profile || !profile.capacity) return '';
+    const number = Number(profile.capacity).toLocaleString('zh-CN');
+    const unit = { seats: '席', people: '人' }[profile.capacity_unit] || '';
+    const prefix = profile.capacity_maximum ? '最多 ' : profile.capacity_approximate ? '约 ' : '';
+    return prefix + number + (unit ? ' ' + unit : '');
   }
 
-  function venueLinkHost(url) {
-    try {
-      return new URL(url).host.replace(/^www\./, '');
-    } catch (error) {
-      return '';
-    }
-  }
-
-  function venueMapUrl(venue) {
-    const profile = venue && venue.profile;
-    if (profile && Number.isFinite(profile.latitude) && Number.isFinite(profile.longitude))
-      return (
-        'https://www.google.com/maps/search/?api=1&query=' +
-        profile.latitude +
-        ',' +
-        profile.longitude
-      );
-    const label = venueQueryLabel(venue);
-    return label
-      ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(label)
-      : '';
+  function venueListPath() {
+    return deps.routes.query(deps.routes.venues(), { q: venueQuery.value, page: venuePage.value });
   }
 
   function venueAliasRows(venue) {
     if (!venue) return [];
-    const seen = new Set([venue.name, venue.name_zh, venue.name_ja, venue.name_raw, ''].map(v => String(v || '')));
+    const seen = new Set([venueLabel(venue), venueOriginalName(venue), venue.name_en, '', ...venueNameHistory(venue).map(row => row.name)].map(venueNameKey));
     const rows = [];
-    (venue.aliases || []).forEach(alias => {
+    const candidates = venue.localization?.display_aliases || [venue.name_ja, venue.name_raw, ...(venue.localization?.aliases || []), ...(venue.aliases || [])];
+    candidates.forEach(alias => {
       const value = String(alias || '').trim();
-      if (value && !seen.has(value) && rows.indexOf(value) < 0) rows.push(value);
+      const key = venueNameKey(value);
+      const parts = value.normalize('NFKC').split(/[()]/).filter(part => part.trim());
+      if (seen.has(key) || (parts.length > 1 && parts.every(part => seen.has(venueNameKey(part))))) return;
+      seen.add(key);
+      rows.push(value);
     });
     return rows;
   }
 
-  function venueSourceLabel(source) {
-    const kind = String(source && source.kind || '').toLowerCase();
-    return ({
-      eventernote: 'Eventernote',
-      eventernote_place: 'Eventernote',
-      wikipedia_ja: '日文维基百科',
-      wikipedia_en: '英文维基百科',
-      official: '官方',
-      venue_directory: 'Eventernote 会场资料',
-      venue_reference: '官方访问指南',
-    })[kind] || kind;
+  function venueNameHistory(venue) {
+    return (venue?.localization?.name_history_zh || []).map(line => {
+      const match = line.match(/^(.*?)（([^（）]*\d[^（）]*)）$/);
+      const period = match?.[2].replace(/(\d{4}) 年 (\d{1,2}) 月 (\d{1,2}) 日/g, (_, year, month, day) => `${year}.${month.padStart(2, '0')}.${day.padStart(2, '0')}`).replace('至', ' — ');
+      return match ? { name: match[1].trim(), period } : { name: line, period: '' };
+    });
   }
 
-  let venueSearchTimer;
+  function venueHeroLinks(venue) {
+    const profile = venue?.profile || {};
+    const sources = [profile.capacity_source, ...(profile.sources || []), ...(venue?.sources || []), ...(venue?.localization?.references || [])]
+      .map(source => typeof source === 'string' ? source : source?.url).filter(Boolean);
+    const findHost = host => sources.find(url => {
+      try { return new URL(url).hostname === host || new URL(url).hostname.endsWith('.' + host); }
+      catch { return false; }
+    });
+    return [
+      { label: '官网', url: profile.official_url },
+      { label: 'Eventernote', url: findHost('eventernote.com'), icon: '/uma_tools/img/eventernote-icon.png' },
+      { label: 'Wikipedia', url: profile.wikipedia_zh || profile.wikipedia_ja || profile.wikipedia_en || findHost('wikipedia.org'), icon: '/uma_tools/img/wikipedia-icon.png' },
+      { label: 'SeatView', url: venue?.localization?.seatview_url, icon: '/uma_tools/img/seatview-icon.png' },
+      { label: 'Google Maps', url: venue?.localization?.google_maps?.url, icon: '/uma_tools/img/google-maps-icon.png', title: venue?.localization?.google_maps?.note_zh || venue?.localization?.google_maps?.place_name },
+    ].filter(link => /^https?:\/\//.test(link.url || ''));
+  }
 
   function start() {
     deps.watch(venueDetail, function () {
@@ -209,19 +219,16 @@ export function createVenues(deps) {
     deps.watch(
       venueQuery,
       function () {
-        if (deps.restoringRoute) return;
-        deps.pushUrl(true);
-      },
-      { flush: "sync" },
-    );
-    deps.watch(
-      venueQuery,
-      function () {
         if (
           deps.restoringRoute ||
           deps.currentUrlPath().split("?")[0] !== deps.routes.venues()
         )
           return;
+        venuePage.value = 1;
+        venuesListRevision += 1;
+        venuesLoading.value = true;
+        venuesError.value = "";
+        deps.pushUrl(true);
         window.clearTimeout(venueSearchTimer);
         venueSearchTimer = window.setTimeout(() => {
           if (deps.currentUrlPath().split('?')[0] === deps.routes.venues()) loadVenuesListData().catch(() => {});
@@ -243,22 +250,22 @@ export function createVenues(deps) {
     venueEvents,
     venueEventsExpanded,
     venueAliasRows,
+    venueNameHistory,
+    venueHeroLinks,
+    venueEnglishName,
+    venueActivityLabel,
     venueCapacityLabel,
     venueLabel,
-    venueLinkHost,
-    venueMapUrl,
+    venueListPath,
+    venueLocation,
+    venueOriginalName,
     venuePage,
     venuePageCount,
-    venuePageEnd,
     venuePageList,
-    venuePageStart,
     venueQuery,
-    venueQueryLabel,
-    venueSourceLabel,
     toggleVenueEvents,
     venuesError,
     venuesList,
-    venuesPerPage,
-    venuesTotal,
+    venuesLoading,
   };
 }

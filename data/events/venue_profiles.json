@@ -27,6 +27,12 @@
    "address": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店 北館9F",
    "address_source": "eventernote",
    "capacity": 250,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/13860"
+   },
+   "capacity_maximum": true,
    "capacity_text": "最大250席",
    "phone": "03-3988-1351",
    "official_url": "https://www.animate.co.jp/shop/ikebukuro/",
@@ -44,6 +50,11 @@
    "address": "〒359-1196 埼玉県所沢市上山口2135 西武ドーム",
    "address_source": "eventernote",
    "capacity": 40000,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/38"
+   },
    "capacity_text": "40,000人(アリーナ使用時最大) / 31,552人(野球開催時)",
    "phone": "04-2925-1141",
    "official_url": "https://bellunadome.seibulions.co.jp/",
@@ -73,6 +84,12 @@
    "address": "〒061-1116 北海道北広島市Fビレッジ1 エスコンフィールドHOKKAIDO",
    "address_source": "eventernote",
    "capacity": 35000,
+   "capacity_unit": "people",
+   "capacity_approximate": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/13986"
+   },
    "capacity_text": "約35,000人",
    "official_url": "https://www.hkdballpark.com/",
    "seat_map_url": "https://www.hkdballpark.com/map/esconfield/",
@@ -134,6 +151,11 @@
    "address": "〒105-0022 東京都港区海岸1丁目11-1 ニューピア竹芝ノースタワー1F",
    "address_source": "eventernote",
    "capacity": 796,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/1286"
+   },
    "capacity_text": "796席",
    "phone": "03-3578-0041",
    "official_url": "http://www.newpier-hall.jp/",
@@ -157,6 +179,10 @@
    "address": "東京都渋谷区神南2丁目2番1号",
    "address_source": "wikipedia",
    "capacity": 3800,
+   "capacity_source": {
+    "kind": "wikipedia_ja",
+    "url": "https://ja.wikipedia.org/wiki/NHK%E3%83%9B%E3%83%BC%E3%83%AB"
+   },
    "capacity_text": "3800",
    "official_url": "http://www.nhk-sc.or.jp/nhk_hall/",
    "latitude": 35.66634750366211,
@@ -223,6 +249,12 @@
    "address": "〒108-0075 東京都港区港南2丁目16-4 品川グランドセントラルタワー3F 品川ザ・グランドホール",
    "address_source": "eventernote",
    "capacity": 484,
+   "capacity_unit": "seats",
+   "capacity_maximum": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/650"
+   },
    "capacity_text": "最大484席",
    "phone": "03-5463-9971",
    "official_url": "https://tg-hall.com/",
@@ -315,6 +347,11 @@
    "address": "〒100-0006 東京都千代田区有楽町1丁目1-3 東京宝塚ビルB1F TOHOシネマズ 日比谷",
    "address_source": "eventernote",
    "capacity": 489,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/2749"
+   },
    "capacity_text": "489席",
    "phone": "050-6868-5068",
    "official_url": "https://hlo.tohotheater.jp/net/schedule/081/TNPI2000J01.do",
@@ -402,6 +439,12 @@
    "address": "埼玉県さいたま市中央区新都心8",
    "address_source": "wikipedia",
    "capacity": 22500,
+   "capacity_unit": "people",
+   "capacity_approximate": true,
+   "capacity_source": {
+    "kind": "wikipedia_ja",
+    "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"
+   },
    "capacity_text": "アリーナモード：約22,500人",
    "official_url": "https://www.saitama-arena.co.jp/arena/%7C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
    "description_ja": "さいたまスーパーアリーナ（英: Saitama Super Arena）は、埼玉県さいたま市中央区にある多目的アリーナ。",
@@ -440,6 +483,12 @@
    "address": "〒220-0012 神奈川県横浜市西区みなとみらい3丁目2-2 ぴあアリーナMM",
    "address_source": "eventernote",
    "capacity": 12141,
+   "capacity_unit": "people",
+   "capacity_maximum": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/11340"
+   },
    "capacity_text": "最大12,141人",
    "phone": "045-211-4143",
    "official_url": "https://pia-arena-mm.jp/",
@@ -465,6 +514,11 @@
    "address": "〒160-0022 東京都新宿区新宿3丁目17-17",
    "address_source": "eventernote",
    "capacity": 250,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/152"
+   },
    "capacity_text": "250人(スタンディング) / 150席(座席指定)",
    "phone": "03-5919-4321",
    "official_url": "https://www.animate.co.jp/shop/shinjuku/",
@@ -481,6 +535,11 @@
    "address": "〒170-0013 東京都豊島区東池袋1丁目20-7 アニメイト池袋本店B2F アニメイトシアター",
    "address_source": "eventernote",
    "capacity": 208,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/13857"
+   },
    "capacity_text": "着席208名 立席340名",
    "phone": "03-3988-1351",
    "official_url": "https://www.animate.co.jp/theater/",
@@ -562,6 +621,11 @@
    "address": "〒812-0031 福岡県福岡市博多区沖浜町2-1",
    "address_source": "eventernote",
    "capacity": 6000,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/7808"
+   },
    "capacity_text": "6,000人",
    "phone": "092-262-5111",
    "official_url": "https://www.marinemesse.or.jp/messe-b/",
@@ -583,7 +647,13 @@
   "venue-ユナイテッド-シネマ-アクアシティお台場": {
    "address": "〒135-0091 東京都港区台場1丁目7-1 アクアシティお台場東エリア1F ユナイテッド・シネマアクアシティお台場",
    "address_source": "eventernote",
-   "capacity": 13,
+   "screen_count": 13,
+   "capacity": 2838,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "official",
+    "url": "https://www.unitedcinemas.jp/image/about_company/uc-sitemap21.pdf"
+   },
    "capacity_text": "13スクリーン 計2,838席",
    "phone": "0570-783-804",
    "official_url": "https://www.unitedcinemas.jp/odaiba/index.html",
@@ -715,6 +785,11 @@
    "address": "〒108-8611 東京都港区高輪4丁目10-30 品川ステラボール",
    "address_source": "eventernote",
    "capacity": 1884,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/61"
+   },
    "capacity_text": "1,884人(スタンディング) / 876席(シーティング)",
    "phone": "03-3440-1111",
    "official_url": "https://www.princehotels.co.jp/shinagawa/stellarball/",
@@ -773,6 +848,12 @@
    "address": "〒100-0004 東京都千代田区大手町1丁目2-1 Otemachi One 3F 大手町三井ホール",
    "address_source": "eventernote",
    "capacity": 638,
+   "capacity_unit": "seats",
+   "capacity_maximum": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/12111"
+   },
    "capacity_text": "最大638席",
    "phone": "03-5962-9570",
    "official_url": "https://otemachi-hall.jp/website/",
@@ -795,6 +876,11 @@
    "address": "〒540-0002 大阪府大阪市中央区大阪城3番1号 大阪城ホール",
    "address_source": "eventernote",
    "capacity": 16000,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/5"
+   },
    "capacity_text": "16,000人(センターステージ形式) / 11,200人(エンドステージ形式)",
    "phone": "0570-034-533",
    "official_url": "https://www.osaka-johall.com/",
@@ -820,6 +906,11 @@
    "address": "〒151-8539 東京都渋谷区代々木1丁目53-1 山野美容専門学校",
    "address_source": "eventernote",
    "capacity": 800,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/245"
+   },
    "capacity_text": "800席 (固定276席＋可動524席)",
    "phone": "03-3379-0381",
    "official_url": "https://www.yamanohall.com/",
@@ -891,6 +982,12 @@
    "address": "〒160-0023 東京都新宿区西新宿2丁目6-1 新宿住友ビル 三角広場",
    "address_source": "eventernote",
    "capacity": 2000,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/12716"
+   },
+   "capacity_maximum": true,
    "capacity_text": "最大2,000人",
    "phone": "050-3112-5050",
    "official_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/",
@@ -939,6 +1036,11 @@
    "address": "〒214-0006 神奈川県川崎市多摩区菅仙谷4丁目 日テレらんらんホール",
    "address_source": "eventernote",
    "capacity": 1000,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/3499"
+   },
    "capacity_text": "1,000席",
    "phone": "044-966-1135",
    "access": "＜アクセス＞\n・京王よみうりランド駅下車\n　・ゴンドラ「スカイシャトル」で5～10分\n　・もしくは小田急バスで5分\n・読売ランド前駅下車 \n　・小田急バスで10分",
@@ -959,6 +1061,11 @@
    "address": "〒102-8321 東京都千代田区北の丸公園2番3号",
    "address_source": "eventernote",
    "capacity": 14501,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/3"
+   },
    "capacity_text": "14,501席 (アリーナ2,946席＋1階3,199席＋2・3階7,876席＋3階立見480席)",
    "phone": "03-3216-5100",
    "official_url": "https://www.nipponbudokan.or.jp/",
@@ -984,6 +1091,12 @@
    "address": "〒135-0063 東京都江東区有明1丁目11-1 有明アリーナ",
    "address_source": "eventernote",
    "capacity": 15000,
+   "capacity_unit": "seats",
+   "capacity_approximate": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/11572"
+   },
    "capacity_text": "約15,000席",
    "phone": "03-5500-7201",
    "official_url": "https://ariake-arena.tokyo/",
@@ -1008,7 +1121,13 @@
   "venue-札幌シネマフロンティア": {
    "address": "〒060-0005 北海道札幌市中央区北5条西2丁目5 JRタワーステラプレイス7F",
    "address_source": "eventernote",
-   "capacity": 12,
+   "screen_count": 12,
+   "capacity": 2705,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "official",
+    "url": "https://www.cinemafrontier.net/pc/img/SCFrelease151225.pdf"
+   },
    "capacity_text": "（12スクリーン）2,705",
    "phone": "011-209-5400",
    "official_url": "https://www.cinemafrontier.net/cgi-bin/pc/index.cgi",
@@ -1032,6 +1151,12 @@
    "address": "〒135-0063 東京都江東区有明2-1-6 東京ガーデンシアター",
    "address_source": "eventernote",
    "capacity": 8000,
+   "capacity_unit": "people",
+   "capacity_approximate": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/11813"
+   },
    "capacity_text": "約8,000人",
    "official_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/",
    "seat_map_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/visitor/floor/",
@@ -1056,6 +1181,12 @@
    "address": "〒135-0063 東京都江東区有明3丁目11-1",
    "address_source": "eventernote",
    "capacity": 126300,
+   "capacity_unit": "people",
+   "capacity_maximum": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/438"
+   },
    "capacity_text": "最大126,300人 東１ホール 9,500人 東２ホール 9,100人 東３ホール 9,500人 東４ホール 9,500人 東５ホール 9,100人 東６ホール 9,500人 東７ホール 12,800人 東８ホール 3,300人 西１ホール 9,700人 西２ホール 9,700人 西３ホール 5,100人 西４ホール 7,500人 南１ホール 5,500人 南２ホール 5,500人 南３ホール 5,500人 南４ホール 5,500人",
    "phone": "03-5530-1111",
    "official_url": "https://www.bigsight.jp/",
@@ -1078,6 +1209,11 @@
    "address": "〒100-0005 東京都千代田区丸の内3丁目5番1号",
    "address_source": "eventernote",
    "capacity": 1502,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/425"
+   },
    "capacity_text": "1,502席 (1階739席＋2階363席＋3階400席)",
    "phone": "03-5221-9000",
    "official_url": "https://www.t-i-forum.co.jp/visitors/facilities/c/",
@@ -1095,6 +1231,12 @@
    "address": "〒222-0033 神奈川県横浜市港北区新横浜3丁目10番地 横浜アリーナ",
    "address_source": "eventernote",
    "capacity": 17000,
+   "capacity_unit": "people",
+   "capacity_approximate": true,
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/1"
+   },
    "capacity_text": "約17,000人",
    "phone": "045-474-4000",
    "official_url": "https://www.yokohama-arena.co.jp/",
@@ -1118,6 +1260,10 @@
    "address": "横浜市中区新山下3-4-17",
    "address_source": "wikipedia",
    "capacity": 1100,
+   "capacity_source": {
+    "kind": "wikipedia_ja",
+    "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%83%99%E3%82%A4%E3%83%9B%E3%83%BC%E3%83%AB"
+   },
    "capacity_text": "1100",
    "official_url": "http://www.bayhall.jp/",
    "description_ja": "横浜ベイホール（Yokohama Bay Hall）は、神奈川県横浜市中区新山下にあるライブハウスである。",
@@ -1204,6 +1350,11 @@
    "address": "〒102-0091 東京都千代田区北の丸公園2-1 科学技術館B2F",
    "address_source": "eventernote",
    "capacity": 410,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/119"
+   },
    "capacity_text": "410席",
    "phone": "03-3212-8485",
    "official_url": "https://event-jsf.jp/science_hall",
@@ -1247,6 +1398,11 @@
    "address": "〒279-8518 千葉県浦安市舞浜2-50 舞浜アンフィシアター",
    "address_source": "eventernote",
    "capacity": 2170,
+   "capacity_unit": "seats",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/234"
+   },
    "capacity_text": "2,170席",
    "phone": "047-381-3898",
    "official_url": "https://www.maihama-amphitheater.jp/",
@@ -1272,6 +1428,11 @@
    "address": "〒920-3105 石川県金沢市八田町西1番地 金沢競馬場",
    "address_source": "eventernote",
    "capacity": 15000,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/9706"
+   },
    "capacity_text": "15,000人",
    "phone": "076-258-5761",
    "official_url": "https://www.kanazawakeiba.com/",
@@ -1295,6 +1456,11 @@
    "address": "〒841-0034 佐賀県鳥栖市京町812 鳥栖スタジアム",
    "address_source": "eventernote",
    "capacity": 24130,
+   "capacity_unit": "people",
+   "capacity_source": {
+    "kind": "eventernote_place",
+    "url": "https://www.eventernote.com/places/5019"
+   },
    "capacity_text": "24,130人",
    "phone": "0942-85-7332",
    "official_url": "https://www.city.tosu.lg.jp/soshiki/12/1166.html",

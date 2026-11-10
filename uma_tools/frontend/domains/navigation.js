@@ -567,13 +567,9 @@ export function createNavigation(deps) {
     if (deps.venueDetail.value)
       return items.concat([
         { label: "资料库" },
-        { label: "会场", path: deps.routes.venues() },
+        { label: "会场", path: deps.venueListPath() },
         {
-          label:
-            deps.venueDetail.value.name_zh ||
-            deps.venueDetail.value.name ||
-            deps.venueDetail.value.name_ja ||
-            deps.venueDetail.value.id,
+          label: deps.venueLabel(deps.venueDetail.value) || deps.venueDetail.value.id,
         },
       ]);
     if (deps.charDetail.value)

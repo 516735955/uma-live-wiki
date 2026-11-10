@@ -77,6 +77,19 @@ def program_text_lines(value: str) -> list[str]:
     return [line.strip() for line in text.splitlines()]
 
 
+def program_summary_body(value: str) -> str:
+    """Compare editorial text independently of YouTube's promotional footer and link cards."""
+    body = " ".join(" ".join(program_text_lines(value)).split())
+    body = pipeline_common.re.split(
+        r"(?:-+\+){3,}-+(?=\s*(?:[^。！？]{0,28}チャンネル(?:の)?登録|【[^】]*(?:公式|特設サイト)))"
+        r"|\sチャンネル登録(?=.{0,50}(?:https?://|/\s*@))"
+        r"|▼(?=[^▼]{0,60}(?:ここから|こっちだ|再生リスト))",
+        body,
+        maxsplit=1,
+    )[0]
+    return body.strip()
+
+
 def program_summary(description: str) -> str:
     """Return editorial programme copy, excluding player warnings and boilerplate.
 

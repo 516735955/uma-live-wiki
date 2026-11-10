@@ -2,6 +2,22 @@
   "schema_version": 1,
   "venues": [
     {
+      "id": "venue-meitetsu-gifu-station",
+      "raw": "名鉄岐阜駅",
+      "display": "名铁岐阜站",
+      "name_zh": "名铁岐阜站",
+      "name_ja": "名鉄岐阜駅",
+      "city": "岐阜",
+      "country": "日本",
+      "kind": "venue",
+      "normalization_status": "reviewed_display",
+      "aliases": ["名鉄岐阜", "Meitetsu Gifu Station"],
+      "sources": [
+        "https://www.meitetsu.co.jp/pr/meitetsu_umamusume/",
+        "https://www.meitetsu.co.jp/train/station_info/line01/station/1253.html"
+      ]
+    },
+    {
       "id": "venue-northern-horsepark-main-arena",
       "raw": "Northern Horse Park · 主竞技场",
       "display": "Northern Horse Park · 主竞技场",
@@ -557,8 +573,8 @@
     {
       "id": "venue-animate-hall-black",
       "raw": "animate hall BLACK",
-      "display": "安利美特池袋本店北馆 9F BLACK 活动厅",
-      "name_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "display": "Animate池袋本店北馆 9F BLACK 活动厅",
+      "name_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "name_ja": "animate hall BLACK",
       "city": "东京",
       "normalization_status": "reviewed_display",
@@ -697,8 +713,8 @@
     {
       "id": "venue-animate-hall-black",
       "raw": "アニメイト池袋本店 9F animate hall BLACK",
-      "display": "安利美特池袋本店北馆 9F BLACK 活动厅",
-      "name_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "display": "Animate池袋本店北馆 9F BLACK 活动厅",
+      "name_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "name_ja": "アニメイト池袋本店 9F animate hall BLACK",
       "city": "东京",
       "normalization_status": "reviewed_display",
@@ -723,8 +739,8 @@
     {
       "id": "venue-アニメイト池袋本店-b2f-アニメイトシアタ",
       "raw": "アニメイト池袋本店 B2F アニメイトシアター",
-      "display": "安利美特池袋本店北馆 B2F 剧场",
-      "name_zh": "安利美特池袋本店北馆 B2F 剧场",
+      "display": "Animate池袋本店北馆 B2F 剧场",
+      "name_zh": "Animate池袋本店北馆 B2F 剧场",
       "name_ja": "アニメイト池袋本店 B2F アニメイトシアター",
       "city": "东京",
       "normalization_status": "reviewed_display",

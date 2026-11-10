@@ -51,7 +51,7 @@ export function createDomains(env) {
           "openEvent",
         ],
         horses: ["horseDetail", "otherSection", "renderCharBlood"],
-        venues: ["venueDetail"],
+        venues: ["venueDetail", "venueLabel", "venueListPath"],
         news: ["newsDetail", "newsTitle"],
         player: ["playerController"],
         songs: ["songDetail", "songSection"],
@@ -227,7 +227,6 @@ export function createDomains(env) {
           "venuePage",
           "venuePageCount",
           "venueQuery",
-          "venuesList",
         ],
         songs: [
           "loadSongCatalog",

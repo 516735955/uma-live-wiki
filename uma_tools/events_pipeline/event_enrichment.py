@@ -227,6 +227,16 @@ def apply_venues(events: list[dict], document: dict | None = None) -> list[dict]
                     row['venue_zh'] = name['display']
                     row['venue_ja'] = name.get('name_ja') or row['venue_ja']
                     break
+        sessions = []
+        for session in row.get("sessions") or []:
+            place = by_raw.get(str(session.get("venue_raw") or session.get("venue") or ""))
+            if not place or "venue_id" in session:
+                sessions.append(session)
+                continue
+            venue_id = "" if place.get("normalization_status") in {"channel", "region_placeholder"} else str(place.get("id") or "")
+            sessions.append({**session, "venue_id": venue_id, "venue": place.get("display") or session.get("venue") or ""})
+        if "sessions" in row:
+            row["sessions"] = sessions
         output.append(row)
     return output
 

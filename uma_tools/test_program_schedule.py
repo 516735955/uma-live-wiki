@@ -23,6 +23,11 @@ class ProgramScheduleTest(unittest.TestCase):
     def test_chapter_and_deadline_are_not_broadcast_times(self):
         self.assertIsNone(extract_announced_time("番組概要\nchapter 00:00\n报名截止 12:00"))
 
+    def test_weekly_anime_promotion_does_not_set_commentary_clock(self):
+        summary = "【放送情報】\nTOKYO MX、BS11、AT-Xにて2020年7月7日より毎週火曜日21時54分から放送"
+        self.assertEqual(schedule_for_program(source_description=summary, broadcast_date="2020-08-11"), {})
+        self.assertEqual(extract_announced_time(source_description=summary + "\n本企画は8月11日20時から配信")["broadcast_time"], "20:00")
+
     def test_after_midnight_is_normalized_to_next_date(self):
         value = schedule_for_program(source_title="24時30分から放送", broadcast_date="2026-10-24")
         self.assertEqual(value["broadcast_time"], "00:30")

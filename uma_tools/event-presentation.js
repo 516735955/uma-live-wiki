@@ -31,7 +31,7 @@ function projectEvents(events, groups = []) {
         label: unitLabel(source.length === 1 ? (member.label || child.title) : [member.label, session.label].filter(Boolean).join('、')),
         date: session.date || child.date,
         venue: session.venue || child.venue || '',
-        venue_id: session.venue_id || child.venue_id || '',
+        venue_id: session.venue_id ?? ((!session.venue || session.venue === child.venue) ? child.venue_id || '' : ''),
         doors_time: session.doors_time || child.doors_time || '',
         start_time: session.start_time || child.start_time || '',
         end_time: session.end_time || child.end_time || '',

@@ -30,6 +30,7 @@ const MUSIC_SOURCE_FILES = [
 const CHARACTER_INDEX_FILE = 'character_index_data.js';
 const EVENT_IMAGE_MAP = 'auto_update/event_images.json';
 const VENUE_PROFILE_FILE = 'events/venue_profiles.json';
+const VENUE_LOCALIZATION_FILE = 'events/venue_localizations.json';
 const EVENT_KIND_COVERS = {
   concert: '/uma_tools/img/event-covers/concert.svg',
   official_program: '/uma_tools/img/event-covers/official-program.svg',
@@ -186,31 +187,54 @@ function venueMetaFromEvent(event) {
   };
 }
 
-function venuesFromRows(eventRows, profiles) {
+function venuesFromRows(eventRows, rawEvents, profiles, localizations) {
   const map = new Map();
-  eventRows.forEach((row) => {
-    const event = row.data;
-    const id = String(event.venue_id || '').trim();
-    if (!id) return;
-    let entry = map.get(id);
-    const date = String(event.end_date || event.date || '');
-    if (!entry) {
-      entry = { id, ...venueMetaFromEvent(event), event_count: 0, session_count: 0, last_date: '' };
-      map.set(id, entry);
+  eventRows.forEach(({ data: event, summary }) => {
+    const sessions = event.sessions || [];
+    const byVenue = new Map();
+    for (const session of sessions.length ? sessions : [null]) {
+      const id = session?.venue_id ?? ((!session?.venue || session.venue === event.venue) ? event.venue_id : '');
+      if (!id) continue;
+      if (!byVenue.has(id)) byVenue.set(id, []);
+      byVenue.get(id).push(session);
     }
-    entry.event_count += 1;
-    entry.session_count += Math.max(1, (event.sessions || []).length);
-    if (date > entry.last_date) {
-      entry.last_date = date;
-      Object.assign(entry, venueMetaFromEvent(event));
+    for (const [id, matches] of byVenue) {
+      const [first] = matches;
+      const source = rawEvents.get(first?.source_event_id) || event;
+      const meta = venueMetaFromEvent(source.venue_id === id ? source : { venue: first?.venue });
+      const date = matches.reduce((latest, session) => {
+        const value = session?.end_date || session?.date || event.end_date || event.date || '';
+        return value > latest ? value : latest;
+      }, '');
+      const entry = map.get(id) || { id, ...meta, event_count: 0, session_count: 0, last_date: '', events: [] };
+      map.set(id, entry);
+      entry.event_count += 1;
+      entry.session_count += matches.filter(Boolean).length;
+      const { search_text, ...item } = summary;
+      entry.events.push({
+        ...item,
+        date: first?.date || item.date,
+        end_date: date,
+        session_id: first?.id || '',
+        session_count: matches.filter(Boolean).length,
+      });
+      if (date > entry.last_date) {
+        entry.last_date = date;
+        Object.assign(entry, meta);
+      }
     }
   });
-  if (profiles) {
-    map.forEach((entry) => {
-      const profile = profiles[String(entry.id)];
-      if (profile) entry.profile = profile;
-    });
-  }
+  map.forEach((entry) => {
+    const profile = profiles[entry.id];
+    const copy = localizations[entry.id];
+    if (profile || copy?.facts) entry.profile = { ...profile, ...copy?.facts };
+    if (copy) {
+      entry.display_name = copy.name_zh || '';
+      entry.name_en = copy.name_en || '';
+      entry.cover = copy.photo?.path || '';
+      entry.localization = copy;
+    }
+  });
   return map;
 }
 
@@ -438,9 +462,11 @@ class CatalogStore {
     const pending = await fs.promises.stat(path.join(this.dataDir, 'auto_update/catalog_pending.json')).catch(error => { if (error.code !== 'ENOENT') throw error; return null; });
     const eventImages = await fs.promises.stat(path.join(this.dataDir, EVENT_IMAGE_MAP)).catch(() => null);
     const venueProfiles = await fs.promises.stat(path.join(this.dataDir, VENUE_PROFILE_FILE)).catch(() => null);
+    const venueLocalizations = await fs.promises.stat(path.join(this.dataDir, VENUE_LOCALIZATION_FILE)).catch(() => null);
     const anime = await fs.promises.stat(path.join(this.dataDir, 'anime_catalog.json')).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
     this.checkedSignature = stats.map((stat) => stat.size + ':' + stat.mtimeMs).join('|') + ':' + (pending ? pending.mtimeMs + ':' + pending.size : 'published') + ':' + (eventImages ? eventImages.mtimeMs + ':' + eventImages.size : 'no-event-images');
     this.checkedSignature += ':' + (venueProfiles ? venueProfiles.mtimeMs + ':' + venueProfiles.size : 'no-venue-profiles');
+    this.checkedSignature += ':' + (venueLocalizations ? venueLocalizations.mtimeMs + ':' + venueLocalizations.size : 'no-venue-localizations');
     this.checkedSignature += ':' + (anime ? anime.mtimeMs + ':' + anime.size : 'no-anime');
     this.signatureCheckedAt = Date.now();
     return this.checkedSignature;
@@ -494,6 +520,8 @@ class CatalogStore {
     const animeText = await fs.promises.readFile(path.join(this.dataDir, 'anime_catalog.json'), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
     const venueProfileText = await fs.promises.readFile(path.join(this.dataDir, VENUE_PROFILE_FILE), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
     const venueProfiles = (JSON.parse(venueProfileText).profiles) || {};
+    const venueLocalizationText = await fs.promises.readFile(path.join(this.dataDir, VENUE_LOCALIZATION_FILE), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; });
+    const venueLocalizations = JSON.parse(venueLocalizationText).records || {};
     const classifyAlbum = createClassification(JSON.parse(animeText), songsDoc.songs || [], albumWork);
     const music = {
       creatorsById: new Map((musicCreatorsDoc.creators || []).map((creator) => [String(creator.id), creator])),
@@ -512,7 +540,7 @@ class CatalogStore {
       throw new Error('catalog revision mismatch');
     }
     let sourceRevision = crypto.createHash('sha1')
-      .update(texts.join('\u0000') + animeText + venueProfileText)
+      .update(texts.join('\u0000') + animeText + venueProfileText + venueLocalizationText)
       .digest('hex')
       .slice(0, 12);
 
@@ -616,7 +644,7 @@ class CatalogStore {
       }))),
       charactersById,
       eventRows,
-      venueProfiles,
+      venueIndex: venuesFromRows(eventRows, presentation.rawById, venueProfiles, venueLocalizations),
       songRows,
       creatorRows,
       music,
@@ -767,33 +795,28 @@ class CatalogStore {
     const store = snapshot || await this.get();
     const venueId = String(id || '').trim();
     if (!venueId) return null;
-    const byId = venuesFromRows(store.eventRows, store.venueProfiles);
-    const meta = byId.get(venueId);
-    if (!meta) return null;
-    const events = store.eventRows
-      .filter(({ data: event }) => String(event.venue_id || '').trim() === venueId)
-      .map(({ summary }) => {
-        const { search_text, ...item } = summary;
-        return item;
-      });
-    events.sort((a, b) => String(b.end_date || b.date || '').localeCompare(String(a.end_date || a.date || '')) || String(a.title).localeCompare(String(b.title), 'ja'));
-    return { build_id: store.buildId, venue: meta, events, total: events.length };
+    const entry = store.venueIndex.get(venueId);
+    if (!entry) return null;
+    const { events, ...venue } = entry;
+    const sorted = events.slice().sort((a, b) => String(b.end_date || b.date || '').localeCompare(String(a.end_date || a.date || '')) || String(a.title).localeCompare(String(b.title), 'ja'));
+    return { build_id: store.buildId, venue, events: sorted, total: sorted.length };
   }
 
   async venues(params) {
     const store = await this.get();
     params = params || new URLSearchParams();
     const query = normalize(params.get('q') || '');
-    let rows = Array.from(venuesFromRows(store.eventRows, store.venueProfiles).values());
-    if (query) rows = rows.filter((row) => searchText.matchesIndex(searchText.fields([row.name, row.name_zh, row.name_ja, row.name_raw, row.aliases, row.city]), query));
-    rows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja') || String(a.id).localeCompare(String(b.id)));
+    let rows = Array.from(store.venueIndex.values());
+    const names = row => [row.display_name, row.name, row.name_zh, row.name_ja, row.name_en, row.name_raw, row.aliases, row.localization?.aliases, row.localization?.search_aliases];
+    if (query) rows = rows.filter(row => searchText.matchesIndex(searchText.fields([names(row), row.country, row.city]), query));
+    rows.sort((a, b) => (query ? searchText.rank(names(a), query) - searchText.rank(names(b), query) : 0) || String(a.name).localeCompare(String(b.name), 'ja') || String(a.id).localeCompare(String(b.id)));
     const total = rows.length;
     const pageSize = Math.min(5000, pageNumber(params.get('page_size'), 30));
     const pageCount = Math.max(1, Math.ceil(total / pageSize));
     const page = Math.min(pageCount, pageNumber(params.get('page'), 1));
     return {
       build_id: store.buildId,
-      items: rows.slice((page - 1) * pageSize, page * pageSize).map(({ profile, ...item }) => item),
+      items: rows.slice((page - 1) * pageSize, page * pageSize).map(({ profile, localization, events, ...item }) => item),
       total,
       page,
       page_size: pageSize

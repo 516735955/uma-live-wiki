@@ -342,14 +342,27 @@ def pick(values, prefer_numeric=False):
     return values[0]
 
 
-def parse_number(value):
-    match = re.search(r"(\d[\d,]*)", str(value or ""))
-    if not match:
-        return None
-    try:
-        return int(match.group(1).replace(",", ""))
-    except ValueError:
-        return None
+def capacity_details(value):
+    text = unicodedata.normalize("NFKC", str(value or "")).strip()
+    number = r"(\d[\d,]*)"
+    screens = re.search(number + r"\s*(?:スクリーン|screens?\b)", text, re.I)
+    if screens:
+        details = {"screen_count": int(screens[1].replace(",", ""))}
+        total = re.search(r"(?:合計|計|total(?: of)?\s*)" + number + r"\s*(?:席|seats?\b)", text, re.I)
+        if total:
+            details.update(capacity=int(total[1].replace(",", "")), capacity_unit="seats")
+        return details
+
+    count = re.search(r"(?P<qualifier>約\s*|about\s+|最大\s*)?(?P<count>\d[\d,]*)\s*(?P<unit>席|人|名|seats?\b|people\b)", text, re.I)
+    if count:
+        unit = "seats" if count["unit"] == "席" or count["unit"].lower().startswith("seat") else "people"
+        details = {"capacity": int(count["count"].replace(",", "")), "capacity_unit": unit}
+        if count["qualifier"]:
+            details["capacity_maximum" if count["qualifier"].strip() == "最大" else "capacity_approximate"] = True
+        return details
+    if re.fullmatch(number, text):
+        return {"capacity": int(text.replace(",", ""))}
+    return {}
 
 
 def wiki_profile(record, lang):
@@ -365,7 +378,7 @@ def wiki_profile(record, lang):
     return {
         "wikipedia": wikipedia,
         "title": title.replace("_", " "),
-        "capacity": parse_number(capacity_value),
+        **capacity_details(capacity_value),
         "capacity_text": str(capacity_value or ""),
         "address": pick(record.get("addresses") or []),
         "latitude": record.get("lat") or "",
@@ -445,7 +458,7 @@ def profile_for(rows):
     if not ja or not all(ja.get(key) for key in ("capacity", "address", "latitude")):
         en = wiki_profile(wiki_lookup_en(primary, derived, city), "en")
     if ja and en:
-        for key in ("capacity", "capacity_text", "address", "latitude", "longitude", "homepage"):
+        for key in ("address", "latitude", "longitude", "homepage"):
             if not ja.get(key) and en.get(key):
                 ja[key] = en[key]
 
@@ -458,11 +471,6 @@ def profile_for(rows):
         address_source = "eventernote" if (place or {}).get("address") else (
             "venue_registry" if registry_address(rows) else "wikipedia")
 
-    capacity_text = (place or {}).get("capacity_text") or (ja or en or {}).get("capacity_text", "")
-    capacity = parse_number(capacity_text) or (ja or en or {}).get("capacity")
-    if not capacity_text and capacity:
-        capacity_text = "{:,}".format(capacity)
-
     sources = []
     if places:
         sources.append({"kind": "eventernote_place", "url": places[0]})
@@ -471,10 +479,26 @@ def profile_for(rows):
     if en:
         sources.append({"kind": "wikipedia_en", "url": en["wikipedia"]})
 
+    capacity_text = ""
+    capacity = {}
+    for candidate, kind, url in (
+        (place, "eventernote_place", places[0] if places else ""),
+        (ja, "wikipedia_ja", (ja or {}).get("wikipedia")),
+        (en, "wikipedia_en", (en or {}).get("wikipedia")),
+    ):
+        text = (candidate or {}).get("capacity_text", "")
+        details = capacity_details(text)
+        if details:
+            capacity_text = text
+            capacity = details
+            if capacity.get("capacity"):
+                capacity["capacity_source"] = {"kind": kind, "url": url}
+            break
+
     profile = {
         "address": address,
         "address_source": address_source,
-        "capacity": capacity,
+        **capacity,
         "capacity_text": capacity_text,
         "phone": (place or {}).get("phone", ""),
         "official_url": (place or {}).get("website", "") or (ja or en or {}).get("homepage", ""),
@@ -512,13 +536,20 @@ def main():
     if args.limit:
         venue_ids = venue_ids[: args.limit]
 
-    profiles = {}
+    previous = json.loads(OUTPUT.read_text(encoding="utf-8"))["profiles"] if OUTPUT.exists() else {}
+    profiles = dict(previous) if args.limit else {}
     stats = collections.Counter()
     for index, venue_id in enumerate(venue_ids, 1):
         rows = by_id.get(venue_id) or []
         if not rows:
             continue
         profile = profile_for(rows)
+        saved = previous.get(venue_id, {})
+        if saved.get("capacity_source", {}).get("kind") == "official":
+            for field in ("capacity", "capacity_text", "capacity_unit", "capacity_approximate", "capacity_maximum", "capacity_source", "screen_count"):
+                profile.pop(field, None)
+                if field in saved:
+                    profile[field] = saved[field]
         profiles[venue_id] = profile
         if profile.get("capacity"):
             stats["capacity"] += 1

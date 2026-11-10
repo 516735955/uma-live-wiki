@@ -1,0 +1,2646 @@
+{
+  "schema_version": 1,
+  "records": {
+    "venue-aichi-sky-expo": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1004957664533005548",
+        "place_name": "Aichi Sky Expo, 5 Chome-１０番１号 Centrair, Tokoname, Aichi 479-0881, Japan",
+        "source_url": "https://maps.google.com/maps?q=Aichi+Sky+Expo&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "爱知天空展览馆",
+      "name_en": "Aichi Sky Expo",
+      "venue_type": "会展中心",
+      "facts": {
+        "official_url": "https://www.aichiskyexpo.com/",
+        "address": "〒479-0881 愛知県常滑市セントレア5丁目10番1号",
+        "access_url": "https://www.aichiskyexpo.com/access/"
+      },
+      "name_original": "Aichi Sky Expo",
+      "description_zh": "爱知县国际展览馆，位于常滑市中部国际机场岛，2019 年 8 月启用。",
+      "access_zh": "由名铁中部国际机场站步行约 5 分钟。",
+      "location": {
+        "lat": 34.8565154,
+        "lng": 136.8198019,
+        "source_url": "https://www.aichiskyexpo.com/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/aichi-sky-expo.webp",
+        "source_url": "https://www.aichiskyexpo.com/",
+        "original_url": "https://www.aichiskyexpo.com/wp-content/uploads/2025/02/halla1.jpg",
+        "credit": "爱知天空展览馆",
+        "width": 1000,
+        "height": 700
+      },
+      "aliases": [
+        "爱知天空展览馆"
+      ],
+      "display_aliases": [
+        "爱知天空展览馆"
+      ]
+    },
+    "venue-animate-hall-black": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5782044568649909786",
+        "place_name": "animate Ikebukuro Flagship Store, 1 Chome-20-7 Higashiikebukuro, Toshima City, Tokyo 170-0013, Japan",
+        "source_url": "https://maps.google.com/maps?q=animate+hall+BLACK&output=embed",
+        "scope": "complex"
+      },
+      "name_zh": "Animate 池袋本店 BLACK 活动厅",
+      "access_zh": "从池袋站东口步行约 5 分钟。",
+      "notes_zh": "2023 年 3 月 16 日开馆。9 层另设 WHITE 活动厅（150 席），地下 2 层设Animate剧场（208 席）。",
+      "venue_type": "展演空间",
+      "name_original": "animate hall BLACK",
+      "description_zh": "位于Animate池袋本店 9 层，设黑色主题活动空间，用于演出、访谈及放映。",
+      "location": {
+        "lat": 35.7311443,
+        "lng": 139.7154592,
+        "source_url": "https://www.animate.co.jp/shop/ikebukuro/access/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.animate.co.jp/shop/ikebukuro/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/animate-hall-black.webp",
+        "source_url": "https://www.animate.co.jp/ex/animate_guide/en.pdf#page=3",
+        "original_url": "https://www.animate.co.jp/ex/animate_guide/en.pdf#page=3",
+        "credit": "Animate",
+        "width": 469,
+        "height": 312
+      },
+      "aliases": [
+        "Animate池袋本店 BLACK 活动厅"
+      ],
+      "display_aliases": [
+        "Animate池袋本店 BLACK 活动厅"
+      ]
+    },
+    "venue-belluna-dome": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11573014212355572430",
+        "place_name": "Belluna Dome, 2135 Kamiyamaguchi, Tokorozawa, Saitama 359-1153, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%99%E3%83%AB%E3%83%BC%E3%83%8A%E3%83%89%E3%83%BC%E3%83%A0&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/belluna-dome",
+      "name_zh": "西武巨蛋",
+      "name_en": "Belluna Dome",
+      "aliases": [
+        "西武ドーム",
+        "インボイスSEIBUドーム",
+        "グッドウィルドーム",
+        "西武プリンスドーム",
+        "メットライフドーム",
+        "大都会人寿巨蛋",
+        "ベルーナドーム",
+        "西武巨蛋"
+      ],
+      "capacity_zh": [
+        "场馆模式最多 40,000 人",
+        "棒球比赛时 31,552 人"
+      ],
+      "access_zh": "西武球场前站下车即到。活动期间西武狭山线和西武池袋线加开临时列车。",
+      "name_history_zh": [
+        "Invoice SEIBU Dome（2005 年 3 月 1 日至 2006 年 12 月 31 日）",
+        "Goodwill Dome（2007 年 1 月 1 日至 2008 年 1 月 8 日）",
+        "Seibu Prince Dome（2015 年 3 月 1 日至 2017 年 2 月 28 日）",
+        "MetLife Dome（2017 年 3 月 1 日至 2022 年 2 月 28 日）",
+        "Belluna Dome（2022 年 3 月 1 日至 2027 年 2 月 28 日）"
+      ],
+      "venue_type": "体育场",
+      "parking_zh": "停车场共 630 个车位，蓝区 200 个、红区 320 个、绿区 110 个。",
+      "description_zh": "位于埼玉县所泽市，是埼玉西武狮队的主场，也举办音乐演出等活动。",
+      "facts": {
+        "access_url": "https://www.seibulions.jp/stadium/access/index.html"
+      },
+      "location": {
+        "lat": 35.76850128,
+        "lng": 139.42050171,
+        "source_url": "https://www.seibulions.jp/stadium/access/index.html",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/belluna-dome.webp",
+        "source_url": "https://bellunadome.seibulions.co.jp/eng.html",
+        "original_url": "https://bellunadome.seibulions.co.jp/assets/img/blue/img_eng_01.jpg",
+        "credit": "西武巨蛋",
+        "width": 802,
+        "height": 536
+      },
+      "display_aliases": [
+        "西武巨蛋",
+        "Seibu Dome"
+      ]
+    },
+    "venue-es-con-field-hokkaido": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=4976868412452256829",
+        "place_name": "Es Con Field Hokkaido, １番地 F Village, Kitahiroshima, Hokkaido 061-1116, Japan",
+        "source_url": "https://maps.google.com/maps?q=ES+CON+FIELD+HOKKAIDO&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "ES CON FIELD 北海道",
+      "name_en": "ES CON FIELD HOKKAIDO",
+      "description_zh": "北海道日本火腿斗士的主场，位于北海道北广岛市共荣，设有可开合屋顶。球场是 HOKKAIDO BALLPARK F VILLAGE 的一部分，园区内还有住宿、商业设施、餐厅及住宅。",
+      "capacity_zh": [
+        "约 35,000 人",
+        "约 30,000 席"
+      ],
+      "access_zh": "从 JR 千岁线北广岛站步行约 19 分钟。北广岛、新札幌、野幌、新千岁机场及札幌均有往返接驳车。",
+      "notes_zh": "2023 年 3 月 14 日开馆。2020 年 1 月起使用 ES CON FIELD HOKKAIDO 冠名。",
+      "venue_type": "体育场",
+      "photo": {
+        "path": "/uma_tools/img/venues/es-con-field.webp",
+        "source_url": "https://www.hkdballpark.com/about/esconfield/",
+        "original_url": "https://www.hkdballpark.com/_next/static/media/img-esconfield00.1wxckm5w9q8ol.jpg",
+        "credit": "北海道棒球园区 F VILLAGE",
+        "width": 800,
+        "height": 493
+      },
+      "location": {
+        "lat": 42.9897222,
+        "lng": 141.5494444,
+        "source_url": "https://en.wikipedia.org/wiki/Es_Con_Field_Hokkaido",
+        "scope": "building",
+        "retrieved_from": "https://dbpedia.org/data/Es_Con_Field_Hokkaido.json"
+      }
+    },
+    "venue-fcgビル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=6885159910464798042",
+        "place_name": "FCG Bldg., 2 Chome-4-8 Daiba, Minato City, Tokyo 135-0091, Japan",
+        "source_url": "https://maps.google.com/maps?q=FCG%E3%83%93%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "富士电视台总部大楼",
+      "name_en": "FCG Building",
+      "description_zh": "位于东京都港区台场，由富士媒体控股持有。富士电视台、BS 富士等富士产经集团企业在此设有总部或演播室。集团原向东京都租用土地，2018 年 3 月以约 140 亿日元购得。2013 年披露的年租金为 7.38 亿日元。",
+      "venue_type": "广播电视设施",
+      "facts": {
+        "official_url": "https://www.fujitv.com/visit_fujitv/",
+        "access_url": "https://www.fujitv.com/access/"
+      },
+      "location": {
+        "lat": 35.6269784,
+        "lng": 139.7745765,
+        "source_url": "https://www.fujitv.com/access/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/fuji-tv.webp",
+        "source_url": "https://www.fujitv.com/about/about-our-building/",
+        "original_url": "https://www.fujitv.com/wp-content/themes/fuji-tv-v2/dist/images/top/img-fujitv-01_2c59540f.jpg",
+        "credit": "富士电视台",
+        "width": 1080,
+        "height": 1080
+      }
+    },
+    "venue-makuhari-event-hall": {
+      "seatview_url": "https://seat.genchi.top/zh/v/makuhari-messe-event-hall",
+      "name_en": "Makuhari Event Hall",
+      "description_zh": "活动大厅隶属幕张展览馆。该综合会展设施位于千叶市美滨区幕张新都心，由幕张展览馆股份有限公司运营，曾获 BCS 奖、IAITA 奖和千叶县建筑文化奖。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.6482395,
+        "lng": 140.0347285,
+        "source_url": "https://maps.google.com/maps?cid=8119969245783251126&output=embed",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.m-messe.co.jp/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/makuhari-event-hall.webp",
+        "source_url": "https://www.m-messe.co.jp/organizers/support/layout/",
+        "original_url": "https://www.m-messe.co.jp/cache/images/photo/96/e2/6384db74eb879dfc53eaa0b6b1a43030a53c96e2_resized.1024x683.fill.jpg",
+        "license_url": "https://www.m-messe.co.jp/organizers/support/layout/",
+        "license_label": "官方图片使用说明",
+        "credit": "幕张展览馆",
+        "width": 1024,
+        "height": 683,
+        "focus": "center",
+        "usage": "官方设施图库公开图片，用于介绍场馆；保留原图色调及完整主体。"
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8119969245783251126",
+        "place_name": "Makuhari Event Hall",
+        "source_url": "https://maps.google.com/maps?cid=8119969245783251126&output=embed",
+        "scope": "venue"
+      }
+    },
+    "venue-new-pier-hall": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=7953969772587721852",
+        "place_name": "New Pier Hall, ニューピア竹芝ノースタワ 1 Chome-11-1 Kaigan, Minato City, Tokyo 105-0022, Japan",
+        "source_url": "https://maps.google.com/maps?q=NEW+PIER+HALL&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "NEW PIER HALL",
+      "name_en": "NEW PIER HALL",
+      "description_zh": "位于东京都港区海岸一丁目，新码头竹芝北塔内的多功能大厅。",
+      "access_zh": "从百合鸥线竹芝站步行 2 分钟。由 JR 或东京单轨电车滨松町站北口步行 7 分钟，由都营大江户线或浅草线大门站 B1 出口步行 8 分钟。",
+      "notes_zh": "座位排号先用数字，后用字母。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.65555519999999,
+        "lng": 139.7636494,
+        "source_url": "http://www.newpier-hall.jp/visitor/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/new-pier-hall.webp",
+        "source_url": "http://www.newpier-hall.jp/",
+        "original_url": "http://www.newpier-hall.jp/img/home/slide/mv1.jpg",
+        "credit": "新码头大厅",
+        "width": 709,
+        "height": 472
+      },
+      "aliases": [
+        "新码头大厅"
+      ],
+      "display_aliases": []
+    },
+    "venue-nhkホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=2365023203218160332",
+        "place_name": "NHK Hall, 2 Chome-2-1 Jinnan, Shibuya, Tokyo 150-8001, Japan",
+        "source_url": "https://maps.google.com/maps?q=NHK%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/nhk-hall",
+      "name_en": "NHK Hall",
+      "description_zh": "位于东京都涩谷区的多功能音乐厅，由日建设计负责建筑设计。1972 年 11 月竣工，1973 年 6 月 20 日正式启用，此前已用于电视公开录制。初代音乐厅位于 NHK 东京广播会馆。现馆由 NHK 服务中心运营，也是 NHK 交响乐团的主要演出场地。",
+      "capacity_zh": [
+        "3,601 席（固定席 3,400 席、可动及辅助席 201 席）"
+      ],
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html",
+        "capacity": 3601,
+        "capacity_unit": "seats",
+        "capacity_source": {
+          "kind": "official",
+          "label": "NHK 音乐厅设施资料",
+          "url": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html"
+        },
+        "phone": "03-3465-1751",
+        "access_url": "https://www.nhk-fdn.or.jp/nhk_hall/access.html",
+        "seat_map_url": "https://www.nhk-fdn.or.jp/nhk_hall/seat.html"
+      },
+      "name_original": "NHKホール",
+      "access_zh": "JR 山手线原宿站、东京地铁明治神宫前站 2 号出口步行约 10 分钟。涩谷站、代代木公园站步行约 15 分钟。由代代木公园榉树步道一侧进入。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html"
+        },
+        {
+          "kind": "official",
+          "url": "https://www.nhkso.or.jp/concert/hall/nhkhall/"
+        }
+      ],
+      "location": {
+        "lat": 35.6663475,
+        "lng": 139.69737244,
+        "source_url": "https://www.nhkso.or.jp/concert/hall/nhkhall/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/nhk-hall.webp",
+        "source_url": "https://www.nhk-fdn.or.jp/nhk_hall/hall.html",
+        "original_url": "https://www.nhk-fdn.or.jp/nhk_hall/img/hall_photo_06.jpg",
+        "credit": "NHKホール",
+        "width": 640,
+        "height": 360
+      }
+    },
+    "venue-northern-horsepark-main-arena": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=16189220728075276834",
+        "place_name": "Northern Horse Park, 114-7 Misawa, Tomakomai, Hokkaido 059-1361, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF+%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "complex"
+      },
+      "name_zh": "Northern Horse Park 主竞技场",
+      "name_original": "メインアリーナ",
+      "name_en": "Northern Horse Park Main Arena",
+      "description_zh": "位于 Northern Horse Park 的骑乘区，举办北方大师马术赛。2026 年 8 月 1 日的活动第一部在此举行。",
+      "venue_type": "马术竞技场",
+      "access_zh": "从新千岁机场可乘园区免费接驳巴士，时刻见交通指南。",
+      "parking_zh": "园区有 500 个免费车位。",
+      "facts": {
+        "official_url": "https://www.northern-horsepark.jp/northernm_hs/",
+        "address": "北海道苫小牧市美沢114-7",
+        "phone": "0144-58-2116",
+        "access_url": "https://www.northern-horsepark.jp/access/"
+      },
+      "location": {
+        "lat": 42.778694,
+        "lng": 141.739076,
+        "source_url": "https://www.northern-horsepark.jp/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "source_url": "https://uma-furusato.com/news/91018.html",
+        "original_url": "https://uma-furusato.com/archives/011/202103/copy_2l-a978cc5c7b284836dc4be84c334fc77b25e3a903a01cb64a1bdbfba7deec65f7.jpg",
+        "credit": "竞走马故乡向导所",
+        "width": 800,
+        "height": 600,
+        "path": "/uma_tools/img/venues/northern-main-arena.webp"
+      },
+      "aliases": [
+        "北方马匹公园主竞技场"
+      ],
+      "display_aliases": []
+    },
+    "venue-peacock-theater": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=14347754949373382415",
+        "place_name": "Peacock Theater, 777 Chick Hearn Ct, Los Angeles, CA 90015, United States",
+        "source_url": "https://maps.google.com/maps?q=Peacock+Theater&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "Peacock Theater",
+      "name_en": "Peacock Theater",
+      "name_history_zh": [
+        "Nokia Theatre",
+        "Microsoft Theater"
+      ],
+      "venue_type": "展演空间",
+      "description_zh": "位于洛杉矶市中心 L.A. LIVE 的演出剧院，毗邻洛杉矶会议中心与 Crypto.com Arena。",
+      "name_original": "Peacock Theater",
+      "location": {
+        "lat": 34.0444,
+        "lng": -118.2675,
+        "source_url": "https://en.wikipedia.org/wiki/Peacock_Theater",
+        "scope": "building"
+      },
+      "facts": {
+        "address": "777 Chick Hearn Court, Los Angeles, CA 90015",
+        "access_url": "https://www.peacocktheater.com/directions"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/peacock-theater.webp",
+        "source_url": "https://www.peacocktheater.com/venue-info/about-us",
+        "original_url": "https://www.peacocktheater.com/assets/img/Peacock-Theater-0869f48b96.jpg",
+        "credit": "Peacock Theater",
+        "width": 1130,
+        "height": 665
+      },
+      "aliases": [
+        "孔雀剧院"
+      ],
+      "display_aliases": []
+    },
+    "venue-tbs放送センタ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=16849467097889060786",
+        "place_name": "Japan, 〒107-0052 Tokyo, Minato City, Akasaka, 5 Chome−3−6 TBS放送センター",
+        "source_url": "https://maps.google.com/maps?q=TBS%E6%94%BE%E9%80%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%B5%A4%E5%9D%825%E4%B8%81%E7%9B%AE3%E2%88%926&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "TBS Broadcasting Center",
+      "description_zh": "位于东京都港区赤坂，通称 Big Hat。大楼归 TBS 控股所有，设有 TBS 电视台和 TBS 广播电台的总部办公室及演播室。按建筑总面积，在东京主要电视台的总部大楼中位列第三，仅次于 FCG 大楼和日本电视台大厦。",
+      "venue_type": "广播电视设施",
+      "facts": {
+        "official_url": "https://www.tbsact.co.jp/company/access/"
+      },
+      "location": {
+        "lat": 35.6717643737793,
+        "lng": 139.7344665527344,
+        "source_url": "https://ja.wikipedia.org/wiki/TBS%E6%94%BE%E9%80%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+        "retrieved_from": "https://ja.dbpedia.org/data/TBS放送センター.json",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://www.nikkansports.com/entertainment/photonews/photonews_nsInc_202209280000762-0.html",
+        "original_url": "https://www.nikkansports.com/entertainment/news/img/202209280000762-w1300_0.jpg",
+        "credit": "日刊体育",
+        "width": 1300,
+        "height": 1015,
+        "path": "/uma_tools/img/venues/tbs-broadcasting-center.webp"
+      }
+    },
+    "venue-the-grand-hall": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15070282136339400766",
+        "place_name": "Shinagawa The Grand Hall, Shinagawa Grand Central Tower, 3F 2 Chome-16-4 Konan, Minato City, Tokyo 108-0075, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%93%81%E5%B7%9D+%E3%82%B6%E3%83%BB%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "THE GRAND HALL 品川",
+      "name_en": "THE GRAND HALL",
+      "access_zh": "由 JR 品川站港南口步行 3 分钟，由京急品川站步行 8 分钟。",
+      "venue_type": "展演空间",
+      "description_zh": "位于东京品川的活动大厅，从品川站港南口可步行到达。",
+      "facts": {
+        "phone": "03-5463-9971",
+        "access_url": "https://tg-hall.com/access"
+      },
+      "location": {
+        "lat": 35.626638,
+        "lng": 139.7405616,
+        "source_url": "https://tg-hall.com/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/the-grand-hall.webp",
+        "source_url": "https://tg-hall.com/",
+        "original_url": "https://tg-hall.com/hubfs/image/basic/hall_theater09_1280_800.jpg",
+        "credit": "品川大礼堂",
+        "width": 1280,
+        "height": 960
+      },
+      "aliases": [
+        "品川大礼堂"
+      ],
+      "display_aliases": []
+    },
+    "venue-tohoシネマズ六本木ヒルズ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=10216858254958247403",
+        "place_name": "TOHO Cinemas Roppongi Hills, 六本木ヒルズ Keyakizaka Complex, 6 Chome-10-2 Roppongi, Minato City, Tokyo 106-0032, Japan",
+        "source_url": "https://maps.google.com/maps?q=TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%83%92%E3%83%AB%E3%82%BA&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "TOHO Cinemas 六本木 Hills",
+      "name_en": "TOHO Cinemas Roppongi Hills",
+      "access_zh": "日比谷线六本木站 1C 出口步行 3 分钟，大江户线六本木站 3 号出口步行 6 分钟。也可由大江户线麻布十番站 7 号出口步行 8 分钟、千代田线乃木坂站 5 号出口步行 10 分钟，或南北线麻布十番站 4 号出口步行 11 分钟。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.tohotheater.jp/theater/009/"
+      },
+      "location": {
+        "lat": 35.6599131,
+        "lng": 139.7297326,
+        "source_url": "https://www.tohotheater.jp/theater/009/access.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://lp.p.pia.jp/venue/theater/13/2/6/11546/photo-gallery/index.html?id=2",
+        "original_url": "https://lp.p.pia.jp/shared/materials/8bf771c0-c157-459d-a8cf-6a948c1d5bde/origin.jpg",
+        "credit": "ぴあ映画",
+        "width": 1200,
+        "height": 800,
+        "path": "/uma_tools/img/venues/toho-roppongi.webp"
+      },
+      "aliases": [
+        "TOHO 影院六本木新城店"
+      ],
+      "display_aliases": []
+    },
+    "venue-tohoシネマズ新宿": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5627263652638490600",
+        "place_name": "TOHO Cinemas Shinjuku, Shinjuku Toho Building, ３階 1 Chome-19-1 Kabukicho, Shinjuku City, Tokyo 160-0021, Japan",
+        "source_url": "https://maps.google.com/maps?q=TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%96%B0%E5%AE%BF&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "TOHO Cinemas 新宿",
+      "name_en": "TOHO Cinemas Shinjuku",
+      "access_zh": "由 JR 新宿站东口步行 5 分钟，或由西武新宿线西武新宿站步行 3 分钟。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.tohotheater.jp/theater/076/"
+      },
+      "description_zh": "位于新宿东宝大楼的多厅影院。",
+      "location": {
+        "lat": 35.6951588,
+        "lng": 139.7020539,
+        "source_url": "https://www.tohotheater.jp/theater/076/access.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://sidelongglancesofapigeonkicker.blogspot.com/2015/04/toho-cinemas-opens-in-shinjuku-godzilla.html",
+        "original_url": "https://3.bp.blogspot.com/-6anwcYHXH_0/VTD_nPER2hI/AAAAAAAAEK0/Qy74NfPEAZc/s1600/P4170013.JPG",
+        "credit": "Brett Homenick",
+        "width": 1200,
+        "height": 1600,
+        "path": "/uma_tools/img/venues/toho-shinjuku.webp"
+      },
+      "aliases": [
+        "TOHO 影院新宿店"
+      ],
+      "display_aliases": []
+    },
+    "venue-tohoシネマズ日比谷": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=2545113634289879067",
+        "place_name": "〒100-0006 東京都千代田区有楽町１丁目１−２ ４Ｆ TOHOシネマズ日比谷",
+        "source_url": "https://www.tohotheater.jp/theater/081/access.html",
+        "scope": "venue"
+      },
+      "name_zh": "TOHO Cinemas 日比谷",
+      "name_en": "TOHO Cinemas Hibiya",
+      "access_zh": "可从日比谷线或千代田线日比谷站 A4 出口经地下通道抵达。也可由丸之内线或银座线银座站 C1 出口、有乐町线有乐町站 D4 出口或 JR 有乐町站中央西口前往。",
+      "notes_zh": "1 至 11 号厅位于东京中城日比谷 4 层（有乐町 1-1-2）。12 号厅原为 Scala-za，13 号厅原为御幸座，均位于东京宝冢大厦地下 1 层（有乐町 1-1-3）。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.tohotheater.jp/theater/081/",
+        "screen_count": 13,
+        "access_url": "https://www.tohotheater.jp/theater/081/access.html"
+      },
+      "description_zh": "由 TOHO Cinemas 运营的多厅影院，分布于东京中城日比谷和东京宝冢大厦。",
+      "location": {
+        "lat": 35.6737436,
+        "lng": 139.7591762,
+        "source_url": "https://www.tohotheater.jp/theater/081/access.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://www.enjoytokyo.jp/article/109548/",
+        "original_url": "https://rstatic.enjoytokyo.jp/assets/images/article/01/5959/1778139.jpg?1724998007=&p=t&w=1800",
+        "credit": "レッツエンジョイ東京",
+        "width": 1350,
+        "height": 900,
+        "path": "/uma_tools/img/venues/toho-hibiya.webp"
+      },
+      "aliases": [
+        "TOHO 影院日比谷店"
+      ],
+      "display_aliases": []
+    },
+    "venue-tohoシネマズ日比谷-スクリ-ン12-旧-tohoシネマズスカラ座": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=14042509496444648189",
+        "place_name": "TOHO Cinemas Hibiya, Screen 12, 13, Tokyo Takarazuka Building, B1 1 Chome-1-3 Yurakucho, Chiyoda City, Tokyo 100-0006, Japan",
+        "source_url": "https://maps.google.com/maps?q=TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E6%97%A5%E6%AF%94%E8%B0%B7+%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B312&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "TOHO Cinemas 日比谷 12 号厅",
+      "name_en": "TOHO Cinemas Hibiya Screen 12",
+      "aliases": [
+        "日比谷斯卡拉座",
+        "TOHO 影院斯卡拉座",
+        "TOHO 影院日比谷 12 号厅"
+      ],
+      "access_zh": "12、13 号厅位于东京宝冢大厦地下。可从日比谷线或千代田线日比谷站 A4 出口经地下通道抵达，也可从丸之内线或银座线银座站 C1 出口、有乐町线有乐町站 D4 出口或 JR 有乐町站中央西口前往。",
+      "notes_zh": "原日比谷 Scala-za 于 2000 年 12 月 16 日重建开业，2009 年 2 月 3 日改称 TOHO Cinemas Scala-za，2018 年 3 月 29 日改为现名。相邻的 13 号厅原为御幸座。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.tohotheater.jp/theater/081/",
+        "access_url": "https://www.tohotheater.jp/theater/081/access.html"
+      },
+      "name_original": "TOHOシネマズ日比谷 スクリーン12",
+      "description_zh": "TOHO Cinemas 日比谷 12 号厅，位于东京宝冢大厦地下，前身为日比谷 Scala-za。",
+      "location": {
+        "lat": 35.6729863,
+        "lng": 139.7590572,
+        "source_url": "https://www.tohotheater.jp/theater/081/access.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://maruna0817.info/8945.html",
+        "original_url": "https://maruna0817.info/wp-content/uploads/2019/10/90cf2336f0020230af73be06fe809cd7.jpg",
+        "credit": "キネマフリーク",
+        "width": 675,
+        "height": 455,
+        "path": "/uma_tools/img/venues/toho-hibiya-screen12.webp"
+      },
+      "display_aliases": [
+        "日比谷 Scala-za",
+        "TOHO Cinemas Scala-za"
+      ]
+    },
+    "venue-tohoシネマズすすきの": {
+      "photo": {
+        "path": "/uma_tools/img/venues/toho-susukino.webp",
+        "source_url": "https://www.tohocinemas.co.jp/recruit/story/open/susukino.html",
+        "original_url": "https://www.tohocinemas.co.jp/recruit/shared/images/under/story/img_susukino_23.png",
+        "credit": "TOHO Cinemas",
+        "width": 1229,
+        "height": 553
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=12991622071705011317",
+        "place_name": "TOHO CINEMAS Susukino, 4 Chome-１−番地 Minami 4 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0804, Japan",
+        "source_url": "https://maps.google.com/maps?q=TOHO%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%BA%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "TOHO Cinemas 薄野",
+      "name_en": "TOHO Cinemas Susukino",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.tohotheater.jp/theater/089/"
+      },
+      "location": {
+        "lat": 43.0552629,
+        "lng": 141.3526939,
+        "source_url": "https://www.tohotheater.jp/theater/089/access.html",
+        "scope": "building"
+      },
+      "aliases": [
+        "TOHO 影院薄野店"
+      ],
+      "display_aliases": []
+    },
+    "venue-tokyo-dome-city-hall": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=2269660560407380733",
+        "place_name": "Kanadevia Hall, 東京ドームミーツポート 1F 1 Chome-3-61 Koraku, Bunkyo City, Tokyo 112-0004, Japan",
+        "source_url": "https://maps.google.com/maps?q=Kanadevia+Hall&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/kanadevia-hall",
+      "name_zh": "Kanadevia Hall",
+      "name_en": "Kanadevia Hall",
+      "venue_type": "展演空间",
+      "name_original": "Kanadevia Hall",
+      "aliases": [
+        "TOKYO DOME CITY HALL",
+        "东京巨蛋城剧场"
+      ],
+      "description_zh": "位于东京巨蛋城的室内演出场馆，可举办音乐会、舞台演出及体育活动。",
+      "search_aliases": [
+        "TDC Hall",
+        "TDCホール"
+      ],
+      "location": {
+        "lat": 35.7033641,
+        "lng": 139.7542192,
+        "source_url": "https://www.tokyo-dome.co.jp/tdc-hall/access/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/kanadevia-hall.webp",
+        "source_url": "https://www.tokyo-dome.co.jp/tdc-hall",
+        "original_url": "https://www.tokyo-dome.co.jp/themes/common/img/tdc-hall/index-image-5.webp",
+        "credit": "东京巨蛋城剧场",
+        "width": 1280,
+        "height": 720
+      },
+      "display_aliases": [
+        "TOKYO DOME CITY HALL",
+        "TDC Hall"
+      ]
+    },
+    "venue-tsutaya三軒茶屋店": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11424057307802149757",
+        "place_name": "TSUTAYA Sangenjaya, キャロットタワ ２Ｆ, 4 Chome-1-1 Taishido, Setagaya City, Tokyo 154-0004, Japan",
+        "source_url": "https://maps.google.com/maps?q=TSUTAYA%E4%B8%89%E8%BB%92%E8%8C%B6%E5%B1%8B%E5%BA%97&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.6438236,
+        "lng": 139.6692852,
+        "source_url": "https://www.google.com/maps?cid=11424057307802149757",
+        "scope": "building"
+      },
+      "access_zh": "与东急田园都市线、世田谷线三轩茶屋站相连，步行约 1 分钟。",
+      "venue_type": "门店",
+      "facts": {
+        "official_url": ""
+      },
+      "photo": {
+        "source_url": "https://note.com/pitacat3/n/n4cc840787c4c",
+        "original_url": "https://assets.st-note.com/production/uploads/images/243674597/de118bdb408906b2f5a016a3d839f133.jpg",
+        "credit": "ぴたぴた",
+        "width": 5760,
+        "height": 3013,
+        "path": "/uma_tools/img/venues/tsutaya-sangenjaya.webp"
+      }
+    },
+    "venue-twtc-hall-1-台北世界貿易中心展覽一館-世貿一館-台北世界貿易センタ-展示ホ-ル1号館": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9005257277865912694",
+        "place_name": "Taipei World Trade Center, No. 5, Section 5, Xinyi Rd, Xicun Village, Xinyi District, Taipei City, Taiwan 110",
+        "source_url": "https://maps.google.com/maps?q=%E5%8F%B0%E5%8C%97%E4%B8%96%E7%95%8C%E8%B2%BF%E6%98%93%E4%B8%AD%E5%BF%83%E5%B1%95%E8%A6%BD%E4%B8%80%E9%A4%A8&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "台北世界贸易中心展览一馆",
+      "name_en": "TWTC Hall 1",
+      "aliases": [
+        "台北世贸一馆",
+        "世贸一馆"
+      ],
+      "venue_type": "会展中心",
+      "facts": {
+        "official_url": "https://www.twtc.org.tw/",
+        "address": "臺北市信義區信義路五段5號"
+      },
+      "name_original": "台北世界貿易中心展覽一館",
+      "description_zh": "位于台北信义区，由台湾贸易中心运营的展览场馆，亦称世贸一馆。",
+      "location": {
+        "lat": 25.033765,
+        "lng": 121.56238,
+        "source_url": "https://eng.taiwan.net.tw/m1.aspx?id=A12-00415&sNo=0002090",
+        "scope": "building"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.twtc.org.tw/"
+        }
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/twtc-hall-1.webp",
+        "source_url": "https://www.twtc.org.tw/en/about",
+        "original_url": "https://www.twtc.org.tw/img/about/1F展場圖_2.JPG",
+        "credit": "台北世界贸易中心",
+        "width": 800,
+        "height": 531
+      }
+    },
+    "venue-うみかぜ公園": {
+      "photo": {
+        "path": "/uma_tools/img/venues/umikaze-park.webp",
+        "source_url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html",
+        "original_url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/images/fc00000441.jpg",
+        "credit": "横须贺市",
+        "width": 246,
+        "height": 167
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=17884708620812720369",
+        "place_name": "Umikaze Park, 3 Chome-２３ Heiseicho, Yokosuka, Kanagawa 238-0013, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%81%86%E3%81%BF%E3%81%8B%E3%81%9C%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "venue"
+      },
+      "description_zh": "神奈川县横须贺市平成町的港湾绿地，位于横须贺新港东南约 1.5 公里处，可近望猿岛和东京湾。",
+      "venue_type": "公园",
+      "facts": {
+        "official_url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html",
+        "address": "〒238-0013 神奈川県横須賀市平成町3-23",
+        "phone": "046-826-2899"
+      },
+      "access_zh": "京急县立大学站步行约 15 分钟。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html"
+        }
+      ],
+      "location": {
+        "lat": 35.2766951067561,
+        "lng": 139.68332243496,
+        "source_url": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html",
+        "scope": "complex"
+      }
+    },
+    "venue-さいたまス-パ-アリ-ナ": {
+      "photo": {
+        "path": "/uma_tools/img/venues/saitama-super-arena.webp",
+        "source_url": "https://www.atpress.ne.jp/news/418184",
+        "original_url": "https://www.atpress.ne.jp/releases/418184/LL_img_418184_6.jpg?format=webp&ts=1734873932",
+        "credit": "埼玉竞技场株式会社",
+        "width": 840,
+        "height": 542
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5795035645996205213",
+        "place_name": "GMO Arena Saitama, 8 Shintoshin, Chuo Ward, Saitama, 330-0081, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/saitama-super-arena",
+      "name_en": "Saitama Super Arena",
+      "description_zh": "位于埼玉县埼玉市中央区的多功能竞技场。",
+      "capacity_zh": [
+        "竞技场模式约 22,500 人"
+      ],
+      "venue_type": "竞技场",
+      "facts": {
+        "official_url": "https://www.saitama-arena.co.jp/arena/",
+        "access_url": "https://www.saitama-arena.co.jp/access/"
+      },
+      "location": {
+        "lat": 35.895081,
+        "lng": 139.6307319,
+        "source_url": "https://www.saitama-arena.co.jp/access/",
+        "scope": "building"
+      },
+      "search_aliases": [
+        "SSA",
+        "埼玉超级竞技场",
+        "埼玉超級競技場",
+        "たまアリ"
+      ]
+    },
+    "venue-しんまちボ-ドウォ-ク-パラソルショップ": {
+      "photo": {
+        "path": "/uma_tools/img/venues/shinmachi-boardwalk.webp",
+        "source_url": "https://www.city.tokushima.tokushima.jp/kankou/keikan/board_walk.html",
+        "original_url": "https://www.city.tokushima.tokushima.jp/kankou/keikan/board_walk.images/shinmachigawa1.jpg",
+        "credit": "德岛市",
+        "width": 300,
+        "height": 300
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8696566371092072553",
+        "place_name": "Shimmachi Board Walk, 1 Chome Higashisenbacho, Tokushima, 770-0911, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%81%97%E3%82%93%E3%81%BE%E3%81%A1%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "新町木板步道阳伞商店区",
+      "description_zh": "沿德岛市中心的新町川河岸铺设的木板步道。",
+      "notes_zh": "步道全长 350 米，与新町川水际公园隔河相望。",
+      "venue_type": "公园",
+      "location": {
+        "lat": 34.07051467895508,
+        "lng": 134.5489959716797,
+        "source_url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%93%E3%81%BE%E3%81%A1%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF",
+        "retrieved_from": "https://ja.dbpedia.org/data/しんまちボードウォーク.json",
+        "scope": "complex"
+      }
+    },
+    "venue-ぴあアリ-ナmm": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=3511454377714437328",
+        "place_name": "Pia Arena MM, 3 Chome-2-2-2 Minatomirai, Nishi Ward, Yokohama, Kanagawa 220-0012, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%81%B4%E3%81%82%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8AMM&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/pia-arena-mm",
+      "name_en": "Pia Arena MM",
+      "description_zh": "位于神奈川县横滨市西区港未来的音乐演出场馆，由 Pia 株式会社运营，正式定名前曾暂称 Pia MM Arena。",
+      "access_zh": "港未来线港未来站 1 号出口步行 7 分钟，新高岛站 2 号出口步行 8 分钟。JR 樱木町站北检票口东口步行 7 分钟，可搭乘正前方扶梯，经自动步道和二层连廊抵达。JR 横滨站东口步行 18 分钟。",
+      "notes_zh": "一层设 654 个投币储物柜，普通柜 510 个，每次 400 日元。大型柜 144 个，每次 700 日元。",
+      "venue_type": "竞技场",
+      "parking_zh": "会场没有机动车或自行车停车区，建议乘公共交通。",
+      "location": {
+        "lat": 35.455819,
+        "lng": 139.6286459,
+        "source_url": "https://pia-arena-mm.jp/access/index.html",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://pia-arena-mm.jp/access/index.html"
+      },
+      "search_aliases": [
+        "PIA Arena MM",
+        "ぴあMM"
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/pia-arena-mm.webp",
+        "source_url": "https://corporate.pia.jp/business/hall/index.html",
+        "original_url": "https://corporate.pia.jp/business/hall/img/img_02.jpg",
+        "credit": "ぴあ株式会社",
+        "width": 640,
+        "height": 427
+      }
+    },
+    "venue-アニメイト新宿-旧店舗-移転済": {
+      "name_zh": "Animate 新宿旧店",
+      "notes_zh": "旧店已于 2020 年 5 月 17 日结束营业。原店地下 2 层设Animate新宿活动厅。",
+      "venue_type": "门店",
+      "facts": {
+        "official_url": ""
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/animate-shinjuku-old.webp",
+        "source_url": "https://www.animatetimes.com/news/details.php?id=1309548531",
+        "original_url": "https://img.animatetimes.com/news/visual/2011/1309548531_4_1.jpg",
+        "credit": "Animate Times",
+        "width": 480,
+        "height": 360
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5984524990855467538",
+        "place_name": "Japan, 〒160-0022 Tokyo, Shinjuku City, Shinjuku, 3-chōme−17−17 新宿3丁目共同ビル",
+        "source_url": "https://maps.google.com/maps?q=%E6%96%B0%E5%AE%BF3-17-17&output=embed",
+        "scope": "historic_building",
+        "label_zh": "旧店原址",
+        "note_zh": "地图入口指向旧店所在的新宿三丁目共同大楼。"
+      },
+      "location": {
+        "lat": 35.6924756,
+        "lng": 139.7033786,
+        "source_url": "https://maps.google.com/maps?q=%E6%96%B0%E5%AE%BF3-17-17&output=embed",
+        "scope": "building"
+      },
+      "aliases": [
+        "Animate新宿旧店"
+      ],
+      "display_aliases": [
+        "Animate新宿旧店"
+      ]
+    },
+    "venue-アニメイト池袋本店-b2f-アニメイトシアタ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=14192314007080669234",
+        "place_name": "animate Theater, Ｂ２Ｆ 1 Chome-20-7 Higashiikebukuro, Toshima City, Tokyo 170-0013, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%A4%E3%83%88%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "Animate 池袋本店剧场",
+      "capacity_zh": [
+        "坐席 208 席",
+        "站席 340 人"
+      ],
+      "access_zh": "从池袋站东口步行约 5 分钟。",
+      "notes_zh": "这是Animate首个舞台设施。",
+      "venue_type": "展演空间",
+      "name_original": "アニメイトシアター",
+      "description_zh": "位于Animate池袋本店地下 2 层的多功能剧场，可举办舞台剧、朗读剧和访谈。",
+      "location": {
+        "lat": 35.7311443,
+        "lng": 139.7154592,
+        "source_url": "https://www.animate.co.jp/shop/ikebukuro/access/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.animate.co.jp/shop/ikebukuro/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/animate-theater.webp",
+        "source_url": "https://www.animate.co.jp/theater/",
+        "original_url": "https://www.animate.co.jp/assets/img/theater/index/hero.jpg",
+        "credit": "Animate池袋本店剧场",
+        "width": 1920,
+        "height": 946
+      },
+      "aliases": [
+        "Animate池袋本店剧场"
+      ],
+      "display_aliases": [
+        "Animate池袋本店剧场"
+      ]
+    },
+    "venue-ディファ有明": {
+      "name_zh": "Differ 有明",
+      "name_en": "Differ Ariake",
+      "description_zh": "位于东京都江东区有明，2000 年以日本首座格斗专用竞技场的定位开馆，2018 年 6 月 30 日结束营业。职业摔角团体 NOAH 的总部、训练场和宿舍曾设于此，直至 2016 年 12 月。改建前，这栋建筑曾是演出场馆兼迪斯科舞厅 MZA 有明。原址由土地所有者东武铁道改为东武有明场地，2020 年夏季启用。",
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": ""
+      },
+      "location": {
+        "lat": 35.63872146606445,
+        "lng": 139.7892150878906,
+        "source_url": "https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E6%9C%89%E6%98%8E",
+        "retrieved_from": "https://ja.dbpedia.org/data/ディファ有明.json",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://www.trackpacking.com/v/index/4b7375b3f964a5209baf2de3",
+        "original_url": "https://fastly.4sqi.net/img/general/1200x800/111780386_Aq-56KCxUryS6OX-Lp7Sdwpvpqsr_eLGSdxuA7ODqFM.jpg",
+        "credit": "Foursquare / Trackpacking",
+        "width": 1200,
+        "height": 800,
+        "path": "/uma_tools/img/venues/differ-ariake.webp"
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=4219456200431549176",
+        "place_name": "Japan, 〒135-0063 Tokyo, Koto City, Ariake, 1-chōme−3−28 有明住宅公園",
+        "source_url": "https://maps.google.com/maps?q=%E6%9C%89%E6%98%8E%E4%BD%8F%E5%AE%85%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "historic_site",
+        "label_zh": "会场原址",
+        "note_zh": "原会场已拆除；地图入口指向原址现有的有明住宅公园。"
+      },
+      "aliases": [
+        "迪法有明"
+      ],
+      "display_aliases": []
+    },
+    "venue-ノ-ザンホ-スパ-ク": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=16189220728075276834",
+        "place_name": "Northern Horse Park, 114-7 Misawa, Tomakomai, Hokkaido 059-1361, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%8E%E3%83%BC%E3%82%B6%E3%83%B3%E3%83%9B%E3%83%BC%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "Northern Horse Park",
+      "name_en": "Northern Horse Park",
+      "description_zh": "位于北海道苫小牧市美泽，由社台集团旗下的 Northern Horse Park 公司经营，1989 年 7 月开园，占地 478,982 平方米。园内提供骑马、马车、矮马表演和马蹄铁手作等体验，并设有餐厅和商店。每年 7 月的精选赛马拍卖会在这里举行。烧烤屋于 2007 年开业，礼拜堂和宴会餐厅于 2011 年开业。",
+      "access_zh": "新千岁机场有免费接驳巴士。",
+      "parking_zh": "园区有 500 个免费车位。",
+      "venue_type": "公园",
+      "location": {
+        "lat": 42.778694,
+        "lng": 141.739076,
+        "source_url": "https://www.northern-horsepark.jp/access/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.northern-horsepark.jp/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/northern-horsepark.webp",
+        "source_url": "https://www.northern-horsepark.jp/",
+        "original_url": "https://www.northern-horsepark.jp/img/top/img_main02.jpg",
+        "credit": "北方马匹公园",
+        "width": 1400,
+        "height": 674
+      },
+      "aliases": [
+        "北方马匹公园"
+      ],
+      "display_aliases": []
+    },
+    "venue-マリンメッセ福岡b館": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=4556051629205090581",
+        "place_name": "Marine Messe Fukuoka Hall B, 2-1 Okihamamachi, Hakata Ward, Fukuoka, 812-0031, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E7%A6%8F%E5%B2%A1B%E9%A4%A8&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 33.6065023,
+        "lng": 130.4037394,
+        "source_url": "https://www.google.com/maps?cid=4556051629205090581",
+        "scope": "building"
+      },
+      "name_zh": "Marine Messe 福冈 B 馆",
+      "name_en": "Marine Messe Fukuoka Hall B",
+      "description_zh": "位于福冈市博多区冲滨町，是福冈市的音乐厅和会展设施，由福冈会展中心受托运营。原馆于 2019 年 10 月改称 A 馆，B 馆于 2021 年 4 月 1 日开馆。",
+      "access_zh": "从博多站西日本都市银行前 F 站台乘西铁 88 路，开往中央码头，约 15 分钟。由天神 Solaria Stage 前 2A 站台乘西铁 80 路，约 12 分钟。两路均在 Marine Messe 前站下车即到。",
+      "venue_type": "展演空间",
+      "name_original": "マリンメッセ福岡B館",
+      "photo": {
+        "path": "/uma_tools/img/venues/marine-messe-b.webp",
+        "source_url": "https://www.marinemesse.or.jp/messe-b/",
+        "original_url": "https://storage.googleapis.com/studio-design-asset-files/projects/YPqr7Q7ka5/s-2121x1402_v-frms_webp_458012b0-0a4d-42c6-b1ac-519ce9695e58.webp",
+        "credit": "福冈会展中心",
+        "width": 2121,
+        "height": 1402
+      }
+    },
+    "venue-ユナイテッド-シネマ-アクアシティお台場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1663742865851609624",
+        "place_name": "United Cinemas Aqua City Odaiba, アクアシティ お台場 1F 1 Chome-7-1 Daiba, Minato City, Tokyo 135-0091, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%A6%E3%83%8A%E3%82%A4%E3%83%86%E3%83%83%E3%83%89%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E+%E3%82%A2%E3%82%AF%E3%82%A2%E3%82%B7%E3%83%86%E3%82%A3%E3%81%8A%E5%8F%B0%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "United Cinemas Aqua City 台场",
+      "name_en": "United Cinemas Aqua City Odaiba",
+      "access_zh": "百合鸥线台场站步行 1 分钟，临海线东京电讯港站步行 6 分钟。",
+      "notes_zh": "前身 Cinema Mediage 于 2000 年 4 月 22 日开业、2017 年 2 月 23 日关闭。联合影院于 2017 年 4 月 29 日在此开业。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.unitedcinemas.jp/odaiba/about_facilities.html",
+        "access_url": "https://www.unitedcinemas.jp/odaiba/about-theater.html"
+      },
+      "description_zh": "台场 Aqua City 商场内的多厅影院。13 个影厅中，8 号厅设 4DX，13 号厅设 ScreenX。",
+      "location": {
+        "lat": 35.6278192,
+        "lng": 139.7735683,
+        "source_url": "https://www.unitedcinemas.jp/odaiba/about-theater.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://prtimes.jp/main/html/rd/p/000000332.000034304.html",
+        "original_url": "https://prcdn.freetls.fastly.net/release_image/34304/332/34304-332-c6502f4d31679e31358e4feb35ddab60-2000x1333.jpg?auto=webp&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
+        "credit": "ローソンエンタテインメント",
+        "width": 1950,
+        "height": 1300,
+        "path": "/uma_tools/img/venues/united-cinemas-odaiba.webp"
+      },
+      "aliases": [
+        "台场 Aqua City 联合影院"
+      ],
+      "display_aliases": []
+    },
+    "venue-中山競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=17105272901934026023",
+        "place_name": "Nakayama Racecourse, 1 Chome-1-1 Kosaku, Funabashi, Chiba 273-0037, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E4%B8%AD%E5%B1%B1%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Nakayama Racecourse",
+      "description_zh": "由日本中央竞马会经营，位于千叶县船桥市，部分用地跨入市川市。它与东京、阪神、京都并列日本四大主要赛马场，举办有马纪念、皋月赏、短途马锦标和希望锦标等一级赛。有马纪念在国际赛马组织联盟公布的 2020 年世界百大一级赛中排名世界第十、日本第四，单场投注额曾达到约 875 亿日元并获吉尼斯世界纪录。",
+      "access_zh": "从 JR 船桥法典站经设有自动步道的专用地下通道步行约 10 分钟。地下通道从开门开放至 17:20，临时检票口开放时间为 8:00 至 17:30。由 JR 西船桥站乘巴士约 15 分钟或步行约 30 分钟，由京成东中山站乘巴士约 10 分钟或步行约 20 分钟。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 35.72591666666667,
+        "lng": 139.96241666666666,
+        "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+        "retrieved_from": "https://ja.dbpedia.org/data/中山競馬場.json",
+        "scope": "complex"
+      },
+      "photo": {
+        "source_url": "https://note.com/cool_iguana9030/n/n4c1a8871fe85",
+        "original_url": "https://assets.st-note.com/img/1767963329-h27vBS694ckJNpHaLuX8mljO.jpg?width=1200",
+        "credit": "あおなし",
+        "width": 1200,
+        "height": 900,
+        "path": "/uma_tools/img/venues/nakayama-racecourse.webp"
+      }
+    },
+    "venue-伊香立公園": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11224261392231514250",
+        "place_name": "Ikadachi Park, 4 Yamayurinooka, Otsu, Shiga 520-0357, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E4%BC%8A%E9%A6%99%E7%AB%8B%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "venue"
+      },
+      "access_zh": "在坚田站 3 号站台乘江若交通堅田葛川线 51、54、57 或 59 路，在伊香立诊疗所前站下车，步行约 2 分钟。",
+      "venue_type": "公园",
+      "location": {
+        "lat": 35.1377512,
+        "lng": 135.8843465,
+        "source_url": "https://otsukoen.org/ikadachi-park/access/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://otsukoen.org/ikadachi-park/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/ikadachi-park.webp",
+        "source_url": "https://otsukoen.org/ikadachi-park/facilities/",
+        "original_url": "https://otsukoen.org/ikadachi-park/wp-content/uploads/2023/12/IMG_2043-1-1536x1152.jpg",
+        "credit": "大津市公园绿地协会",
+        "width": 1536,
+        "height": 1152
+      }
+    },
+    "venue-佐久市駒場公園": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=4752659027039062900",
+        "place_name": "Komaba Park, 字丸山-55番地 Sarukubo, Saku, Nagano 385-0011, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E4%BD%90%E4%B9%85%E5%B8%82%E9%A7%92%E5%A0%B4%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "venue"
+      },
+      "access_zh": "从 JR 小海线北中込站步行约 15 分钟，或由北陆新干线佐久平站乘出租车约 10 分钟。",
+      "parking_zh": "北侧第 1 停车场 238 个车位，南侧第 2 停车场 300 个车位。",
+      "venue_type": "公园",
+      "facts": {
+        "official_url": "https://www.city.saku.nagano.jp/shisetsu/koen/saku/komaba.html",
+        "address": "長野県佐久市猿久保字丸山55",
+        "seat_map_url": ""
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/komaba-park.webp",
+        "source_url": "https://openphoto.app/photo/31009",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "license_label": "CC BY 4.0",
+        "credit": "佐久市 · 2018 年驹场公园",
+        "width": 1920,
+        "height": 1281
+      },
+      "description_zh": "位于佐久市的公共公园，园内设美术馆、体育设施和供户外活动使用的空间。",
+      "references": [
+        {
+          "kind": "official",
+          "label": "园区设施",
+          "url": "https://komabapark-saku.jp/facility/"
+        }
+      ],
+      "location": {
+        "lat": 36.2552096,
+        "lng": 138.4828805,
+        "scope": "complex",
+        "source_url": "https://www.city.saku.nagano.jp/shisetsu/koen/saku/komaba.html"
+      }
+    },
+    "venue-佐賀競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=17109637063387477245",
+        "place_name": "Saga Horse Racetrack, 字西谷-3256-228 Ejimamachi, Tosu, Saga 841-0073, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E4%BD%90%E8%B3%80%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Saga Racecourse",
+      "description_zh": "位于佐贺县鸟栖市的地方赛马场，由佐贺县竞马组合主办，全年赛事以周末为主。赛马场加入 Odds Park，观众席大楼一层设中央赛马场外投注点 J-PLACE 鸟栖。",
+      "access_zh": "从鸟栖站前乘开往目达原、神埼站通方向的西铁 43 路巴士，在赛马场前下车。由 JR 新鸟栖站乘出租车约 10 分钟。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 33.3506433,
+        "lng": 130.4699647,
+        "source_url": "https://www.sagakeiba.net/guide/address/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.sagakeiba.net/guide/address/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/saga-racecourse.webp",
+        "source_url": "https://www.sagakeiba.net/guide/",
+        "original_url": "https://www.sagakeiba.net/wp-content/uploads/2020/11/13091631676842.jpg",
+        "credit": "佐贺县竞马组合",
+        "width": 300,
+        "height": 200
+      }
+    },
+    "venue-台北世界貿易中心": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9005257277865912694",
+        "place_name": "Taipei World Trade Center, No. 5, Section 5, Xinyi Rd, Xicun Village, Xinyi District, Taipei City, Taiwan 110",
+        "source_url": "https://maps.google.com/maps?q=Taipei+World+Trade+Center&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 25.0334826,
+        "lng": 121.562377,
+        "source_url": "https://www.google.com/maps?cid=9005257277865912694",
+        "scope": "building"
+      },
+      "name_en": "Taipei World Trade Center",
+      "description_zh": "位于台北市信义开发区的会展及商业设施。",
+      "venue_type": "会展中心",
+      "facts": {
+        "official_url": ""
+      },
+      "search_aliases": [
+        "台北世贸",
+        "台北世貿",
+        "TWTC"
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/taipei-world-trade-center.webp",
+        "source_url": "https://www.twtc.com.tw/about.aspx",
+        "original_url": "https://www.twtc.com.tw/img/about/4in1.jpg",
+        "credit": "台北世界贸易中心",
+        "width": 478,
+        "height": 513
+      }
+    },
+    "venue-名古屋競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5249093689865916670",
+        "place_name": "Nagoya Racecourse, 1 Komanocho, Yatomi, Aichi 498-0065, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Nagoya Racecourse",
+      "description_zh": "位于爱知县弥富市驹野町 1 番地的地方赛马场。原址在名古屋市港区，2022 年春迁至弥富市，宣传口号为「金鯱赛马 NAGOYA」。",
+      "access_zh": "名古屋赛马举办日，近铁蟹江站和名古屋站有免费接驳车。名古屋站乘车处为名铁巴士中心 4 层 21 号站台。",
+      "notes_zh": "新址于 2022 年 3 月 22 日启用。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 35.0527077,
+        "lng": 136.7834511,
+        "source_url": "https://www.nagoyakeiba.com/access/index.html",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/nagoya-racecourse.webp",
+        "source_url": "https://www.nagoyakeiba.com/guide/information.html",
+        "original_url": "https://www.nagoyakeiba.com/guide/images/guide_info_img02.jpg",
+        "credit": "爱知县竞马组合",
+        "width": 420,
+        "height": 280
+      }
+    },
+    "venue-品川プリンスホテル-ステラボ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=4348770787052835919",
+        "place_name": "Stellar Ball, 4 Chome-10-30 Takanawa, Minato City, Tokyo 108-0074, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%93%81%E5%B7%9D%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB+%E3%82%B9%E3%83%86%E3%83%A9%E3%83%9C%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Stella Ball",
+      "capacity_zh": [
+        "站席布局 1,884 人（1 层站席 1,758 人，2 层露台及贵宾席 126 人）",
+        "坐席布局 876 席（1 层 750 席，2 层露台及贵宾席 126 席）"
+      ],
+      "access_zh": "从品川站高轮口步行 5 分钟，由银杏坡一侧的影院入口进入。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.6276141,
+        "lng": 139.7354645,
+        "source_url": "https://www.princehotels.co.jp/shinagawa/stellarball/",
+        "scope": "complex"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.princehotels.co.jp/shinagawa/stellarball/"
+        }
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/stellar-ball.webp",
+        "source_url": "https://www.princehotels.co.jp/shinagawa/stellarball/floor.html",
+        "original_url": "https://www.princehotels.co.jp/shinagawa/stellarball/images/gallery_4.jpg",
+        "credit": "品川王子大饭店",
+        "width": 1200,
+        "height": 820
+      },
+      "name_zh": "品川王子大饭店 Stella Ball",
+      "display_aliases": []
+    },
+    "venue-園田競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8637601679505879841",
+        "place_name": "Sonoda Racecourse, 2-chome-1-1 Tano, Amagasaki, Hyogo 661-0951, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%9C%92%E7%94%B0%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Sonoda Racecourse",
+      "description_zh": "位于兵库县尼崎市的地方赛马场，由兵库县竞马组合主办。2005 年 8 月接入地方赛马统一电话投注系统 D-Net。这里曾以阿拉伯系赛马赛事闻名，并举办过楠赏全日本阿拉伯优骏。2012 年 9 月装设照明塔后可举办夜赛，直至 2020 年姬路赛马场恢复办赛前，兵库县赛事均在园田举行。",
+      "access_zh": "阪急园田站西北约 50 米处设免费专线站台，车程约 5 分钟。日间赛事通常 9:45 起、夏季赛事 11:30 起、夜间赛事 13:30 起陆续发车。举办园田赛事时，另有从阪神尼崎站北口巴士总站 5 号站台出发，经 JR 尼崎站南口的免费巴士。由阪急园田站步行约 25 分钟。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 34.7664723,
+        "lng": 135.4450351,
+        "source_url": "https://www.sonoda-himeji.jp/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/sonoda-racecourse.webp",
+        "source_url": "https://www.sonoda-himeji.jp/",
+        "original_url": "https://www.sonoda-himeji.jp/common/img/top/bg.jpg",
+        "width": 4032,
+        "height": 3024,
+        "credit": "园田赛马场"
+      }
+    },
+    "venue-大井競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9303212058732455957",
+        "place_name": "Oi Racecourse, 2 Chome-1-2 Katsushima, Shinagawa City, Tokyo 140-0012, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%A4%A7%E4%BA%95%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Ohi Racecourse",
+      "description_zh": "位于东京都品川区胜岛的地方赛马场，由东京都竞马株式会社持有，特别区竞马组合租用，并以东京城市赛马（TCK）的名称办赛。它与川崎、浦和、船桥赛马场共同组成南关东公营赛马，亦加入 SPAT4。",
+      "access_zh": "从东京单轨电车大井赛马场前站步行 2 分钟，该站停靠区间快速列车。从京急立会川站步行 12 分钟，该站停靠机场急行列车。\n驾车由首都高速 1 号羽田线铃森出口约 440 米、胜岛出口约 500 米，由湾岸线大井南出口约 1.1 公里。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 35.593444444444444,
+        "lng": 139.74330555555554,
+        "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BA%95%E7%AB%B6%E9%A6%AC%E5%A0%B4",
+        "retrieved_from": "https://ja.dbpedia.org/data/大井競馬場.json",
+        "scope": "complex"
+      },
+      "photo": {
+        "source_url": "https://www2.keiba.go.jp/guide/07/",
+        "original_url": "https://www2.keiba.go.jp/img/guide/07/course_detail_01.jpg",
+        "credit": "地方竞马全国协会",
+        "width": 600,
+        "height": 400,
+        "path": "/uma_tools/img/venues/oi-racecourse.webp"
+      }
+    },
+    "venue-大手町三井ホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11862678943863262167",
+        "place_name": "Otemachi Mitsui Hall, Otemachi One 3F 1 Chome-2-1 Ōtemachi, Chiyoda City, Tokyo 100-0004, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%A4%A7%E6%89%8B%E7%94%BA%E4%B8%89%E4%BA%95%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Otemachi Mitsui Hall",
+      "access_zh": "与大手町站 C4、C5 出口相连，星期日 C5 的大楼入口关闭。由千代田线站台约 2 分钟，丸之内线及半藏门线约 5 分钟，东西线约 9 分钟，都营三田线约 6 分钟。也可由东西线竹桥站步行约 2 分钟，或从 JR 东京站丸之内中央口经地下通道步行约 12 分钟。",
+      "notes_zh": "2020 年 6 月开馆。",
+      "venue_type": "展演空间",
+      "photo": {
+        "path": "/uma_tools/img/venues/otemachi-mitsui-hall.webp",
+        "source_url": "https://otemachi-hall.jp/",
+        "original_url": "https://otemachi-hall.jp/images/home/mainVisual-001x.jpg",
+        "width": 1920,
+        "height": 840,
+        "credit": "大手町三井礼堂"
+      },
+      "location": {
+        "lat": 35.6879122,
+        "lng": 139.7631803,
+        "source_url": "https://otemachi-one.com/access/",
+        "scope": "building"
+      }
+    },
+    "venue-大阪城ホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=12026211076854174400",
+        "place_name": "Osaka-Jo Hall, 3-1 Osakajo, Chuo Ward, Osaka, 540-0002, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%9F%8E%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/osaka-jo-hall",
+      "name_en": "Osaka-Jo Hall",
+      "description_zh": "位于大阪市中央区大阪城公园内的多功能场馆。正式名称为大阪城国际文化体育厅，通称大阪城音乐厅，也简称城厅，由大阪城音乐厅株式会社运营。",
+      "capacity_zh": [
+        "中央舞台布局 16,000 人",
+        "端部舞台布局 11,200 人"
+      ],
+      "access_zh": "从 JR 大阪环状线大阪城公园站，或地铁长堀鹤见绿地线大阪商务园区站 1 号出口，均可步行 5 分钟抵达。",
+      "venue_type": "展演空间",
+      "photo": {
+        "path": "/uma_tools/img/venues/osaka-jo-hall.webp",
+        "source_url": "https://www.osaka-johall.com/",
+        "original_url": "https://www.osaka-johall.com/img/guide_img_seat.jpg",
+        "credit": "大阪城音乐厅",
+        "width": 800,
+        "height": 500
+      },
+      "location": {
+        "lat": 34.6896386,
+        "lng": 135.5301017,
+        "source_url": "https://www.osaka-johall.com/",
+        "scope": "building"
+      }
+    },
+    "venue-山野ホ-ル-貸出中止": {
+      "photo": {
+        "path": "/uma_tools/img/venues/yamano-hall.webp",
+        "source_url": "https://www.yamano-bc.ac.jp/sinfo_sinfo-new.html",
+        "original_url": "https://www.yamano-bc.ac.jp/assets/img/renew/sinfo_sinfo-new/15.jpg",
+        "credit": "山野美容专门学校",
+        "width": 2184,
+        "height": 1456
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=13121834849808260279",
+        "place_name": "Yamano Hall, 地下3階 1 Chome-53-1 Yoyogi, Shibuya, Tokyo 151-8539, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "山野礼堂",
+      "name_en": "Yamano Hall",
+      "description_zh": "位于东京都涩谷区代代木，是山野美容专门学校的礼堂兼教室。",
+      "capacity_zh": [
+        "800 席（固定 276 席、活动 524 席）"
+      ],
+      "access_zh": "小田急线南新宿站下车即到。JR 山手线或总武线代代木站北口、都营大江户线代代木站 A3 出口步行约 1 分钟，各线新宿站步行约 5 分钟。入口在学校大楼右侧通往楼后的通道尽头，乘下行扶梯或走楼梯即可抵达。",
+      "notes_zh": "山野学苑于 2024 年 12 月 7 日公告，因部分校舍设施存在与安全法规有关的疑点，停止对外出租山野礼堂等设施，并将展开调查。",
+      "venue_type": "学校礼堂",
+      "facts": {
+        "official_url": ""
+      },
+      "location": {
+        "lat": 35.68416595458984,
+        "lng": 139.6999969482422,
+        "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB",
+        "retrieved_from": "https://ja.dbpedia.org/data/山野ホール.json",
+        "scope": "building"
+      }
+    },
+    "venue-帯広競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=7653286941925976853",
+        "place_name": "Obihiro Racecourse, 9 Chome-１-1 Nishi 13 Jominami, Obihiro, Hokkaido 080-0023, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%B8%AF%E5%BA%83%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Obihiro Racecourse",
+      "description_zh": "位于北海道带广市的挽曳赛马场。",
+      "access_zh": "JR 带广站南口乘出租车约 7 分钟。也可在带广站巴士总站 12 号站台乘十胜巴士，或在十胜带广机场乘机场巴士，于带广赛马场前下车。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 42.9210019,
+        "lng": 143.1823285,
+        "source_url": "https://banei-keiba.or.jp/access.php",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://banei-keiba.or.jp/access.php"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/obihiro-racecourse.webp",
+        "source_url": "https://www.banei-keiba.or.jp/spot_stand.php",
+        "original_url": "https://www.banei-keiba.or.jp/img/spot/stand/p.jpg",
+        "credit": "带广市 ばんえい十胜",
+        "width": 1078,
+        "height": 500
+      }
+    },
+    "venue-幕張メッセ-国際展示場ホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=14898119344862873056",
+        "place_name": "〒261-8550 千葉県千葉市美浜区中瀬２丁目１ 幕張メッセ",
+        "source_url": "https://www.m-messe.co.jp/access/",
+        "scope": "complex"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/makuhari-messe-international-exhibition-hall",
+      "name_zh": "幕张国际展览馆",
+      "name_en": "Makuhari Messe International Exhibition Hall",
+      "description_zh": "位于千叶市美滨区幕张新都心，隶属幕张展览馆，正式名称为千叶县日本会展中心国际展览馆。该会展设施由幕张展览馆股份有限公司运营，曾获 BCS 奖、IAITA 奖和千叶县建筑文化奖。",
+      "access_zh": "由 JR 京叶线海滨幕张站步行约 10 至 15 分钟，由幕张丰砂站步行约 20 分钟。海滨幕张站乘往永旺梦乐城方向的巴士约 4 分钟，现金 170 日元、交通卡 168 日元。由 JR 或京成电铁幕张本乡站乘巴士约 17 分钟，在 Town Center、幕张展览馆东口或幕张展览馆中央下车。",
+      "notes_zh": "国际展览馆 1 至 8 号厅共 54,000 平方米，每厅 6,750 平方米。9 至 11 号厅共 18,000 平方米。园区另有活动大厅、国际会议场及室外展区。",
+      "venue_type": "会展中心",
+      "location": {
+        "lat": 35.6476856,
+        "lng": 140.0355286,
+        "source_url": "https://www.m-messe.co.jp/access/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.m-messe.co.jp/access/"
+      },
+      "parking_zh": "展馆停车场可停 5,500 辆普通车辆，8:00 至 23:00 开放，普通车每日 1,000 日元。周边另有停车场。",
+      "photo": {
+        "path": "/uma_tools/img/venues/makuhari-exhibition.webp",
+        "source_url": "https://www.m-messe.co.jp/organizers/support/layout/",
+        "original_url": "https://www.m-messe.co.jp/cache/images/photo/a3/3d/ddb9971e38f882416ebd4cb19bc18fef386aa33d_resized.1024x683.fill.jpg",
+        "license_url": "https://www.m-messe.co.jp/organizers/support/layout/",
+        "license_label": "官方图片使用说明",
+        "credit": "幕张展览馆",
+        "width": 1024,
+        "height": 683,
+        "focus": "center",
+        "usage": "官方设施图库公开图片，用于介绍场馆；保留原图色调及完整主体。"
+      }
+    },
+    "venue-新宿住友ビル三角広場": {
+      "photo": {
+        "path": "/uma_tools/img/venues/shinjuku-triangle-square.webp",
+        "source_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/",
+        "original_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/assets/imgs/slider/slider23.png",
+        "credit": "住友不动产",
+        "width": 1136,
+        "height": 600
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1349220789940718932",
+        "place_name": "Shinjuku Sumitomo Building Triangle Square, 2 Chome-6-1 Nishishinjuku, Shinjuku City, Tokyo 163-0290, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%96%B0%E5%AE%BF%E4%BD%8F%E5%8F%8B%E3%83%93%E3%83%AB%E4%B8%89%E8%A7%92%E5%BA%83%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "access_zh": "与都营大江户线都厅前站相连，距丸之内线西新宿站步行 4 分钟、新宿站步行 8 分钟。",
+      "venue_type": "室外活动广场",
+      "description_zh": "位于东京西新宿的全天候活动广场，与都厅前站相连。",
+      "facts": {
+        "phone": "050-3112-5050"
+      },
+      "location": {
+        "lat": 35.6912566,
+        "lng": 139.692597,
+        "source_url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/",
+        "scope": "building"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/"
+        }
+      ]
+    },
+    "venue-新町橋東公園ステ-ジ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=12091031984698403892",
+        "place_name": "Shimmachi Bridge East Park, 1 Chome-4地先 Higashisenbacho, Tokushima, 770-0911, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%96%B0%E7%94%BA%E6%A9%8B%E6%9D%B1%E5%85%AC%E5%9C%92%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8&output=embed",
+        "scope": "complex"
+      },
+      "location": {
+        "lat": 34.0711314,
+        "lng": 134.54841,
+        "source_url": "https://www.google.com/maps?cid=12091031984698403892",
+        "scope": "complex"
+      },
+      "access_zh": "从 JR 德岛站沿路向南，步行约 6 分钟。",
+      "venue_type": "公园",
+      "facts": {
+        "official_url": "https://syougai.tokushima-ec.ed.jp/manabihiroba/srch_inst/3789.html"
+      },
+      "description_zh": "位于德岛市东船场町、新町川南岸的公园舞台，与新町川沿岸步道相邻。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://syougai.tokushima-ec.ed.jp/manabihiroba/srch_inst/3789.html"
+        }
+      ],
+      "photo": {
+        "source_url": "https://gigazine.net/news/20230505-event-schedule-machiasobi26/",
+        "original_url": "https://i.gzn.jp/img/2023/05/05/event-schedule-machiasobi26/shinmachi-bridge-east-park.jpg",
+        "credit": "GIGAZINE",
+        "width": 1200,
+        "height": 675,
+        "path": "/uma_tools/img/venues/shinmachi-east-stage.webp"
+      }
+    },
+    "venue-日テレらんらんホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11120672440735401222",
+        "place_name": "Yomiuri Land Nittele Lan Lan Hall, 1-4015-1 Yanokuchi, Tama Ward, Inagi, Tokyo 206-8566, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%82%89%E3%82%93%E3%82%89%E3%82%93%E3%83%9B%E3%83%BC%E3%83%AB+%E3%82%88%E3%81%BF%E3%81%86%E3%82%8A%E3%83%A9%E3%83%B3%E3%83%89&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.6254239,
+        "lng": 139.5211328,
+        "source_url": "https://www.google.com/maps?cid=11120672440735401222",
+        "scope": "building"
+      },
+      "name_zh": "日本电视台 Ran-Ran 大厅",
+      "name_en": "Nippon TV Ran-Ran Hall",
+      "access_zh": "从京王读卖乐园站乘 Sky Shuttle 缆车约 5 至 10 分钟，或乘小田急巴士约 5 分钟。从读卖乐园前站乘小田急巴士约 10 分钟。",
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": ""
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/ranran-hall.webp",
+        "source_url": "https://www.yomiuriland.co.jp/brand/history/modals/history-2014.html",
+        "original_url": "https://www.yomiuriland.co.jp/brand/img/history/history-2014_pc.jpg",
+        "credit": "读卖乐园",
+        "width": 1300,
+        "height": 434
+      }
+    },
+    "venue-日本武道館": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=2403616469912220040",
+        "place_name": "Nippon Budokan, 2-3 Kitanomarukoen, Chiyoda City, Tokyo 102-8321, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/nippon-budokan",
+      "name_en": "Nippon Budokan",
+      "description_zh": "位于东京都千代田区北之丸公园 2-3，旨在推广日本传统武道，也是日本武道协议会成员。场馆还用于室内体育比赛和演出，由公益财团法人日本武道馆运营。",
+      "capacity_zh": [
+        "14,501 人（场内 2,946 席、一层 3,199 席、二三层 7,876 席，另含三层站席 480 人）"
+      ],
+      "access_zh": "由东京地铁东西线、半藏门线或都营新宿线九段下站 2 号出口步行 5 分钟。车站拥挤时也可经坡下的 4 号出口前往。散场时可走人行天桥至 1 号或 3 号出口。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.69333,
+        "lng": 139.7497076,
+        "source_url": "https://www.nipponbudokan.or.jp/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.nipponbudokan.or.jp/about/access"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/nippon-budokan.webp",
+        "source_url": "https://www.nipponbudokan.or.jp/",
+        "original_url": "https://www.nipponbudokan.or.jp/CDFy5t/wp-content/themes/budokan/images/mainvisual-random1.jpg",
+        "credit": "日本武道馆",
+        "width": 1600,
+        "height": 500
+      }
+    },
+    "venue-有明アリ-ナ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15062131049299699304",
+        "place_name": "Ariake Arena, 1 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/ariake-arena",
+      "name_en": "Ariake Arena",
+      "description_zh": "位于东京都江东区有明一丁目，兼作室内体育、音乐会和活动场馆。为东京 2020 奥运会和残奥会而建，2017 年 4 月 21 日开工，2019 年 12 月 9 日竣工，2022 年 8 月 20 日以体育文化设施重新开放，并采用公共设施特许经营方式。",
+      "access_zh": "从百合鸥线新丰洲站或有明网球森林站步行约 8 分钟，从临海线国际展示场站或东云站步行约 17 分钟，从东京 BRT 有明网球森林站步行约 8 分钟。",
+      "venue_type": "竞技场",
+      "photo": {
+        "path": "/uma_tools/img/venues/ariake-arena.webp",
+        "source_url": "https://ariake-arena.tokyo/organizer/facilities/",
+        "original_url": "https://ariake-arena.tokyo/wp-content/themes/ariake-arena/assets/images/page/img_facilities01.jpg",
+        "width": 1240,
+        "height": 460,
+        "credit": "有明体育馆"
+      },
+      "location": {
+        "lat": 35.6435546875,
+        "lng": 139.7942504882812,
+        "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+        "retrieved_from": "https://ja.dbpedia.org/data/有明アリーナ.json",
+        "scope": "building"
+      }
+    },
+    "venue-札幌シネマフロンティア": {
+      "photo": {
+        "path": "/uma_tools/img/venues/sapporo-cinema-frontier.webp",
+        "source_url": "https://www.cinemafrontier.net/cgi-bin/pc/showfile.cgi?tgttmp=theater%2Findex",
+        "original_url": "https://www.cinemafrontier.net/pc/assets/guide/img/img1.jpg",
+        "credit": "札幌 Cinema Frontier",
+        "width": 851,
+        "height": 315
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=12189493048149012663",
+        "place_name": "Sapporo Cinema Frontier, JRタワーステラプレイス 7F 2 Chome-5 Kita 5 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0005, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%9C%AD%E5%B9%8C%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "札幌 Cinema Frontier 影院",
+      "name_en": "Sapporo Cinema Frontier",
+      "description_zh": "位于札幌站站楼札幌 Stellar Place 中央馆 7 层的多厅影院。",
+      "venue_type": "电影院",
+      "facts": {
+        "official_url": "https://www.cinemafrontier.net/cgi-bin/pc/showfile.cgi?tgttmp=theater%2Findex",
+        "access_url": "https://www.cinemafrontier.net/cgi-bin/pc/showfile.cgi?tgttmp=ticket/site_access"
+      },
+      "access_zh": "影院位于 JR 札幌站相连的札幌 Stellar Place 中央馆 7 层。",
+      "location": {
+        "lat": 43.0681393,
+        "lng": 141.3524285,
+        "source_url": "https://www.cinemafrontier.net/cgi-bin/pc/showfile.cgi?tgttmp=ticket/site_access",
+        "scope": "building"
+      }
+    },
+    "venue-東京ガ-デンシアタ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15401657290313832267",
+        "place_name": "Tokyo Garden Theater, 2 Chome-1-6 Ariake, Koto City, Tokyo 135-0063, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/tokyo-garden-theater",
+      "name_en": "Tokyo Garden Theater",
+      "description_zh": "位于东京都江东区有明花园，是按与日本武道馆相近的规模建设的剧场式演出场馆，最多可容纳约 8,000 人。演出期间，园区部分设施也会播放表演者的音乐。",
+      "access_zh": "由百合鸥线有明站 2B 出口步行 4 分钟、有明网球森林站 2A 出口步行 5 分钟，或由临海线国际展示场站 A 出口步行 7 分钟。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.6377592,
+        "lng": 139.7920197,
+        "source_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/access/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/tokyo-garden-theater.webp",
+        "source_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/",
+        "original_url": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/wp-content/themes/event-hole/images/common/footPhoto.webp",
+        "credit": "东京花园剧场",
+        "width": 712,
+        "height": 400
+      },
+      "name_zh": "东京花园剧场",
+      "display_aliases": []
+    },
+    "venue-東京ビッグサイト": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=11876362316687890945",
+        "place_name": "Tokyo Big Sight, 3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E3%83%93%E3%83%83%E3%82%B0%E3%82%B5%E3%82%A4%E3%83%88&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Tokyo Big Sight",
+      "description_zh": "位于东京都江东区有明，通称 Tokyo Big Sight，由东京 Big Sight 株式会社管理和运营。",
+      "capacity_zh": [
+        "全馆最多 126,300 人",
+        "东馆 1 至 8 号厅分别为 9,500、9,100、9,500、9,100、9,500、9,100、12,800、3,300 人",
+        "西馆 1 至 4 号厅分别为 9,700、9,700、5,100、7,500 人",
+        "南馆 1 至 4 号厅各 5,500 人"
+      ],
+      "access_zh": "临海线国际展示场站步行 7 分钟，百合鸥线东京 Big Sight 站步行 3 分钟，东京 BRT 国际展示场站步行 7 分钟。也可乘都营巴士在东京 Big Sight 站下车，或乘不定期开行的水上巴士，下船后步行 2 分钟。",
+      "notes_zh": "东展馆 1 至 8 号厅在一层。西展馆与南展馆均为 1、2 号厅在一层，3、4 号厅在四层。原青海展馆已关闭。",
+      "venue_type": "会展中心",
+      "location": {
+        "lat": 35.6321364,
+        "lng": 139.7974687,
+        "source_url": "https://www.bigsight.jp/visitor/access/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.bigsight.jp/visitor/access/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/tokyo-big-sight.webp",
+        "source_url": "https://www.bigsight.jp/",
+        "original_url": "https://www.bigsight.jp/img/carousel-01-08.jpg",
+        "credit": "东京国际展示场",
+        "width": 1960,
+        "height": 976
+      },
+      "name_zh": "东京国际展示场",
+      "display_aliases": []
+    },
+    "venue-東京国際フォ-ラム-ホ-ルc": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5400332486729301541",
+        "place_name": "Tokyo International Forum Hall C, Tokyo International Forum, １階 3 Chome-5-1 Marunouchi, Chiyoda City, Tokyo 100-0005, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E5%9B%BD%E9%9A%9B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A9%E3%83%A0+%E3%83%9B%E3%83%BC%E3%83%ABC&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/tokyo-international-forum",
+      "name_en": "Tokyo International Forum Hall C",
+      "capacity_zh": [
+        "1,502 席（一层 739 席、二层 363 席、三层 400 席）"
+      ],
+      "access_zh": "由 JR 有乐町站步行 1 分钟、东京站步行 5 分钟，京叶线东京站与会场地下 1 层相连。地铁有乐町线有乐町站也有地下通道相连。由千代田线二重桥前站、丸之内线银座站或三田线日比谷站步行约 5 分钟。由千代田线日比谷站、银座线银座站或京桥站步行约 7 分钟。",
+      "venue_type": "展演空间",
+      "description_zh": "东京国际论坛内的 C 厅，位于东京丸之内。",
+      "facts": {
+        "access_url": "https://www.t-i-forum.co.jp/access/access/"
+      },
+      "location": {
+        "lat": 35.6767429,
+        "lng": 139.7637532,
+        "source_url": "https://www.t-i-forum.co.jp/access/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/tokyo-forum-c.webp",
+        "source_url": "https://www.t-i-forum.co.jp/visitors/facilities/c/",
+        "original_url": "https://www.t-i-forum.co.jp/img/visitors/facilities/c/131-04-gallery-01.jpg",
+        "credit": "东京国际论坛",
+        "width": 1600,
+        "height": 900
+      }
+    },
+    "venue-横浜アリ-ナ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=3374935697267411479",
+        "place_name": "Yokohama Arena, 3 Chome-10 Shinyokohama, Kohoku Ward, Yokohama, Kanagawa 222-0033, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%A8%AA%E6%B5%9C%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/yokohama-arena",
+      "name_en": "Yokohama Arena",
+      "description_zh": "位于神奈川县横滨市港北区新横滨的多功能场馆，1989 年 4 月 1 日开馆。管理方横滨体育馆株式会社成立于 1986 年，母公司为西武铁道。场馆也简称「横アリ」。",
+      "access_zh": "由横滨市营地铁蓝线、相铁新横滨线或东急新横滨线新横滨站 7、8 号出口步行 4 分钟。由 JR 横滨线新横滨站北口或东海道新干线新横滨站东口步行 5 分钟。",
+      "venue_type": "竞技场",
+      "location": {
+        "lat": 35.511833333333335,
+        "lng": 139.6196388888889,
+        "source_url": "https://www.yokohama-arena.co.jp/access/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://www.yokohama-arena.co.jp/access/"
+      },
+      "search_aliases": [
+        "横アリ",
+        "横滨体育馆",
+        "横濱體育館"
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/yokohama-arena.webp",
+        "source_url": "https://www.yokohama-arena.co.jp/organizer/equipment/",
+        "original_url": "https://www.yokohama-arena.co.jp/common/img/organizer/equipment/1-02.jpg",
+        "credit": "横滨体育馆",
+        "width": 724,
+        "height": 483
+      }
+    },
+    "venue-横浜ベイホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=14835975739596245936",
+        "place_name": "Yokohama Bay Hall, カリカチュア 3 Chome-4-17 Shinyamashita, Naka Ward, Yokohama, Kanagawa 231-0801, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%A8%AA%E6%B5%9C%E3%83%99%E3%82%A4%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Yokohama Bay Hall",
+      "description_zh": "位于神奈川县横滨市中区新山下的现场音乐演出场馆。",
+      "capacity_zh": [
+        "1,100 人"
+      ],
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.4416575,
+        "lng": 139.6611119,
+        "source_url": "https://bayhall.jp/access/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/yokohama-bay-hall.webp",
+        "source_url": "https://bayhall.jp/about/",
+        "original_url": "https://bayhall.jp/wp-content/uploads/2016/01/img2.jpg",
+        "credit": "Yokohama Bay Hall",
+        "width": 300,
+        "height": 200
+      },
+      "name_zh": "横滨 Bay Hall",
+      "display_aliases": []
+    },
+    "venue-武蔵野の森総合スポ-ツプラザ-メインアリ-ナ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=3994857175778151502",
+        "place_name": "Keio Arena Tokyo, 290-11 Nishimachi, Chofu, Tokyo 182-0032, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E4%BA%AC%E7%8E%8B%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A%EF%BC%B4%EF%BC%AF%EF%BC%AB%EF%BC%B9%EF%BC%AF+%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "complex"
+      },
+      "name_en": "Musashino Forest Sport Plaza Main Arena",
+      "description_zh": "主竞技场位于东京都调布市的武藏野之森综合体育广场，园区设有室内体育馆和室内游泳池。",
+      "venue_type": "竞技场",
+      "name_original": "京王アリーナＴＯＫＹＯ メインアリーナ",
+      "aliases": [
+        "武蔵野の森総合スポーツプラザ メインアリーナ",
+        "武藏野之森综合体育广场主竞技场"
+      ],
+      "location": {
+        "lat": 35.664833333333334,
+        "lng": 139.524,
+        "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E8%94%B5%E9%87%8E%E3%81%AE%E6%A3%AE%E7%B7%8F%E5%90%88%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%97%E3%83%A9%E3%82%B6",
+        "retrieved_from": "https://ja.dbpedia.org/data/武蔵野の森総合スポーツプラザ.json",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/musashino-main-arena.webp",
+        "source_url": "https://keio-arena.tokyo/facility/mainarena.php",
+        "original_url": "https://keio-arena.tokyo/facility/img/mainarena_img01.jpg",
+        "credit": "京王体育馆 TOKYO",
+        "width": 960,
+        "height": 640
+      },
+      "facts": {
+        "official_url": "https://keio-arena.tokyo/facility/mainarena.php"
+      },
+      "search_aliases": [
+        "京王体育馆",
+        "京王竞技场",
+        "KEIO ARENA TOKYO"
+      ]
+    },
+    "venue-江戸川区総合文化センタ-大ホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1312960692426742792",
+        "place_name": "Edogawa City Cultural Centre, 4 Chome-14-1 Central, Edogawa City, Tokyo 132-0021, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "complex"
+      },
+      "description_zh": "大礼堂隶属江户川区综合文化中心，由江户川区设立、管理及运营。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.7110897,
+        "lng": 139.8682626,
+        "source_url": "https://edogawa-bunkacenter.jp/map/",
+        "scope": "building"
+      },
+      "facts": {
+        "access_url": "https://edogawa-bunkacenter.jp/map/"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/edogawa-main-hall.webp",
+        "source_url": "https://edogawa-bunkacenter.jp/facilities/hall/",
+        "original_url": "https://edogawa-bunkacenter.jp/wp-content/themes/theme-edogawa-bunkacenter/assets/dist/img/hall1.jpg",
+        "credit": "江户川区综合文化中心",
+        "width": 1920,
+        "height": 1060
+      }
+    },
+    "venue-浦和競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1261602849283513559",
+        "place_name": "Urawa Racecourse, 1 Chome-8-42 Oyaba, Minami Ward, Saitama, 336-0016, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Urawa Racecourse",
+      "description_zh": "位于埼玉县埼玉市南区大谷场一丁目的地方赛马场，由埼玉县和埼玉市组成的埼玉县竞马组合主办，加入 SPAT4。它与船桥、大井、川崎赛马场共同组成南关东公营赛马，场内设中央赛马场外投注点 WINS 浦和。",
+      "access_zh": "由 JR 南浦和站东口至赛马场正门可步行约 15 分钟，或搭免费接驳车约 5 分钟。由 JR 浦和站东口至北门步行约 15 分钟。驾车距东京外环自动车道外环浦和出口 2.2 公里。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 35.8568096,
+        "lng": 139.6700174,
+        "source_url": "https://www.urawa-keiba.jp/",
+        "scope": "building"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/urawa-racecourse.webp",
+        "source_url": "https://www.urawa-keiba.jp/guide/",
+        "original_url": "https://www.urawa-keiba.jp/assets/img/guide/map_modal_img09.jpg",
+        "credit": "浦和赛马场",
+        "width": 5417,
+        "height": 3611
+      }
+    },
+    "venue-科学技術館サイエンスホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=10021759567453155731",
+        "place_name": "Science Museum Science Hall, 科学技術館 B2階 2-1 Kitanomarukoen, Chiyoda City, Tokyo 102-0091, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.6917955,
+        "lng": 139.7533001,
+        "source_url": "https://www.google.com/maps?cid=10021759567453155731",
+        "scope": "building"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/kagaku-gijutsukan",
+      "access_zh": "由东京地铁东西线竹桥站 1b 出口步行约 7 分钟，由东西线、半藏门线或都营新宿线九段下站步行约 9 分钟。",
+      "notes_zh": "科学技术馆一层另设展览及活动大厅。",
+      "venue_type": "展演空间",
+      "photo": {
+        "path": "/uma_tools/img/venues/science-hall.webp",
+        "source_url": "https://www.j-cast.com/2023/12/07474454.html",
+        "original_url": "https://www.j-cast.com/assets_c/2023/12/news_20231207194639-thumb-645xauto-262684.jpg",
+        "credit": "科学技术馆（场馆供图）",
+        "width": 645,
+        "height": 484
+      }
+    },
+    "venue-笠松競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9551641784644503344",
+        "place_name": "Kasamatsu Racecourse, 12 Wakabacho, Kasamatsu, Hashima District, Gifu 501-6036, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E7%AC%A0%E6%9D%BE%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Kasamatsu Racecourse",
+      "description_zh": "位于岐阜县羽岛郡笠松町的地方赛马场，部分设施跨入同郡岐南町。前身为惠那郡中津町（今中津川市）的中津赛马场，1935 年迁至笠松。岐阜县原有的各务原赛马场于 1938 年并入这里。",
+      "access_zh": "从名铁笠松站步行 3 分钟。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 35.3723169,
+        "lng": 136.765659,
+        "source_url": "https://www.kasamatsu-keiba.com/access",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.kasamatsu-keiba.com/access"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/kasamatsu-racecourse.webp",
+        "source_url": "https://www.kasamatsu-keiba.com/facilities",
+        "original_url": "https://www.kasamatsu-keiba.com/common/img/facilities/mv_img.jpg",
+        "credit": "笠松赛马场",
+        "width": 1080,
+        "height": 436
+      }
+    },
+    "venue-舞浜アンフィシアタ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5538433142803833737",
+        "place_name": "Maihama Amphitheater, 2-50 Maihama, Urayasu, Chiba 279-8512, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E8%88%9E%E6%B5%9C%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Maihama Amphitheater",
+      "description_zh": "位于千叶县浦安市舞滨、东京迪士尼度假区内的多功能剧场。",
+      "access_zh": "从 JR 京叶线或武藏野线舞滨站南口出发，经伊克斯皮儿莉购物中心及迪士尼大使饭店，步行约 10 分钟。",
+      "venue_type": "展演空间",
+      "location": {
+        "lat": 35.63258361816406,
+        "lng": 139.8892211914062,
+        "source_url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E6%B5%9C%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC",
+        "retrieved_from": "https://ja.dbpedia.org/data/舞浜アンフィシアター.json",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://www.jalan.net/kankou/spt_guide000000186020/",
+        "original_url": "https://cdn.jalan.jp/jalan/img/0/kuchikomi/5590/KL/52414_0005590868_2.jpeg",
+        "credit": "じゃらん",
+        "width": 640,
+        "height": 480,
+        "path": "/uma_tools/img/venues/maihama-amphitheater.webp"
+      }
+    },
+    "venue-金沢競馬場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8714000109187695015",
+        "place_name": "Kanazawa Horse Park, 金沢競馬場 1 Hattamachinishi, Kanazawa, Ishikawa 920-3105, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E9%87%91%E6%B2%A2%E7%AB%B6%E9%A6%AC%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "name_en": "Kanazawa Racecourse",
+      "description_zh": "位于石川县金泽市八田町西的地方赛马场，由石川县和金泽市分别主办赛事，通称金泽赛马，加入 Odds Park 和 D-Net。",
+      "access_zh": "从金泽站金泽港口（西口）乘免费接驳巴士。",
+      "venue_type": "赛马场",
+      "location": {
+        "lat": 36.6365067,
+        "lng": 136.6747854,
+        "source_url": "https://www.kanazawakeiba.com/facilities/access/",
+        "scope": "complex"
+      },
+      "facts": {
+        "access_url": "https://www.kanazawakeiba.com/facilities/access/"
+      },
+      "photo": {
+        "source_url": "https://www.keiba.go.jp/furlong/2020/tokusyu/jbc_data/200929-01.html",
+        "original_url": "https://www.keiba.go.jp/furlong/2020/tokusyu/jbc_data/img/200929-01-03_big.jpg",
+        "credit": "地方竞马全国协会",
+        "width": 780,
+        "height": 520,
+        "path": "/uma_tools/img/venues/kanazawa-racecourse.webp"
+      }
+    },
+    "venue-駅前不動産スタジアム-鳥栖スタジアム": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9430830460612160414",
+        "place_name": "Ekimae Real Estate Stadium, 812 Kyomachi, Tosu, Saga 841-0034, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E9%A7%85%E5%89%8D%E4%B8%8D%E5%8B%95%E7%94%A3%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "站前不动产体育场",
+      "name_en": "Ekimae Real Estate Stadium",
+      "aliases": [
+        "鸟栖体育场",
+        "Best Amenity Stadium"
+      ],
+      "access_zh": "从 JR 鸟栖站步行约 3 分钟。",
+      "name_history_zh": [
+        "Best Amenity Stadium（2008 年 1 月 1 日至 2018 年 12 月 31 日）",
+        "站前不动产体育场（2019 年 2 月 1 日起）"
+      ],
+      "venue_type": "体育场",
+      "location": {
+        "lat": 33.37165495,
+        "lng": 130.51995372,
+        "source_url": "https://www.city.tosu.lg.jp/soshiki/12/1166.html",
+        "scope": "building"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.city.tosu.lg.jp/soshiki/12/1166.html"
+        }
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/tosu-stadium.webp",
+        "source_url": "https://www.city.tosu.lg.jp/soshiki/12/1166.html",
+        "original_url": "https://www.city.tosu.lg.jp/uploaded/image/16514.png",
+        "credit": "站前不动产体育场",
+        "width": 1015,
+        "height": 749
+      }
+    },
+    "venue-インテックス大阪-5号館": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9112986694446224934",
+        "place_name": "INTEX Osaka - Hall 5, 1 Chome-5-102 Nankokita, Suminoe Ward, Osaka, 559-0034, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%82%A4%E3%83%B3%E3%83%86%E3%83%83%E3%82%AF%E3%82%B9%E5%A4%A7%E9%98%AA+5%E5%8F%B7%E9%A4%A8&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/intex-osaka",
+      "venue_type": "会展中心",
+      "facts": {
+        "official_url": "https://www.intex-osaka.com/jp/organizer/hall/"
+      },
+      "location": {
+        "lat": 34.6372222,
+        "lng": 135.4180556,
+        "source_url": "https://en.wikipedia.org/wiki/Intex_Osaka",
+        "scope": "complex",
+        "retrieved_from": "https://dbpedia.org/data/Intex_Osaka.json"
+      },
+      "photo": {
+        "source_url": "https://madream.jp/sp/town/0320-osaka_suminoe/",
+        "original_url": "https://madream.jp/yomimono/images/309/img04_1697706377.jpg",
+        "credit": "マドリーム",
+        "width": 750,
+        "height": 500,
+        "path": "/uma_tools/img/venues/intex-hall5.webp"
+      },
+      "name_zh": "INTEX 大阪 5 号馆",
+      "display_aliases": []
+    },
+    "venue-ポ-トメッセなごや": {
+      "seatview_url": "https://seat.genchi.top/zh/v/nagoya-international-exhibition-hall",
+      "venue_type": "会展中心",
+      "facts": {
+        "official_url": "https://portmesse.com/",
+        "access_url": "https://portmesse.com/access"
+      },
+      "description_zh": "位于名古屋港区金城埠头的市立国际展览馆，可举办展览、会议、典礼与演出。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://portmesse.com/"
+        }
+      ],
+      "location": {
+        "lat": 35.0479742,
+        "lng": 136.8446105,
+        "source_url": "https://portmesse.com/access",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/port-messe-nagoya.webp",
+        "source_url": "https://portmesse.com/",
+        "original_url": "https://portmesse.com/wp-content/uploads/img_tenji1-1.jpg",
+        "credit": "名古屋国际展示场",
+        "width": 1500,
+        "height": 1000
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=12243196182605132393",
+        "place_name": "Port Messe Nagoya, 2 Chome-２ Kinjofuto, Minato Ward, Nagoya, Aichi 455-0848, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%9D%E3%83%BC%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%81%AA%E3%81%94%E3%82%84+%E4%BA%A4%E6%B5%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC&output=embed",
+        "scope": "complex",
+        "label_zh": "Google 地图"
+      },
+      "name_zh": "Port Messe 名古屋",
+      "display_aliases": []
+    },
+    "venue-akihabaraゲ-マ-ズ本店": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8504831724463025653",
+        "place_name": "Akihabara Gamers, 1 Chome-14-7 Sotokanda, Chiyoda City, Tokyo 101-0021, Japan",
+        "source_url": "https://maps.google.com/maps?q=AKIHABARA%E3%82%B2%E3%83%BC%E3%83%9E%E3%83%BC%E3%82%BA%E6%9C%AC%E5%BA%97&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.6983011,
+        "lng": 139.7716604,
+        "source_url": "https://www.google.com/maps?cid=8504831724463025653",
+        "scope": "building"
+      },
+      "venue_type": "门店",
+      "facts": {
+        "official_url": "https://www.gamers.co.jp/shop/detail.php?id=4"
+      },
+      "photo": {
+        "source_url": "https://ascii.jp/elem/000/000/152/152840/",
+        "original_url": "https://ascii.jp/img/2008/07/22/54228/l/ed564be32b876b5f.jpg",
+        "credit": "ASCII",
+        "width": 450,
+        "height": 600,
+        "path": "/uma_tools/img/venues/akihabara-gamers.webp"
+      }
+    },
+    "venue-函館サ-モン-まるなまアリ-ナ": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=1029385634850850978",
+        "place_name": "Hakodate Salmon Marunama Arena, 1 Chome-32-2 Yunokawacho, Hakodate, Hokkaido 042-0932, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E5%87%BD%E9%A4%A8%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E3%83%BB%E3%81%BE%E3%82%8B%E3%81%AA%E3%81%BE%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A&output=embed",
+        "scope": "venue"
+      },
+      "venue_type": "竞技场",
+      "facts": {
+        "official_url": "https://www.city.hakodate.hokkaido.jp/docs/2014040900082/"
+      },
+      "name_original": "函館サーモン・まるなまアリーナ",
+      "description_zh": "函馆市的体育及活动设施，设主竞技场和副竞技场。原名函馆竞技场。",
+      "photo": {
+        "path": "/uma_tools/img/venues/hakodate-arena.webp",
+        "source_url": "https://zaidan-hakodate.com/arena/gaiyou.html",
+        "original_url": "https://zaidan-hakodate.com/arena/images/gaiyou/mainarena.jpg",
+        "credit": "函馆市文化体育振兴财团",
+        "width": 800,
+        "height": 532
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.city.hakodate.hokkaido.jp/docs/2014040900082/"
+        }
+      ],
+      "location": {
+        "lat": 41.7819528,
+        "lng": 140.783521,
+        "source_url": "https://www.city.hakodate.hokkaido.jp/docs/2014040900082/",
+        "scope": "building"
+      }
+    },
+    "venue-ラフォ-レミュ-ジアム六本木": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=7054842753820115759",
+        "place_name": "Laforet Museum Roppongi, 丁目-1-9-9 Roppongi, 港区 Minato City, Tokyo 106-0032, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%A9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AC%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0%E5%85%AD%E6%9C%AC%E6%9C%A8&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.6629767,
+        "lng": 139.7407488,
+        "source_url": "https://www.google.com/maps?cid=7054842753820115759",
+        "scope": "building"
+      },
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": ""
+      },
+      "photo": {
+        "source_url": "https://prtimes.jp/main/html/rd/p/000000021.000084123.html",
+        "original_url": "https://prcdn.freetls.fastly.net/release_image/84123/21/84123-21-78b732cef603054d4a095f4a17a19f53-2268x2098.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
+        "credit": "ワイムシェアリング",
+        "width": 1459,
+        "height": 1350,
+        "path": "/uma_tools/img/venues/laforet-roppongi.webp",
+        "caption_zh": "会场所在的六本木 First Building"
+      }
+    },
+    "venue-tft-hall-1000": {
+      "photo": {
+        "path": "/uma_tools/img/venues/tft-hall-1000.webp",
+        "source_url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/",
+        "original_url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/img/img-tfthall-02.jpg",
+        "credit": "东京国际展示场",
+        "width": 400,
+        "height": 300
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=13818760605279452304",
+        "place_name": "Big Sight TFT Hall 1000, 3-chōme-4 Ariake, Koto City, Tokyo 135-0063, Japan",
+        "source_url": "https://maps.google.com/maps?q=TFT+%E3%83%9B%E3%83%BC%E3%83%AB+1000&output=embed",
+        "scope": "venue"
+      },
+      "seatview_url": "https://seat.genchi.top/zh/v/tft-hall",
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/",
+        "capacity": 900,
+        "capacity_unit": "seats",
+        "capacity_source": {
+          "kind": "official",
+          "url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/"
+        }
+      },
+      "name_original": "TFT ホール 1000",
+      "description_zh": "东京 TFT 大楼的多功能活动厅，可举办展览、发布会、研讨会及文化活动。",
+      "capacity_zh": [
+        "剧院式 900 席",
+        "走秀式 700 席",
+        "课桌式 500 席",
+        "酒会式 600 人"
+      ],
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/"
+        }
+      ],
+      "location": {
+        "lat": 35.6308953,
+        "lng": 139.790628,
+        "scope": "building",
+        "source_url": "https://www.bigsight.jp/organizer/buildings/tft/access.html"
+      }
+    },
+    "venue-zepp-divercity": {
+      "photo": {
+        "path": "/uma_tools/img/venues/zepp-divercity.webp",
+        "source_url": "https://note.cocotame.jp/n/n4ff47ed31707",
+        "original_url": "https://assets.st-note.com/img/1779434257-vY9HD3RZPSu06hTM7npNV4ik.jpg?width=1200",
+        "credit": "Sony Music Entertainment",
+        "width": 1200,
+        "height": 856
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=8657078908804524129",
+        "place_name": "Zepp DiverCity (TOKYO), 1 Chome-1-10 Aomi, Koto City, Tokyo 135-0064, Japan",
+        "source_url": "https://maps.google.com/maps?q=Zepp+DiverCity&output=embed",
+        "scope": "venue"
+      },
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": "https://www.zepp.co.jp/hall/divercity/",
+        "phone": "03-3527-5256",
+        "seat_map_url": "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2018/11/21143732/dc_seat.pdf"
+      },
+      "name_en": "Zepp DiverCity (TOKYO)",
+      "description_zh": "东京台场 DiverCity Tokyo Plaza 内的室内演出场馆，由 Zepp Hall Network 运营。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.zepp.co.jp/hall/divercity/"
+        }
+      ],
+      "location": {
+        "lat": 35.6247851,
+        "lng": 139.7758551,
+        "source_url": "https://www.zepp.co.jp/hall/divercity/",
+        "scope": "complex"
+      }
+    },
+    "venue-yokohama-landmark-hall": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9131498151472929727",
+        "place_name": "Japan, 〒220-0012 Kanagawa, Yokohama, Nishi Ward, Minatomirai, 2 Chome−2−1 Landmark Hall, ランドマークプラザ ５F",
+        "source_url": "https://maps.google.com/maps?q=Yokohama+LANDMARK+HALL&output=embed",
+        "scope": "venue"
+      },
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": "https://landmarkhall.jp/",
+        "phone": "045-222-5050"
+      },
+      "name_en": "Yokohama LANDMARK HALL",
+      "description_zh": "位于横滨地标广场的多功能礼堂，可举办演出、发布会及会议。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://landmarkhall.jp/"
+        }
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/yokohama-landmark-hall.webp",
+        "source_url": "https://landmarkhall.jp/",
+        "original_url": "https://landmarkhall.jp/wp/wp-content/uploads/2018/08/202605_02-1.jpg",
+        "credit": "横滨地标大厅",
+        "width": 1200,
+        "height": 672
+      },
+      "location": {
+        "lat": 35.455175085548,
+        "lng": 139.63109267347,
+        "scope": "building",
+        "source_url": "https://landmarkhall.jp/"
+      },
+      "name_zh": "横滨 LANDMARK HALL",
+      "display_aliases": []
+    },
+    "venue-新宿住友ホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15902259301647523806",
+        "place_name": "Shinjuku Sumitomo Hall, Shinjuku Sumitomo bldg., B1F 2 Chome-6-1 Nishishinjuku, Shinjuku City, Tokyo 163-0290, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E6%96%B0%E5%AE%BF%E4%BD%8F%E5%8F%8B%E3%83%9B%E3%83%BC%E3%83%AB&output=embed",
+        "scope": "venue"
+      },
+      "venue_type": "展演空间",
+      "description_zh": "位于东京西新宿、由住友不动产旗下 Belle Salle 运营的会场，设活动大厅及会议设施。",
+      "facts": {
+        "phone": "050-3112-0905"
+      },
+      "location": {
+        "lat": 35.6914915,
+        "lng": 139.6925863,
+        "source_url": "https://www.bellesalle.co.jp/shisetsu/shinjuku/shinjukusumitomohall/",
+        "scope": "building"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.bellesalle.co.jp/shisetsu/shinjuku/shinjukusumitomohall/"
+        }
+      ],
+      "photo": {
+        "path": "/uma_tools/img/venues/shinjuku-sumitomo-hall.webp",
+        "source_url": "https://www.bellesalle.co.jp/shisetsu/shinjuku/shinjukusumitomohall/",
+        "original_url": "https://www.bellesalle.co.jp/wp-content/uploads/shinjukusumitomohall_main.jpg",
+        "credit": "住友不动产 BELLESALLE",
+        "width": 935,
+        "height": 1247
+      }
+    },
+    "venue-恵比寿ガ-デンホ-ル": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=2411367857894532220",
+        "place_name": "The Garden Hall, 1-chōme-13 Mita, Meguro City, Tokyo 153-0062, Japan",
+        "source_url": "https://maps.google.com/maps?q=Yebisu+Garden+Hall&output=embed",
+        "scope": "venue"
+      },
+      "venue_type": "展演空间",
+      "facts": {
+        "official_url": "https://gardenplace.jp/hall/index",
+        "access_url": "https://gardenplace.jp/access/"
+      },
+      "description_zh": "惠比寿花园广场内的多功能场馆，与同一设施内的 Garden Room 分别使用。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://gardenplace.jp/hall/index"
+        }
+      ],
+      "location": {
+        "lat": 35.642145,
+        "lng": 139.713487,
+        "source_url": "https://gardenplace.jp/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/yebisu-garden-hall.webp",
+        "source_url": "https://www.sapporo-re.jp/portfolio/ygp/garden-hall-room/",
+        "original_url": "https://www.sapporo-re.jp/contents/uploads/2025/08/250820_gaden-hall_01.webp",
+        "credit": "札幌不动产开发株式会社",
+        "width": 1000,
+        "height": 530
+      },
+      "name_zh": "惠比寿 Garden Hall",
+      "display_aliases": []
+    },
+    "venue-眉山山頂ステ-ジ": {
+      "location": {
+        "lat": 34.0671349,
+        "lng": 134.5374873,
+        "source_url": "https://maps.google.com/maps?cid=15819196425098718761&output=embed",
+        "scope": "complex"
+      },
+      "venue_type": "公园",
+      "facts": {
+        "official_url": "https://www.city.tokushima.tokushima.jp/smph/kankou/keikan/bizan.html"
+      },
+      "description_zh": "位于德岛市眉山山顶区域，附近设眉山索道山顶站。",
+      "access_zh": "可搭乘眉山索道至山顶站，再按活动当天的现场指引前往舞台。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.city.tokushima.tokushima.jp/smph/kankou/keikan/bizan.html"
+        }
+      ],
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15819196425098718761",
+        "place_name": "Bizan Park, Mosukegahara Bizancho, Tokushima, 770-0908, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E7%9C%89%E5%B1%B1%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "complex"
+      },
+      "photo": {
+        "source_url": "https://gigazine.net/news/20151011-prince-of-stride-machiasobi15/",
+        "original_url": "https://i.gzn.jp/img/2015/10/11/prince-of-stride-machiasobi15/GGZ_6814.jpg",
+        "credit": "GIGAZINE",
+        "width": 801,
+        "height": 1200,
+        "path": "/uma_tools/img/venues/bizan-summit-stage.webp"
+      }
+    },
+    "venue-眉山林間ステ-ジ": {
+      "location": {
+        "lat": 34.0671349,
+        "lng": 134.5374873,
+        "source_url": "https://maps.google.com/maps?cid=15819196425098718761&output=embed",
+        "scope": "complex"
+      },
+      "venue_type": "公园",
+      "description_zh": "位于德岛市眉山公园的林间活动空间。与山顶舞台分别记录。",
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=15819196425098718761",
+        "place_name": "Bizan Park, Mosukegahara Bizancho, Tokushima, 770-0908, Japan",
+        "source_url": "https://maps.google.com/maps?q=%E7%9C%89%E5%B1%B1%E5%85%AC%E5%9C%92&output=embed",
+        "scope": "complex"
+      },
+      "photo": {
+        "source_url": "https://animeanime.jp/article/2013/10/13/15919.html",
+        "original_url": "https://s.animeanime.jp/imgs/p/X2bKTbbkhKNuuQZDts1HWTagH66grq_oqaqr/24330.jpg",
+        "credit": "アニメ！アニメ！",
+        "width": 700,
+        "height": 525,
+        "path": "/uma_tools/img/venues/bizan-forest-stage.webp"
+      }
+    },
+    "venue-烏丸半島芝生広場": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=5660966980151994820",
+        "place_name": "Japan, 〒525-0001 Shiga, Kusatsu, Oroshimocho, 烏丸半島 芝生広場",
+        "source_url": "https://maps.google.com/maps?q=%E7%83%8F%E4%B8%B8%E5%8D%8A%E5%B3%B6%E8%8A%9D%E7%94%9F%E5%BA%83%E5%A0%B4&output=embed",
+        "scope": "venue"
+      },
+      "location": {
+        "lat": 35.0746729,
+        "lng": 135.9327881,
+        "source_url": "https://www.google.com/maps?cid=5660966980151994820",
+        "scope": "building"
+      },
+      "venue_type": "公园",
+      "facts": {
+        "official_url": ""
+      },
+      "description_zh": "滋贺县草津市琵琶湖岸乌丸半岛的户外草坪，是音乐节等活动使用的场地。",
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.city.kusatsu.shiga.jp/shisei/shichoshitsu/kaikentaiwa/shiminnokoe.files/R8.2_1.pdf"
+        }
+      ],
+      "photo": {
+        "source_url": "https://plaza.rakuten.co.jp/hiromily2005/diary/202405130000/",
+        "original_url": "https://image.space.rakuten.co.jp/d/strg/ctrl/9/234d272ad9d032249a567f29db6330381714fbda.91.9.9.3.png",
+        "credit": "我が家の4わん",
+        "width": 700,
+        "height": 525,
+        "path": "/uma_tools/img/venues/karasuma-lawn.webp"
+      }
+    },
+    "venue-northern-horsepark-pony-hall": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=3626157093654022965",
+        "place_name": "Japan, 〒059-1361 Hokkaido, Tomakomai, Misawa, 114 パラッツォ・ベガ ポニー館",
+        "source_url": "https://maps.google.com/maps?q=%E3%83%91%E3%83%A9%E3%83%83%E3%83%84%E3%82%A9%E3%83%BB%E3%83%99%E3%82%AC&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "Northern Horse Park Palazzo Vega",
+      "name_original": "パラッツォ・ベガ",
+      "name_en": "Palazzo Vega",
+      "venue_type": "马术表演馆",
+      "description_zh": "Northern Horse Park 的室内小马表演空间。2026 年 8 月 1 日的活动第二部在此举行。",
+      "access_zh": "从新千岁机场可乘园区免费接驳巴士，返程在小马表演馆外乘车。",
+      "parking_zh": "园区有 500 个免费车位。",
+      "facts": {
+        "official_url": "https://www.northern-horsepark.jp/horse/ponyshow/",
+        "address": "北海道苫小牧市美沢114-7",
+        "phone": "0144-58-2116",
+        "access_url": "https://www.northern-horsepark.jp/access/"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.northern-horsepark.jp/northernm_hs/nm-event/451961/"
+        }
+      ],
+      "location": {
+        "lat": 42.778694,
+        "lng": 141.739076,
+        "source_url": "https://www.northern-horsepark.jp/access/",
+        "scope": "complex"
+      },
+      "photo": {
+        "path": "/uma_tools/img/venues/northern-pony-hall.webp",
+        "source_url": "https://www.northern-horsepark.jp/horse/ponyshow/",
+        "original_url": "https://www.northern-horsepark.jp/img/uploads/img_main01-5.jpg",
+        "credit": "北方马匹公园小马表演馆",
+        "width": 720,
+        "height": 472
+      },
+      "aliases": [
+        "北方马匹公园小马表演馆"
+      ],
+      "display_aliases": []
+    },
+    "venue-meitetsu-gifu-station": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=9679253500442496067",
+        "place_name": "Meitetsu-Gifu Station, 9-chōme Kandamachi, Gifu, 500-8833, Japan",
+        "source_url": "https://maps.google.com/maps?q=Meitetsu+Gifu+Station&output=embed",
+        "scope": "venue"
+      },
+      "name_zh": "名铁岐阜站",
+      "name_original": "名鉄岐阜駅",
+      "name_en": "Meitetsu Gifu Station",
+      "venue_type": "铁路车站",
+      "description_zh": "位于岐阜市，是名古屋铁道名古屋本线和各务原线的终点站。2025 年 4 月 13 日，《赛马娘 芦毛灰姑娘》联动彩绘列车在此举行发车仪式。",
+      "access_zh": "可乘名铁名古屋本线或各务原线抵达。",
+      "facts": {
+        "official_url": "https://www.meitetsu.co.jp/train/station_info/line01/station/1253.html",
+        "address": "岐阜県岐阜市長住町2丁目9番地"
+      },
+      "references": [
+        {
+          "kind": "official",
+          "url": "https://www.meitetsu.co.jp/pr/meitetsu_umamusume/"
+        }
+      ],
+      "location": {
+        "lat": 35.411709,
+        "lng": 136.759821,
+        "source_url": "https://www.meitetsu.co.jp/train/station_info/line01/station/1253.html",
+        "scope": "building"
+      },
+      "photo": {
+        "source_url": "https://note.com/fallen_pear/n/n383562cf257a",
+        "original_url": "https://assets.st-note.com/img/1675776369659-R95GuyvdzP.jpg",
+        "credit": "fallen_pear",
+        "width": 1024,
+        "height": 768,
+        "path": "/uma_tools/img/venues/meitetsu-gifu.webp"
+      }
+    }
+  }
+}

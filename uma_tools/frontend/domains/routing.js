@@ -880,8 +880,6 @@ export function createRouting(deps) {
             1,
             parseInt(url.searchParams.get("page") || "1", 10) || 1,
           );
-          if (!deps.venuesList.value.length)
-            deps.loadVenuesListData({ q: deps.venueQuery.value, page: deps.venuePage.value }).catch(() => {});
         }
       } else if (
         first === "database" &&
