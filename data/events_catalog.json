@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T09:00:07+00:00",
+  "generated_at": "2026-11-11T00:11:20+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -12,15 +12,15 @@
     }
   },
   "coverage": {
-    "events": 516,
+    "events": 518,
     "by_kind": {
       "concert": 46,
       "official_program": 271,
-      "onsite": 199
+      "onsite": 201
     },
     "by_mode": {
       "online": 272,
-      "onsite": 244
+      "onsite": 246
     },
     "official_programs": 254,
     "unresolved_cast_names": 0
@@ -996,12 +996,12 @@
           "label": "六视角",
           "date": "2026-09-11",
           "date_end": "2026-09-11",
-          "image": "https://i.ytimg.com/vi_webp/QkH0BY94osE/maxresdefault.webp"
+          "image": "https://i.ytimg.com/vi/QkH0BY94osE/hq720.jpg"
         }
       ],
       "date_start": "2026-09-11",
       "date_end": "2026-09-11",
-      "image": "https://i.ytimg.com/vi_webp/QkH0BY94osE/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/QkH0BY94osE/hq720.jpg",
       "image_strategy": "default_session"
     },
     {
@@ -2765,7 +2765,7 @@
           "label": "第5回",
           "date": "2020-09-08",
           "date_end": "2020-09-08",
-          "image": "https://i.ytimg.com/vi_webp/PGJh8LyFYZE/maxresdefault.webp"
+          "image": "https://i.ytimg.com/vi/PGJh8LyFYZE/hq720.jpg"
         }
       ],
       "date_start": "2020-08-11",
@@ -3059,6 +3059,1018 @@
       "display_title": "WINNING LIVE 37 发售纪念活动"
     },
     {
+      "id": "eventernote-2027-01-20",
+      "title": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2",
+      "date": "2027-01-20",
+      "end_date": "2027-01-20",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "Eventim Apollo",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0051",
+          "name": "大桥彩香",
+          "character_id": "vodka",
+          "role": "伏特加",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0090",
+          "name": "木村千咲",
+          "character_id": "daiwascarlet",
+          "role": "大和赤骥",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0073",
+          "name": "德井青空",
+          "character_id": "tmoperao",
+          "role": "好歌剧",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0155",
+          "name": "衣川里佳",
+          "character_id": "naritabrian",
+          "role": "成田白仁",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0165",
+          "name": "铃木实里",
+          "character_id": "agnesdigital",
+          "role": "爱丽数码",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0085",
+          "name": "星谷美绪",
+          "character_id": "mayanotopgun",
+          "role": "摩耶重炮",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0058",
+          "name": "小仓唯",
+          "character_id": "manhattancafe",
+          "role": "曼城茶座",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0008",
+          "name": "上坂堇",
+          "character_id": "agnestachyon",
+          "role": "爱丽速子",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0042",
+          "name": "咲咲木瞳",
+          "character_id": "admirevega",
+          "role": "爱慕织姬",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0132",
+          "name": "福原绫香",
+          "character_id": "seekingthepearl",
+          "role": "采珠",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0125",
+          "name": "真野美月",
+          "character_id": "sakuralaurel",
+          "role": "樱花桂冠",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0086",
+          "name": "春川芽生",
+          "character_id": "symbolikriss",
+          "role": "吉兆",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0134",
+          "name": "福岛晴菜",
+          "character_id": "dantsuflame",
+          "role": "烈焰快驹",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0153",
+          "name": "藤本侑里",
+          "character_id": "junglepocket",
+          "role": "森林宝穴",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499848",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499848"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "eventernote-2027-01-20-session-1",
+          "label": "本场",
+          "date": "2027-01-20",
+          "songs": [],
+          "character_ids": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0051",
+              "name": "大桥彩香",
+              "character_id": "vodka",
+              "role": "伏特加",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0090",
+              "name": "木村千咲",
+              "character_id": "daiwascarlet",
+              "role": "大和赤骥",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0073",
+              "name": "德井青空",
+              "character_id": "tmoperao",
+              "role": "好歌剧",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0155",
+              "name": "衣川里佳",
+              "character_id": "naritabrian",
+              "role": "成田白仁",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0165",
+              "name": "铃木实里",
+              "character_id": "agnesdigital",
+              "role": "爱丽数码",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0085",
+              "name": "星谷美绪",
+              "character_id": "mayanotopgun",
+              "role": "摩耶重炮",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0058",
+              "name": "小仓唯",
+              "character_id": "manhattancafe",
+              "role": "曼城茶座",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0008",
+              "name": "上坂堇",
+              "character_id": "agnestachyon",
+              "role": "爱丽速子",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0042",
+              "name": "咲咲木瞳",
+              "character_id": "admirevega",
+              "role": "爱慕织姬",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0132",
+              "name": "福原绫香",
+              "character_id": "seekingthepearl",
+              "role": "采珠",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0125",
+              "name": "真野美月",
+              "character_id": "sakuralaurel",
+              "role": "樱花桂冠",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0086",
+              "name": "春川芽生",
+              "character_id": "symbolikriss",
+              "role": "吉兆",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0134",
+              "name": "福岛晴菜",
+              "character_id": "dantsuflame",
+              "role": "烈焰快驹",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0153",
+              "name": "藤本侑里",
+              "character_id": "junglepocket",
+              "role": "森林宝穴",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499848",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499848"
+                }
+              ]
+            }
+          ],
+          "setlist_status": "none",
+          "doors_time": "18:00",
+          "start_time": "19:00",
+          "end_time": "22:00",
+          "end_time_estimated": true,
+          "time_source": "eventernote",
+          "time_precision": "minute",
+          "source_time_text": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2    開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります 開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
+          "time_source_url": "https://www.eventernote.com/events/499848"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/499848"
+        }
+      ],
+      "legacy_url": "",
+      "image": "https://eventernote.s3.amazonaws.com/images/events/499848_s.jpg",
+      "summary": "",
+      "source_time_text": "開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
+      "title_aliases": [
+        "赛马娘 Pretty Derby 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2"
+      ],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "time_source": "eventernote",
+      "time_precision": "minute",
+      "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2",
+      "summary_ja": "",
+      "title_zh": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2",
+      "localization_state": "complete"
+    },
+    {
+      "id": "eventernote-2027-01-19",
+      "title": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1",
+      "date": "2027-01-19",
+      "end_date": "2027-01-19",
+      "kind": "onsite",
+      "mode": "onsite",
+      "series_id": "",
+      "venue": "Eventim Apollo",
+      "cast_status": "verified",
+      "cast": [
+        {
+          "voice_actor_id": "va-0051",
+          "name": "大桥彩香",
+          "character_id": "vodka",
+          "role": "伏特加",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0090",
+          "name": "木村千咲",
+          "character_id": "daiwascarlet",
+          "role": "大和赤骥",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0073",
+          "name": "德井青空",
+          "character_id": "tmoperao",
+          "role": "好歌剧",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0155",
+          "name": "衣川里佳",
+          "character_id": "naritabrian",
+          "role": "成田白仁",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0165",
+          "name": "铃木实里",
+          "character_id": "agnesdigital",
+          "role": "爱丽数码",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0085",
+          "name": "星谷美绪",
+          "character_id": "mayanotopgun",
+          "role": "摩耶重炮",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0058",
+          "name": "小仓唯",
+          "character_id": "manhattancafe",
+          "role": "曼城茶座",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0008",
+          "name": "上坂堇",
+          "character_id": "agnestachyon",
+          "role": "爱丽速子",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0042",
+          "name": "咲咲木瞳",
+          "character_id": "admirevega",
+          "role": "爱慕织姬",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0132",
+          "name": "福原绫香",
+          "character_id": "seekingthepearl",
+          "role": "采珠",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0125",
+          "name": "真野美月",
+          "character_id": "sakuralaurel",
+          "role": "樱花桂冠",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0086",
+          "name": "春川芽生",
+          "character_id": "symbolikriss",
+          "role": "吉兆",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0134",
+          "name": "福岛晴菜",
+          "character_id": "dantsuflame",
+          "role": "烈焰快驹",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        },
+        {
+          "voice_actor_id": "va-0153",
+          "name": "藤本侑里",
+          "character_id": "junglepocket",
+          "role": "森林宝穴",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/499847",
+          "person_type": "voice_actor",
+          "resolution": "resolved",
+          "evidence_sources": [
+            {
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/499847"
+            }
+          ]
+        }
+      ],
+      "character_ids": [],
+      "sessions": [
+        {
+          "id": "eventernote-2027-01-19-session-1",
+          "label": "本场",
+          "date": "2027-01-19",
+          "songs": [],
+          "character_ids": [],
+          "cast": [
+            {
+              "voice_actor_id": "va-0051",
+              "name": "大桥彩香",
+              "character_id": "vodka",
+              "role": "伏特加",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0090",
+              "name": "木村千咲",
+              "character_id": "daiwascarlet",
+              "role": "大和赤骥",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0073",
+              "name": "德井青空",
+              "character_id": "tmoperao",
+              "role": "好歌剧",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0155",
+              "name": "衣川里佳",
+              "character_id": "naritabrian",
+              "role": "成田白仁",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0165",
+              "name": "铃木实里",
+              "character_id": "agnesdigital",
+              "role": "爱丽数码",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0085",
+              "name": "星谷美绪",
+              "character_id": "mayanotopgun",
+              "role": "摩耶重炮",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0058",
+              "name": "小仓唯",
+              "character_id": "manhattancafe",
+              "role": "曼城茶座",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0008",
+              "name": "上坂堇",
+              "character_id": "agnestachyon",
+              "role": "爱丽速子",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0042",
+              "name": "咲咲木瞳",
+              "character_id": "admirevega",
+              "role": "爱慕织姬",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0132",
+              "name": "福原绫香",
+              "character_id": "seekingthepearl",
+              "role": "采珠",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0125",
+              "name": "真野美月",
+              "character_id": "sakuralaurel",
+              "role": "樱花桂冠",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0086",
+              "name": "春川芽生",
+              "character_id": "symbolikriss",
+              "role": "吉兆",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0134",
+              "name": "福岛晴菜",
+              "character_id": "dantsuflame",
+              "role": "烈焰快驹",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0153",
+              "name": "藤本侑里",
+              "character_id": "junglepocket",
+              "role": "森林宝穴",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/499847",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/499847"
+                }
+              ]
+            }
+          ],
+          "setlist_status": "none",
+          "doors_time": "18:00",
+          "start_time": "19:00",
+          "end_time": "22:00",
+          "end_time_estimated": true,
+          "time_source": "eventernote",
+          "time_precision": "minute",
+          "source_time_text": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1    開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります 開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
+          "time_source_url": "https://www.eventernote.com/events/499847"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "kind": "eventernote",
+          "label": "Eventernote",
+          "url": "https://www.eventernote.com/events/499847"
+        }
+      ],
+      "legacy_url": "",
+      "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg",
+      "summary": "",
+      "source_time_text": "開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
+      "title_aliases": [
+        "赛马娘 Pretty Derby 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1"
+      ],
+      "id_aliases": [],
+      "legacy_aliases": [],
+      "setlist_status": "none",
+      "time_source": "eventernote",
+      "time_precision": "minute",
+      "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1",
+      "summary_ja": "",
+      "title_zh": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1",
+      "localization_state": "complete"
+    },
+    {
       "id": "eventernote-2026-12-12",
       "title": "WINNING LIVE 36 发售纪念活动",
       "date": "2026-12-12",
@@ -3311,7 +4323,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 開場 16:30 開演 17:30 終演 18:30",
+          "source_time_text": "『ウマ娘 プリティーダービー』WINNING LIVE 36発売記念イベント    開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
           "time_source_url": "https://www.eventernote.com/events/494410"
         }
       ],
@@ -3326,7 +4338,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LACA-25304_JK.jpg",
       "summary": "对应 WINNING LIVE 唱片的发售纪念活动，内容包括出演声优谈话与迷你演唱会。现场观览通过唱片附带的申请凭证报名抽选。",
-      "source_time_text": "開場 16:30 開演 17:30 終演 18:30",
+      "source_time_text": "開場 16:30 開演 17:30 終演 18:30 ※終演時間はあくまでも目安になります",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/live/1413/",
@@ -3552,7 +4564,7 @@
           "end_time_estimated": true,
           "time_source": "eventernote",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります 開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
+          "source_time_text": "ウマ娘 プリティーダービー 6th EVENT The New Frontier Blu-ray 発売記念上映イベント    開場 16:30 開演 17:00 終演 19:00 開場 16:30 開演 17:00 終演 19:00",
           "time_source_url": "https://www.eventernote.com/events/494412"
         }
       ],
@@ -3567,7 +4579,7 @@
       "legacy_url": "",
       "image": "https://umamusume.lantis.jp/7uTXon4C/wp-content/uploads/discography/LABX-8953_7.jpg",
       "summary": "为第6次大型演唱会《The New Frontier》Blu-ray 发售举办的谈话与放映活动，高柳知叶、奥野香耶、佳原萌枝、真名濑日和及松田飒水出演。",
-      "source_time_text": "開場 16:30 開演 17:00 終演 19:00 ※終演時間はあくまでも目安になります",
+      "source_time_text": "開場 16:30 開演 17:00 終演 19:00",
       "image_source": {
         "kind": "associated_release_cover",
         "url": "https://umamusume.lantis.jp/discography/%e3%82%a6%e3%83%9e%e5%a8%98-%e3%83%97%e3%83%aa%e3%83%86%e3%82%a3%e3%83%bc%e3%83%80%e3%83%bc%e3%83%93%e3%83%bc-6th-event-the-new-frontier-blu-ray/",
@@ -9388,7 +10400,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi_webp/QkH0BY94osE/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/QkH0BY94osE/hq720.jpg",
       "summary": "六位赛马娘共同游玩《Among Us 3D》，从各自视角展开游戏实况。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -18462,7 +19474,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "anime-cinderella-bluray",
-      "venue": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue": "Animate池袋本店北馆 9F BLACK 活动厅",
       "cast_status": "verified",
       "cast": [
         {
@@ -18601,7 +19613,7 @@
       "setlist_status": "none",
       "venue_raw": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_id": "venue-animate-hall-black",
-      "venue_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "venue_ja": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -22461,7 +23473,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "anime-cinderella-exhibition",
-      "venue": "安利美特池袋本店北馆 B2F 剧场",
+      "venue": "Animate池袋本店北馆 B2F 剧场",
       "cast_status": "verified",
       "cast": [
         {
@@ -22576,7 +23588,7 @@
       "group_date_end": "",
       "venue_raw": "アニメイト池袋本店 B2F アニメイトシアター",
       "venue_id": "venue-アニメイト池袋本店-b2f-アニメイトシアタ",
-      "venue_zh": "安利美特池袋本店北馆 B2F 剧场",
+      "venue_zh": "Animate池袋本店北馆 B2F 剧场",
       "venue_ja": "アニメイト池袋本店 B2F アニメイトシアター",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -22606,7 +23618,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "anime-cinderella-exhibition",
-      "venue": "安利美特池袋本店北馆 B2F 剧场",
+      "venue": "Animate池袋本店北馆 B2F 剧场",
       "cast_status": "verified",
       "cast": [
         {
@@ -22721,7 +23733,7 @@
       "group_date_end": "",
       "venue_raw": "アニメイト池袋本店 B2F アニメイトシアター",
       "venue_id": "venue-アニメイト池袋本店-b2f-アニメイトシアタ",
-      "venue_zh": "安利美特池袋本店北馆 B2F 剧场",
+      "venue_zh": "Animate池袋本店北馆 B2F 剧场",
       "venue_ja": "アニメイト池袋本店 B2F アニメイトシアター",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -22844,7 +23856,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "",
-      "venue": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue": "Animate池袋本店北馆 9F BLACK 活动厅",
       "cast_status": "verified",
       "cast": [
         {
@@ -22964,7 +23976,7 @@
       "group_date_end": "",
       "venue_raw": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_id": "venue-animate-hall-black",
-      "venue_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "venue_ja": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -22995,7 +24007,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "",
-      "venue": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue": "Animate池袋本店北馆 9F BLACK 活动厅",
       "cast_status": "verified",
       "cast": [
         {
@@ -23115,7 +24127,7 @@
       "group_date_end": "",
       "venue_raw": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_id": "venue-animate-hall-black",
-      "venue_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "venue_ja": "アニメイト池袋本店 9F animate hall BLACK",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -37468,7 +38480,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "anime-release-events",
-      "venue": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue": "Animate池袋本店北馆 9F BLACK 活动厅",
       "cast_status": "verified",
       "cast": [
         {
@@ -37677,7 +38689,7 @@
       "group_date_end": "",
       "venue_raw": "animate hall BLACK",
       "venue_id": "venue-animate-hall-black",
-      "venue_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "venue_ja": "animate hall BLACK",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -37708,7 +38720,7 @@
       "kind": "onsite",
       "mode": "onsite",
       "series_id": "anime-release-events",
-      "venue": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue": "Animate池袋本店北馆 9F BLACK 活动厅",
       "cast_status": "verified",
       "cast": [
         {
@@ -37917,7 +38929,7 @@
       "group_date_end": "",
       "venue_raw": "animate hall BLACK",
       "venue_id": "venue-animate-hall-black",
-      "venue_zh": "安利美特池袋本店北馆 9F BLACK 活动厅",
+      "venue_zh": "Animate池袋本店北馆 9F BLACK 活动厅",
       "venue_ja": "animate hall BLACK",
       "venue_city": "东京",
       "venue_country": "日本",
@@ -109166,7 +110178,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi_webp/LcpgKvi33w4/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/LcpgKvi33w4/hq720.jpg",
       "summary": "花开胜利俱乐部抵达樱岛，却不见樱花进王的身影。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -155031,7 +156043,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi_webp/UUvp1X5G33s/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/UUvp1X5G33s/hq720.jpg",
       "summary": "黄金船与观众聊赛马娘歌曲，为第三次活动预热。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -160812,7 +161824,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi_webp/PGJh8LyFYZE/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/PGJh8LyFYZE/hq720.jpg",
       "summary": "精选动画《四格马娘》中的精彩集数！继第1集、第2集之后，本期将与出演演员的视频一同欣赏第5集《大激战！拉面杯（GⅡ）》的音频评论！出演：特别周役 和气杏未、东海帝王役 Machico、小栗帽役 高柳知叶。【播出信息】TOKYO MX、BS11、AT-X自2020年7月7日起每周二21:54播出。※播出时间可能未经预告变更。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -161242,7 +162254,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/DLMaPKHnvaM/maxresdefault.jpg",
+      "image": "https://i.ytimg.com/vi/DLMaPKHnvaM/hq720.jpg",
       "summary": "机械黄金船继续挑战速度的顶点。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -169238,7 +170250,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi_webp/Z8aJJeahGA4/maxresdefault.webp",
+      "image": "https://i.ytimg.com/vi/Z8aJJeahGA4/hq720.jpg",
       "summary": "黄金船在万圣节装饰的摄影棚中，介绍此前征集到的赛马娘川柳。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -190651,5 +191663,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "a2e9fea79b428ddefab8"
+  "build_id": "aaa22327bf297e2e12e3"
 }
