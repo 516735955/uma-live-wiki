@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T02:37:32+00:00",
+  "generated_at": "2026-11-12T02:57:25+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -519,19 +519,19 @@
           "label": "DAY1",
           "date": "2027-01-19",
           "date_end": "2027-01-19",
-          "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg"
+          "image": "/uma_tools/img/event-covers/numbered/7th.png"
         },
         {
           "event_id": "eventernote-2027-01-20",
           "label": "DAY2",
           "date": "2027-01-20",
           "date_end": "2027-01-20",
-          "image": "https://eventernote.s3.amazonaws.com/images/events/499848_s.jpg"
+          "image": "/uma_tools/img/event-covers/numbered/7th.png"
         }
       ],
       "date_start": "2027-01-19",
       "date_end": "2027-01-20",
-      "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "image_strategy": "default_session"
     },
     {
@@ -3606,7 +3606,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://eventernote.s3.amazonaws.com/images/events/499848_s.jpg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "",
       "source_time_text": "開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [
@@ -4155,7 +4155,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg",
+      "image": "/uma_tools/img/event-covers/numbered/7th.png",
       "summary": "",
       "source_time_text": "開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
       "title_aliases": [
@@ -191800,5 +191800,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "58011ddd08f3b1ef06d4"
+  "build_id": "0f3f6f2cc41a5adda910"
 }
