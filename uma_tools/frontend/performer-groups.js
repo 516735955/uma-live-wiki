@@ -98,6 +98,21 @@ export function groupSetlistPerformers(html) {
   return template.innerHTML;
 }
 
+export const CastChip = {
+  props: { type: String, color: String, href: String, image: String, label: String },
+  setup(props) {
+    const view = Vue.getCurrentInstance().proxy.$root;
+    const failedImage = Vue.ref('');
+    const navigate = event => view.internalLink(event, () => view.navNavigate(props.href));
+    return { failedImage, navigate };
+  },
+  template: `<a class="performer-chip cast-chip" :class="type+'-chip'" :style="{'--chip-color':color}" :href="href" @click="navigate">
+    <img v-if="image && image !== failedImage" v-media-src="image" alt="" loading="lazy" @error="failedImage=image">
+    <span v-else class="performer-chip-fallback" aria-hidden="true">{{ label?.slice(0,1) }}</span>
+    <span>{{ label }}</span>
+  </a>`,
+};
+
 export const PerformanceCast = {
   props: { performance: {type:Object, required:true}, rowClass: {type:String, default:''} },
   setup(props) {

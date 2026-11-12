@@ -77,7 +77,7 @@ export function createVoices(deps) {
   }
 
   function setVoiceSection(section) {
-    if (["profile", "songs", "anime", "events"].indexOf(section) === -1) return;
+    if (!deps.routes.sections.voiceActor.includes(section)) return;
     voiceSection.value = section;
     deps.pushUrl(true);
     if (section === "anime") deps.loadAnimeCatalogOptional();

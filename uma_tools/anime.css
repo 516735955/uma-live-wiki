@@ -43,11 +43,6 @@
 .anime-episode-list a:hover b { color: var(--ui-cobalt); }
 .anime-cast-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px 20px; }
 .anime-cast-list .anime-cast-pair { display: grid; grid-template-columns: minmax(0,140px) minmax(0,1fr); gap: 8px; padding: 8px 0; margin: 0; align-items: center; }
-.anime-cast-pair .performer-chip { min-width: 0; gap: 7px; margin: 0; font-size: 14px; }
-.anime-cast-pair .performer-chip img { width: 30px; height: 30px; flex: 0 0 auto; }
-.anime-cast-pair .performer-chip span { min-width: 0; white-space: normal; line-height: 1.4; }
-.anime-cast-pair .voice-chip { color: var(--text-2); }
-.anime-cast-list a { text-decoration: none; }
 .anime-album-record { padding: 12px 0; text-decoration: none; color: inherit; }
 .anime-album-record > span { display: grid; gap: 8px; }
 .anime-crosslink-grid { display: grid; gap: 8px; }

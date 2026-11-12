@@ -335,9 +335,7 @@ export function createRouting(deps) {
         }
       } else if (deps.activeTab.value === "live") {
         if (deps.liveView.value === "eventDetail" && deps.eventDetail.value) {
-          const session = deps.selectedEventSessionId.value;
-          path = deps.routes.events(deps.eventDetail.value.id, session);
-          if (!session && deps.eventDetail.value.sessions?.length) path = deps.routes.query(path, { view: 'overview' });
+          path = deps.routes.events(deps.eventDetail.value.id, deps.selectedEventSessionId.value);
         } else {
           path = deps.routes.query(deps.routes.events(), {
             q: deps.eventsQuery.value,
@@ -598,7 +596,6 @@ export function createRouting(deps) {
             seg[3]
               ? decodeURIComponent(seg[3])
               : url.searchParams.get("session") || "",
-            !seg[3] && url.searchParams.get("view") === "overview",
           );
         else {
           deps.eventsQuery.value = url.searchParams.get("q") || "";

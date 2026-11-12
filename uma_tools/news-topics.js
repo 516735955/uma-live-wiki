@@ -35,16 +35,16 @@ function createNewsTopics({ DATA_DIR, catalogStore, newsContent, sendJson }) {
     function topic(type, id) {
       if (type === 'character') {
         const row = store.charactersById.get(id);
-        return row && { type, id, title: row.zh || row.ja, image: row.av || row.img, color: row.main, href: routes.characters(id) };
+        return row && { type, id, title: row.zh || row.ja, image: row.img || row.av, color: row.main, href: routes.characters(id) };
       }
       if (type === 'voice') {
         const row = voices.get(id);
-        return row && { type, id, title: row.identity.zh || row.identity.ja, image: row.photo?.url, color: row.roles?.[0]?.main, href: routes.voiceActors(id) };
+        return row && { type, id, title: row.identity.zh || row.identity.ja, image: row.photo?.url, color: row.roles?.[0]?.color_main || '#3157ed', href: routes.voiceActors(id) };
       }
       const raw = store.eventsById.get(id) || sessions.get(id);
       if (!raw) return null;
       const row = store.parentForChild.get(raw.id)?.parent || raw;
-      return { type, id: row.id, title: row.title_zh || row.title, image: row.image_preview || row.image, color: eventColors[row.kind], href: routes.query(routes.events(row.id), { view: 'overview' }) };
+      return { type, id: row.id, title: row.title_zh || row.title, image: row.image_preview || row.image, color: eventColors[row.kind], href: routes.events(row.id) };
     }
 
     for (const [key, row] of Object.entries(source())) {

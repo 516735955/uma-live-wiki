@@ -309,7 +309,7 @@ export function createDomains(env) {
           "normName",
           "resetPageScroll",
         ],
-        environment: ["api", "computed", "reactive", "ref", "watch"],
+        environment: ["api", "computed", "reactive", "ref", "routes", "watch"],
         routing: ["beginEntityNavigation", "clearEntityDetails", "pushUrl", "navigationError", "navigationRetry"],
         horses: [
           "charHasPedigree",

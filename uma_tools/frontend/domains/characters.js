@@ -126,11 +126,7 @@ export function createCharacters(deps) {
   ];
 
   function setCharSection(section) {
-    if (
-      ["profile", "pedigree", "songs", "anime", "events"].indexOf(section) ===
-      -1
-    )
-      return;
+    if (!deps.routes.sections.character.includes(section)) return;
     charSection.value = section;
     deps.pushUrl(true);
     if (section === "pedigree") {

@@ -33,7 +33,7 @@ export function createEvents(deps) {
 
   const eventSessionOptions = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
-    const options = sessions.map(function (session, index) {
+    return sessions.map(function (session, index) {
       const unitLabel = session.label && !/^\d{1,2}:\d{2}$/.test(session.label)
         ? session.label : "第" + (index + 1) + "回";
       return {
@@ -43,7 +43,6 @@ export function createEvents(deps) {
           .join(" "),
       };
     });
-    return options.length ? [{ value: '', label: '总览' }, ...options] : options;
   });
 
   const homeNextEvent = deps.ref(null);
@@ -425,7 +424,6 @@ export function createEvents(deps) {
 
   const selectedEventSession = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
-    if (!selectedEventSessionId.value && sessions.length > 1) return null;
     return (
       sessions.find(function (session) {
         return session.id === selectedEventSessionId.value;
@@ -530,13 +528,13 @@ export function createEvents(deps) {
   }
 
   function selectEventSession(sessionId) {
-    if (sessionId && !eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
+    if (!eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
     selectedEventSessionId.value = sessionId;
     activeMediaKey.value = "";
     deps.pushUrl();
   }
 
-  function openEvent(eventOrId, requestedSessionId, overview = false) {
+  function openEvent(eventOrId, requestedSessionId) {
     const isCurrent = deps.beginEntityNavigation();
     const id =
       typeof eventOrId === "string" ? eventOrId : eventOrId && eventOrId.id;
@@ -565,7 +563,7 @@ export function createEvents(deps) {
         return session.id === requestedSessionId;
       })
         ? requestedSessionId
-        : overview ? "" : (sessions[0] && sessions[0].id) || "";
+        : sessions[0]?.id || "";
       liveView.value = "eventDetail";
       deps.activeTab.value = "live";
       if (!isCurrent.fromRoute) deps.resetPageScroll();

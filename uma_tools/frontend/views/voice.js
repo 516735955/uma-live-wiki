@@ -22,6 +22,7 @@ export const template = `
                     <button :class="{active:voiceSection==='songs'}" @click="setVoiceSection('songs')">歌曲信息</button>
                     <button :class="{active:voiceSection==='anime'}" @click="setVoiceSection('anime')">动画出演</button>
                     <button :class="{active:voiceSection==='events'}" @click="setVoiceSection('events')">活动出演</button>
+                    <button :class="{active:voiceSection==='news'}" @click="setVoiceSection('news')">相关新闻</button>
                 </nav>
                 <section v-if="voiceSection==='profile'" class="entity-section">
                     <dl class="profile-facts">
@@ -69,6 +70,6 @@ export const template = `
                     <content-state v-else-if="voiceHistoryQuery || voiceHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="voiceHistoryQuery='';voiceHistoryKind='all'"></content-state>
                     <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
-                <related-news type="voice" :entity-id="voiceDetail.id"></related-news>
+                <related-news v-else-if="voiceSection==='news'" type="voice" :entity-id="voiceDetail.id" standalone></related-news>
             </article>
         `;

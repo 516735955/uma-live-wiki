@@ -13,7 +13,7 @@ function loadFrontend(context) {
   const requestSource = read(path.join(directory, 'requests.js')).replace(/export function /g, 'function ');
   Object.assign(context, vm.runInContext('(function(){' + requestSource + ';return {catalogPath,catalogPageSize,createCatalogList,newsIndexPath,newsDetailPath};})()', context));
   const performers = read(path.join(directory, 'performer-groups.js')).replace(/export (const|function) /g, '$1 ');
-  Object.assign(context, vm.runInContext('(function(){' + performers + ';return {castGroups,performanceGroups,groupSetlistPerformers,PerformanceCast};})()', context));
+  Object.assign(context, vm.runInContext('(function(){' + performers + ';return {castGroups,performanceGroups,groupSetlistPerformers,CastChip,PerformanceCast};})()', context));
   const wiring = read(path.join(directory, "domains.js"));
   const labels = read(path.join(directory, 'anime-labels.js')).replace(/export function /g, 'function ');
   Object.assign(context, vm.runInContext('(function(){' + labels + ';return {animeFormatLabel,animeStatusLabel,animePlatformLabel};})()', context));

@@ -31,6 +31,7 @@ export const template = `
                     <button :class="{active:charSection==='songs'}" @click="setCharSection('songs')">歌曲信息</button>
                     <button :class="{active:charSection==='anime'}" @click="setCharSection('anime')">动画出演</button>
                     <button :class="{active:charSection==='events'}" @click="setCharSection('events')">活动出演</button>
+                    <button :class="{active:charSection==='news'}" @click="setCharSection('news')">相关新闻</button>
                 </nav>
                 <section v-show="charSection==='profile'" class="entity-section character-profile">
                     <dl v-if="charDetail.birth || charDetail.height || charDetail.weight || charDetail.sankak" class="profile-facts">
@@ -81,6 +82,6 @@ export const template = `
                     <content-state v-else-if="charHistoryQuery || charHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="charHistoryQuery='';charHistoryKind='all'"></content-state>
                     <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
-                <related-news type="character" :entity-id="charDetail.id"></related-news>
+                <related-news v-if="charSection==='news'" type="character" :entity-id="charDetail.id" standalone></related-news>
             </article>
         `;

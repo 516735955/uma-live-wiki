@@ -10,8 +10,8 @@
   const sections = Object.freeze({
     song: ['releases', 'credits', 'lyrics', 'performances'],
     creator: ['works', 'collaborators'],
-    character: ['profile', 'pedigree', 'songs', 'anime', 'events'],
-    voiceActor: ['profile', 'songs', 'anime', 'events']
+    character: ['profile', 'pedigree', 'songs', 'anime', 'events', 'news'],
+    voiceActor: ['profile', 'songs', 'anime', 'events', 'news']
   });
   const sectionAliases = Object.freeze({ appearances: 'events' });
   const albumWorks = [

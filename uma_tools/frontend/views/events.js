@@ -140,7 +140,7 @@ export const template = `
                             </div>
                         </div>
                     </section>
-                    <related-news v-if="!selectedEventSessionId" type="event" :entity-id="eventDetail.id"></related-news>
+                    <related-news v-if="!eventDetail.sessions?.length || selectedEventSessionId === eventDetail.sessions[0].id" type="event" :entity-id="eventDetail.id"></related-news>
                 </article>
             </template>
         `;
