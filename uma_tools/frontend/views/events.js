@@ -128,15 +128,16 @@ export const template = `
 
                     </template>
                     <template v-else-if="eventSection==='related'">
-                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
-                    <section v-if="eventAnimeRelations.length" class="entity-section anime-crosslink-section">
+                    <section class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
-                        <anime-participation :works="eventAnimeWorks"></anime-participation>
+                        <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
+                        <anime-participation v-else-if="eventAnimeRelations.length" :works="eventAnimeWorks"></anime-participation>
+                        <content-state v-else state="uncollected" subject="动画关联"></content-state>
                     </section>
 
-                    <section v-if="eventMediaCards.length" class="entity-section">
+                    <section class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">相关影像</span></div>
-                        <div class="event-video-grid">
+                        <div v-if="eventMediaCards.length" class="event-video-grid">
                             <div v-for="media in eventMediaCards" :key="media.key" class="event-video" :class="'event-video-'+media.platform">
                                 <iframe v-if="media.embedUrl && activeMediaKey===media.key" v-media-src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+'　'+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <button v-else-if="media.embedUrl" class="event-video-launch" type="button" @click="activateEventMedia(media)">
@@ -153,11 +154,9 @@ export const template = `
                                 </a>
                             </div>
                         </div>
+                        <content-state v-else state="uncollected" subject="相关影像"></content-state>
                     </section>
-                    <related-news v-if="!eventDetail.sessions?.length || selectedEventSessionId === eventDetail.sessions[0].id" type="event" :entity-id="eventDetail.id" :standalone="!eventAnimeRelations.length && !eventMediaCards.length && !animeError"></related-news>
-                    <section v-else-if="!eventAnimeRelations.length && !eventMediaCards.length && !animeError" class="entity-section">
-                        <content-state state="uncollected" subject="相关信息"></content-state>
-                    </section>
+                    <related-news type="event" :entity-id="!eventDetail.sessions?.length || selectedEventSessionId === eventDetail.sessions[0].id ? eventDetail.id : ''"></related-news>
                     </template>
                 </article>
             </template>

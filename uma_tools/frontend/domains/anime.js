@@ -718,31 +718,26 @@ export function createAnime(deps) {
     animeCurrentRelations.value.filter((row) => row.target_type === "race"),
   );
 
-  const animeEventRows = deps.computed(() =>
-    [
-      { kind: "screening", label: "上映" },
-      { kind: "stage", label: "舞台见面会" },
-      { kind: "program", label: "作品专题" },
-    ]
-      .flatMap((group) => animeCurrentRelations.value
-          .filter(
-            (row) =>
-              row.target_type === "event" &&
-              (row.event_category || "screening") === group.kind,
-          )
-          .flatMap((relation) => {
-            const event = animeRelatedEvents[relation.target_id];
-            return event ? [{
-              relation_id: relation.id,
-              event_id: relation.target_id,
-              session_id: relation.session_id,
-              title: event.title,
-              date: event.date,
-              participation_label: relation.label,
-              kind: group.label,
-            }] : [];
-          })
-          .sort((a, b) => String(a.date).localeCompare(String(b.date)))),
+  const animeEventRows = deps.computed(() => animeCurrentRelations.value
+    .filter((relation) => relation.target_type === "event")
+    .flatMap((relation) => {
+      const event = animeRelatedEvents[relation.target_id];
+      if (!event) return [];
+      const session = (event.sessions || []).find((row) => row.id === relation.session_id);
+      return [{
+        relation_id: relation.id,
+        event_id: event.id,
+        session_id: relation.session_id,
+        session_label: session?.label,
+        title: event.title,
+        kind: event.kind,
+        date: session?.date || event.date,
+        end_date: session?.end_date || event.end_date,
+        scheduled_month: event.scheduled_month,
+        schedule_status: event.schedule_status,
+      }];
+    })
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || ""))),
   );
 
   function animeRelationTargetLabel(relation) {

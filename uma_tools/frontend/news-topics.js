@@ -59,7 +59,7 @@ export const NewsTopics = {
 
 export const RelatedNews = {
   components: { NewsSection },
-  props: { type: String, entityId: String, standalone: Boolean },
+  props: { type: String, entityId: String },
   setup(props) {
     const page = Vue.ref(1);
     Vue.watch(() => [props.type, props.entityId], () => { page.value = 1; }, { flush: 'sync' });
@@ -73,10 +73,10 @@ export const RelatedNews = {
     return { shown, pending, failed, retry, go, navigate: topicNavigation() };
   },
   template: `
-    <news-section v-if="standalone || shown?.items.length" class="related-news" label="相关新闻" :pending="pending">
+    <news-section class="related-news" label="相关新闻" :pending="pending">
       <content-state v-if="failed" state="error" subject="相关新闻" :retry="true" @retry="retry"></content-state>
-      <content-state v-else-if="standalone && pending && !shown" state="loading" subject="相关新闻"></content-state>
-      <content-state v-else-if="standalone && !shown?.items.length" state="uncollected" subject="相关新闻"></content-state>
+      <content-state v-else-if="pending && !shown" state="loading" subject="相关新闻"></content-state>
+      <content-state v-else-if="!shown?.items.length" state="uncollected" subject="相关新闻"></content-state>
       <div v-if="shown?.items.length" class="history-list">
         <a v-for="item in shown.items" :key="item.id" :href="item.href" @click="navigate($event,item.href)">
           <time :datetime="item.date">{{ item.date }}</time><strong>{{ item.title }}</strong>

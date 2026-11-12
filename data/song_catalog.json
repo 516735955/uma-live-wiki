@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T06:41:27+00:00",
+  "generated_at": "2026-11-12T15:16:54+00:00",
   "coverage": {
     "songs": 1043,
     "versions": 2173,
@@ -9,7 +9,7 @@
     "live_performances": 1270,
     "credited_songs": 423,
     "lyric_songs": 248,
-    "credited_versions": 1446,
+    "credited_versions": 1499,
     "lyric_versions": 472
   },
   "songs": [
@@ -126739,8 +126739,29 @@
           "release_count": 1,
           "performance_count": 160,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-228f943b49",
           "has_lyrics": true,
           "has_timing": true
@@ -126799,6 +126820,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -126890,6 +126917,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -126981,6 +127014,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127072,6 +127111,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127163,6 +127208,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127254,6 +127305,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127345,6 +127402,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127436,6 +127499,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127527,6 +127596,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127618,6 +127693,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127709,6 +127790,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127800,6 +127887,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -127951,6 +128044,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -128014,6 +128113,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -128483,6 +128588,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -129049,6 +129160,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -129298,8 +129415,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -129818,6 +129956,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -130077,6 +130221,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -130406,6 +130556,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -130454,6 +130610,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -130689,8 +130851,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -130991,8 +131174,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -131275,6 +131479,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -131520,6 +131730,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -131849,6 +132065,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -132094,6 +132316,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -132315,8 +132543,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -132571,6 +132820,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -132988,8 +133243,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -133272,6 +133548,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -133433,6 +133715,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -133818,6 +134106,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -134119,6 +134413,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -134392,6 +134692,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -134683,8 +134989,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -135013,8 +135340,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -135301,8 +135649,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -135547,8 +135916,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -135737,8 +136127,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -135983,8 +136394,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -136032,8 +136464,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -136306,8 +136759,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -136884,6 +137358,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -137353,6 +137833,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -137742,8 +138228,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -137792,8 +138299,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -137842,8 +138370,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -137923,8 +138472,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -137973,8 +138543,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138054,8 +138645,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138104,8 +138716,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138154,8 +138787,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138204,8 +138858,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138285,8 +138960,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138335,8 +139031,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138385,8 +139102,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138466,8 +139204,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138547,8 +139306,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -138628,8 +139408,29 @@
           "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -139016,12 +139817,31 @@
           "instrumental": false,
           "credits": [
             {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
               "role": "remixer",
               "role_label": "混音改编",
               "creator_id": "creator-sasuke-haraguchi-b35f958bea"
             }
           ],
           "creator_ids": [
+            "creator-eaf94340d3",
             "creator-sasuke-haraguchi-b35f958bea"
           ],
           "lyrics_ref": "",
@@ -139410,12 +140230,31 @@
           "instrumental": false,
           "credits": [
             {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
               "role": "remixer",
               "role_label": "混音改编",
               "creator_id": "creator-taku-inoue-7553565d84"
             }
           ],
           "creator_ids": [
+            "creator-eaf94340d3",
             "creator-taku-inoue-7553565d84"
           ],
           "lyrics_ref": "",
@@ -141780,6 +142619,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -142394,8 +143239,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-a46be45447",
           "has_lyrics": true,
           "has_timing": true
@@ -142472,8 +143338,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-8e6c67d3a5",
           "has_lyrics": true,
           "has_timing": true
@@ -142550,8 +143437,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-1674a12f67",
           "has_lyrics": true,
           "has_timing": true
@@ -142628,8 +143536,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-886bf8f9a0",
           "has_lyrics": true,
           "has_timing": true
@@ -142706,8 +143635,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-605471f5c5",
           "has_lyrics": true,
           "has_timing": true
@@ -142784,8 +143734,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-e630f80c0d",
           "has_lyrics": true,
           "has_timing": true
@@ -142862,8 +143833,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-b69d9b9734",
           "has_lyrics": true,
           "has_timing": true
@@ -142952,6 +143944,12 @@
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3",
               "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -143033,8 +144031,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-9d736d1ab8",
           "has_lyrics": true,
           "has_timing": true
@@ -143121,6 +144140,12 @@
             {
               "role": "composer",
               "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
               "creator_id": "creator-eaf94340d3",
               "institution": "Cygames"
             }
@@ -143284,6 +144309,12 @@
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3",
               "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -143329,8 +144360,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -143379,8 +144431,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "song-228f943b49-v-807a5af099",
           "has_lyrics": true,
           "has_timing": true
@@ -143775,6 +144848,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -144034,6 +145113,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -144251,6 +145336,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -144552,6 +145643,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -145035,6 +146132,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -145934,6 +147037,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -146492,8 +147601,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -146776,6 +147906,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -147021,6 +148157,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -147600,6 +148742,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -148170,8 +149318,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -148426,6 +149595,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -148843,8 +150018,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -149127,6 +150323,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -149288,6 +150490,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -149673,6 +150881,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -149974,6 +151188,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -150247,6 +151467,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -150538,8 +151764,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -150868,8 +152115,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -151156,8 +152424,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -151402,8 +152691,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -151592,8 +152902,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -151838,8 +153169,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -152140,8 +153492,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -152568,8 +153941,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -152842,8 +154236,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -153308,6 +154723,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -153707,6 +155128,12 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-eaf94340d3"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
@@ -153997,8 +155424,29 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
+            }
+          ],
+          "creator_ids": [
+            "creator-eaf94340d3"
+          ],
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
@@ -227318,8 +228766,33 @@
           "release_count": 1,
           "performance_count": 3,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-500b86dc49"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-c5dc7f2d43"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8da413e81e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c5dc7f2d43"
+            }
+          ],
+          "creator_ids": [
+            "creator-500b86dc49",
+            "creator-8da413e81e",
+            "creator-c5dc7f2d43"
+          ],
           "lyrics_ref": "song-c90f013526-v-c90f013526",
           "has_lyrics": true,
           "has_timing": true
@@ -227378,10 +228851,21 @@
               "role": "composer",
               "role_label": "作曲",
               "creator_id": "creator-c5dc7f2d43"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-8da413e81e"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-c5dc7f2d43"
             }
           ],
           "creator_ids": [
             "creator-500b86dc49",
+            "creator-8da413e81e",
             "creator-c5dc7f2d43"
           ],
           "lyrics_ref": "song-c90f013526-v-6f297d2683",
@@ -227395,6 +228879,7 @@
       "original_version_id": "song-c90f013526-v-c90f013526",
       "creator_ids": [
         "creator-500b86dc49",
+        "creator-8da413e81e",
         "creator-c5dc7f2d43"
       ],
       "has_lyrics": true
@@ -259011,5 +260496,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "b320203b840387acd9d1"
+  "build_id": "b522253df258db4172cf"
 }

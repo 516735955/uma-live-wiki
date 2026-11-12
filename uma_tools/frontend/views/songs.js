@@ -66,6 +66,7 @@ export const template = `
                     <section v-else-if="songSection==='credits'" class="entity-section song-credit-section">
                         <div v-if="songCreditVersions.length" class="song-credit-list">
                             <div class="song-credit-original">
+                                <div v-if="!songCreditVersions[0].is_original" class="section-toolbar"><span class="credit-role-tag">{{ songCreditVersions[0].credit_heading }}</span></div>
                                 <song-credit-ledger :groups="creditRoleGroups(songCreditVersions[0])"></song-credit-ledger>
                             </div>
                             <div v-if="songCreditVersions.length > 1" class="song-credit-variants ui-disclosure-list">
@@ -107,12 +108,13 @@ export const template = `
                     </section>
 
                     <template v-else-if="songSection==='related'">
-                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
-                    <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
-                        <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
-                    </section>
-                        <related-news type="song" :entity-id="songDetail.id" :standalone="!songAnimeRelations.length && !animeError"></related-news>
+                        <section class="entity-section anime-crosslink-section">
+                            <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
+                            <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
+                            <anime-participation v-else-if="songAnimeRelations.length" :works="songAnimeWorks" section="music"></anime-participation>
+                            <content-state v-else state="uncollected" subject="动画关联"></content-state>
+                        </section>
+                        <related-news type="song" :entity-id="songDetail.id"></related-news>
                     </template>
                 </div>
             </article>

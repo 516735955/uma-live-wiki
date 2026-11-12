@@ -1,6 +1,32 @@
 {
   "schema_version": 1,
   "versions": {
+    "song-228f943b49-v-228f943b49": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "composer",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        },
+        {
+          "role": "arranger",
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
+        }
+      ],
+      "source": "official_lantis_catalog",
+      "source_url": "https://umamusume.lantis.jp/discography/starting-gate-01/",
+      "source_catalog": "LACA-15621",
+      "manual": true
+    },
     "song-samba-de76f4b524-v-de76f4b524": {
       "credits": [
         {
@@ -8904,6 +8930,34 @@
       ],
       "source": "official_lantis_catalog",
       "source_catalog": "LACA-25109"
+    },
+    "song-c90f013526-v-c90f013526": {
+      "credits": [
+        {
+          "role": "lyricist",
+          "name": "真崎エリカ",
+          "creator_id": "creator-500b86dc49"
+        },
+        {
+          "role": "composer",
+          "name": "原 知也",
+          "creator_id": "creator-c5dc7f2d43"
+        },
+        {
+          "role": "arranger",
+          "name": "原 知也",
+          "creator_id": "creator-c5dc7f2d43"
+        },
+        {
+          "role": "arranger",
+          "name": "ラムシーニ",
+          "creator_id": "creator-8da413e81e"
+        }
+      ],
+      "source": "official_production",
+      "source_url": "https://www.hatoscage.com/works",
+      "source_catalog": "LACA-15711",
+      "manual": true
     },
     "song-c90f013526-v-6f297d2683": {
       "credits": [

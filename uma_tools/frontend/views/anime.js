@@ -1,4 +1,5 @@
 export const bindings = ["animeCardArtwork","animeWatchAccess","coverStyle","sampleCover","albums","coverThumb","isActive","playRelationRelease","addSongTrack","expandedRelationSongId","toggleRelationSong","characterImage","characterColor","voiceName","voicePhoto","animeLoading","animeError","animeDetail","animeUnitDetail","animeQuery","animeEpisodeQuery","animeSort","animeSortOptions","animeFormat","animeStatus","animeFormatOptions","animeStatusOptions","animeFiltered","animeWorkHref","animeArtwork","animeHeroArtwork","animeHeroOriginal","animeMatchedUnits","clearAnimeFilters","animeWorkFormats","animeWorkYears","animeCurrentWatch","animeFormatLabel","animeStatusLabel","animePlatformLabel","animeRelationTargetLabel","animeRelationHref","retryAnime","animeSection","setAnimeSection","animeStaffQuery","animeStaffGroups","animeStaffAggregate","animeStaffAggregateGroups","animeUnitGroups","animeAdjacentUnits","animeEpisodeDirectoryHref","animeUnitHref","animeSingle","animeEdition","setAnimeEdition","animeContentUnit","animeTabs","animeStillUnit","animeVisibleStillGroups","animeStillOptions","animeCurrentCast","animeLink","animeDates","animeMusicCueGroups","animeUsefulRelations","animeEventRows","openEvent","animeMusicItems","animeMusicVersions","animeMusicCover","animeMusicSong","routes"];
+bindings.push("appearanceDateLabel", "appearanceSessionLabel", "eventKindLabel");
 export const template = `
             <template v-if="!animeDetail">
                 <div class="archive-toolbar">
@@ -69,18 +70,17 @@ export const template = `
                         <dl v-if="!animeUnitDetail && animeStaffAggregate.length" class="anime-credit-ledger staff-role-ledger"><div v-for="group in animeStaffAggregateGroups" :key="group.key"><dt>{{ group.role }}</dt><dd><staff-credit-list :credits="group.rows" participation></staff-credit-list></dd></div></dl>
                     </section>
                     <template v-if="animeSection==='related'">
-                        <section v-if="animeUsefulRelations.length" class="entity-section">
+                        <section class="entity-section">
                             <div class="section-toolbar"><span class="credit-role-tag">相关赛事</span></div>
                     <nav v-if="animeUsefulRelations.length" class="anime-context-links" aria-label="相关内容"><a v-for="relation in animeUsefulRelations" :key="relation.id" class="horse-link-chip" :href="animeRelationHref(relation)" @click="relation.target_type==='race' ? null : animeLink($event,animeRelationHref(relation))" :target="relation.target_type==='race'?'_blank':null" rel="noopener"><span class="credit-role-tag">{{ relation.label }}</span>{{ animeRelationTargetLabel(relation) }}<svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path :d="relation.target_type==='race'?'M7 17 17 7M7 7h10v10':'M5 12h14m-6-6 6 6-6 6'"/></svg></a></nav>
+                            <content-state v-if="!animeUsefulRelations.length" :state="animeError ? 'error' : animeLoading ? 'loading' : 'uncollected'" subject="相关赛事" :retry="!!animeError" @retry="retryAnime"></content-state>
                         </section>
-                        <section v-if="animeEventRows.length" class="entity-section" aria-label="相关活动">
+                        <section class="entity-section" aria-label="相关活动">
                             <div class="section-toolbar"><span class="credit-role-tag">相关活动</span></div>
-                            <activity-history :events="animeEventRows" :routes="routes" :date-label="row=>row.date || '—'" :kind-label="kind=>kind" :session-label="()=>''" @open="openEvent($event.event_id,$event.session_id)"></activity-history>
+                            <activity-history v-if="animeEventRows.length" :events="animeEventRows" :routes="routes" :date-label="appearanceDateLabel" :kind-label="eventKindLabel" :session-label="appearanceSessionLabel" @open="openEvent($event.event_id,$event.session_id)"></activity-history>
+                            <content-state v-else :state="animeError ? 'error' : animeLoading ? 'loading' : 'uncollected'" subject="相关活动" :retry="!!animeError" @retry="retryAnime"></content-state>
                         </section>
-                        <related-news v-if="!animeUnitDetail" type="anime" :entity-id="animeDetail.id" :standalone="!animeUsefulRelations.length && !animeEventRows.length"></related-news>
-                        <section v-else-if="!animeUsefulRelations.length && !animeEventRows.length" class="entity-section">
-                            <content-state state="uncollected" subject="相关信息"></content-state>
-                        </section>
+                        <related-news v-if="!animeUnitDetail" type="anime" :entity-id="animeDetail.id"></related-news>
                     </template>
                 </div>
             </article>

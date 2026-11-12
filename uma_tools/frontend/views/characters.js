@@ -43,7 +43,9 @@ export const template = `
                     <div class="c-detail-block" id="cDetailBlock"></div>
                 </section>
                 <section v-if="charSection==='pedigree'" class="pedigree-section">
-                    <content-state v-if="!charHasPedigree || pedigreeStatus==='uncollected'" :state="charPedigreeApplicable ? 'uncollected' : 'not_applicable'" subject="血统资料"></content-state>
+                    <div v-if="!charHasPedigree || pedigreeStatus==='uncollected'" class="entity-section">
+                        <content-state :state="charPedigreeApplicable ? 'uncollected' : 'not_applicable'" subject="血统资料"></content-state>
+                    </div>
                     <div v-else-if="pedigreeStatus==='loading' || pedigreeStatus==='idle'" class="ui-state ui-state-loading" role="status">血统关系加载中</div>
                     <content-state v-else-if="pedigreeStatus==='error'" state="error" subject="血统关系" :retry="true" @retry="retryPedigree"></content-state>
                     <div v-else id="cCharBlood"></div>
@@ -82,6 +84,6 @@ export const template = `
                     <content-state v-else-if="charHistoryQuery || charHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="charHistoryQuery='';charHistoryKind='all'"></content-state>
                     <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
-                <related-news v-if="charSection==='news'" type="character" :entity-id="charDetail.id" standalone></related-news>
+                <related-news v-if="charSection==='news'" type="character" :entity-id="charDetail.id"></related-news>
             </article>
         `;

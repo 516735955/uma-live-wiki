@@ -74,12 +74,13 @@ export const template = `
                         <content-state v-else state="uncollected" subject="创作信息"></content-state>
                     </section>
                     <template v-else-if="albumSection==='related'">
-                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
-                    <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
-                        <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
-                    </section>
-                        <related-news type="album" :entity-id="albumDetail.data.id" :standalone="!albumAnimeRelations.length && !animeError"></related-news>
+                        <section class="entity-section anime-crosslink-section">
+                            <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
+                            <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
+                            <anime-participation v-else-if="albumAnimeRelations.length" :works="albumAnimeWorks" section="music"></anime-participation>
+                            <content-state v-else state="uncollected" subject="动画关联"></content-state>
+                        </section>
+                        <related-news type="album" :entity-id="albumDetail.data.id"></related-news>
                     </template>
                 </div>
             </article>
