@@ -70,6 +70,8 @@ def validate(
             if version.get("instrumental") and version.get("has_lyrics"):
                 errors.append(f"instrumental version {version.get('id')} publishes lyrics")
             for credit in version.get("credits") or []:
+                if credit.get("organization") and not credit.get("creator_id"):
+                    continue
                 if credit.get("creator_id") not in known_creators:
                     errors.append(f"version {version.get('id')} references unknown creator {credit.get('creator_id')}")
     for creator in creators_catalog.get("creators") or []:

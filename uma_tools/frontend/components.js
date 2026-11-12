@@ -30,7 +30,7 @@ export function registerComponents(umaApp, routes) {
       <div v-for="group in groups" :key="group.role">
         <dt>{{ group.label }}</dt>
         <dd class="credit-people">
-          <span v-for="credit in group.credits" :key="credit.creator_id || credit.name" class="credit-person">
+          <span v-for="credit in group.credits" :key="credit.organization || credit.creator_id || credit.name" class="credit-person">
             <em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em>
             <a v-else-if="credit.creator_id" class="text-link" :href="creatorLink(credit.creator_id)" @click="open($event,credit.creator_id)">{{ credit.name }}</a>
             <span v-else>{{ credit.name }}</span>

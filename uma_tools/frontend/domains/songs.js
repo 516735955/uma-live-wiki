@@ -159,7 +159,7 @@ export function createSongs(deps) {
       });
     if (!original) return [];
     const key = function (credit) {
-      return [credit.role, credit.creator_id || credit.name].join(":");
+      return [credit.role, credit.organization || credit.creator_id || credit.name].join(":");
     };
     const originalKeys = new Set((original.credits || []).map(key));
     const rows = [

@@ -8,10 +8,14 @@ from . import text as pipeline_text
 
 def build_creator_catalog(songs_catalog: dict[str, pipeline_common.Any], creators_doc: dict[str, pipeline_common.Any], generated_at: str) -> dict[str, pipeline_common.Any]:
     source_by_id = {str(row.get("id") or ""): row for row in creators_doc.get("creators") or [] if row.get("id")}
+    organization_ids = {creator_id for creator_id, source in source_by_id.items() if source.get("type") == "organization"}
     relations: dict[str, dict[str, pipeline_common.Any]] = pipeline_common.defaultdict(lambda: {"works": {}, "versions": set(), "roles": pipeline_common.Counter(), "collaborators": pipeline_common.defaultdict(lambda: {"versions": set(), "works": set()})})
     for song in songs_catalog.get("songs") or []:
         for version in song.get("versions") or []:
-            credits = [row for row in version.get("credits") or [] if row.get("creator_id")]
+            credits = [
+                row for row in version.get("credits") or []
+                if row.get("creator_id") and row["creator_id"] not in organization_ids and not row.get("organization")
+            ]
             creator_ids = sorted({row["creator_id"] for row in credits})
             roles_by_creator: dict[str, set[str]] = pipeline_common.defaultdict(set)
             for credit in credits:
@@ -47,7 +51,7 @@ def build_creator_catalog(songs_catalog: dict[str, pipeline_common.Any], creator
     # Animation music staff and authors of identified, unreleased cues share
     # creator pages. Their episode credits do not fabricate song recordings.
     for creator_id, source in source_by_id.items():
-        if source.get("anime_staff") or source.get("anime_music"):
+        if creator_id not in organization_ids and (source.get("anime_staff") or source.get("anime_music")):
             relations[creator_id]
     creators: list[dict[str, pipeline_common.Any]] = []
     for creator_id, relation in relations.items():
@@ -406,6 +410,11 @@ def build_song_catalog(
                     performance["version_id"] = folded[0]
                     performance["performance_variant"] = {"title": folded[1], "label": folded[2]}
 
+    organizations = {
+        creator["id"]: creator.get("name") or creator["id"]
+        for creator in (sources.get("creators") or {}).get("creators", [])
+        if creator.get("id") and creator.get("type") == "organization"
+    }
     songs = []
     for work in works.values():
         original_version_id = pipeline_song_identity.effective_music_metadata(
@@ -414,6 +423,7 @@ def build_song_catalog(
             sources.get("lyrics") or {},
             sources.get("timings") or {},
             sources.get("overrides") or {},
+            organizations=organizations,
         )
         versions = []
         for version in work["versions"].values():
@@ -468,9 +478,9 @@ def build_song_catalog(
             "albums": len(albums),
             "release_tracks": sum(row["release_count"] for row in songs),
             "live_performances": sum(row["performance_count"] for row in songs),
-            "credited_songs": sum(bool(row.get("creator_ids")) for row in songs),
+            "credited_songs": sum(any(version["credits"] for version in row["versions"]) for row in songs),
             "lyric_songs": sum(bool(row.get("has_lyrics")) for row in songs),
-            "credited_versions": sum(bool(version.get("creator_ids")) for row in songs for version in row.get("versions") or []),
+            "credited_versions": sum(bool(version["credits"]) for row in songs for version in row["versions"]),
             "lyric_versions": sum(bool(version.get("has_lyrics")) for row in songs for version in row.get("versions") or []),
         },
         "songs": songs,

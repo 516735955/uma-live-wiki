@@ -81,16 +81,11 @@ export function createCreators(deps) {
       .then(function (data) {
         if (!isCurrent()) return;
         const found = data && data.creator;
-        if (!found) {
+        if (!found || found.type === "organization") {
           deps.notFound.value = true;
           deps.activeTab.value = "not-found";
           return;
         }
-        if (found.type === "organization")
-          return deps.navigateTo(
-            deps.routes.songs(found.works[0].song_id),
-            isCurrent.fromRoute,
-          );
         const requestedCreator =
           typeof creatorOrId === "string" ? null : creatorOrId;
         const catalogCreator = (creatorCatalog.value.creators || []).find(

@@ -252,10 +252,11 @@ async function main() {
   assert.strictEqual(app.showContextBack.value, true);
   location.href = 'http://localhost/zh-Hans/music/creators/creator-cygames-f5bc529953';
   history.state = {};
-  const beforeRedirect = history.pushes.length;
+  const beforeOrganizationRoute = history.pushes.length;
   await app.applyCurrentRoute();
-  assert(location.pathname.startsWith('/zh-Hans/music/songs/'), 'legacy organization credits resolve to their song');
-  assert.strictEqual(history.pushes.length,beforeRedirect,'canonical organization redirects replace the route without trapping Back');
+  assert.strictEqual(app.activeTab.value, 'not-found', 'organization IDs do not have creator pages');
+  assert.strictEqual(location.pathname, '/zh-Hans/music/creators/creator-cygames-f5bc529953');
+  assert.strictEqual(history.pushes.length, beforeOrganizationRoute, 'an old organization URL leaves history intact');
   assert.strictEqual(app.showContextBack.value,false);
 
   location.href = 'http://localhost/zh-Hans/music/songs?page=999';

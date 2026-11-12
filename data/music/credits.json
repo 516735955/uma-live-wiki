@@ -6122,21 +6122,26 @@
         {
           "role": "lyricist",
           "name": "本田晃弘",
+          "affiliation": "Cygames",
           "creator_id": "creator-eaf94340d3"
         },
         {
           "role": "composer",
           "name": "本田晃弘",
+          "affiliation": "Cygames",
           "creator_id": "creator-eaf94340d3"
         },
         {
           "role": "arranger",
-          "name": "Cygames",
-          "creator_id": "creator-cygames-f5bc529953"
+          "name": "本田晃弘",
+          "affiliation": "Cygames",
+          "creator_id": "creator-eaf94340d3"
         }
       ],
-      "source": "netease_recording_metadata",
-      "source_track_id": "2047751482"
+      "source": "official_lantis_catalog",
+      "source_url": "https://umamusume.lantis.jp/discography/%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0/",
+      "source_catalog": "LACA-9983",
+      "manual": true
     },
     "song-228f943b49-v-db43e2b8a7": {
       "credits": [

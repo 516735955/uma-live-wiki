@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T15:16:54+00:00",
+  "generated_at": "2026-11-12T15:25:21+00:00",
   "coverage": {
     "songs": 1043,
     "versions": 2173,
@@ -128749,21 +128749,23 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3"
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3"
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             },
             {
               "role": "arranger",
               "role_label": "编曲",
-              "creator_id": "creator-cygames-f5bc529953"
+              "creator_id": "creator-eaf94340d3",
+              "institution": "Cygames"
             }
           ],
           "creator_ids": [
-            "creator-cygames-f5bc529953",
             "creator-eaf94340d3"
           ],
           "lyrics_ref": "song-228f943b49-v-8fbcc5f162",
@@ -155457,7 +155459,6 @@
       "performance_count": 160,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
-        "creator-cygames-f5bc529953",
         "creator-eaf94340d3",
         "creator-sasuke-haraguchi-b35f958bea",
         "creator-taku-inoue-7553565d84"
@@ -186820,13 +186821,13 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-a9987f1a38"
+              "organization": "Cygames",
+              "name": "Cygames"
             },
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-cygames-f5bc529953",
-              "organization": "Cygames"
+              "creator_id": "creator-a9987f1a38"
             },
             {
               "role": "composer",
@@ -186840,8 +186841,7 @@
             }
           ],
           "creator_ids": [
-            "creator-a9987f1a38",
-            "creator-cygames-f5bc529953"
+            "creator-a9987f1a38"
           ],
           "lyrics_ref": "song-32ce030f79-v-32ce030f79",
           "has_lyrics": true,
@@ -186853,8 +186853,7 @@
       "performance_count": 0,
       "original_version_id": "song-32ce030f79-v-32ce030f79",
       "creator_ids": [
-        "creator-a9987f1a38",
-        "creator-cygames-f5bc529953"
+        "creator-a9987f1a38"
       ],
       "has_lyrics": true
     },
@@ -260496,5 +260495,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "b522253df258db4172cf"
+  "build_id": "41331cdbe8c4df6bc246"
 }

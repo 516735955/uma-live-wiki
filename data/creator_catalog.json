@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T15:16:54+00:00",
+  "generated_at": "2026-11-12T15:25:21+00:00",
   "coverage": {
-    "creators": 306,
+    "creators": 305,
     "credited_works": 423,
     "credited_versions": 1499
   },
@@ -1071,95 +1071,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-88c09416fe"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "creator-cygames-f5bc529953",
-      "name": "Cygames",
-      "aliases": [],
-      "type": "organization",
-      "affiliations": [],
-      "roles": [
-        {
-          "role": "lyricist",
-          "label": "作词",
-          "count": 1
-        },
-        {
-          "role": "arranger",
-          "label": "编曲",
-          "count": 1
-        }
-      ],
-      "work_count": 2,
-      "version_count": 2,
-      "works": [
-        {
-          "song_id": "song-228f943b49",
-          "title": "うまぴょい伝説",
-          "cover": "/album_covers/LACA-15621.webp",
-          "release_date": "2016-11-30",
-          "album_name": "アニメ「ウマ娘 プリティーダービー ROAD TO THE TOP」アルバム",
-          "roles": [
-            "arranger"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-8fbcc5f162"
-          ],
-          "versions": [
-            {
-              "id": "song-228f943b49-v-8fbcc5f162",
-              "title": "うまぴょい伝説 (Anime Size)",
-              "version_label": "Anime Size / 演唱版：LACA-9983",
-              "roles": [
-                "arranger"
-              ]
-            }
-          ]
-        },
-        {
-          "song_id": "song-32ce030f79",
-          "title": "チヨノオーのお悩み相談室のうた",
-          "cover": "https://p1.music.126.net/jDCD0253BruJ5BPFSfMqpQ==/109951168595176690.jpg",
-          "release_date": "2023-04-26",
-          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 12",
-          "roles": [
-            "lyricist"
-          ],
-          "version_ids": [
-            "song-32ce030f79-v-32ce030f79"
-          ],
-          "versions": [
-            {
-              "id": "song-32ce030f79-v-32ce030f79",
-              "title": "チヨノオーのお悩み相談室のうた",
-              "version_label": "",
-              "roles": [
-                "lyricist"
-              ]
-            }
-          ]
-        }
-      ],
-      "collaborators": [
-        {
-          "creator_id": "creator-a9987f1a38",
-          "name": "木下龍平",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-32ce030f79"
-          ]
-        },
-        {
-          "creator_id": "creator-eaf94340d3",
-          "name": "本田晃弘",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
           ]
         }
       ]
@@ -35039,17 +34950,7 @@
           ]
         }
       ],
-      "collaborators": [
-        {
-          "creator_id": "creator-cygames-f5bc529953",
-          "name": "Cygames",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-32ce030f79"
-          ]
-        }
-      ]
+      "collaborators": []
     },
     {
       "id": "creator-515c2ae903",
@@ -35489,7 +35390,7 @@
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 185
+          "count": 186
         },
         {
           "role": "producer",
@@ -35810,7 +35711,8 @@
               "version_label": "Anime Size / 演唱版：LACA-9983",
               "roles": [
                 "lyricist",
-                "composer"
+                "composer",
+                "arranger"
               ]
             },
             {
@@ -38515,15 +38417,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-burning-heart-c74e3107bb"
-          ]
-        },
-        {
-          "creator_id": "creator-cygames-f5bc529953",
-          "name": "Cygames",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-228f943b49"
           ]
         },
         {
@@ -61473,5 +61366,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "b522253df258db4172cf"
+  "build_id": "41331cdbe8c4df6bc246"
 }

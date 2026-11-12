@@ -230,6 +230,8 @@ def effective_music_metadata(
     lyrics_doc: dict[str, pipeline_common.Any],
     timings_doc: dict[str, pipeline_common.Any],
     overrides_doc: dict[str, pipeline_common.Any],
+    *,
+    organizations: dict[str, str] | None = None,
 ) -> str:
     versions = list(work["versions"].values())
     versions_by_id = {version["id"]: version for version in versions}
@@ -239,6 +241,7 @@ def effective_music_metadata(
     overrides = overrides_doc.get("versions") or {}
     original_id = select_original_version(work, overrides_doc)
     original_credits = list((source_credits.get(original_id) or {}).get("credits") or [])
+    organizations = organizations or {}
 
     def inherited_document(source: dict[str, pipeline_common.Any], version_id: str, fallback=None):
         """Resolve override parent chains transitively, with cycle protection."""
@@ -265,16 +268,17 @@ def effective_music_metadata(
         deduped: list[dict[str, pipeline_common.Any]] = []
         seen_credit: set[tuple[str, str]] = set()
         for credit in credits:
-            key = (str(credit.get("role") or ""), str(credit.get("creator_id") or credit.get("name") or ""))
+            creator_id = credit.get("creator_id") or ""
+            organization = credit.get("organization") or organizations.get(creator_id)
+            key = (str(credit.get("role") or ""), str(organization or creator_id or credit.get("name") or ""))
             if not key[0] or not key[1] or key in seen_credit:
                 continue
             seen_credit.add(key)
             deduped.append({
                 "role": credit["role"],
                 "role_label": pipeline_common.CREATOR_ROLE_LABELS.get(credit["role"], credit["role"]),
-                "creator_id": credit.get("creator_id") or "",
-                **({"institution": credit["affiliation"]} if credit.get("affiliation") else {}),
-                **({"organization": credit["organization"]} if credit.get("organization") else {}),
+                **({"organization": organization, "name": organization} if organization else {"creator_id": creator_id}),
+                **({"institution": credit["affiliation"]} if credit.get("affiliation") and not organization else {}),
             })
         deduped.sort(key=lambda row: (pipeline_common.CREATOR_ROLE_ORDER.get(row["role"], 99), row.get("creator_id") or ""))
         # The catalog stores compact stable references. Creator names and the
