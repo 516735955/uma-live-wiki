@@ -25,7 +25,7 @@ exports.createService = function (deps) {
       .then(async ({ status, data }) => {
         if (status === 0) return;
         if (status !== 200) return archive.request('source_failure', { key, status, error: 'upstream article HTTP ' + status });
-        await archive.request('put', { key, data, owner: 'baidu' });
+        await archive.request('put', { key, data, owner: 'baidu', track_topics: true });
       }).catch(error => console.error('[news:archive]', error.message))
       .finally(() => archiveLoads.delete(key));
     archiveLoads.set(key, task);
@@ -88,6 +88,7 @@ exports.createService = function (deps) {
     if (archiveRefreshRunning || deps.NO_AUTO_CRAWL) return;
     archiveRefreshRunning = true;
     try {
+      await deps.updateNewsTopics().catch(error => console.error('[news:topic-update]', error.message));
       const rows = (newsIndexCache.data?.information_list || []).filter(item => !deps.newsContent.isRemoved(item.source === 'lantis' ? String(item.announce_id) : 'official-' + item.announce_id));
       for (let index = 0; index < rows.length; index += 3) {
         await Promise.all(rows.slice(index, index + 3).map(async item => {
@@ -104,6 +105,7 @@ exports.createService = function (deps) {
           if (archiveLoads.has(key)) await archiveLoads.get(key);
         }));
       }
+      await deps.updateNewsTopics().catch(error => console.error('[news:topic-update]', error.message));
     } catch (error) { console.error('[news:archive-refresh]', error.message); }
     finally { archiveRefreshRunning = false; }
   }
@@ -831,6 +833,7 @@ exports.createService = function (deps) {
   }
   return {
     start,
+    archiveRequest: (operation, args) => archive.request(operation, args),
     close() { archive.close(); },
     handleNewsIndex,
     handleNewsDetail,

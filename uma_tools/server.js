@@ -55,6 +55,7 @@ services.catalog = require("./server-catalog").createService({
 });
 services.news = require("./server-news").createService({
   path, DATA_DIR, fs, mergeNews, crypto,
+  updateNewsTopics: () => services.newsTopics.update(),
   AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   get translationAvailable() { return services.translation.translationAvailable; },
   newsContent: services.translation.newsContent,
@@ -72,6 +73,10 @@ services.news = require("./server-news").createService({
     return services.scheduler.runLantisCrawl;
   },
   httpsGetHtml: services.transport.httpsGetHtml,
+});
+services.newsTopics = require("./news-topics").createNewsTopics({
+  DATA_DIR, catalogStore, animeStore, newsContent: services.translation.newsContent,
+  sendJson: services.transport.sendJson, archiveRequest: services.news.archiveRequest,
 });
 services.audio = require("./server-audio").createService({
   http, https, pipeline,
@@ -99,9 +104,7 @@ services.application = require("./server-application").createService({
   AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   sendJson: services.transport.sendJson,
   handleNewsIndex: services.news.handleNewsIndex,
-  handleNewsTopics: require("./news-topics").createNewsTopics({
-    DATA_DIR, catalogStore, newsContent: services.translation.newsContent, sendJson: services.transport.sendJson,
-  }),
+  handleNewsTopics: services.newsTopics.handle,
   handleHomeSummary: services.catalog.handleHomeSummary,
   handleCatalogApi: services.catalog.handleCatalogApi,
   handleNewsDetail: services.news.handleNewsDetail,

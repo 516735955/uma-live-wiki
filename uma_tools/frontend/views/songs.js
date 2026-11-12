@@ -121,5 +121,6 @@ export const template = `
                     </section>
 
                 </div>
+                <related-news type="song" :entity-id="songDetail.id"></related-news>
             </article>
         `;

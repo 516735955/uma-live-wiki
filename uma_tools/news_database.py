@@ -112,6 +112,9 @@ class NewsDatabase:
                 article_key TEXT NOT NULL, source TEXT NOT NULL, target TEXT NOT NULL,
                 PRIMARY KEY(article_key,source)
             );
+            CREATE TABLE IF NOT EXISTS automatic_news_topics (
+                article_key TEXT PRIMARY KEY, topics TEXT
+            );
         ''')
         with self.db:
             self.db.execute('BEGIN IMMEDIATE')
@@ -199,7 +202,7 @@ class NewsDatabase:
             detail['archive_fragments'] = dict(self.db.execute('SELECT source,target FROM fragments WHERE article_key=? AND ambiguous=0', (key,)))
         return result
 
-    def put(self, key, data, owner='baidu'):
+    def put(self, key, data, owner='baidu', track_topics=False):
         detail = dict(data['detail'])
         for name in ('title_zh', 'message_zh', 'translation_state', 'archive_revision', 'translation_owner', 'translator', 'archive_checked_at', 'archive_fragments'):
             detail.pop(name, None)
@@ -255,6 +258,8 @@ class NewsDatabase:
                 owner=CASE WHEN articles.revision!=excluded.revision AND ? THEN excluded.owner ELSE articles.owner END''',
                 (key, revision, owner, time.time(), bool(current and current['state'] == 'complete' and translation_incomplete)))
             self.db.execute('DELETE FROM source_failures WHERE key=?', (key,))
+            if current is None and track_topics:
+                self.db.execute('INSERT OR IGNORE INTO automatic_news_topics(article_key) VALUES(?)', (key,))
         return self.get(key)
 
     def translate(self, key, revision, detail, translator):
@@ -353,7 +358,25 @@ class NewsDatabase:
             row = self.db.execute('SELECT * FROM source_failures WHERE key=?', (args['key'],)).fetchone()
             return dict(row) if row else None
         if operation == 'put':
-            return self.put(args['key'], args['data'], args.get('owner', 'baidu'))
+            return self.put(args['key'], args['data'], args.get('owner', 'baidu'), args.get('track_topics', False))
+        if operation == 'topic_queue':
+            return [{'key': row['article_key'], 'detail': json.loads(row['original'])['detail'],
+                     'text': row['japanese_text']} for row in self.db.execute('''
+                SELECT t.article_key,v.original,v.japanese_text FROM automatic_news_topics t
+                JOIN versions v ON v.article_key=t.article_key AND v.revision=1
+                WHERE t.topics IS NULL ORDER BY t.rowid LIMIT 20''')]
+        if operation == 'topic_complete':
+            with self.db:
+                self.db.executemany('UPDATE automatic_news_topics SET topics=? WHERE article_key=? AND topics IS NULL',
+                                    [(json.dumps(row['topics'], ensure_ascii=False), row['key']) for row in args['rows']])
+            return True
+        if operation == 'topic_records':
+            return {row['article_key']: dict(json.loads(row['topics']), title=row['translated_title'] or row['original_title'])
+                    for row in self.db.execute('''
+                SELECT t.article_key,t.topics,v.original_title,v.translated_title FROM automatic_news_topics t
+                JOIN articles a ON a.key=t.article_key
+                JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
+                WHERE t.topics IS NOT NULL AND t.topics!='{}' ''')}
         if operation == 'translate':
             return self.translate(args['key'], args['revision'], args['detail'], args['translator'])
         if operation == 'jobs':

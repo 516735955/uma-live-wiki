@@ -74,5 +74,6 @@ export const template = `
                     </section>
                     </template>
                 </div>
+                <related-news v-if="!animeUnitDetail" type="anime" :entity-id="animeDetail.id"></related-news>
             </article>
         `;

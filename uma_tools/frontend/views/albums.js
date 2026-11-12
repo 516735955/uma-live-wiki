@@ -61,5 +61,6 @@ export const template = `
                         <content-state v-else :state="(albumDetail.data.content_status && albumDetail.data.content_status.tracks && albumDetail.data.content_status.tracks.state) || 'uncollected'" subject="曲目"></content-state>
                     </section>
                 </div>
+                <related-news type="album" :entity-id="albumDetail.data.id"></related-news>
             </article>
         `;
