@@ -106,7 +106,7 @@ export const CastChip = {
     const navigate = event => view.internalLink(event, () => view.navNavigate(props.href));
     return { failedImage, navigate };
   },
-  template: `<a class="performer-chip cast-chip" :class="type+'-chip'" :style="{'--chip-color':color}" :href="href" @click="navigate">
+  template: `<a class="performer-chip cast-chip" :class="type+'-chip'" :style="{'--chip-color':color}" :href="href" :title="type==='event' ? label : null" @click="navigate">
     <img v-if="image && image !== failedImage" v-media-src="image" alt="" loading="lazy" @error="failedImage=image">
     <span v-else class="performer-chip-fallback" aria-hidden="true">{{ label?.slice(0,1) }}</span>
     <span>{{ label }}</span>
