@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T02:57:25+00:00",
+  "generated_at": "2026-11-12T06:41:27+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -493,7 +493,7 @@
       "kind": "onsite_group",
       "title": "7th EVENT THE STAGE 伦敦公演",
       "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON",
-      "summary": "7th EVENT 世界巡演伦敦站在 Eventim Apollo 举办。两天均由同一组 14 位声优以角色身份出演。",
+      "summary": "",
       "source_urls": [
         "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"
       ],
@@ -2196,7 +2196,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 01 发售纪念活动",
       "title_ja": "STARTING GATE 01 発売記念イベント",
-      "summary": "STARTING GATE 01 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -2240,7 +2240,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 02 发售纪念活动",
       "title_ja": "STARTING GATE 02 発売記念イベント",
-      "summary": "STARTING GATE 02 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -2284,7 +2284,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 03 发售纪念活动",
       "title_ja": "STARTING GATE 03 発売記念イベント",
-      "summary": "STARTING GATE 03 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -2328,7 +2328,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 04 发售纪念活动",
       "title_ja": "STARTING GATE 04 発売記念イベント",
-      "summary": "STARTING GATE 04 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -2372,7 +2372,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 05 发售纪念活动",
       "title_ja": "STARTING GATE 05 発売記念イベント",
-      "summary": "STARTING GATE 05 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -2416,7 +2416,7 @@
       "kind": "release_event",
       "title": "STARTING GATE 06 发售纪念活动",
       "title_ja": "STARTING GATE 06 発売記念イベント",
-      "summary": "STARTING GATE 06 发售纪念活动的第1回与第2回。",
+      "summary": "",
       "source_urls": [],
       "source_identity": {},
       "members": [
@@ -3633,8 +3633,7 @@
         "Eventim Apollo",
         "Hammersmith Apollo",
         "Hammersmith Odeon",
-        "汉默史密斯阿波罗",
-        "London"
+        "Gaumont Palace"
       ],
       "venue_sources": [
         {
@@ -4182,8 +4181,7 @@
         "Eventim Apollo",
         "Hammersmith Apollo",
         "Hammersmith Odeon",
-        "汉默史密斯阿波罗",
-        "London"
+        "Gaumont Palace"
       ],
       "venue_sources": [
         {
@@ -191800,5 +191798,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "0f3f6f2cc41a5adda910"
+  "build_id": "b320203b840387acd9d1"
 }

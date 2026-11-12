@@ -13,8 +13,8 @@
       "name_en": "Eventim Apollo",
       "venue_type": "展演空间",
       "description_zh": "位于伦敦西部汉默史密斯的演出剧院，1932 年以 Gaumont Palace 电影院之名开业，保留了装饰艺术风格的建筑与室内设计。",
-      "aliases": ["汉默史密斯阿波罗", "Hammersmith Apollo", "Hammersmith Odeon", "Gaumont Palace"],
-      "search_aliases": ["Eventim", "Apollo", "Hammersmith", "London"],
+      "name_history_zh": ["Gaumont Palace（1932 年至 1962 年）", "Hammersmith Odeon", "Hammersmith Apollo"],
+      "search_aliases": ["Eventim", "Apollo", "Hammersmith", "London", "Hammersmith Apollo", "Hammersmith Odeon", "Gaumont Palace"],
       "capacity_zh": ["3,655 席（全座席）", "最多 5,300 人（部分站席）"],
       "location": {
         "lat": 51.490747,
@@ -749,6 +749,7 @@
       },
       "name_zh": "台北世界贸易中心展览一馆",
       "name_en": "TWTC Hall 1",
+      "display_aliases": ["世贸一馆"],
       "aliases": [
         "台北世贸一馆",
         "世贸一馆"
@@ -834,6 +835,7 @@
       },
       "seatview_url": "https://seat.genchi.top/zh/v/saitama-super-arena",
       "name_en": "Saitama Super Arena",
+      "display_aliases": ["GMOアリーナさいたま"],
       "description_zh": "位于埼玉县埼玉市中央区的多功能竞技场。",
       "capacity_zh": [
         "竞技场模式约 22,500 人"
@@ -2267,6 +2269,7 @@
         "official_url": "https://www.city.hakodate.hokkaido.jp/docs/2014040900082/"
       },
       "name_original": "函館サーモン・まるなまアリーナ",
+      "name_history_zh": ["函館アリーナ"],
       "description_zh": "函馆市的体育及活动设施，设主竞技场和副竞技场。原名函馆竞技场。",
       "photo": {
         "path": "/uma_tools/img/venues/hakodate-arena.webp",
