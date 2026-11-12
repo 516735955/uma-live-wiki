@@ -335,7 +335,9 @@ export function createRouting(deps) {
         }
       } else if (deps.activeTab.value === "live") {
         if (deps.liveView.value === "eventDetail" && deps.eventDetail.value) {
-          path = deps.routes.events(deps.eventDetail.value.id, deps.selectedEventSessionId.value);
+          path = deps.routes.query(deps.routes.events(deps.eventDetail.value.id, deps.selectedEventSessionId.value), {
+            section: deps.eventSection.value === deps.defaultEventSection.value ? "" : deps.eventSection.value,
+          });
         } else {
           path = deps.routes.query(deps.routes.events(), {
             q: deps.eventsQuery.value,
@@ -363,7 +365,7 @@ export function createRouting(deps) {
               });
         } else if (deps.dbView.value === "albums") {
           path = deps.albumDetail.value
-            ? deps.routes.albums(deps.albumDetail.value.data.id)
+            ? deps.routes.albums(deps.albumDetail.value.data.id, deps.albumSection.value)
             : deps.routes.query(deps.routes.albums(), {
                 q: deps.relQuery.value,
                 work: deps.relWork.value,
@@ -596,6 +598,7 @@ export function createRouting(deps) {
             seg[3]
               ? decodeURIComponent(seg[3])
               : url.searchParams.get("session") || "",
+            deps.routes.sections.event.includes(url.searchParams.get("section")) ? url.searchParams.get("section") : "",
           );
         else {
           deps.eventsQuery.value = url.searchParams.get("q") || "";
@@ -659,7 +662,7 @@ export function createRouting(deps) {
           parseInt(url.searchParams.get("page") || "1", 10) || 1,
         );
         if (requested) return deps.openCreator(requested, section);
-      } else if (first === "music" && seg[1] === "albums" && seg.length <= 3) {
+      } else if (first === "music" && seg[1] === "albums" && seg.length <= 4) {
         deps.activeTab.value = "database";
         deps.dbView.value = "albums";
         if (!seg[2]) {
@@ -678,7 +681,11 @@ export function createRouting(deps) {
             parseInt(url.searchParams.get("page") || "1", 10) || 1,
           );
         }
-        if (seg[2]) return deps.openAlbum({ id: decodeURIComponent(seg[2]) });
+        if (seg[2]) {
+          const section = seg[3] || "credits";
+          if (!deps.routes.sections.album.includes(section)) return reject();
+          return deps.openAlbum({ id: decodeURIComponent(seg[2]) }, section);
+        }
       } else if (
         first === "database" &&
         seg[1] === "characters" &&
@@ -730,13 +737,7 @@ export function createRouting(deps) {
         deps.animeEdition.value =
           url.searchParams.get("edition") === "web" ? "web" : "film";
         deps.animeStillUnit.value = url.searchParams.get("still") || "";
-        deps.animeSection.value = [
-          "episodes",
-          "characters",
-          "music",
-          "staff",
-          "stills",
-        ].includes(url.searchParams.get("section"))
+        deps.animeSection.value = deps.routes.sections.anime.includes(url.searchParams.get("section"))
           ? url.searchParams.get("section")
           : seg[4]
             ? "characters"

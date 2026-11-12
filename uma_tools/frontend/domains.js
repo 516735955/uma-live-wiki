@@ -111,6 +111,7 @@ export function createDomains(env) {
         ],
         albums: [
           "albumDetail",
+          "albumSection",
           "albumYears",
           "loadAlbums",
           "openAlbum",
@@ -197,6 +198,8 @@ export function createDomains(env) {
           "loadEvents",
           "openEvent",
           "selectedEventSessionId",
+          "eventSection",
+          "defaultEventSection",
         ],
         voices: [
           "findVaBySlug",

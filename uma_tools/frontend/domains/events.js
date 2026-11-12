@@ -142,17 +142,34 @@ export function createEvents(deps) {
     }
   }
 
-  function renderSessionTable(session) {
-    if (!session || !session.setlist_html) return "";
-    const html = deps.fixAvatarSrc(deps.hideEncorePerf(session.setlist_html));
+  function hasSetlistRows(session) {
     // A generated table may contain only the column header when no song rows
     // were collected. Treat that as empty so the whole setlist block stays
     // hidden instead of rendering a misleading blank frame.
-    if (!/<tbody\b[\s\S]*?<tr\b[\s\S]*?<\/tr>/i.test(html)) return "";
+    return /<tbody\b[\s\S]*?<tr\b[\s\S]*?<\/tr>/i.test(session?.setlist_html || "");
+  }
+
+  function renderSessionTable(session) {
+    if (!hasSetlistRows(session)) return "";
+    const html = deps.fixAvatarSrc(deps.hideEncorePerf(session.setlist_html));
     return deps.linkSetlistSongs(html, session.performances);
   }
 
   const currentSessionTable = deps.computed(() => renderSessionTable(selectedEventSession.value));
+  const eventSection = deps.ref("");
+  const eventHasSetlist = deps.computed(() => {
+    const session = selectedEventSession.value;
+    return !!session && eventDetail.value?.schedule_status !== "cancelled" &&
+      session.schedule_status !== "cancelled" &&
+      !!(hasSetlistRows(session) || session.performances?.length);
+  });
+  const defaultEventSection = deps.computed(() => eventHasSetlist.value ? "setlist" : "cast");
+
+  function setEventSection(section) {
+    eventSection.value = section;
+    deps.pushUrl(true);
+  }
+
   function eventSessionTable(session) {
     return session === selectedEventSession.value ? currentSessionTable.value : renderSessionTable(session);
   }
@@ -530,11 +547,12 @@ export function createEvents(deps) {
   function selectEventSession(sessionId) {
     if (!eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
     selectedEventSessionId.value = sessionId;
+    if (eventSection.value === "setlist" && !eventHasSetlist.value) eventSection.value = "cast";
     activeMediaKey.value = "";
     deps.pushUrl();
   }
 
-  function openEvent(eventOrId, requestedSessionId) {
+  function openEvent(eventOrId, requestedSessionId, section) {
     const isCurrent = deps.beginEntityNavigation();
     const id =
       typeof eventOrId === "string" ? eventOrId : eventOrId && eventOrId.id;
@@ -564,6 +582,7 @@ export function createEvents(deps) {
       })
         ? requestedSessionId
         : sessions[0]?.id || "";
+      eventSection.value = section || defaultEventSection.value;
       liveView.value = "eventDetail";
       deps.activeTab.value = "live";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
@@ -581,7 +600,7 @@ export function createEvents(deps) {
       .catch(function () {
         if (isCurrent()) {
           deps.navigationError.value = "活动资料暂时无法载入，请重试。";
-          deps.navigationRetry.value = () => openEvent(eventOrId, requestedSessionId);
+          deps.navigationRetry.value = () => openEvent(eventOrId, requestedSessionId, section);
         }
       });
   }
@@ -678,6 +697,10 @@ export function createEvents(deps) {
     playEventSession,
     playEventTrack,
     selectEventSession,
+    eventSection,
+    eventHasSetlist,
+    defaultEventSection,
+    setEventSection,
     selectedEventSession,
     eventVenueLinks,
     selectedEventSessionId,

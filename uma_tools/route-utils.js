@@ -8,8 +8,11 @@
   const language = 'zh-Hans';
   const prefix = '/' + language;
   const sections = Object.freeze({
-    song: ['releases', 'credits', 'lyrics', 'performances'],
-    creator: ['works', 'collaborators'],
+    song: ['releases', 'credits', 'lyrics', 'performances', 'related'],
+    album: ['credits', 'related'],
+    creator: ['works', 'collaborators', 'anime'],
+    event: ['setlist', 'cast', 'related'],
+    anime: ['episodes', 'characters', 'music', 'staff', 'stills', 'related'],
     character: ['profile', 'pedigree', 'songs', 'anime', 'events', 'news'],
     voiceActor: ['profile', 'songs', 'anime', 'events', 'news']
   });
@@ -119,7 +122,7 @@
       return id && sessionId ? base + '/sessions/' + part(sessionId) : base;
     },
     songs: function (id, section) { return entity('/music/songs', id, section, sections.song, 'releases'); },
-    albums: function (id) { return prefix + '/music/albums' + (id ? '/' + part(id) : ''); },
+    albums: function (id, section) { return entity('/music/albums', id, section, sections.album, 'credits'); },
     creators: function (id, section) { return entity('/music/creators', id, section, sections.creator, 'works'); },
     characters: function (id, section) { return entity('/database/characters', id, section, sections.character, 'profile'); },
     voiceActors: function (id, section) { return entity('/database/voice-actors', id, section, sections.voiceActor, 'profile'); },

@@ -46,8 +46,12 @@ async function main() {
     assert.strictEqual(await page.evaluate(()=>window.__uma_app.eventDetail.id), eventId, 'late detail never replaces the newer destination');
     assert(await page.evaluate(()=>window.__uma_app.audio===window.__originalAudio), 'navigation keeps the same audio controller');
 
+    const eventTabs = page.getByRole('navigation', {name: '活动栏目'});
+    await eventTabs.getByRole('button', {name: '出演阵容'}).click();
+    await page.locator('.performer-cast-groups').waitFor();
     const cast = await page.locator('.performer-cast-groups > .performer-group').evaluateAll(groups=>groups.map(group=>group.querySelectorAll('.performer-chip').length));
     assert.deepStrictEqual(cast,[7,5]);
+    await eventTabs.getByRole('button', {name: '曲目列表'}).click();
     const finale = await page.locator('.setlist-table tbody tr').last().locator('.setlist-perf').evaluate(cell=>({
       groups:[...cell.querySelectorAll(':scope > .performer-group')].map(row=>row.dataset.performerGroup),
       characters:cell.querySelectorAll('[data-character-id]').length,

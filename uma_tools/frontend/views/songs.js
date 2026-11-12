@@ -35,16 +35,12 @@ export const template = `
                 </div>
                 <div class="media-content">
                     <content-state v-if="musicPeopleError" state="error" subject="人物资料" :retry="true" @retry="loadMusicPeople"></content-state>
-                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
-                    <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
-                        <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
-                    </section>
                     <nav class="entity-tabs" aria-label="歌曲栏目">
                         <button :class="{active:songSection==='releases'}" @click="setSongSection('releases')">收录信息</button>
                         <button :class="{active:songSection==='credits'}" @click="setSongSection('credits')">创作信息</button>
                         <button v-if="songLyricsApplicable" :class="{active:songSection==='lyrics'}" @click="setSongSection('lyrics')">歌词</button>
                         <button :class="{active:songSection==='performances'}" @click="setSongSection('performances')">出演记录</button>
+                        <button :class="{active:songSection==='related'}" @click="setSongSection('related')">相关信息</button>
                     </nav>
 
                     <section v-if="songSection==='releases'" class="entity-section">
@@ -70,22 +66,12 @@ export const template = `
                     <section v-else-if="songSection==='credits'" class="entity-section song-credit-section">
                         <div v-if="songCreditVersions.length" class="song-credit-list">
                             <div class="song-credit-original">
-                                <dl class="credit-ledger">
-                                    <div v-for="group in creditRoleGroups(songCreditVersions[0])" :key="group.role">
-                                        <dt>{{ group.label }}</dt>
-                                        <dd class="credit-people"><span class="credit-person" v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></span></dd>
-                                    </div>
-                                </dl>
+                                <song-credit-ledger :groups="creditRoleGroups(songCreditVersions[0])"></song-credit-ledger>
                             </div>
                             <div v-if="songCreditVersions.length > 1" class="song-credit-variants ui-disclosure-list">
                             <ui-disclosure v-for="version in songCreditVersions.slice(1)" :key="version.id" class="song-credit-version" :open="expandedSongCreditId===version.id" @toggle="toggleSongCredit(version.id)">
                                 <template #title><b>{{ version.credit_heading }}</b></template>
-                                <dl class="credit-ledger">
-                                    <div v-for="group in creditRoleGroups(version)" :key="group.role">
-                                        <dt>{{ group.label }}</dt>
-                                        <dd class="credit-people"><span class="credit-person" v-for="(credit,index) in group.credits" :key="credit.creator_id || credit.name"><em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em><a v-else-if="credit.creator_id" class="text-link" :href="routes.creators(credit.creator_id)" @click="internalLink($event, () => openCreator(credit.creator_id))">{{ credit.name }}</a><span v-else>{{ credit.name }}</span><em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em></span></dd>
-                                    </div>
-                                </dl>
+                                <song-credit-ledger :groups="creditRoleGroups(version)"></song-credit-ledger>
                             </ui-disclosure>
                             </div>
                         </div>
@@ -120,7 +106,14 @@ export const template = `
                     <content-state v-else state="uncollected" subject="演出记录"></content-state>
                     </section>
 
+                    <template v-else-if="songSection==='related'">
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
+                    <section v-if="songAnimeRelations.length" class="entity-section anime-crosslink-section">
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
+                        <anime-participation :works="songAnimeWorks" section="music"></anime-participation>
+                    </section>
+                        <related-news type="song" :entity-id="songDetail.id" :standalone="!songAnimeRelations.length && !animeError"></related-news>
+                    </template>
                 </div>
-                <related-news type="song" :entity-id="songDetail.id"></related-news>
             </article>
         `;

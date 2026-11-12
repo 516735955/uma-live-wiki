@@ -1,4 +1,4 @@
-export const bindings = ["liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectedEventSessionId","eventSessionOptions","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventVoiceCastGroups","eventUnscopedCast","openEvent","openNews","eventDateLabel","eventSummary","eventCurrentSummary","eventSessionSummary","eventSessionImage","eventCancellation","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
+export const bindings = ["eventSection","eventHasSetlist","setEventSection","liveView","isActive","eventsQuery","evTime","evYear","eventYearOptions","eventTypeOptions","eventTypeSelection","setEvTime","setEvYear","eventsCurrentPage","eventsPage","eventsPageCount","eventsTotal","eventsPageStart","eventsPageEnd","eventsPageList","setEventsPage","goEventsPage","onEventImageError","eventDetail","selectedEventSession","selectedEventSessionId","eventSessionOptions","selectEventSession","eventPlayableRows","playEventTrack","addEventTrack","playEventSession","enqueueEventSession","eventMediaCards","activeMediaKey","activateEventMedia","eventVoiceCast","eventVoiceCastGroups","eventUnscopedCast","openEvent","openNews","eventDateLabel","eventSummary","eventCurrentSummary","eventSessionSummary","eventSessionImage","eventCancellation","eventStatusNewsId","eventKindLabel","eventModeLabel","eventSeriesName","eventSongCount","eventSessionTable","onEventSetlistClick","playableSongRelease","relationSong","openSong","characterName","characterPerformanceImage","characterColor","voiceName","voicePhoto","openCharacter","openVoice","animeError","eventAnimeRelations","retryAnime","eventAnimeWorks","eventsAll","eventsError","eventsLoading","loadEvents","internalLink","routes"];
 bindings.push("eventCharacterCast", "characterImage", "eventVenueLinks");
 export const template = `
             <content-state v-if="eventsError" state="error" subject="活动" :retry="true" @retry="loadEvents()"></content-state>
@@ -78,7 +78,14 @@ export const template = `
                         <p v-if="eventCancellation" class="event-status-note">{{ eventCancellation.status_note }} <a v-if="eventStatusNewsId(eventCancellation)" class="text-link" :href="routes.news(eventStatusNewsId(eventCancellation))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventCancellation)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventCancellation.status_source_url" class="text-link" :href="eventCancellation.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
                     </section>
 
-                    <section v-if="selectedEventSession && eventDetail.schedule_status!=='cancelled' && selectedEventSession.schedule_status!=='cancelled' && (eventSessionTable(selectedEventSession) || (selectedEventSession.performances && selectedEventSession.performances.length))" class="entity-section">
+                    <nav class="entity-tabs" aria-label="活动栏目">
+                        <button :class="{active:eventSection==='setlist'}" @click="setEventSection('setlist')">曲目列表</button>
+                        <button :class="{active:eventSection==='cast'}" @click="setEventSection('cast')">出演阵容</button>
+                        <button :class="{active:eventSection==='related'}" @click="setEventSection('related')">相关信息</button>
+                    </nav>
+
+                    <template v-if="eventSection==='setlist'">
+                    <section v-if="eventHasSetlist" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">演出曲目</span><div class="entity-section-actions"><entity-actions v-if="eventPlayableRows.length" size="compact" play-label="播放本场" add-label="加入本场" @play="playEventSession" @add="enqueueEventSession"></entity-actions></div></div>
                         <div v-if="eventSessionTable(selectedEventSession)" class="setlist-frame" @click="onEventSetlistClick($event)" v-html="eventSessionTable(selectedEventSession)"></div>
                         <table v-else-if="selectedEventSession.performances && selectedEventSession.performances.length" class="data-table setlist-table">
@@ -94,6 +101,11 @@ export const template = `
                         <content-state v-else state="uncollected" subject="曲目"></content-state>
                     </section>
 
+                    <section v-else class="entity-section">
+                        <content-state state="uncollected" subject="曲目"></content-state>
+                    </section>
+                    </template>
+                    <template v-else-if="eventSection==='cast'">
                     <section class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">{{ eventCancellation ? '原定出演' : '出演阵容' }}</span><span v-if="eventVoiceCast.length">{{ eventVoiceCast.length }} 位</span></div>
                         <div v-if="eventVoiceCast.length" class="performer-cast-groups">
@@ -114,6 +126,8 @@ export const template = `
                         <div class="performer-chip-list"><component v-for="(cast,index) in eventUnscopedCast" :is="cast.voice_actor_id ? 'a' : 'span'" :key="cast.voice_actor_id || ('external-' + cast.name + '-' + index)" class="performer-chip voice-chip" :href="cast.voice_actor_id ? routes.voiceActors(cast.voice_actor_id) : undefined" @click="cast.voice_actor_id && internalLink($event, () => openVoice(cast.voice_actor_id))"><img v-if="voicePhoto(cast.voice_actor_id)" v-media-src="voicePhoto(cast.voice_actor_id)" alt=""><span>{{ voiceName(cast.voice_actor_id,cast.name) }}</span><em v-if="cast.participation_label" class="credit-role-tag">{{ cast.participation_label }}</em></component></div>
                     </section>
 
+                    </template>
+                    <template v-else-if="eventSection==='related'">
                     <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
                     <section v-if="eventAnimeRelations.length" class="entity-section anime-crosslink-section">
                         <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
@@ -121,7 +135,7 @@ export const template = `
                     </section>
 
                     <section v-if="eventMediaCards.length" class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">节目影像</span></div>
+                        <div class="section-toolbar"><span class="credit-role-tag">相关影像</span></div>
                         <div class="event-video-grid">
                             <div v-for="media in eventMediaCards" :key="media.key" class="event-video" :class="'event-video-'+media.platform">
                                 <iframe v-if="media.embedUrl && activeMediaKey===media.key" v-media-src="media.embedUrl+'?autoplay=1'" :title="eventDetail.title+'　'+media.label" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -140,7 +154,11 @@ export const template = `
                             </div>
                         </div>
                     </section>
-                    <related-news v-if="!eventDetail.sessions?.length || selectedEventSessionId === eventDetail.sessions[0].id" type="event" :entity-id="eventDetail.id"></related-news>
+                    <related-news v-if="!eventDetail.sessions?.length || selectedEventSessionId === eventDetail.sessions[0].id" type="event" :entity-id="eventDetail.id" :standalone="!eventAnimeRelations.length && !eventMediaCards.length && !animeError"></related-news>
+                    <section v-else-if="!eventAnimeRelations.length && !eventMediaCards.length && !animeError" class="entity-section">
+                        <content-state state="uncollected" subject="相关信息"></content-state>
+                    </section>
+                    </template>
                 </article>
             </template>
         `;

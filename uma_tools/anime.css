@@ -13,9 +13,9 @@
 .anime-entity-detail .anime-summary { margin: 12px 0; line-height: 1.65; white-space: pre-line; font-weight: 400; }
 .anime-watch-links, .anime-episode-nav, .anime-context-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; }
 .anime-watch-links a, .anime-episode-nav a, .anime-context-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; text-decoration: none; color: var(--ui-navy); }
-.anime-context-links { margin: 0 0 14px; }
+.anime-context-links { margin: 0; }
 .anime-context-links a { max-width: 100%; flex-wrap: wrap; }
-.anime-event-links { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--ui-line); }
+.anime-event-links { margin: 0; }
 .anime-event-group + .anime-event-group { margin-top: 12px; }
 .anime-event-category { display: block; margin-bottom: 4px; color: var(--ui-navy); font-size: .875rem; }
 .anime-event-group > a { display: grid; grid-template-columns: max-content minmax(0,1fr) 18px; align-items: baseline; gap: 8px 12px; padding: 8px 0; color: var(--ui-navy); text-decoration: none; font-size: .875rem; line-height: 1.55; }

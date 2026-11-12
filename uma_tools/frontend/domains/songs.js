@@ -64,10 +64,7 @@ export function createSongs(deps) {
   }
 
   function setSongSection(section) {
-    if (
-      ["releases", "credits", "lyrics", "performances"].indexOf(section) === -1
-    )
-      return;
+    if (!deps.routes.sections.song.includes(section)) return;
     songSection.value = section;
     deps.pushUrl(true);
   }

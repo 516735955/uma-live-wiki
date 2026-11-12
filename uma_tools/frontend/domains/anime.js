@@ -737,6 +737,7 @@ export function createAnime(deps) {
               entry.roles?.length && animeRowMatchesEdition(entry, animeEdition.value))),
       },
       { id: "stills", label: "剧照", show: animeStillGroups.value.length },
+      { id: "related", label: "相关信息", show: true },
     ].filter((tab) => tab.show),
   );
 
@@ -994,7 +995,6 @@ export function createAnime(deps) {
     characterAnimeRelations: participation.characterAnimeRelations,
     characterAnimeWorks: participation.characterAnimeWorks,
     clearAnimeFilters,
-    creatorAnimeCueWorks: participation.creatorAnimeCueWorks,
     creatorAnimeWorks: participation.creatorAnimeWorks,
     eventAnimeRelations: participation.eventAnimeRelations,
     eventAnimeWorks: participation.eventAnimeWorks,

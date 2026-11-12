@@ -32,7 +32,6 @@ export const template = `
                         <p v-if="(animeUnitDetail || animeDetail).summary_zh || (animeUnitDetail || animeDetail).summary_ja" class="anime-summary">{{ (animeUnitDetail || animeDetail).summary_zh || (animeUnitDetail || animeDetail).summary_ja }}</p>
                         <div v-if="animeDetail.id==='anime-rttt' && !animeUnitDetail" class="anime-version-switch" role="group" aria-label="动画版本"><button :aria-pressed="animeEdition==='film'" :class="{active:animeEdition==='film'}" @click="setAnimeEdition('film')">剧场版</button><button :aria-pressed="animeEdition==='web'" :class="{active:animeEdition==='web'}" @click="setAnimeEdition('web')">网络版</button></div>
                         <div v-if="animeCurrentWatch.length" class="anime-watch-links"><a v-for="resource in animeCurrentWatch" :key="resource.id" class="horse-link-chip" :href="resource.url" target="_blank" rel="noopener noreferrer"><platform-mark :platform="resource.platform"></platform-mark>{{ animePlatformLabel(resource.platform) }}<small v-if="animeWatchAccess(resource)">{{ animeWatchAccess(resource) }}</small><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
-                        <anime-event-links v-if="animeEventGroups.length" :groups="animeEventGroups" :work-title="animeDetail.title_ja"></anime-event-links>
                         <nav v-if="animeUnitDetail && !animeSingle" class="anime-episode-nav" aria-label="剧集导航">
                             <a v-if="animeAdjacentUnits.previous" class="horse-link-chip" :href="animeUnitHref(animeAdjacentUnits.previous)" @click="animeLink($event,$event.currentTarget.href)" :aria-label="'上一话：'+animeAdjacentUnits.previous.label"><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>{{ animeAdjacentUnits.previous.label }}</a>
                             <a class="horse-link-chip" :href="animeEpisodeDirectoryHref" @click="animeLink($event,animeEpisodeDirectoryHref)"><svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/></svg>全部剧集</a>
@@ -41,7 +40,6 @@ export const template = `
                     </div>
                 </div>
                 <div class="media-content">
-                    <nav v-if="animeUsefulRelations.length" class="anime-context-links" aria-label="相关内容"><a v-for="relation in animeUsefulRelations" :key="relation.id" class="horse-link-chip" :href="animeRelationHref(relation)" @click="relation.target_type==='race' ? null : animeLink($event,animeRelationHref(relation))" :target="relation.target_type==='race'?'_blank':null" rel="noopener"><span class="credit-role-tag">{{ relation.label }}</span>{{ animeRelationTargetLabel(relation) }}<svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path :d="relation.target_type==='race'?'M7 17 17 7M7 7h10v10':'M5 12h14m-6-6 6 6-6 6'"/></svg></a></nav>
                     <nav class="entity-tabs" aria-label="动画栏目"><button v-for="tab in animeTabs" :key="tab.id" :class="{active:animeSection===tab.id}" @click="setAnimeSection(tab.id)">{{ tab.label }}</button></nav>
                     <content-state v-if="!animeTabs.some(tab=>tab.id===animeSection)" :state="animeSection==='episodes' && animeSingle ? 'not_applicable' : 'uncollected'" :subject="animeSection==='episodes' ? '剧集栏目' : animeSection==='music' ? '音乐资料' : animeSection==='staff' ? '制作人员资料' : animeSection==='stills' ? '剧照' : '登场角色资料'"></content-state>
                     <template v-if="animeTabs.some(tab=>tab.id===animeSection)">
@@ -72,8 +70,21 @@ export const template = `
                         <content-state v-else-if="!animeStaffAggregate.length && animeTabs.some(tab=>tab.id==='staff')" state="uncollected" subject="制作人员资料"></content-state>
                         <dl v-if="!animeUnitDetail && animeStaffAggregate.length" class="anime-credit-ledger staff-role-ledger"><div v-for="group in animeStaffAggregateGroups" :key="group.key"><dt>{{ group.role }}</dt><dd><staff-credit-list :credits="group.rows" participation></staff-credit-list></dd></div></dl>
                     </section>
+                    <template v-if="animeSection==='related'">
+                        <section v-if="animeUsefulRelations.length" class="entity-section">
+                            <div class="section-toolbar"><span class="credit-role-tag">相关赛事</span></div>
+                    <nav v-if="animeUsefulRelations.length" class="anime-context-links" aria-label="相关内容"><a v-for="relation in animeUsefulRelations" :key="relation.id" class="horse-link-chip" :href="animeRelationHref(relation)" @click="relation.target_type==='race' ? null : animeLink($event,animeRelationHref(relation))" :target="relation.target_type==='race'?'_blank':null" rel="noopener"><span class="credit-role-tag">{{ relation.label }}</span>{{ animeRelationTargetLabel(relation) }}<svg class="anime-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path :d="relation.target_type==='race'?'M7 17 17 7M7 7h10v10':'M5 12h14m-6-6 6 6-6 6'"/></svg></a></nav>
+                        </section>
+                        <section v-if="animeEventGroups.length" class="entity-section">
+                            <div class="section-toolbar"><span class="credit-role-tag">相关活动</span></div>
+                        <anime-event-links v-if="animeEventGroups.length" :groups="animeEventGroups" :work-title="animeDetail.title_ja"></anime-event-links>
+                        </section>
+                        <related-news v-if="!animeUnitDetail" type="anime" :entity-id="animeDetail.id" :standalone="!animeUsefulRelations.length && !animeEventGroups.length"></related-news>
+                        <section v-else-if="!animeUsefulRelations.length && !animeEventGroups.length" class="entity-section">
+                            <content-state state="uncollected" subject="相关信息"></content-state>
+                        </section>
+                    </template>
                     </template>
                 </div>
-                <related-news v-if="!animeUnitDetail" type="anime" :entity-id="animeDetail.id"></related-news>
             </article>
         `;

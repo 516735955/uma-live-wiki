@@ -134,37 +134,6 @@ export function createAnimeParticipation(deps) {
   const creatorAnimeWorks = deps.computed(() =>
     groupAnimeParticipation(deps.creatorAnimeStaff.value),
   );
-  const creatorAnimeCueWorks = deps.computed(() => {
-    if (!deps.creatorDetail.value) return [];
-    const rows = [];
-    (deps.animeCatalog.value.units || []).forEach((unit) =>
-      (unit.music_cues || []).forEach((cue) => {
-        (cue.credits || [])
-          .filter((credit) =>
-            (credit.creator_ids || []).includes(deps.creatorDetail.value.id),
-          )
-          .forEach((credit) => {
-            rows.push({
-              entry: {
-                group: cue.title,
-                role: credit.role,
-                institutions: credit.institutions,
-              },
-              relation: {
-                target_type: 'song',
-                target_id: cue.song_id,
-                version_id: cue.version_id || '',
-                release_id: cue.release_id || '',
-                usage_type: cue.usage_type || '',
-              },
-              work: deps.findAnimeWork(unit.work_id),
-              unit,
-            });
-          });
-      }),
-    );
-    return groupAnimeParticipation(rows);
-  });
   const characterAnimeWorks = deps.computed(() =>
     groupAnimeParticipation(characterAnimeRelations.value),
   );
@@ -287,7 +256,6 @@ export function createAnimeParticipation(deps) {
   return {
     groupAnimeParticipation,
     creatorAnimeWorks,
-    creatorAnimeCueWorks,
     characterAnimeWorks,
     voiceAnimeWorks,
     songAnimeWorks,

@@ -31,7 +31,7 @@ export function createCreators(deps) {
   }
 
   function setCreatorSection(section) {
-    if (["works", "collaborators"].indexOf(section) === -1) return;
+    if (!deps.routes.sections.creator.includes(section)) return;
     creatorSection.value = section;
     deps.pushUrl(true);
   }
@@ -108,7 +108,9 @@ export function createCreators(deps) {
           (catalogCreator && catalogCreator.photo);
         deps.clearEntityDetails("creator");
         creatorDetail.value = found;
-        creatorSection.value = section || "works";
+        creatorSection.value = section === "collaborators" && !found.collaborators.length
+          ? "works"
+          : section || "works";
         expandedCreatorWorkId.value = "";
         deps.activeTab.value = "database";
         deps.dbView.value = "creators";

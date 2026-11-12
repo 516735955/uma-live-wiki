@@ -197,7 +197,22 @@ export function createAlbums(deps) {
       : null;
   }
 
-  function openAlbum(a) {
+  const albumSection = deps.ref("credits");
+
+  function setAlbumSection(section) {
+    albumSection.value = section;
+    deps.pushUrl(true);
+  }
+
+  function albumTrackCredits(track, index) {
+    const album = albumDetail.value?.data;
+    const song = findAlbumTrackSong(track, index, album);
+    const versions = (song?.versions || []).filter(version =>
+      (version.releases || []).some(release => matchesAlbum(release, album) && Number(release.track_number) === index + 1));
+    return versions.length === 1 ? versions[0].credits || [] : [];
+  }
+
+  function openAlbum(a, section = "credits") {
     albumsError.value = "";
     const isCurrent = deps.beginEntityNavigation();
     const name = a && a.name;
@@ -221,6 +236,7 @@ export function createAlbums(deps) {
         deps.clearEntityDetails("album");
         deps.activeTab.value = "database";
         deps.dbView.value = "albums";
+        albumSection.value = section;
         albumDetail.value = { data: data.album, songs: data.album.songs || [] };
         if (!isCurrent.fromRoute) deps.resetPageScroll();
         deps.pushUrl(isCurrent.fromRoute);
@@ -232,7 +248,7 @@ export function createAlbums(deps) {
           deps.activeTab.value = "not-found";
         } else if (isCurrent()) {
           deps.navigationError.value = "专辑资料暂时无法载入，请重试。";
-          deps.navigationRetry.value = () => openAlbum(a);
+          deps.navigationRetry.value = () => openAlbum(a, section);
         }
       });
   }
@@ -572,6 +588,9 @@ export function createAlbums(deps) {
     );
   }
   return {
+    albumSection,
+    setAlbumSection,
+    albumTrackCredits,
     start,
     addAlbumTrack,
     albumDetail,

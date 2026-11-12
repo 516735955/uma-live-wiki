@@ -18,6 +18,28 @@ export function registerComponents(umaApp, routes) {
   umaApp.component("venue-map", VenueMap);
   umaApp.component("news-topics", NewsTopics);
   umaApp.component("related-news", RelatedNews);
+  umaApp.component("song-credit-ledger", {
+    props: { groups: Array },
+    methods: {
+      creatorLink(id) { return routes.creators(id); },
+      open(event, id) {
+        this.$root.internalLink(event, () => this.$root.openCreator(id));
+      },
+    },
+    template: `<dl class="credit-ledger">
+      <div v-for="group in groups" :key="group.role">
+        <dt>{{ group.label }}</dt>
+        <dd class="credit-people">
+          <span v-for="credit in group.credits" :key="credit.creator_id || credit.name" class="credit-person">
+            <em v-if="credit.organization" class="credit-role-tag">{{ credit.organization }}</em>
+            <a v-else-if="credit.creator_id" class="text-link" :href="creatorLink(credit.creator_id)" @click="open($event,credit.creator_id)">{{ credit.name }}</a>
+            <span v-else>{{ credit.name }}</span>
+            <em v-if="credit.institution" class="credit-role-tag">{{ credit.institution }}</em>
+          </span>
+        </dd>
+      </div>
+    </dl>`,
+  });
   umaApp.component("platform-mark", {
     props: { platform: String },
     // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.

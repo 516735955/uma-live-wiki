@@ -11,7 +11,7 @@ const { createClassification } = require('./music-classification');
 const { projectEvents } = require('./event-presentation');
 const { neteaseTrackId } = require('./netease-audio');
 
-const CATALOG_RESPONSE_SCHEMA = 12;
+const CATALOG_RESPONSE_SCHEMA = 13;
 
 const CATALOG_FILES = [
   'catalog_manifest.json',
@@ -963,6 +963,9 @@ class CatalogStore {
       const song = store.albumTracks.get(stableAlbumId(album) + ':' + (index + 1));
       return song ? { ...songSummary(song, store.music), versions: (song.versions || []).map(version => ({
         id: version.id, title: version.title, version_label: version.version_label, instrumental: !!version.instrumental,
+        credits: (version.credits || []).map(credit => ({
+          ...credit, name: musicCreatorName(store.music, credit.creator_id) || credit.name || credit.creator_id || ''
+        })),
         releases: (version.releases || []).filter(release => release.album_id === stableAlbumId(album))
       })).filter(version => version.releases.length) } : null;
     }).filter(Boolean);

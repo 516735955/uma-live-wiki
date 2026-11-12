@@ -1,4 +1,4 @@
-export const bindings = ["albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
+export const bindings = ["albumSection","setAlbumSection","albumTrackCredits","creditRoleGroups","albums","albumsError","albumsLoading","albumDetail","player","openAlbumFromDb","coverStyle","coverThumb","onCatalogImageError","sampleCover","isActive","playAlbumTrack","addAlbumTrack","playAlbum","enqueueAlbum","albumPlayableCount","openSong","albumTrackVocalists","albumTrackSecondary","albumTrackSongId","openVoice","animeError","albumAnimeRelations","retryAnime","albumAnimeWorks","relFilter","relTypeList","relYearList","relWorkList","relQuery","relWork","relSort","relYear","relPage","relFiltered","relPaged","relPageCount","relPageStart","relPageEnd","relPageList","setRelPage","goRelPage","albumSortOptions","albumsTotal","loadAlbums","internalLink","routes"];
 bindings.push("musicPeopleError", "loadMusicPeople");
 bindings.push("relSeries", "relSeriesList");
 bindings.push("albumHeading", "albumStreamingLinks");
@@ -38,12 +38,11 @@ export const template = `
                 </div>
                 <div class="media-content">
                     <content-state v-if="musicPeopleError" state="error" subject="人物资料" :retry="true" @retry="loadMusicPeople"></content-state>
-                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
-                    <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
-                        <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
-                    </section>
-                    <section class="entity-section">
+                    <nav class="entity-tabs" aria-label="专辑栏目">
+                        <button :class="{active:albumSection==='credits'}" @click="setAlbumSection('credits')">创作信息</button>
+                        <button :class="{active:albumSection==='related'}" @click="setAlbumSection('related')">相关信息</button>
+                    </nav>
+                    <section v-if="albumSection==='credits'" class="entity-section">
                         <div class="section-toolbar"><span class="credit-role-tag">曲目</span><div v-if="albumDetail.songs.length" class="entity-section-actions"><a v-for="link in albumStreamingLinks" :key="link.url" class="text-link" :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a><span>{{ albumDetail.songs.length }} 首</span></div></div>
                         <div v-if="albumDetail.songs.length" class="album-track-list">
                             <div v-for="(song,index) in albumDetail.songs" :key="song.name+'-'+index">
@@ -54,13 +53,21 @@ export const template = `
                                         <a v-for="vocalist in albumTrackVocalists(song,index)" :key="vocalist.voice_actor_id" class="performer-chip voice-chip" :style="{'--chip-color':vocalist.color}" :href="routes.voiceActors(vocalist.voice_actor_id)" @click="internalLink($event, () => openVoice(vocalist.voice_actor_id))"><img v-media-src="vocalist.image" alt=""><span>{{ vocalist.name }}</span></a>
                                     </div>
                                     <span v-else-if="albumTrackSecondary(song)" class="secondary-line">{{ albumTrackSecondary(song) }}</span>
+                                    <song-credit-ledger v-if="albumTrackCredits(song,index).length" :groups="creditRoleGroups({credits:albumTrackCredits(song,index)})"></song-credit-ledger>
                                 </div>
                                 <entity-actions v-if="song.url" size="compact" :playing="isActive(song.url)" @play="playAlbumTrack(albumDetail,index)" @add="addAlbumTrack(albumDetail,index)"></entity-actions>
                             </div>
                         </div>
                         <content-state v-else :state="(albumDetail.data.content_status && albumDetail.data.content_status.tracks && albumDetail.data.content_status.tracks.state) || 'uncollected'" subject="曲目"></content-state>
                     </section>
+                    <template v-else-if="albumSection==='related'">
+                    <content-state v-if="animeError" state="error" subject="动画关联" :retry="true" @retry="retryAnime"></content-state>
+                    <section v-if="albumAnimeRelations.length" class="entity-section anime-crosslink-section">
+                        <div class="section-toolbar"><span class="credit-role-tag">动画关联</span></div>
+                        <anime-participation :works="albumAnimeWorks" section="music"></anime-participation>
+                    </section>
+                        <related-news type="album" :entity-id="albumDetail.data.id" :standalone="!albumAnimeRelations.length && !animeError"></related-news>
+                    </template>
                 </div>
-                <related-news type="album" :entity-id="albumDetail.data.id"></related-news>
             </article>
         `;
