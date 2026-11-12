@@ -210,14 +210,11 @@ button.setlist-performer-link:hover img { transform: scale(1.1); box-shadow: 0 3
     font-weight: 900;
 }
 .voice-chip img { background: #fff; }
-.cast-chip-list,
-.performer-chip-list.cast-chip-list { align-items: center; row-gap: 12px; }
-.cast-chip { min-width: 0; margin: 0; color: var(--text); font-size: 14px; line-height: 1.4; text-decoration: none; }
+.cast-chip-list { align-items: center; row-gap: 12px; }
+.cast-chip { flex: none; max-width: none; margin: 0; color: var(--text); font-size: 14px; line-height: 1.4; text-decoration: none; }
 .cast-chip :is(img,.performer-chip-fallback) { width: 30px; height: 30px; }
-.cast-chip > span:last-child { min-width: 0; white-space: normal; line-height: 1.4; overflow-wrap: anywhere; }
-.cast-chip.event-chip { grid-column: 1 / -1; }
+.cast-chip > span:last-child { white-space: nowrap; }
 .cast-chip.event-chip img { object-position: center; }
-.cast-chip.event-chip > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .setlist-voice-link { text-decoration: none; }
 .setlist-voice-link:hover { color: var(--ui-cobalt-deep); }
 .entity-hero .performer-chip { margin-top: 16px; color: #fff; }

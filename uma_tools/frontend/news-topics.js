@@ -50,7 +50,7 @@ export const NewsTopics = {
   },
   template: `
     <news-section v-if="topics.length" class="news-topics" label="本文话题">
-      <div class="performer-chip-list cast-chip-list">
+      <div class="cast-chip-list">
         <cast-chip v-for="item in topics" :key="item.type+':'+item.id" :type="item.type"
           :color="item.color" :href="item.href" :image="item.image" :label="item.title"></cast-chip>
       </div>

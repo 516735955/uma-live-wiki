@@ -210,6 +210,13 @@
         .news-detail-body a { color: var(--brand-dark, #b94c00); text-decoration: none; }
         .news-detail-body span[data-text-custom-color] { color: inherit; }
 .news-topics { margin-top: 32px; }
+.news-topics .cast-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    overflow-x: auto;
+    padding: 4px 0;
+}
 :is(.news-topics,.related-news) .section-toolbar h2 { margin: 0; }
 .related-news .history-list > a { grid-template-columns: 102px minmax(0,1fr); }
 .related-news .history-list strong { min-width: 0; overflow-wrap: anywhere; }

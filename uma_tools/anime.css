@@ -42,7 +42,7 @@
 .anime-episode-list b { display: block; margin-top: 6px; line-height: 1.5; }
 .anime-episode-list a:hover b { color: var(--ui-cobalt); }
 .anime-cast-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); column-gap: 20px; }
-.anime-cast-list .anime-cast-pair { display: grid; grid-template-columns: minmax(0,140px) minmax(0,1fr); gap: 8px; margin: 0; align-items: center; }
+.anime-cast-list .anime-cast-pair { display: grid; grid-template-columns: minmax(max-content,140px) max-content; gap: 8px; margin: 0; align-items: center; overflow-x: auto; }
 .anime-album-record { padding: 12px 0; text-decoration: none; color: inherit; }
 .anime-album-record > span { display: grid; gap: 8px; }
 .anime-crosslink-grid { display: grid; gap: 8px; }
