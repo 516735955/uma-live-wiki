@@ -345,6 +345,50 @@
     "/zh-Hans/live/other/64": "live-other-2025-05-25-6th-event-the-new-frontier-day2"
   },
   "event_patches": {
+    "eventernote-2027-01-19": {
+      "kind": "concert",
+      "series_id": "numbered-live",
+      "sources_add": [
+        {"kind": "official_announcement", "label": "Cygames 公演公告", "url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"},
+        {"kind": "official_venue", "label": "Eventim Apollo 公演页面", "url": "https://www.eventimapollo.com/events/umamusume/"}
+      ],
+      "session_patches": {
+        "eventernote-2027-01-19-session-1": {
+          "doors_time": "18:00",
+          "start_time": "19:00",
+          "end_time": "22:00",
+          "end_time_estimated": true,
+          "time_source": "official_announcement",
+          "time_source_url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/",
+          "time_precision": "minute",
+          "source_time_text": "開場 18:00 / 開演 19:00（GMT）",
+          "end_time_source_url": "https://www.eventernote.com/events/499847",
+          "schedule_note": "伦敦当地时间（GMT）"
+        }
+      }
+    },
+    "eventernote-2027-01-20": {
+      "kind": "concert",
+      "series_id": "numbered-live",
+      "sources_add": [
+        {"kind": "official_announcement", "label": "Cygames 公演公告", "url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"},
+        {"kind": "official_venue", "label": "Eventim Apollo 公演页面", "url": "https://www.eventimapollo.com/events/umamusume/"}
+      ],
+      "session_patches": {
+        "eventernote-2027-01-20-session-1": {
+          "doors_time": "18:00",
+          "start_time": "19:00",
+          "end_time": "22:00",
+          "end_time_estimated": true,
+          "time_source": "official_announcement",
+          "time_source_url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/",
+          "time_precision": "minute",
+          "source_time_text": "開場 18:00 / 開演 19:00（GMT）",
+          "end_time_source_url": "https://www.eventernote.com/events/499848",
+          "schedule_note": "伦敦当地时间（GMT）"
+        }
+      }
+    },
     "eventernote-2018-02-25": {
       "venue": "AKIHABARAゲーマーズ本店"
     },

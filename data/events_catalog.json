@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T01:40:15+00:00",
+  "generated_at": "2026-11-12T02:37:32+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -14,9 +14,9 @@
   "coverage": {
     "events": 518,
     "by_kind": {
-      "concert": 46,
+      "concert": 48,
       "official_program": 271,
-      "onsite": 201
+      "onsite": 199
     },
     "by_mode": {
       "online": 272,
@@ -488,6 +488,52 @@
     }
   ],
   "event_groups": [
+    {
+      "id": "live-numbered-7th-event-2027-01-19",
+      "kind": "onsite_group",
+      "title": "7th EVENT THE STAGE 伦敦公演",
+      "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON",
+      "summary": "7th EVENT 世界巡演伦敦站在 Eventim Apollo 举办。两天均由同一组 14 位声优以角色身份出演。",
+      "source_urls": [
+        "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"
+      ],
+      "source_identity": {},
+      "members": [
+        {
+          "event_id": "eventernote-2027-01-19",
+          "role": "child",
+          "label": "DAY1",
+          "source_urls": []
+        },
+        {
+          "event_id": "eventernote-2027-01-20",
+          "role": "child",
+          "label": "DAY2",
+          "source_urls": []
+        }
+      ],
+      "missing_event_ids": [],
+      "children": [
+        {
+          "event_id": "eventernote-2027-01-19",
+          "label": "DAY1",
+          "date": "2027-01-19",
+          "date_end": "2027-01-19",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg"
+        },
+        {
+          "event_id": "eventernote-2027-01-20",
+          "label": "DAY2",
+          "date": "2027-01-20",
+          "date_end": "2027-01-20",
+          "image": "https://eventernote.s3.amazonaws.com/images/events/499848_s.jpg"
+        }
+      ],
+      "date_start": "2027-01-19",
+      "date_end": "2027-01-20",
+      "image": "https://eventernote.s3.amazonaws.com/images/events/499847_s.jpg",
+      "image_strategy": "default_session"
+    },
     {
       "id": "program-golf-world-2026-01",
       "kind": "series_arc",
@@ -3063,9 +3109,9 @@
       "title": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2",
       "date": "2027-01-20",
       "end_date": "2027-01-20",
-      "kind": "onsite",
+      "kind": "concert",
       "mode": "onsite",
-      "series_id": "",
+      "series_id": "numbered-live",
       "venue": "Eventim Apollo",
       "cast_status": "verified",
       "cast": [
@@ -3533,10 +3579,12 @@
           "start_time": "19:00",
           "end_time": "22:00",
           "end_time_estimated": true,
-          "time_source": "eventernote",
+          "time_source": "official_announcement",
+          "time_source_url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2    開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります 開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
-          "time_source_url": "https://www.eventernote.com/events/499848"
+          "source_time_text": "開場 18:00 / 開演 19:00（GMT）",
+          "end_time_source_url": "https://www.eventernote.com/events/499848",
+          "schedule_note": "伦敦当地时间（GMT）"
         }
       ],
       "media": [],
@@ -3545,6 +3593,16 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/499848"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 公演公告",
+          "url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"
+        },
+        {
+          "kind": "official_venue",
+          "label": "Eventim Apollo 公演页面",
+          "url": "https://www.eventimapollo.com/events/umamusume/"
         }
       ],
       "legacy_url": "",
@@ -3557,7 +3615,38 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "time_source": "eventernote",
+      "group_id": "live-numbered-7th-event-2027-01-19",
+      "group_ids": [
+        "live-numbered-7th-event-2027-01-19"
+      ],
+      "group_role": "child",
+      "group_label": "DAY2",
+      "group_date_start": "",
+      "group_date_end": "",
+      "venue_raw": "Eventim Apollo",
+      "venue_id": "venue-eventim-apollo",
+      "venue_zh": "Eventim Apollo",
+      "venue_ja": "Eventim Apollo",
+      "venue_city": "伦敦",
+      "venue_country": "英国",
+      "venue_aliases": [
+        "Eventim Apollo",
+        "Hammersmith Apollo",
+        "Hammersmith Odeon",
+        "汉默史密斯阿波罗",
+        "London"
+      ],
+      "venue_sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.eventimapollo.com/venue-info/venue-history/"
+        },
+        {
+          "kind": "eventernote",
+          "url": "https://www.eventernote.com/places/26525"
+        }
+      ],
+      "time_source": "official_announcement",
       "time_precision": "minute",
       "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY2",
       "summary_ja": "",
@@ -3569,9 +3658,9 @@
       "title": "7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1",
       "date": "2027-01-19",
       "end_date": "2027-01-19",
-      "kind": "onsite",
+      "kind": "concert",
       "mode": "onsite",
-      "series_id": "",
+      "series_id": "numbered-live",
       "venue": "Eventim Apollo",
       "cast_status": "verified",
       "cast": [
@@ -4039,10 +4128,12 @@
           "start_time": "19:00",
           "end_time": "22:00",
           "end_time_estimated": true,
-          "time_source": "eventernote",
+          "time_source": "official_announcement",
+          "time_source_url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/",
           "time_precision": "minute",
-          "source_time_text": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1    開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります 開場 18:00 開演 19:00 終演 22:00 ※終演時間はあくまでも目安になります",
-          "time_source_url": "https://www.eventernote.com/events/499847"
+          "source_time_text": "開場 18:00 / 開演 19:00（GMT）",
+          "end_time_source_url": "https://www.eventernote.com/events/499847",
+          "schedule_note": "伦敦当地时间（GMT）"
         }
       ],
       "media": [],
@@ -4051,6 +4142,16 @@
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/499847"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "Cygames 公演公告",
+          "url": "https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"
+        },
+        {
+          "kind": "official_venue",
+          "label": "Eventim Apollo 公演页面",
+          "url": "https://www.eventimapollo.com/events/umamusume/"
         }
       ],
       "legacy_url": "",
@@ -4063,7 +4164,38 @@
       "id_aliases": [],
       "legacy_aliases": [],
       "setlist_status": "none",
-      "time_source": "eventernote",
+      "group_id": "live-numbered-7th-event-2027-01-19",
+      "group_ids": [
+        "live-numbered-7th-event-2027-01-19"
+      ],
+      "group_role": "child",
+      "group_label": "DAY1",
+      "group_date_start": "",
+      "group_date_end": "",
+      "venue_raw": "Eventim Apollo",
+      "venue_id": "venue-eventim-apollo",
+      "venue_zh": "Eventim Apollo",
+      "venue_ja": "Eventim Apollo",
+      "venue_city": "伦敦",
+      "venue_country": "英国",
+      "venue_aliases": [
+        "Eventim Apollo",
+        "Hammersmith Apollo",
+        "Hammersmith Odeon",
+        "汉默史密斯阿波罗",
+        "London"
+      ],
+      "venue_sources": [
+        {
+          "kind": "venue_reference",
+          "url": "https://www.eventimapollo.com/venue-info/venue-history/"
+        },
+        {
+          "kind": "eventernote",
+          "url": "https://www.eventernote.com/places/26525"
+        }
+      ],
+      "time_source": "official_announcement",
       "time_precision": "minute",
       "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON DAY1",
       "summary_ja": "",
@@ -191668,5 +191800,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "f99b1630551bd889cf02"
+  "build_id": "58011ddd08f3b1ef06d4"
 }

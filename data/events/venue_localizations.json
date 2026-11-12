@@ -1,6 +1,43 @@
 {
   "schema_version": 1,
   "records": {
+    "venue-eventim-apollo": {
+      "google_maps": {
+        "url": "https://www.google.com/maps?cid=17594283854762254996",
+        "place_name": "Eventim Apollo, 45 Queen Caroline Street, London W6 9QH, United Kingdom",
+        "source_url": "https://wanderlog.com/place/details/121819/hammersmith-apollo",
+        "scope": "venue"
+      },
+      "name_zh": "Eventim Apollo",
+      "name_original": "Eventim Apollo",
+      "name_en": "Eventim Apollo",
+      "venue_type": "展演空间",
+      "description_zh": "位于伦敦西部汉默史密斯的演出剧院，1932 年以 Gaumont Palace 电影院之名开业，保留了装饰艺术风格的建筑与室内设计。",
+      "aliases": ["汉默史密斯阿波罗", "Hammersmith Apollo", "Hammersmith Odeon", "Gaumont Palace"],
+      "search_aliases": ["Eventim", "Apollo", "Hammersmith", "London"],
+      "capacity_zh": ["3,655 席（全座席）", "最多 5,300 人（部分站席）"],
+      "location": {
+        "lat": 51.490747,
+        "lng": -0.224458,
+        "source_url": "https://en.wikipedia.org/wiki/Hammersmith_Apollo",
+        "scope": "building"
+      },
+      "facts": {
+        "official_url": "https://www.eventimapollo.com/",
+        "wikipedia_en": "https://en.wikipedia.org/wiki/Hammersmith_Apollo",
+        "address": "45 Queen Caroline Street, London W6 9QH, United Kingdom",
+        "access_url": "https://www.eventimapollo.com/venue-info/getting-here/"
+      },
+      "access_zh": "乘地铁至 Hammersmith 站，会场位于 Broadway Shopping Centre 对面。",
+      "photo": {
+        "path": "/uma_tools/img/venues/eventim-apollo.webp",
+        "source_url": "https://www.eventimapollo.com/venue-info/venue-history/",
+        "original_url": "https://aeg-media-assets.b-cdn.net/eventim/images/Eventim-Apollo.jpg",
+        "credit": "Eventim Apollo",
+        "width": 1080,
+        "height": 1080
+      }
+    },
     "venue-aichi-sky-expo": {
       "google_maps": {
         "url": "https://www.google.com/maps?cid=1004957664533005548",

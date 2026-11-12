@@ -269,6 +269,22 @@
       ]
     },
     {
+      "id": "venue-eventim-apollo",
+      "raw": "Eventim Apollo",
+      "display": "Eventim Apollo",
+      "name_zh": "Eventim Apollo",
+      "name_ja": "Eventim Apollo",
+      "city": "伦敦",
+      "country": "英国",
+      "normalization_status": "reviewed_display",
+      "kind": "venue",
+      "aliases": ["Hammersmith Apollo", "Hammersmith Odeon", "汉默史密斯阿波罗", "London"],
+      "sources": [
+        {"kind": "venue_reference", "url": "https://www.eventimapollo.com/venue-info/venue-history/"},
+        {"kind": "eventernote", "url": "https://www.eventernote.com/places/26525"}
+      ]
+    },
+    {
       "id": "venue-peacock-theater",
       "raw": "Peacock Theater",
       "display": "孔雀剧院（Peacock Theater）",

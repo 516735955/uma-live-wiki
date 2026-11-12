@@ -2,6 +2,18 @@
   "schema_version": 1,
   "groups": [
     {
+      "id": "live-numbered-7th-event-2027-01-19",
+      "kind": "onsite_group",
+      "title": "7th EVENT THE STAGE 伦敦公演",
+      "title_ja": "ウマ娘 プリティーダービー 7th EVENT WORLD TOUR “THE STAGE” in LONDON",
+      "summary": "7th EVENT 世界巡演伦敦站在 Eventim Apollo 举办。两天均由同一组 14 位声优以角色身份出演。",
+      "source_urls": ["https://prtimes.jp/main/html/rd/p/000001323.000005593.html/"],
+      "members": [
+        {"event_id": "eventernote-2027-01-19", "label": "DAY1"},
+        {"event_id": "eventernote-2027-01-20", "label": "DAY2"}
+      ]
+    },
+    {
       "id": "program-golf-world-2026-01", "kind": "series_arc",
       "title": "Everybody’s Golf WORLD 四人游戏实况（2026年1月）",
       "summary": "目白善信、目白赖恩、目白阿尔丹与目白光明共同游玩《Everybody’s Golf WORLD》。上篇进行通常模式对战，下篇继续进行综艺模式对战。",
