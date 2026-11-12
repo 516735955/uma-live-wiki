@@ -69,5 +69,6 @@ export const template = `
                     <content-state v-else-if="voiceHistoryQuery || voiceHistoryKind!=='all'" state="filtered" subject="演出活动" :clear="true" @clear="voiceHistoryQuery='';voiceHistoryKind='all'"></content-state>
                     <content-state v-else state="uncollected" subject="演出活动"></content-state>
                 </section>
+                <related-news type="voice" :entity-id="voiceDetail.id"></related-news>
             </article>
         `;

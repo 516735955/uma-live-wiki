@@ -1,3 +1,4 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 /* albums state and behavior; external dependencies are explicit live ports. */
 export function createAlbums(deps) {
   const albums = deps.ref([]);
@@ -12,7 +13,6 @@ export function createAlbums(deps) {
 
   const albumYears = deps.ref([]);
 
-  let albumListRevision = 0;
 
   const albumDetail = deps.ref(null);
   const albumStreamingLinks = deps.computed(() => (albumDetail.value?.data?.sources || []).flatMap(url => {
@@ -25,7 +25,6 @@ export function createAlbums(deps) {
     .replace(/\s*\(2021 Remastered Version\)/i, '（2021重制）')
     .replace(/Original Sound\s*Track/i, '原声集'));
 
-  let albumsLoadPromise = null;
 
   const relFilter = deps.ref("");
 
@@ -204,9 +203,13 @@ export function createAlbums(deps) {
     const name = a && a.name;
     if (!name && !(a && a.id)) return Promise.resolve();
     deps.loadMusicPeople();
-    return deps.api.request(
-        "/api/catalog/album" + deps.api.query({ id: a.id, name: name }),
-      )
+    return deps.api.request(catalogPath('album', a.id ? { id: a.id } : { name }))
+      .catch(error => {
+        if (error.message === 'HTTP 404' && a.id && name && isCurrent()) {
+          return deps.api.request(catalogPath('album', { name }));
+        }
+        throw error;
+      })
       .then(function (data) {
         if (!isCurrent()) return;
         if (!data || !data.album) {
@@ -361,7 +364,8 @@ export function createAlbums(deps) {
     return relAlbums.value.slice();
   });
 
-  const relPerPage = 30;
+  const relPerPage = catalogPageSize('albums');
+  const albumList = createCatalogList(deps, { name: 'albums', loading: albumsLoading, error: albumsError, message: '专辑资料暂时无法载入，请重试。' });
 
   const relPageCount = deps.computed(function () {
     return Math.max(1, Math.ceil(albumsTotal.value / relPerPage));
@@ -398,7 +402,6 @@ export function createAlbums(deps) {
     return pages;
   });
 
-  let albumSearchTimer;
 
   const coverTint = deps.reactive({});
 
@@ -494,41 +497,13 @@ export function createAlbums(deps) {
   }
 
   function loadAlbums(params) {
-    const query = params || {
-      q: relQuery.value,
-      type: relFilter.value,
-      work: relWork.value,
-      release_series: relSeries.value,
-      year: relYear.value,
-      sort: relSort.value,
-      page: relPage.value,
-    };
-    const revision = ++albumListRevision;
-    albumsError.value = "";
-    albumsLoading.value = true;
-    albumsLoadPromise = deps.api
-      .request(
-        "/api/catalog/albums" +
-          deps.api.query({ ...query, page_size: relPerPage }),
-      )
-      .then(function (data) {
-        if (revision !== albumListRevision) return;
-        albumsLoadPromise = null;
-        albums.value = data && Array.isArray(data.items) ? data.items : [];
-        albumsTotal.value = data.total || 0;
-        albumTypes.value = data.types || [];
-        albumYears.value = data.years || [];
-        relPage.value = data.page || 1;
-      })
-      .catch(function (e) {
-        if (revision !== albumListRevision) return;
-        albumsLoadPromise = null;
-        albumsError.value = "专辑资料暂时无法载入，请重试。";
-      })
-      .finally(function () {
-        if (revision === albumListRevision) albumsLoading.value = false;
-      });
-    return albumsLoadPromise;
+    return albumList.load(params || {q:relQuery.value,type:relFilter.value,work:relWork.value,release_series:relSeries.value,year:relYear.value,sort:relSort.value,page:relPage.value}, data => {
+      albums.value = data.items;
+      albumsTotal.value = data.total || 0;
+      albumTypes.value = data.types || [];
+      albumYears.value = data.years || [];
+      relPage.value = data.page || 1;
+    });
   }
   function start() {
     deps.watch(
@@ -584,7 +559,6 @@ export function createAlbums(deps) {
     deps.watch(
       [relQuery, relWork, relSeries, relFilter, relYear, relSort],
       function () {
-        albumListRevision += 1;
         if (
           deps.restoringRoute ||
           deps.activeTab.value !== "database" ||
@@ -592,10 +566,7 @@ export function createAlbums(deps) {
           albumDetail.value
         )
           return;
-        window.clearTimeout(albumSearchTimer);
-        albumSearchTimer = window.setTimeout(() => {
-          if (window.location.pathname === '/zh-Hans/music/albums' && !albumDetail.value) loadAlbums();
-        }, 180);
+        albumList.schedule(() => window.location.pathname === deps.routes.albums(), loadAlbums);
       },
       { flush: "sync" },
     );

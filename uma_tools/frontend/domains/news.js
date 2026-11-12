@@ -1,3 +1,5 @@
+import { newsIndexPath, newsDetailPath } from "/uma_tools/frontend/requests.js";
+
 /* news state and behavior; external dependencies are explicit live ports. */
 export function createNews(deps) {
   const newsDateFormatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
@@ -370,7 +372,7 @@ export function createNews(deps) {
     newsError.value = "";
     newsLoading.value = true;
     newsLoadPromise = deps.api
-      .request("/api/news-index" + (requestedQuery ? deps.api.query({ q: requestedQuery }) : ""), { fresh: !!fresh })
+      .request(newsIndexPath(requestedQuery), { fresh: !!fresh })
       .then(function (d) {
         if (serial !== newsLoadSerial) return;
         newsItems.value = (d && d.information_list) || [];
@@ -434,9 +436,7 @@ export function createNews(deps) {
       return;
     const controller = new AbortController();
     newsTranslationRequest = controller;
-    const endpoint = String(request.key).startsWith("lantis-")
-      ? "/api/lantis-detail"
-      : "/api/news-detail";
+    const endpoint = newsDetailPath(String(request.key));
     const deadline = setTimeout(() => controller.abort(), 120000);
     try {
       while (
@@ -454,7 +454,7 @@ export function createNews(deps) {
         });
         if (controller.signal.aborted) break;
         const response = await fetch(
-          endpoint + "?id=" + encodeURIComponent(request.key),
+          endpoint,
           { cache: "no-cache", signal: controller.signal },
         );
         if (!response.ok) break;
@@ -569,7 +569,7 @@ export function createNews(deps) {
       // Lantis CD-related item: crawl body via the proxy server.
       const item = newsDetail.value;
       request.promise = deps.api.request(
-        "/api/lantis-detail?id=" + encodeURIComponent(id),
+        newsDetailPath(String(id)),
         requestOptions,
       )
         .then(function (d) {
@@ -604,7 +604,7 @@ export function createNews(deps) {
       return request.promise;
     }
     request.promise = deps.api.request(
-      "/api/news-detail?id=" + encodeURIComponent(id),
+      newsDetailPath(String(id)),
       requestOptions,
     )
       .then(function (d) {

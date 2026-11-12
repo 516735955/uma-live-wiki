@@ -1,3 +1,4 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 import { castGroups } from "/uma_tools/frontend/performer-groups.js";
 /* events state and behavior; external dependencies are explicit live ports. */
 export function createEvents(deps) {
@@ -11,7 +12,6 @@ export function createEvents(deps) {
 
   const eventYearValues = deps.ref([]);
 
-  let eventListRevision = 0;
 
   const eventSeries = deps.ref([]);
 
@@ -33,7 +33,7 @@ export function createEvents(deps) {
 
   const eventSessionOptions = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
-    return sessions.map(function (session, index) {
+    const options = sessions.map(function (session, index) {
       const unitLabel = session.label && !/^\d{1,2}:\d{2}$/.test(session.label)
         ? session.label : "第" + (index + 1) + "回";
       return {
@@ -43,6 +43,7 @@ export function createEvents(deps) {
           .join(" "),
       };
     });
+    return options.length ? [{ value: '', label: '总览' }, ...options] : options;
   });
 
   const homeNextEvent = deps.ref(null);
@@ -65,7 +66,8 @@ export function createEvents(deps) {
 
   const eventsPage = deps.ref(1);
 
-  const eventsPerPage = 20;
+  const eventsPerPage = catalogPageSize('events');
+  const eventList = createCatalogList(deps, { name: 'events', loading: eventsLoading, error: eventsError, message: '活动资料暂时无法载入，请重试。' });
 
   const charHistoryEvents = deps.computed(function () {
     const query = String(deps.charHistoryQuery.value || "").trim();
@@ -423,6 +425,7 @@ export function createEvents(deps) {
 
   const selectedEventSession = deps.computed(function () {
     const sessions = (eventDetail.value && eventDetail.value.sessions) || [];
+    if (!selectedEventSessionId.value && sessions.length > 1) return null;
     return (
       sessions.find(function (session) {
         return session.id === selectedEventSessionId.value;
@@ -527,13 +530,13 @@ export function createEvents(deps) {
   }
 
   function selectEventSession(sessionId) {
-    if (!eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
+    if (sessionId && !eventDetail.value?.sessions?.some(session => session.id === sessionId)) return;
     selectedEventSessionId.value = sessionId;
     activeMediaKey.value = "";
     deps.pushUrl();
   }
 
-  function openEvent(eventOrId, requestedSessionId) {
+  function openEvent(eventOrId, requestedSessionId, overview = false) {
     const isCurrent = deps.beginEntityNavigation();
     const id =
       typeof eventOrId === "string" ? eventOrId : eventOrId && eventOrId.id;
@@ -562,7 +565,7 @@ export function createEvents(deps) {
         return session.id === requestedSessionId;
       })
         ? requestedSessionId
-        : (sessions[0] && sessions[0].id) || "";
+        : overview ? "" : (sessions[0] && sessions[0].id) || "";
       liveView.value = "eventDetail";
       deps.activeTab.value = "live";
       if (!isCurrent.fromRoute) deps.resetPageScroll();
@@ -570,7 +573,7 @@ export function createEvents(deps) {
       deps.loadAnimeCatalogOptional("event", found.id);
     };
     return Promise.all([
-      deps.api.request("/api/catalog/event" + deps.api.query({ id: id })),
+      deps.api.request(catalogPath('event', { id })),
       deps.loadCharacterIndexData(),
       deps.loadVoiceData(),
     ])
@@ -595,55 +598,22 @@ export function createEvents(deps) {
   }
 
   function loadEvents(params) {
-    const query = params || {
-      q: eventsQuery.value,
-      time: evTime.value,
-      kind: evKind.value,
-      mode: evMode.value,
-      year: evYear.value,
-      series: evSeries.value,
-      page: eventsPage.value,
-    };
-    const revision = ++eventListRevision;
-    eventsError.value = "";
-    eventsLoading.value = true;
-    return deps.api
-      .request(
-        "/api/catalog/events" +
-          deps.api.query(
-            Object.assign({}, query, { page_size: eventsPerPage }),
-          ),
-      )
-      .then(function (data) {
-        if (revision !== eventListRevision) return;
-        eventsAll.value = data.items || [];
-        eventSeries.value = data.series || [];
-        eventYearValues.value = data.years || [];
-        eventsTotal.value = data.total || 0;
-        eventsPage.value = data.page || 1;
-      })
-      .catch(function () {
-        if (revision === eventListRevision)
-          eventsError.value = "活动资料暂时无法载入，请重试。";
-      })
-      .finally(function () {
-        if (revision === eventListRevision) eventsLoading.value = false;
-      });
+    return eventList.load(params || {q:eventsQuery.value,time:evTime.value,kind:evKind.value,mode:evMode.value,year:evYear.value,series:evSeries.value,page:eventsPage.value}, data => {
+      eventsAll.value = data.items;
+      eventSeries.value = data.series || [];
+      eventYearValues.value = data.years || [];
+      eventsTotal.value = data.total || 0;
+      eventsPage.value = data.page || 1;
+    });
   }
-
-  let eventSearchTimer = 0;
   function start() {
     deps.watch(
       [eventsQuery, evTime, evKind, evMode, evYear, evSeries],
       function () {
         if (deps.restoringRoute) return;
-        eventListRevision += 1;
         eventsPage.value = 1;
         deps.pushUrl(true);
-        window.clearTimeout(eventSearchTimer);
-        eventSearchTimer = window.setTimeout(function () {
-          if (window.location.pathname === '/zh-Hans/events') loadEvents();
-        }, 180);
+        eventList.schedule(() => window.location.pathname === deps.routes.events(), loadEvents);
       },
       { flush: "sync" },
     );

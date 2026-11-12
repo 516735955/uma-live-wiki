@@ -2,6 +2,7 @@ import { ContentState } from "/uma_tools/frontend/content-state.js";
 import { ActivityTime, ActivityHistory } from "/uma_tools/frontend/activity-components.js";
 import { PerformanceCast } from "/uma_tools/frontend/performer-groups.js";
 import { VenueMap } from "/uma_tools/frontend/venue-map.js";
+import { NewsTopics, RelatedNews } from "/uma_tools/frontend/news-topics.js";
 
 export function registerComponents(umaApp, routes) {
   umaApp.component("ui-select", window.UmaUi.UiSelect);
@@ -14,6 +15,8 @@ export function registerComponents(umaApp, routes) {
   umaApp.component("activity-history", ActivityHistory);
   umaApp.component("performance-cast", PerformanceCast);
   umaApp.component("venue-map", VenueMap);
+  umaApp.component("news-topics", NewsTopics);
+  umaApp.component("related-news", RelatedNews);
   umaApp.component("platform-mark", {
     props: { platform: String },
     // Brand paths: Simple Icons (CC0), icons/bilibili.svg and icons/youtube.svg.

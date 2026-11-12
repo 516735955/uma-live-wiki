@@ -6,6 +6,7 @@ export function createRouting(deps) {
   const routeProgress = deps.ref(false);
   const routeEntering = deps.ref(false);
   const routePendingAtomic = deps.ref(false);
+  const routePendingLayout = deps.ref('plain');
   const routePendingTitle = deps.ref('');
   let progressTimer, enterTimer, navigationStarted = 0;
 
@@ -15,6 +16,7 @@ export function createRouting(deps) {
     routeProgress.value = false; routeEntering.value = false;
     navigationPending.value = true;
     routePendingAtomic.value = path ? routeWillBeAtomic(path) : true;
+    routePendingLayout.value = pendingLayout(path);
     routePendingTitle.value = title;
     progressTimer = setTimeout(() => { if (navigationStarted) routeProgress.value = true; }, 120);
   }
@@ -187,6 +189,17 @@ export function createRouting(deps) {
     );
   }
 
+  function pendingLayout(path) {
+    if (!path) return 'entity';
+    const [, , area, section, id] = new URL(path, window.location.origin).pathname.split('/');
+    if (area === 'news') return section ? 'article' : 'news';
+    if (area === 'events') return section ? 'event' : 'rows';
+    if (area === 'database' && section === 'venues') return id ? 'venue' : 'venues';
+    if (routeWillBeAtomic(path)) return 'entity';
+    if (area === 'music' && ['songs', 'albums'].includes(section)) return section;
+    return area === 'music' && section === 'creators' ? 'rows' : 'plain';
+  }
+
   function beginEntityNavigation() {
     const fromRoute = restoringRoute;
     if (!fromRoute) {
@@ -243,12 +256,12 @@ export function createRouting(deps) {
         finishRouteFeedback();
       }
     });
-    function apply() {
+    function apply([prepared]) {
       if (
         revision === navigationRevision.value &&
         sourcePath === currentUrlPath()
       ) {
-        const pending = syncFromUrl();
+        const pending = syncFromUrl(prepared);
         const requestRevision = entityRequestRevision;
         preparedEntityRevision = requestRevision;
         // News already has a title/date placeholder and its own body state.
@@ -322,10 +335,9 @@ export function createRouting(deps) {
         }
       } else if (deps.activeTab.value === "live") {
         if (deps.liveView.value === "eventDetail" && deps.eventDetail.value) {
-          path = deps.routes.events(
-            deps.eventDetail.value.id,
-            deps.selectedEventSessionId.value,
-          );
+          const session = deps.selectedEventSessionId.value;
+          path = deps.routes.events(deps.eventDetail.value.id, session);
+          if (!session && deps.eventDetail.value.sessions?.length) path = deps.routes.query(path, { view: 'overview' });
         } else {
           path = deps.routes.query(deps.routes.events(), {
             q: deps.eventsQuery.value,
@@ -506,7 +518,7 @@ export function createRouting(deps) {
     }
   }
 
-  function syncFromUrl() {
+  function syncFromUrl(prepared) {
     const canonicalPath = deps.routes.resolve(currentUrlPath(), {
       eventSeries: Object.keys(deps.eventSeriesMap.value).length ? Object.keys(deps.eventSeriesMap.value) : undefined,
       albumYears: deps.albumYears.value.length ? deps.albumYears.value : undefined,
@@ -586,6 +598,7 @@ export function createRouting(deps) {
             seg[3]
               ? decodeURIComponent(seg[3])
               : url.searchParams.get("session") || "",
+            !seg[3] && url.searchParams.get("view") === "overview",
           );
         else {
           deps.eventsQuery.value = url.searchParams.get("q") || "";
@@ -865,14 +878,8 @@ export function createRouting(deps) {
         deps.activeTab.value = "database";
         deps.dbView.value = "venues";
         if (seg[2]) {
-          deps.venueDetail.value =
-            (window.VENUES_DETAIL &&
-              window.VENUES_DETAIL[decodeURIComponent(seg[2])]) ||
-            null;
-          deps.venueEvents.value =
-            (window.VENUES_EVENTS &&
-              window.VENUES_EVENTS[decodeURIComponent(seg[2])]) ||
-            [];
+          deps.venueDetail.value = prepared?.venue || null;
+          deps.venueEvents.value = prepared?.events || [];
           if (!deps.venueDetail.value) reject();
         } else {
           deps.venueQuery.value = url.searchParams.get("q") || "";
@@ -1031,6 +1038,7 @@ export function createRouting(deps) {
     routeProgress,
     routeEntering,
     routePendingAtomic,
+    routePendingLayout,
     routePendingTitle,
     syncFromUrl,
   };

@@ -1,8 +1,6 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 /* creators state and behavior; external dependencies are explicit live ports. */
 export function createCreators(deps) {
-  let creatorCatalogLoadPromise = null;
-  let creatorListRevision = 0;
-  let creatorSearchTimer;
   const creatorTotal = deps.ref(0);
 
   const creatorCatalog = deps.ref({ coverage: {}, creators: [] });
@@ -21,40 +19,15 @@ export function createCreators(deps) {
 
   const creatorPage = deps.ref(1);
 
-  const creatorsPerPage = 40;
+  const creatorsPerPage = catalogPageSize('creators');
+  const creatorList = createCatalogList(deps, { name: 'creators', loading: creatorCatalogLoading, error: creatorCatalogError, message: '创作者资料暂时无法载入，请重试。' });
 
   function loadCreatorCatalog(params) {
-    const revision = ++creatorListRevision;
-    const query = params || { q: creatorQuery.value, page: creatorPage.value };
-    creatorCatalogError.value = "";
-    creatorCatalogLoading.value = true;
-    creatorCatalogLoadPromise = deps.api
-      .request('/api/catalog/creators' + deps.api.query({ ...query, type: 'person', page_size: creatorsPerPage }))
-      .then(function (data) {
-        if (revision !== creatorListRevision) return;
-        creatorCatalog.value =
-          data && Array.isArray(data.items)
-            ? {
-                build_id: data.build_id || "",
-                coverage: data.coverage || {},
-                creators: data.items,
-              }
-            : { build_id: "", coverage: {}, creators: [] };
-        creatorTotal.value = data.total || 0;
-        creatorPage.value = data.page || 1;
-      })
-      .catch(function () {
-        if (revision !== creatorListRevision) return;
-        creatorCatalogLoadPromise = null;
-        creatorCatalog.value = { coverage: {}, creators: [] };
-        creatorCatalogError.value = "创作者资料暂时无法载入。";
-      })
-      .finally(function () {
-        if (revision !== creatorListRevision) return;
-        creatorCatalogLoadPromise = null;
-        creatorCatalogLoading.value = false;
-      });
-    return creatorCatalogLoadPromise;
+    return creatorList.load(params || {q:creatorQuery.value,page:creatorPage.value}, data => {
+      creatorCatalog.value = { build_id: data.build_id || "", coverage: data.coverage || {}, creators: data.items };
+      creatorTotal.value = data.total || 0;
+      creatorPage.value = data.page || 1;
+    });
   }
 
   function setCreatorSection(section) {
@@ -103,10 +76,7 @@ export function createCreators(deps) {
         : creatorOrId && creatorOrId.id;
     return deps.api
       .request(
-        "/api/catalog/creator" +
-          deps.api.query({
-            id: requested,
-          }),
+        catalogPath('creator', { id: requested }),
       )
       .then(function (data) {
         if (!isCurrent()) return;
@@ -224,13 +194,9 @@ export function createCreators(deps) {
       creatorQuery,
       function () {
         if (!deps.restoringRoute) {
-          creatorListRevision += 1;
           creatorPage.value = 1;
           deps.pushUrl(true);
-          clearTimeout(creatorSearchTimer);
-          creatorSearchTimer = setTimeout(() => {
-            if (window.location.pathname === deps.routes.creators()) loadCreatorCatalog();
-          }, 250);
+          creatorList.schedule(() => window.location.pathname === deps.routes.creators(), loadCreatorCatalog);
         }
       },
       { flush: "sync" },

@@ -1,3 +1,4 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 /* venues state and behavior; external dependencies are explicit live ports. */
 export function createVenues(deps) {
   const venuesList = deps.ref([]);
@@ -17,45 +18,16 @@ export function createVenues(deps) {
 
   const venuePage = deps.ref(1);
 
-  const venuesPerPage = 30;
+  const venuesPerPage = catalogPageSize('venues');
+  const venueList = createCatalogList(deps, { name: 'venues', loading: venuesLoading, error: venuesError, message: '会场资料暂时无法载入，请重试。' });
 
-  let venuesListRevision = 0;
-  let venueSearchTimer;
 
   function loadVenuesListData(params) {
-    window.clearTimeout(venueSearchTimer);
-    venuesError.value = "";
-    venuesLoading.value = true;
-    const revision = ++venuesListRevision;
-    const requested = params || {
-      q: venueQuery.value,
-      page: venuePage.value,
-      page_size: venuesPerPage,
-    };
-    const query = {
-      q: requested.q || "",
-      page: Math.max(1, Number(requested.page) || 1),
-      page_size: venuesPerPage,
-    };
-    return deps.api
-      .request("/api/catalog/venues" + deps.api.query(query))
-      .then(function (data) {
-        if (revision !== venuesListRevision) return;
-        if (!data || !Array.isArray(data.items))
-          throw new Error("invalid venues list");
-        venuesList.value = data.items;
-        venuesTotal.value = data.total;
-        venuePage.value = data.page;
-      })
-      .catch(function () {
-        if (revision === venuesListRevision) {
-          venuesError.value = "会场目录暂时无法载入，请重试。";
-        }
-        throw new Error("venues list load failed");
-      })
-      .finally(function () {
-        if (revision === venuesListRevision) venuesLoading.value = false;
-      });
+    return venueList.load(params || {q:venueQuery.value,page:venuePage.value}, data => {
+      venuesList.value = data.items;
+      venuesTotal.value = data.total;
+      venuePage.value = data.page;
+    });
   }
 
   function loadVenueData(id) {
@@ -64,17 +36,13 @@ export function createVenues(deps) {
     venuesError.value = "";
     const sourcePath = deps.currentUrlPath();
     const navigation = deps.navigationRevision.value;
-    return deps.api.request("/api/catalog/venue" + deps.api.query({ id }))
+    return deps.api.request(catalogPath('venue', { id }))
       .then(function (data) {
         if (!data || !data.venue) throw new Error("empty venue data");
-        window.VENUES_DETAIL = { ...window.VENUES_DETAIL, [id]: data.venue };
-        window.VENUES_EVENTS = { ...window.VENUES_EVENTS, [id]: data.events || [] };
+        return data;
       })
       .catch(function (error) {
-        if (error.message === "HTTP 404") {
-          window.VENUES_DETAIL = { ...window.VENUES_DETAIL, [id]: null };
-          return;
-        }
+        if (error.message === "HTTP 404") return null;
         if (sourcePath === deps.currentUrlPath() && navigation === deps.navigationRevision.value)
           venuesError.value = "会场资料暂时无法载入，请重试。";
         throw error;
@@ -87,18 +55,26 @@ export function createVenues(deps) {
 
   function openVenue(id) {
     const isCurrent = deps.beginEntityNavigation();
-    const show = function () {
+    const show = function (data) {
       if (!isCurrent()) return;
-      if (!window.VENUES_DETAIL || !window.VENUES_DETAIL[id]) return;
+      if (!data?.venue) {
+        deps.notFound.value = true;
+        deps.activeTab.value = "not-found";
+        return;
+      }
       deps.clearEntityDetails("venue");
       deps.activeTab.value = "database";
       deps.dbView.value = "venues";
-      venueDetail.value = window.VENUES_DETAIL[id];
-      venueEvents.value = window.VENUES_EVENTS[id] || [];
+      venueDetail.value = data.venue;
+      venueEvents.value = data.events || [];
       deps.resetPageScroll();
       deps.pushUrl();
     };
-    return Promise.resolve(loadVenueData(id)).then(show, show);
+    return loadVenueData(id).then(show).catch(() => {
+      if (!isCurrent()) return;
+      deps.navigationError.value = "会场资料暂时无法载入，请重试。";
+      deps.navigationRetry.value = () => openVenue(id);
+    });
   }
 
   const venuePageCount = deps.computed(function () {
@@ -175,7 +151,7 @@ export function createVenues(deps) {
     if (!venue) return [];
     const seen = new Set([venueLabel(venue), venueOriginalName(venue), venue.name_en, '', ...venueNameHistory(venue).map(row => row.name)].map(venueNameKey));
     const rows = [];
-    const candidates = venue.localization?.display_aliases || [venue.name_ja, venue.name_raw, ...(venue.localization?.aliases || []), ...(venue.aliases || [])];
+    const candidates = venue.localization?.display_aliases || [];
     candidates.forEach(alias => {
       const value = String(alias || '').trim();
       const key = venueNameKey(value);
@@ -225,14 +201,8 @@ export function createVenues(deps) {
         )
           return;
         venuePage.value = 1;
-        venuesListRevision += 1;
-        venuesLoading.value = true;
-        venuesError.value = "";
         deps.pushUrl(true);
-        window.clearTimeout(venueSearchTimer);
-        venueSearchTimer = window.setTimeout(() => {
-          if (deps.currentUrlPath().split('?')[0] === deps.routes.venues()) loadVenuesListData().catch(() => {});
-        }, 180);
+        venueList.schedule(() => window.location.pathname === deps.routes.venues(), loadVenuesListData);
       },
       { flush: "sync" },
     );

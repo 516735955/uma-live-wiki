@@ -1,3 +1,5 @@
+import { catalogPath } from "/uma_tools/frontend/requests.js";
+
 /* voices state and behavior; external dependencies are explicit live ports. */
 export function createVoices(deps) {
   const voiceDataRequests = new Map();
@@ -42,8 +44,7 @@ export function createVoices(deps) {
     const navigation = deps.navigationRevision.value;
     const promise = voiceDataRequests.get(key) || deps.api
       .request(
-        "/api/catalog/voice-actors" +
-          deps.api.query(id ? { id: id } : { scope: "index" }),
+        catalogPath('voice-actors', id ? { id } : { scope: 'index' }),
       )
       .then(function (data) {
         if (

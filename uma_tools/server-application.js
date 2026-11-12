@@ -40,6 +40,8 @@ exports.createService = function (deps) {
         return deps.handleCatalogApi(req, res, urlPath, params);
       if (req.method === "GET" && urlPath === "/api/news-detail")
         return deps.handleNewsDetail(req, res, params);
+      if (req.method === "GET" && urlPath === "/api/news-topics")
+        return deps.handleNewsTopics(res, params);
       if (req.method === "GET" && ["/api/news-image", "/api/image"].includes(urlPath)) {
         const controller = new AbortController();
         const cancel = () => { if (!res.writableEnded) controller.abort(); };

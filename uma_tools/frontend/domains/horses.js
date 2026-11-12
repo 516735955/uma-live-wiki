@@ -1,3 +1,4 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 /* horses state and behavior; external dependencies are explicit live ports. */
 export function createHorses(deps) {
   let pedigreeLoadPromise = null;
@@ -29,7 +30,6 @@ export function createHorses(deps) {
 
   const horsesPagedByApi = deps.ref(false);
 
-  let horseListRevision = 0;
 
   const horsesListError = deps.ref("");
 
@@ -56,70 +56,35 @@ export function createHorses(deps) {
     { value: "name", label: "名称" },
   ];
 
-  const horsesPerPage = 30;
-
-  let horsesDataPromise = null;
-
-  let horsesListPromise = null;
-
+  const horsesPerPage = catalogPageSize('horses');
+  const horseList = createCatalogList(deps, {
+    name: 'horses', loading: deps.ref(false), error: horsesListError,
+    message: '原型马目录暂时无法载入，请重试。',
+  });
   let horseIndexUpdatedAt = Date.now();
 
   function loadHorsesListData(params) {
+    const paged = params?.scope !== 'index' && deps.currentUrlPath().split('?')[0] === deps.routes.horses();
     horsesListError.value = "";
-    const paged = !(params && params.scope === "index") && deps.currentUrlPath().split("?")[0] === deps.routes.horses();
-    if (
-      !paged &&
-      window.HORSES &&
-      window.HORSES.length &&
-      Date.now() - horseIndexUpdatedAt < 300000
-    ) {
+    if (!paged && window.HORSES?.length && Date.now() - horseIndexUpdatedAt < 300000) {
       horsesList.value = window.HORSES;
       horseIndex.value = window.HORSES;
       return Promise.resolve();
     }
-    const revision = ++horseListRevision;
-    const requested = paged
-      ? params || {
-          q: horseQuery.value,
-          sex: horseSex.value,
-          sort: horseSort.value,
-          page: horsePage.value,
-          page_size: horsesPerPage,
-        }
-      : { scope: "index" };
     const query = paged
-      ? {
-          q: requested.q,
-          sex: requested.sex || "",
-          sort: requested.sort || "newest",
-          page: requested.page,
-          page_size: horsesPerPage,
-        }
-      : requested;
-    horsesListPromise = deps.api
-      .request("/api/catalog/horses" + deps.api.query(query))
-      .then(function (data) {
-        if (revision !== horseListRevision) return;
-        if (!data || !Array.isArray(data.items))
-          throw new Error("invalid horses list");
-        horsesPagedByApi.value = paged;
-        horsesList.value = data.items;
-        horsesTotal.value = data.total;
-        if (paged) horsePage.value = data.page;
-        else {
-          window.HORSES = data.items;
-          horseIndex.value = data.items;
-          horseIndexUpdatedAt = Date.now();
-        }
-      })
-      .catch(function () {
-        if (revision === horseListRevision) {
-          horsesListPromise = null;
-          horsesListError.value = "原型马目录暂时无法载入，请重试。";
-        }
-        throw new Error("horses list load failed");
-      });
-    return horsesListPromise;
+      ? params || { q: horseQuery.value, sex: horseSex.value, sort: horseSort.value, page: horsePage.value }
+      : { scope: 'index' };
+    return horseList.load(query, data => {
+      horsesPagedByApi.value = paged;
+      horsesList.value = data.items;
+      horsesTotal.value = data.total;
+      if (paged) horsePage.value = data.page;
+      else {
+        window.HORSES = data.items;
+        horseIndex.value = data.items;
+        horseIndexUpdatedAt = Date.now();
+      }
+    });
   }
 
   const curatedVideos = [
@@ -194,13 +159,12 @@ export function createHorses(deps) {
     horsesListError.value = "";
     const sourcePath = deps.currentUrlPath();
     const navigation = deps.navigationRevision.value;
-    horsesDataPromise = deps.api.request("/api/catalog/horse" + deps.api.query({ id }))
+    return deps.api.request(catalogPath('horse', { id }))
       .then(function (data) {
         if (!data?.horse) throw new Error("empty horse data");
         window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: data.horse };
       })
       .catch(function (error) {
-        horsesDataPromise = null;
         if (error.message === "HTTP 404") {
           window.HORSES_DETAIL = { ...window.HORSES_DETAIL, [id]: null };
           return;
@@ -209,7 +173,6 @@ export function createHorses(deps) {
           horsesListError.value = "原型马资料暂时无法载入，请重试。";
         throw error;
       });
-    return horsesDataPromise;
   }
 
   function retryHorses() {
@@ -637,7 +600,6 @@ export function createHorses(deps) {
     window.UmaMedia.fallback(image, '/uma_tools/img/album-placeholder.svg');
   }
 
-  let horseSearchTimer;
 
   function renderCharBlood() {
     var box = document.getElementById("cCharBlood");
@@ -666,44 +628,18 @@ export function createHorses(deps) {
     deps.watch(horseDetail, function () {
       horseMajorExpanded.value = false;
     });
-    deps.watch(
-      horseQuery,
-      function () {
-        if (!deps.restoringRoute) {
-          horseListRevision += 1;
-          horsePage.value = 1;
-          deps.pushUrl(true);
-        }
-      },
-      { flush: "sync" },
-    );
-    deps.watch(
-      horseQuery,
-      function () {
-        if (
-          deps.restoringRoute ||
-          deps.currentUrlPath().split("?")[0] !== deps.routes.horses()
-        )
-          return;
-        window.clearTimeout(horseSearchTimer);
-        horseSearchTimer = window.setTimeout(() => {
-          if (deps.currentUrlPath().split('?')[0] === deps.routes.horses()) loadHorsesListData().catch(() => {});
-        }, 180);
-      },
-      { flush: "sync" },
-    );
+    const onHorseList = () => deps.currentUrlPath().split('?')[0] === deps.routes.horses();
+    deps.watch(horseQuery, function () {
+      if (deps.restoringRoute || !onHorseList()) return;
+      horsePage.value = 1;
+      deps.pushUrl(true);
+      horseList.schedule(onHorseList, loadHorsesListData);
+    }, { flush: 'sync' });
     const onFilterChange = function () {
-      if (!deps.restoringRoute) {
-        horseListRevision += 1;
-        horsePage.value = 1;
-        deps.pushUrl(true);
-      }
-      if (
-        deps.restoringRoute ||
-        deps.currentUrlPath().split("?")[0] !== deps.routes.horses()
-      )
-        return;
-      loadHorsesListData().catch(() => {});
+      if (deps.restoringRoute || !onHorseList()) return;
+      horsePage.value = 1;
+      deps.pushUrl(true);
+      loadHorsesListData();
     };
     deps.watch(horseSex, onFilterChange);
     deps.watch(horseSort, onFilterChange);

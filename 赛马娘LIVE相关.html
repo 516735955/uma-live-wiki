@@ -137,10 +137,32 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
     </header>
 
     <div class="container" v-if="!home">
-        <section v-if="!routeReady || navigationPending" class="route-placeholder" :class="{'route-placeholder-detail':routePendingAtomic}" aria-busy="true" role="status" :aria-label="routePendingTitle ? '正在打开'+routePendingTitle : '正在打开页面'">
-            <div v-if="routePendingAtomic" class="route-placeholder-hero"><span></span><div><b v-if="routePendingTitle">{{ routePendingTitle }}</b><i></i><i></i><i></i></div></div>
-            <div v-else class="route-placeholder-toolbar"><span></span><span></span></div>
-            <div class="music-card-grid route-placeholder-grid"><div v-for="i in (routePendingAtomic ? 4 : 8)" :key="i" class="archive-card-skeleton" aria-hidden="true"><span></span><span></span></div></div>
+        <section v-if="!routeReady || navigationPending" class="route-placeholder" :class="{'route-placeholder-detail':routePendingAtomic}" :data-layout="routePendingLayout" aria-busy="true" role="status" :aria-label="routePendingTitle ? '正在打开'+routePendingTitle : '正在打开页面'">
+            <div class="route-placeholder-content">
+                <template v-if="['venue','event','entity'].includes(routePendingLayout)">
+                    <div :class="routePendingLayout==='venue' ? 'venue-entity-detail' : routePendingLayout==='event' ? 'event-entity-detail' : 'album-entity-detail'" class="entity-detail">
+                        <div class="entity-hero music-archive-hero route-placeholder-hero" :class="{'venue-hero':routePendingLayout==='venue'}">
+                            <span class="entity-cover" :class="{'event-cover':routePendingLayout==='event'}"></span>
+                            <div class="entity-intro"><b v-if="routePendingTitle">{{ routePendingTitle }}</b><i v-else></i><i></i><i></i></div>
+                        </div>
+                    </div>
+                    <div class="entity-section route-placeholder-lines" aria-hidden="true"><span v-for="i in 3" :key="i"></span></div>
+                </template>
+                <template v-else-if="routePendingLayout==='article'">
+                    <div class="news-detail"><h2 v-if="routePendingTitle" class="news-detail-title">{{ routePendingTitle }}</h2><div class="news-body-skeleton" aria-hidden="true"><span v-for="i in 6" :key="i"></span></div></div>
+                </template>
+                <template v-else-if="routePendingLayout!=='plain'">
+                    <div v-if="routePendingLayout==='news'" class="news-hero-grid" aria-hidden="true">
+                        <div v-for="i in 3" :key="i" class="news-hero-card news-hero-skeleton"><div class="news-hero-cover"></div><div class="news-hero-body"><span class="news-skeleton-line short"></span><span class="news-skeleton-line"></span></div></div>
+                    </div>
+                    <div class="route-placeholder-toolbar" aria-hidden="true"><span></span><span v-if="routePendingLayout!=='venues'"></span></div>
+                    <div v-if="['venues','albums','songs'].includes(routePendingLayout)" :class="routePendingLayout==='songs' ? 'music-card-grid' : 'albums-grid album-database-grid'" class="route-placeholder-grid" aria-hidden="true">
+                        <div v-for="i in 8" :key="i" class="archive-card-skeleton"><span></span><span></span></div>
+                    </div>
+                    <div v-else class="route-placeholder-lines" aria-hidden="true"><span v-for="i in 5" :key="i"></span></div>
+                </template>
+                <content-state v-else state="loading" subject="页面"></content-state>
+            </div>
         </section>
         <content-state v-else-if="routeError" state="error" subject="页面" :retry="true" @retry="retryCurrentRoute"></content-state>
         <section v-else-if="notFound" class="not-found-page" aria-labelledby="not-found-title">

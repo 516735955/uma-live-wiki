@@ -99,6 +99,9 @@ services.application = require("./server-application").createService({
   AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   sendJson: services.transport.sendJson,
   handleNewsIndex: services.news.handleNewsIndex,
+  handleNewsTopics: require("./news-topics").createNewsTopics({
+    DATA_DIR, catalogStore, newsContent: services.translation.newsContent, sendJson: services.transport.sendJson,
+  }),
   handleHomeSummary: services.catalog.handleHomeSummary,
   handleCatalogApi: services.catalog.handleCatalogApi,
   handleNewsDetail: services.news.handleNewsDetail,

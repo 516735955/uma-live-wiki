@@ -40,7 +40,7 @@ export const template = `
     </template>
 
     <article v-else class="entity-detail venue-entity-detail">
-        <div class="entity-hero music-archive-hero">
+        <div class="entity-hero music-archive-hero venue-hero">
             <div class="entity-cover album-cover-detail">
                 <img v-if="venueDetail.cover" v-media-src="venueDetail.cover" :data-original="venueDetail.cover" :style="{objectPosition:venueDetail.localization?.photo?.focus || 'center'}" :alt="venueLabel(venueDetail)" fetchpriority="high" @error="onCatalogImageError($event)">
                 <span v-else class="venue-photo-empty">暂无照片</span>

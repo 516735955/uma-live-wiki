@@ -16,6 +16,7 @@ export function createViewModel(domains, routes) {
     routeProgress: domains.routing.routeProgress,
     routeEntering: domains.routing.routeEntering,
     routePendingAtomic: domains.routing.routePendingAtomic,
+    routePendingLayout: domains.routing.routePendingLayout,
     routePendingTitle: domains.routing.routePendingTitle,
     routeError: domains.routing.routeError,
     retryCurrentRoute: domains.routing.retryCurrentRoute,

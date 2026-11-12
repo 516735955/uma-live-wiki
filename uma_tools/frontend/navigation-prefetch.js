@@ -1,32 +1,7 @@
 import { preloadPage } from '/uma_tools/frontend/pages.js';
+import { routeRequest } from '/uma_tools/frontend/requests.js';
 
-// Prefetch reads only; it never changes the active list, filters or route.
-export function prefetchRequest(path) {
-  const url = new URL(path, 'https://uma.invalid');
-  const parts = url.pathname.split('/').filter(Boolean).slice(1);
-  const q = new URLSearchParams(url.search);
-  const endpoint = (name, defaults = {}) => {
-    Object.entries(defaults).forEach(([key,value]) => { if (!q.has(key)) q.set(key,value); });
-    return '/api/catalog/' + name + (q.size ? '?' + q : '');
-  };
-  if (parts[0] === 'news' && parts[1]) return { path: '/api/' + (parts[1].startsWith('lantis-') ? 'lantis-detail' : 'news-detail') + '?id=' + encodeURIComponent(parts[1]), news: true };
-  if (parts[0] === 'news') return {path:'/api/news-index' + (q.get('q') ? '?q=' + encodeURIComponent(q.get('q').trim()) : ''),news:true};
-  if (parts[0] === 'music') {
-    const section = parts[1];
-    if (!['songs','albums','creators'].includes(section)) return null;
-    if (parts[2]) return { path: '/api/catalog/' + ({songs:'song',albums:'album',creators:'creator'})[section] + '?id=' + encodeURIComponent(parts[2]) };
-    return { path: endpoint(section, section === 'creators' ? {type:'person',page_size:40} : {page_size:30}) };
-  }
-  if (parts[0] === 'events') return { path: parts[1] ? '/api/catalog/event?id=' + encodeURIComponent(parts[1]) : endpoint('events',{page_size:20}) };
-  if (parts[0] === 'database' && parts[1] === 'voice-actors') return { path: '/api/catalog/voice-actors?' + (parts[2] ? 'id=' + encodeURIComponent(parts[2]) : 'scope=index') };
-  if (parts[0] === 'database' && parts[1] === 'horses') return {path:parts[2]
-    ? '/api/catalog/horse?id=' + encodeURIComponent(parts[2]) : endpoint('horses',{sort:'newest',page_size:30})};
-  if (parts[0] === 'database' && ['anime','staff'].includes(parts[1])) {
-    const scope = parts[1] === 'staff' ? (parts[2] ? 'person' : 'people') : (parts[4] ? 'unit' : parts[2] ? 'work' : 'index');
-    return {path:'/api/catalog/anime?scope=' + scope + ((parts[4] || parts[2]) ? '&id=' + encodeURIComponent(parts[4] || parts[2]) : '')};
-  }
-  return null;
-}
+export const prefetchRequest = routeRequest;
 
 export function installNavigationPrefetch(api) {
   const queued = new Map();

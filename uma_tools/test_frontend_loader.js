@@ -10,6 +10,8 @@ function loadFrontend(context) {
   context.preloadPage = async () => {};
   context.installNavigationPrefetch = () => () => {};
   const directory = path.join(__dirname, "frontend");
+  const requestSource = read(path.join(directory, 'requests.js')).replace(/export function /g, 'function ');
+  Object.assign(context, vm.runInContext('(function(){' + requestSource + ';return {catalogPath,catalogPageSize,createCatalogList,newsIndexPath,newsDetailPath};})()', context));
   const performers = read(path.join(directory, 'performer-groups.js')).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + performers + ';return {castGroups,performanceGroups,groupSetlistPerformers,PerformanceCast};})()', context));
   const wiring = read(path.join(directory, "domains.js"));
@@ -24,6 +26,8 @@ function loadFrontend(context) {
   context.ContentState = vm.runInContext('(function(){' + contentStateSource + ';return ContentState;})()', context, { filename: 'content-state.js' });
   const venueMapSource = read(path.join(directory, 'venue-map.js')).replace('export const VenueMap', 'const VenueMap');
   context.VenueMap = vm.runInContext('(function(){' + venueMapSource + ';return VenueMap;})()', context, { filename: 'venue-map.js' });
+  const topicSource = read(path.join(directory, 'news-topics.js')).replace(/export const /g, 'const ');
+  Object.assign(context, vm.runInContext('(function(){' + topicSource + ';return {NewsTopics,RelatedNews};})()', context));
   const activitySource = read(path.join(directory, 'activity-components.js')).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + activitySource + ';return {ActivityTime,ActivityHistory};})()', context, { filename: 'activity-components.js' }));
   const imports = Array.from(

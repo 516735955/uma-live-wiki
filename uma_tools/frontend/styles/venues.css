@@ -16,6 +16,27 @@
 }
 
 .venue-entity-detail { --entity-accent: var(--ui-cobalt-deep); }
+.venue-entity-detail > .venue-hero {
+    --venue-cover-size: 148px;
+    display: grid;
+    grid-template-columns: calc(var(--venue-cover-size) + 24px) minmax(0, 1fr);
+    min-height: 0;
+}
+.venue-hero::before { width: calc(var(--venue-cover-size) + 62px); }
+.venue-entity-detail .venue-hero > .entity-cover {
+    width: var(--venue-cover-size);
+    max-width: 100%;
+}
+@media (max-width: 640px) {
+    .venue-entity-detail > .venue-hero {
+        --venue-cover-size: 96px;
+        grid-template-columns: var(--venue-cover-size) minmax(0, 1fr);
+    }
+    .venue-hero::before { width: calc(var(--venue-cover-size) + 26px); }
+}
+@media (max-width: 360px) {
+    .venue-entity-detail > .venue-hero { --venue-cover-size: 84px; }
+}
 .venue-entity-detail .entity-intro h1 {
     display: block;
     white-space: normal;

@@ -1,3 +1,4 @@
+import { catalogPath, catalogPageSize, createCatalogList } from "/uma_tools/frontend/requests.js";
 import { groupSetlistPerformers } from "/uma_tools/frontend/performer-groups.js";
 /* songs state and behavior; external dependencies are explicit live ports. */
 export function createSongs(deps) {
@@ -35,11 +36,11 @@ export function createSongs(deps) {
 
   const songTotal = deps.ref(0);
 
-  let songListRevision = 0;
 
   const songDbPage = deps.ref(1);
 
-  const songDbPerPage = 30;
+  const songDbPerPage = catalogPageSize('songs');
+  const songList = createCatalogList(deps, { name: 'songs', loading: songCatalogLoading, error: songCatalogError, message: '歌曲资料暂时无法载入，请重试。' });
 
   const expandedRelationSongId = deps.ref("");
 
@@ -55,36 +56,11 @@ export function createSongs(deps) {
   }
 
   function loadSongCatalog(params) {
-    const query = params || { q: songDbQuery.value, page: songDbPage.value };
-    const revision = ++songListRevision;
-    songCatalogError.value = "";
-    songCatalogLoading.value = true;
-    return deps.api
-      .request(
-        "/api/catalog/songs" +
-          deps.api.query({
-            q: query.q,
-            page: query.page,
-            page_size: songDbPerPage,
-          }),
-      )
-      .then(function (data) {
-        if (revision !== songListRevision) return;
-        songCatalog.value = {
-          build_id: data.build_id || "",
-          coverage: data.coverage || {},
-          songs: data.items || [],
-        };
-        songTotal.value = data.total || 0;
-        songDbPage.value = data.page || 1;
-      })
-      .catch(function () {
-        if (revision === songListRevision)
-          songCatalogError.value = "歌曲资料暂时无法载入，请重试。";
-      })
-      .finally(function () {
-        if (revision === songListRevision) songCatalogLoading.value = false;
-      });
+    return songList.load(params || {q:songDbQuery.value,page:songDbPage.value}, data => {
+      songCatalog.value = { build_id: data.build_id || "", coverage: data.coverage || {}, songs: data.items };
+      songTotal.value = data.total || 0;
+      songDbPage.value = data.page || 1;
+    });
   }
 
   function setSongSection(section) {
@@ -164,7 +140,6 @@ export function createSongs(deps) {
     setSongDbPage(songDbPage.value + delta);
   }
 
-  let songSearchTimer = 0;
 
   const songDetailReleaseVersions = deps.computed(function () {
     return ((songDetail.value && songDetail.value.versions) || []).filter(
@@ -505,7 +480,7 @@ export function createSongs(deps) {
     };
     deps.loadMusicPeople();
     return deps.api.request(
-        "/api/catalog/song" + deps.api.query({ id: requested }),
+        catalogPath('song', { id: requested }),
       )
       .then(show)
       .catch(function (error) {
@@ -720,13 +695,9 @@ export function createSongs(deps) {
       songDbQuery,
       function () {
         if (deps.restoringRoute) return;
-        songListRevision += 1;
         songDbPage.value = 1;
         deps.pushUrl(true);
-        window.clearTimeout(songSearchTimer);
-        songSearchTimer = window.setTimeout(function () {
-          if (window.location.pathname === deps.routes.songs()) loadSongCatalog();
-        }, 180);
+        songList.schedule(() => window.location.pathname === deps.routes.songs(), loadSongCatalog);
       },
       { flush: "sync" },
     );
