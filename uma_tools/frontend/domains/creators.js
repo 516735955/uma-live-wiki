@@ -108,9 +108,7 @@ export function createCreators(deps) {
           (catalogCreator && catalogCreator.photo);
         deps.clearEntityDetails("creator");
         creatorDetail.value = found;
-        creatorSection.value = section === "collaborators" && !found.collaborators.length
-          ? "works"
-          : section || "works";
+        creatorSection.value = section || "works";
         expandedCreatorWorkId.value = "";
         deps.activeTab.value = "database";
         deps.dbView.value = "creators";

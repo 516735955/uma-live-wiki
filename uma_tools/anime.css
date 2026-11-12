@@ -15,18 +15,6 @@
 .anime-watch-links a, .anime-episode-nav a, .anime-context-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; text-decoration: none; color: var(--ui-navy); }
 .anime-context-links { margin: 0; }
 .anime-context-links a { max-width: 100%; flex-wrap: wrap; }
-.anime-event-links { margin: 0; }
-.anime-event-group + .anime-event-group { margin-top: 12px; }
-.anime-event-category { display: block; margin-bottom: 4px; color: var(--ui-navy); font-size: .875rem; }
-.anime-event-group > a { display: grid; grid-template-columns: max-content minmax(0,1fr) 18px; align-items: baseline; gap: 8px 12px; padding: 8px 0; color: var(--ui-navy); text-decoration: none; font-size: .875rem; line-height: 1.55; }
-.anime-event-kind { color: var(--text-2); white-space: nowrap; }
-.anime-event-copy { min-width: 0; }
-.anime-event-copy > span { display: inline; }
-.anime-event-copy time { display: inline-block; margin-left: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.anime-event-group > a > svg { align-self: center; color: var(--ui-orange); }
-.anime-event-group > a:hover .anime-event-copy > span { color: var(--ui-cobalt-deep); }
-.anime-event-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; margin-top: 4px; padding: 4px 0; border: 0; background: transparent; color: var(--ui-cobalt-deep); font: inherit; font-size: .875rem; cursor: pointer; }
-@media (max-width: 650px) { .anime-event-group > a { grid-template-columns: minmax(0,1fr) 18px; gap: 4px 10px; }.anime-event-kind { grid-column: 1; }.anime-event-copy { grid-column: 1; }.anime-event-group > a > svg { grid-column: 2; grid-row: 1 / span 2; } }
 .anime-version-switch { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-top: 12px; border: 1px solid var(--ui-line); border-radius: 999px; background: var(--ui-soft); }
 .anime-version-switch button { min-height: 40px; padding: 8px 18px; border: 0; border-radius: 999px; background: transparent; color: var(--ui-navy); font: inherit; font-weight: 700; cursor: pointer; }
 .anime-version-switch .active { background: linear-gradient(110deg,var(--ui-cobalt-deep),var(--ui-cobalt)); color: white; }

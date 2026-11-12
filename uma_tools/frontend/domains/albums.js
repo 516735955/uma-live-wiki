@@ -197,7 +197,7 @@ export function createAlbums(deps) {
       : null;
   }
 
-  const albumSection = deps.ref("credits");
+  const albumSection = deps.ref("tracks");
 
   function setAlbumSection(section) {
     albumSection.value = section;
@@ -212,7 +212,7 @@ export function createAlbums(deps) {
     return versions.length === 1 ? versions[0].credits || [] : [];
   }
 
-  function openAlbum(a, section = "credits") {
+  function openAlbum(a, section = "tracks") {
     albumsError.value = "";
     const isCurrent = deps.beginEntityNavigation();
     const name = a && a.name;

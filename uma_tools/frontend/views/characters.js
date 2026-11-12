@@ -27,7 +27,7 @@ export const template = `
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
                     <button :class="{active:charSection==='profile'}" @click="setCharSection('profile')">角色信息</button>
-                    <button v-if="charPedigreeApplicable" :class="{active:charSection==='pedigree'}" @click="setCharSection('pedigree')">血统溯源</button>
+                    <button :class="{active:charSection==='pedigree'}" @click="setCharSection('pedigree')">血统溯源</button>
                     <button :class="{active:charSection==='songs'}" @click="setCharSection('songs')">歌曲信息</button>
                     <button :class="{active:charSection==='anime'}" @click="setCharSection('anime')">动画出演</button>
                     <button :class="{active:charSection==='events'}" @click="setCharSection('events')">活动出演</button>
@@ -43,7 +43,7 @@ export const template = `
                     <div class="c-detail-block" id="cDetailBlock"></div>
                 </section>
                 <section v-if="charSection==='pedigree'" class="pedigree-section">
-                    <content-state v-if="!charHasPedigree" :state="charPedigreeApplicable ? 'uncollected' : 'not_applicable'" subject="血统资料"></content-state>
+                    <content-state v-if="!charHasPedigree || pedigreeStatus==='uncollected'" :state="charPedigreeApplicable ? 'uncollected' : 'not_applicable'" subject="血统资料"></content-state>
                     <div v-else-if="pedigreeStatus==='loading' || pedigreeStatus==='idle'" class="ui-state ui-state-loading" role="status">血统关系加载中</div>
                     <content-state v-else-if="pedigreeStatus==='error'" state="error" subject="血统关系" :retry="true" @retry="retryPedigree"></content-state>
                     <div v-else id="cCharBlood"></div>

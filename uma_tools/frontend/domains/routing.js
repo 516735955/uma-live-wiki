@@ -682,7 +682,7 @@ export function createRouting(deps) {
           );
         }
         if (seg[2]) {
-          const section = seg[3] || "credits";
+          const section = seg[3] || "tracks";
           if (!deps.routes.sections.album.includes(section)) return reject();
           return deps.openAlbum({ id: decodeURIComponent(seg[2]) }, section);
         }
@@ -737,8 +737,9 @@ export function createRouting(deps) {
         deps.animeEdition.value =
           url.searchParams.get("edition") === "web" ? "web" : "film";
         deps.animeStillUnit.value = url.searchParams.get("still") || "";
-        deps.animeSection.value = deps.routes.sections.anime.includes(url.searchParams.get("section"))
-          ? url.searchParams.get("section")
+        const section = url.searchParams.get("section");
+        deps.animeSection.value = deps.routes.sections.anime.includes(section) && !(seg[4] && section === "episodes")
+          ? section
           : seg[4]
             ? "characters"
             : "episodes";

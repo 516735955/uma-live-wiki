@@ -32,13 +32,15 @@ async function main() {
       await current.goto(base+'/zh-Hans/database/anime/anime-s1/episodes/anime-s1-e01?section=staff',{waitUntil:'domcontentloaded'});
       await current.waitForFunction(()=>document.querySelector('h1')?.textContent.includes('梦想之门'));
       assert((await current.locator('.anime-credit-ledger').innerText()).includes('Cygames'));
-      const event = current.locator('.anime-event-links a').first();
-      if (await event.count()) {
+      if (width === 390) {
+        await current.goto(base+'/zh-Hans/database/anime/anime-cinderella-gray?section=related',{waitUntil:'domcontentloaded'});
+        const event = current.locator('section[aria-label="相关活动"] .history-list > a').first();
+        await event.waitFor();
         await event.click();
         await current.waitForFunction(()=>window.__uma_app?.eventDetail);
         await current.evaluate(()=>history.back());
-        await current.waitForFunction(()=>window.__uma_app?.animeUnitDetail?.id==='anime-s1-e01' && window.__uma_app.routeReady);
-        assert((await current.title()).includes('梦想之门'));
+        await event.waitFor();
+        assert.strictEqual(new URL(current.url()).searchParams.get('section'),'related');
       }
       await current.close();
     }

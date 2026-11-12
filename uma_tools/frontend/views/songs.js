@@ -38,7 +38,7 @@ export const template = `
                     <nav class="entity-tabs" aria-label="歌曲栏目">
                         <button :class="{active:songSection==='releases'}" @click="setSongSection('releases')">收录信息</button>
                         <button :class="{active:songSection==='credits'}" @click="setSongSection('credits')">创作信息</button>
-                        <button v-if="songLyricsApplicable" :class="{active:songSection==='lyrics'}" @click="setSongSection('lyrics')">歌词</button>
+                        <button :class="{active:songSection==='lyrics'}" @click="setSongSection('lyrics')">歌词</button>
                         <button :class="{active:songSection==='performances'}" @click="setSongSection('performances')">出演记录</button>
                         <button :class="{active:songSection==='related'}" @click="setSongSection('related')">相关信息</button>
                     </nav>

@@ -620,8 +620,7 @@ export function createHorses(deps) {
     }
     if (window.renderBloodGraphInDetail(box, id) === false) {
       box.innerHTML = "";
-      deps.charSection.value = "profile";
-      deps.pushUrl(true);
+      pedigreeStatus.value = "uncollected";
     }
   }
   function start() {

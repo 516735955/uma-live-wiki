@@ -408,7 +408,7 @@ export function createViewModel(domains, routes) {
     animeMusicCues: domains.anime.animeMusicCues,
     animeMusicCueGroups: domains.anime.animeMusicCueGroups,
     animeUsefulRelations: domains.anime.animeUsefulRelations,
-    animeEventGroups: domains.anime.animeEventGroups,
+    animeEventRows: domains.anime.animeEventRows,
     eventAnimeWorks: domains.anime.eventAnimeWorks,
     appearanceSessionLabel: domains.characters.appearanceSessionLabel,
     appearanceDateLabel: domains.characters.appearanceDateLabel,

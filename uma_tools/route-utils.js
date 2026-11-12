@@ -9,7 +9,7 @@
   const prefix = '/' + language;
   const sections = Object.freeze({
     song: ['releases', 'credits', 'lyrics', 'performances', 'related'],
-    album: ['credits', 'related'],
+    album: ['tracks', 'credits', 'related'],
     creator: ['works', 'collaborators', 'anime'],
     event: ['setlist', 'cast', 'related'],
     anime: ['episodes', 'characters', 'music', 'staff', 'stills', 'related'],
@@ -122,7 +122,7 @@
       return id && sessionId ? base + '/sessions/' + part(sessionId) : base;
     },
     songs: function (id, section) { return entity('/music/songs', id, section, sections.song, 'releases'); },
-    albums: function (id, section) { return entity('/music/albums', id, section, sections.album, 'credits'); },
+    albums: function (id, section) { return entity('/music/albums', id, section, sections.album, 'tracks'); },
     creators: function (id, section) { return entity('/music/creators', id, section, sections.creator, 'works'); },
     characters: function (id, section) { return entity('/database/characters', id, section, sections.character, 'profile'); },
     voiceActors: function (id, section) { return entity('/database/voice-actors', id, section, sections.voiceActor, 'profile'); },

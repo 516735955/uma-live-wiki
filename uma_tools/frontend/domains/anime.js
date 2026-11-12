@@ -426,8 +426,6 @@ export function createAnime(deps) {
   function setAnimeEdition(edition) {
     animeEdition.value = edition;
     animeStillUnit.value = "";
-    if (!animeTabs.value.some((tab) => tab.id === animeSection.value))
-      animeSection.value = (animeTabs.value[0] || {}).id || "characters";
     deps.pushUrl(true);
   }
 
@@ -616,6 +614,7 @@ export function createAnime(deps) {
   );
 
   const animeUnitGroups = deps.computed(() => {
+    if (animeSingle.value) return [];
     const query = animeEpisodeQuery.value.trim();
     const groups = [];
     animeWorkUnits.value.forEach((unit) => {
@@ -706,69 +705,44 @@ export function createAnime(deps) {
 
   const animeTabs = deps.computed(() =>
     [
-      {
-        id: "episodes",
-        label: "剧集",
-        show:
-          !animeUnitDetail.value &&
-          !animeSingle.value &&
-          animeWorkUnits.value.length,
-      },
-      {
-        id: "characters",
-        label: animeUnitDetail.value ? "登场角色" : "角色",
-        show: animeCurrentCast.value.length,
-      },
-      {
-        id: "music",
-        label: "音乐",
-        show:
-          music.animeMusicGroups.value.length ||
-          music.animeMusicCues.value.length,
-      },
-      {
-        id: "staff",
-        label: "制作人员",
-        show:
-          deps.animeCurrentStaff.value.length ||
-          (!animeUnitDetail.value && !animeSingle.value &&
-            (animeCatalog.value.staff || []).some(entry =>
-              entry.work_id === animeDetail.value?.id && entry.unit_id &&
-              entry.roles?.length && animeRowMatchesEdition(entry, animeEdition.value))),
-      },
-      { id: "stills", label: "剧照", show: animeStillGroups.value.length },
-      { id: "related", label: "相关信息", show: true },
-    ].filter((tab) => tab.show),
+      ...(!animeUnitDetail.value ? [{ id: "episodes", label: "剧集" }] : []),
+      { id: "characters", label: "角色" },
+      { id: "music", label: "音乐" },
+      { id: "staff", label: "制作人员" },
+      { id: "stills", label: "剧照" },
+      { id: "related", label: "相关信息" },
+    ],
   );
 
   const animeUsefulRelations = deps.computed(() =>
     animeCurrentRelations.value.filter((row) => row.target_type === "race"),
   );
 
-  const animeEventGroups = deps.computed(() =>
+  const animeEventRows = deps.computed(() =>
     [
       { kind: "screening", label: "上映" },
       { kind: "stage", label: "舞台见面会" },
       { kind: "program", label: "作品专题" },
     ]
-      .map((group) => ({
-        ...group,
-        rows: animeCurrentRelations.value
+      .flatMap((group) => animeCurrentRelations.value
           .filter(
             (row) =>
               row.target_type === "event" &&
               (row.event_category || "screening") === group.kind,
           )
-          .map((relation) => ({
-            relation,
-            event: animeRelatedEvents[relation.target_id],
-          }))
-          .filter((row) => row.event)
-          .sort((a, b) =>
-            String(a.event.date).localeCompare(String(b.event.date)),
-          ),
-      }))
-      .filter((group) => group.rows.length),
+          .flatMap((relation) => {
+            const event = animeRelatedEvents[relation.target_id];
+            return event ? [{
+              relation_id: relation.id,
+              event_id: relation.target_id,
+              session_id: relation.session_id,
+              title: event.title,
+              date: event.date,
+              participation_label: relation.label,
+              kind: group.label,
+            }] : [];
+          })
+          .sort((a, b) => String(a.date).localeCompare(String(b.date)))),
   );
 
   function animeRelationTargetLabel(relation) {
@@ -847,10 +821,10 @@ export function createAnime(deps) {
       )
         deps.pushUrl(true);
     });
-    deps.watch(animeTabs, (tabs) => {
-      const requested = window.location && new URL(window.location.href).searchParams.get("section");
-      if (!requested && tabs.length && !tabs.some(tab => tab.id === animeSection.value))
-        animeSection.value = tabs[0].id;
+    deps.watch([animeDetail, animeSingle], ([, single]) => {
+      if (single && animeSection.value === "episodes" &&
+          !new URL(window.location.href).searchParams.has("section"))
+        animeSection.value = "characters";
     });
   }
   const participation = createAnimeParticipation({
@@ -947,7 +921,7 @@ export function createAnime(deps) {
     animeEpisodeDirectoryHref,
     animeEpisodeQuery,
     animeError,
-    animeEventGroups,
+    animeEventRows,
     animeFiltered,
     animeFormat,
     animeFormatLabel,
