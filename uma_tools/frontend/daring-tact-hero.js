@@ -1136,7 +1136,25 @@ export const DaringTactHero = {
       this.hoveredStar = null;
     },
 
+    resetTripleTiara(event) {
+      if (!this.crowned && this.litCount === 0) return;
+      this.litCount = 0;
+      this.crowned = false;
+      setDaringTactCrowned(false);
+      this._regaliaWave = 0;
+      this.emitStarPulse(event, 0.75);
+      if (this._fallbackCtx && this._loadedImage) {
+        this.renderCanvas2DFallback();
+      }
+    },
+
     onStarClick(star, index, event) {
+      // Once all 3 stars are crowned, clicking any star smoothly resets back to uncrowned (0/3)
+      if (this.crowned) {
+        this.resetTripleTiara(event);
+        return;
+      }
+
       // Strictly enforce chronological order: 樱花赏 (0) -> 优骏牝马 (1) -> 秋华赏 (2)
       if (index !== this.litCount) {
         if (index > this.litCount) {
@@ -1234,7 +1252,12 @@ export const DaringTactHero = {
               </svg>
             </button>
           </div>
-          <div class="dt-constellation-label">{{ activeStarText }}</div>
+          <div
+            class="dt-constellation-label"
+            :class="{ 'is-resettable': crowned }"
+            :title="crowned ? '点击可重置回初始状态' : ''"
+            @click.stop="crowned && resetTripleTiara($event)"
+          >{{ activeStarText }}</div>
         </div>
       </template>
     </div>
