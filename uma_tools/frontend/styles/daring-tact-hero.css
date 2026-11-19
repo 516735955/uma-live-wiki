@@ -930,7 +930,7 @@ body.dt-detail-theme.dt-crowned-theme .audio-dock input[type="range"] {
     }
 }
 
-/* Responsive adjustments */
+/* Responsive & Mobile full-featured showcase adaptations */
 @media (max-width: 900px) {
     .dt-editorial-title {
         left: 22px;
@@ -943,15 +943,88 @@ body.dt-detail-theme.dt-crowned-theme .audio-dock input[type="range"] {
 }
 
 @media (max-width: 768px) {
-    .dt-mag-en {
-        top: 10%;
-        font-size: 3.1rem;
+    body.dt-home-theme .home-brand {
+        background: linear-gradient(180deg, #070d1e 0%, #091228 100%);
+        border-bottom: 1px solid rgba(121, 198, 219, 0.16);
     }
-    .dt-mag-year,
-    .dt-mag-vertical,
-    .dt-editorial-title,
+    body.dt-home-theme.dt-crowned-theme .home-brand {
+        background: linear-gradient(180deg, #0b1636 0%, #101f48 100%);
+        border-bottom-color: rgba(248, 212, 120, 0.28);
+    }
+    .home-hero.home-hero-daring-tact {
+        height: min(62vh, 460px) !important;
+        min-height: 360px !important;
+    }
+    body.dt-home-theme .home-nav {
+        box-shadow: none;
+        border-top: 1px solid rgba(121, 198, 219, 0.14);
+    }
+    body.dt-home-theme.dt-crowned-theme .home-nav {
+        border-top-color: rgba(248, 212, 120, 0.24);
+    }
+    .dt-mag-en {
+        top: 6%;
+        left: 4%;
+        font-size: clamp(2.5rem, 12vw, 3.8rem);
+        -webkit-text-stroke-width: 1px;
+    }
+    .dt-mag-year {
+        top: calc(6% + clamp(2.4rem, 11vw, 3.6rem));
+        left: 4.5%;
+        font-size: 1.55rem;
+    }
+    .dt-mag-vertical {
+        right: 14px;
+        top: 16%;
+        font-size: 1.65rem;
+    }
+    .dt-editorial-title {
+        left: 16px;
+        bottom: 16px;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .dt-ed-zh {
+        font-size: 1.45rem;
+    }
+    .dt-ed-sub {
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+    }
     .dt-constellation {
+        right: 16px;
+        bottom: 14px;
+        gap: 6px;
+    }
+    .dt-stars-row {
+        gap: 12px;
+    }
+    .dt-star-node {
+        width: 32px;
+        height: 32px;
+    }
+    .dt-star-node svg {
+        width: 15px;
+        height: 15px;
+    }
+    .dt-constellation-label {
+        font-size: 0.78rem;
+    }
+    .character-entity-detail.dt-celebration-detail .entity-hero {
+        padding: 20px 16px 26px;
+    }
+    body.dt-detail-theme .character-entity-detail .entity-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    body.dt-detail-theme .character-entity-detail .entity-tabs::-webkit-scrollbar {
         display: none;
+    }
+    body.dt-detail-theme .character-entity-detail .entity-tabs button {
+        flex: 0 0 auto;
+        white-space: nowrap;
     }
 }
 

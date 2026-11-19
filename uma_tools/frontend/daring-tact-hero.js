@@ -133,8 +133,8 @@ float bayer8(vec2 a) { return bayer4(0.5 * a) * 0.25 + bayer2(a); }
 
 vec2 portraitUv(vec2 uv, vec2 parallax) {
   float aspect = uResolution.x / max(uResolution.y, 1.0);
-  float scaleY = aspect < 0.85 ? 0.76 : 0.92;
-  float centerX = aspect < 0.85 ? 0.50 : 0.54;
+  float scaleY = aspect < 1.0 ? 0.90 : 0.92;
+  float centerX = aspect < 1.0 ? 0.50 : 0.54;
   vec2 p = uv - vec2(centerX, 0.0) + parallax;
   p.x *= aspect;
   p /= scaleY;
