@@ -3,8 +3,10 @@ import { ActivityTime, ActivityHistory } from "/uma_tools/frontend/activity-comp
 import { CastChip, PerformanceCast } from "/uma_tools/frontend/performer-groups.js";
 import { VenueMap } from "/uma_tools/frontend/venue-map.js";
 import { NewsTopics, RelatedNews } from "/uma_tools/frontend/news-topics.js";
+import { DaringTactHero } from "/uma_tools/frontend/daring-tact-hero.js";
 
 export function registerComponents(umaApp, routes) {
+  umaApp.component("daring-tact-hero", DaringTactHero);
   umaApp.component("ui-select", window.UmaUi.UiSelect);
   umaApp.component("ui-disclosure", window.UmaUi.UiDisclosure);
   umaApp.component("entity-actions", window.UmaUi.EntityActions);

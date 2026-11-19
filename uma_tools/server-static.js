@@ -15,6 +15,8 @@ exports.createService = function (deps) {
     ".svg": "image/svg+xml",
     ".gif": "image/gif",
     ".ico": "image/x-icon",
+    ".woff2": "font/woff2",
+    ".woff": "font/woff",
   };
 
   const COMPRESSIBLE_EXTENSIONS = new Set([

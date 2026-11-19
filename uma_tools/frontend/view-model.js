@@ -1,5 +1,10 @@
+import { isDaringTactHeroActive, getDaringTactCrowned } from "/uma_tools/frontend/hero-campaign.js";
+
 export function createViewModel(domains, routes) {
+  const daringTactHeroActive = isDaringTactHeroActive();
   return {
+    daringTactHeroActive,
+    daringTactCrowned: getDaringTactCrowned,
     audio: domains.player.audio,
     albums: domains.albums.albums,
     albumsError: domains.albums.albumsError,

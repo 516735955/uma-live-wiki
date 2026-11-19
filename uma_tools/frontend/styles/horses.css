@@ -226,9 +226,9 @@
     margin-top: 16px;
     margin-left: 12px;
     padding: 7px 14px;
-    border: 1.5px solid color-mix(in srgb, var(--entity-accent) 55%, #dfe3ee);
+    border: none;
     border-radius: 999px;
-    background: #fff;
+    background: color-mix(in srgb, var(--entity-accent) 12%, #fff);
     color: color-mix(in srgb, var(--entity-accent) 78%, #1c2b4a);
     font-size: .82rem;
     font-weight: 750;

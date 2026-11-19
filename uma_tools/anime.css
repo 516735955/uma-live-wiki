@@ -107,11 +107,11 @@
 .anime-entity-detail .entity-intro { padding: 0; }
 .anime-entity-detail .entity-hero::before, .anime-entity-detail .entity-hero::after { display: none; }
 .anime-entity-detail .anime-watch-links { margin-top: 20px; }
-.anime-entity-detail .anime-watch-links .horse-link-chip { margin: 0; border-radius: 6px; border-color: var(--ui-cobalt); background: var(--ui-cobalt); color: white; }
+.anime-entity-detail .anime-watch-links .horse-link-chip { margin: 0; border: none; border-radius: 6px; background: var(--ui-cobalt); color: white; }
 .anime-entity-detail .anime-watch-links .horse-link-chip:hover { background: var(--ui-cobalt-deep); color: white; box-shadow: none; transform: none; }
 .anime-entity-detail .anime-episode-nav { padding-top: 16px; margin-top: 20px; border-top: 1px solid var(--ui-line); }
-.anime-entity-detail .anime-episode-nav .horse-link-chip { margin: 0; border: 1px solid transparent; border-radius: 4px; background: var(--ui-soft); color: var(--ui-navy); font-size: .875rem; min-height: 40px; padding: 8px 12px; }
-.anime-entity-detail .anime-episode-nav .horse-link-chip:hover { border-color: var(--ui-cobalt); background: var(--ui-cobalt-soft); color: var(--ui-cobalt-deep); box-shadow: none; transform: none; }
+.anime-entity-detail .anime-episode-nav .horse-link-chip { margin: 0; border: none; border-radius: 4px; background: var(--ui-soft); color: var(--ui-navy); font-size: .875rem; min-height: 40px; padding: 8px 12px; }
+.anime-entity-detail .anime-episode-nav .horse-link-chip:hover { background: var(--ui-cobalt-soft); color: var(--ui-cobalt-deep); box-shadow: none; transform: none; }
 .staff-role-ledger { margin: 0; }
 .staff-role-ledger > div { display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--ui-line); }
 .staff-role-ledger dt { color: var(--ui-navy); font-size: .875rem; line-height: 1.6; font-weight: 700; }

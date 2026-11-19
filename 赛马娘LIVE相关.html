@@ -30,9 +30,21 @@
 </script>
 <script>
 if (['/', '/zh-Hans', '/zh-Hans/'].includes(location.pathname)) {
+    const heroParam = new URLSearchParams(location.search).get('hero');
+    const nowTs = Date.now();
+    const dtActive = heroParam === 'daring-tact' || heroParam === 'daringtact' || heroParam === '1075'
+        || (heroParam !== 'default' && heroParam !== 'off' && heroParam !== 'none'
+            && nowTs >= Date.parse('2026-11-19T00:00:00+08:00')
+            && nowTs <= Date.parse('2026-11-26T23:59:59+08:00'));
     const preload = document.createElement('link');
-    preload.rel = 'preload'; preload.as = 'image'; preload.type = 'image/avif'; preload.fetchPriority = 'high';
-    preload.href = matchMedia('(max-width:480px)').matches ? '/uma_tools/img/hero_bg_phone.avif' : matchMedia('(max-width:768px)').matches ? '/uma_tools/img/hero_bg_tablet.avif' : '/uma_tools/img/hero_bg.avif';
+    preload.rel = 'preload'; preload.as = 'image'; preload.fetchPriority = 'high';
+    if (dtActive) {
+        preload.type = 'image/png';
+        preload.href = '/uma_tools/img/daring_tact_stand_107501.png';
+    } else {
+        preload.type = 'image/avif';
+        preload.href = matchMedia('(max-width:480px)').matches ? '/uma_tools/img/hero_bg_phone.avif' : matchMedia('(max-width:768px)').matches ? '/uma_tools/img/hero_bg_tablet.avif' : '/uma_tools/img/hero_bg.avif';
+    }
     document.head.appendChild(preload);
 }
 </script>
@@ -41,6 +53,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 </style>
 <link rel="stylesheet" href="/uma_tools/frontend/styles/foundation.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/home-shell.css">
+<link rel="stylesheet" href="/uma_tools/frontend/styles/daring-tact-hero.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/catalog-base.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/album-base.css">
 <link rel="stylesheet" href="/uma_tools/frontend/styles/news-base.css">
@@ -112,8 +125,10 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
                 </div>
             </nav>
         </div>
-        <div class="home-hero"></div>
-        <a v-if="nextUpcomingEvent" class="home-upcoming" :href="nextUpcomingHref" @click="internalLink($event, openNextUpcoming)">
+        <div class="home-hero" :class="{ 'home-hero-daring-tact': daringTactHeroActive }">
+            <daring-tact-hero v-if="daringTactHeroActive" @open-character="openCharacter($event)"></daring-tact-hero>
+        </div>
+        <a v-if="nextUpcomingEvent && !daringTactHeroActive" class="home-upcoming" :href="nextUpcomingHref" @click="internalLink($event, openNextUpcoming)">
             <span class="hu-badge">即将举办</span>
             <span class="hu-title">{{ nextUpcomingEvent.title }}</span>
             <span class="hu-meta">{{ eventDateLabel(nextUpcomingEvent) }}<template v-if="nextUpcomingEvent.venue"> · {{ nextUpcomingEvent.venue }}</template></span>

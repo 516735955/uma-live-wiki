@@ -66,7 +66,7 @@ export function createDomains(env) {
       domains,
       {
         navigation: ["activeTab", "dbView", "homeStats", "resetPageScroll"],
-        environment: ["api", "computed", "reactive", "ref", "watch"],
+        environment: ["api", "computed", "reactive", "ref", "routes", "watch"],
         characters: ["appearanceSongs", "charDetail"],
         routing: [
           "beginEntityNavigation",
@@ -338,7 +338,7 @@ export function createDomains(env) {
           "hideEncorePerf",
           "resetPageScroll",
         ],
-        environment: ["api", "computed", "ref", "watch"],
+        environment: ["api", "computed", "ref", "routes", "watch"],
         routing: [
           "beginEntityNavigation",
           "clearEntityDetails",

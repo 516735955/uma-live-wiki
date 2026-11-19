@@ -1,4 +1,4 @@
-export const bindings = ["coverThumb","onCatalogImageError","isActive","voiceHrefByName","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePhotoByName","charDetail","charSort","characterSortOptions","charSection","charHasPedigree","setCharSection","charAppearance","charHistoryQuery","charHistoryKind","charHistoryEvents","horseUrlForCharacter","horseVideosForCharacter","openVoice","appearanceIsLoading","appearanceError","retryAppearance","pedigreeStatus","pedigreeError","retryPedigree","animeError","retryAnime","characterAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes","internalLink"];
+export const bindings = ["coverThumb","onCatalogImageError","isActive","voiceHrefByName","openEvent","eventKindLabel","playRelationRelease","addSongTrack","relationSong","relationSongVersions","relationReleaseVocalists","expandedRelationSongId","toggleRelationSong","openAlbumFromSong","voiceName","voicePhoto","voicePhotoByName","charDetail","charSort","characterSortOptions","charSection","charHasPedigree","setCharSection","charAppearance","charHistoryQuery","charHistoryKind","charHistoryEvents","horseUrlForCharacter","horseVideosForCharacter","openVoice","appearanceIsLoading","appearanceError","retryAppearance","pedigreeStatus","pedigreeError","retryPedigree","animeError","retryAnime","characterAnimeWorks","animeLink","appearanceSessionLabel","appearanceDateLabel","historyKindOptions","routes","internalLink","daringTactHeroActive","daringTactCrowned"];
 bindings.push("charPedigreeApplicable");
 export const template = `
             <template v-if="!charDetail">
@@ -8,8 +8,9 @@ export const template = `
                 </div>
                 <div class="cio-list loading" id="cIntroList"><ul class="cio-grid" id="cIntroGrid"></ul><div id="cIntroNoData"><content-state state="filtered" subject="角色"></content-state></div></div>
             </template>
-            <article v-else id="cIntroDetail" class="entity-detail character-entity-detail" :style="{'--entity-accent':charDetail.main || '#3157ed','--entity-sub':charDetail.sub || '#ffa932'}">
+            <article v-else id="cIntroDetail" class="entity-detail character-entity-detail" :class="{'dt-celebration-detail': daringTactHeroActive && charDetail.id === 'daringtact', 'is-crowned': daringTactHeroActive && charDetail.id === 'daringtact' && daringTactCrowned()}" :style="{'--entity-accent':charDetail.main || '#3157ed','--entity-sub':charDetail.sub || '#ffa932'}">
                 <div class="entity-hero" :class="{'entity-hero-text':!charDetail.img}">
+                    <div v-if="daringTactHeroActive && charDetail.id === 'daringtact'" class="dt-detail-hero-bg"><daring-tact-hero mode="banner"></daring-tact-hero></div>
                     <div v-if="charDetail.img" class="entity-cover character-cover"><img v-media-src="charDetail.img" :alt="charDetail.zh" fetchpriority="high"></div>
                     <div class="entity-intro">
                         <span class="entity-kind">角色</span><h1>{{ charDetail.zh }}</h1>
