@@ -11,7 +11,6 @@ const PREVIEW_MD = path.join(ROOT, 'uma_tools', 'pending_preview.md');
 const MICROCMS_URL = 'https://6azuq3sitt-aw4monxblm4y4x0oos66.microcms.io/api/v1/goods';
 const MICROCMS_KEY = 'xCZfLPNnbazeFHih87prlh1pomFsB1LFq6qZ';
 const NETEASE_SEARCH = 'https://music.163.com/api/search/get/web';
-const METING = 'https://api.injahow.cn/meting/?server=netease&type=url&id=';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -110,14 +109,6 @@ async function neteaseAlbumDetail(album) {
   });
   if (!j || !j.album) return null;
   const tracks = (j.album.songs) || [];
-  let playable = new Set();
-  try {
-    const availability = await neteaseJson('https://music.163.com/api/song/enhance/player/url?' + new URLSearchParams({ ids: JSON.stringify(tracks.map((t) => t.id)), br: '320000' }), {
-      headers: { 'user-agent': UA, 'referer': 'https://music.163.com/' }
-    });
-    const durations = new Map(tracks.map((t) => [t.id, t.dt || t.duration || 0]));
-    playable = new Set((availability.data || []).filter((t) => t.code === 200 && t.url && !t.freeTrialInfo && durations.get(t.id) > 0 && t.time >= durations.get(t.id) - 2000).map((t) => t.id));
-  } catch (_) { /* 无法确认完整音源时只导入曲目信息。 */ }
   return {
     name: j.album.name || album.name,
     cover: (album.picUrl || album.blurPicUrl || ''),
@@ -127,7 +118,7 @@ async function neteaseAlbumDetail(album) {
       name: t.name,
       artist: (t.ar || t.artists || []).map((a) => a.name).join('/'),
       id: t.id,
-      playable: playable.has(t.id)
+      duration: t.dt || t.duration || 0
     }))
   };
 }
@@ -143,7 +134,9 @@ function buildCandidate(official, det) {
     songs: det.tracks.map((t) => ({
       name: t.name,
       artist: t.artist,
-      url: t.playable ? METING + t.id : '',
+      url: /^[1-9][0-9]*$/.test(String(t.id || '')) ? '/api/audio?track=' + t.id : '',
+      ...(/^[1-9][0-9]*$/.test(String(t.id || '')) ? { netease_id: String(t.id) } : {}),
+      ...(t.duration ? { duration_ms: t.duration } : {}),
       pic: cover
     }))
   };

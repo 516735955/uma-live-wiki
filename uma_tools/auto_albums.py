@@ -25,7 +25,6 @@ NO_IMAGE = 'https://tis9kp3e0c.user-space.cdn.idcfcloud.net/bc/images/common/no_
 PLACEHOLDER_COVERS = {None, '', NO_IMAGE, '/album_covers/placeholder.webp'}
 NETEASE_SEARCH = 'https://music.163.com/api/search/get/web'
 NETEASE_ALBUM = 'https://music.163.com/api/v1/album/'
-METING = 'https://api.injahow.cn/meting/?server=netease&type=url&id='
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
 
 MAX_ENRICH_PER_RUN = 6      # 每次运行最多补全几张（网易云限流）
@@ -223,31 +222,18 @@ def netease_detail(album_id):
     return dict(alb, songs=tracks)
 
 
-def full_audio_ids(tracks):
-    ids = [t.get('id') for t in tracks if t.get('id')]
-    if not ids:
-        return set()
-    result = http_json('https://music.163.com/api/song/enhance/player/url?' +
-                       urllib.parse.urlencode({'ids': json.dumps(ids), 'br': 320000}),
-                       {'user-agent': UA, 'referer': 'https://music.163.com/'}, tries=2)
-    durations = {t.get('id'): t.get('dt') or t.get('duration') or 0 for t in tracks}
-    return {item.get('id') for item in (result or {}).get('data') or []
-            if item.get('code') == 200 and item.get('url') and not item.get('freeTrialInfo')
-            and durations.get(item.get('id'), 0) > 0
-            and (item.get('time') or 0) >= durations[item.get('id')] - 2000}
-
-
 def build_songs(tracks, cover):
-    playable = full_audio_ids(tracks)
     out = []
     for t in tracks:
         arts = [a.get('name', '') for a in (t.get('ar') or t.get('artists') or [])]
-        track_id = t.get('id')
+        track_id = str(t.get('id') or '')
+        track_id = track_id if re.fullmatch(r'[1-9][0-9]*', track_id) else ''
         duration = t.get('dt') or t.get('duration')
         track = {
             'name': t.get('name'),
             'artist': u'、'.join(a for a in arts if a),
-            'url': METING + str(track_id) if track_id in playable else '',
+            # Playback resolves the current member session and quality at request time.
+            'url': '/api/audio?track=' + track_id if track_id else '',
             'pic': cover}
         if track_id:
             track['netease_id'] = str(track_id)

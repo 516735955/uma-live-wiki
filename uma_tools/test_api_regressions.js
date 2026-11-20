@@ -98,7 +98,11 @@ vm.runInContext(source, context);
     global.fetch = async () => ({status:200,json:async()=>({result:{albums:[{id:1,name:'WINNING LIVE 01'},{id:2,name:'WINNING LIVE 01'}]}})});
     assert.strictEqual((await neteaseSearchAlbum('WINNING LIVE 01')).best,null);
   } finally {global.fetch = originalFetch;}
-  assert.strictEqual(buildCandidate({}, { tracks: [{ name: 'trial', id: 1, playable: false }] }).songs[0].url, '');
+  const memberTrack = buildCandidate({}, { tracks: [{ name: 'member', id: 1, playable: false, duration: 180000 }] }).songs[0];
+  assert.strictEqual(memberTrack.url, '/api/audio?track=1');
+  assert.strictEqual(memberTrack.netease_id, '1');
+  assert.strictEqual(memberTrack.duration_ms, 180000);
+  assert.strictEqual(buildCandidate({}, { tracks: [{ id: 'invalid' }] }).songs[0].url, '');
   const animeContext = vm.createContext({Date:{now:()=>now}, URLSearchParams});
   vm.runInContext(fs.readFileSync(require.resolve('./anime-loader'),'utf8'), animeContext);
   const loader = animeContext.UmaAnimeLoader.create(async url => {

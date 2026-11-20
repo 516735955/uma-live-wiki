@@ -96,7 +96,7 @@ class AlbumImportTests(unittest.TestCase):
         self.assertEqual(auto_albums.infer_type('デジタルシングル「Test」'), '单曲')
         album = {'name': 'Test', 'cover': 'curated', 'songs': [{'name': 'Track', 'artist': 'manual', 'url': ''}]}
         tracks = [{'id': 1, 'name': 'Track', 'artists': [{'name': 'source'}]}]
-        with patch.object(auto_albums, 'netease_search', return_value=({'id': 1}, 100)), patch.object(auto_albums, 'netease_detail', return_value={'songs': tracks, 'picUrl': 'automatic'}), patch.object(auto_albums, 'full_audio_ids', return_value={1}), patch.object(auto_albums.time, 'sleep'):
+        with patch.object(auto_albums, 'netease_search', return_value=({'id': 1}, 100)), patch.object(auto_albums, 'netease_detail', return_value={'songs': tracks, 'picUrl': 'automatic'}), patch.object(auto_albums.time, 'sleep'):
             self.assertTrue(auto_albums.enrich_entry(album))
         self.assertEqual(album['cover'], 'curated')
         self.assertEqual(album['songs'][0]['artist'], 'manual')
@@ -112,7 +112,7 @@ class AlbumImportTests(unittest.TestCase):
             self.assertNotEqual(auto_albums.norm_key(left), auto_albums.norm_key(right))
             self.assertEqual(auto_albums.score_album(left, right), 0)
 
-    def test_only_complete_audio_is_imported(self):
+    def test_member_tracks_do_not_require_anonymous_playback(self):
         tracks = [{'id': i, 'name': str(i), 'duration': 180000} for i in range(1, 5)]
         result = {'data': [
             {'id': 1, 'code': 200, 'url': 'full', 'time': 180000},
@@ -120,13 +120,15 @@ class AlbumImportTests(unittest.TestCase):
             {'id': 3, 'code': 200, 'url': 'trial', 'time': 180000, 'freeTrialInfo': {'start': 0}},
             {'id': 4, 'code': 404, 'time': 0},
         ]}
-        with patch.object(auto_albums, 'http_json', return_value=result):
+        with patch.object(auto_albums, 'http_json', return_value=result) as request:
             songs = auto_albums.build_songs(tracks, 'cover')
-        self.assertTrue(songs[0]['url'])
-        self.assertEqual([song['url'] for song in songs[1:]], ['', '', ''])
+        request.assert_not_called()
+        self.assertEqual([song['url'] for song in songs], ['/api/audio?track=' + str(i) for i in range(1, 5)])
         self.assertEqual([song['netease_id'] for song in songs], ['1', '2', '3', '4'])
         self.assertEqual([song['duration_ms'] for song in songs], [180000] * 4)
         self.assertEqual(len(songs), 4)
+        invalid = auto_albums.build_songs([{'id': value} for value in [None, 0, -1, 'bad']], '')
+        self.assertTrue(all(not song['url'] and 'netease_id' not in song for song in invalid))
 
 
 if __name__ == '__main__':

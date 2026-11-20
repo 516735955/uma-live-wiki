@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T13:54:06+00:00",
+  "generated_at": "2026-11-20T17:35:21+00:00",
   "coverage": {
     "songs": 1043,
-    "versions": 2173,
-    "albums": 116,
-    "release_tracks": 2253,
+    "versions": 2174,
+    "albums": 117,
+    "release_tracks": 2256,
     "live_performances": 1270,
     "credited_songs": 423,
     "lyric_songs": 248,
-    "credited_versions": 1499,
+    "credited_versions": 1500,
     "lyric_versions": 472
   },
   "songs": [
@@ -85306,10 +85306,12 @@
         "STARTING FORCE (Game Size)（ブラストワンピース）",
         "STARTING FORCE (Game Size)（マチカネフクキタル）",
         "STARTING FORCE (Game Size)（ラッキーライラック）",
-        "STARTING FORCE (Game Size)（ラヴズオンリーユー）"
+        "STARTING FORCE (Game Size)（ラヴズオンリーユー）",
+        "STARTING FORCE (Off Vocal)"
       ],
       "legacy_ids": [],
       "artists": [
+        "Instrumental",
         "上田 瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
         "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
         "中島由貴",
@@ -85636,8 +85638,8 @@
         "va-0176",
         "va-0179"
       ],
-      "cover": "https://p1.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
-      "release_date": "2025-03-05",
+      "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+      "release_date": "2025-02-25",
       "versions": [
         {
           "id": "song-starting-force-c0c6c398c4-v-c0c6c398c4",
@@ -85647,6 +85649,247 @@
             "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹"
           ],
           "releases": [
+            {
+              "album_id": "album-c0c6c398c494",
+              "album_name": "STARTING FORCE",
+              "release_date": "2025-02-25",
+              "catalog": "",
+              "type": "单曲",
+              "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "track_number": 1,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
+              "audio_url": "/api/audio?track=2686954090",
+              "image": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0010",
+                  "voice_actor_name": "下地紫野",
+                  "character_id": "nakayamafesta",
+                  "character": {
+                    "id": "nakayamafesta",
+                    "name": "中山庆典",
+                    "name_ja": "ナカヤマフェスタ",
+                    "name_en": "Nakayama Festa",
+                    "image": "/uma_official/nakayamafesta.png",
+                    "color_main": "#C0453F",
+                    "color_sub": "#236192"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0143",
+                  "voice_actor_name": "羊宫妃那",
+                  "character_id": "daringtact",
+                  "character": {
+                    "id": "daringtact",
+                    "name": "谋勇兼备",
+                    "name_ja": "デアリングタクト",
+                    "name_en": "Daring Tact",
+                    "image": "/uma_official/daringtact.png",
+                    "color_main": "#79c6db",
+                    "color_sub": "#6c5953"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0059",
+                  "voice_actor_name": "小岛菜菜惠",
+                  "character_id": "rheinkraft",
+                  "character": {
+                    "id": "rheinkraft",
+                    "name": "莱茵力量",
+                    "name_ja": "ラインクラフト",
+                    "name_en": "Rhein Kraft",
+                    "image": "/uma_official/rheinkraft.png",
+                    "color_main": "#f15b75",
+                    "color_sub": "#2c9679"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0072",
+                  "voice_actor_name": "希水汐",
+                  "character_id": "daringheart",
+                  "character": {
+                    "id": "daringheart",
+                    "name": "勇敢之心",
+                    "name_ja": "デアリングハート",
+                    "name_en": "Daring Heart",
+                    "image": "/uma_official/daringheart.png",
+                    "color_main": "#d0ba00",
+                    "color_sub": "#38312b"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0032",
+                  "voice_actor_name": "佳原萌枝",
+                  "character_id": "fusaichipandora",
+                  "character": {
+                    "id": "fusaichipandora",
+                    "name": "房一潘多拉",
+                    "name_ja": "フサイチパンドラ",
+                    "name_en": "Fusaichi Pandora",
+                    "image": "/uma_official/fusaichipandora.png",
+                    "color_main": "#fd637f",
+                    "color_sub": "#fbd872"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0081",
+                  "voice_actor_name": "日笠阳子",
+                  "character_id": "orfevre",
+                  "character": {
+                    "id": "orfevre",
+                    "name": "黄金巨匠",
+                    "name_ja": "オルフェーヴル",
+                    "name_en": "Orfevre",
+                    "image": "/uma_official/orfevre.png",
+                    "color_main": "#be4134",
+                    "color_sub": "#ecd898"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0038",
+                  "voice_actor_name": "吉冈茉祐",
+                  "character_id": "dreamjourney",
+                  "character": {
+                    "id": "dreamjourney",
+                    "name": "梦之旅",
+                    "name_ja": "ドリームジャーニー",
+                    "name_en": "Dream Journey",
+                    "image": "/uma_official/dreamjourney.png",
+                    "color_main": "#332d1f",
+                    "color_sub": "#e6e08a"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0080",
+                  "voice_actor_name": "日比优理香",
+                  "character_id": "fenomeno",
+                  "character": {
+                    "id": "fenomeno",
+                    "name": "超常骏骥",
+                    "name_ja": "フェノーメノ",
+                    "name_en": "Fenomeno",
+                    "image": "/uma_official/fenomeno.png",
+                    "color_main": "#574a74",
+                    "color_sub": "#f4db4e"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0141",
+                  "voice_actor_name": "紫月杏朱彩",
+                  "character_id": "blastonepiece",
+                  "character": {
+                    "id": "blastonepiece",
+                    "name": "防爆装束",
+                    "name_ja": "ブラストワンピース",
+                    "name_en": "Blast Onepiece",
+                    "image": "/uma_official/blastonepiece.png",
+                    "color_main": "#009CBD",
+                    "color_sub": "#0CB85F"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0127",
+                  "voice_actor_name": "石原夏织",
+                  "character_id": "almondeye",
+                  "character": {
+                    "id": "almondeye",
+                    "name": "杏目",
+                    "name_ja": "アーモンドアイ",
+                    "name_en": "Almond Eye",
+                    "image": "/uma_official/almondeye.png",
+                    "color_main": "#69a9e9",
+                    "color_sub": "#cc3300"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0011",
+                  "voice_actor_name": "中岛由贵",
+                  "character_id": "luckylilac",
+                  "character": {
+                    "id": "luckylilac",
+                    "name": "旺紫丁",
+                    "name_ja": "ラッキーライラック",
+                    "name_en": "Lucky Lilac",
+                    "image": "/uma_official/luckylilac.png",
+                    "color_main": "#454152",
+                    "color_sub": "#907594"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0048",
+                  "voice_actor_name": "夏目妃菜",
+                  "character_id": "granalegria",
+                  "character": {
+                    "id": "granalegria",
+                    "name": "放声欢呼",
+                    "name_ja": "グランアレグリア",
+                    "name_en": "Gran Alegria",
+                    "image": "/uma_official/granalegria.png",
+                    "color_main": "#53565a",
+                    "color_sub": "#ef4d60"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0015",
+                  "voice_actor_name": "久保田未梦",
+                  "character_id": "lovesonlyyou",
+                  "character": {
+                    "id": "lovesonlyyou",
+                    "name": "唯独爱你",
+                    "name_ja": "ラヴズオンリーユー",
+                    "name_en": "Loves Only You",
+                    "image": "/uma_official/lovesonlyyou.png",
+                    "color_main": "#424840",
+                    "color_sub": "#268745"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0124",
+                  "voice_actor_name": "真名濑日和",
+                  "character_id": "chronogenesis",
+                  "character": {
+                    "id": "chronogenesis",
+                    "name": "创世驹",
+                    "name_ja": "クロノジェネシス",
+                    "name_en": "Chrono Genesis",
+                    "image": "/uma_official/chronogenesis.png",
+                    "color_main": "#464647",
+                    "color_sub": "#50a19f"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0062",
+                  "voice_actor_name": "小田杏树",
+                  "character_id": "currenbouquetdor",
+                  "character": {
+                    "id": "currenbouquetdor",
+                    "name": "机伶金花",
+                    "name_ja": "カレンブーケドール",
+                    "name_en": "Curren Bouquetd'or",
+                    "image": "/uma_official/currenbouquetdor.png",
+                    "color_main": "#8e8180",
+                    "color_sub": "#473d3c"
+                  }
+                }
+              ]
+            },
             {
               "album_id": "album-laca-35146",
               "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 24",
@@ -85658,7 +85901,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
-              "audio_url": "",
+              "audio_url": "/api/audio?track=2686954090",
               "image": "https://p1.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
               "instrumental": false,
               "vocalists": [
@@ -86164,7 +86407,7 @@
               "event_url": "/zh-Hans/events/live-numbered-6th-event-2025-05-24?session=live-numbered-6th-event-2025-05-24-session-1"
             }
           ],
-          "release_count": 1,
+          "release_count": 2,
           "performance_count": 5,
           "instrumental": false,
           "credits": [
@@ -86197,9 +86440,251 @@
           "title": "STARTING FORCE (Game Size)",
           "version_label": "Game Size",
           "artists": [
-            "上田 瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹"
+            "上田 瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
+            "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹"
           ],
           "releases": [
+            {
+              "album_id": "album-c0c6c398c494",
+              "album_name": "STARTING FORCE",
+              "release_date": "2025-02-25",
+              "catalog": "",
+              "type": "单曲",
+              "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "track_number": 3,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "上田瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
+              "audio_url": "/api/audio?track=2686954093",
+              "image": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "instrumental": false,
+              "vocalists": [
+                {
+                  "voice_actor_id": "va-0009",
+                  "voice_actor_name": "上田瞳",
+                  "character_id": "goldship",
+                  "character": {
+                    "id": "goldship",
+                    "name": "黄金船",
+                    "name_ja": "ゴールドシップ",
+                    "name_en": "Gold Ship",
+                    "image": "/uma_official/goldship.png",
+                    "color_main": "#DA3C57",
+                    "color_sub": "#E9DA36"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0010",
+                  "voice_actor_name": "下地紫野",
+                  "character_id": "nakayamafesta",
+                  "character": {
+                    "id": "nakayamafesta",
+                    "name": "中山庆典",
+                    "name_ja": "ナカヤマフェスタ",
+                    "name_en": "Nakayama Festa",
+                    "image": "/uma_official/nakayamafesta.png",
+                    "color_main": "#C0453F",
+                    "color_sub": "#236192"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0143",
+                  "voice_actor_name": "羊宫妃那",
+                  "character_id": "daringtact",
+                  "character": {
+                    "id": "daringtact",
+                    "name": "谋勇兼备",
+                    "name_ja": "デアリングタクト",
+                    "name_en": "Daring Tact",
+                    "image": "/uma_official/daringtact.png",
+                    "color_main": "#79c6db",
+                    "color_sub": "#6c5953"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0059",
+                  "voice_actor_name": "小岛菜菜惠",
+                  "character_id": "rheinkraft",
+                  "character": {
+                    "id": "rheinkraft",
+                    "name": "莱茵力量",
+                    "name_ja": "ラインクラフト",
+                    "name_en": "Rhein Kraft",
+                    "image": "/uma_official/rheinkraft.png",
+                    "color_main": "#f15b75",
+                    "color_sub": "#2c9679"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0072",
+                  "voice_actor_name": "希水汐",
+                  "character_id": "daringheart",
+                  "character": {
+                    "id": "daringheart",
+                    "name": "勇敢之心",
+                    "name_ja": "デアリングハート",
+                    "name_en": "Daring Heart",
+                    "image": "/uma_official/daringheart.png",
+                    "color_main": "#d0ba00",
+                    "color_sub": "#38312b"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0032",
+                  "voice_actor_name": "佳原萌枝",
+                  "character_id": "fusaichipandora",
+                  "character": {
+                    "id": "fusaichipandora",
+                    "name": "房一潘多拉",
+                    "name_ja": "フサイチパンドラ",
+                    "name_en": "Fusaichi Pandora",
+                    "image": "/uma_official/fusaichipandora.png",
+                    "color_main": "#fd637f",
+                    "color_sub": "#fbd872"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0081",
+                  "voice_actor_name": "日笠阳子",
+                  "character_id": "orfevre",
+                  "character": {
+                    "id": "orfevre",
+                    "name": "黄金巨匠",
+                    "name_ja": "オルフェーヴル",
+                    "name_en": "Orfevre",
+                    "image": "/uma_official/orfevre.png",
+                    "color_main": "#be4134",
+                    "color_sub": "#ecd898"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0038",
+                  "voice_actor_name": "吉冈茉祐",
+                  "character_id": "dreamjourney",
+                  "character": {
+                    "id": "dreamjourney",
+                    "name": "梦之旅",
+                    "name_ja": "ドリームジャーニー",
+                    "name_en": "Dream Journey",
+                    "image": "/uma_official/dreamjourney.png",
+                    "color_main": "#332d1f",
+                    "color_sub": "#e6e08a"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0080",
+                  "voice_actor_name": "日比优理香",
+                  "character_id": "fenomeno",
+                  "character": {
+                    "id": "fenomeno",
+                    "name": "超常骏骥",
+                    "name_ja": "フェノーメノ",
+                    "name_en": "Fenomeno",
+                    "image": "/uma_official/fenomeno.png",
+                    "color_main": "#574a74",
+                    "color_sub": "#f4db4e"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0141",
+                  "voice_actor_name": "紫月杏朱彩",
+                  "character_id": "blastonepiece",
+                  "character": {
+                    "id": "blastonepiece",
+                    "name": "防爆装束",
+                    "name_ja": "ブラストワンピース",
+                    "name_en": "Blast Onepiece",
+                    "image": "/uma_official/blastonepiece.png",
+                    "color_main": "#009CBD",
+                    "color_sub": "#0CB85F"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0127",
+                  "voice_actor_name": "石原夏织",
+                  "character_id": "almondeye",
+                  "character": {
+                    "id": "almondeye",
+                    "name": "杏目",
+                    "name_ja": "アーモンドアイ",
+                    "name_en": "Almond Eye",
+                    "image": "/uma_official/almondeye.png",
+                    "color_main": "#69a9e9",
+                    "color_sub": "#cc3300"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0011",
+                  "voice_actor_name": "中岛由贵",
+                  "character_id": "luckylilac",
+                  "character": {
+                    "id": "luckylilac",
+                    "name": "旺紫丁",
+                    "name_ja": "ラッキーライラック",
+                    "name_en": "Lucky Lilac",
+                    "image": "/uma_official/luckylilac.png",
+                    "color_main": "#454152",
+                    "color_sub": "#907594"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0048",
+                  "voice_actor_name": "夏目妃菜",
+                  "character_id": "granalegria",
+                  "character": {
+                    "id": "granalegria",
+                    "name": "放声欢呼",
+                    "name_ja": "グランアレグリア",
+                    "name_en": "Gran Alegria",
+                    "image": "/uma_official/granalegria.png",
+                    "color_main": "#53565a",
+                    "color_sub": "#ef4d60"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0015",
+                  "voice_actor_name": "久保田未梦",
+                  "character_id": "lovesonlyyou",
+                  "character": {
+                    "id": "lovesonlyyou",
+                    "name": "唯独爱你",
+                    "name_ja": "ラヴズオンリーユー",
+                    "name_en": "Loves Only You",
+                    "image": "/uma_official/lovesonlyyou.png",
+                    "color_main": "#424840",
+                    "color_sub": "#268745"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0124",
+                  "voice_actor_name": "真名濑日和",
+                  "character_id": "chronogenesis",
+                  "character": {
+                    "id": "chronogenesis",
+                    "name": "创世驹",
+                    "name_ja": "クロノジェネシス",
+                    "name_en": "Chrono Genesis",
+                    "image": "/uma_official/chronogenesis.png",
+                    "color_main": "#464647",
+                    "color_sub": "#50a19f"
+                  }
+                },
+                {
+                  "voice_actor_id": "va-0062",
+                  "voice_actor_name": "小田杏树",
+                  "character_id": "currenbouquetdor",
+                  "character": {
+                    "id": "currenbouquetdor",
+                    "name": "机伶金花",
+                    "name_ja": "カレンブーケドール",
+                    "name_en": "Curren Bouquetd'or",
+                    "image": "/uma_official/currenbouquetdor.png",
+                    "color_main": "#8e8180",
+                    "color_sub": "#473d3c"
+                  }
+                }
+              ]
+            },
             {
               "album_id": "album-laca-35146",
               "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 24",
@@ -86211,7 +86696,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "上田 瞳、下地紫野、羊宮妃那、小島菜々恵、希水しお、佳原萌枝、日笠陽子、吉岡茉祐、日比優理香、紫月杏朱彩、石原夏織、中島由貴、夏目妃菜、久保田未夢、真名瀬日和、小田杏樹",
-              "audio_url": "",
+              "audio_url": "/api/audio?track=2686954093",
               "image": "https://p2.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
               "instrumental": false,
               "vocalists": [
@@ -86443,7 +86928,7 @@
             }
           ],
           "performances": [],
-          "release_count": 1,
+          "release_count": 2,
           "performance_count": 0,
           "instrumental": false,
           "credits": [
@@ -87505,10 +87990,64 @@
           "lyrics_ref": "",
           "has_lyrics": false,
           "has_timing": false
+        },
+        {
+          "id": "song-starting-force-c0c6c398c4-v-492deb5f51",
+          "title": "STARTING FORCE (Off Vocal)",
+          "version_label": "Off Vocal",
+          "artists": [
+            "Instrumental"
+          ],
+          "releases": [
+            {
+              "album_id": "album-c0c6c398c494",
+              "album_name": "STARTING FORCE",
+              "release_date": "2025-02-25",
+              "catalog": "",
+              "type": "单曲",
+              "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "track_number": 2,
+              "disc_number": null,
+              "disc_track_number": null,
+              "artist": "Instrumental",
+              "audio_url": "/api/audio?track=2686954091",
+              "image": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+              "instrumental": true,
+              "vocalists": []
+            }
+          ],
+          "performances": [],
+          "release_count": 1,
+          "performance_count": 0,
+          "instrumental": true,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-3b78b1a677"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-647bf144a4"
+            },
+            {
+              "role": "arranger",
+              "role_label": "编曲",
+              "creator_id": "creator-647bf144a4"
+            }
+          ],
+          "creator_ids": [
+            "creator-3b78b1a677",
+            "creator-647bf144a4"
+          ],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
         }
       ],
-      "version_count": 17,
-      "release_count": 17,
+      "version_count": 18,
+      "release_count": 20,
       "performance_count": 5,
       "original_version_id": "song-starting-force-c0c6c398c4-v-c0c6c398c4",
       "creator_ids": [
@@ -111291,7 +111830,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "フリオーソ (CV. 西連寺亜希)、トランセンド (CV. 塚田悠衣)、エスポワールシチー (CV. 亜咲花)、コパノリッキー (CV. 稲垣 好)、ホッコータルマエ (CV. 菊池紗矢香)、ワンダーアキュート (CV. 須藤叶希)、フォーエバーヤング (CV. 海弓シュリ)、マルシュロレーヌ (CV. 近貞月乃)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009984",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -136456,7 +136995,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009058",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": []
@@ -153540,7 +154079,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "Machico、上田 瞳、木村千咲、田所あずさ、大空直美、星谷美緒、小倉 唯、山本希望、上坂すみれ、井上遥乃、高橋花林、香坂さき、羊宮妃那、西連寺亜希、塚田悠衣、亜咲花、福嶋晴菜、河野ひより、稲垣 好、菊池紗矢香、須藤叶希、和泉風花、紫月杏朱彩、中島由貴、松田颯水、関根 瞳、海弓シュリ、近貞月乃",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009055",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -175782,7 +176321,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "ゴールドシップ (CV. 上田 瞳)、マンハッタンカフェ (CV. 小倉 唯)、アグネスタキオン (CV. 上坂すみれ)、ダンツフレーム (CV. 福嶋晴菜)、ブエナビスタ (CV. 和泉風花)、ラッキーライラック (CV. 中島由貴)、ステイゴールド (CV. 松田颯水)、レッドディザイア (CV. 関根 瞳)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009985",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -222547,7 +223086,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "ノーリーズン (CV. 河野ひより)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009053",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -249431,7 +249970,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "トウカイテイオー (CV. Machico)、ダイワスカーレット (CV. 木村千咲)、シンボリルドルフ (CV. 田所あずさ)、タマモクロス (CV. 大空直美)、マヤノトップガン (CV. 星谷美緒)、ユキノビジン (CV. 山本希望)、イナリワン (CV. 井上遥乃)、カワカミプリンセス (CV. 高橋花林)、ゴールドシチー (CV. 香坂さき)、ノーリーズン (CV. 河野ひより)、ブラストワンピース (CV. 紫月杏朱彩)、吾妻 (CV. 三石琴乃)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009981",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -249662,7 +250201,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009057",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": []
@@ -257954,7 +258493,7 @@
               "disc_number": null,
               "disc_track_number": null,
               "artist": "デアリングタクト (CV. 羊宮妃那)",
-              "audio_url": "",
+              "audio_url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461009983",
               "image": "/album_covers/LACA-25308.jpg",
               "instrumental": false,
               "vocalists": [
@@ -260495,5 +261034,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "b7b680601c40c707d296"
+  "build_id": "e7c13ffa7c1e38c6e718"
 }

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T13:54:06+00:00",
+  "generated_at": "2026-11-20T17:35:21+00:00",
   "coverage": {
     "creators": 305,
     "credited_works": 423,
-    "credited_versions": 1499
+    "credited_versions": 1500
   },
   "creators": [
     {
@@ -10758,11 +10758,11 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 34
+          "count": 35
         }
       ],
       "work_count": 2,
-      "version_count": 34,
+      "version_count": 35,
       "works": [
         {
           "song_id": "song-4bfe85c283",
@@ -10934,9 +10934,9 @@
         {
           "song_id": "song-starting-force-c0c6c398c4",
           "title": "STARTING FORCE",
-          "cover": "https://p1.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
-          "release_date": "2025-03-05",
-          "album_name": "『ウマ娘 プリティーダービー』Solo Vocal Tracks ＆ Talk 6th EVENT The New Frontier",
+          "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+          "release_date": "2025-02-25",
+          "album_name": "STARTING FORCE",
           "roles": [
             "lyricist"
           ],
@@ -10945,6 +10945,7 @@
             "song-starting-force-c0c6c398c4-v-24e0c03934",
             "song-starting-force-c0c6c398c4-v-2bda0df172",
             "song-starting-force-c0c6c398c4-v-2f60059593",
+            "song-starting-force-c0c6c398c4-v-492deb5f51",
             "song-starting-force-c0c6c398c4-v-4f3ef0aaa1",
             "song-starting-force-c0c6c398c4-v-4ffc9a06e4",
             "song-starting-force-c0c6c398c4-v-5008335404",
@@ -11095,6 +11096,14 @@
               "roles": [
                 "lyricist"
               ]
+            },
+            {
+              "id": "song-starting-force-c0c6c398c4-v-492deb5f51",
+              "title": "STARTING FORCE (Off Vocal)",
+              "version_label": "Off Vocal",
+              "roles": [
+                "lyricist"
+              ]
             }
           ]
         }
@@ -11103,7 +11112,7 @@
         {
           "creator_id": "creator-647bf144a4",
           "name": "東大路憲太",
-          "shared_version_count": 34,
+          "shared_version_count": 35,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-4bfe85c283",
@@ -38618,16 +38627,16 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 45
+          "count": 46
         },
         {
           "role": "arranger",
           "label": "编曲",
-          "count": 73
+          "count": 74
         }
       ],
       "work_count": 19,
-      "version_count": 77,
+      "version_count": 78,
       "works": [
         {
           "song_id": "song-4bfe85c283",
@@ -39097,9 +39106,9 @@
         {
           "song_id": "song-starting-force-c0c6c398c4",
           "title": "STARTING FORCE",
-          "cover": "https://p1.music.126.net/NK8jWG3RBgprmM1skUE9cQ==/109951170653203583.jpg",
-          "release_date": "2025-03-05",
-          "album_name": "『ウマ娘 プリティーダービー』Solo Vocal Tracks ＆ Talk 6th EVENT The New Frontier",
+          "cover": "https://p1.music.126.net/_bnyZRcTzv6ht_t8LA2HDw==/109951170977448757.jpg",
+          "release_date": "2025-02-25",
+          "album_name": "STARTING FORCE",
           "roles": [
             "composer",
             "arranger"
@@ -39109,6 +39118,7 @@
             "song-starting-force-c0c6c398c4-v-24e0c03934",
             "song-starting-force-c0c6c398c4-v-2bda0df172",
             "song-starting-force-c0c6c398c4-v-2f60059593",
+            "song-starting-force-c0c6c398c4-v-492deb5f51",
             "song-starting-force-c0c6c398c4-v-4f3ef0aaa1",
             "song-starting-force-c0c6c398c4-v-4ffc9a06e4",
             "song-starting-force-c0c6c398c4-v-5008335404",
@@ -39272,6 +39282,15 @@
               "id": "song-starting-force-c0c6c398c4-v-5008335404",
               "title": "STARTING FORCE (Game Size)（ラヴズオンリーユー）",
               "version_label": "Game Size / 角色独唱：ラヴズオンリーユー",
+              "roles": [
+                "composer",
+                "arranger"
+              ]
+            },
+            {
+              "id": "song-starting-force-c0c6c398c4-v-492deb5f51",
+              "title": "STARTING FORCE (Off Vocal)",
+              "version_label": "Off Vocal",
               "roles": [
                 "composer",
                 "arranger"
@@ -39665,7 +39684,7 @@
         {
           "creator_id": "creator-3b78b1a677",
           "name": "マイクスギヤマ",
-          "shared_version_count": 34,
+          "shared_version_count": 35,
           "shared_work_count": 2,
           "shared_song_ids": [
             "song-4bfe85c283",
@@ -61366,5 +61385,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "b7b680601c40c707d296"
+  "build_id": "e7c13ffa7c1e38c6e718"
 }
