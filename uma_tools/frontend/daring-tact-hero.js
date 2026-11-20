@@ -531,7 +531,25 @@ export const DaringTactHero = {
       this.imageReady = true;
     }
     this.bindEvents();
-    this.startLoop();
+    this._inViewport = true;
+    this._onVisibility = () => {
+      if (document.hidden || !this._inViewport) {
+        cancelAnimationFrame(this._rafId);
+        this._rafId = null;
+      } else if (!this._rafId) {
+        this._lastFrameTs = performance.now();
+        this.startLoop();
+      }
+    };
+    document.addEventListener("visibilitychange", this._onVisibility);
+    if (typeof IntersectionObserver !== "undefined") {
+      this._intersectionObserver = new IntersectionObserver(([entry]) => {
+        this._inViewport = entry.isIntersecting;
+        this._onVisibility();
+      });
+      this._intersectionObserver.observe(this.$refs.stage);
+    }
+    this._onVisibility();
   },
   beforeUnmount() {
     this._destroyed = true;
@@ -540,6 +558,9 @@ export const DaringTactHero = {
       syncDaringTactBodyTheme("none");
     }
     if (this._rafId) cancelAnimationFrame(this._rafId);
+    clearTimeout(this._shakeTimer);
+    this._intersectionObserver?.disconnect();
+    document.removeEventListener("visibilitychange", this._onVisibility);
     if (this._resizeObserver) this._resizeObserver.disconnect();
     window.removeEventListener("resize", this._onResize);
     window.removeEventListener("keydown", this._onKeyDown);
@@ -583,7 +604,7 @@ export const DaringTactHero = {
 
     resizeCanvases() {
       const stage = this.$refs.stage;
-      const glCanvas = this.$refs.glCanvas;
+      const glCanvas = this._fallbackCanvas || this.$refs.glCanvas;
       const pCanvas = this.$refs.particlesCanvas;
       if (!stage || !glCanvas || !pCanvas) return;
 
@@ -672,7 +693,10 @@ export const DaringTactHero = {
       } catch (err) {
         console.warn("[DaringTactHero] WebGL fallback activated:", err);
         this._gl = null;
-        this._fallbackCtx = canvas.getContext("2d");
+        const replacement = canvas.cloneNode();
+        canvas.replaceWith(replacement);
+        this._fallbackCanvas = replacement;
+        this._fallbackCtx = replacement.getContext("2d");
       }
     },
 
@@ -708,7 +732,7 @@ export const DaringTactHero = {
 
     renderCanvas2DFallback() {
       const ctx = this._fallbackCtx;
-      const canvas = this.$refs.glCanvas;
+      const canvas = this._fallbackCanvas || this.$refs.glCanvas;
       const img = this._loadedImage;
       if (!ctx || !canvas || !img) return;
 

@@ -10,6 +10,18 @@ TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS_DIR)
 DATA_DIR = os.path.join(ROOT, 'data')
 OUT = os.path.join(DATA_DIR, 'events_data.json')
+
+
+def actor_identity(actor):
+    match = re.search(r"/actors/[^/]+/(\d+)/?$", actor.get("url") or "")
+    return match.group(1) if match else actor.get("url") or actor.get("name")
+
+
+def preserve_actor_names(previous, incoming):
+    accepted = {actor_identity(actor): actor for actor in previous}
+    return [{**actor, "name": accepted[actor_identity(actor)]["name"]}
+            if actor_identity(actor) in accepted else actor for actor in incoming]
+
 BASE = 'https://www.eventernote.com/actors/%E3%82%A6%E3%83%9E%E5%A8%98%20%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC(gal%E2%80%99up!)/22274/events'
 LIMIT = 100
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Accept-Language': 'ja'}
@@ -48,6 +60,7 @@ def parse_event_detail(markup, previous):
     if cast:
         incoming['actors'] = [{'name': anchor.get_text(' ', strip=True), 'url': 'https://www.eventernote.com' + anchor['href']}
                               for anchor in cast.select('ul.actors a[href^="/actors/"]')]
+        incoming['actors'] = preserve_actor_names(previous.get('actors', []), incoming['actors'])
     return {**previous, **{key: value for key, value in incoming.items() if value not in ('', [], None)}}
 
 
@@ -55,8 +68,8 @@ def merge_listing(previous, incoming):
     """A listing may truncate its cast; only detail pages replace a full roster."""
     merged = {**previous, **{key:value for key,value in incoming.items() if value not in ('', None, [], {}) and key != 'live'}}
     actors = {}
-    for actor in [*incoming.get('actors', []), *previous.get('actors', [])]:
-        key = actor.get('url') or actor.get('name')
+    for actor in [*previous.get('actors', []), *incoming.get('actors', [])]:
+        key = actor_identity(actor)
         if key and key not in actors:
             actors[key] = actor
     if actors:

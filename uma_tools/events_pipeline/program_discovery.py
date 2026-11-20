@@ -930,6 +930,34 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         key=lambda value: (candidates[value].get("approximate_date") or "", value),
         reverse=True,
     )
+    rechecks_file = PROGRAM_METADATA_CACHE.parent / "metadata-rechecks.json"
+    try:
+        rechecks = pipeline_common.read_json(rechecks_file).get("records", {})
+    except (OSError, ValueError):
+        rechecks = {}
+    known_video_ids = existing_video_ids | set(candidates)
+    failures = {}
+    for message in metadata_rechecks + source_errors:
+        for video_id in known_video_ids:
+            if pipeline_common.re.search(r"(?<![\w-])" + pipeline_common.re.escape(video_id) + r"(?![\w-])", message):
+                failures[video_id] = message
+    if not rechecks_file.exists():
+        for message in (existing_doc.get("coverage") or {}).get("metadata_recheck_pending", []):
+            for video_id in existing_video_ids:
+                if pipeline_common.re.search(r"(?<![\w-])" + pipeline_common.re.escape(video_id) + r"(?![\w-])", message):
+                    rechecks[video_id] = {"reason": message}
+    for video_id in fetched_video_ids - set(failures):
+        rechecks.pop(video_id, None)
+    for video_id, reason in failures.items():
+        attempted_at = attempts.get(video_id, 0)
+        rechecks[video_id] = {
+            "reason": reason,
+            "last_attempt_at": attempted_at,
+            "last_success_at": (existing_by_video.get(video_id) or {}).get("metadata_checked_at"),
+            "next_attempt_at": attempted_at + (86400 if video_id in existing_video_ids else 3600),
+        }
+    pipeline_common.atomic_json(rechecks_file, {"records": rechecks})
+    metadata_rechecks = [rechecks[video_id]["reason"] for video_id in sorted(rechecks)]
     return {
         "schema_version": 2,
         "source": f"official YouTube channel {pipeline_common.OFFICIAL_CHANNEL_ID} and official portal announcements",

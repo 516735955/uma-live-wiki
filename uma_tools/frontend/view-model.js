@@ -1,10 +1,34 @@
-import { isDaringTactHeroActive, getDaringTactCrowned } from "/uma_tools/frontend/hero-campaign.js";
+import { DARING_TACT_HERO_CONFIG, isDaringTactHeroActive, getDaringTactCrowned } from "/uma_tools/frontend/hero-campaign.js";
 
 export function createViewModel(domains, routes) {
-  const daringTactHeroActive = isDaringTactHeroActive();
+  const daringTactHeroActive = Vue.ref(isDaringTactHeroActive());
+  const crowned = Vue.ref(getDaringTactCrowned());
+  let expiryTimer;
+  function refreshCampaign() {
+    daringTactHeroActive.value = isDaringTactHeroActive();
+    crowned.value = getDaringTactCrowned();
+    clearTimeout(expiryTimer);
+    const now = Date.now();
+    const nextBoundary = [DARING_TACT_HERO_CONFIG.startIso, DARING_TACT_HERO_CONFIG.endIso]
+      .map(Date.parse).find(time => time > now);
+    if (nextBoundary) expiryTimer = setTimeout(refreshCampaign, Math.min(nextBoundary - now, 2147483647));
+  }
+  if (Vue.getCurrentInstance()) {
+    Vue.onMounted(() => {
+      refreshCampaign();
+      window.addEventListener("focus", refreshCampaign);
+      document.addEventListener("uma-campaign-theme", refreshCampaign);
+    });
+    Vue.onBeforeUnmount(() => {
+      clearTimeout(expiryTimer);
+      window.removeEventListener("focus", refreshCampaign);
+      document.removeEventListener("uma-campaign-theme", refreshCampaign);
+    });
+    Vue.watch(domains.routing.routeReady, ready => { if (ready) refreshCampaign(); });
+  }
   return {
     daringTactHeroActive,
-    daringTactCrowned: getDaringTactCrowned,
+    daringTactCrowned: () => crowned.value,
     audio: domains.player.audio,
     albums: domains.albums.albums,
     albumsError: domains.albums.albumsError,

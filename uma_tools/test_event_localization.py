@@ -7,11 +7,33 @@ import unittest
 from unittest.mock import patch
 
 from event_localization import apply_localizations
-from publish_event_sources import preserve_collaborator_changes, parse_source, merge_localizations
+from publish_event_sources import preserve_collaborator_changes, parse_source, merge_localizations, source_content
 from events_pipeline import program_discovery
 
 
 class EventLocalizationTests(unittest.TestCase):
+    def test_publication_ignores_clocks_and_source_formatting_but_keeps_real_changes(self):
+        before = {"refreshed_at": "old", "coverage": {"pending": 1},
+                  "events": [{"date_zh": "2027-01-19 (火)", "times": "開演 19:00 終演 22:00",
+                              "actors": [{"name": "A", "url": "/actors/A/1"}, {"name": "B", "url": "/actors/B/2"}]}]}
+        incoming = json.loads(json.dumps(before))
+        incoming["refreshed_at"] = "new"
+        incoming["coverage"]["pending"] = 2
+        incoming["events"][0]["date_zh"] = "2027-01-19\u00a0(火)"
+        incoming["events"][0]["times"] += " ※終演時間はあくまでも目安になります"
+        incoming["events"][0]["actors"].reverse()
+        self.assertEqual(source_content(before), source_content(incoming))
+        incoming["events"][0]["times"] = "開演 19:30 終演 22:00"
+        self.assertNotEqual(source_content(before), source_content(incoming))
+
+    def test_actor_rename_reuses_the_accepted_identity_and_historical_name(self):
+        from crawl_events import merge_listing, preserve_actor_names
+        accepted = [{"name": "城木玲亜", "url": "https://www.eventernote.com/actors/城木玲亜/32808"}]
+        incoming = [{"name": "repi", "url": "https://www.eventernote.com/actors/repi/32808"}]
+        merged = merge_listing({"actors": accepted}, {"actors": incoming})
+        self.assertEqual(merged["actors"], accepted)
+        self.assertEqual(preserve_actor_names(accepted, incoming)[0]["name"], "城木玲亜")
+
     def test_official_gameplay_feed_keeps_exact_time_and_channel(self):
         channel = 'UC' + 'a' * 22
         raw = f'''<feed xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://www.youtube.com/xml/schemas/2015">

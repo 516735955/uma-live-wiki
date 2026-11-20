@@ -182,6 +182,29 @@
     relSource = PED_REL;
   }
 
+  function pedigreeThemeCss() {
+    var dtDark = document.body && document.body.classList.contains('dt-detail-theme');
+    var dtCrowned = document.body && document.body.classList.contains('dt-crowned-theme');
+    return dtDark ? (
+      'html,body,.lab-page,.lab-workspace,.workspace-content,.workspace-body,.graph-viewport,.graph-stage{background:' + (dtCrowned ? '#09122b' : '#070d1e') + ' !important;color:#edf6ff !important;}' +
+      '.ped-node,.node-card,[class*="node"]{background:rgba(15,26,54,.92) !important;border-color:' + (dtCrowned ? 'rgba(248,212,120,.32)' : 'rgba(121,198,219,.28)') + ' !important;color:#eef7ff !important;box-shadow:0 6px 18px rgba(2,6,18,.45) !important;}' +
+      '.ped-node:hover,.node-card:hover{border-color:' + (dtCrowned ? '#f8d478' : '#79c6db') + ' !important;}' +
+      '.ped-name,.node-name,.horse-name,.character-link{color:#f5fbff !important;}' +
+      '.ped-sub,.node-sub,.kinship,.lab-footnote{color:rgba(186,220,244,.76) !important;}' +
+      'svg path,svg line{stroke:' + (dtCrowned ? 'rgba(248,212,120,.36)' : 'rgba(121,198,219,.34)') + ' !important;}' +
+      '.sheet-panel,.inspector-card{background:#0b1530 !important;color:#edf6ff !important;border-color:rgba(121,198,219,.24) !important;}'
+    ) : '';
+  }
+
+  function syncPedigreeTheme() {
+    document.querySelectorAll('.c-pedigree-lens-frame').forEach(function (frame) {
+      var style = frame.contentDocument && frame.contentDocument.getElementById('pedigree-theme');
+      if (style) style.textContent = pedigreeThemeCss();
+    });
+  }
+
+  document.addEventListener('uma-campaign-theme', syncPedigreeTheme);
+
   function renderBloodGraphInDetail(box, root) {
     if (!box) return;
     refreshRelIndex();
@@ -209,19 +232,7 @@
     var sampleId = String(root).replace(/[^a-z0-9_]/gi, '');
     frame.className = 'c-pedigree-lens-frame';
     frame.dataset.pedigreeSample = root;
-    var dtDark = document.body && document.body.classList.contains('dt-detail-theme');
-    var dtCrowned = document.body && document.body.classList.contains('dt-crowned-theme');
-    var dtPedigreeStyle = dtDark ? (
-      '<style>' +
-      'html,body,.lab-page,.lab-workspace,.workspace-content,.workspace-body,.graph-viewport,.graph-stage{background:' + (dtCrowned ? '#09122b' : '#070d1e') + ' !important;color:#edf6ff !important;}' +
-      '.ped-node,.node-card,[class*="node"]{background:rgba(15,26,54,.92) !important;border-color:' + (dtCrowned ? 'rgba(248,212,120,.32)' : 'rgba(121,198,219,.28)') + ' !important;color:#eef7ff !important;box-shadow:0 6px 18px rgba(2,6,18,.45) !important;}' +
-      '.ped-node:hover,.node-card:hover{border-color:' + (dtCrowned ? '#f8d478' : '#79c6db') + ' !important;}' +
-      '.ped-name,.node-name,.horse-name,.character-link{color:#f5fbff !important;}' +
-      '.ped-sub,.node-sub,.kinship,.lab-footnote{color:rgba(186,220,244,.76) !important;}' +
-      'svg path,svg line{stroke:' + (dtCrowned ? 'rgba(248,212,120,.36)' : 'rgba(121,198,219,.34)') + ' !important;}' +
-      '.sheet-panel,.inspector-card{background:#0b1530 !important;color:#edf6ff !important;border-color:rgba(121,198,219,.24) !important;}' +
-      '</style>'
-    ) : '';
+    var dtPedigreeStyle = '<style id="pedigree-theme">' + pedigreeThemeCss() + '</style>';
     frame.srcdoc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
       '<link rel="stylesheet" href="/uma_tools/pedigree-lab.css">' +

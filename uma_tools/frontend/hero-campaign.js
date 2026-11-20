@@ -2,9 +2,9 @@ export const DARING_TACT_HERO_CONFIG = Object.freeze({
   id: "daring-tact-2026",
   characterId: "daringtact",
   imageUrl: "/uma_tools/img/daring_tact_stand_107501.png",
-  // 7-day celebration window (Asia/Shanghai, inclusive)
+  // Seven days in Asia/Shanghai, with an exclusive end.
   startIso: "2026-11-19T00:00:00+08:00",
-  endIso: "2026-11-26T23:59:59+08:00",
+  endIso: "2026-11-26T00:00:00+08:00",
   crownedStorageKey: "uma_dt_crowned_2026",
 });
 
@@ -24,7 +24,27 @@ export function isDaringTactHeroActive(now = new Date(), search = typeof window 
   const ts = now instanceof Date ? now.getTime() : Date.parse(now);
   const start = Date.parse(DARING_TACT_HERO_CONFIG.startIso);
   const end = Date.parse(DARING_TACT_HERO_CONFIG.endIso);
-  return Number.isFinite(ts) && ts >= start && ts <= end;
+  return Number.isFinite(ts) && ts >= start && ts < end;
+}
+
+export function preloadHomeHero() {
+  if (typeof document === "undefined" || !["/", "/zh-Hans", "/zh-Hans/"].includes(window.location.pathname)) return;
+  const preload = document.createElement("link");
+  preload.rel = "preload";
+  preload.as = "image";
+  preload.fetchPriority = "high";
+  if (isDaringTactHeroActive()) {
+    preload.type = "image/png";
+    preload.href = DARING_TACT_HERO_CONFIG.imageUrl;
+  } else {
+    preload.type = "image/avif";
+    preload.href = window.matchMedia("(max-width:480px)").matches
+      ? "/uma_tools/img/hero_bg_phone.avif"
+      : window.matchMedia("(max-width:768px)").matches
+        ? "/uma_tools/img/hero_bg_tablet.avif"
+        : "/uma_tools/img/hero_bg.avif";
+  }
+  document.head.appendChild(preload);
 }
 
 export function getDaringTactCrowned() {
@@ -62,6 +82,7 @@ export function syncDaringTactBodyTheme(mode = null) {
   if (body.classList.contains("dt-home-theme") || body.classList.contains("dt-detail-theme")) {
     body.classList.toggle("dt-crowned-theme", getDaringTactCrowned());
   }
+  document.dispatchEvent?.(new CustomEvent("uma-campaign-theme"));
 }
 
 // Cinematic fluted-glass prism curtain when transitioning from homepage to Daring Tact detail page

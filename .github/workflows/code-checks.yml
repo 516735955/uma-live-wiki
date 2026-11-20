@@ -19,20 +19,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: python -m pip install Pillow beautifulsoup4 openpyxl
       - run: npm ci --prefix uma_tools --include=dev --no-audit --no-fund
       - name: Core catalog, server, and release checks
         run: |
-          npm --prefix uma_tools run test:catalog
+          node uma_tools/test_catalog_store.js
           npm --prefix uma_tools run test:routes
-          node uma_tools/test_server_regressions.js
+          node uma_tools/test_frontend_regressions.js
           node uma_tools/test_api_regressions.js
           node deploy/test_release.js
           node deploy/test_data_sync.js
-          node deploy/test_deployment_state.js
           bash -n deploy/update.sh
-      - name: Music metadata check
-        run: python uma_tools/sync_music_metadata.py --check

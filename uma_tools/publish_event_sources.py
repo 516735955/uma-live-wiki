@@ -86,6 +86,39 @@ def merge_localizations(reviewed: dict, runtime: dict) -> None:
                 'source' if source == translated and not re.search(r'[\u3040-\u30ff]', source) else 'unknown')
 
 
+def source_content(value, field: str = ""):
+    """Compare collected content without collection clocks or presentation whitespace."""
+    if isinstance(value, dict):
+        return {key: source_content(item, key) for key, item in value.items()
+                if key not in {"refreshed_at", "scraped_at", "metadata_checked_at", "coverage"}}
+    if isinstance(value, list):
+        rows = [source_content(item) for item in value]
+        if field == "actors":
+            rows.sort(key=lambda row: str(row.get("url") or row.get("name") or ""))
+        return rows
+    if isinstance(value, str) and field in {"date_zh", "times"}:
+        if field == "times":
+            value = value.replace("※終演時間はあくまでも目安になります", "")
+        return re.sub(r"\s+", " ", value).strip()
+    return value
+
+
+def restore_equivalent_sources(collected: dict, previous: dict) -> None:
+    for name, value in collected.items():
+        if source_content(value) == source_content(previous[name]):
+            collected[name] = previous[name]
+
+
+def report_pending_localizations() -> None:
+    subprocess.run(["node", "-e",
+                    "require('./uma_tools/localize_events').run(undefined,{noApi:true,rebuild:false}).catch(e=>{console.error(e.message);process.exitCode=1})"],
+                   cwd=ROOT, check=True)
+    runtime = ROOT / "data/auto_update/event_localizations.json"
+    if runtime.exists():
+        pending = json.loads(runtime.read_text(encoding="utf-8")).get("pending", [])
+        print("Final published-source translation review: " + json.dumps(pending, ensure_ascii=False))
+
+
 def main() -> int:
     baseline = git("rev-parse", "HEAD")
     before = {name: revision_json(baseline, name) for name in SOURCES}
@@ -93,6 +126,7 @@ def main() -> int:
     runtime = ROOT / "data/auto_update/event_localizations.json"
     if runtime.exists():
         merge_localizations(collected[SOURCES[2]], json.loads(runtime.read_text(encoding="utf-8")))
+    restore_equivalent_sources(collected, before)
     # Preserve the collected result in a normal commit before following a
     # collaborator's newer main. This runs only in the clean CI checkout.
     for name in SOURCES:
@@ -104,6 +138,15 @@ def main() -> int:
             for name in SOURCES:
                 merged = preserve_collaborator_changes(before[name], collected[name], revision_json("HEAD", name))
                 write_source(name, merged)
+        current = {name: revision_json("HEAD", name) for name in SOURCES}
+        publishing = {name: parse_source(name, (ROOT / name).read_text(encoding="utf-8")) for name in SOURCES}
+        restore_equivalent_sources(publishing, current)
+        for name, value in publishing.items():
+            write_source(name, value)
+        if publishing == current:
+            print("No event content changes to publish.")
+            report_pending_localizations()
+            return 0
         subprocess.run([sys.executable, str(ROOT / "uma_tools/update_events.py")], cwd=ROOT, check=True)
         subprocess.run([sys.executable, str(ROOT / "uma_tools/build_anime_catalog.py")], cwd=ROOT, check=True)
         subprocess.run(["node", str(ROOT / "uma_tools/build_search_pronunciations.js")], cwd=ROOT, check=True)
@@ -112,11 +155,13 @@ def main() -> int:
         git("add", "--", *SOURCES, *GENERATED, *group_images)
         if not git("diff", "--cached", "--name-only"):
             print("No event data changes to publish.")
+            report_pending_localizations()
             return 0
         date = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date().isoformat()
         git("commit", "-m", f"chore(events): sync official programs and appearances {date}", capture=False)
         pushed = subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=ROOT)
         if pushed.returncode == 0:
+            report_pending_localizations()
             return 0
     print("main changed repeatedly; collected data remains in the CI commits.", file=sys.stderr)
     return 1
