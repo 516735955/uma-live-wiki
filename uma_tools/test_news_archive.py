@@ -13,6 +13,15 @@ from archive_news import source_article
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_failed_translation_is_reviewable_without_losing_original(self):
+        with tempfile.TemporaryDirectory() as directory:
+            archive = NewsDatabase(Path(directory) / 'news.sqlite')
+            saved = archive.put('official-1', {'detail': {'announce_id': 1, 'title': 'お知らせ', 'message': '<p>原文</p>'}})
+            archive.dispatch('retry', {'key': 'official-1', 'revision': saved['detail']['archive_revision']})
+            self.assertEqual(archive.get('official-1')['detail']['translation_state'], 'review_required')
+            self.assertEqual(archive.get('official-1')['detail']['message'], '<p>原文</p>')
+            archive.db.close()
+
     def test_archived_removed_source_backs_off_without_losing_bilingual_copy(self):
         with tempfile.TemporaryDirectory() as directory:
             archive = NewsDatabase(Path(directory) / 'news.sqlite')

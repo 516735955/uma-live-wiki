@@ -16,6 +16,12 @@ async function main() {
   assert(!translationFactsMatch('11/6 12:00', '11/61 2:00'), 'a different date and hour are not accepted');
   assert(translationFactsMatch('11/10 12:00', '11月10日12:00'), 'equivalent Chinese dates with times are accepted');
   assert(!translationFactsMatch('11/11 11:59', '11/11:59'), 'an omitted hour or day is still rejected');
+  assert(translationFactsMatch('2026/11/16 12:00', '2026/11/1612:00'), 'a full source date keeps its time boundary');
+  assert(!translationFactsMatch('2026/11/16 12:00', '2026/11/1612:01'), 'changed minutes in a full date are rejected');
+  const protectedFacts = createTerms([{ ja: 'デアリングタクト', zh: '谋勇兼备' }]).protect('2026/11/16 12:00から、デアリングタクトを1名、50,000円。');
+  assert(!/\d/.test(protectedFacts.text), 'dates, quantities and money are protected before translation');
+  assert.strictEqual(protectedFacts.restore(protectedFacts.text), '2026/11/16 12:00から、谋勇兼备を1名、50,000円。');
+  assert.strictEqual(protectedFacts.restore(protectedFacts.text.replace(/ZXQNAME[A-Z]+QXZ/, '')), null, 'a missing fact cannot become a published translation');
   const previous = [process.env.BAIDU_APPID, process.env.BAIDU_SECRET];
   process.env.BAIDU_APPID = process.env.BAIDU_SECRET = 'fixture';
   try {
@@ -70,6 +76,9 @@ async function main() {
     const acceptedName = await article('<p>・シンパシー</p>', null,
       { fragments: { '・シンパシー': '・シンパシー' } });
     assert.strictEqual(acceptedName.queries.length, 0, 'accepted unchanged names in the bilingual archive are not billed again');
+    const namedFacts = await article('<p>・架空名 2026/11/16 12:00</p>', null);
+    assert.strictEqual(namedFacts.queries.length, 0, 'known names and dates need no provider request');
+    assert.strictEqual(namedFacts.data.message_zh, '<p>・名称 2026/11/16 12:00</p>');
     const failed = await article('<p>お知らせ</p>', null);
     const repeated = await article('<p>お知らせ</p><p>お知らせ</p>', '通知');
     assert.deepStrictEqual(repeated.queries, ['お知らせ'], 'repeated article paragraphs consume one provider translation');

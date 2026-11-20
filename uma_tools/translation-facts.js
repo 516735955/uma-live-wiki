@@ -16,7 +16,7 @@ function translationFactsMatch(source, translated) {
   // Restore only a date/time boundary explicitly present in the source.
   // Baidu can join "11/6 12:00" as "11/612:00"; guessing the split
   // from the translated digits alone can instead read it as "11/61 2:00".
-  for (const match of String(source || '').normalize('NFKC').matchAll(/\b(\d{1,2}\/\d{1,2})\s+(\d{1,2}:\d{2})\b/g)) {
+  for (const match of String(source || '').normalize('NFKC').matchAll(/\b((?:\d{4}\/)?\d{1,2}\/\d{1,2})\s+(\d{1,2}:\d{2})\b/g)) {
     const joined = match[1] + match[2];
     candidate = candidate.replace(new RegExp('(?<![\\d/])' + joined.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?!\\d)', 'g'), match[1] + ' ' + match[2]);
   }

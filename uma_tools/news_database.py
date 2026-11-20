@@ -194,6 +194,8 @@ class NewsDatabase:
             translated = json.loads(row['translated'])
             detail.update({name: translated.get(name, '') for name in ('title_zh', 'message_zh')})
         detail['translation_state'] = row['state']
+        if row['state'] != 'complete' and row['error'] == 'translation incomplete':
+            detail['translation_state'] = 'review_required'
         detail['archive_revision'] = row['revision']
         detail['translation_owner'] = row['owner']
         detail['translator'] = row['translator'] or ''

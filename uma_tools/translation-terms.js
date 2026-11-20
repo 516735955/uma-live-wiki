@@ -61,8 +61,9 @@ function loadTerms(root) {
 function createTerms(terms) {
   const byName = new Map(terms.map((term) => [term.ja, term.zh]));
   const pattern = new RegExp(terms.map((term) => term.ja.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g');
-  const protectedPattern = new RegExp('https?:\\/\\/[^\\s<>"“”「」（）()，。]+|' + pattern.source, 'g');
-  const revision = crypto.createHash('sha256').update('alphabetic-v2:' + JSON.stringify(terms)).digest('hex').slice(0, 12);
+  const facts = '(?:\\d{4}/)?\\d{1,2}/\\d{1,2}\\s+\\d{1,2}:\\d{2}|[+-]?\\d+(?:[,./:]\\d+)*';
+  const protectedPattern = new RegExp('https?:\\/\\/[^\\s<>"“”「」（）()，。]+|' + pattern.source + '|' + facts, 'g');
+  const revision = crypto.createHash('sha256').update('alphabetic-facts-v3:' + JSON.stringify(terms)).digest('hex').slice(0, 12);
   function letters(number) {
     let result = '';
     do { result = String.fromCharCode(65 + number % 26) + result; number = Math.floor(number / 26) - 1; } while (number >= 0);
@@ -83,7 +84,7 @@ function createTerms(terms) {
         // Numeric identifiers lose repeated zeroes in real long-form translations.
         const prefix = namespace === '' ? '' : letters(Number(namespace)) + 'Z';
         const token = 'ZXQNAME' + prefix + letters(replacements.length) + 'QXZ';
-        replacements.push({ token, value: /^https?:\/\//.test(name) ? name : byName.get(name) });
+        replacements.push({ token, value: byName.get(name) || name });
         return token;
       });
       return {

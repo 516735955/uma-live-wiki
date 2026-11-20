@@ -217,7 +217,7 @@ exports.createService = function (deps) {
     const rejectedKey = 'rejected:' + translationKeyWithTerms(text, terms);
     if (translations.get(rejectedKey)) return Promise.resolve('');
     const known = terms.protect(text);
-    if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
+    if (known.count && !/[ぁ-ゖァ-ヺ\u3400-\u9fff]/.test(known.text))
       return Promise.resolve(known.restore(known.text));
     return new Promise((resolve) => {
       const protectedText = terms.protect(text);
@@ -319,7 +319,7 @@ exports.createService = function (deps) {
   }
 
   function hasCjk(s) {
-    return /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]/.test(s);
+    return /[ぁ-ゖァ-ヺ\u3400-\u4dbf\u4e00-\u9fff]/.test(s);
   }
 
   function translateBatchLines(lines, cb, signal, attempt = 0, terms = currentTerms()) {
@@ -486,7 +486,7 @@ exports.createService = function (deps) {
       if (cachedFragment) translated.set(run, terms.normalize(cachedFragment));
       else {
         const known = terms.protect(run.text);
-        if (known.count && !/[\u3040-\u30ff\u3400-\u9fff]/.test(known.text))
+        if (known.count && !/[ぁ-ゖァ-ヺ\u3400-\u9fff]/.test(known.text))
           translated.set(run, known.restore(known.text));
         else if (translations.get('rejected:' + translationKeyWithTerms(run.text, terms))) {
           translated.set(run, run.text);

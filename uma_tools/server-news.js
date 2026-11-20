@@ -65,8 +65,9 @@ exports.createService = function (deps) {
     if (translationRunning || deps.NO_AUTO_CRAWL || deps.translationAvailable === false) return;
     translationRunning = true;
     try {
-      const jobs = await archive.request('jobs', { owner: 'baidu', limit: 1, claim: true });
-      for (const job of jobs) {
+      for (let index = 0; index < 10; index++) {
+        const [job] = await archive.request('jobs', { owner: 'baidu', limit: 1, claim: true });
+        if (!job) break;
         const detail = applyArticleEdits(job.data).detail;
         const controller = new AbortController();
         const result = await new Promise(resolve => {
@@ -106,6 +107,7 @@ exports.createService = function (deps) {
         }));
       }
       await deps.updateNewsTopics().catch(error => console.error('[news:topic-update]', error.message));
+      await translateArchivedNews();
     } catch (error) { console.error('[news:archive-refresh]', error.message); }
     finally { archiveRefreshRunning = false; }
   }

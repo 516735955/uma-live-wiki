@@ -164,7 +164,7 @@ async function main() {
   await translation.translateHtmlMessage('<p>原文\n原文</p>', (value) => { result = value; });
   await tick();
   assert.strictEqual(result, '<p>译文 译文</p>', 'HTML whitespace does not create extra API translation rows');
-  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '★★★★译文1500' }] });
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: text.replace(/^★+/, '★★★★').replace('原文', '译文') }] });
   translation.translateBatchLines(['★★★原文1500'], (value) => { lines = value; });
   await tick();
   assert.strictEqual(lines[0], '★★★译文1500', 'a translated rating retains its original star count');
@@ -173,18 +173,18 @@ async function main() {
   await tick();
   assert.strictEqual(lines[0], '原文1500', 'a changed amount keeps the original line');
   assert.strictEqual(linesDirty, true);
-  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '票价：￥2000（含10%税）' }] });
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: text.replace('チケット料金', '票价').replace('税込', '含税') }] });
   translation.translateBatchLines(['チケット料金：￥2,000 (10%税込)'], (value) => { lines = value; });
   await tick();
-  assert.strictEqual(lines[0], '票价：￥2000（含10%税）', 'thousands separators are formatting, not a changed amount');
-  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '【9/2817:50追记】' }] });
+  assert.strictEqual(lines[0], '票价：￥2,000 (10%含税)', 'protected amounts retain the source digits and separators');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: text.replace('追記', '追记') }] });
   translation.translateBatchLines(['【9/28 17:50追記】'], (value) => { lines = value; });
   await tick();
-  assert.strictEqual(lines[0], '【9/2817:50追记】', 'merged date-time spacing keeps the same digits in order');
-  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: '开场12：00' }] });
+  assert.strictEqual(lines[0], '【9/28 17:50追记】', 'protected dates retain the source time boundary');
+  translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: text.replace('開場', '开场') }] });
   translation.translateBatchLines(['開場12:00'], (value) => { lines = value; });
   await tick();
-  assert.strictEqual(lines[0], '开场12：00', 'full-width colons are formatting, not a changed time');
+  assert.strictEqual(lines[0], '开场12:00', 'protected times retain the source clock');
   for (const [source, destination] of [['1.5倍', '15倍'], ['開場12:30', '开场1:23:0'], ['開催します', '開催します']]) {
     translation.fetchTranslation = async (text) => ({ trans_result: [{ src: text, dst: destination }] });
     translation.translateBatchLines([source], (value, dirty) => { lines = value; linesDirty = dirty; });
