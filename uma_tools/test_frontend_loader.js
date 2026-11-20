@@ -11,7 +11,7 @@ function loadFrontend(context) {
   context.installNavigationPrefetch = () => () => {};
   const directory = path.join(__dirname, "frontend");
   const campaignSource = read(path.join(directory, "hero-campaign.js")).replace(/export (const|function) /g, '$1 ');
-  Object.assign(context, vm.runInContext('(function(){' + campaignSource + ';return {DARING_TACT_HERO_CONFIG,isDaringTactHeroActive,getDaringTactCrowned,setDaringTactCrowned,syncDaringTactBodyTheme,triggerDaringTactTransition};})()', context));
+  Object.assign(context, vm.runInContext('(function(){' + campaignSource + ';return {DARING_TACT_HERO_CONFIG,isDaringTactHeroActive,getDaringTactCrowned,setDaringTactCrowned,syncDaringTactBodyTheme,syncDaringTactRouteTheme,triggerDaringTactTransition};})()', context));
   const heroSource = read(path.join(directory, "daring-tact-hero.js"))
     .replace(/^import[\s\S]*?from "[^"]+";\n/, "")
     .replace("export const DaringTactHero", "const DaringTactHero");

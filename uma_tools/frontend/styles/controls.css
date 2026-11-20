@@ -45,7 +45,7 @@ a:is(.album-card,.music-card-main,.creator-catalog-row,.event-catalog-row,.album
 }
 .ui-search:focus-within,
 .ui-select-control.open,
-.ui-select-control:focus-within { border-color: var(--ui-orange); box-shadow: 0 0 0 3px rgba(245,130,32,.13); }
+.ui-select-control:focus-within { border-color: var(--ui-focus); box-shadow: 0 0 0 3px var(--ui-focus-halo); }
 .ui-search > svg { width: 20px; height: 20px; margin-left: 14px; fill: none; stroke: var(--ui-cobalt-deep); stroke-width: 2; flex: none; }
 .ui-search input,
 #tab-characters .ui-search .c-search,
@@ -149,7 +149,7 @@ a:is(.album-card,.music-card-main,.creator-catalog-row,.event-catalog-row,.album
 .song-catalog { border-top: 3px solid var(--ui-cobalt-deep); }
 .event-catalog-row:hover { background: #f7f9ff; box-shadow: none; transform: translateX(3px); }
 .event-catalog-row > svg,
-.relation-song-row svg { stroke: var(--ui-orange-deep); }
+.relation-song-row svg { stroke: var(--ui-disclosure-accent, var(--ui-orange-deep)); }
 .navigation-progress { position: fixed; z-index: 1200; inset: 0 0 auto; height: 3px; pointer-events: none; overflow: hidden; background: #3157ed18; }
 .navigation-progress span { display: block; width: 38%; height: 100%; background: var(--ui-orange,#ff8718); transform: translateX(-100%); animation: route-progress 1.15s ease-in-out infinite; }
 .route-placeholder { min-height: 440px; padding-top: 12px; }

@@ -63,6 +63,10 @@ exports.createService = function (deps) {
         res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }); res.end("404 Not Found"); return;
       }
       deps.fs.fstat(fd, (err2, st2) => {
+      if (req.aborted || res.destroyed || res.writableEnded) {
+        deps.fs.close(fd, () => {});
+        return;
+      }
       if (err2 || !st2.isFile()) {
         deps.fs.close(fd, () => {});
         res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
@@ -130,7 +134,7 @@ exports.createService = function (deps) {
         res.end();
         return;
       }
-        const input = deps.fs.createReadStream(null, { fd, autoClose: true });
+      const input = deps.fs.createReadStream(null, { fd, autoClose: true });
       const streams = shouldCompress
         ? [input, deps.zlib.createGzip(), res]
         : [input, res];

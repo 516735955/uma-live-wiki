@@ -76,13 +76,22 @@ export function syncDaringTactBodyTheme(mode = null) {
     body.classList.add("dt-detail-theme");
     body.classList.remove("dt-home-theme");
   } else if (mode === "none") {
-    body.classList.remove("dt-home-theme", "dt-detail-theme", "dt-crowned-theme");
+    body.classList.remove("dt-home-theme", "dt-detail-theme", "dt-crowned-theme", "ui-theme-dark");
     return;
   }
   if (body.classList.contains("dt-home-theme") || body.classList.contains("dt-detail-theme")) {
+    body.classList.add("ui-theme-dark");
     body.classList.toggle("dt-crowned-theme", getDaringTactCrowned());
   }
   document.dispatchEvent?.(new CustomEvent("uma-campaign-theme"));
+}
+
+export function syncDaringTactRouteTheme() {
+  const path = window.location.pathname.replace(/\/$/, "");
+  const active = isDaringTactHeroActive();
+  const mode = !active ? "none" : ["", "/zh-Hans"].includes(path) ? "home"
+    : /^\/zh-Hans\/database\/characters\/daringtact(?:\/|$)/i.test(path) ? "detail" : "none";
+  syncDaringTactBodyTheme(mode);
 }
 
 // Cinematic fluted-glass prism curtain when transitioning from homepage to Daring Tact detail page

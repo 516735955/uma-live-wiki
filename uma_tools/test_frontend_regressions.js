@@ -41,6 +41,7 @@ async function main() {
     async request(url) {
       calls.push(url);
       const parsed = new URL(url, location);
+      if (parsed.pathname === '/api/home-summary') return { stats: { songs: 1043, albums: 116, live: 61, performances: 47 } };
       if (parsed.pathname === '/api/news-detail') {
         const response = await newsDetail.promise;
         if (!response.ok) throw new Error('HTTP ' + response.status);
@@ -88,7 +89,7 @@ async function main() {
   vm.runInContext(source('vendor/vue.global.prod.js'), context);
   vm.runInContext(source('ui-components.js'), context);
   context.document = {
-    body: { classList: { toggle() {} } }, getElementById() { return null; }, querySelector() { return null; },
+    body: { classList: { toggle() {}, add() {}, remove() {}, contains() { return false; } } }, getElementById() { return null; }, querySelector() { return null; },
     createElement() { return {}; },
     head: { appendChild(script) { pedigreeAttempts += 1; queueMicrotask(() => script.onerror()); } }
   };
@@ -534,6 +535,16 @@ async function main() {
   for (const name of venuePage.bindings) {
     assert.ok(name in app, `${name} resolves on the root view model`);
   }
+  const summariesBefore = calls.filter(url => url === '/api/home-summary').length;
+  await app.navigateTo('/zh-Hans/');
+  await context.Vue.nextTick();
+  assert.strictEqual(calls.filter(url => url === '/api/home-summary').length, summariesBefore + 1, 'returning from a detail route loads home statistics');
+  assert.strictEqual(app.statSongs.value, 1043);
+  await app.navigateTo('/zh-Hans/music/songs');
+  location.href = 'http://localhost/zh-Hans/';
+  await app.applyCurrentRoute();
+  await context.Vue.nextTick();
+  assert.strictEqual(calls.filter(url => url === '/api/home-summary').length, summariesBefore + 2, 'history restoration loads the same home statistics');
   console.log('frontend regressions passed');
 }
 

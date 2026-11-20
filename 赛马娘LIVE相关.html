@@ -70,6 +70,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
 <link rel="stylesheet" href="/uma_tools/image-viewer.css">
 <script type="module" src="/uma_tools/image-viewer.js"></script>
 <link rel="stylesheet" href="/uma_tools/context-navigation.css">
+<link rel="stylesheet" href="/uma_tools/frontend/styles/theme-components.css">
 <script defer src="/uma_tools/context-navigation.js"></script>
 </head>
 <body>
@@ -107,7 +108,7 @@ html,body{margin:0;min-height:100%;background:#f5f4f9;color:#20283b;font-family:
             </nav>
         </div>
         <div class="home-hero" :class="{ 'home-hero-daring-tact': daringTactHeroActive }">
-            <daring-tact-hero v-if="daringTactHeroActive" @open-character="openCharacter($event)"></daring-tact-hero>
+            <daring-tact-hero v-if="daringTactHeroActive" @open-character="navNavigate(routes.characters($event))"></daring-tact-hero>
         </div>
         <a v-if="nextUpcomingEvent && !daringTactHeroActive" class="home-upcoming" :href="nextUpcomingHref" @click="internalLink($event, openNextUpcoming)">
             <span class="hu-badge">即将举办</span>

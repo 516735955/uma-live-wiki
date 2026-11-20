@@ -1,4 +1,5 @@
 import { preloadPage } from "/uma_tools/frontend/pages.js";
+import { syncDaringTactRouteTheme } from "/uma_tools/frontend/hero-campaign.js";
 /* routing state and behavior; external dependencies are explicit live ports. */
 export function createRouting(deps) {
   const routeReady = deps.ref(false);
@@ -37,6 +38,7 @@ export function createRouting(deps) {
   }
 
   function stageRoute(path, title) {
+    syncDaringTactRouteTheme();
     beginRouteFeedback(path, title);
     const parts = new URL(path, window.location.origin).pathname.split('/').filter(Boolean).slice(1);
     deps.home.value = parts.length === 0;
@@ -511,6 +513,7 @@ export function createRouting(deps) {
     if (deps.newsDetailRequest && deps.newsDetailRequest.path !== path)
       deps.cancelNewsDetailRequest();
     pendingEntitySource = false;
+    syncDaringTactRouteTheme();
     if (navigationPending.value && !restoringRoute) {
       navigationPending.value = false;
       routeReady.value = true;

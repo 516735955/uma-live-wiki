@@ -138,21 +138,21 @@
     cursor: pointer;
     transition: background 160ms ease,color 160ms ease;
 }
-.ui-disclosure-summary:hover { background: #f7f8fc; }
+.ui-disclosure-summary:hover { background: var(--ui-disclosure-hover, #f7f8fc); }
 .ui-disclosure.has-leading > .ui-disclosure-summary { grid-template-columns: auto minmax(0,1fr) 22px; }
 .ui-disclosure.has-meta > .ui-disclosure-summary { grid-template-columns: minmax(0,1fr) auto 22px; }
 .ui-disclosure.has-leading.has-meta > .ui-disclosure-summary { grid-template-columns: auto minmax(0,1fr) auto 22px; }
-.ui-disclosure.open > .ui-disclosure-summary { background: #f2f5ff; }
+.ui-disclosure.open > .ui-disclosure-summary { background: var(--ui-disclosure-open, #f2f5ff); }
 .ui-disclosure-leading { display: grid; place-items: center; }
 .ui-disclosure-leading img { width: 52px; height: 52px; border-radius: 5px; object-fit: cover; }
 .ui-disclosure-copy { min-width: 0; }
 .ui-disclosure-copy b,.ui-disclosure-copy small { display: block; }
 .ui-disclosure-copy b { overflow: hidden; color: var(--ui-navy); font-size: .9rem; font-weight: 880; text-overflow: ellipsis; white-space: nowrap; }
-.ui-disclosure-copy small { margin-top: 4px; color: #657089; font-size: .78rem; line-height: 1.45; }
-.ui-disclosure-meta { color: #657089; font-size: .78rem; font-weight: 750; white-space: nowrap; }
-.ui-disclosure-chevron { width: 20px; height: 20px; fill: none; stroke: var(--ui-orange-deep); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 220ms var(--ui-ease); }
+.ui-disclosure-copy small { margin-top: 4px; color: var(--ui-disclosure-muted, #657089); font-size: .78rem; line-height: 1.45; }
+.ui-disclosure-meta { color: var(--ui-disclosure-muted, #657089); font-size: .78rem; font-weight: 750; white-space: nowrap; }
+.ui-disclosure-chevron { width: 20px; height: 20px; fill: none; stroke: var(--ui-disclosure-accent, var(--ui-orange-deep)); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 220ms var(--ui-ease); }
 .ui-disclosure.open .ui-disclosure-chevron { transform: rotate(180deg); }
-.ui-disclosure-summary:focus-visible { outline: 2px solid var(--ui-cobalt); outline-offset: -3px; }
+.ui-disclosure-summary:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -3px; }
 .ui-disclosure-detail {
     margin: 0 12px 14px;
     padding: 14px 16px;

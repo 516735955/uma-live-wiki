@@ -616,7 +616,6 @@ export function createNavigation(deps) {
     activeTab.value = "database";
     dbView.value = "songs";
     resetPageScroll();
-    loadHomeSummaryIfNeeded();
     deps.pushUrl();
   }
 
@@ -746,7 +745,10 @@ export function createNavigation(deps) {
 
   function start() {
     syncBodyBackground(home.value);
-    deps.watch(home, syncBodyBackground);
+    deps.watch(home, function (isHome) {
+      syncBodyBackground(isHome);
+      if (isHome) loadHomeSummary();
+    });
     window.umaNavigate = deps.navigateTo;
     deps.watch(
       function () {

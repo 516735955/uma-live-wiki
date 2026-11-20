@@ -1,7 +1,7 @@
 
 .catalog-play { align-self: center; }
 .news-detail-date { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.news-detail-date a { color: var(--ui-orange-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }
+.news-detail-date a { color: var(--ui-cobalt-deep); font-size: .82rem; font-weight: 800; text-decoration: none; }
 .news-detail-date a:hover { text-decoration: none; }
 .catalog-subline,
 .secondary-line { display: block; margin-top: 4px; color: #687086; font-size: .78rem; font-weight: 550; line-height: 1.45; overflow-wrap: anywhere; }

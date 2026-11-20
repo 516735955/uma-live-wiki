@@ -24,6 +24,8 @@
             --brand-light: #fff5e6;
             --amber: #b4550d;
             --radius: 8px;
+            --ui-focus: #3157ed;
+            --ui-focus-halo: rgba(49, 87, 237, .16);
             --shadow: 0 1px 2px rgba(20, 20, 40, 0.05), 0 4px 16px rgba(20, 20, 40, 0.05);
         }
 
@@ -56,4 +58,5 @@
         #app > .site-footer { flex-shrink: 0; }
 
         ::selection { background: rgba(255, 123, 22, 0.2); color: var(--navy-3); }
-        :focus-visible { outline: 2px solid rgba(255, 123, 22, 0.72); outline-offset: 2px; }
+        :focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+        .entity-tabs button:focus-visible { outline: none; box-shadow: inset 0 -3px 0 var(--ui-focus); }

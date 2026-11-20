@@ -1,0 +1,94 @@
+/* Shared component palette for temporary dark campaigns. Artwork stays in campaign styles. */
+body.ui-theme-dark {
+    color-scheme: dark;
+    --theme-surface: #0c142a;
+    --theme-raised: #152540;
+    --theme-accent: #9ae0f4;
+    --theme-line: #34485e;
+    --text: #edf6ff;
+    --text-1: #edf6ff;
+    --text-2: #bdccdc;
+    --text-3: #abbdd0;
+    --ui-navy: #edf6ff;
+    --ui-line: var(--theme-line);
+    --ui-soft: var(--theme-surface);
+    --ui-focus: var(--theme-accent);
+    --ui-focus-halo: rgba(154, 224, 244, .18);
+    --ui-disclosure-open: var(--theme-raised);
+    --ui-disclosure-hover: #182d48;
+    --ui-disclosure-muted: var(--text-2);
+    --ui-disclosure-accent: var(--theme-accent);
+}
+body.ui-theme-dark.dt-crowned-theme {
+    --theme-accent: #ffe49c;
+    --theme-raised: #29273a;
+    --theme-line: #5b5261;
+    --ui-focus-halo: rgba(255, 228, 156, .18);
+    --ui-disclosure-hover: #343044;
+}
+body.ui-theme-dark .ui-state { color: var(--text-2); }
+body.ui-theme-dark .ui-state-error { color: #ffb6aa; }
+body.ui-theme-dark .ui-disclosure-detail {
+    background: var(--theme-surface);
+    border-color: var(--theme-line);
+}
+body.ui-theme-dark :is(.relation-version, .relation-release + .relation-release) { border-color: var(--theme-line); }
+body.ui-theme-dark .credit-role-tag,
+body.ui-theme-dark .history-list em.credit-role-tag {
+    background: var(--theme-raised) !important;
+    color: var(--theme-accent) !important;
+    border-color: var(--theme-line) !important;
+}
+body.ui-theme-dark .ui-retry {
+    background: var(--theme-raised);
+    border-color: var(--theme-line);
+    color: var(--theme-accent);
+}
+body.ui-theme-dark .ui-search > svg { stroke: var(--theme-accent); }
+body.ui-theme-dark .ui-select-trigger > svg { stroke: var(--theme-accent); }
+body.ui-theme-dark .ui-select-menu {
+    background: var(--theme-surface) !important;
+    border-color: var(--theme-line) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .3);
+}
+body.ui-theme-dark .ui-select-menu button { color: var(--text); }
+body.ui-theme-dark .ui-select-menu button:is(:hover, .active, .selected) {
+    background: var(--theme-raised);
+    color: var(--theme-accent);
+}
+body.ui-theme-dark .audio-panel {
+    background: var(--theme-surface);
+    border-color: var(--theme-line);
+    color: var(--text);
+}
+body.ui-theme-dark .audio-queue-row {
+    background: transparent;
+    border-color: var(--theme-line);
+}
+body.ui-theme-dark .audio-queue-row:is(:hover, .active, .dragging) { background: var(--theme-raised); }
+body.ui-theme-dark :is(.audio-queue-copy small, .audio-queue-number, .audio-panel-head h2 em,
+    .audio-panel-clear, .audio-icon-btn, .audio-queue-drag, .audio-queue-remove) { color: var(--text-2); }
+body.ui-theme-dark .audio-queue-row.active .audio-queue-number { color: var(--theme-accent); }
+body.ui-theme-dark :is(.audio-panel-clear, .audio-icon-btn, .audio-queue-remove):hover {
+    color: var(--theme-accent);
+    background: var(--theme-raised);
+}
+body.ui-theme-dark .ui-search:focus-within,
+body.ui-theme-dark .ui-select-control:is(.open, :focus-within) {
+    border-color: var(--ui-focus) !important;
+    box-shadow: 0 0 0 3px var(--ui-focus-halo) !important;
+}
+body.ui-theme-dark .sub-header {
+    background: #070d1e !important;
+    border-bottom-color: var(--theme-line);
+}
+body.ui-theme-dark .route-placeholder :is(.entity-hero, .entity-section, .entity-cover) {
+    background: var(--theme-surface);
+    border-color: var(--theme-line);
+    box-shadow: none;
+}
+body.ui-theme-dark .route-placeholder .entity-hero::before,
+body.ui-theme-dark .route-placeholder .entity-hero::after { display: none; }
+body.ui-theme-dark .route-placeholder :is(i, .route-placeholder-lines > span) {
+    background: var(--theme-raised);
+}

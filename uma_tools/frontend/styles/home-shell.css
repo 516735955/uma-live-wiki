@@ -97,7 +97,7 @@
             display: inline-flex; align-items: center; gap: 6px;
             padding: 3px 10px; border-radius: 999px;
             background: linear-gradient(90deg, #ff7b16, #ffa932);
-            color: #fff; font-size: 0.72em; font-weight: 800; letter-spacing: 0.1em;
+            color: #20283b; font-size: 0.72em; font-weight: 800; letter-spacing: 0.1em;
             text-shadow: none; align-self: flex-start;
         }
         .home-upcoming .hu-title {

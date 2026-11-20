@@ -3,6 +3,7 @@ import {
   getDaringTactCrowned,
   setDaringTactCrowned,
   syncDaringTactBodyTheme,
+  syncDaringTactRouteTheme,
   triggerDaringTactTransition,
 } from "/uma_tools/frontend/hero-campaign.js";
 
@@ -555,7 +556,7 @@ export const DaringTactHero = {
     this._destroyed = true;
     activeHeroInstances = Math.max(0, activeHeroInstances - 1);
     if (activeHeroInstances === 0) {
-      syncDaringTactBodyTheme("none");
+      syncDaringTactRouteTheme();
     }
     if (this._rafId) cancelAnimationFrame(this._rafId);
     clearTimeout(this._shakeTimer);
