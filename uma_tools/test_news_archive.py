@@ -13,6 +13,23 @@ from archive_news import source_article
 
 
 class NewsArchiveTest(unittest.TestCase):
+    def test_topics_commit_with_first_translation_and_preserve_existing_topics(self):
+        with tempfile.TemporaryDirectory() as directory:
+            archive = NewsDatabase(Path(directory) / 'news.sqlite')
+            source = {'detail': {'title': '番組', 'message': '<p>出演</p>'}}
+            archive.put('official-1', source, track_topics=True)
+            archive.dispatch('topic_complete', {'rows': [{'key': 'official-1', 'topics': {}}]})
+            self.assertEqual(archive.dispatch('topic_queue', {}), [])
+            self.assertEqual(len(archive.dispatch('topic_queue', {'recheck': True})), 1)
+            topics = {'date': '2026-11-20', 'event': ['program-1']}
+            archive.translate('official-1', 1, dict(source['detail'], title_zh='节目', message_zh='<p>出演</p>'), 'baidu', topics)
+            self.assertEqual(archive.dispatch('topic_records', {})['official-1']['event'], ['program-1'])
+            archive.dispatch('topic_complete', {'rows': [{'key': 'official-1', 'topics': {'voice': ['voice-1']}}]})
+            self.assertEqual(archive.dispatch('topic_records', {})['official-1']['event'], ['program-1'])
+            self.assertEqual(archive.dispatch('topic_records', {})['official-1']['voice'], ['voice-1'])
+            self.assertEqual(archive.get('official-1')['detail']['translation_state'], 'complete')
+            archive.db.close()
+
     def test_failed_translation_is_reviewable_without_losing_original(self):
         with tempfile.TemporaryDirectory() as directory:
             archive = NewsDatabase(Path(directory) / 'news.sqlite')

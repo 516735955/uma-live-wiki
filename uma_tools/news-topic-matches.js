@@ -69,7 +69,16 @@ function createTopicMatcher(store, anime) {
     const selected = Object.fromEntries(fields.map(type => [type, new Set()]));
     const quoted = new Set([...title.matchAll(/[「『【《]([^」』】》]+)[」』】》]/g)].map(match => compact(match[1])));
     const ownUrl = key.startsWith('official-') ? 'official:' + key.slice(9) : canonicalUrl(detail.url);
-    for (const id of eventSources.get(ownUrl) || []) selected.event.add(id);
+    for (const id of eventSources.get(ownUrl) || []) {
+      selected.event.add(id);
+      const event = store.eventsById.get(id);
+      if (event?.kind === 'official_program' && /放送|配信|出走者|出演/.test(sourceTitle + '\n' + (text || ''))) {
+        for (const person of event.cast || []) {
+          if (person.character_id) selected.character.add(person.character_id);
+          if (person.voice_actor_id) selected.voice.add(person.voice_actor_id);
+        }
+      }
+    }
     const eventNames = events.filter(([name]) => name.length >= 8 && inTitle(name));
     for (const [name, id] of eventNames) {
       if (!eventNames.some(([other, otherId]) => id !== otherId && other.length > name.length && other.includes(name))) selected.event.add(id);
@@ -90,7 +99,10 @@ function createTopicMatcher(store, anime) {
         if (id) selected.album.add(id);
       }
     }
-    for (const [name, id] of works) if (quoted.has(name) || (name.length >= 4 && inTitle(name))) selected.anime.add(id);
+    const namedWorks = works.filter(([name]) => quoted.has(name) || (name.length >= 4 && inTitle(name)));
+    for (const [name, id] of namedWorks) {
+      if (quoted.has(name) || !namedWorks.some(([other, otherId]) => id !== otherId && other.length > name.length && other.includes(name))) selected.anime.add(id);
+    }
     if (musicContext.test(title) || /楽曲「|テーマソング「/.test(text || '')) {
       for (const name of quoted) if (songs.has(name)) selected.song.add(songs.get(name));
       for (const name of (text || '').matchAll(/(?:楽曲|テーマソング|主題歌)「([^」]+)」/g)) {
@@ -103,7 +115,8 @@ function createTopicMatcher(store, anime) {
       if (id) selected.song.add(id);
     }
     for (const [name, id] of characters) {
-      if (quoted.has(name) || (name.length >= 4 && characterContext.test(title) && inTitle(name))) selected.character.add(id);
+      if (quoted.has(name) || (name.length >= 4 && [...quoted].some(quote => quote.startsWith(name + 'の'))) ||
+          (name.length >= 4 && characterContext.test(title) && inTitle(name))) selected.character.add(id);
     }
     for (const [name, id] of voices) {
       if (quoted.has(name) || (name.length >= 4 && /出演|声優|ゲスト|登壇/.test(title) && inTitle(name))) selected.voice.add(id);

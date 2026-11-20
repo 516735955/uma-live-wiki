@@ -17,6 +17,7 @@ function createNewsTopics({ DATA_DIR, catalogStore, animeStore, newsContent, sen
   let indexedSnapshot;
   let indexedAnime;
   let index;
+  let matchedStore, matchedAnime;
 
   function source() {
     if (records) return records;
@@ -44,19 +45,41 @@ function createNewsTopics({ DATA_DIR, catalogStore, animeStore, newsContent, sen
   }
 
   async function update() {
-    const queued = await archiveRequest('topic_queue');
-    if (!queued.length) return;
     const [store, anime] = await Promise.all([catalogStore.get(), animeStore.load()]);
+    const recheck = store !== matchedStore || anime !== matchedAnime;
     const match = createTopicMatcher(store, anime);
     const manual = source();
-    await archiveRequest('topic_complete', { rows: queued.map(row => {
-      const date = String(row.detail.post_at || '').slice(0, 10).replace(/[./]/g, '-');
-      const topics = date && !Object.hasOwn(manual, row.key) && !newsContent.isRemoved(row.key) ? match(row) : {};
-      return { key: row.key, topics: Object.keys(topics).length ? { date, ...topics } : {} };
-    }) });
+    let after = 0;
+    while (true) {
+      const queued = await archiveRequest('topic_queue', { recheck, after });
+      if (!queued.length) break;
+      await archiveRequest('topic_complete', { rows: queued.map(row => {
+        const date = String(row.detail.post_at || '').slice(0, 10).replace(/[./]/g, '-');
+        const topics = date && !Object.hasOwn(manual, row.key) && !newsContent.isRemoved(row.key) ? match(row) : {};
+        return { key: row.key, topics: Object.keys(topics).length ? { date, ...topics } : {} };
+      }) });
+      after = queued[queued.length - 1].cursor;
+    }
+    matchedStore = store; matchedAnime = anime;
     await automaticLoad;
     automaticChecked = 0;
     await refreshAutomatic();
+  }
+
+  async function matchArticle(key, detail) {
+    if (Object.hasOwn(source(), key) || newsContent.isRemoved(key)) return undefined;
+    const [store, anime, tokens] = await Promise.all([catalogStore.get(), animeStore.load(),
+      require('./html-text').splitHtmlText(detail.message || '')]);
+    const topics = createTopicMatcher(store, anime)({ key, detail,
+      text: tokens.filter(token => token.text).map(token => token.text).join('\n'), localizedTitle: detail.title_zh || '' });
+    return Object.keys(topics).length ? { date: String(detail.post_at || '').slice(0, 10).replace(/[./]/g, '-'), ...topics } : {};
+  }
+
+  async function articleTopics(key) {
+    if (newsContent.isRemoved(key)) return [];
+    if (!Object.hasOwn(source(), key)) await refreshAutomatic();
+    const [store, anime] = await Promise.all([catalogStore.get(), animeStore.load()]);
+    return makeIndex(store, anime).articles.get(key) || [];
   }
 
   function makeIndex(store, anime) {
@@ -129,12 +152,10 @@ function createNewsTopics({ DATA_DIR, catalogStore, animeStore, newsContent, sen
     }
     const key = /^\d+$/.test(id) ? 'official-' + id : id;
     try {
-      const manual = source();
-      if (!article || !Object.hasOwn(manual, key)) await refreshAutomatic();
-      if (article && ((!Object.hasOwn(manual, key) && !Object.hasOwn(automatic, key)) || newsContent.isRemoved(key))) return sendJson(res, 200, { topics: [] });
+      if (article) return sendJson(res, 200, { topics: await articleTopics(key) });
+      await refreshAutomatic();
       const [store, anime] = await Promise.all([catalogStore.get(), animeStore.load().catch(() => null)]);
       const view = makeIndex(store, anime);
-      if (article) return sendJson(res, 200, { topics: view.articles.get(key) || [] });
       const rows = (view.related.get(type + ':' + id) || []).filter(row => !newsContent.isRemoved(row.key));
       const count = Math.max(1, Math.ceil(rows.length / pageSize));
       const page = Math.min(count, Math.max(1, parseInt(params.get('page'), 10) || 1));
@@ -145,7 +166,7 @@ function createNewsTopics({ DATA_DIR, catalogStore, animeStore, newsContent, sen
     }
   }
 
-  return { handle, update };
+  return { handle, update, article: articleTopics, matchArticle };
 }
 
 module.exports = { createNewsTopics };

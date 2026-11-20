@@ -264,7 +264,18 @@ class NewsDatabase:
                 self.db.execute('INSERT OR IGNORE INTO automatic_news_topics(article_key) VALUES(?)', (key,))
         return self.get(key)
 
-    def translate(self, key, revision, detail, translator):
+    def store_topics(self, key, topics):
+        row = self.db.execute('SELECT topics FROM automatic_news_topics WHERE article_key=?', (key,)).fetchone()
+        saved = json.loads(row['topics']) if row and row['topics'] else {}
+        merged = dict(topics, **saved)
+        for field in ('event', 'character', 'voice', 'album', 'song', 'anime'):
+            values = list(dict.fromkeys([*saved.get(field, []), *topics.get(field, [])]))
+            if values:
+                merged[field] = values
+        self.db.execute('INSERT INTO automatic_news_topics(article_key,topics) VALUES(?,?) ON CONFLICT(article_key) DO UPDATE SET topics=excluded.topics',
+                        (key, json.dumps(merged, ensure_ascii=False)))
+
+    def translate(self, key, revision, detail, translator, topics=None):
         if not detail.get('message_zh') or not detail.get('title_zh'):
             raise ValueError('Complete title and body are required')
         with self.db:
@@ -284,6 +295,8 @@ class NewsDatabase:
             current = self.db.execute('SELECT revision FROM articles WHERE key=?', (key,)).fetchone()
             if current and current['revision'] == revision:
                 self.store_fragments(key, source.get('message'), detail['message_zh'])
+                if topics is not None:
+                    self.store_topics(key, topics)
         return self.get(key)
 
     def jobs(self, owner, limit=10, claim=False):
@@ -362,15 +375,17 @@ class NewsDatabase:
         if operation == 'put':
             return self.put(args['key'], args['data'], args.get('owner', 'baidu'), args.get('track_topics', False))
         if operation == 'topic_queue':
-            return [{'key': row['article_key'], 'detail': json.loads(row['original'])['detail'],
+            return [{'key': row['article_key'], 'cursor': row['cursor'], 'detail': json.loads(row['original'])['detail'],
                      'text': row['japanese_text']} for row in self.db.execute('''
-                SELECT t.article_key,v.original,v.japanese_text FROM automatic_news_topics t
-                JOIN versions v ON v.article_key=t.article_key AND v.revision=1
-                WHERE t.topics IS NULL ORDER BY t.rowid LIMIT 20''')]
+                SELECT t.article_key,t.rowid AS cursor,v.original,v.japanese_text FROM automatic_news_topics t
+                JOIN articles a ON a.key=t.article_key
+                JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
+                WHERE (t.topics IS NULL OR ?) AND t.rowid>?
+                ORDER BY t.rowid LIMIT 20''', (bool(args.get('recheck')), args.get('after', 0)))]
         if operation == 'topic_complete':
             with self.db:
-                self.db.executemany('UPDATE automatic_news_topics SET topics=? WHERE article_key=? AND topics IS NULL',
-                                    [(json.dumps(row['topics'], ensure_ascii=False), row['key']) for row in args['rows']])
+                for row in args['rows']:
+                    self.store_topics(row['key'], row['topics'])
             return True
         if operation == 'topic_records':
             return {row['article_key']: dict(json.loads(row['topics']), title=row['translated_title'] or row['original_title'])
@@ -380,7 +395,7 @@ class NewsDatabase:
                 JOIN versions v ON v.article_key=a.key AND v.revision=a.revision
                 WHERE t.topics IS NOT NULL AND t.topics!='{}' ''')}
         if operation == 'translate':
-            return self.translate(args['key'], args['revision'], args['detail'], args['translator'])
+            return self.translate(args['key'], args['revision'], args['detail'], args['translator'], args.get('topics'))
         if operation == 'jobs':
             return self.jobs(args.get('owner', 'baidu'), args.get('limit', 10), args.get('claim', False))
         if operation == 'retry':

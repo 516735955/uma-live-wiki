@@ -199,6 +199,7 @@ async function main() {
   let titleDone, bodyDone, articleResult;
   const completedArticles = vm.createContext({
     newsContent: { apply: (detail) => detail },
+    currentTerms: () => emptyTerms,
     translateTitle: (text, done) => { titleDone = done; },
     translateHtmlMessage: (text, done) => { bodyDone = done; }
   });

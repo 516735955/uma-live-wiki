@@ -35,7 +35,10 @@ function loadTerms(root) {
   };
   readJson(path.join(root, 'uma_tools/translation-glossary.json')).terms.forEach(item => add(item.ja, item.zh));
   const index = fs.readFileSync(path.join(root, 'data/character_index_data.js'), 'utf8');
-  JSON.parse(index.slice(index.indexOf('['), index.lastIndexOf(']') + 1)).forEach((item) => add(item.ja, item.zh));
+  JSON.parse(index.slice(index.indexOf('['), index.lastIndexOf(']') + 1)).forEach((item) => {
+    add(item.ja, item.zh);
+    if (item.ja && item.zh) add(item.ja + '号', item.zh);
+  });
   const voices = readJson(path.join(root, 'data/voice_actor_profiles.json'));
   voices.voice_actors.forEach((item) => add(item.identity.ja, item.identity.zh));
   const events = readJson(path.join(root, 'data/events_catalog.json'));

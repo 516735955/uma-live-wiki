@@ -37,7 +37,7 @@ exports.createService = function (deps) {
     try {
       const data = await archive.request('get', { key });
       if (data) {
-        return deps.sendJson(res, 200, applyArticleEdits(data), { cacheControl: 'no-store' });
+        return deps.sendJson(res, 200, await withArticleTopics(key, data), { cacheControl: 'no-store' });
       }
       const id = key.replace(/^official-/, '');
       const item = newsIndexCache.data?.information_list.find(row => String(row.announce_id) === id);
@@ -57,7 +57,7 @@ exports.createService = function (deps) {
     try {
       if (deps.newsContent.isRemoved(key)) return deps.sendJson(res, 404, {error:'news not found'});
       const data = await archive.request('get', {key});
-      deps.sendJson(res, data ? 200 : 404, data ? applyArticleEdits(data) : {error:'news not archived'}, {cacheControl:'no-store'});
+      deps.sendJson(res, data ? 200 : 404, data ? await withArticleTopics(key, data) : {error:'news not archived'}, {cacheControl:'no-store'});
     } catch (_) { deps.sendJson(res, 503, {error:'news archive unavailable'}); }
   }
 
@@ -78,7 +78,9 @@ exports.createService = function (deps) {
           });
         });
         if (result?.translation_state === 'complete') {
-          await archive.request('translate', { key: job.key, revision: detail.archive_revision, detail: result, translator: 'baidu' });
+          const topics = await deps.matchNewsTopics?.(job.key, result);
+          await archive.request('translate', { key: job.key, revision: detail.archive_revision, detail: result, translator: 'baidu', topics });
+          await deps.updateNewsTopics();
         } else await archive.request('retry', { key: job.key, revision: detail.archive_revision, delay: 3600 });
       }
     } catch (error) { console.error('[news:translation]', error.message); }
@@ -690,6 +692,15 @@ exports.createService = function (deps) {
       if (edited) detail.message_zh = edited;
     }
     return { ...data, detail };
+  }
+
+  async function withArticleTopics(key, data) {
+    const result = applyArticleEdits(data);
+    if (result.detail && deps.articleNewsTopics) {
+      try { result.detail.news_topics = await deps.articleNewsTopics(key); }
+      catch (error) { console.error('[news:topics]', error.message); }
+    }
+    return result;
   }
 
   function handleNewsDetail(req, res, params) {

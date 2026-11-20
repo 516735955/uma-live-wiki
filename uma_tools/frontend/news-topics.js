@@ -43,13 +43,14 @@ const NewsSection = {
 
 export const NewsTopics = {
   components: { NewsSection },
-  props: { articleId: String },
+  props: { articleId: String, items: Array, loading: Boolean },
   setup(props) {
-    const { result } = useTopicRequest(() => ({ id: props.articleId }));
-    return { topics: Vue.computed(() => result.value?.topics || []) };
+    const { result, pending } = useTopicRequest(() => props.loading || Array.isArray(props.items) ? null : ({ id: props.articleId }));
+    return { topics: Vue.computed(() => props.items || result.value?.topics || []), pending };
   },
   template: `
-    <news-section v-if="topics.length" class="news-topics" label="本文话题">
+    <news-section v-if="topics.length || pending || loading" class="news-topics" label="本文话题" :pending="pending || loading">
+      <content-state v-if="!topics.length && (pending || loading)" state="loading" subject="话题"></content-state>
       <div class="cast-chip-list">
         <cast-chip v-for="item in topics" :key="item.type+':'+item.id" :type="item.type"
           :color="item.color" :href="item.href" :image="item.image" :label="item.title"></cast-chip>

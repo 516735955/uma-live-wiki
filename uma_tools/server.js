@@ -56,6 +56,8 @@ services.catalog = require("./server-catalog").createService({
 services.news = require("./server-news").createService({
   path, DATA_DIR, fs, mergeNews, crypto,
   updateNewsTopics: () => services.newsTopics.update(),
+  articleNewsTopics: key => services.newsTopics.article(key),
+  matchNewsTopics: (key, detail) => services.newsTopics.matchArticle(key, detail),
   AUTO_CRAWL_DISABLED: NO_AUTO_CRAWL,
   get translationAvailable() { return services.translation.translationAvailable; },
   newsContent: services.translation.newsContent,

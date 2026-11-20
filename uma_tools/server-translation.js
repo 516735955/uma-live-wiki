@@ -289,9 +289,9 @@ exports.createService = function (deps) {
     } } finally { transRunning = false; }
   }
 
-  function translateTitle(text, cb, signal, background = false) {
+  function translateTitle(text, cb, signal, background = false, articleTerms = null) {
     if (!text) return cb(text || "");
-    const terms = currentTerms();
+    const terms = articleTerms || currentTerms();
     const cached = terms.normalize(newsContent.title(text));
     if (cached) return cb(cached);
     if (!BAIDU_APPID || !BAIDU_SECRET) return cb(text);
@@ -410,13 +410,13 @@ exports.createService = function (deps) {
       .catch(() => fallback());
   }
 
-  function translateHtmlMessage(html, cb, signal, archivedFragments = {}) {
+  function translateHtmlMessage(html, cb, signal, archivedFragments = {}, articleTerms = null) {
     const { splitHtmlText, escapeText } = require('./html-text');
     const work = async () => {
     const src = String(html || "");
     if (signal && signal.aborted) return { value: '', dirty: true };
     if (!src) return { value: '', dirty: false };
-    const terms = currentTerms();
+    const terms = articleTerms || currentTerms();
     const hash = deps.crypto.createHash("md5").update(src).digest("hex");
     const originalKey = "msg_" + hash;
     const key = terms.protect(src).count
@@ -583,6 +583,15 @@ exports.createService = function (deps) {
 
   function translateArticle(detail, signal, finish) {
     Object.assign(detail, newsContent.apply(detail));
+    let terms = currentTerms();
+    if (/ぱかライブ|PakaLive/.test(detail.title || '') || /公式生配信番組/.test(detail.message || '')) {
+      if (!terms.broadcast) terms.broadcast = deps.createTerms([
+        ...deps.loadTerms(deps.ROOT), { ja: '出走者', zh: '出演阵容' },
+        { ja: '参赛者', zh: '出演阵容' }, { ja: '扭蛋更新', zh: '招募更新' },
+        { ja: "波或'谈话！", zh: "Paka' Talk!" },
+      ].sort((a, b) => b.ja.length - a.ja.length));
+      terms = terms.broadcast;
+    }
     let incomplete = false;
     let remaining = 2;
     const complete = () => {
@@ -606,6 +615,7 @@ exports.createService = function (deps) {
         },
         signal,
         detail.archive_fragments,
+        terms,
       );
     };
     if (detail.title_zh || !detail.title) { complete(); translateBody(); }
@@ -614,7 +624,7 @@ exports.createService = function (deps) {
       if (!detail.title_zh) incomplete = true;
       complete();
       translateBody();
-    }, signal);
+    }, signal, false, terms);
   }
   return { newsContent, translateTitle, translateArticle,
     translateHtmlMessage,

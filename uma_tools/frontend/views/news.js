@@ -20,7 +20,7 @@ export const template = `
                 <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh && newsDetail.translation_state==='pending'" state="loading" subject="中文译文"></content-state>
                 <content-state v-else-if="newsLanguage==='zh' && !newsDetail.message_zh" state="uncollected" subject="中文译文"></content-state>
                 <div class="news-detail-body" :lang="newsLanguage==='ja'?'ja':'zh-Hans'" v-html="newsDetailBody"></div>
-                <news-topics :article-id="String(newsDetail.announce_id || '')"></news-topics>
+                <news-topics :article-id="String(newsDetail.announce_id || '')" :items="newsDetail.news_topics" :loading="newsDetailLoading || newsDetail.archive_state==='pending'"></news-topics>
             </div>
 
             <div v-else class="news-list">
