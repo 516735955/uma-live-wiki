@@ -53,7 +53,6 @@ export function createViewModel(domains, routes) {
     routes,
     albumDetail: domains.albums.albumDetail,
     albumHeading: domains.albums.albumHeading,
-    albumStreamingLinks: domains.albums.albumStreamingLinks,
     liveView: domains.events.liveView,
     player: domains.player.player,
     navItems: domains.navigation.navItems,

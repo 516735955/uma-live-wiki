@@ -15,11 +15,6 @@ export function createAlbums(deps) {
 
 
   const albumDetail = deps.ref(null);
-  const albumStreamingLinks = deps.computed(() => (albumDetail.value?.data?.sources || []).flatMap(url => {
-    if (url.startsWith('https://music.amazon.co.jp/albums/')) return [{ url, label: 'Amazon Music 日本' }];
-    if (url.startsWith('https://music.apple.com/us/album/')) return [{ url, label: 'Apple Music 美国' }];
-    return [];
-  }));
   const albumHeading = deps.computed(() => String(albumDetail.value?.data?.name || '')
     .replace(/^(?:TVアニメ)?[『「](?:ウマ娘\s*プリティーダービー|赛马娘\s*Pretty Derby)[』」]\s*/i, '')
     .replace(/\s*\(2021 Remastered Version\)/i, '（2021重制）')
@@ -594,7 +589,6 @@ export function createAlbums(deps) {
     start,
     addAlbumTrack,
     albumDetail,
-    albumStreamingLinks,
     albumHeading,
     albumPlayableCount,
     albumSortOptions,
