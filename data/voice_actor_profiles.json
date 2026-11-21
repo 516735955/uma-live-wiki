@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T17:35:21+00:00",
+  "generated_at": "2026-11-21T00:55:15+00:00",
   "voice_actors": [
     {
       "id": "va-0001",
@@ -3436,9 +3436,9 @@
         }
       ],
       "stats": {
-        "events": 8,
+        "events": 9,
         "concerts": 5,
-        "programs": 2,
+        "programs": 3,
         "songs": 4
       }
     },
@@ -4896,9 +4896,9 @@
         }
       ],
       "stats": {
-        "events": 9,
+        "events": 10,
         "concerts": 4,
-        "programs": 3,
+        "programs": 4,
         "songs": 12
       }
     },
@@ -5505,9 +5505,9 @@
         }
       ],
       "stats": {
-        "events": 13,
+        "events": 14,
         "concerts": 3,
-        "programs": 3,
+        "programs": 4,
         "songs": 4
       }
     },
@@ -7418,9 +7418,9 @@
         }
       ],
       "stats": {
-        "events": 40,
+        "events": 41,
         "concerts": 7,
-        "programs": 9,
+        "programs": 10,
         "songs": 8
       }
     },
@@ -7530,9 +7530,9 @@
         }
       ],
       "stats": {
-        "events": 3,
+        "events": 4,
         "concerts": 1,
-        "programs": 1,
+        "programs": 2,
         "songs": 3
       }
     },
@@ -8491,9 +8491,9 @@
         }
       ],
       "stats": {
-        "events": 53,
+        "events": 54,
         "concerts": 9,
-        "programs": 19,
+        "programs": 20,
         "songs": 9
       }
     },
@@ -9055,9 +9055,9 @@
         }
       ],
       "stats": {
-        "events": 12,
+        "events": 13,
         "concerts": 2,
-        "programs": 4,
+        "programs": 5,
         "songs": 7
       }
     },
@@ -11090,5 +11090,5 @@
       }
     }
   ],
-  "build_id": "e7c13ffa7c1e38c6e718"
+  "build_id": "d3e6e6386f81201c9b96"
 }
