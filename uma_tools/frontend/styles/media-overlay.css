@@ -372,6 +372,15 @@ details.ui-native-details {
     }
 }
 
+.context-sections {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.context-sections::-webkit-scrollbar {
+    display: none;
+}
+
 .context-sections button {
     border-radius: var(--radius-badge);
     transition: color 180ms ease, background 180ms ease;

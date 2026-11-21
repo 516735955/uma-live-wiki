@@ -127,37 +127,22 @@ body.subpage-bg:not(.ui-theme-dark) {
 }
 
 @keyframes umaPageEnter {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 14px, 0) scale(0.992);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) scale(1);
-    }
+    from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.992); }
+    to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
 
 /* Sticky top bar depth & kinetic nav polish */
-body.is-scrolled .sub-header {
-    box-shadow: 0 12px 32px rgba(18, 32, 86, 0.24);
-}
+body.is-scrolled .sub-header { box-shadow: 0 12px 32px rgba(18, 32, 86, 0.24); }
 
-.site-nav-sub .site-nav-menu {
-    border-radius: 0 0 14px 14px;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    animation: umaNavMenuIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+.site-nav-sub .site-nav-menu { border-radius: 0 0 14px 14px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+@media (min-width: 701px) {
+    .site-nav-sub .site-nav-item.open > .site-nav-menu { animation: umaNavMenuIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 }
 
 @keyframes umaNavMenuIn {
-    from {
-        opacity: 0;
-        transform: skewX(30deg) translateY(-8px);
-    }
-    to {
-        opacity: 1;
-        transform: skewX(30deg) translateY(0);
-    }
+    from { opacity: 0; transform: skewX(30deg) translateY(-8px); }
+    to { opacity: 1; transform: skewX(30deg) translateY(0); }
 }
 
 /* --- 2. De-Bureaucratized Controls (Borderless Floating Pills + Proper Z-Index Layering) --- */
@@ -168,6 +153,8 @@ body.is-scrolled .sub-header {
 
 .ui-search,
 .ui-select-control {
+    position: relative;
+    z-index: 1;
     border: 1px solid transparent;
     border-radius: var(--radius-control);
     background: var(--surface-panel);
@@ -184,7 +171,7 @@ body.is-scrolled .sub-header {
 
 .ui-select-control.open {
     position: relative;
-    z-index: 120;
+    z-index: 300 !important;
 }
 
 .ui-search:focus-within,
@@ -195,7 +182,7 @@ body.is-scrolled .sub-header {
 }
 
 .ui-select-menu {
-    z-index: 200;
+    z-index: 400 !important;
     pointer-events: auto;
     border: 0;
     border-radius: var(--radius-card);

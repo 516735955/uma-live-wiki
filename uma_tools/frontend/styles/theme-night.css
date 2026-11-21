@@ -111,14 +111,18 @@ body.ui-theme-dark .sub-header {
 }
 
 body.ui-theme-dark .site-nav-sub .site-nav-item.active {
-    transform: skewX(-30deg);
     border-right-color: var(--hairline);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, var(--accent-primary-soft) 100%);
     box-shadow: inset 0 -3px 0 var(--accent-primary);
 }
 
-body.ui-theme-dark .site-nav-sub .site-nav-item.active .site-nav-trigger {
-    min-height: 56px;
+@media (min-width: 701px) {
+    body.ui-theme-dark .site-nav-sub .site-nav-item.active {
+        transform: skewX(-30deg);
+    }
+    body.ui-theme-dark .site-nav-sub .site-nav-item.active .site-nav-trigger {
+        min-height: 56px;
+    }
 }
 
 body.ui-theme-dark .site-nav-sub .site-nav-item.active > .site-nav-trigger {
@@ -479,6 +483,18 @@ body.ui-theme-dark .audio-quality .audio-quality-current {
 body.ui-theme-dark .audio-quality .selected :is(.audio-quality-code, .audio-quality-current) {
     background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
+}
+
+body.ui-theme-dark .audio-queue-toggle em {
+    background: var(--accent-primary);
+    color: #060b18;
+    border-color: #070d1e;
+    font-weight: 800;
+}
+
+body.ui-theme-dark .audio-preview {
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
 }
 
 /* Back-to-top, Pedigree Container, Filter Pills & Misc Overlays */
