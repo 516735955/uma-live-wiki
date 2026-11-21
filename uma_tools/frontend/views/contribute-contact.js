@@ -1,25 +1,31 @@
 export const bindings = ["contactEmails","goContributeFix"];
 export const template = `
             <div class="contact-wrap info-page">
-                <header class="entity-hero music-archive-hero entity-hero-text"><div class="entity-intro"><h1>联系我们</h1></div></header>
+                <header class="entity-hero music-archive-hero entity-hero-text info-hero">
+                    <div class="entity-intro">
+                        <span class="entity-kind">参与共建</span>
+                        <h1>联系我们</h1>
+                        <p class="entity-reading">版权与来源咨询、删改请求、媒体合作及资料反馈入口</p>
+                    </div>
+                </header>
 
                 <div class="contact-section entity-section">
                     <div class="contact-sec-head">
-                        <span class="contact-sec-title">邮件</span>
+                        <span class="contact-sec-title">邮件联络</span>
                     </div>
-                    <div>
-                        <div class="contact-row"><div class="contact-k">联系邮箱</div><div class="contact-v"><a v-for="email in contactEmails" :key="email" :href="'mailto:'+email">{{ email }}</a></div></div>
-                        <div class="contact-row"><div class="contact-k">适用情形</div><div class="contact-v">版权与来源咨询、删改请求、媒体联络、合作申请</div></div>
-                    </div>
+                    <dl class="profile-facts contact-facts">
+                        <div><dt>联系邮箱</dt><dd class="email-chip-list"><a v-for="email in contactEmails" :key="email" class="email-chip" :href="'mailto:'+email">{{ email }}</a></dd></div>
+                        <div><dt>适用情形</dt><dd>版权与来源咨询、删改请求、媒体联络、合作申请</dd></div>
+                    </dl>
                 </div>
 
                 <div class="contact-section entity-section">
                     <div class="contact-sec-head">
                         <span class="contact-sec-title">资料订正</span>
                     </div>
-                    <div>
-                        <div class="contact-row"><div class="contact-k">页面入口</div><div class="contact-v"><button type="button" class="info-inline-action" @click="goContributeFix()">打开资料订正表单 ↗</button></div></div>
-                    </div>
+                    <dl class="profile-facts contact-facts">
+                        <div><dt>页面入口</dt><dd><button type="button" class="info-inline-action" @click="goContributeFix()">打开资料订正表单</button></dd></div>
+                    </dl>
                 </div>
 
                 <div class="contact-section entity-section">

@@ -1,5 +1,11 @@
 import { preloadPage } from "/uma_tools/frontend/pages.js";
 import { syncDaringTactRouteTheme } from "/uma_tools/frontend/hero-campaign.js";
+import {
+  buildCanonicalRoutePath,
+  currentUrlPath,
+  pendingLayout,
+  routeWillBeAtomic,
+} from "/uma_tools/frontend/domains/routing-url.js";
 /* routing state and behavior; external dependencies are explicit live ports. */
 export function createRouting(deps) {
   const routeReady = deps.ref(false);
@@ -26,14 +32,14 @@ export function createRouting(deps) {
     if (!navigationStarted || !routeReady.value || navigationPending.value ||
         (deps.activeTab.value === 'news' && deps.newsDetailLoading.value)) return;
     const started = navigationStarted;
-    routeEntering.value = performance.now() - started > 100;
+    routeEntering.value = true;
     requestAnimationFrame(() => requestAnimationFrame(() => {
       if (started !== navigationStarted || navigationPending.value ||
           (deps.activeTab.value === 'news' && deps.newsDetailLoading.value)) return;
       clearTimeout(progressTimer);
       routeProgress.value = false;
       navigationStarted = 0;
-      enterTimer = setTimeout(() => { routeEntering.value = false; }, 180);
+      enterTimer = setTimeout(() => { routeEntering.value = false; }, 340);
     }));
   }
 
@@ -175,33 +181,6 @@ export function createRouting(deps) {
     }
   }
 
-  function routeWillBeAtomic(path) {
-    const clean = String(path || "")
-      .split("?")[0]
-      .replace(/\/+$/, '')
-      .replace(/^\/zh-Hans/i, "");
-    return (
-      /^\/news\/[^/]+$/.test(clean) ||
-      /^\/events\/[^/]+(?:\/sessions\/[^/]+)?$/.test(clean) ||
-      /^\/music\/(?:songs|albums|creators)\/[^/]+(?:\/[^/]+)?$/.test(clean) ||
-      /^\/database\/(?:characters|voice-actors|horses|venues|staff)\/[^/]+(?:\/[^/]+)?$/.test(
-        clean,
-      ) ||
-      /^\/database\/anime\/[^/]+(?:\/episodes\/[^/]+)?$/.test(clean)
-    );
-  }
-
-  function pendingLayout(path) {
-    if (!path) return 'entity';
-    const [, , area, section, id] = new URL(path, window.location.origin).pathname.split('/');
-    if (area === 'news') return section ? 'article' : 'news';
-    if (area === 'events') return section ? 'event' : 'rows';
-    if (area === 'database' && section === 'venues') return id ? 'venue' : 'venues';
-    if (routeWillBeAtomic(path)) return 'entity';
-    if (area === 'music' && ['songs', 'albums'].includes(section)) return section;
-    return area === 'music' && section === 'creators' ? 'rows' : 'plain';
-  }
-
   function beginEntityNavigation() {
     const fromRoute = restoringRoute;
     if (!fromRoute) {
@@ -316,186 +295,9 @@ export function createRouting(deps) {
     navigateTo(currentUrlPath(), true);
   }
 
-  function currentUrlPath() {
-    return window.location.pathname + window.location.search;
-  }
-
   function pushUrl(replace) {
     replace = replace || restoringRoute;
-    let path = deps.routes.home();
-    if (!deps.home.value) {
-      if (deps.activeTab.value === "news") {
-        if (deps.newsDetail.value) {
-          path = deps.routes.news(deps.newsDetail.value.announce_id);
-        } else {
-          path = deps.routes.query(deps.routes.news(), {
-            q: deps.newsQuery.value,
-            range: deps.newsRange.value,
-            type: deps.newsType.value,
-            page: deps.newsPage.value,
-          });
-        }
-      } else if (deps.activeTab.value === "live") {
-        if (deps.liveView.value === "eventDetail" && deps.eventDetail.value) {
-          path = deps.routes.query(deps.routes.events(deps.eventDetail.value.id, deps.selectedEventSessionId.value), {
-            section: deps.eventSection.value === deps.defaultEventSection.value ? "" : deps.eventSection.value,
-          });
-        } else {
-          path = deps.routes.query(deps.routes.events(), {
-            q: deps.eventsQuery.value,
-            time: deps.evTime.value,
-            kind: deps.evKind.value,
-            mode: deps.evMode.value,
-            year: deps.evYear.value,
-            series: deps.evSeries.value,
-            page: deps.eventsPage.value,
-          });
-        }
-      } else if (deps.activeTab.value === "database") {
-        if (deps.dbView.value === "characters") {
-          path = deps.charDetail.value
-            ? deps.routes.characters(deps.charDetail.value.id, deps.charSection.value)
-            : deps.routes.query(deps.routes.characters(), {
-                q: document.querySelector('#cIntroSearch')?.value || '',
-                sort: deps.charSort.value === 'default' ? '' : deps.charSort.value,
-              });
-        } else if (deps.dbView.value === "voice") {
-          path = deps.voiceDetail.value
-            ? deps.routes.voiceActors(deps.voiceDetail.value.id, deps.voiceSection.value)
-            : deps.routes.query(deps.routes.voiceActors(), {
-                q: document.querySelector('#vaSearch')?.value || '',
-              });
-        } else if (deps.dbView.value === "albums") {
-          path = deps.albumDetail.value
-            ? deps.routes.albums(deps.albumDetail.value.data.id, deps.albumSection.value)
-            : deps.routes.query(deps.routes.albums(), {
-                q: deps.relQuery.value,
-                work: deps.relWork.value,
-                release_series: deps.relSeries.value,
-                type: deps.relFilter.value,
-                year: deps.relYear.value,
-                sort: deps.relSort.value === "newest" ? "" : deps.relSort.value,
-                page: deps.relPage.value,
-              });
-        } else if (deps.dbView.value === "songs") {
-          path = deps.routes.songs(
-            deps.songDetail.value && deps.songDetail.value.id,
-            deps.songSection.value,
-          );
-          if (deps.songDetail.value) {
-            path = deps.routes.query(path, {
-              version: deps.songLinkVersion.value,
-              release: deps.songLinkRelease.value,
-            });
-          } else {
-            path = deps.routes.query(deps.routes.songs(), {
-              q: deps.songDbQuery.value,
-              page: deps.songDbPage.value,
-            });
-          }
-        } else if (deps.dbView.value === "creators") {
-          path = deps.routes.creators(
-            deps.creatorDetail.value && deps.creatorDetail.value.id,
-            deps.creatorSection.value,
-          );
-          if (!deps.creatorDetail.value) {
-            path = deps.routes.query(deps.routes.creators(), {
-              q: deps.creatorQuery.value,
-              page: deps.creatorPage.value,
-            });
-          }
-        } else if (deps.dbView.value === "anime") {
-          if (deps.animeDetail.value) {
-            const current = new URL(window.location.href);
-            const workPath = deps.routes.anime(deps.animeDetail.value.id);
-            const sameWork = current.pathname === workPath || current.pathname.startsWith(workPath + "/");
-            path = deps.routes.query(
-              deps.routes.anime(
-                deps.animeDetail.value.id,
-                deps.animeUnitDetail.value && deps.animeUnitDetail.value.id,
-              ),
-              {
-                section: deps.animeSection.value,
-                staff: deps.animeStaffQuery.value,
-                edition:
-                  deps.animeDetail.value.id === "anime-rttt"
-                    ? deps.animeEdition.value
-                    : "",
-                still: deps.animeStillUnit.value,
-                episodes: deps.animeEpisodeQuery.value,
-                version: sameWork ? current.searchParams.get("version") : "",
-                release: sameWork ? current.searchParams.get("release") : "",
-              },
-            );
-          } else {
-            path = deps.routes.query(deps.routes.anime(), {
-              q: deps.animeQuery.value,
-              format: deps.animeFormat.value,
-              status: deps.animeStatus.value,
-              sort:
-                deps.animeSort.value === "newest" ? "" : deps.animeSort.value,
-            });
-          }
-        } else if (deps.dbView.value === "staff") {
-          path = deps.routes.query(
-            deps.routes.staff(
-              deps.staffDetail.value && deps.staffDetail.value.id,
-            ),
-            {
-              q: deps.staffDetail.value ? "" : deps.staffQuery.value,
-              page: deps.staffDetail.value ? "" : deps.staffPage.value,
-            },
-          );
-        } else if (deps.dbView.value === "venues") {
-          if (deps.venueDetail.value)
-            path = deps.routes.venues(deps.venueDetail.value.id);
-          else
-            path = deps.routes.query(deps.routes.venues(), {
-              q: deps.venueQuery.value,
-              page: deps.venuePage.value,
-            });
-        } else if (deps.dbView.value === "other") {
-          if (
-            !deps.horseDetail.value &&
-            deps.otherSection.value === "relationships"
-          ) {
-            path = deps.routes.other();
-          } else if (deps.otherSection.value === "horses") {
-            path = deps.routes.query(
-              deps.routes.horses(
-                deps.horseDetail.value && deps.horseDetail.value.id,
-              ),
-              {
-                q: deps.horseQuery.value,
-                page: deps.horsePage.value,
-                sex: deps.horseSex.value,
-                sort: deps.horseSort.value === "newest" ? "" : deps.horseSort.value,
-              },
-            );
-          } else if (deps.otherSection.value === "videos") {
-            path = deps.routes.videos();
-          } else if (deps.otherSection.value === "jockeys") {
-            path = deps.routes.jockeys();
-          } else {
-            path = deps.routes.relationships();
-          }
-        } else {
-          path = deps.routes.characters();
-        }
-      } else if (deps.activeTab.value === "contribute") {
-        path = deps.routes.contribute("fix");
-      } else if (deps.activeTab.value === "contribute-contact") {
-        path = deps.routes.contribute("contact");
-      } else if (deps.activeTab.value === "legal-privacy") {
-        path = deps.routes.legal("privacy");
-      } else if (deps.activeTab.value === "legal-terms") {
-        path = deps.routes.legal("terms");
-      } else if (deps.activeTab.value === "links") {
-        path = deps.routes.links();
-      } else {
-        path = deps.LANG_PREFIX + "/" + deps.activeTab.value;
-      }
-    }
+    const path = buildCanonicalRoutePath(deps);
     if (currentUrlPath() !== path) {
       const targetEntity = deps.isAtomicView();
       const previousState = history.state || {};

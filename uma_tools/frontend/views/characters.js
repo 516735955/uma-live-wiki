@@ -18,12 +18,12 @@ export const template = `
                         <div v-if="charDetail.cv_zh || horseUrlForCharacter(charDetail.id)" class="hero-chip-row">
                             <a v-if="voiceHrefByName(charDetail.cv_zh)" class="performer-chip voice-chip" :style="{'--chip-color':charDetail.main}" :href="voiceHrefByName(charDetail.cv_zh)" @click="animeLink($event,voiceHrefByName(charDetail.cv_zh))"><img v-if="voicePhotoByName(charDetail.cv_zh)" v-media-src="voicePhotoByName(charDetail.cv_zh)" alt=""><span>{{ charDetail.cv_zh }}</span></a>
                             <span v-else-if="charDetail.cv_zh" class="performer-chip voice-chip" :style="{'--chip-color':charDetail.main}">{{ charDetail.cv_zh }}</span>
-                            <a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click="animeLink($event,horseUrlForCharacter(charDetail.id))">原型马 <em>↗</em></a>
+                            <a v-if="horseUrlForCharacter(charDetail.id)" class="horse-link-chip" :href="horseUrlForCharacter(charDetail.id)" @click="animeLink($event,horseUrlForCharacter(charDetail.id))">原型马</a>
                         </div>
                     </div>
                     <aside v-if="horseVideosForCharacter(charDetail.id).length" class="hero-video-aside">
-                        <b>原型马解说视频：</b>
-                        <a v-for="video in horseVideosForCharacter(charDetail.id)" :key="video.id" class="horse-link-chip" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener">{{ video.title }} <em>↗</em></a>
+                        <b>原型马解说视频</b>
+                        <a v-for="video in horseVideosForCharacter(charDetail.id)" :key="video.id" class="horse-link-chip" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener">{{ video.title }}</a>
                     </aside>
                 </div>
                 <nav class="entity-tabs" aria-label="角色栏目">
@@ -39,7 +39,7 @@ export const template = `
                         <div v-if="charDetail.birth"><dt>生日</dt><dd>{{ charDetail.birth }}</dd></div>
                         <div v-if="charDetail.height"><dt>身高</dt><dd>{{ charDetail.height }}cm</dd></div>
                         <div v-if="charDetail.weight"><dt>体重</dt><dd>{{ charDetail.weight }}</dd></div>
-                        <div v-if="charDetail.sankak"><dt>三围</dt><dd>{{ charDetail.sankak }}</dd></div>
+                        <div v-if="charDetail.sankak"><dt>三围</dt><dd>{{ String(charDetail.sankak).replace(/·/g, '  ') }}</dd></div>
                     </dl>
                     <div class="c-detail-block" id="cDetailBlock"></div>
                 </section>

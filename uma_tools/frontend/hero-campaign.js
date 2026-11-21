@@ -77,11 +77,20 @@ export function syncDaringTactBodyTheme(mode = null) {
     body.classList.remove("dt-home-theme");
   } else if (mode === "none") {
     body.classList.remove("dt-home-theme", "dt-detail-theme", "dt-crowned-theme", "ui-theme-dark");
+    if (body.dataset) {
+      delete body.dataset.theme;
+      delete body.dataset.variant;
+    }
     return;
   }
   if (body.classList.contains("dt-home-theme") || body.classList.contains("dt-detail-theme")) {
+    const crowned = getDaringTactCrowned();
     body.classList.add("ui-theme-dark");
-    body.classList.toggle("dt-crowned-theme", getDaringTactCrowned());
+    body.classList.toggle("dt-crowned-theme", crowned);
+    if (body.dataset) {
+      body.dataset.theme = "night";
+      body.dataset.variant = crowned ? "daring-tact-crowned" : "daring-tact";
+    }
   }
   document.dispatchEvent?.(new CustomEvent("uma-campaign-theme"));
 }

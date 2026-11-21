@@ -1,0 +1,331 @@
+/* ===== MULTI-SIZE MOBILE RESPONSIVE SYSTEM =====
+ * Dedicated phone adaptation across compact (<=375px), standard (376-430px),
+ * and large mobile (431-767px) screens for every standalone page type.
+ */
+
+/* --- Tier 1: All Mobile Phones (<= 767px) --- */
+@media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+
+    /* Safe bottom clearance when audio dock is present */
+    body:has(.audio-dock) .site-footer,
+    body:has(.audio-dock) .main-wrap {
+        padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* Compact sticky subpage header */
+    .sub-header {
+        padding-inline: 10px;
+    }
+
+    .sub-header-inner {
+        min-height: 52px;
+        gap: 6px;
+    }
+
+    .site-nav-sub .site-nav-menu {
+        max-width: calc(100vw - 20px);
+        left: 0;
+        right: auto;
+    }
+
+    /* Main container breathing room */
+    .main-wrap,
+    .archive-surface,
+    .entity-detail {
+        padding-inline: 12px;
+    }
+
+    /* Unified horizontal-scroll kinetic tabs (keeps sliding ink-bar silky on mobile!) */
+    .entity-tabs,
+    .character-entity-detail .entity-tabs,
+    .voice-entity-detail .entity-tabs,
+    .song-entity-detail .entity-tabs,
+    .anime-entity-detail .entity-tabs,
+    .horse-entity-detail .entity-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 6px;
+        padding: 4px 4px 12px;
+        margin-inline: -4px;
+        scroll-snap-type: x proximity;
+    }
+
+    .entity-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .entity-tabs button,
+    .character-entity-detail .entity-tabs button,
+    .voice-entity-detail .entity-tabs button,
+    .song-entity-detail .entity-tabs button,
+    .anime-entity-detail .entity-tabs button,
+    .horse-entity-detail .entity-tabs button {
+        flex: 0 0 auto !important;
+        min-height: 40px;
+        padding: 8px 14px !important;
+        font-size: 0.84rem !important;
+        white-space: nowrap;
+        scroll-snap-align: start;
+    }
+
+    /* Entity Detail Mastheads (Character / Voice / Song / Album / Event / Horse / Venue / Anime) */
+    .character-entity-detail > .entity-hero,
+    .voice-entity-detail > .entity-hero,
+    .horse-entity-detail > .entity-hero,
+    .music-archive-hero,
+    .event-entity-detail > .entity-hero {
+        border-radius: 16px;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .character-entity-detail > .entity-hero,
+    .voice-entity-detail > .entity-hero,
+    .horse-entity-detail > .entity-hero {
+        grid-template-columns: 96px minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .character-entity-detail > .entity-hero > .hero-video-aside,
+    .horse-entity-detail > .entity-hero > .hero-video-aside {
+        grid-column: 1 / -1;
+        max-width: none;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .entity-hero h1,
+    .music-archive-hero h1 {
+        font-size: clamp(1.24rem, 5.4vw, 1.65rem);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    .entity-reading {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    /* Profile facts & detail metadata: clean borderless tonal cards */
+    .profile-facts,
+    .detail-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .profile-facts > div,
+    .detail-meta > div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+        padding: 12px 14px;
+    }
+
+    #tab-characters .character-description {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    /* Entity Sections & Tables */
+    .entity-section {
+        border-radius: 16px;
+        padding: 14px;
+    }
+
+    .data-table,
+    .setlist-frame .setlist-table,
+    .horse-table {
+        font-size: 0.84rem;
+    }
+
+    .setlist-frame,
+    .horse-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-inline: -4px;
+        padding-inline: 4px;
+    }
+
+    /* Relation song disclosure detail: remove desktop 69px left indent on mobile */
+    .relation-song-detail {
+        padding: 8px 10px 14px;
+    }
+
+    .relation-release {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    /* Archive toolbars & filters */
+    .archive-toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .archive-toolbar > .ui-search,
+    .archive-toolbar > .filter-pill-group,
+    .archive-toolbar > .archive-controls {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .archive-controls {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .archive-toolbar > .ui-select-control,
+    .archive-controls > .ui-select-control {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .ui-select-menu {
+        max-height: min(300px, 50vh);
+    }
+
+    /* Catalog grids */
+    .album-database-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    #tab-characters .cio-list ul.cio-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .anime-catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .horse-row {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 10px 12px;
+        padding: 12px 10px;
+    }
+
+    .horse-row-badges {
+        grid-column: 2;
+        justify-content: flex-start;
+    }
+
+    /* Legal, Contact, Fix Form & Links pages */
+    .legal-page,
+    .contribute-page,
+    .links-page {
+        padding: 18px 14px;
+        border-radius: 16px;
+    }
+
+    .fix-input,
+    .fix-textarea,
+    .ui-search input {
+        font-size: 16px; /* Prevents iOS Safari auto-zoom on focus */
+    }
+
+    .fix-submit {
+        width: 100%;
+        min-height: 46px;
+        justify-content: center;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Footer clean mobile stack */
+    .footer-inner {
+        padding: 28px 16px 22px;
+        gap: 20px;
+    }
+
+    .footer-copy {
+        font-size: 0.76rem;
+        line-height: 1.6;
+        gap: 8px 14px !important;
+    }
+}
+
+/* --- Tier 2: Standard Phones (<= 430px — iPhone 14/15/16 Pro / Pro Max) --- */
+@media (max-width: 430px) {
+    .main-wrap,
+    .archive-surface,
+    .entity-detail {
+        padding-inline: 10px;
+    }
+
+    .character-entity-detail > .entity-hero,
+    .voice-entity-detail > .entity-hero,
+    .horse-entity-detail > .entity-hero {
+        grid-template-columns: 82px minmax(0, 1fr);
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .profile-facts,
+    .detail-meta {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .event-catalog-row {
+        grid-template-columns: 72px minmax(0, 1fr) 16px;
+        gap: 6px 10px;
+        padding: 12px 8px;
+    }
+
+    .event-catalog-cover {
+        width: 72px;
+    }
+
+    .music-card {
+        border-radius: 14px;
+    }
+}
+
+/* --- Tier 3: Compact Phones (<= 375px — iPhone SE / Mini / 360px Android) --- */
+@media (max-width: 375px) {
+    .archive-toolbar,
+    .archive-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #tab-characters .cio-list ul.cio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .anime-catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-entity-detail > .entity-hero,
+    .voice-entity-detail > .entity-hero,
+    .horse-entity-detail > .entity-hero {
+        grid-template-columns: 72px minmax(0, 1fr);
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .entity-tabs button,
+    .character-entity-detail .entity-tabs button,
+    .voice-entity-detail .entity-tabs button,
+    .song-entity-detail .entity-tabs button {
+        padding: 8px 11px !important;
+        font-size: 0.8rem !important;
+    }
+}

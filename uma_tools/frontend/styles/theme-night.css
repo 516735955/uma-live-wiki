@@ -1,0 +1,353 @@
+/* ===== SHARED NIGHT CAMPAIGN BASE + VARIANT SYSTEM =====
+ * Used exclusively by temporary special campaigns (e.g. Daring Tact 7-day celebration).
+ * Future dark campaigns only need a ~6-line [data-variant="..."] accent block.
+ */
+
+body.ui-theme-dark,
+body[data-theme="night"] {
+    color-scheme: dark;
+
+    --surface-canvas: #060b18;
+    --surface-panel: rgba(13, 21, 44, 0.72);
+    --surface-raised: #152544;
+    --surface-subtle: rgba(9, 16, 36, 0.76);
+    --surface-hover: rgba(121, 198, 219, 0.11);
+    --surface-glass: rgba(8, 14, 32, 0.86);
+
+    --ink-1: #f0f6ff;
+    --ink-2: #b4c8df;
+    --ink-3: #839ab8;
+
+    --accent-primary: #79c6db;
+    --accent-primary-deep: #9ae0f4;
+    --accent-primary-soft: rgba(121, 198, 219, 0.16);
+    --accent-secondary: #f5c556;
+    --accent-secondary-end: #ffe49c;
+    --accent-secondary-soft: rgba(245, 197, 86, 0.18);
+    --accent-ring: rgba(121, 198, 219, 0.24);
+
+    --hairline: rgba(154, 214, 240, 0.14);
+    --hairline-strong: rgba(154, 214, 240, 0.26);
+
+    --shadow-panel: 0 12px 34px rgba(2, 6, 18, 0.45);
+    --shadow-hover: 0 16px 40px rgba(2, 6, 18, 0.58);
+    --shadow-control: 0 4px 14px rgba(2, 6, 18, 0.36);
+    --shadow-float: 0 18px 44px rgba(2, 5, 16, 0.65);
+
+    /* Legacy compatibility bridge */
+    --theme-surface: #0c142a;
+    --theme-raised: var(--surface-raised);
+    --theme-accent: var(--accent-primary-deep);
+    --theme-line: rgba(154, 214, 240, 0.22);
+    --ui-disclosure-open: var(--surface-raised);
+    --ui-disclosure-hover: rgba(121, 198, 219, 0.12);
+    --ui-disclosure-muted: var(--ink-2);
+    --ui-disclosure-accent: var(--accent-primary-deep);
+}
+
+/* Variant: Daring Tact Crowned (无败牝马三冠达成鎏金态) */
+body.ui-theme-dark.dt-crowned-theme,
+body[data-theme="night"][data-variant="daring-tact-crowned"] {
+    --surface-canvas: #081026;
+    --surface-panel: rgba(16, 28, 60, 0.72);
+    --surface-raised: #242b48;
+    --surface-hover: rgba(248, 212, 120, 0.13);
+    --accent-primary: #f5c556;
+    --accent-primary-deep: #ffe49c;
+    --accent-primary-soft: rgba(248, 212, 120, 0.18);
+    --accent-ring: rgba(255, 228, 156, 0.24);
+    --hairline: rgba(248, 212, 120, 0.18);
+    --hairline-strong: rgba(248, 212, 120, 0.34);
+    --theme-accent: #ffe49c;
+    --theme-raised: #29273a;
+    --theme-line: rgba(248, 212, 120, 0.32);
+    --ui-disclosure-hover: rgba(248, 212, 120, 0.14);
+}
+
+/* Base page canvas & chrome under night theme */
+body.ui-theme-dark,
+body.ui-theme-dark #app {
+    background-color: var(--surface-canvas);
+    background-image: none;
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .sub-header {
+    background-image: none;
+    background: var(--surface-glass);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 10px 30px rgba(2, 6, 18, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+body.ui-theme-dark .site-nav-sub .site-nav-item.active {
+    transform: skewX(-30deg);
+    border-right-color: var(--hairline);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, var(--accent-primary-soft) 100%);
+    box-shadow: inset 0 -3px 0 var(--accent-primary);
+}
+
+body.ui-theme-dark .site-nav-sub .site-nav-item.active .site-nav-trigger {
+    min-height: 56px;
+}
+
+body.ui-theme-dark .site-nav-sub .site-nav-item.active > .site-nav-trigger {
+    background: transparent;
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .site-nav-sub .site-nav-menu {
+    background: rgba(10, 18, 40, 0.96);
+    border: 1px solid var(--hairline);
+}
+
+body.ui-theme-dark .route-breadcrumb {
+    color: var(--ink-3);
+}
+
+body.ui-theme-dark .route-breadcrumb a {
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .route-breadcrumb a:hover {
+    color: #ffffff;
+}
+
+body.ui-theme-dark .route-breadcrumb em:last-child {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .context-back {
+    background: var(--surface-glass);
+    border-color: var(--hairline);
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .context-back:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary-deep);
+}
+
+/* Unified Night Footer */
+body.ui-theme-dark .site-footer {
+    background-image: none;
+    background: linear-gradient(180deg, #070d1e 0%, #050914 100%);
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark.dt-crowned-theme .site-footer {
+    background: linear-gradient(180deg, #0b1636 0%, #070e24 100%);
+}
+
+/* Unified Night Audio Dock & Queue Panel */
+body.ui-theme-dark .audio-dock {
+    background: linear-gradient(90deg, #060b18 0%, #0b1530 52%, #070d1e 100%);
+    border-top: 1px solid var(--hairline-strong);
+    box-shadow: 0 -10px 30px rgba(2, 6, 16, 0.55);
+}
+
+body.ui-theme-dark.dt-crowned-theme .audio-dock {
+    background: linear-gradient(90deg, #09132e 0%, #12224f 52%, #0a1432 100%);
+}
+
+body.ui-theme-dark .audio-dock::before {
+    opacity: 0;
+}
+
+body.ui-theme-dark .audio-dock .audio-control-primary {
+    background: var(--accent-primary);
+    color: #060b18;
+    box-shadow: 0 6px 20px var(--accent-ring);
+}
+
+body.ui-theme-dark .audio-dock .audio-control-primary:hover {
+    background: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .audio-dock input[type="range"] {
+    accent-color: var(--accent-primary);
+}
+
+body.ui-theme-dark .audio-panel {
+    background: #0b142c;
+    border-color: var(--hairline-strong);
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .audio-queue-row {
+    background: transparent;
+    border-color: var(--hairline);
+}
+
+body.ui-theme-dark .audio-queue-row:is(:hover, .active, .dragging) {
+    background: var(--surface-raised);
+}
+
+body.ui-theme-dark :is(.audio-queue-copy small, .audio-queue-number, .audio-panel-head h2 em,
+    .audio-panel-clear, .audio-icon-btn, .audio-queue-drag, .audio-queue-remove) {
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark .audio-queue-row.active .audio-queue-number {
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark :is(.audio-panel-clear, .audio-icon-btn, .audio-queue-remove):hover {
+    color: var(--accent-primary-deep);
+    background: var(--surface-raised);
+}
+
+/* Shared Dark Controls, Tabs, Disclosures, History & News */
+body.ui-theme-dark .ui-search,
+body.ui-theme-dark .ui-select-control {
+    background: var(--surface-subtle);
+    border-color: var(--hairline-strong);
+    color: var(--ink-1);
+    box-shadow: var(--shadow-control);
+}
+
+body.ui-theme-dark .ui-search input,
+body.ui-theme-dark .ui-select-trigger,
+body.ui-theme-dark .ui-select-value {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .ui-search input::placeholder,
+body.ui-theme-dark .ui-select-label {
+    color: var(--ink-3);
+}
+
+body.ui-theme-dark .ui-search > svg,
+body.ui-theme-dark .ui-select-trigger > svg {
+    stroke: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .ui-select-menu {
+    background: #0b1530;
+    border-color: var(--hairline-strong);
+    box-shadow: var(--shadow-float);
+}
+
+body.ui-theme-dark .ui-select-menu button {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .ui-select-menu button:is(:hover, .active, .selected) {
+    background: var(--surface-raised);
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .ui-state { color: var(--ink-2); }
+body.ui-theme-dark .ui-state-error { color: #ffb6aa; }
+body.ui-theme-dark .ui-retry {
+    background: var(--surface-raised);
+    border-color: var(--hairline-strong);
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .entity-tabs {
+    border-bottom: 0;
+}
+
+body.ui-theme-dark .entity-tabs button {
+    color: var(--ink-2);
+    background: transparent;
+}
+
+body.ui-theme-dark .entity-tabs button:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.ui-theme-dark .entity-tabs button.active {
+    color: var(--accent-primary-deep);
+    background: transparent;
+    box-shadow: none;
+}
+
+body.ui-theme-dark .entity-section,
+body.ui-theme-dark .pedigree-section {
+    background: var(--surface-panel);
+    border: 0;
+    color: var(--ink-1);
+    box-shadow: var(--shadow-panel);
+}
+
+body.ui-theme-dark .ui-disclosure-detail {
+    background: var(--surface-subtle);
+    border-color: var(--hairline);
+}
+
+body.ui-theme-dark .relation-song-row b,
+body.ui-theme-dark .ui-disclosure-copy b,
+body.ui-theme-dark .relation-version header,
+body.ui-theme-dark .relation-release b,
+body.ui-theme-dark .album-inline b,
+body.ui-theme-dark .history-list strong,
+body.ui-theme-dark .history-list > a > span:first-of-type {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .relation-song-meta,
+body.ui-theme-dark .secondary-line,
+body.ui-theme-dark .history-list time,
+body.ui-theme-dark .history-list em {
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark .history-list > a:hover {
+    background: var(--surface-hover);
+}
+
+body.ui-theme-dark .credit-role-tag,
+body.ui-theme-dark .history-list em.credit-role-tag,
+body.ui-theme-dark .related-news .section-toolbar h2 {
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+    border: 0;
+}
+
+body.ui-theme-dark .text-link,
+body.ui-theme-dark .album-inline {
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .route-placeholder :is(.entity-hero, .entity-section, .entity-cover) {
+    background: var(--surface-panel);
+    border-color: var(--hairline);
+    box-shadow: none;
+}
+
+body.ui-theme-dark .route-placeholder :is(i, .route-placeholder-lines > span) {
+    background: var(--surface-raised);
+}
+
+/* High-contrast borderless tonal profile facts & editorial bio under night theme */
+body.ui-theme-dark .profile-facts > div,
+body.ui-theme-dark .detail-meta > div {
+    background: var(--surface-subtle);
+    border: 0;
+}
+
+body.ui-theme-dark .profile-facts > div:hover,
+body.ui-theme-dark .detail-meta > div:hover {
+    background: var(--surface-hover);
+}
+
+body.ui-theme-dark .profile-facts dt,
+body.ui-theme-dark .detail-meta dt {
+    color: var(--ink-3);
+}
+
+body.ui-theme-dark .profile-facts dd,
+body.ui-theme-dark .detail-meta dd {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark #tab-characters .character-description {
+    background: var(--surface-subtle);
+    border-left-color: var(--accent-primary);
+    color: var(--ink-1);
+}

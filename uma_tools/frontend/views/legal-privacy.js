@@ -1,8 +1,5 @@
 export const bindings = ["contactEmails"];
 export const template = `
-            <div class="legal-wrap info-page">
-                <header class="entity-hero music-archive-hero entity-hero-text"><div class="entity-intro"><h1>隐私政策</h1></div></header>
-
                 <article class="entity-section information-document">
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">一、</span><span class="legal-sec-title">浏览与账户</span></div>
@@ -17,8 +14,8 @@ export const template = `
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">三、</span><span class="legal-sec-title">Cookie 与本地存储</span></div>
-                    <p class="legal-text">本站当前不要求使用 Cookie 才能浏览公开内容，也未使用浏览器本地存储建立访问者档案。外部服务在您使用其表单、媒体或链接时，可能按其自身政策使用 Cookie 或类似技术。</p>
-                    <p class="legal-text">您可以通过浏览器设置管理或清除站点数据；清除后，相关页面偏好或外部服务状态可能需要重新设置。</p>
+                    <p class="legal-text">本站浏览公开内容无需 Cookie，也不会建立访问者画像或接入第三方广告追踪。本站仅会在浏览器本地存储中保存音频播放队列、音量及期间限定纪念主题的互动状态，所有数据均留在您的本地设备，不会上传至服务器。</p>
+                    <p class="legal-text">您可随时通过浏览器设置清除站点数据；清除后，播放队列或纪念互动状态将恢复默认。</p>
                 </div>
 
                 <div class="legal-section">
@@ -49,11 +46,10 @@ export const template = `
 
                 <div class="legal-section">
                     <div class="legal-sec-head"><span class="legal-sec-no">九、</span><span class="legal-sec-title">联系方式</span></div>
-                    <p class="legal-text">联系邮箱：<a v-for="email in contactEmails" :key="email" :href="'mailto:'+email">{{ email }}</a>。资料订正也可使用页脚表单。</p>
+                    <p class="legal-text">联系邮箱：<span class="email-inline-list"><a v-for="email in contactEmails" :key="email" class="email-chip" :href="'mailto:'+email">{{ email }}</a></span>。资料订正也可直接使用页脚的资料订正与联系入口。</p>
                     <p class="legal-text">本政策可能随站点功能与实际服务变化而更新；变更会在本页注明日期。</p>
                 </div>
 
-                <p class="legal-updated">最后更新：2026-09-20</p>
+                <p class="legal-updated">最后更新：2026-11-21</p>
                 </article>
-            </div>
         `;

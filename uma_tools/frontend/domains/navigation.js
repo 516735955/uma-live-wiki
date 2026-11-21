@@ -422,9 +422,17 @@ export function createNavigation(deps) {
   }
 
   function goLegal(page) {
+    const nextTab = page === "privacy" ? "legal-privacy" : "legal-terms";
+    const alreadyLegal = activeTab.value === "legal-privacy" || activeTab.value === "legal-terms";
+    if (alreadyLegal) {
+      if (activeTab.value === nextTab) return;
+      activeTab.value = nextTab;
+      deps.pushUrl(true);
+      return;
+    }
     deps.beginEntityNavigation();
     home.value = false;
-    activeTab.value = page === "privacy" ? "legal-privacy" : "legal-terms";
+    activeTab.value = nextTab;
     deps.clearEntityDetails();
     dbView.value = "index";
     resetPageScroll();

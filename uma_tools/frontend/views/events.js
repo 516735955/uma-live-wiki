@@ -75,7 +75,7 @@ export const template = `
                     <section class="entity-overview">
                         <dl><div><dt>形式</dt><dd>{{ eventModeLabel(eventDetail.mode) }}</dd></div><div v-if="eventSeriesName(eventDetail)"><dt>系列</dt><dd>{{ eventSeriesName(eventDetail) }}</dd></div></dl>
                         <p v-if="eventCurrentSummary">{{ eventCurrentSummary }}</p>
-                        <p v-if="eventCancellation" class="event-status-note">{{ eventCancellation.status_note }} <a v-if="eventStatusNewsId(eventCancellation)" class="text-link" :href="routes.news(eventStatusNewsId(eventCancellation))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventCancellation)))">查看取消公告 <span aria-hidden="true">→</span></a><a v-else-if="eventCancellation.status_source_url" class="text-link" :href="eventCancellation.status_source_url" target="_blank" rel="noopener">官方取消公告 ↗</a></p>
+                        <p v-if="eventCancellation" class="event-status-note">{{ eventCancellation.status_note }} <a v-if="eventStatusNewsId(eventCancellation)" class="text-link" :href="routes.news(eventStatusNewsId(eventCancellation))" @click="internalLink($event, () => openNews(eventStatusNewsId(eventCancellation)))">查看取消公告</a><a v-else-if="eventCancellation.status_source_url" class="text-link" :href="eventCancellation.status_source_url" target="_blank" rel="noopener">官方取消公告</a></p>
                     </section>
 
                     <nav class="entity-tabs" aria-label="活动栏目">

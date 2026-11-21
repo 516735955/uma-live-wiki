@@ -1,0 +1,75 @@
+/* ===== UNIFIED DESIGN TOKENS: DAYLIGHT (UMAMUSUME.JP COBALT & STAGE ORANGE) ===== */
+:root {
+    /* Surface elevation ramp (tonal hierarchy replaces box-in-box borders) */
+    --surface-canvas: #f3f5fb;
+    --surface-panel: #ffffff;
+    --surface-raised: #edf2fc;
+    --surface-subtle: #f7f9fe;
+    --surface-hover: rgba(49, 87, 237, 0.055);
+    --surface-glass: rgba(255, 255, 255, 0.88);
+
+    /* Ink hierarchy */
+    --ink-1: #161f3d;
+    --ink-2: #525f7d;
+    --ink-3: #7b87a3;
+    --ink-inverse: #ffffff;
+
+    /* Official umamusume.jp Cobalt & Stage Orange */
+    --accent-primary: #3157ed;
+    --accent-primary-deep: #213aa8;
+    --accent-primary-soft: rgba(49, 87, 237, 0.10);
+    --accent-secondary: #ff7b16;
+    --accent-secondary-end: #ffa932;
+    --accent-secondary-soft: rgba(255, 123, 22, 0.12);
+    --accent-ring: rgba(49, 87, 237, 0.22);
+
+    /* Ultra-restrained hairlines */
+    --hairline: rgba(22, 31, 61, 0.08);
+    --hairline-strong: rgba(49, 87, 237, 0.16);
+
+    /* Soft ambient shadows (replaces harsh 1px borders and heavy solid offsets) */
+    --shadow-panel: 0 2px 6px rgba(22, 36, 92, 0.04), 0 12px 32px rgba(22, 36, 92, 0.065);
+    --shadow-hover: 0 6px 16px rgba(22, 36, 92, 0.08), 0 18px 40px rgba(49, 87, 237, 0.13);
+    --shadow-control: 0 2px 8px rgba(22, 36, 92, 0.055), 0 1px 2px rgba(22, 36, 92, 0.04);
+    --shadow-float: 0 14px 36px rgba(18, 30, 74, 0.16);
+
+    /* Unified Typography Scale & Weights */
+    --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic UI", "Yu Gothic", system-ui, -apple-system, sans-serif;
+    --text-h1: clamp(1.42rem, 2.3vw, 1.92rem);
+    --text-h2: 1.02rem;
+    --text-body: 0.9375rem;
+    --text-sub: 0.875rem;
+    --text-label: 0.8125rem;
+    --text-badge: 0.75rem;
+
+    /* Kinetic motion physics */
+    --ease-uma: cubic-bezier(.19, 1, .22, 1);
+    --ease-spring: cubic-bezier(.22, 1.16, .36, 1);
+    --dur-fast: 160ms;
+    --dur-base: 280ms;
+    --dur-slow: 460ms;
+
+    /* Legacy token aliases mapped cleanly to single source of truth */
+    --bg: var(--surface-canvas);
+    --bg-2: var(--surface-raised);
+    --card: var(--surface-panel);
+    --text: var(--ink-1);
+    --text-1: var(--ink-1);
+    --text-2: var(--ink-2);
+    --text-3: var(--ink-3);
+    --border: var(--hairline);
+    --border-strong: var(--hairline-strong);
+    --surface-line: var(--hairline);
+    --surface-muted: var(--surface-subtle);
+    --ui-line: var(--hairline);
+    --ui-soft: var(--surface-raised);
+    --ui-navy: var(--ink-1);
+    --ui-cobalt: var(--accent-primary);
+    --ui-cobalt-deep: var(--accent-primary-deep);
+    --ui-orange: var(--accent-secondary);
+    --ui-orange-end: var(--accent-secondary-end);
+    --ui-orange-deep: var(--accent-secondary);
+    --ui-focus: var(--accent-primary);
+    --ui-focus-halo: var(--accent-ring);
+    --ui-ease: var(--ease-uma);
+}

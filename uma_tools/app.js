@@ -3,6 +3,7 @@ import { createViewModel } from "/uma_tools/frontend/view-model.js";
 import { registerPages } from "/uma_tools/frontend/pages.js";
 import { createDomains } from "/uma_tools/frontend/domains.js";
 import { installNavigationPrefetch } from '/uma_tools/frontend/navigation-prefetch.js';
+import { installUiMotion } from '/uma_tools/frontend/ui-motion.js';
 
 const { createApp, ref, reactive, computed, watch } = Vue;
 const api = window.UmaApi;
@@ -36,6 +37,7 @@ const umaApp = createApp({
     const self = this;
     window.__uma_app = this;
     this.stopNavigationPrefetch = installNavigationPrefetch(api);
+    this.stopUiMotion = installUiMotion();
     let popRevision = 0;
     let restoreRevision = 0;
     let renderedRevision = 0;
@@ -127,7 +129,7 @@ const umaApp = createApp({
     syncPrepared();
     this.loadHomeSummaryIfNeeded();
   },
-  beforeUnmount() { this.stopNavigationPrefetch?.(); },
+  beforeUnmount() { this.stopNavigationPrefetch?.(); this.stopUiMotion?.(); },
 });
 registerComponents(umaApp, routes);
 umaApp.directive('media-src', {

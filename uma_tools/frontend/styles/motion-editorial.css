@@ -1,0 +1,989 @@
+/* ===== UMAMUSUME.JP SLANTED KINETIC VISUAL LANGUAGE =====
+ * Removes stiff government-portal box-in-box borders & redundant horizontal lines,
+ * replacing them with tonal floating panels, slanted diagonal energy,
+ * unified single-color accents, and fluid spring-kinetic transitions.
+ */
+
+/* --- 0. Unified Sitewide Typography & Non-Selectable UI/Decorative Text --- */
+body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Uniform upright typography across UI labels (no random italic/slanted clash) */
+.entity-kind,
+.credit-role-tag,
+.horse-badge,
+.event-catalog-facts i,
+.route-breadcrumb em,
+.history-list em,
+.card-veil p,
+.legal-sec-no {
+    font-style: normal;
+}
+
+.entity-hero h1,
+.music-archive-hero h1 {
+    font-size: var(--text-h1);
+    font-weight: 800;
+    line-height: 1.26;
+    letter-spacing: -0.01em;
+}
+
+.entity-reading,
+.secondary-line {
+    font-size: var(--text-sub);
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.legal-text,
+.contact-text,
+#tab-characters .character-description {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.legal-sec-title,
+.contact-sec-title,
+.section-toolbar h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.profile-facts dt,
+.detail-meta dt,
+.fix-label,
+.data-table th {
+    font-size: var(--text-label);
+    font-weight: 600;
+}
+
+.profile-facts dd,
+.detail-meta dd {
+    font-size: var(--text-body);
+    font-weight: 600;
+}
+
+.entity-kind,
+.credit-role-tag,
+.horse-badge,
+.event-catalog-facts i,
+.legal-sec-no {
+    font-size: var(--text-badge);
+    font-weight: 700;
+}
+
+/* Non-selectable UI controls, buttons, badges & decorative homepage magazine text */
+button,
+.sub-brand,
+.site-nav,
+.site-nav-trigger,
+.site-nav-menu,
+.entity-tabs,
+.entity-kind,
+.credit-role-tag,
+.horse-badge,
+.ui-select-control,
+.ui-select-menu,
+.ui-pager,
+.fix-submit,
+.info-inline-action,
+.card-veil,
+.legal-sec-no,
+.home-nav,
+.home-stats,
+.home-upcoming .hu-badge,
+.dt-hero-stage,
+.dt-hero-stage *,
+.dt-crown-btn,
+.dt-crown-bar,
+.dt-vertical-stamp,
+.dt-bg-word,
+.dt-banner-title,
+.dt-detail-hero-bg,
+.dt-detail-hero-bg * {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* --- 1. Global Page Canvas & Fluid Route Choreography --- */
+body.subpage-bg:not(.ui-theme-dark) {
+    background-color: var(--surface-canvas);
+    background-image:
+        radial-gradient(ellipse 90% 42% at 88% -8%, rgba(49, 87, 237, 0.075) 0%, transparent 64%),
+        radial-gradient(ellipse 65% 36% at 6% 18%, rgba(255, 123, 22, 0.055) 0%, transparent 60%),
+        url('/uma_tools/img/bg_texture_white.webp');
+}
+
+.route-content-enter {
+    animation: umaPageEnter 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: transform, opacity;
+}
+
+@keyframes umaPageEnter {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0) scale(0.992);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/* Sticky top bar depth & kinetic nav polish */
+body.is-scrolled .sub-header {
+    box-shadow: 0 12px 32px rgba(18, 32, 86, 0.24);
+}
+
+.site-nav-sub .site-nav-menu {
+    border-radius: 0 0 14px 14px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: umaNavMenuIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes umaNavMenuIn {
+    from {
+        opacity: 0;
+        transform: skewX(30deg) translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: skewX(30deg) translateY(0);
+    }
+}
+
+/* --- 2. De-Bureaucratized Controls (Borderless Floating Pills + Smooth Dropdowns) --- */
+.ui-search,
+.ui-select-control {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-control);
+    transition:
+        border-color var(--dur-fast) ease,
+        box-shadow var(--dur-base) var(--ease-uma),
+        transform var(--dur-base) var(--ease-uma);
+}
+
+.ui-search:hover,
+.ui-select-control:hover {
+    box-shadow: 0 6px 18px rgba(22, 36, 92, 0.09);
+    transform: translateY(-1px);
+}
+
+.ui-search:focus-within,
+.ui-select-control.open,
+.ui-select-control:focus-within {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-ring), 0 8px 22px rgba(49, 87, 237, 0.12);
+    transform: translateY(0);
+}
+
+.ui-select-menu {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: var(--shadow-float);
+    transform-origin: top center;
+    animation: umaDropdownIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes umaDropdownIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -8px, 0) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+.ui-select-menu button {
+    border-radius: 8px;
+    transition: background var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-uma);
+}
+
+.ui-select-menu button:hover {
+    transform: translateX(4px);
+}
+
+.ui-pager button {
+    border: 0;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-control);
+    transition: transform 240ms cubic-bezier(0.22, 1.15, 0.36, 1), box-shadow var(--dur-base) var(--ease-uma), background var(--dur-fast) ease;
+}
+
+.ui-pager button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.ui-pager button:not(:disabled):active {
+    transform: translateY(0) scale(0.93);
+}
+
+/* --- 3. Borderless Floating Archive Lists & Slanted Kinetic Row Highlight --- */
+.event-catalog,
+.song-catalog,
+.album-catalog,
+.creator-catalog,
+.horse-list {
+    border: 0;
+    border-radius: 18px;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-panel);
+    overflow: hidden;
+    padding: 6px;
+}
+
+.event-catalog-row,
+.creator-catalog-row,
+.news-row,
+.horse-row,
+.relation-song-row {
+    position: relative;
+    border-bottom: 0;
+    border-radius: 12px;
+    transition:
+        background 200ms ease,
+        transform 280ms cubic-bezier(0.22, 1.12, 0.36, 1),
+        box-shadow 220ms ease;
+}
+
+.event-catalog-row::before,
+.creator-catalog-row::before,
+.news-row::before,
+.horse-row::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    bottom: 12px;
+    width: 3.5px;
+    border-radius: 3px;
+    background: var(--accent-primary);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 280ms cubic-bezier(0.22, 1.18, 0.36, 1);
+    pointer-events: none;
+}
+
+.event-catalog-row:hover::before,
+.creator-catalog-row:hover::before,
+.news-row:hover::before,
+.horse-row:hover::before {
+    transform: scaleY(1);
+}
+
+.event-catalog-row:hover,
+.creator-catalog-row:hover,
+.news-row:hover,
+.horse-row:hover {
+    background: var(--surface-hover);
+    box-shadow: none;
+    transform: translateX(5px);
+}
+
+/* --- 4. Borderless Tonal Tags & Badges (Zero Clunky Pill Borders) --- */
+.credit-role-tag,
+.event-catalog-facts i,
+.guest-performer,
+.horse-badge {
+    border: 0;
+    border-radius: 999px;
+    background: var(--surface-raised);
+    color: var(--accent-primary-deep);
+    padding: 4px 12px;
+}
+
+.horse-badge-death {
+    background: var(--accent-secondary-soft);
+    color: #9e4810;
+}
+
+/* --- 5. Gallery Cards & Staggered Cascade Choreography --- */
+.music-card,
+.album-card,
+.news-hero-card,
+.database-directory button,
+.video-library a,
+.setting-book-list a,
+.link-card {
+    border: 0;
+    border-radius: 16px;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-panel);
+    transition:
+        transform 340ms cubic-bezier(0.22, 1.15, 0.36, 1),
+        box-shadow 300ms var(--ease-uma);
+}
+
+.music-card::after {
+    width: 44px;
+    height: 4px;
+    border-radius: 999px;
+    transform: none;
+    right: 14px;
+    bottom: 0;
+    transition: width 320ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.music-card:hover::after {
+    width: 78px;
+}
+
+.music-card:hover,
+.album-card:hover,
+.news-hero-card:hover,
+.database-directory button:hover,
+.video-library a:hover,
+.setting-book-list a:hover,
+.link-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.music-card:active,
+.album-card:active,
+.news-hero-card:active,
+.database-directory button:active,
+.link-card:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.album-cover,
+.news-hero-cover,
+.music-card-main > img {
+    transition: transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.album-card:hover .album-cover,
+.news-hero-card:hover .news-hero-cover,
+.music-card:hover .music-card-main > img {
+    transform: scale(1.055);
+}
+
+/* Crisp staggered entrance for catalog cards & rows */
+@keyframes umaStaggerIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 12px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :is(.album-card, .music-card, .event-catalog-row, .creator-catalog-row, .news-row, .horse-row, .relation-song-row) {
+    animation: umaStaggerIn 340ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(2) { animation-delay: 24ms; }
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(3) { animation-delay: 48ms; }
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(4) { animation-delay: 72ms; }
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(5) { animation-delay: 96ms; }
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(6) { animation-delay: 120ms; }
+:is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > :nth-child(n+7) { animation-delay: 144ms; }
+
+/* Modern gallery cards: artwork on top, always-visible crisp title caption below (zero overlap!) */
+.album-card {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: auto;
+    overflow: hidden;
+}
+
+.album-card::before {
+    content: none;
+}
+
+.album-card > .album-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+}
+
+.album-card > .album-info {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    flex: 1 1 auto;
+    padding: 12px 14px 14px;
+    background: var(--surface-panel);
+    color: var(--ink-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.album-card .album-name {
+    color: var(--ink-1);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.38;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.album-card .album-count {
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+/* Card hover veil sits strictly over the artwork area (never overlaps caption or CV!) */
+.card-veil {
+    background: linear-gradient(
+        165deg,
+        color-mix(in srgb, var(--card-accent, var(--color-main, #3157ed)) 16%, transparent) 0%,
+        color-mix(in srgb, var(--card-accent, var(--color-main, #3157ed)) 78%, transparent) 66%,
+        color-mix(in srgb, var(--card-accent, var(--color-main, #3157ed)) 94%, #0f1838) 100%
+    );
+    z-index: 5;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 14px 16px;
+    transition: opacity 260ms var(--ease-uma);
+}
+
+.album-card > .card-veil {
+    inset: 0 0 auto 0;
+    aspect-ratio: 1 / 1;
+}
+
+.cio-card > .card-veil {
+    inset: 0 0 64px 0;
+    z-index: 6;
+}
+
+:is(.album-card, .cio-card):is(:hover, :focus-visible) > .card-veil {
+    opacity: 1;
+}
+
+.card-veil p {
+    transform: translateY(8px);
+    transition: transform 320ms cubic-bezier(0.22, 1.15, 0.36, 1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.84rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+}
+
+:is(.album-card, .cio-card):is(:hover, :focus-visible) > .card-veil p {
+    transform: translateY(0);
+}
+
+/* Performer chips micro-spring (zero borders!) */
+.performer-chip {
+    transition: transform 260ms cubic-bezier(0.22, 1.15, 0.36, 1), color 180ms ease;
+}
+
+.performer-chip:hover {
+    transform: translateX(2px);
+}
+
+.performer-chip:hover img {
+    transform: scale(1.12);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--chip-color, #3157ed) 32%, transparent);
+}
+
+/* --- 6. Editorial Entity Detail Mastheads & Zero-Hairline Profile Sections --- */
+.event-entity-detail > .entity-hero,
+.character-entity-detail > .entity-hero,
+.voice-entity-detail > .entity-hero,
+.horse-entity-detail > .entity-hero,
+.music-archive-hero {
+    border: 0;
+    border-radius: 20px;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-panel);
+    overflow: hidden;
+}
+
+.entity-cover {
+    border: 3px solid rgba(255, 255, 255, 0.96);
+    border-radius: 14px;
+    box-shadow: 0 14px 32px rgba(22, 36, 92, 0.16);
+    transition: transform 420ms cubic-bezier(0.22, 1.15, 0.36, 1), box-shadow 360ms var(--ease-uma);
+}
+
+.entity-hero:hover .entity-cover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.entity-kind {
+    border-radius: 6px;
+    transform: none;
+    padding: 4px 12px;
+}
+
+/* Borderless floating content sections with silky kinetic entrance */
+.entity-section {
+    border: 0;
+    border-radius: 18px;
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-panel);
+    animation: umaTabPanelIn 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes umaTabPanelIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* ZERO horizontal lines in profile facts & detail metadata — tonal soft tiles instead */
+.profile-facts,
+.detail-meta {
+    border: 0;
+    gap: 12px;
+}
+
+.profile-facts > div,
+.detail-meta > div {
+    border: 0;
+    border-radius: 12px;
+    background: var(--surface-subtle);
+    padding: 14px 18px;
+    transition: background 200ms ease, transform 240ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.profile-facts > div:hover,
+.detail-meta > div:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+}
+
+.profile-facts dt,
+.detail-meta dt {
+    background: transparent;
+    color: var(--ink-3);
+    font-weight: 700;
+    font-size: 0.84rem;
+}
+
+.profile-facts dd,
+.detail-meta dd {
+    color: var(--ink-1);
+    font-weight: 750;
+}
+
+/* Character editorial bio/quote — ZERO top horizontal line, clean left accent bar */
+#tab-characters .character-description {
+    margin-top: 18px;
+    padding: 16px 20px;
+    border: 0;
+    border-left: 3px solid var(--entity-accent, var(--accent-primary));
+    border-radius: 0 14px 14px 0;
+    background: var(--surface-subtle);
+    color: var(--ink-1);
+}
+
+/* --- 7. Unified Single-Color Sliding Tab Bar (ZERO Bottom Hairline & ZERO Box Border) --- */
+.entity-tabs {
+    border-bottom: 0;
+    padding: 4px 2px 10px;
+    gap: 6px;
+}
+
+.entity-tabs button {
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+        color 200ms ease,
+        background 200ms ease,
+        transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.entity-tabs button:hover {
+    background: color-mix(in srgb, var(--entity-accent, var(--accent-primary)) 6%, transparent);
+    color: var(--entity-accent, var(--accent-primary-deep));
+}
+
+.entity-tabs button:active {
+    transform: scale(0.96);
+}
+
+.entity-tabs button.active {
+    background: transparent;
+    color: var(--entity-accent, var(--accent-primary-deep));
+    box-shadow: none;
+}
+
+.entity-tabs.has-ink-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 3px;
+    width: var(--tab-w, 0px);
+    transform: translateX(var(--tab-x, 0px));
+    border-radius: 999px;
+    background: var(--entity-accent, var(--accent-primary));
+    transition:
+        transform 380ms cubic-bezier(0.22, 1.18, 0.36, 1),
+        width 340ms cubic-bezier(0.22, 1.12, 0.36, 1),
+        background-color 220ms ease;
+    pointer-events: none;
+}
+
+body.ui-theme-dark .entity-tabs.has-ink-bar::after {
+    background: var(--accent-primary);
+}
+
+.entity-tabs.has-ink-bar button.active {
+    box-shadow: none;
+}
+
+/* --- 8. Lightened Data Tables & Smooth Disclosures --- */
+.data-table th,
+.setlist-frame .setlist-table th,
+.horse-table thead th {
+    border-bottom: 0;
+    background: var(--surface-subtle);
+    color: var(--ink-2);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.data-table th:first-child,
+.setlist-frame .setlist-table th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.data-table th:last-child,
+.setlist-frame .setlist-table th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.data-table td,
+.setlist-frame .setlist-table td {
+    border-bottom: 1px solid color-mix(in srgb, var(--hairline) 65%, transparent);
+}
+
+.data-table tbody tr:last-child td,
+.setlist-frame .setlist-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.data-table tbody tr:hover td,
+.setlist-frame .setlist-table tbody tr:hover td {
+    background: var(--surface-hover);
+}
+
+.ui-disclosure-list {
+    border-top: 0;
+}
+
+.ui-disclosure {
+    border-bottom: 0;
+    margin-bottom: 4px;
+}
+
+.ui-disclosure-detail {
+    border: 0;
+    border-radius: 14px;
+    background: var(--surface-subtle);
+    animation: umaDisclosureIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.relation-version {
+    border-top: 0;
+    padding: 12px 0;
+}
+
+@keyframes umaDisclosureIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -8px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* --- 9. Info / Legal / Fix Form Pages (Unified Editorial Masthead + Slanted Orange CTA) --- */
+.info-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-hero {
+    position: relative;
+    padding: 28px 32px;
+    background:
+        linear-gradient(122deg, rgba(49, 87, 237, 0.06) 0%, rgba(255, 123, 22, 0.04) 100%),
+        var(--surface-panel);
+}
+
+.info-hero::after {
+    content: none;
+}
+
+.info-hero .entity-kind {
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transform: none;
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+    font-size: var(--text-badge);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.info-hero .entity-reading {
+    margin: 8px 0 0;
+    color: var(--ink-2);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.information-document {
+    padding: 28px 34px;
+}
+
+.legal-section {
+    border: 0;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    background: var(--surface-subtle);
+    transition: background 200ms ease, transform 240ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.legal-section:hover {
+    background: var(--surface-hover);
+    transform: translateX(3px);
+}
+
+.legal-sec-no {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+    transform: none;
+}
+
+.legal-text a {
+    display: inline;
+    margin: 0;
+    color: var(--accent-primary-deep);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-section {
+    padding: 24px 28px;
+}
+
+.contact-sec-head {
+    border-bottom: 0;
+    margin-bottom: 14px;
+    padding-bottom: 0;
+}
+
+.contact-sec-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--ink-1);
+}
+
+.contact-sec-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--accent-primary);
+    transform: none;
+}
+
+.info-inline-action {
+    border: 0;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+    font-weight: 700;
+    transition: background 180ms ease, transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.info-inline-action:hover {
+    background: var(--accent-primary);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.fix-card {
+    padding: 28px 32px;
+}
+
+.fix-chips button {
+    border: 0;
+    border-radius: 999px;
+    background: var(--surface-subtle);
+    color: var(--ink-2);
+    font-weight: 600;
+    transition: background 180ms ease, color 180ms ease, transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.fix-chips button:hover {
+    background: var(--surface-hover);
+    color: var(--accent-primary-deep);
+    transform: translateY(-1px);
+}
+
+.fix-chips button.active {
+    background: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(49, 87, 237, 0.24);
+}
+
+.fix-input,
+.fix-textarea {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: var(--surface-subtle);
+    box-shadow: inset 0 1px 2px rgba(22, 36, 92, 0.05);
+    transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-uma);
+}
+
+.fix-input:focus,
+.fix-textarea:focus {
+    background: var(--surface-panel);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.fix-submit {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 34px;
+    background: linear-gradient(108deg, var(--accent-secondary), var(--accent-secondary-end));
+    color: #fff;
+    font-size: var(--text-body);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transform: none;
+    box-shadow: 0 10px 24px rgba(255, 123, 22, 0.26);
+    transition: transform 280ms cubic-bezier(0.22, 1.15, 0.36, 1), box-shadow 260ms var(--ease-uma), filter var(--dur-fast) ease, opacity 200ms ease;
+}
+
+.fix-submit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 28%, rgba(255, 255, 255, 0.3) 50%, transparent 72%);
+    transform: translateX(-120%);
+    transition: transform 540ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.fix-submit:not(:disabled):hover::before {
+    transform: translateX(120%);
+}
+
+.fix-submit:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255, 123, 22, 0.34);
+    filter: brightness(1.04);
+}
+
+.fix-submit:not(:disabled):active {
+    transform: translateY(0) scale(0.97);
+}
+
+.fix-submit:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Catalog Polish: No mid-word badge wrap on songs, uncrowded album toolbar, crisp cover scrim */
+.music-card .credit-role-tag,
+.music-card-meta span {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.archive-toolbar {
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.archive-toolbar > .ui-search {
+    flex: 1 1 280px;
+}
+
+.archive-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+}
+
+.archive-toolbar > .ui-select-control,
+.archive-controls > .ui-select-control {
+    flex: 0 1 auto;
+    min-width: 152px;
+}
+
+/* --- 10. Normal Homepage Subtle Kinetic Polish --- */
+.home-upcoming {
+    gap: 7px;
+}
+
+.home-upcoming .hu-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.home-upcoming .hu-venue {
+    opacity: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .route-content-enter, .entity-section, .ui-select-menu, .ui-disclosure-detail, .site-nav-sub .site-nav-menu,
+    :is(.album-database-grid, .song-catalog, .event-catalog, .creator-catalog, .news-list, .horse-list, .relation-song-list) > * {
+        animation: none;
+    }
+    .entity-tabs.has-ink-bar::after { transition: none; }
+}

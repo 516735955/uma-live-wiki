@@ -1,4 +1,7 @@
-/* ===== SELF-HOSTED EDITORIAL DISPLAY FONT (ZERO EXTERNAL CDN) ===== */
+/* ===== DARING TACT 7-DAY CAMPAIGN ARTWORK & CONSTELLATION =====
+ * Shared dark surfaces, controls, tabs, audio dock & footer live in theme-night.css.
+ */
+
 @font-face {
     font-family: "CinzelEditorial";
     src: url("/uma_tools/fonts/cinzel-editorial.woff2") format("woff2");
@@ -7,11 +10,7 @@
     font-display: swap;
 }
 
-/* ===== HOMEPAGE 7-DAY UNIFIED EDITORIAL THEME (SIDEBAR + STATS + FOOTER) ===== */
-body.dt-home-theme {
-    background: #060a16;
-}
-
+/* Homepage Campaign Shell Overrides */
 body.dt-home-theme .home-layout {
     background: #060a16;
 }
@@ -20,7 +19,7 @@ body.dt-home-theme .home-nav {
     background-image: none;
     background: linear-gradient(180deg, #070d1e 0%, #091228 54%, #060b18 100%);
     box-shadow: inset -1px 0 0 rgba(121, 198, 219, 0.18);
-    transition: background 0.85s cubic-bezier(.19, 1, .22, 1), box-shadow 0.85s cubic-bezier(.19, 1, .22, 1);
+    transition: background 0.85s var(--ease-uma), box-shadow 0.85s var(--ease-uma);
 }
 
 body.dt-home-theme.dt-crowned-theme .home-nav {
@@ -33,16 +32,14 @@ body.dt-home-theme .home-brand .hl-zh {
     color: #f5fbff;
 }
 
-body.dt-home-theme .home-brand .hl-en {
+body.dt-home-theme .home-brand .hl-en,
+body.dt-home-theme .site-footer .footer-brand-en,
+body.dt-detail-theme .site-footer .footer-brand-en {
     font-family: "CinzelEditorial", Georgia, serif;
     font-weight: 700;
-    letter-spacing: 0.28em;
-    color: rgba(154, 224, 244, 0.88);
-    transition: color 0.8s cubic-bezier(.19, 1, .22, 1);
-}
-
-body.dt-home-theme.dt-crowned-theme .home-brand .hl-en {
-    color: rgba(255, 228, 156, 0.92);
+    letter-spacing: 0.26em;
+    color: var(--accent-primary-deep);
+    transition: color 0.8s var(--ease-uma);
 }
 
 body.dt-home-theme .site-nav-home .site-nav-trigger {
@@ -53,64 +50,27 @@ body.dt-home-theme .site-nav-home .site-nav-trigger {
 body.dt-home-theme .site-nav-home .site-nav-trigger:hover,
 body.dt-home-theme .site-nav-home .site-nav-item.open > .site-nav-trigger {
     color: #ffffff;
-    background: rgba(121, 198, 219, 0.14);
-}
-
-body.dt-home-theme.dt-crowned-theme .site-nav-home .site-nav-trigger:hover,
-body.dt-home-theme.dt-crowned-theme .site-nav-home .site-nav-item.open > .site-nav-trigger {
-    background: rgba(248, 212, 120, 0.16);
+    background: var(--accent-primary-soft);
 }
 
 body.dt-home-theme .home-stats {
     background: rgba(7, 13, 30, 0.56);
-    border-color: rgba(121, 198, 219, 0.22);
+    border-color: var(--hairline-strong);
     box-shadow: 0 14px 36px rgba(3, 6, 16, 0.45);
-    transition: border-color 0.8s cubic-bezier(.19, 1, .22, 1), background 0.8s cubic-bezier(.19, 1, .22, 1);
+    transition: border-color 0.8s var(--ease-uma), background 0.8s var(--ease-uma);
 }
 
 body.dt-home-theme.dt-crowned-theme .home-stats {
     background: rgba(13, 24, 56, 0.62);
-    border-color: rgba(248, 212, 120, 0.36);
 }
 
 body.dt-home-theme .home-stat + .home-stat {
-    border-left-color: rgba(121, 198, 219, 0.22);
+    border-left-color: var(--hairline-strong);
 }
 
-body.dt-home-theme.dt-crowned-theme .home-stat + .home-stat {
-    border-left-color: rgba(248, 212, 120, 0.28);
-}
-
-/* Unified midnight editorial footer on both Homepage and Daring Tact Detail page */
-body.dt-home-theme .site-footer,
-body.dt-detail-theme .site-footer {
-    background-image: none !important;
-    background: linear-gradient(180deg, #070d1e 0%, #050914 100%) !important;
-    border-top: 1px solid rgba(121, 198, 219, 0.18);
-    color: rgba(226, 242, 255, 0.84);
-}
-
-body.dt-home-theme.dt-crowned-theme .site-footer,
-body.dt-detail-theme.dt-crowned-theme .site-footer {
-    background: linear-gradient(180deg, #0b1636 0%, #070e24 100%) !important;
-    border-top-color: rgba(248, 212, 120, 0.32);
-}
-
-body.dt-home-theme .site-footer .footer-brand-en,
-body.dt-detail-theme .site-footer .footer-brand-en {
-    font-family: "CinzelEditorial", Georgia, serif;
-    letter-spacing: 0.22em;
-    color: rgba(154, 224, 244, 0.82);
-}
-
-body.dt-home-theme.dt-crowned-theme .site-footer .footer-brand-en,
-body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
-    color: rgba(255, 228, 156, 0.88);
-}
-
-/* ===== DARING TACT EDITORIAL MAGAZINE HERO ===== */
+/* Editorial WebGL Stage */
 .home-hero.home-hero-daring-tact {
-    background: #060a16 !important;
+    background: #060a16;
     overflow: hidden;
 }
 
@@ -126,7 +86,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     background: radial-gradient(ellipse 66% 62% at 54% 48%, rgba(121, 198, 219, 0.16) 0%, #070d1e 60%, #050814 100%);
     isolation: isolate;
     font-family: inherit;
-    transition: background 0.9s cubic-bezier(.19, 1, .22, 1);
+    transition: background 0.9s var(--ease-uma);
 }
 
 .dt-hero-stage.is-banner {
@@ -134,24 +94,17 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     border-radius: 0;
 }
 
-.dt-hero-gl {
+.dt-hero-gl,
+.dt-hero-particles {
     position: absolute;
     inset: 0;
-    z-index: 1;
     width: 100%;
     height: 100%;
     display: block;
 }
 
-.dt-hero-particles {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: block;
-    pointer-events: none;
-}
+.dt-hero-gl { z-index: 1; }
+.dt-hero-particles { z-index: 2; pointer-events: none; }
 
 .dt-hero-stage:not(.is-banner)::after {
     content: "";
@@ -162,25 +115,15 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     height: 190px;
     z-index: 3;
     pointer-events: none;
-    background: linear-gradient(
-        to top,
-        rgba(5, 8, 20, 0.88) 0%,
-        rgba(5, 8, 20, 0.44) 52%,
-        rgba(5, 8, 20, 0) 100%
-    );
-    transition: background 0.9s cubic-bezier(.19, 1, .22, 1);
+    background: linear-gradient(to top, rgba(5, 8, 20, 0.88) 0%, rgba(5, 8, 20, 0.44) 52%, rgba(5, 8, 20, 0) 100%);
+    transition: background 0.9s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned:not(.is-banner)::after {
-    background: linear-gradient(
-        to top,
-        rgba(10, 19, 48, 0.86) 0%,
-        rgba(16, 28, 66, 0.36) 52%,
-        rgba(16, 28, 66, 0) 100%
-    );
+    background: linear-gradient(to top, rgba(10, 19, 48, 0.86) 0%, rgba(16, 28, 66, 0.36) 52%, rgba(16, 28, 66, 0) 100%);
 }
 
-/* ===== BOLD EDITORIAL MAGAZINE COVER TYPOGRAPHY ===== */
+/* Magazine Cover Typography */
 .dt-magazine-layer {
     position: absolute;
     inset: 0;
@@ -202,7 +145,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     -webkit-text-stroke: 1.4px rgba(121, 198, 219, 0.28);
     white-space: nowrap;
     transform: translate3d(var(--dt-px, 0px), var(--dt-py, 0px), 0);
-    transition: -webkit-text-stroke-color 0.8s cubic-bezier(.19, 1, .22, 1), color 0.8s cubic-bezier(.19, 1, .22, 1);
+    transition: -webkit-text-stroke-color 0.8s var(--ease-uma), color 0.8s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned .dt-mag-en {
@@ -220,7 +163,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     letter-spacing: 0.24em;
     line-height: 1;
     color: rgba(121, 198, 219, 0.28);
-    transition: color 0.8s cubic-bezier(.19, 1, .22, 1);
+    transition: color 0.8s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned .dt-mag-year {
@@ -237,7 +180,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     letter-spacing: 0.28em;
     line-height: 1;
     color: rgba(245, 251, 255, 0.16);
-    transition: color 0.8s cubic-bezier(.19, 1, .22, 1), text-shadow 0.8s cubic-bezier(.19, 1, .22, 1);
+    transition: color 0.8s var(--ease-uma), text-shadow 0.8s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned .dt-mag-vertical {
@@ -269,12 +212,8 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.22em;
-    color: #79c6db;
-    transition: color 0.7s cubic-bezier(.19, 1, .22, 1);
-}
-
-.dt-hero-stage.is-crowned .dt-ed-sub {
-    color: #f8d478;
+    color: var(--accent-primary);
+    transition: color 0.7s var(--ease-uma);
 }
 
 .dt-audio-eq {
@@ -288,14 +227,12 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
 .dt-audio-eq span {
     width: 2.5px;
     height: 100%;
-    background: #79c6db;
+    background: var(--accent-primary);
     border-radius: 1px;
     transform-origin: bottom center;
     animation: dt-eq-pulse 0.85s ease-in-out infinite;
 }
-.dt-hero-stage.is-crowned .dt-audio-eq span {
-    background: #f8d478;
-}
+
 .dt-audio-eq span:nth-child(2) { animation-delay: 0.18s; }
 .dt-audio-eq span:nth-child(3) { animation-delay: 0.36s; }
 
@@ -304,7 +241,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     50% { transform: scaleY(1); opacity: 1; }
 }
 
-/* ===== SEQUENTIAL TRIPLE TIARA CONSTELLATION (BOTTOM-RIGHT) ===== */
+/* Sequential Triple Tiara Constellation */
 .dt-constellation {
     position: absolute;
     right: 36px;
@@ -334,7 +271,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     height: 1.5px;
     background: rgba(121, 198, 219, 0.26);
     pointer-events: none;
-    transition: background 0.7s cubic-bezier(.19, 1, .22, 1);
+    transition: background 0.7s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned .dt-stars-row::before {
@@ -358,7 +295,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.28s cubic-bezier(.19, 1, .22, 1), border-color 0.28s ease, color 0.28s ease, box-shadow 0.35s ease, opacity 0.28s ease, background 0.28s ease;
+    transition: transform 0.28s var(--ease-uma), border-color 0.28s ease, color 0.28s ease, box-shadow 0.35s ease, opacity 0.28s ease, background 0.28s ease;
 }
 
 .dt-star-node.is-next {
@@ -368,11 +305,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     animation: dt-star-invite 2.1s ease-in-out infinite;
 }
 
-.dt-star-node.is-locked {
-    opacity: 0.38;
-    cursor: not-allowed;
-}
-
+.dt-star-node.is-locked { opacity: 0.38; cursor: not-allowed; }
 .dt-star-node:not(.is-locked):hover,
 .dt-star-node:not(.is-locked):focus-visible {
     transform: translateY(-2px) scale(1.1);
@@ -390,20 +323,9 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     animation: none;
 }
 
-.dt-star-node.is-shake {
-    animation: dt-star-shake 0.36s ease;
-}
-
-.dt-star-node svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transition: transform 0.5s cubic-bezier(.19, 1, .22, 1);
-}
-
-.dt-star-node.is-lit svg {
-    transform: rotate(90deg) scale(1.14);
-}
+.dt-star-node.is-shake { animation: dt-star-shake 0.36s ease; }
+.dt-star-node svg { width: 18px; height: 18px; fill: currentColor; transition: transform 0.5s var(--ease-uma); }
+.dt-star-node.is-lit svg { transform: rotate(90deg) scale(1.14); }
 
 .dt-constellation-label {
     min-height: 22px;
@@ -413,7 +335,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     color: #eaf7ff;
     text-align: right;
     text-shadow: 0 2px 14px rgba(4, 8, 20, 0.9);
-    transition: color 0.6s cubic-bezier(.19, 1, .22, 1);
+    transition: color 0.6s var(--ease-uma);
 }
 
 .dt-hero-stage.is-crowned .dt-constellation-label {
@@ -421,13 +343,8 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     text-shadow: 0 0 20px rgba(245, 197, 86, 0.55);
 }
 
-.dt-constellation-label.is-resettable {
-    cursor: pointer;
-}
-
-.dt-constellation-label.is-resettable:hover {
-    color: #ffffff;
-}
+.dt-constellation-label.is-resettable { cursor: pointer; }
+.dt-constellation-label.is-resettable:hover { color: #ffffff; }
 
 @keyframes dt-star-invite {
     0%, 100% { box-shadow: 0 0 12px rgba(121, 198, 219, 0.34); }
@@ -440,7 +357,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     60% { transform: translateX(4px); }
 }
 
-/* ===== CINEMATIC PAGE TRANSITION PRISM CURTAIN ===== */
+/* Cinematic Prism Curtain Transition */
 .dt-transition-curtain {
     position: fixed;
     inset: 0;
@@ -454,7 +371,7 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
         radial-gradient(circle at 50% 50%, #102046 0%, #060b19 68%);
     opacity: 0;
     transform: scale(1.04);
-    transition: opacity 0.24s cubic-bezier(.19, 1, .22, 1), transform 0.45s cubic-bezier(.19, 1, .22, 1);
+    transition: opacity 0.24s var(--ease-uma), transform 0.45s var(--ease-uma);
 }
 
 .dt-transition-curtain.is-crowned {
@@ -463,16 +380,8 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
         radial-gradient(circle at 50% 50%, #1a2d62 0%, #081129 68%);
 }
 
-.dt-transition-curtain.is-entering {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.dt-transition-curtain.is-leaving {
-    opacity: 0;
-    transform: scale(0.98);
-    transition: opacity 0.48s cubic-bezier(.19, 1, .22, 1), transform 0.48s cubic-bezier(.19, 1, .22, 1);
-}
+.dt-transition-curtain.is-entering { opacity: 1; transform: scale(1); }
+.dt-transition-curtain.is-leaving { opacity: 0; transform: scale(0.98); transition: opacity 0.48s var(--ease-uma), transform 0.48s var(--ease-uma); }
 
 .dt-curtain-mark {
     font-family: "CinzelEditorial", Georgia, serif;
@@ -489,98 +398,21 @@ body.dt-detail-theme.dt-crowned-theme .site-footer .footer-brand-en {
     text-shadow: 0 0 42px rgba(245, 197, 86, 0.42);
 }
 
-/* ===== CHARACTER DETAIL PAGE FULL UNIFIED 7-DAY EDITORIAL THEME ===== */
-body.dt-detail-theme,
-body.dt-detail-theme #app {
-    background: #060b18 !important;
-    color: #e8f3ff;
-}
-
-body.dt-detail-theme.dt-crowned-theme,
-body.dt-detail-theme.dt-crowned-theme #app {
-    background: #081026 !important;
-}
-
-body.dt-detail-theme .sub-header {
-    background-image: none !important;
-    background: rgba(7, 13, 30, 0.92) !important;
-    border-bottom: 1px solid rgba(121, 198, 219, 0.16);
-    box-shadow: 0 10px 30px rgba(3, 6, 16, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-body.dt-detail-theme.dt-crowned-theme .sub-header {
-    background: rgba(11, 22, 54, 0.92) !important;
-    border-bottom-color: rgba(248, 212, 120, 0.28);
-}
-
-body.dt-detail-theme .site-nav-sub .site-nav-item.active {
-    background: linear-gradient(135deg, rgba(121, 198, 219, 0.24) 0%, rgba(121, 198, 219, 0.12) 100%) !important;
-    box-shadow: inset 0 -2px 0 #79c6db !important;
-}
-
-body.dt-detail-theme.dt-crowned-theme .site-nav-sub .site-nav-item.active {
-    background: linear-gradient(135deg, rgba(248, 212, 120, 0.26) 0%, rgba(248, 212, 120, 0.12) 100%) !important;
-    box-shadow: inset 0 -2px 0 #f5c556 !important;
-}
-
-body.dt-detail-theme .site-nav-sub .site-nav-item.active > .site-nav-trigger {
-    background: transparent !important;
-    color: #a6e7fb !important;
-}
-
-body.dt-detail-theme.dt-crowned-theme .site-nav-sub .site-nav-item.active > .site-nav-trigger {
-    color: #ffe49c !important;
-}
-
-body.dt-detail-theme .route-breadcrumb {
-    color: rgba(186, 218, 240, 0.68);
-}
-
-body.dt-detail-theme .route-breadcrumb a {
-    color: rgba(154, 224, 244, 0.86);
-}
-
-body.dt-detail-theme .route-breadcrumb a:hover {
-    color: #ffffff;
-}
-
-body.dt-detail-theme .route-breadcrumb em:last-child {
-    color: #f5fbff !important;
-}
-
-body.dt-detail-theme.dt-crowned-theme .route-breadcrumb em:last-child {
-    color: #ffe49c !important;
-}
-
-/* Frameless, borderless hero canvas that melts seamlessly into the midnight page */
+/* Character Detail Frameless Campaign Hero Continuation */
 .character-entity-detail.dt-celebration-detail .entity-hero {
     position: relative;
     overflow: hidden;
-    background: transparent !important;
-    border: none !important;
+    background: transparent;
+    border: 0;
     border-radius: 18px;
-    box-shadow: none !important;
+    box-shadow: none;
     color: #f5fbff;
     padding: 36px 38px 40px;
-    animation: dt-detail-enter 0.72s cubic-bezier(.19, 1, .22, 1) both;
 }
 
+.character-entity-detail.dt-celebration-detail .entity-hero::before,
 .character-entity-detail.dt-celebration-detail .entity-hero::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 76px;
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(to top, #060b18 0%, rgba(6, 11, 24, 0) 100%);
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail.dt-celebration-detail .entity-hero::after {
-    background: linear-gradient(to top, #081026 0%, rgba(8, 16, 38, 0) 100%);
+    display: none;
 }
 
 .character-entity-detail.dt-celebration-detail .dt-detail-hero-bg {
@@ -595,22 +427,15 @@ body.dt-detail-theme.dt-crowned-theme .character-entity-detail.dt-celebration-de
     z-index: 2;
 }
 
-/* Frameless floating character portrait — zero clunky card border */
 .character-entity-detail.dt-celebration-detail .entity-cover.character-cover {
     background: rgba(6, 11, 24, 0.35);
-    border: none !important;
+    border: 0;
     box-shadow: 0 22px 48px rgba(2, 5, 14, 0.62);
 }
 
 .character-entity-detail.dt-celebration-detail .entity-kind {
-    background: rgba(121, 198, 219, 0.16);
-    color: #9ae0f4;
-    border: none;
-}
-
-.character-entity-detail.dt-celebration-detail.is-crowned .entity-kind {
-    background: rgba(248, 212, 120, 0.18);
-    color: #ffe49c;
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
 }
 
 .character-entity-detail.dt-celebration-detail .entity-intro h1 {
@@ -622,42 +447,33 @@ body.dt-detail-theme.dt-crowned-theme .character-entity-detail.dt-celebration-de
     color: rgba(214, 238, 250, 0.84);
 }
 
-/* Clean borderless frosted aside for prototype horse video */
 .character-entity-detail.dt-celebration-detail .hero-video-aside {
     background: rgba(6, 11, 24, 0.42);
-    border: none !important;
-    box-shadow: none !important;
+    border: 0;
+    box-shadow: none;
     color: #e6f5ff;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 .character-entity-detail.dt-celebration-detail .hero-video-aside b {
-    color: #9ae0f4;
-}
-
-.character-entity-detail.dt-celebration-detail.is-crowned .hero-video-aside b {
-    color: #ffe49c;
+    color: var(--accent-primary-deep);
 }
 
 .character-entity-detail.dt-celebration-detail .performer-chip.voice-chip {
     background: transparent;
-    border: none !important;
+    border: 0;
     padding: 0;
     color: #f5fbff;
 }
 
 .character-entity-detail.dt-celebration-detail .performer-chip.voice-chip:hover {
-    color: #9ae0f4;
-}
-
-.character-entity-detail.dt-celebration-detail.is-crowned .performer-chip.voice-chip:hover {
-    color: #ffe49c;
+    color: var(--accent-primary-deep);
 }
 
 .character-entity-detail.dt-celebration-detail .horse-link-chip {
     background: rgba(8, 15, 34, 0.44);
-    border: none !important;
+    border: 0;
     border-radius: 999px;
     padding: 7px 14px;
     color: #f5fbff;
@@ -666,374 +482,55 @@ body.dt-detail-theme.dt-crowned-theme .character-entity-detail.dt-celebration-de
 }
 
 .character-entity-detail.dt-celebration-detail .horse-link-chip:hover {
-    background: rgba(121, 198, 219, 0.24);
+    background: var(--accent-primary-soft);
     color: #ffffff;
 }
 
-.character-entity-detail.dt-celebration-detail.is-crowned .horse-link-chip:hover {
-    background: rgba(248, 212, 120, 0.22);
-    color: #ffffff;
-}
-
-/* Unified midnight editorial tabs & body cards (zero white-card whiplash) */
-body.dt-detail-theme .character-entity-detail .entity-tabs {
-    border-bottom-color: rgba(121, 198, 219, 0.18);
-    animation: dt-detail-enter 0.78s 0.06s cubic-bezier(.19, 1, .22, 1) both;
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .entity-tabs {
-    border-bottom-color: rgba(248, 212, 120, 0.22);
-}
-
-body.dt-detail-theme .character-entity-detail .entity-tabs button {
-    color: rgba(200, 224, 245, 0.68);
-}
-
-body.dt-detail-theme .character-entity-detail .entity-tabs button:hover {
-    color: #ffffff;
-}
-
-body.dt-detail-theme .character-entity-detail .entity-tabs button.active {
-    color: #9ae0f4;
-    box-shadow: inset 0 -2.5px 0 #79c6db;
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .entity-tabs button.active {
-    color: #ffe49c;
-    box-shadow: inset 0 -2.5px 0 #f5c556;
-}
-
-body.dt-detail-theme .character-entity-detail .entity-section,
-body.dt-detail-theme .character-entity-detail .pedigree-section {
-    background: rgba(12, 20, 42, 0.62);
-    border: 1px solid rgba(121, 198, 219, 0.14);
-    border-radius: 16px;
-    color: #e6f2ff;
-    animation: dt-detail-enter 0.84s 0.12s cubic-bezier(.19, 1, .22, 1) both;
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .entity-section,
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .pedigree-section {
-    background: rgba(16, 28, 60, 0.62);
-    border-color: rgba(248, 212, 120, 0.18);
-}
-
-body.dt-detail-theme .character-entity-detail .profile-facts {
-    border-bottom-color: rgba(121, 198, 219, 0.16);
-}
-
-body.dt-detail-theme .character-entity-detail .profile-facts dt {
-    color: rgba(154, 224, 244, 0.72);
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .profile-facts dt {
-    color: rgba(255, 228, 156, 0.78);
-}
-
-body.dt-detail-theme .character-entity-detail .profile-facts dd,
-body.dt-detail-theme .character-entity-detail .c-detail-block,
-body.dt-detail-theme .character-entity-detail .c-detail-block p {
-    color: #edf6ff;
-}
-
-body.dt-detail-theme .character-entity-detail .relation-song-row,
-body.dt-detail-theme .character-entity-detail .ui-disclosure {
-    background: rgba(8, 14, 32, 0.52);
-    border-color: rgba(121, 198, 219, 0.16);
-    color: #edf6ff;
-}
-
-body.dt-detail-theme .character-entity-detail .relation-song-row b,
-body.dt-detail-theme .character-entity-detail .ui-disclosure-title,
-body.dt-detail-theme .character-entity-detail .ui-disclosure-title b,
-body.dt-detail-theme .character-entity-detail .ui-disclosure-trigger,
-body.dt-detail-theme .character-entity-detail .relation-version header,
-body.dt-detail-theme .character-entity-detail .relation-release b,
-body.dt-detail-theme .character-entity-detail .album-inline b {
-    color: #f2f8ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .relation-song-meta,
-body.dt-detail-theme .character-entity-detail .secondary-line,
-body.dt-detail-theme .character-entity-detail .relation-version header > span {
-    color: rgba(182, 216, 240, 0.78) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-disclosure-chevron {
-    color: rgba(154, 224, 244, 0.82);
-}
-
-body.dt-detail-theme .character-entity-detail .text-link,
-body.dt-detail-theme .character-entity-detail .album-inline {
-    color: #9ae0f4;
-}
-
-/* Dark-editorial adaptation for Events History, Search/Select Toolbar, Related News, and Pedigree */
-body.dt-detail-theme .character-entity-detail .ui-search,
-body.dt-detail-theme .character-entity-detail .ui-select-control {
-    background: rgba(8, 15, 34, 0.74) !important;
-    border-color: rgba(121, 198, 219, 0.24) !important;
-    color: #eef7ff !important;
-    box-shadow: none !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-search input,
-body.dt-detail-theme .character-entity-detail .ui-select-trigger,
-body.dt-detail-theme .character-entity-detail .ui-select-value {
-    color: #f2f8ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-search input::placeholder,
-body.dt-detail-theme .character-entity-detail .ui-select-label {
-    color: rgba(166, 208, 236, 0.68) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-search svg,
-body.dt-detail-theme .character-entity-detail .ui-select-trigger svg {
-    color: rgba(154, 224, 244, 0.78);
-}
-
-body.dt-detail-theme .character-entity-detail .ui-select-menu {
-    background: #0b1530 !important;
-    border-color: rgba(121, 198, 219, 0.28) !important;
-    color: #eef7ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-select-option {
-    color: #e6f2ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .ui-select-option:hover,
-body.dt-detail-theme .character-entity-detail .ui-select-option[aria-selected="true"] {
-    background: rgba(121, 198, 219, 0.18) !important;
-    color: #ffffff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list {
-    border-top-color: rgba(121, 198, 219, 0.18) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list > a,
-body.dt-detail-theme .character-entity-detail .history-list > div {
-    border-bottom-color: rgba(121, 198, 219, 0.14) !important;
-    color: #eef7ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list > a:hover {
-    background: rgba(121, 198, 219, 0.08) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list strong,
-body.dt-detail-theme .character-entity-detail .history-list > a > span:first-of-type {
-    color: #f2f8ff !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list time {
-    color: rgba(166, 214, 242, 0.78) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list em,
-body.dt-detail-theme .character-entity-detail .history-list .history-kind,
-body.dt-detail-theme .character-entity-detail .history-list > a > span:last-child {
-    color: rgba(186, 220, 244, 0.76) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .history-list .session-badge,
-body.dt-detail-theme .character-entity-detail .history-list .activity-session,
-body.dt-detail-theme .character-entity-detail .history-list strong em,
-body.dt-detail-theme .character-entity-detail .related-news .section-toolbar h2 {
-    background: rgba(121, 198, 219, 0.16) !important;
-    color: #a6e7fb !important;
-    border-color: rgba(121, 198, 219, 0.28) !important;
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .history-list .session-badge,
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .history-list .activity-session,
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .history-list strong em,
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .related-news .section-toolbar h2 {
-    background: rgba(248, 212, 120, 0.18) !important;
-    color: #ffe49c !important;
-    border-color: rgba(248, 212, 120, 0.34) !important;
-}
-
-body.dt-detail-theme .character-entity-detail .pedigree-section,
-body.dt-detail-theme .character-entity-detail .c-pedigree-lens {
-    background: #070d1e !important;
-}
-
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .pedigree-section,
-body.dt-detail-theme.dt-crowned-theme .character-entity-detail .c-pedigree-lens {
-    background: #09122b !important;
-}
-
-/* Unified Obsidian / Crowned-Gold Bottom Audio Player Dock */
-body.dt-home-theme .audio-dock,
-body.dt-detail-theme .audio-dock {
-    background: linear-gradient(90deg, #060b18 0%, #0b1530 52%, #070d1e 100%) !important;
-    border-top: 1px solid rgba(121, 198, 219, 0.22);
-    box-shadow: 0 -10px 30px rgba(3, 6, 16, 0.55);
-}
-
-body.dt-home-theme.dt-crowned-theme .audio-dock,
-body.dt-detail-theme.dt-crowned-theme .audio-dock {
-    background: linear-gradient(90deg, #09132e 0%, #12224f 52%, #0a1432 100%) !important;
-    border-top-color: rgba(248, 212, 120, 0.36);
-}
-
-body.dt-home-theme .audio-dock::before,
-body.dt-detail-theme .audio-dock::before {
-    opacity: 0 !important;
-}
-
-body.dt-home-theme .audio-dock .audio-control-primary,
-body.dt-detail-theme .audio-dock .audio-control-primary {
-    background: #79c6db !important;
-    color: #060b18 !important;
-    box-shadow: 0 6px 20px rgba(121, 198, 219, 0.35) !important;
-}
-
-body.dt-home-theme .audio-dock .audio-control-primary:hover,
-body.dt-detail-theme .audio-dock .audio-control-primary:hover {
-    background: #9ce0f3 !important;
-}
-
-body.dt-home-theme.dt-crowned-theme .audio-dock .audio-control-primary,
-body.dt-detail-theme.dt-crowned-theme .audio-dock .audio-control-primary {
-    background: #f5c556 !important;
-    color: #0b142c !important;
-    box-shadow: 0 6px 22px rgba(245, 197, 86, 0.42) !important;
-}
-
-body.dt-home-theme.dt-crowned-theme .audio-dock .audio-control-primary:hover,
-body.dt-detail-theme.dt-crowned-theme .audio-dock .audio-control-primary:hover {
-    background: #ffe08a !important;
-}
-
-body.dt-home-theme .audio-dock input[type="range"],
-body.dt-detail-theme .audio-dock input[type="range"] {
-    accent-color: #79c6db;
-}
-
-body.dt-home-theme.dt-crowned-theme .audio-dock input[type="range"],
-body.dt-detail-theme.dt-crowned-theme .audio-dock input[type="range"] {
-    accent-color: #f5c556;
-}
-
-@keyframes dt-detail-enter {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive & Mobile full-featured showcase adaptations */
+/* Mobile Campaign Adaptations */
 @media (max-width: 900px) {
-    .dt-editorial-title {
-        left: 22px;
-        bottom: 24px;
-    }
-    .dt-constellation {
-        right: 22px;
-        bottom: 22px;
-    }
+    .dt-editorial-title { left: 22px; bottom: 24px; }
+    .dt-constellation { right: 22px; bottom: 22px; }
 }
 
 @media (max-width: 768px) {
     body.dt-home-theme .home-brand {
         background: linear-gradient(180deg, #070d1e 0%, #091228 100%);
-        border-bottom: 1px solid rgba(121, 198, 219, 0.16);
+        border-bottom: 1px solid var(--hairline);
     }
     body.dt-home-theme.dt-crowned-theme .home-brand {
         background: linear-gradient(180deg, #0b1636 0%, #101f48 100%);
-        border-bottom-color: rgba(248, 212, 120, 0.28);
     }
     .home-hero.home-hero-daring-tact {
-        height: min(62vh, 460px) !important;
-        min-height: 360px !important;
+        height: min(62vh, 460px);
+        min-height: 360px;
     }
     body.dt-home-theme .home-nav {
         box-shadow: none;
-        border-top: 1px solid rgba(121, 198, 219, 0.14);
+        border-top: 1px solid var(--hairline);
     }
-    body.dt-home-theme.dt-crowned-theme .home-nav {
-        border-top-color: rgba(248, 212, 120, 0.24);
-    }
-    .dt-mag-en {
-        top: 6%;
-        left: 4%;
-        font-size: clamp(2.5rem, 12vw, 3.8rem);
-        -webkit-text-stroke-width: 1px;
-    }
-    .dt-mag-year {
-        top: calc(6% + clamp(2.4rem, 11vw, 3.6rem));
-        left: 4.5%;
-        font-size: 1.55rem;
-    }
-    .dt-mag-vertical {
-        right: 14px;
-        top: 16%;
-        font-size: 1.65rem;
-    }
-    .dt-editorial-title {
-        left: 16px;
-        bottom: 16px;
-        flex-direction: column;
-        gap: 4px;
-    }
-    .dt-ed-zh {
-        font-size: 1.45rem;
-    }
-    .dt-ed-sub {
-        font-size: 0.76rem;
-        letter-spacing: 0.16em;
-    }
-    .dt-constellation {
-        right: 16px;
-        bottom: 14px;
-        gap: 6px;
-    }
-    .dt-stars-row {
-        gap: 12px;
-    }
-    .dt-star-node {
-        width: 32px;
-        height: 32px;
-    }
-    .dt-star-node svg {
-        width: 15px;
-        height: 15px;
-    }
-    .dt-constellation-label {
-        font-size: 0.78rem;
-    }
-    .character-entity-detail.dt-celebration-detail .entity-hero {
-        padding: 20px 16px 26px;
-    }
+    .dt-mag-en { top: 6%; left: 4%; font-size: clamp(2.5rem, 12vw, 3.8rem); -webkit-text-stroke-width: 1px; }
+    .dt-mag-year { top: calc(6% + clamp(2.4rem, 11vw, 3.6rem)); left: 4.5%; font-size: 1.55rem; }
+    .dt-mag-vertical { right: 14px; top: 16%; font-size: 1.65rem; }
+    .dt-editorial-title { left: 16px; bottom: 16px; flex-direction: column; gap: 4px; }
+    .dt-ed-zh { font-size: 1.45rem; }
+    .dt-ed-sub { font-size: 0.76rem; letter-spacing: 0.16em; }
+    .dt-constellation { right: 16px; bottom: 14px; gap: 6px; }
+    .dt-stars-row { gap: 12px; }
+    .dt-star-node { width: 32px; height: 32px; }
+    .dt-star-node svg { width: 15px; height: 15px; }
+    .dt-constellation-label { font-size: 0.78rem; }
+    .character-entity-detail.dt-celebration-detail .entity-hero { padding: 20px 16px 26px; }
     body.dt-detail-theme .character-entity-detail .entity-tabs {
         overflow-x: auto;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
-    body.dt-detail-theme .character-entity-detail .entity-tabs::-webkit-scrollbar {
-        display: none;
-    }
-    body.dt-detail-theme .character-entity-detail .entity-tabs button {
-        flex: 0 0 auto;
-        white-space: nowrap;
-    }
+    body.dt-detail-theme .character-entity-detail .entity-tabs::-webkit-scrollbar { display: none; }
+    body.dt-detail-theme .character-entity-detail .entity-tabs button { flex: 0 0 auto; white-space: nowrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .dt-audio-eq span,
-    .dt-star-node.is-next,
-    .character-entity-detail.dt-celebration-detail .entity-hero,
-    body.dt-detail-theme .character-entity-detail .entity-tabs,
-    body.dt-detail-theme .character-entity-detail .entity-section {
-        animation: none;
-    }
+    .dt-star-node.is-next { animation: none; }
 }

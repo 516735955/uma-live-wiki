@@ -198,7 +198,7 @@ function openViewer(img) {
     pswp.ui.registerElement({name:'in',order:6,isButton:true,ariaLabel:'放大',html:icon('<path d="M5 12h14M12 5v14"/>'),onClick:()=>zoom(1.25)});
     pswp.ui.registerElement({name:'fit',order:7,isButton:true,ariaLabel:'适应窗口',html:'适应窗口',onClick:fit});
     pswp.ui.registerElement({name:'actual',order:8,isButton:true,ariaLabel:'按原始尺寸查看',html:'100%',onClick:actual});
-    pswp.ui.registerElement({name:'original',order:9,isButton:false,tagName:'a',html:'打开原图'+icon('<path d="M7 17 17 7M7 7h10v10"/>'),onInit:el=>{
+    pswp.ui.registerElement({name:'original',order:9,isButton:false,tagName:'a',html:'查看原图',onInit:el=>{
       el.classList.add('pswp__button','pswp__button--original'); el.target='_blank'; el.rel='noopener';
       const update = () => el.href = data[pswp.currIndex].src;
       pswp.on('change',update); update();

@@ -5,7 +5,7 @@ export const template = `
                     <img class="news-detail-cover" v-media-src="newsImage(newsDetail.image_big)" :data-original="newsDetail.image_big" :alt="newsDetail.title_zh || newsDetail.title">
                 </div>
                 <div class="news-detail-meta">
-                    <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">原文 ↗</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
+                    <div class="news-detail-date">{{ newsDetail.post_at }}<a v-if="newsDetail.source === 'lantis'" :href="newsDetail.url || 'https://umamusume.lantis.jp/'" target="_blank" rel="noopener noreferrer">查看原文</a><a v-else :href="'https://umamusume.jp/news/detail?id=' + newsDetail.announce_id" target="_blank" rel="noopener noreferrer">查看原文</a></div>
                     <button type="button" class="news-language" role="switch" aria-label="新闻语言：日文" :aria-checked="newsLanguage==='ja'" @click="setNewsLanguage(newsLanguage==='zh'?'ja':'zh')">
                         <span class="news-language-thumb" :class="{'is-ja':newsLanguage==='ja'}" aria-hidden="true"></span>
                         <span :class="{active:newsLanguage==='zh'}" aria-hidden="true">中文</span>

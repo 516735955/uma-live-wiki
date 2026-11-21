@@ -1095,15 +1095,24 @@
     var width = parseFloat(stage.style.width) || 1;
     var height = parseFloat(stage.style.height) || 1;
     var mobile = window.innerWidth <= 760;
-    var padding = mobile ? 6 : 12;
-    var scale = Math.min(1,
+    var padding = mobile ? 14 : 18;
+    var fitScale = Math.min(1,
       (viewport.clientWidth - padding * 2) / width,
       (viewport.clientHeight - padding * 2) / height
     );
-    var tx = Math.max(padding, (viewport.clientWidth - width * scale) / 2);
-    var ty = Math.max(padding, (viewport.clientHeight - height * scale) / 2);
+    var scale = mobile ? Math.max(0.62, fitScale) : Math.max(0.5, fitScale);
+    var scaledW = width * scale;
+    var scaledH = height * scale;
+    var tx = scaledW < viewport.clientWidth ? (viewport.clientWidth - scaledW) / 2 : padding;
+    var ty = Math.max(padding, Math.min(28, (viewport.clientHeight - scaledH) / 2));
     stage.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
-    viewport.scrollLeft = 0;
+    if (mobile && scaledW > viewport.clientWidth) {
+      viewport.style.overflowX = 'auto';
+      viewport.style.overflowY = 'auto';
+      viewport.scrollLeft = Math.max(0, (scaledW + padding * 2 - viewport.clientWidth) / 2);
+    } else {
+      viewport.scrollLeft = 0;
+    }
     viewport.scrollTop = 0;
     syncEmbeddedHeight();
   }

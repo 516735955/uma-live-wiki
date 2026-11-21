@@ -9,11 +9,16 @@ const read = file => fs.readFileSync(file, 'utf8').replace(/\r\n?/g, '\n');
 function loadFrontend(context) {
   context.preloadPage = async () => {};
   context.installNavigationPrefetch = () => () => {};
+  context.installUiMotion = () => () => {};
   const directory = path.join(__dirname, "frontend");
   const campaignSource = read(path.join(directory, "hero-campaign.js")).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + campaignSource + ';return {DARING_TACT_HERO_CONFIG,isDaringTactHeroActive,getDaringTactCrowned,setDaringTactCrowned,syncDaringTactBodyTheme,syncDaringTactRouteTheme,triggerDaringTactTransition};})()', context));
+  const shaderSource = read(path.join(directory, "campaigns", "daring-tact-shaders.js")).replace(/export (const|function) /g, '$1 ');
+  Object.assign(context, vm.runInContext('(function(){' + shaderSource + ';return {VERT_QUAD,FRAG_FLOW,FRAG_MAIN,createGlyphAtlasCanvas,createLoreAtlasCanvas,createProgram,createTexture,createFlowFbo};})()', context));
+  const particleSource = read(path.join(directory, "campaigns", "daring-tact-particles.js")).replace(/export (const|function) /g, '$1 ');
+  Object.assign(context, vm.runInContext('(function(){' + particleSource + ';return {createDaringTactParticles,stepDaringTactParticles};})()', context));
   const heroSource = read(path.join(directory, "daring-tact-hero.js"))
-    .replace(/^import[\s\S]*?from "[^"]+";\n/, "")
+    .replace(/^import[\s\S]*?from "[^"]+";\n/gm, "")
     .replace("export const DaringTactHero", "const DaringTactHero");
   context.DaringTactHero = vm.runInContext('(function(){' + heroSource + ';return DaringTactHero;})()', context);
   const requestSource = read(path.join(directory, 'requests.js')).replace(/export function /g, 'function ');
@@ -36,6 +41,8 @@ function loadFrontend(context) {
   Object.assign(context, vm.runInContext('(function(){' + topicSource + ';return {NewsTopics,RelatedNews};})()', context));
   const activitySource = read(path.join(directory, 'activity-components.js')).replace(/export (const|function) /g, '$1 ');
   Object.assign(context, vm.runInContext('(function(){' + activitySource + ';return {ActivityTime,ActivityHistory};})()', context, { filename: 'activity-components.js' }));
+  const routingUrlSource = read(path.join(directory, 'domains', 'routing-url.js')).replace(/export (const|function) /g, '$1 ');
+  Object.assign(context, vm.runInContext('(function(){' + routingUrlSource + ';return {buildCanonicalRoutePath,currentUrlPath,pendingLayout,routeWillBeAtomic};})()', context, { filename: 'routing-url.js' }));
   const imports = Array.from(
     wiring.matchAll(
       /import\s*\{\s*(\w+)\s*\}\s*from "\/uma_tools\/frontend\/domains\/([\w-]+)\.js";/g,

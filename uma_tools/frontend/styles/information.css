@@ -164,15 +164,15 @@
         #tab-characters .character-description p { margin: 0 0 0.85em; }
         #tab-characters .character-description p:last-child { margin-bottom: 0; }
         #tab-characters .c-pedigree-lens {
-            margin-top: 18px; overflow: hidden; border: 1px solid #dfe1ea; border-radius: 14px;
-            background: #f7f8fc; box-shadow: 0 10px 28px rgba(24,33,64,.09);
+            margin-top: 8px; overflow: hidden; border: 0; border-radius: 16px;
+            background: var(--surface-panel, #fff); box-shadow: var(--shadow-panel, 0 10px 28px rgba(24,33,64,.08));
         }
         #tab-characters .c-pedigree-lens-frame {
-            display: block; width: 100%; height: 900px; border: 0; background: #f7f8fc;
+            display: block; width: 100%; height: clamp(460px, 62vh, 660px); border: 0; background: var(--surface-panel, #fff);
         }
         @media screen and (max-width: 700px) {
-            #tab-characters .c-pedigree-lens { border-radius: 12px; }
-            #tab-characters .c-pedigree-lens-frame { height: 690px; }
+            #tab-characters .c-pedigree-lens { border-radius: 14px; }
+            #tab-characters .c-pedigree-lens-frame { height: clamp(420px, 64vh, 520px); }
         }
 
         /* ===== CANONICAL ARCHIVE UI ===== */

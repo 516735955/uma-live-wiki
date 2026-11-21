@@ -1,0 +1,348 @@
+/* ===== MEDIA OVERLAYS, DETAILS DISCLOSURES & EDITORIAL TABLES =====
+ * Dedicated module (<300 lines) for:
+ * 1. Modernized native <details> disclosures (replaces clunky ▼ + hairline borders)
+ * 2. Uniform borderless horse/entity metadata grids (zero zebra striping)
+ * 3. Spaced email chips
+ * 4. Kinetic Audio Dock & Queue Drawer polish
+ * 5. Frosted Glass PhotoSwipe Image Lightbox Viewer
+ */
+
+/* --- 1. Modernized Native <details> Disclosures (replaces ▼ + rigid hairlines) --- */
+.activity-time-more,
+.participation-recordings,
+details.ui-native-details {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--surface-subtle);
+    padding: 6px 12px;
+    transition: background 200ms ease;
+}
+
+.activity-time-more summary,
+.participation-recordings summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    color: var(--accent-primary-deep);
+    font-size: var(--text-sub);
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 180ms ease;
+}
+
+.activity-time-more summary::-webkit-details-marker,
+.participation-recordings summary::-webkit-details-marker {
+    display: none;
+}
+
+.activity-time-more summary::before,
+.participation-recordings summary::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 240ms cubic-bezier(0.22, 1.15, 0.36, 1);
+    flex: none;
+}
+
+.activity-time-more[open] > summary::before,
+.participation-recordings[open] > summary::before {
+    transform: rotate(45deg) translateY(-1px);
+}
+
+.activity-time-more > div {
+    border-top: 0;
+    padding: 6px 8px;
+    margin-top: 4px;
+    border-radius: 8px;
+    background: var(--surface-panel);
+    animation: umaDisclosureIn 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.activity-time-more dt,
+.activity-time-more dd {
+    padding: 4px 6px;
+}
+
+/* --- 2. Uniform Non-Zebra Metadata Grids & Spacious Data Tables --- */
+.entity-detail .entity-meta,
+.horse-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+    border: 0;
+}
+
+.entity-detail .entity-meta > div,
+.horse-meta > div {
+    border: 0;
+    border-radius: 12px;
+    background: var(--surface-subtle) !important;
+    padding: 13px 18px !important;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: baseline;
+    gap: 14px;
+    transition: background 180ms ease, transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.entity-detail .entity-meta > div:hover,
+.horse-meta > div:hover {
+    background: var(--surface-hover) !important;
+    transform: translateY(-1px);
+}
+
+.horse-table th,
+.horse-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid color-mix(in srgb, var(--hairline) 65%, transparent);
+}
+
+.horse-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* --- 3. Spaced Email Pills (never concatenated) --- */
+.email-chip-list,
+.email-inline-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+}
+
+.email-chip {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep) !important;
+    font-size: var(--text-sub);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background 180ms ease, color 180ms ease, transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.email-chip:hover {
+    background: var(--accent-primary);
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* --- 4. Kinetic Frosted Audio Player Dock & Queue Drawer --- */
+.audio-dock {
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 -10px 36px rgba(16, 26, 72, 0.22);
+    animation: audioDockEnter 340ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes audioDockEnter {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.audio-cover {
+    border: 0;
+    border-radius: 10px;
+    transition: transform 300ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.audio-cover:hover {
+    transform: scale(1.06);
+}
+
+.audio-control-primary {
+    background: linear-gradient(125deg, var(--accent-secondary), var(--accent-secondary-end));
+    box-shadow: 0 8px 22px rgba(255, 123, 22, 0.36);
+    transition: transform 260ms cubic-bezier(0.22, 1.18, 0.36, 1), box-shadow 240ms ease, filter 180ms ease;
+}
+
+.audio-control-primary:hover {
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 12px 28px rgba(255, 123, 22, 0.46);
+}
+
+.audio-dock-progress input::-webkit-slider-thumb {
+    transition: transform 180ms cubic-bezier(0.22, 1.18, 0.36, 1), box-shadow 180ms ease;
+}
+
+.audio-dock-progress input:hover::-webkit-slider-thumb {
+    transform: scale(1.28);
+    box-shadow: 0 0 0 4px rgba(255, 123, 22, 0.28);
+}
+
+.audio-queue-panel {
+    border: 0;
+    border-radius: 18px 18px 0 0;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 -14px 44px rgba(15, 24, 62, 0.24);
+    animation: audioQueueIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes audioQueueIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+.audio-queue-row {
+    border-radius: 10px;
+    transition: background 180ms ease, transform 220ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.audio-queue-row:hover {
+    transform: translateX(4px);
+}
+
+/* --- 5. Frosted Glass Image Lightbox Viewer (PhotoSwipe) --- */
+.uma-image-viewer {
+    --pswp-bg: rgba(10, 16, 34, 0.92);
+    --pswp-placeholder-bg: rgba(10, 16, 34, 0.92);
+}
+
+.uma-image-viewer .pswp__bg {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.uma-image-viewer .pswp__top-bar {
+    height: 62px;
+    padding: 10px 18px;
+    background: rgba(14, 22, 46, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 28px rgba(4, 8, 22, 0.36);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    animation: viewerBarIn 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes viewerBarIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.uma-image-viewer .viewer-title {
+    color: #f4f7ff;
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+.uma-image-viewer .pswp__button,
+.uma-image-viewer .pswp__button:is(:hover, :focus, :active),
+.uma-image-viewer .viewer-more > button {
+    border: 0;
+    border-radius: 10px;
+    color: rgba(240, 246, 255, 0.88);
+    transition: background 180ms ease, color 180ms ease, transform 240ms cubic-bezier(0.22, 1.15, 0.36, 1);
+}
+
+.uma-image-viewer .pswp__button:is(:hover, :focus-visible),
+.uma-image-viewer .viewer-more > button:is(:hover, :focus-visible) {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-1px);
+}
+
+.uma-image-viewer .pswp__button:active {
+    transform: scale(0.94);
+}
+
+.uma-image-viewer .pswp__button--original,
+.uma-image-viewer .pswp__button--original:is(:hover, :focus, :active) {
+    width: auto;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(49, 87, 237, 0.86);
+    color: #ffffff;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.uma-image-viewer .pswp__button--original:hover {
+    background: var(--accent-secondary);
+    color: #ffffff;
+}
+
+.uma-image-viewer .pswp__button--arrow,
+.uma-image-viewer .pswp__button--arrow:is(:hover, :focus, :active) {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(16, 24, 52, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(4, 8, 22, 0.36);
+}
+
+.uma-image-viewer .pswp__button--arrow:hover {
+    background: var(--accent-primary);
+    transform: scale(1.08);
+}
+
+.uma-image-viewer .viewer-menu {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(14, 22, 46, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 16px 40px rgba(4, 8, 22, 0.5);
+    animation: umaDropdownIn 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.uma-image-viewer .viewer-menu :is(button, a) {
+    color: #eef4ff;
+    border-radius: 8px;
+}
+
+.uma-image-viewer .viewer-menu :is(button, a):hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .entity-detail .entity-meta,
+    .horse-meta {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .audio-dock,
+    .audio-queue-panel,
+    .uma-image-viewer .pswp__top-bar,
+    .activity-time-more > div {
+        animation: none;
+    }
+}

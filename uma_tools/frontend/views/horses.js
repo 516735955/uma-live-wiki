@@ -4,10 +4,10 @@ export const template = `
             <section v-if="otherSection==='relationships'" class="entity-section other-section">
                 <div class="section-toolbar"><span class="credit-role-tag">赛马娘设定集</span></div>
                 <div class="setting-book-list">
-                    <a style="--thumb:url('/video_thumbs/BV1MsdABFEc7.jpg')" href="https://www.bilibili.com/read/cv48718536" target="_blank" rel="noopener"><b>第1册</b><span>阅读 ↗</span></a>
-                    <a style="--thumb:url('/video_thumbs/BV1iPV96jEbf.jpg')" href="https://www.bilibili.com/read/cv49894422" target="_blank" rel="noopener"><b>第2册</b><span>阅读 ↗</span></a>
-                    <a style="--thumb:url('/video_thumbs/BV1UrNA6zEqq.jpg')" href="https://www.bilibili.com/read/cv51385181" target="_blank" rel="noopener"><b>第3册</b><span>阅读 ↗</span></a>
-                    <a style="--thumb:url('/video_thumbs/BV18FbM6jEA5.jpg')" href="https://www.bilibili.com/read/cv52884578" target="_blank" rel="noopener"><b>第4册</b><span>阅读 ↗</span></a>
+                    <a style="--thumb:url('/video_thumbs/BV1MsdABFEc7.jpg')" href="https://www.bilibili.com/read/cv48718536" target="_blank" rel="noopener"><b>第1册</b><span>阅读</span></a>
+                    <a style="--thumb:url('/video_thumbs/BV1iPV96jEbf.jpg')" href="https://www.bilibili.com/read/cv49894422" target="_blank" rel="noopener"><b>第2册</b><span>阅读</span></a>
+                    <a style="--thumb:url('/video_thumbs/BV1UrNA6zEqq.jpg')" href="https://www.bilibili.com/read/cv51385181" target="_blank" rel="noopener"><b>第3册</b><span>阅读</span></a>
+                    <a style="--thumb:url('/video_thumbs/BV18FbM6jEA5.jpg')" href="https://www.bilibili.com/read/cv52884578" target="_blank" rel="noopener"><b>第4册</b><span>阅读</span></a>
                 </div>
                 <div class="section-toolbar"><span class="credit-role-tag">宿舍室友关系</span></div>
                 <img v-media-src="'/uma_tools/img/character-roommates.jpg'" alt="宿舍室友关系图" class="roommate-image" loading="lazy">
@@ -15,7 +15,7 @@ export const template = `
             <section v-else-if="otherSection==='videos'" class="entity-section other-section">
                 <content-state v-if="!curatedVideos.length" state="uncollected" subject="推荐视频"></content-state>
                 <div v-else class="video-library">
-                    <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img v-media-src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看 ↗</span></a>
+                    <a v-for="video in curatedVideos" :key="video.id" :href="'https://www.bilibili.com/video/'+video.id+'/'" target="_blank" rel="noopener"><img v-media-src="'/video_thumbs/'+video.id+'.jpg'" :alt="video.title" loading="lazy"><b>{{ video.title }}</b><span>观看</span></a>
                 </div>
             </section>
             <section v-else-if="otherSection==='horses'" class="horse-db-section">
@@ -106,7 +106,7 @@ export const template = `
                         <div class="horse-awards"><span v-for="(award,index) in horseDetail.awards" :key="index" class="horse-award-chip">{{ award.year }} {{ award.title }}</span></div>
                     </section>
                     <section v-if="horseDetail.retirement && horseDetail.retirement.length" class="entity-section">
-                        <div class="section-toolbar"><span class="credit-role-tag">退役　繁育　纪念</span></div>
+                        <div class="section-toolbar role-tag-row"><span class="credit-role-tag">退役</span><span class="credit-role-tag">繁育</span><span class="credit-role-tag">纪念</span></div>
                         <p v-for="(paragraph,index) in horseDetail.retirement" :key="index" class="horse-paragraph">{{ paragraph }}</p>
                     </section>
 
