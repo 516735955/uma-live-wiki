@@ -5,7 +5,6 @@ export const template = `
                     <div class="entity-intro">
                         <span class="entity-kind">参与共建</span>
                         <h1>联系我们</h1>
-                        <p class="entity-reading">版权与来源咨询、删改请求、媒体合作及资料反馈入口</p>
                     </div>
                 </header>
 

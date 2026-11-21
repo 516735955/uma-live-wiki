@@ -5,7 +5,6 @@ export const template = `
                     <div class="entity-intro">
                         <span class="entity-kind">参与共建</span>
                         <h1>资料订正</h1>
-                        <p class="entity-reading">提交页面勘误、资料补缺或来源依据，维护者核实后会及时更新</p>
                     </div>
                 </header>
 
@@ -36,26 +35,26 @@ export const template = `
                     <div class="fix-row">
                         <label class="fix-label" for="fixBody">正确内容应为<span class="req">*</span></label>
                         <textarea class="fix-textarea" id="fixBody" v-model.trim="fix.body" maxlength="2000"
-                            placeholder="描述哪里不对、正确的应该是什么。" required></textarea>
+                            placeholder="描述哪里不对、正确的应该是什么" required></textarea>
                         <p class="fix-hint">{{ fix.body.length }} / 2000 个字符</p>
                     </div>
 
                     <div class="fix-row">
                         <label class="fix-label" for="fixSrc">来源与依据链接（可选）</label>
                         <input class="fix-input" id="fixSrc" type="text" v-model.trim="fix.src"
-                            placeholder="附上一个佐证订正的链接，可以帮助审核者更快核实。">
+                            placeholder="附上佐证订正的链接，便于核实">
                     </div>
 
                     <div class="fix-row">
                         <label class="fix-label" for="fixContact">联系方式（可选）</label>
                         <input class="fix-input" id="fixContact" type="text" v-model.trim="fix.contact"
-                            placeholder="仅在审核者需要跟进时使用，不会公开显示。">
+                            placeholder="仅在需要跟进时使用，不会公开显示">
                     </div>
 
                     <div class="fix-row fix-agreement">
                         <label class="fix-check">
                             <input type="checkbox" v-model="fix.agree">
-                            <span>我已阅读并同意使用条款，且确认有权分享所提交的内容。</span>
+                            <span>我已阅读并同意使用条款，确认有权分享所提交的内容</span>
                         </label>
                         <button type="button" class="info-inline-action" @click="goLegal('terms')">阅读使用条款</button>
                     </div>

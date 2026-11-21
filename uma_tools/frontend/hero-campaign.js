@@ -96,6 +96,9 @@ export function syncDaringTactBodyTheme(mode = null) {
 }
 
 export function syncDaringTactRouteTheme() {
+  if (typeof document !== "undefined" && document.body && document.body.dataset && document.body.dataset.dtTransitioning === "1") {
+    return;
+  }
   const path = window.location.pathname.replace(/\/$/, "");
   const active = isDaringTactHeroActive();
   const mode = !active ? "none" : ["", "/zh-Hans"].includes(path) ? "home"
@@ -106,11 +109,16 @@ export function syncDaringTactRouteTheme() {
 // Cinematic fluted-glass prism curtain when transitioning from homepage to Daring Tact detail page
 export function triggerDaringTactTransition(navigateFn) {
   if (typeof document === "undefined" || !document.body || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    syncDaringTactBodyTheme("detail");
     if (typeof navigateFn === "function") navigateFn();
     return;
   }
   const existing = document.getElementById("dt-transition-curtain");
   if (existing) existing.remove();
+
+  // Lock dark detail theme immediately so no daylight Cobalt/Orange frame can ever flash during route swap
+  if (document.body.dataset) document.body.dataset.dtTransitioning = "1";
+  syncDaringTactBodyTheme("detail");
 
   const crowned = getDaringTactCrowned();
   const curtain = document.createElement("div");
@@ -123,15 +131,32 @@ export function triggerDaringTactTransition(navigateFn) {
     curtain.classList.add("is-entering");
   });
 
-  setTimeout(() => {
-    if (typeof navigateFn === "function") navigateFn();
+  let finished = false;
+  function leaveCurtain() {
+    if (finished) return;
+    finished = true;
+    window.removeEventListener("uma-page-rendered", onRendered);
     requestAnimationFrame(() => {
       curtain.classList.remove("is-entering");
       curtain.classList.add("is-leaving");
+      setTimeout(() => {
+        if (document.body.dataset) delete document.body.dataset.dtTransitioning;
+        syncDaringTactRouteTheme();
+        curtain.remove();
+      }, 420);
     });
-  }, 260);
+  }
+  function onRendered() {
+    setTimeout(leaveCurtain, 60);
+  }
 
   setTimeout(() => {
-    curtain.remove();
-  }, 760);
+    window.addEventListener("uma-page-rendered", onRendered, { once: true });
+    let pending = null;
+    if (typeof navigateFn === "function") pending = navigateFn();
+    if (pending && typeof pending.then === "function") {
+      pending.then(() => setTimeout(leaveCurtain, 80)).catch(leaveCurtain);
+    }
+    setTimeout(leaveCurtain, 700);
+  }, 240);
 }

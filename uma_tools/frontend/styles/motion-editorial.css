@@ -160,23 +160,31 @@ body.is-scrolled .sub-header {
     }
 }
 
-/* --- 2. De-Bureaucratized Controls (Borderless Floating Pills + Smooth Dropdowns) --- */
+/* --- 2. De-Bureaucratized Controls (Borderless Floating Pills + Proper Z-Index Layering) --- */
+.archive-toolbar {
+    position: relative;
+    z-index: 60;
+}
+
 .ui-search,
 .ui-select-control {
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: var(--radius-control);
     background: var(--surface-panel);
     box-shadow: var(--shadow-control);
     transition:
         border-color var(--dur-fast) ease,
-        box-shadow var(--dur-base) var(--ease-uma),
-        transform var(--dur-base) var(--ease-uma);
+        box-shadow var(--dur-base) var(--ease-uma);
 }
 
 .ui-search:hover,
 .ui-select-control:hover {
     box-shadow: 0 6px 18px rgba(22, 36, 92, 0.09);
-    transform: translateY(-1px);
+}
+
+.ui-select-control.open {
+    position: relative;
+    z-index: 120;
 }
 
 .ui-search:focus-within,
@@ -184,12 +192,13 @@ body.is-scrolled .sub-header {
 .ui-select-control:focus-within {
     border-color: var(--accent-primary);
     box-shadow: 0 0 0 3px var(--accent-ring), 0 8px 22px rgba(49, 87, 237, 0.12);
-    transform: translateY(0);
 }
 
 .ui-select-menu {
+    z-index: 200;
+    pointer-events: auto;
     border: 0;
-    border-radius: 14px;
+    border-radius: var(--radius-card);
     box-shadow: var(--shadow-float);
     transform-origin: top center;
     animation: umaDropdownIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;

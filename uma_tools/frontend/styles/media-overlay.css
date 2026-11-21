@@ -7,6 +7,27 @@
  * 5. Frosted Glass PhotoSwipe Image Lightbox Viewer
  */
 
+/* --- 0. Seamless Focus Handling (zero jarring rectangular browser focus boxes) --- */
+:focus,
+:focus-visible,
+button:focus-visible,
+a:focus-visible,
+.audio-control:focus-visible,
+.audio-queue-toggle:focus-visible,
+.audio-dismiss:focus-visible,
+.audio-dock-vocalists button:focus-visible,
+.audio-dock-progress input:focus-visible,
+.audio-queue-play:focus-visible,
+.audio-queue-copy:focus-visible,
+.audio-queue-remove:focus-visible,
+.ui-disclosure-summary:focus-visible,
+.entity-action:focus-visible,
+.entity-tabs button:focus-visible,
+.news-language:focus-visible,
+.uma-image-viewer :is(button, a):focus-visible {
+    outline: none !important;
+}
+
 /* --- 1. Modernized Native <details> Disclosures (replaces ▼ + rigid hairlines) --- */
 .activity-time-more,
 .participation-recordings,
@@ -330,6 +351,176 @@ details.ui-native-details {
     color: #ffffff;
 }
 
+/* --- 6. Smooth Sticky Context Navigation Bar, Fluid Queue Drag & Unified Controls --- */
+.context-navigation {
+    background: var(--surface-glass);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 8px 24px rgba(18, 32, 86, 0.08);
+    animation: umaContextBarIn 220ms var(--spring-drag) both;
+}
+
+@keyframes umaContextBarIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -8px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.context-sections button {
+    border-radius: var(--radius-badge);
+    transition: color 180ms ease, background 180ms ease;
+}
+
+.context-sections button:hover {
+    background: var(--surface-hover);
+    color: var(--accent-primary-deep);
+}
+
+.context-sections button.active {
+    color: var(--accent-primary-deep);
+    box-shadow: inset 0 -2.5px 0 var(--accent-primary);
+}
+
+/* Audio Queue Fluid Drag-Snap (1200/80 critically damped spring, zero bounce) */
+.audio-panel {
+    border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    animation: audioQueueIn 260ms var(--spring-drag) both;
+}
+
+.audio-queue-row {
+    position: relative;
+    border-radius: var(--radius-control);
+    transition: background 160ms ease, transform var(--dur-drag) var(--spring-drag), box-shadow 200ms ease;
+    will-change: transform;
+}
+
+.audio-queue-row.dragging {
+    transition: box-shadow 180ms ease, background 160ms ease;
+    background: var(--surface-panel);
+    box-shadow: 0 12px 28px rgba(18, 30, 74, 0.22);
+    cursor: grabbing;
+}
+
+.audio-queue-drag {
+    touch-action: none;
+    cursor: grab;
+}
+
+.audio-queue-row.dragging .audio-queue-drag {
+    cursor: grabbing;
+}
+
+/* Unified Secondary Action Button System (replaces stiff rectangular 1px orange/grey boxes) */
+.relation-detail-link,
+.state-retry,
+.ui-retry,
+.horse-expand-btn,
+.news-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 0 !important;
+    border-radius: var(--radius-pill) !important;
+    padding: 8px 18px !important;
+    background: var(--accent-primary-soft) !important;
+    color: var(--accent-primary-deep) !important;
+    font-size: var(--text-meta);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: none !important;
+    transition: background 180ms ease, color 180ms ease, transform var(--dur-pop) var(--spring-pop);
+}
+
+.relation-detail-link:hover,
+.state-retry:hover,
+.ui-retry:hover,
+.horse-expand-btn:hover,
+.news-refresh-btn:hover:not(:disabled) {
+    background: var(--accent-primary) !important;
+    color: var(--ink-inverse) !important;
+    transform: translateY(-1px);
+}
+
+.relation-detail-link:active,
+.state-retry:active,
+.ui-retry:active,
+.horse-expand-btn:active,
+.news-refresh-btn:active {
+    transform: scale(0.96);
+}
+
+body.ui-theme-dark .relation-detail-link:hover,
+body.ui-theme-dark .state-retry:hover,
+body.ui-theme-dark .ui-retry:hover {
+    color: #060b18 !important;
+}
+
+.creator-relation-detail,
+.creator-relation-detail > div {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.recording-row {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: var(--radius-control);
+    padding: 10px 12px;
+    transition: background 180ms ease;
+}
+
+.recording-row:hover {
+    background: var(--surface-hover);
+}
+
+/* Unified Checkbox Control (380/18 pop micro-rebound) */
+.fix-check input {
+    border-radius: var(--radius-badge);
+    border: 1.5px solid var(--hairline-strong);
+    background: var(--surface-subtle);
+    transition: background 180ms ease, border-color 180ms ease, transform var(--dur-pop) var(--spring-pop), box-shadow 180ms ease;
+}
+
+.fix-check input:checked {
+    border-color: var(--accent-primary);
+    transform: scale(1.06);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.fix-feedback,
+.back-to-top {
+    animation: umaContextBarIn 240ms var(--ease-uma) both;
+}
+
+/* Global Tabular Numerals for jitter-free counters, dates & timestamps */
+.home-stat,
+.home-stat b,
+.audio-dock-progress,
+.audio-queue-number,
+.audio-panel-head em,
+.ui-pager,
+.event-catalog-row > time,
+.album-count,
+.data-table td,
+.horse-table td,
+.fix-hint,
+.legal-updated,
+.contact-updated,
+.news-row time,
+.news-detail-date {
+    font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 767px) {
     .entity-detail .entity-meta,
     .horse-meta {
@@ -340,9 +531,15 @@ details.ui-native-details {
 
 @media (prefers-reduced-motion: reduce) {
     .audio-dock,
+    .audio-panel,
     .audio-queue-panel,
+    .context-navigation,
     .uma-image-viewer .pswp__top-bar,
     .activity-time-more > div {
         animation: none;
+    }
+    .audio-queue-row,
+    .fix-check input {
+        transition: none;
     }
 }

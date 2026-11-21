@@ -229,10 +229,10 @@
     },
     template: `
       <span class="entity-actions" :class="['entity-actions-' + size, {'entity-actions-labelled':labelled}]">
-        <button v-if="!addOnly" class="entity-action entity-action-play" type="button" :disabled="disabled || busy" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" :title="playing?'暂停':playLabel" @click.stop="$emit('play')">
+        <button v-if="!addOnly" class="entity-action entity-action-play" type="button" :disabled="disabled || busy" :class="{playing:playing}" :aria-label="playing?'暂停':playLabel" @click.stop="$emit('play')">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="playing?'M7 5h4v14H7zM14 5h4v14h-4z':'m8 5 11 7-11 7z'"/></svg>
         </button>
-        <button class="entity-action entity-action-add" :class="{'entity-action-added':labelled ? notice.startsWith('已加入') : added}" type="button" :disabled="disabled || busy" :aria-busy="busy" :aria-label="labelled ? (busy ? '加入中…' : (notice || addLabel)) : (added?'已加入播放列表':addLabel)" :title="$attrs.title || (added?'已加入播放列表':addLabel)" @click.stop="add">
+        <button class="entity-action entity-action-add" :class="{'entity-action-added':labelled ? notice.startsWith('已加入') : added}" type="button" :disabled="disabled || busy" :aria-busy="busy" :aria-label="labelled ? (busy ? '加入中…' : (notice || addLabel)) : (added?'已加入播放列表':addLabel)" @click.stop="add">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path :d="(labelled ? notice.startsWith('已加入') : added)?'m5 12 4 4 10-10':'M12 5v14M5 12h14'"/></svg>
           <span v-if="labelled" aria-live="polite">{{ busy ? '加入中…' : (notice || addLabel) }}</span>
         </button>
@@ -245,7 +245,7 @@
       player: { type: Object, required: true }
     },
     emits: ['toggle-play', 'previous', 'next', 'seek', 'skip', 'volume', 'quality', 'quality-open', 'toggle-mute', 'play-at', 'toggle-panel', 'close-panel', 'cycle-mode', 'dismiss', 'retry', 'remove-item', 'move-item', 'clear', 'open-voice', 'open-song'],
-    data: function () { return { draggingIndex: -1, pointerId: null, titleOverflow: false, artistOverflow: false, resizeObserver: null }; },
+    data: function () { return { draggingIndex: -1, dragStartY: 0, dragOffsetY: 0, dragRaf: 0, pendingClientY: 0, pendingClientX: 0, pointerId: null, titleOverflow: false, artistOverflow: false, resizeObserver: null }; },
     computed: {
       current: function () { return this.player.current || null; },
       playing: function () { return this.player.status === 'playing' || this.player.status === 'buffering'; },
@@ -400,23 +400,49 @@
         if (this.player.queue.length < 2) return;
         event.preventDefault();
         this.draggingIndex = index;
+        this.dragStartY = event.clientY;
+        this.dragOffsetY = 0;
         this.pointerId = event.pointerId;
-        document.addEventListener('pointermove', this.onDragMove);
+        document.addEventListener('pointermove', this.onDragMove, { passive: false });
         document.addEventListener('pointerup', this.onDragEnd);
         document.addEventListener('pointercancel', this.onDragEnd);
       },
       onDragMove: function (event) {
         if (this.draggingIndex < 0 || (this.pointerId != null && event.pointerId !== this.pointerId)) return;
-        const target = document.elementFromPoint(event.clientX, event.clientY);
-        const row = target && target.closest ? target.closest('.audio-queue-row') : null;
-        if (!row) return;
-        const nextIndex = Number(row.dataset.index);
-        if (!Number.isInteger(nextIndex) || nextIndex === this.draggingIndex) return;
-        this.$emit('move-item', this.draggingIndex, nextIndex);
-        this.draggingIndex = nextIndex;
+        event.preventDefault();
+        this.pendingClientX = event.clientX;
+        this.pendingClientY = event.clientY;
+        if (this.dragRaf) return;
+        this.dragRaf = requestAnimationFrame(() => {
+          this.dragRaf = 0;
+          if (this.draggingIndex < 0) return;
+          this.dragOffsetY = this.pendingClientY - this.dragStartY;
+          const list = this.$refs.queueList;
+          if (!list) return;
+          const rows = Array.from(list.querySelectorAll('.audio-queue-row'));
+          let nextIndex = this.draggingIndex;
+          for (let i = 0; i < rows.length; i++) {
+            if (i === this.draggingIndex) continue;
+            const rect = rows[i].getBoundingClientRect();
+            const mid = rect.top + rect.height * 0.5;
+            if (i < this.draggingIndex && this.pendingClientY < mid) { nextIndex = i; break; }
+            if (i > this.draggingIndex && this.pendingClientY > mid) { nextIndex = i; }
+          }
+          if (nextIndex !== this.draggingIndex) {
+            const activeRow = rows[this.draggingIndex];
+            const stepH = activeRow ? activeRow.getBoundingClientRect().height : 56;
+            const delta = nextIndex - this.draggingIndex;
+            this.$emit('move-item', this.draggingIndex, nextIndex);
+            this.draggingIndex = nextIndex;
+            this.dragStartY += delta * stepH;
+            this.dragOffsetY = this.pendingClientY - this.dragStartY;
+          }
+        });
       },
       onDragEnd: function () {
+        if (this.dragRaf) { cancelAnimationFrame(this.dragRaf); this.dragRaf = 0; }
         this.draggingIndex = -1;
+        this.dragOffsetY = 0;
         this.pointerId = null;
         document.removeEventListener('pointermove', this.onDragMove);
         document.removeEventListener('pointerup', this.onDragEnd);
@@ -429,19 +455,19 @@
           <header class="audio-panel-head">
             <h2 id="audio-panel-title">播放列表 <em>{{ queuePosition }}</em></h2>
             <button class="audio-panel-clear" type="button" :disabled="!player.queue.length" @click="$emit('clear')">清空</button>
-            <button ref="closePanel" class="audio-icon-btn audio-panel-close" type="button" aria-label="关闭播放列表" title="关闭" @click="$emit('close-panel')">
+            <button ref="closePanel" class="audio-icon-btn audio-panel-close" type="button" aria-label="关闭播放列表" @click="$emit('close-panel')">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
             </button>
           </header>
           <div ref="queueList" class="audio-queue" role="list" aria-label="播放列表">
-            <div v-for="(track,index) in player.queue" :key="track.id+'-'+index" class="audio-queue-row" :class="{active:index===player.queueIndex,dragging:index===draggingIndex}" role="listitem" :data-index="index" :aria-current="index===player.queueIndex?'true':undefined">
-              <button class="audio-queue-drag" type="button" aria-label="拖动调整顺序" title="拖动调整顺序" @pointerdown="startDrag($event,index)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h8M6 10h8M6 15h8"/></svg></button>
+            <div v-for="(track,index) in player.queue" :key="track.id+'-'+index" class="audio-queue-row" :class="{active:index===player.queueIndex,dragging:index===draggingIndex}" :style="index===draggingIndex ? { transform: 'translate3d(0,' + dragOffsetY + 'px,0) scale(1.015)', zIndex: 12 } : null" role="listitem" :data-index="index" :aria-current="index===player.queueIndex?'true':undefined">
+              <button class="audio-queue-drag" type="button" aria-label="拖动调整顺序" @pointerdown="startDrag($event,index)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h8M6 10h8M6 15h8"/></svg></button>
               <button class="audio-queue-play" type="button" :aria-label="'播放 '+track.name" @click="$emit('play-at',index)">
                 <span class="audio-queue-number">{{ index + 1 }}</span>
                 <span v-if="index===player.queueIndex && playing" class="audio-playing-bars" aria-label="当前曲目"><i></i><i></i><i></i></span>
               </button>
               <button class="audio-queue-copy" type="button" :disabled="!track.songId" @click="openSong(track)"><b>{{ track.name }}</b><small>{{ queueArtist(track) }}</small></button>
-              <button class="audio-queue-remove" type="button" aria-label="从播放列表移除" title="移除" @click="$emit('remove-item',index)"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15"/></svg></button>
+              <button class="audio-queue-remove" type="button" aria-label="从播放列表移除" @click="$emit('remove-item',index)"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15"/></svg></button>
             </div>
           </div>
         </section>
@@ -465,19 +491,19 @@
               </div>
             </div>
             <div class="audio-dock-controls">
-              <button class="audio-control audio-mode" type="button" :aria-label="modeLabel" :title="modeLabel" @click="$emit('cycle-mode')">
+              <button class="audio-control audio-mode" type="button" :aria-label="modeLabel" @click="$emit('cycle-mode')">
                 <svg v-if="player.playbackMode==='shuffle'" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3c4 0 5 10 9 10h4M17 14l3 3-3 3M4 17h3c1.5 0 2.6-1.4 3.6-3M15 7h5M17 4l3 3-3 3"/></svg>
                 <svg v-else viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l3 3-3 3M4 6h16M7 21l-3-3 3-3M20 18H4"/><path v-if="player.playbackMode==='one'" d="M11 10h2v5"/></svg>
               </button>
-              <button class="audio-control" type="button" :disabled="!current" aria-label="上一首" title="上一首" @click="$emit('previous')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM18 6 9 12l9 6z"/></svg></button>
-              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="后退 15 秒" title="后退 15 秒" @click="$emit('skip',-15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7H4V3M4.5 7.5a8 8 0 1 1-.3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
-              <button class="audio-control audio-control-primary" type="button" :disabled="!current" :aria-label="playing?'暂停':'播放'" :title="playing?'暂停':'播放'" @click="$emit('toggle-play')">
+              <button class="audio-control" type="button" :disabled="!current" aria-label="上一首" @click="$emit('previous')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM18 6 9 12l9 6z"/></svg></button>
+              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="后退 15 秒" @click="$emit('skip',-15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7H4V3M4.5 7.5a8 8 0 1 1-.3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
+              <button class="audio-control audio-control-primary" type="button" :disabled="!current" :aria-label="playing?'暂停':'播放'" @click="$emit('toggle-play')">
                 <span v-if="loading" class="audio-arc-loader" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="8"/></svg></span>
                 <svg v-else-if="playing" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg>
                 <svg v-else viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg>
               </button>
-              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="前进 15 秒" title="前进 15 秒" @click="$emit('skip',15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h4V3m-.5 4.5a8 8 0 1 0 .3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
-              <button class="audio-control" type="button" :disabled="!current" aria-label="下一首" title="下一首" @click="$emit('next')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM6 6l9 6-9 6z"/></svg></button>
+              <button class="audio-control audio-skip" type="button" :disabled="!current" aria-label="前进 15 秒" @click="$emit('skip',15)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h4V3m-.5 4.5a8 8 0 1 0 .3 8.4M9 11h1v5M15 11h-3v2h1.4a1.5 1.5 0 0 1 0 3H12"/></svg></button>
+              <button class="audio-control" type="button" :disabled="!current" aria-label="下一首" @click="$emit('next')"><svg class="audio-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM6 6l9 6-9 6z"/></svg></button>
             </div>
             <div class="audio-dock-progress">
               <span>{{ formatTime(player.currentTime) }}</span>
@@ -485,7 +511,7 @@
               <span>{{ formatTime(player.duration) }}</span>
             </div>
             <div class="audio-output-controls">
-              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.quality" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" :title="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)">
+              <ui-select v-if="current" :key="current.id" class="audio-quality" :model-value="player.quality" :options="qualityMenuOptions" :trigger-label="qualityBadge" :aria-label="qualityAriaLabel" @open="$emit('quality-open')" @change="$emit('quality',$event)">
                 <template #option="{ option }">
                   <span class="audio-quality-option">
                     <span class="audio-quality-name">{{ option.label }}<span v-if="option.tag" class="audio-quality-code">{{ option.tag }}</span></span>
@@ -494,15 +520,15 @@
                 </template>
               </ui-select>
               <div class="audio-volume">
-                <button class="audio-control" type="button" :aria-label="player.muted?'取消静音':'静音'" :title="player.muted?'取消静音':'静音'" @click="$emit('toggle-mute')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9z"/><path v-if="!player.muted && player.volume>0" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/><path v-else d="m17 9 5 6M22 9l-5 6"/></svg></button>
+                <button class="audio-control" type="button" :aria-label="player.muted?'取消静音':'静音'" @click="$emit('toggle-mute')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9z"/><path v-if="!player.muted && player.volume>0" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/><path v-else d="m17 9 5 6M22 9l-5 6"/></svg></button>
                 <input type="range" min="0" max="1" step="0.05" :value="player.muted?0:player.volume" aria-label="音量" @input="$emit('volume',Number($event.target.value))">
               </div>
             </div>
-            <button ref="queueToggle" class="audio-queue-toggle" type="button" :class="{active:player.panelOpen}" aria-label="播放列表" title="播放列表" :aria-expanded="player.panelOpen" @click="$emit('toggle-panel')">
+            <button ref="queueToggle" class="audio-queue-toggle" type="button" :class="{active:player.panelOpen}" aria-label="播放列表" :aria-expanded="player.panelOpen" @click="$emit('toggle-panel')">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
               <em>{{ player.queue.length }}</em>
             </button>
-            <button class="audio-dismiss" type="button" aria-label="关闭播放器" title="关闭播放器" @click="$emit('dismiss')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></button>
+            <button class="audio-dismiss" type="button" aria-label="关闭播放器" @click="$emit('dismiss')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></button>
           </div>
           <div v-if="player.status==='error'" class="audio-error" role="alert"><span>{{ player.error }}</span><button type="button" @click="$emit('retry')">重试</button></div>
           <div class="audio-live-status" aria-live="polite">{{ statusText }}</div>

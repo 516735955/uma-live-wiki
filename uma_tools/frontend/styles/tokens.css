@@ -1,4 +1,6 @@
-/* ===== UNIFIED DESIGN TOKENS: DAYLIGHT (UMAMUSUME.JP COBALT & STAGE ORANGE) ===== */
+/* ===== UNIFIED DESIGN TOKENS: DAYLIGHT (UMAMUSUME.JP COBALT & STAGE ORANGE) =====
+ * Single source of truth governed by DESIGN_SYSTEM.md.
+ */
 :root {
     /* Surface elevation ramp (tonal hierarchy replaces box-in-box borders) */
     --surface-canvas: #f3f5fb;
@@ -27,27 +29,51 @@
     --hairline: rgba(22, 31, 61, 0.08);
     --hairline-strong: rgba(49, 87, 237, 0.16);
 
-    /* Soft ambient shadows (replaces harsh 1px borders and heavy solid offsets) */
+    /* Soft ambient shadows */
     --shadow-panel: 0 2px 6px rgba(22, 36, 92, 0.04), 0 12px 32px rgba(22, 36, 92, 0.065);
     --shadow-hover: 0 6px 16px rgba(22, 36, 92, 0.08), 0 18px 40px rgba(49, 87, 237, 0.13);
     --shadow-control: 0 2px 8px rgba(22, 36, 92, 0.055), 0 1px 2px rgba(22, 36, 92, 0.04);
     --shadow-float: 0 14px 36px rgba(18, 30, 74, 0.16);
 
-    /* Unified Typography Scale & Weights */
+    /* Strict 3-Tier Typography Scale (see DESIGN_SYSTEM.md) */
     --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic UI", "Yu Gothic", system-ui, -apple-system, sans-serif;
-    --text-h1: clamp(1.42rem, 2.3vw, 1.92rem);
-    --text-h2: 1.02rem;
+    --text-display: clamp(1.375rem, 2vw, 1.625rem);
     --text-body: 0.9375rem;
-    --text-sub: 0.875rem;
-    --text-label: 0.8125rem;
-    --text-badge: 0.75rem;
+    --text-meta: 0.8125rem;
+    /* Semantic aliases mapped strictly to the 3 tiers */
+    --text-h1: var(--text-display);
+    --text-h2: var(--text-body);
+    --text-sub: var(--text-meta);
+    --text-label: var(--text-meta);
+    --text-badge: var(--text-meta);
 
-    /* Kinetic motion physics */
-    --ease-uma: cubic-bezier(.19, 1, .22, 1);
-    --ease-spring: cubic-bezier(.22, 1.16, .36, 1);
+    /* Concentric Continuous Radii */
+    --radius-panel: 20px;
+    --radius-card: 14px;
+    --radius-control: 10px;
+    --radius-badge: 6px;
+    --radius-pill: 999px;
+
+    /* Spacing Scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+
+    /* Standardized Spring & Glide Physics */
+    --spring-drag: cubic-bezier(0.22, 1, 0.36, 1);       /* 1200/80 critically damped, zero bounce */
+    --spring-pop: cubic-bezier(0.34, 1.56, 0.64, 1);     /* 380/18 tactile micro-rebound */
+    --ease-uma: cubic-bezier(0.19, 1, 0.22, 1);          /* Editorial glide */
+    --ease-spring: var(--spring-pop);
     --dur-fast: 160ms;
+    --dur-drag: 200ms;
     --dur-base: 280ms;
+    --dur-pop: 340ms;
     --dur-slow: 460ms;
+    --toast-duration: 2500ms;
 
     /* Legacy token aliases mapped cleanly to single source of truth */
     --bg: var(--surface-canvas);
@@ -66,6 +92,7 @@
     --ui-navy: var(--ink-1);
     --ui-cobalt: var(--accent-primary);
     --ui-cobalt-deep: var(--accent-primary-deep);
+    --ui-cobalt-soft: var(--accent-primary-soft);
     --ui-orange: var(--accent-secondary);
     --ui-orange-end: var(--accent-secondary-end);
     --ui-orange-deep: var(--accent-secondary);

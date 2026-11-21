@@ -34,7 +34,29 @@ body[data-theme="night"] {
     --shadow-control: 0 4px 14px rgba(2, 6, 18, 0.36);
     --shadow-float: 0 18px 44px rgba(2, 5, 16, 0.65);
 
-    /* Legacy compatibility bridge */
+    /* Legacy compatibility bridge — re-declared on body so CSS custom property inheritance resolves to dark values */
+    --bg: var(--surface-canvas);
+    --bg-2: var(--surface-raised);
+    --card: #0d1630;
+    --text: var(--ink-1);
+    --text-1: var(--ink-1);
+    --text-2: var(--ink-2);
+    --text-3: var(--ink-3);
+    --border: var(--hairline);
+    --border-strong: var(--hairline-strong);
+    --surface-line: var(--hairline);
+    --surface-muted: var(--surface-subtle);
+    --ui-line: var(--hairline);
+    --ui-soft: var(--surface-raised);
+    --ui-navy: var(--ink-1);
+    --ui-cobalt: var(--accent-primary);
+    --ui-cobalt-deep: var(--accent-primary-deep);
+    --ui-cobalt-soft: var(--accent-primary-soft);
+    --ui-orange: var(--accent-primary);
+    --ui-orange-end: var(--accent-primary-deep);
+    --ui-orange-deep: var(--accent-primary-deep);
+    --ui-focus: var(--accent-primary);
+    --ui-focus-halo: var(--accent-ring);
     --theme-surface: #0c142a;
     --theme-raised: var(--surface-raised);
     --theme-accent: var(--accent-primary-deep);
@@ -52,12 +74,19 @@ body[data-theme="night"][data-variant="daring-tact-crowned"] {
     --surface-panel: rgba(16, 28, 60, 0.72);
     --surface-raised: #242b48;
     --surface-hover: rgba(248, 212, 120, 0.13);
+    --card: #101c3c;
     --accent-primary: #f5c556;
     --accent-primary-deep: #ffe49c;
     --accent-primary-soft: rgba(248, 212, 120, 0.18);
     --accent-ring: rgba(255, 228, 156, 0.24);
     --hairline: rgba(248, 212, 120, 0.18);
     --hairline-strong: rgba(248, 212, 120, 0.34);
+    --ui-cobalt: var(--accent-primary);
+    --ui-cobalt-deep: var(--accent-primary-deep);
+    --ui-cobalt-soft: var(--accent-primary-soft);
+    --ui-orange: var(--accent-primary);
+    --ui-orange-end: var(--accent-primary-deep);
+    --ui-orange-deep: var(--accent-primary-deep);
     --theme-accent: #ffe49c;
     --theme-raised: #29273a;
     --theme-line: rgba(248, 212, 120, 0.32);
@@ -350,4 +379,148 @@ body.ui-theme-dark #tab-characters .character-description {
     background: var(--surface-subtle);
     border-left-color: var(--accent-primary);
     color: var(--ink-1);
+}
+
+/* Sticky Entity Context Navigation Bar (100% dark glass, zero white bar leak) */
+body.ui-theme-dark .context-navigation {
+    background: var(--surface-glass);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 12px 32px rgba(2, 6, 18, 0.5);
+}
+
+body.ui-theme-dark .context-identity {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .context-sections button {
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark .context-sections button:hover {
+    color: #ffffff;
+}
+
+body.ui-theme-dark .context-sections button.active {
+    color: var(--accent-primary-deep);
+    box-shadow: inset 0 -2.5px 0 var(--accent-primary);
+}
+
+/* Sticky Archive Toolbar Backdrop */
+body.ui-theme-dark .archive-surface:not(:has(.entity-detail)) .archive-toolbar::before {
+    background: var(--surface-canvas);
+    background-image: none;
+}
+
+/* Audio Queue Drawer & Controls under Dark Theme */
+body.ui-theme-dark .audio-panel {
+    background: rgba(10, 17, 36, 0.94);
+    background-image: none;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .audio-panel-head {
+    border-bottom-color: var(--hairline);
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .audio-panel-head h2,
+body.ui-theme-dark .audio-queue-copy b {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .audio-panel-head em,
+body.ui-theme-dark .audio-queue-copy small,
+body.ui-theme-dark .audio-queue-number {
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark .audio-queue-row:hover {
+    background: var(--surface-hover);
+}
+
+body.ui-theme-dark .audio-queue-row.active {
+    background: var(--accent-primary-soft);
+}
+
+body.ui-theme-dark .audio-queue-row.dragging {
+    background: var(--surface-raised);
+    box-shadow: 0 14px 34px rgba(2, 6, 18, 0.65);
+}
+
+body.ui-theme-dark .audio-panel-clear:hover {
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .audio-queue-remove:hover {
+    background: rgba(255, 110, 110, 0.16);
+    color: #ff9c9c;
+}
+
+body.ui-theme-dark .audio-quality.ui-select-control {
+    background: var(--surface-raised);
+    border-color: var(--hairline-strong);
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .audio-quality .audio-quality-code {
+    background: var(--accent-primary-soft);
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark .audio-quality .audio-quality-current {
+    background: var(--accent-secondary-soft);
+    color: var(--accent-secondary-end);
+}
+
+body.ui-theme-dark .audio-quality .selected :is(.audio-quality-code, .audio-quality-current) {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Back-to-top, Pedigree Container, Filter Pills & Misc Overlays */
+body.ui-theme-dark .back-to-top {
+    background: var(--surface-glass);
+    border-color: var(--hairline-strong);
+    color: var(--ink-1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+body.ui-theme-dark .back-to-top:hover {
+    background: var(--accent-primary-soft);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary-deep);
+}
+
+body.ui-theme-dark #tab-characters .c-pedigree-lens {
+    background: var(--surface-panel);
+    box-shadow: var(--shadow-panel);
+}
+
+body.ui-theme-dark .filter-pill,
+body.ui-theme-dark .horse-expand-btn,
+body.ui-theme-dark .news-refresh-btn {
+    background: var(--surface-subtle);
+    border-color: var(--hairline-strong);
+    color: var(--ink-2);
+}
+
+body.ui-theme-dark .filter-pill.active,
+body.ui-theme-dark .horse-expand-btn:hover,
+body.ui-theme-dark .news-refresh-btn:hover:not(:disabled) {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #060b18;
+}
+
+body.ui-theme-dark .not-found-page {
+    color: var(--ink-1);
+}
+
+body.ui-theme-dark .not-found-page p {
+    color: var(--ink-2);
 }
