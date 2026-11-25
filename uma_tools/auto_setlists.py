@@ -58,7 +58,7 @@ def identity_title(value):
 
 def part_key(title, label=None):
     """Generic session labels defer the part to the title; explicit labels win."""
-    if label not in (None, '', '本公演'):
+    if label not in (None, '', '本公演', '本场'):
         return re.sub(r"\s+", "", label).lower()
     return re.sub(r"\s+", "", session_label(title)).lower()
 
@@ -97,7 +97,15 @@ def canonical_match(block, events):
         return event
     volume = re.search(r'ぱかライブTV\s*Vol\.?\s*(\d+)', block['title'], re.I)
     if not volume or re.search(r'そこそこ|Prime|プライム', block['title'], re.I):
-        return None
+        matches = [event for event in events
+                   if any(normalized_title(title) == normalized_title(block['title'])
+                          for title in [event.get('title'), event.get('title_ja'), *event.get('title_aliases', [])] if title)
+                   and block['date'] in {event.get('date'), *(session.get('date') for session in event.get('sessions', []))}
+                   and (not event.get('sessions') or any(
+                       (session.get('date') or event.get('date')) == block['date']
+                       and part_key(event.get('title_ja') or event.get('title'), session.get('label')) == part_key(block['title'])
+                       for session in event['sessions']))]
+        return matches[0] if len(matches) == 1 else None
     identifier = f'paka-live-tv-{int(volume.group(1)):03d}'
     matches = [event for event in events if event['id'] == identifier and event.get('kind') == 'official_program'
                and block['date'] in {event.get('date'), *(session.get('date') for session in event.get('sessions', []))}]
@@ -400,14 +408,10 @@ def print_status():
     catalog_report = report.get('catalog')
     if catalog_report is None:
         published = json.loads((ROOT/'data/events_catalog.json').read_text(encoding='utf-8'))
-        with (ROOT/'data/events/赛马娘LIVE歌单导出.csv').open(encoding='utf-8') as stream:
-            blocks = parse_rows(list(csv.reader(stream)))
-        applied = {(normalized_title(s['setlist_source']['sheet_title']), s.get('date') or e.get('date'))
-                   for e in published['events'] for s in e.get('sessions', [])
-                   if (s.get('setlist_source') or {}).get('sheet_title')}
-        catalog_report = {'blocks': len(blocks), 'applied': [b for b in blocks if (normalized_title(b['title']), b['date']) in applied],
-                          'review': [{'title': b['title'], 'date': b['date'], 'reason': 'not_applied_to_catalog'} for b in blocks if (normalized_title(b['title']), b['date']) not in applied]}
-    summary = f"Google sheet: {catalog_report['blocks']} blocks; {len(catalog_report['applied'])} applied to catalog; {len(catalog_report['review'])} require review."
+        catalog_report = published['coverage']['google_setlists']
+    applied = catalog_report['applied']
+    applied_count = len(applied) if isinstance(applied, list) else applied
+    summary = f"Google sheet: {catalog_report['blocks']} blocks; {applied_count} applied to catalog; {len(catalog_report['review'])} require review."
     print(summary)
     for row in catalog_report['review']:
         print(json.dumps(row, ensure_ascii=False))

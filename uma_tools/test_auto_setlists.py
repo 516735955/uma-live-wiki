@@ -164,6 +164,10 @@ class SheetPublicationTests(unittest.TestCase):
         names = split_performers('鈴木絵理、東山奈央ほか出演者全員')
         self.assertEqual(names[:2], ['鈴木絵理', '東山奈央'])
         self.assertTrue(ALL_CAST_RE.fullmatch(names[-1]))
+        published = [{**event, 'title': '中文活动名', 'title_ja': 'ANIMAX MUSIX【DAY2】',
+                      'sessions': [{**event['sessions'][0], 'label': '本场'}]}]
+        source = {}
+        self.assertEqual(attach_discovered_sessions([block], source, [], published), [])
 
     def test_nonempty_setlist_is_never_replaced(self):
         source = catalog("<table>hand-curated</table>")

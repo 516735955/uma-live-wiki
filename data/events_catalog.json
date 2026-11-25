@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T04:07:44+00:00",
+  "generated_at": "2026-11-25T04:15:39+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
       "preserved": true
     },
     "live_cat_data.json": {
-      "sha256": "63dabf63b51b80d9e04efbfdf7e0b7df8042362dd78812811ac50210456d1613",
+      "sha256": "a3c1b4d3b6a7a98ada0243d31f46bdec453aa194e3f7961c1bef49e93ea76c5e",
       "preserved": true
     }
   },
@@ -23,7 +23,12 @@
       "onsite": 246
     },
     "official_programs": 255,
-    "unresolved_cast_names": 0
+    "unresolved_cast_names": 0,
+    "google_setlists": {
+      "blocks": 158,
+      "applied": 158,
+      "review": []
+    }
   },
   "series": [
     {
@@ -5306,8 +5311,8 @@
       "localization_state": "complete"
     },
     {
-      "id": "live-other-source-466b8b448422",
-      "title": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+      "id": "eventernote-2026-11-21",
+      "title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
       "date": "2026-11-21",
       "end_date": "2026-11-21",
       "kind": "concert",
@@ -5321,21 +5326,17 @@
           "name": "小仓唯",
           "character_id": "manhattancafe",
           "role": "曼城茶座",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5345,21 +5346,17 @@
           "name": "东山奈央",
           "character_id": "mejiroramonu",
           "role": "目白高峰",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5369,21 +5366,17 @@
           "name": "铃木绘理",
           "character_id": "tosenjordan",
           "role": "东瀛佐敦",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5393,21 +5386,17 @@
           "name": "芹泽优",
           "character_id": "gentildonna",
           "role": "贵妇人",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5417,21 +5406,17 @@
           "name": "日比优理香",
           "character_id": "fenomeno",
           "role": "超常骏骥",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5441,21 +5426,17 @@
           "name": "千贺光莉",
           "character_id": "epiphaneia",
           "role": "神威启示",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5465,21 +5446,17 @@
           "name": "菊池友莉菜",
           "character_id": "rosekingdom",
           "role": "玫瑰帝国",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5489,21 +5466,17 @@
           "name": "礒部花凛",
           "character_id": "daiichiruby",
           "role": "第一红宝石",
-          "evidence": "curated_live_cast",
-          "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+          "evidence": "eventernote",
+          "source_url": "https://www.eventernote.com/events/466254",
           "person_type": "voice_actor",
           "resolution": "resolved",
           "evidence_sources": [
             {
-              "kind": "curated_live_cast",
-              "url": ""
+              "kind": "eventernote",
+              "url": "https://www.eventernote.com/events/466254"
             },
             {
               "kind": "google_sheet",
-              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-            },
-            {
-              "kind": "curated_live_cast",
               "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
@@ -5512,8 +5485,8 @@
       "character_ids": [],
       "sessions": [
         {
-          "id": "live-other-source-466b8b448422-session-1",
-          "label": "DAY2",
+          "id": "eventernote-2026-11-21-session-1",
+          "label": "本场",
           "date": "2026-11-21",
           "songs": [
             "うまぴょい伝説",
@@ -5532,6 +5505,169 @@
             "manhattancafe",
             "daiichiruby"
           ],
+          "cast": [
+            {
+              "voice_actor_id": "va-0058",
+              "name": "小仓唯",
+              "character_id": "manhattancafe",
+              "role": "曼城茶座",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0094",
+              "name": "东山奈央",
+              "character_id": "mejiroramonu",
+              "role": "目白高峰",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0167",
+              "name": "铃木绘理",
+              "character_id": "tosenjordan",
+              "role": "东瀛佐敦",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0146",
+              "name": "芹泽优",
+              "character_id": "gentildonna",
+              "role": "贵妇人",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0080",
+              "name": "日比优理香",
+              "character_id": "fenomeno",
+              "role": "超常骏骥",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0036",
+              "name": "千贺光莉",
+              "character_id": "epiphaneia",
+              "role": "神威启示",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0147",
+              "name": "菊池友莉菜",
+              "character_id": "rosekingdom",
+              "role": "玫瑰帝国",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            },
+            {
+              "voice_actor_id": "va-0130",
+              "name": "礒部花凛",
+              "character_id": "daiichiruby",
+              "role": "第一红宝石",
+              "evidence": "eventernote",
+              "source_url": "https://www.eventernote.com/events/466254",
+              "person_type": "voice_actor",
+              "resolution": "resolved",
+              "evidence_sources": [
+                {
+                  "kind": "eventernote",
+                  "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
+                }
+              ]
+            }
+          ],
+          "setlist_status": "verified",
           "performances": [
             {
               "song": "うまぴょい伝説",
@@ -5557,7 +5693,7 @@
               "song_id": "song-228f943b49",
               "version_id": "song-228f943b49-v-228f943b49",
               "song_title": "うまぴょい伝説",
-              "id": "live-other-source-466b8b448422-session-1:song-228f943b49-v-228f943b49"
+              "id": "eventernote-2026-11-21-session-1:song-228f943b49-v-228f943b49"
             },
             {
               "song": "UMA IN AMERICA",
@@ -5581,7 +5717,7 @@
               "song_id": "song-uma-in-america-b359c2cb83",
               "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
               "song_title": "UMA IN AMERICA",
-              "id": "live-other-source-466b8b448422-session-1:song-uma-in-america-b359c2cb83-v-b359c2cb83"
+              "id": "eventernote-2026-11-21-session-1:song-uma-in-america-b359c2cb83-v-b359c2cb83"
             },
             {
               "song": "Special Record!",
@@ -5605,7 +5741,7 @@
               "song_id": "song-special-record-c828cf2dc0",
               "version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
               "song_title": "Special Record!",
-              "id": "live-other-source-466b8b448422-session-1:song-special-record-c828cf2dc0-v-c828cf2dc0"
+              "id": "eventernote-2026-11-21-session-1:song-special-record-c828cf2dc0-v-c828cf2dc0"
             },
             {
               "song": "BLOW my GALE",
@@ -5629,7 +5765,7 @@
               "song_id": "song-blow-my-gale-0d9e0c78df",
               "version_id": "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df",
               "song_title": "BLOW my GALE",
-              "id": "live-other-source-466b8b448422-session-1:song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+              "id": "eventernote-2026-11-21-session-1:song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
             },
             {
               "song": "departure!",
@@ -5720,217 +5856,43 @@
               "song_id": "song-departure-3e12ac8044",
               "version_id": "song-departure-3e12ac8044-v-3e12ac8044",
               "song_title": "departure!",
-              "id": "live-other-source-466b8b448422-session-1:song-departure-3e12ac8044-v-3e12ac8044"
+              "id": "eventernote-2026-11-21-session-1:song-departure-3e12ac8044-v-3e12ac8044"
             }
           ],
-          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Special Record!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">BLOW my GALE</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">departure!</td><td class=\"setlist-perf\"><span class=\"guest-performer\">鈴木絵理</span><span class=\"guest-performer\">日比優理香</span><span class=\"guest-performer\">千賀光莉</span><span class=\"guest-performer\">菊池ゆりな</span><span class=\"guest-performer\">東山奈央</span><span class=\"guest-performer\">出演者全員</span><div class=\"performer-chip-list\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"guest-performer\">藍井エイル</span><span class=\"guest-performer\">いきづらい部！</span><span class=\"guest-performer\">綾咲穂音</span><span class=\"guest-performer\">遠藤璃菜</span><span class=\"guest-performer\">宮野芹</span><span class=\"guest-performer\">藤野こころ</span><span class=\"guest-performer\">坂野愛羽</span><span class=\"guest-performer\">瀬古梨愛</span><span class=\"guest-performer\">奥村優季</span><span class=\"guest-performer\">天沢朱音</span><span class=\"guest-performer\">小戸森穂花</span><span class=\"guest-performer\">涼ノ瀬葵音</span><span class=\"guest-performer\">伊藤美来</span><span class=\"guest-performer\">オーイシマサヨシ(大石昌良)</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/ManhattanCafe.png\" alt=\"曼城茶座\"><span class=\"perf-name\">曼城茶座</span></span><span class=\"guest-performer\">七人のカリスマ声優</span><span class=\"guest-performer\">小野友樹</span><span class=\"guest-performer\">山中真尋</span><span class=\"guest-performer\">福原かつみ</span><span class=\"guest-performer\">細田健太</span><span class=\"guest-performer\">日向朔公</span><span class=\"guest-performer\">大河元気</span><span class=\"guest-performer\">橋詰知久</span><span class=\"guest-performer\">JELEE</span><span class=\"guest-performer\">鈴木このみ</span><span class=\"guest-performer\">前島亜美</span><span class=\"guest-performer\">吉田尚記</span><span class=\"guest-performer\">大西亜玖璃</span><span class=\"guest-performer\">奥井雅美</span><span class=\"guest-performer\">田中有紀</span><span class=\"guest-performer\">sajou no hana</span><span class=\"guest-performer\">sana(37/sajou no hana)</span><span class=\"guest-performer\">茅原実里</span><span class=\"guest-performer\">ハコニワリリィ</span><span class=\"guest-performer\">Hanon(ハコニワリリィ)</span><span class=\"guest-performer\">Kotoha(ハコニワリリィ)</span><span class=\"guest-performer\">fripSide</span><span class=\"guest-performer\">八木沼悟志</span><span class=\"guest-performer\">阿部寿世</span><span class=\"guest-performer\">上杉真央(mAO)</span><span class=\"guest-performer\">MADKID</span><span class=\"guest-performer\">YOU-TA(MADKID)</span><span class=\"guest-performer\">KAZUKI(MADKID)</span><span class=\"guest-performer\">SHIN(MADKID)</span><span class=\"guest-performer\">LIN(MADKID)</span><span class=\"guest-performer\">YUKI(MADKID)</span><span class=\"guest-performer\">ウタヒメドリーム オールスターズ</span><span class=\"guest-performer\">鈴木杏奈</span><span class=\"guest-performer\">花耶</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/DaiichiRuby.png\" alt=\"第一红宝石\"><span class=\"perf-name\">第一红宝石</span></span><span class=\"guest-performer\">鷲見友美ジェナ</span><span class=\"guest-performer\">倉知玲鳳</span><span class=\"guest-performer\">小山奈桜</span><span class=\"guest-performer\">南條愛乃</span><span class=\"guest-performer\">Hearts2Hearts</span><span class=\"guest-performer\">天空のシラバス</span><span class=\"guest-performer\">陽乃ほのか</span><span class=\"guest-performer\">貴野萌</span><span class=\"guest-performer\">山根優佳</span><span class=\"guest-performer\">善木南帆</span><span class=\"guest-performer\">天音ゆかり</span><span class=\"guest-performer\">山田奈都美</span></div></td></tr>\n</tbody>\n</table>",
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Special Record!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">BLOW my GALE</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">departure!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"guest-performer\">藍井エイル</span><span class=\"guest-performer\">いきづらい部！</span><span class=\"guest-performer\">綾咲穂音</span><span class=\"guest-performer\">遠藤璃菜</span><span class=\"guest-performer\">宮野芹</span><span class=\"guest-performer\">藤野こころ</span><span class=\"guest-performer\">坂野愛羽</span><span class=\"guest-performer\">瀬古梨愛</span><span class=\"guest-performer\">奥村優季</span><span class=\"guest-performer\">天沢朱音</span><span class=\"guest-performer\">小戸森穂花</span><span class=\"guest-performer\">涼ノ瀬葵音</span><span class=\"guest-performer\">伊藤美来</span><span class=\"guest-performer\">オーイシマサヨシ(大石昌良)</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/ManhattanCafe.png\" alt=\"曼城茶座\"><span class=\"perf-name\">曼城茶座</span></span><span class=\"guest-performer\">七人のカリスマ声優</span><span class=\"guest-performer\">小野友樹</span><span class=\"guest-performer\">山中真尋</span><span class=\"guest-performer\">福原かつみ</span><span class=\"guest-performer\">細田健太</span><span class=\"guest-performer\">日向朔公</span><span class=\"guest-performer\">大河元気</span><span class=\"guest-performer\">橋詰知久</span><span class=\"guest-performer\">JELEE</span><span class=\"guest-performer\">鈴木このみ</span><span class=\"guest-performer\">前島亜美</span><span class=\"guest-performer\">吉田尚記</span><span class=\"guest-performer\">大西亜玖璃</span><span class=\"guest-performer\">奥井雅美</span><span class=\"guest-performer\">田中有紀</span><span class=\"guest-performer\">sajou no hana</span><span class=\"guest-performer\">sana(37/sajou no hana)</span><span class=\"guest-performer\">茅原実里</span><span class=\"guest-performer\">ハコニワリリィ</span><span class=\"guest-performer\">Hanon(ハコニワリリィ)</span><span class=\"guest-performer\">Kotoha(ハコニワリリィ)</span><span class=\"guest-performer\">fripSide</span><span class=\"guest-performer\">八木沼悟志</span><span class=\"guest-performer\">阿部寿世</span><span class=\"guest-performer\">上杉真央(mAO)</span><span class=\"guest-performer\">MADKID</span><span class=\"guest-performer\">YOU-TA(MADKID)</span><span class=\"guest-performer\">KAZUKI(MADKID)</span><span class=\"guest-performer\">SHIN(MADKID)</span><span class=\"guest-performer\">LIN(MADKID)</span><span class=\"guest-performer\">YUKI(MADKID)</span><span class=\"guest-performer\">ウタヒメドリーム オールスターズ</span><span class=\"guest-performer\">鈴木杏奈</span><span class=\"guest-performer\">花耶</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/DaiichiRuby.png\" alt=\"第一红宝石\"><span class=\"perf-name\">第一红宝石</span></span><span class=\"guest-performer\">鷲見友美ジェナ</span><span class=\"guest-performer\">倉知玲鳳</span><span class=\"guest-performer\">小山奈桜</span><span class=\"guest-performer\">南條愛乃</span><span class=\"guest-performer\">Hearts2Hearts</span><span class=\"guest-performer\">天空のシラバス</span><span class=\"guest-performer\">陽乃ほのか</span><span class=\"guest-performer\">貴野萌</span><span class=\"guest-performer\">山根優佳</span><span class=\"guest-performer\">善木南帆</span><span class=\"guest-performer\">天音ゆかり</span><span class=\"guest-performer\">山田奈都美</span></td></tr>\n</tbody>\n</table>",
           "setlist_source": {
             "file": "data/events/赛马娘LIVE歌单导出.csv",
             "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
             "sheet_title": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino DAY2@横浜アリーナ(神奈川・横浜港北区)"
           },
-          "sources": [
-            {
-              "kind": "eventernote",
-              "label": "Eventernote",
-              "url": "https://www.eventernote.com/events/466254"
-            }
-          ],
-          "source_time_text": "開場 13:00 開演 14:30 終演 21:15",
-          "id_aliases": [],
-          "cast": [
-            {
-              "voice_actor_id": "va-0058",
-              "name": "小仓唯",
-              "character_id": "manhattancafe",
-              "role": "曼城茶座",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0094",
-              "name": "东山奈央",
-              "character_id": "mejiroramonu",
-              "role": "目白高峰",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0167",
-              "name": "铃木绘理",
-              "character_id": "tosenjordan",
-              "role": "东瀛佐敦",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0146",
-              "name": "芹泽优",
-              "character_id": "gentildonna",
-              "role": "贵妇人",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0080",
-              "name": "日比优理香",
-              "character_id": "fenomeno",
-              "role": "超常骏骥",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0036",
-              "name": "千贺光莉",
-              "character_id": "epiphaneia",
-              "role": "神威启示",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0147",
-              "name": "菊池友莉菜",
-              "character_id": "rosekingdom",
-              "role": "玫瑰帝国",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            },
-            {
-              "voice_actor_id": "va-0130",
-              "name": "礒部花凛",
-              "character_id": "daiichiruby",
-              "role": "第一红宝石",
-              "evidence": "curated_live_cast",
-              "source_url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
-              "person_type": "voice_actor",
-              "resolution": "resolved",
-              "evidence_sources": [
-                {
-                  "kind": "curated_live_cast",
-                  "url": ""
-                },
-                {
-                  "kind": "google_sheet",
-                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
-                }
-              ]
-            }
-          ],
-          "alternate_setlist_sources": [
-            {
-              "file": "data/live_cat_data.json",
-              "category": "other",
-              "section": null,
-              "group": 78,
-              "performance": 0,
-              "day": 0
-            }
-          ],
-          "setlist_status": "verified",
+          "end_time": "21:00",
+          "end_time_estimated": true,
+          "time_source": "official_announcement",
+          "time_source_url": "https://www.animax.co.jp/events/animaxmusix/",
+          "time_precision": "minute",
+          "schedule_note": "赛马娘参加DAY2。",
+          "schedule_source_note": "现行官方活动页列DAY2预计21:00结束；2026年7月旧公告列20:30。",
           "doors_time": "13:00",
           "start_time": "14:30",
-          "end_time": "21:15",
-          "end_time_estimated": true,
-          "time_source": "eventernote",
-          "time_precision": "minute",
-          "time_source_url": "https://www.eventernote.com/events/466254"
+          "source_time_text": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】    開場 13:00 開演 14:30 終演 21:15 開場 13:00 開演 14:30 終演 21:15"
         }
       ],
       "media": [],
       "sources": [
         {
-          "kind": "curated_live",
-          "label": "站内精调歌单",
-          "url": "/zh-Hans/live/other/78"
-        },
-        {
           "kind": "eventernote",
           "label": "Eventernote",
           "url": "https://www.eventernote.com/events/466254"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "ANIMAX MUSIX 2026现行日程",
+          "url": "https://www.animax.co.jp/events/animaxmusix/"
+        },
+        {
+          "kind": "official_announcement",
+          "label": "2026年7月旧公告日程",
+          "url": "https://umamusume.jp/news/detail?id=3374"
         },
         {
           "kind": "google_sheet",
@@ -5938,15 +5900,19 @@
           "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
-      "legacy_url": "/zh-Hans/live/other/78",
-      "legacy_aliases": [
-        "/zh-Hans/live/other/78",
-        "/zh-Hans/live/other/78/0/0"
-      ],
-      "image": "https://eventernote.s3.amazonaws.com/images/events/466254_s.jpg",
-      "summary": "出处：https://www.eventernote.com/events/466254",
+      "legacy_url": "",
+      "image": "/uma_tools/img/event-covers/concert.svg",
+      "summary": "ANIMAX MUSIX 2026 第二日演出，赛马娘参加在横滨体育馆举行的动画歌曲音乐节。",
+      "source_time_text": "開場 13:00 開演 14:30 終演 21:15",
+      "image_source": {
+        "kind": "unresolved",
+        "rejected_url": "https://eventernote.s3.amazonaws.com/images/events/466254_s.jpg",
+        "reason": "图片实际内容为错误届次、无关通用图、网页界面、Logo或错误页；当前来源未确认本次可用封面。",
+        "reviewed_at": "2026-10-25"
+      },
       "title_aliases": [],
       "id_aliases": [],
+      "legacy_aliases": [],
       "setlist_status": "verified",
       "venue_raw": "横浜アリーナ",
       "venue_id": "venue-横浜アリ-ナ",
@@ -5964,10 +5930,12 @@
           "url": "https://www.eventernote.com/places/1"
         }
       ],
-      "time_source": "eventernote",
+      "time_source": "official_announcement",
       "time_precision": "minute",
       "title_ja": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
-      "summary_ja": "出处：https://www.eventernote.com/events/466254",
+      "summary_ja": "",
+      "title_zh": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+      "summary_zh": "ANIMAX MUSIX 2026 第二日演出，赛马娘参加在横滨体育馆举行的动画歌曲音乐节。",
       "localization_state": "complete"
     },
     {
@@ -192478,5 +192446,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "a1e2ad54a3eff712af32"
+  "build_id": "c21786faa6637ab1e91e"
 }

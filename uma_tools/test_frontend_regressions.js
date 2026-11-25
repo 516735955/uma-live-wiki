@@ -41,7 +41,7 @@ async function main() {
     async request(url) {
       calls.push(url);
       const parsed = new URL(url, location);
-      if (parsed.pathname === '/api/home-summary') return { stats: { songs: 1043, albums: 116, live: 61, performances: 47 } };
+      if (parsed.pathname === '/api/home-summary') return store.home();
       if (parsed.pathname === '/api/news-detail') {
         const response = await newsDetail.promise;
         if (!response.ok) throw new Error('HTTP ' + response.status);
@@ -539,7 +539,7 @@ async function main() {
   await app.navigateTo('/zh-Hans/');
   await context.Vue.nextTick();
   assert.strictEqual(calls.filter(url => url === '/api/home-summary').length, summariesBefore + 1, 'returning from a detail route loads home statistics');
-  assert.strictEqual(app.statSongs.value, 1043);
+  assert.strictEqual(app.statSongs.value, (await store.home()).stats.songs);
   await app.navigateTo('/zh-Hans/music/songs');
   location.href = 'http://localhost/zh-Hans/';
   await app.applyCurrentRoute();

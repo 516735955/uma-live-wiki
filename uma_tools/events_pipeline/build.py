@@ -97,6 +97,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
         "coverage": {
             "events": len(events), "by_kind": dict(sorted(kinds.items())), "by_mode": dict(sorted(modes.items())),
             "official_programs": len(programs.get("programs") or []), "unresolved_cast_names": len(appearances["unresolved_cast"]),
+            "google_setlists": {"blocks": sheet_report['blocks'], "applied": len(sheet_report['applied']), "review": sheet_report['review']},
         },
         "series": series.get("series") or [],
         "event_groups": event_groups,
