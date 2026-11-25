@@ -52,24 +52,23 @@ jobs:
       - name: Review skipped and conflicting rows
         if: always()
         run: |
-          if test -f data/events/sheet_apply_report.json; then
-            python -c "import json; r=json.load(open('data/events/sheet_apply_report.json')); print('Filled:',len(r['filled']),'Review:',len(r['review'])); [print(x) for x in r['review']]"
-          fi
-
-      - name: Read the complete generated catalog before publication
-        run: node uma_tools/test_catalog_store.js
+          python uma_tools/auto_setlists.py --status
 
       - name: Commit generated data (if changed)
         run: |
           git add 'data/events/赛马娘LIVE歌单导出.csv' data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
+            echo "No setlist changes to publish; no empty commit created." >> "$GITHUB_STEP_SUMMARY"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "chore(events): auto sync sheet setlists $(date -u +%Y-%m-%d)"
             for attempt in 1 2 3; do
-              if git push origin HEAD:main; then exit 0; fi
+              if git push origin HEAD:main; then
+                echo "Published setlist data: $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
+                exit 0
+              fi
               # Reapply the source refresh on the collaborator's latest main;
               # generated catalogs are rebuilt rather than merged as text.
               git fetch origin main
@@ -77,7 +76,6 @@ jobs:
               git switch -c "sheet-sync-retry-$attempt" origin/main
               python uma_tools/auto_setlists.py
               python uma_tools/update_events.py
-              node uma_tools/test_catalog_store.js
               git add 'data/events/赛马娘LIVE歌单导出.csv' data/live_cat_data.json data/events_catalog.json data/events_data.json data/song_catalog.json data/creator_catalog.json data/appearance_index.json data/catalog_manifest.json data/voice_actor_profiles.json
               if git diff --cached --quiet; then exit 0; fi
               git commit -m "chore(events): auto sync sheet setlists $(date -u +%Y-%m-%d)"

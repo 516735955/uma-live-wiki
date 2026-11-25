@@ -18,6 +18,32 @@ import sync_pedigree_sources as pedigree
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_retained_metadata_is_reported_as_partial(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root/'data/events').mkdir(parents=True)
+            (root/'data/events/official_programs.json').write_text(json.dumps({'coverage': {'metadata_recheck_pending': ['old video']}}))
+            with patch.object(runner, 'ROOT', root), patch.object(runner, 'STATE', root/'state.json'), \
+                 patch.object(runner, 'STEPS', [('programs', ['crawl_official_programs.py'])]), patch.dict(os.environ, {'GITHUB_ACTIONS': 'true'}):
+                self.assertEqual(runner.run_updates(run=lambda *a, **kw: subprocess.CompletedProcess(a, 0, 'archive retained', '')), 0)
+                record = json.loads(runner.STATE.read_text())['steps']['programs']
+                self.assertEqual((record['status'], record['pending_rechecks']), ('partial', 1))
+
+    def test_delayed_actions_run_is_due_next_beijing_day(self):
+        from datetime import datetime, timezone, timedelta
+        zone = timezone(timedelta(hours=8))
+        finished = datetime(2026, 11, 25, 20, 27, tzinfo=zone).timestamp()
+        self.assertEqual(datetime.fromtimestamp(runner.next_daily_run(finished, True), zone).isoformat(), '2026-11-26T03:17:00+08:00')
+        self.assertEqual(runner.next_daily_run(finished, False), finished + 86400)
+
+    def test_published_server_leaves_event_collection_to_actions(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root/'release.json').write_text('{}')
+            with patch.object(runner, 'ROOT', root), patch.object(runner, 'STATE', root/'state.json'), \
+                 patch.object(runner, 'STEPS', [('events', ['crawl_events.py']), ('programs', ['crawl_official_programs.py'])]), \
+                 patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
+                self.assertEqual(runner.run_updates(force=True, run=lambda *a, **kw: self.fail('Actions owns event collection')), 0)
+                self.assertTrue(all(row['status'] == 'published' for row in json.loads(runner.STATE.read_text())['steps'].values()))
+
     def test_published_site_uses_the_sheet_snapshot_without_requesting_google(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder); (root/'data/events').mkdir(parents=True); (root/'release.json').write_text('{}')

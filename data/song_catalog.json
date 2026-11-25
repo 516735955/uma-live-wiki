@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T10:45:29+00:00",
+  "generated_at": "2026-11-25T04:03:28+00:00",
   "coverage": {
-    "songs": 1043,
-    "versions": 2174,
+    "songs": 1044,
+    "versions": 2175,
     "albums": 117,
     "release_tracks": 2256,
-    "live_performances": 1270,
+    "live_performances": 1275,
     "credited_songs": 423,
     "lyric_songs": 248,
     "credited_versions": 1500,
@@ -3947,7 +3947,9 @@
         "currenchan",
         "daiwascarlet",
         "eishinflash",
+        "epiphaneia",
         "espoircity",
+        "fenomeno",
         "finemotion",
         "fujikiseki",
         "furioso",
@@ -3981,6 +3983,7 @@
         "oguricap",
         "reddesire",
         "rheinkraft",
+        "rosekingdom",
         "sakurachitoseo",
         "sakurachiyonoo",
         "silencesuzuka",
@@ -3994,6 +3997,7 @@
         "taninogimlet",
         "tapdancecity",
         "tmoperao",
+        "tosenjordan",
         "transcend",
         "verxina",
         "vivlos",
@@ -4012,6 +4016,7 @@
         "va-0033",
         "va-0034",
         "va-0035",
+        "va-0036",
         "va-0039",
         "va-0040",
         "va-0046",
@@ -4029,6 +4034,7 @@
         "va-0073",
         "va-0078",
         "va-0079",
+        "va-0080",
         "va-0083",
         "va-0085",
         "va-0086",
@@ -4050,6 +4056,7 @@
         "va-0140",
         "va-0141",
         "va-0146",
+        "va-0147",
         "va-0148",
         "va-0152",
         "va-0154",
@@ -4058,6 +4065,7 @@
         "va-0161",
         "va-0162",
         "va-0165",
+        "va-0167",
         "va-0170",
         "va-0174",
         "va-0175",
@@ -4104,7 +4112,9 @@
         "currenbouquetdor",
         "daiwascarlet",
         "eishinflash",
+        "epiphaneia",
         "espoircity",
+        "fenomeno",
         "furioso",
         "gentildonna",
         "goldcity",
@@ -4133,6 +4143,7 @@
         "oguricap",
         "reddesire",
         "rheinkraft",
+        "rosekingdom",
         "sakurachitoseo",
         "sakurachiyonoo",
         "silencesuzuka",
@@ -4146,6 +4157,7 @@
         "taninogimlet",
         "tapdancecity",
         "tmoperao",
+        "tosenjordan",
         "transcend",
         "verxina",
         "vivlos",
@@ -4164,6 +4176,7 @@
         "va-0033",
         "va-0034",
         "va-0035",
+        "va-0036",
         "va-0039",
         "va-0040",
         "va-0046",
@@ -4179,6 +4192,7 @@
         "va-0073",
         "va-0078",
         "va-0079",
+        "va-0080",
         "va-0083",
         "va-0085",
         "va-0086",
@@ -4196,6 +4210,7 @@
         "va-0140",
         "va-0141",
         "va-0146",
+        "va-0147",
         "va-0148",
         "va-0152",
         "va-0154",
@@ -4204,6 +4219,7 @@
         "va-0161",
         "va-0162",
         "va-0165",
+        "va-0167",
         "va-0170",
         "va-0174",
         "va-0175",
@@ -4339,6 +4355,33 @@
             }
           ],
           "performances": [
+            {
+              "event_id": "eventernote-2026-11-21",
+              "event_title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+              "event_date": "2026-11-21",
+              "kind": "concert",
+              "series_id": "animax-musix",
+              "session_id": "eventernote-2026-11-21-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-21",
+              "performance_index": 4,
+              "setlist_no": "4",
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-21?session=eventernote-2026-11-21-session-1"
+            },
             {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "7th EVENT THE STAGE 东京公演",
@@ -4849,7 +4892,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 16,
+          "performance_count": 17,
           "instrumental": false,
           "credits": [
             {
@@ -6062,7 +6105,7 @@
       ],
       "version_count": 15,
       "release_count": 15,
-      "performance_count": 16,
+      "performance_count": 17,
       "original_version_id": "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df",
       "creator_ids": [
         "creator-22a01c071a",
@@ -11252,6 +11295,179 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-dear-trainer-a532f0b4af-v-a532f0b4af",
+      "creator_ids": [],
+      "has_lyrics": false
+    },
+    {
+      "id": "song-departure-3e12ac8044",
+      "title": "departure!",
+      "aliases": [
+        "departure!"
+      ],
+      "legacy_ids": [],
+      "artists": [],
+      "character_ids": [
+        "daiichiruby",
+        "epiphaneia",
+        "fenomeno",
+        "gentildonna",
+        "manhattancafe",
+        "mejiroramonu",
+        "rosekingdom",
+        "tosenjordan"
+      ],
+      "voice_actor_ids": [
+        "va-0036",
+        "va-0058",
+        "va-0080",
+        "va-0094",
+        "va-0130",
+        "va-0146",
+        "va-0147",
+        "va-0167"
+      ],
+      "released_character_ids": [],
+      "released_voice_actor_ids": [],
+      "performed_character_ids": [
+        "daiichiruby",
+        "epiphaneia",
+        "fenomeno",
+        "gentildonna",
+        "manhattancafe",
+        "mejiroramonu",
+        "rosekingdom",
+        "tosenjordan"
+      ],
+      "performed_voice_actor_ids": [
+        "va-0036",
+        "va-0058",
+        "va-0080",
+        "va-0094",
+        "va-0130",
+        "va-0146",
+        "va-0147",
+        "va-0167"
+      ],
+      "cover": "/album_covers/placeholder.webp",
+      "release_date": "",
+      "versions": [
+        {
+          "id": "song-departure-3e12ac8044-v-3e12ac8044",
+          "title": "departure!",
+          "version_label": "",
+          "artists": [],
+          "releases": [],
+          "performances": [
+            {
+              "event_id": "eventernote-2026-11-21",
+              "event_title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+              "event_date": "2026-11-21",
+              "kind": "concert",
+              "series_id": "animax-musix",
+              "session_id": "eventernote-2026-11-21-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-21",
+              "performance_index": 5,
+              "setlist_no": "5",
+              "character_ids": [
+                "tosenjordan",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom",
+                "mejiroramonu",
+                "gentildonna",
+                "manhattancafe",
+                "daiichiruby"
+              ],
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0058",
+                "va-0080",
+                "va-0094",
+                "va-0130",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "guest_performers": [
+                "藍井エイル",
+                "いきづらい部！",
+                "綾咲穂音",
+                "遠藤璃菜",
+                "宮野芹",
+                "藤野こころ",
+                "坂野愛羽",
+                "瀬古梨愛",
+                "奥村優季",
+                "天沢朱音",
+                "小戸森穂花",
+                "涼ノ瀬葵音",
+                "伊藤美来",
+                "オーイシマサヨシ(大石昌良)",
+                "七人のカリスマ声優",
+                "小野友樹",
+                "山中真尋",
+                "福原かつみ",
+                "細田健太",
+                "日向朔公",
+                "大河元気",
+                "橋詰知久",
+                "JELEE",
+                "鈴木このみ",
+                "前島亜美",
+                "吉田尚記",
+                "大西亜玖璃",
+                "奥井雅美",
+                "田中有紀",
+                "sajou no hana",
+                "sana(37/sajou no hana)",
+                "茅原実里",
+                "ハコニワリリィ",
+                "Hanon(ハコニワリリィ)",
+                "Kotoha(ハコニワリリィ)",
+                "fripSide",
+                "八木沼悟志",
+                "阿部寿世",
+                "上杉真央(mAO)",
+                "MADKID",
+                "YOU-TA(MADKID)",
+                "KAZUKI(MADKID)",
+                "SHIN(MADKID)",
+                "LIN(MADKID)",
+                "YUKI(MADKID)",
+                "ウタヒメドリーム オールスターズ",
+                "鈴木杏奈",
+                "花耶",
+                "鷲見友美ジェナ",
+                "倉知玲鳳",
+                "小山奈桜",
+                "南條愛乃",
+                "Hearts2Hearts",
+                "天空のシラバス",
+                "陽乃ほのか",
+                "貴野萌",
+                "山根優佳",
+                "善木南帆",
+                "天音ゆかり",
+                "山田奈都美"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-21?session=eventernote-2026-11-21-session-1"
+            }
+          ],
+          "release_count": 0,
+          "performance_count": 1,
+          "instrumental": false,
+          "credits": [],
+          "creator_ids": [],
+          "lyrics_ref": "",
+          "has_lyrics": false,
+          "has_timing": false
+        }
+      ],
+      "version_count": 1,
+      "release_count": 0,
+      "performance_count": 1,
+      "original_version_id": "song-departure-3e12ac8044-v-3e12ac8044",
       "creator_ids": [],
       "has_lyrics": false
     },
@@ -81568,6 +81784,7 @@
         "nicenature",
         "oguricap",
         "riceshower",
+        "rosekingdom",
         "sakurabakushino",
         "satonodiamond",
         "seiunsky",
@@ -81634,6 +81851,7 @@
         "va-0143",
         "va-0145",
         "va-0146",
+        "va-0147",
         "va-0153",
         "va-0155",
         "va-0158",
@@ -81746,6 +81964,7 @@
         "nicenature",
         "oguricap",
         "riceshower",
+        "rosekingdom",
         "sakurabakushino",
         "satonodiamond",
         "seiunsky",
@@ -81811,6 +82030,7 @@
         "va-0143",
         "va-0145",
         "va-0146",
+        "va-0147",
         "va-0153",
         "va-0155",
         "va-0158",
@@ -82107,6 +82327,33 @@
             }
           ],
           "performances": [
+            {
+              "event_id": "eventernote-2026-11-21",
+              "event_title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+              "event_date": "2026-11-21",
+              "kind": "concert",
+              "series_id": "animax-musix",
+              "session_id": "eventernote-2026-11-21-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-21",
+              "performance_index": 3,
+              "setlist_no": "3",
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-21?session=eventernote-2026-11-21-session-1"
+            },
             {
               "event_id": "live-numbered-7th-event-2026-06-20",
               "event_title": "7th EVENT THE STAGE 东京公演",
@@ -82548,7 +82795,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 13,
+          "performance_count": 14,
           "instrumental": false,
           "credits": [
             {
@@ -84926,7 +85173,7 @@
       ],
       "version_count": 15,
       "release_count": 16,
-      "performance_count": 13,
+      "performance_count": 14,
       "original_version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
       "creator_ids": [
         "creator-6ed889314c",
@@ -94222,6 +94469,33 @@
           ],
           "performances": [
             {
+              "event_id": "eventernote-2026-11-21",
+              "event_title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+              "event_date": "2026-11-21",
+              "kind": "concert",
+              "series_id": "animax-musix",
+              "session_id": "eventernote-2026-11-21-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-21",
+              "performance_index": 2,
+              "setlist_no": "2",
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-21?session=eventernote-2026-11-21-session-1"
+            },
+            {
               "event_id": "live-cd-2026-08-16-winning-live-33",
               "event_title": "WINNING LIVE 33 发售纪念活动",
               "event_date": "2026-08-16",
@@ -94412,7 +94686,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 5,
+          "performance_count": 6,
           "instrumental": false,
           "credits": [
             {
@@ -95295,7 +95569,7 @@
       ],
       "version_count": 8,
       "release_count": 14,
-      "performance_count": 5,
+      "performance_count": 6,
       "original_version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
       "creator_ids": [
         "creator-lucas-nainemoutou-2d8686f23a"
@@ -121168,6 +121442,35 @@
           ],
           "performances": [
             {
+              "event_id": "eventernote-2026-11-21",
+              "event_title": "东武铁道 presents ANIMAX MUSIX 2026 supported by Lemino【DAY2】",
+              "event_date": "2026-11-21",
+              "kind": "concert",
+              "series_id": "animax-musix",
+              "session_id": "eventernote-2026-11-21-session-1",
+              "session_label": "本场",
+              "session_date": "2026-11-21",
+              "performance_index": 1,
+              "setlist_no": "1",
+              "character_ids": [
+                "mejiroramonu",
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0094",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "event_url": "/zh-Hans/events/eventernote-2026-11-21?session=eventernote-2026-11-21-session-1"
+            },
+            {
               "event_id": "eventernote-2026-11-07",
               "event_title": "WINNING LIVE 35 发售纪念活动",
               "event_date": "2026-11-07",
@@ -127276,7 +127579,7 @@
             }
           ],
           "release_count": 1,
-          "performance_count": 160,
+          "performance_count": 161,
           "instrumental": false,
           "credits": [
             {
@@ -155995,7 +156298,7 @@
       ],
       "version_count": 120,
       "release_count": 129,
-      "performance_count": 160,
+      "performance_count": 161,
       "original_version_id": "song-228f943b49-v-228f943b49",
       "creator_ids": [
         "creator-eaf94340d3",
@@ -261034,5 +261337,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "514a1fec67ea06f98e8a"
+  "build_id": "c21786faa6637ab1e91e"
 }

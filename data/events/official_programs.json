@@ -1,45 +1,11 @@
 {
   "schema_version": 2,
   "source": "official YouTube channel UCAWxPGGuIfWME2KTLUmSCHw and official portal announcements",
-  "refreshed_at": "2026-11-23T00:23:24+00:00",
+  "refreshed_at": "2026-11-25T04:03:25+00:00",
   "coverage": {
     "official_youtube_refresh": "metadata_recheck_pending",
     "source_errors": [],
     "metadata_recheck_pending": [
-      "stale metadata retained after refresh failure: -XoUGld7cZE",
-      "stale metadata retained after refresh failure: -vs_1Fz8Vgo",
-      "stale metadata retained after refresh failure: 0SV5fUyIVDg",
-      "external video metadata unavailable or channel mismatch: 0rKu9PQsHBk: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: feed publication does not establish a broadcast date",
-      "official video metadata unavailable: 1xXFvLOoaVQ: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 2WLBGvgv2YI: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 31WoRmbeUvM: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "stale metadata retained after refresh failure: 3TFnrD1sYNU",
-      "official video metadata unavailable: 3vhdJaOqMgg: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "metadata recheck deferred; accepted archive retained: 402qxqFvifg",
-      "official video metadata unavailable: 4tNdgNujHGE: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "metadata recheck deferred; accepted archive retained: 5rbC0ltYmUg",
-      "stale metadata retained after refresh failure: 6HuEMtJfDmA",
-      "official video metadata unavailable: 6UTYrO9lFHM: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 6kWw9Nn4dIY: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 7Y1v28OecYw: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 7lPxHiqI5i0: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "stale metadata retained after refresh failure: 8-r-tJQZGVE",
-      "official video metadata unavailable: 87vpnK5vrc0: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "metadata recheck deferred; accepted archive retained: 8DOehXRbeyo",
-      "stale metadata retained after refresh failure: 8Eg5hDpujFs",
-      "official video metadata unavailable: 8On-r5Eeomk: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: 9r9YWhDqIDE: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "stale metadata retained after refresh failure: 9tnWe_I75RU",
-      "stale metadata retained after refresh failure: ARfzZaN_GBw",
-      "official video metadata unavailable: Ahx7gD2O1hw: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: Bp4MnH05458: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: C_I-AURSOBw: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "official video metadata unavailable: CbCs_zfy4mk: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "stale metadata retained after refresh failure: DLMaPKHnvaM",
-      "official video metadata unavailable: EG7l_G9ByXs: default: missing channel; android: missing channel; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
-      "metadata recheck deferred; accepted archive retained: EWmCp_9MIj0",
-      "stale metadata retained after refresh failure: EfR9hcHGE5o",
-      "stale metadata retained after refresh failure: EtrC13GWP9M",
       "official video metadata unavailable: EtyMt8pfEf8: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
       "official video metadata unavailable: F6ONB0JKO0o: default: missing channel,date; android: missing channel,date; official watch page: public watch date unavailable; official prerecorded feed: video is outside the current official feed",
       "stale metadata retained after refresh failure: Fa5_3e7lnEc",
@@ -99,7 +65,6 @@
       "metadata recheck deferred; accepted archive retained: Z-Vw1QGh7qw",
       "stale metadata retained after refresh failure: Z8aJJeahGA4",
       "metadata recheck deferred; accepted archive retained: _8twOlkRBkw",
-      "stale metadata retained after refresh failure: _OC7JG7D7w0",
       "stale metadata retained after refresh failure: _eSlUkKrJr8",
       "metadata recheck deferred; accepted archive retained: aI6Sx0SaDW8",
       "metadata recheck deferred; accepted archive retained: aO8hKrbyVFg",
@@ -185,8 +150,8 @@
     "records": 255,
     "source_verified_regular_episodes": 127,
     "metadata_pending_ids": [],
-    "metadata_candidate_count": 178,
-    "metadata_batch_count": 65,
+    "metadata_candidate_count": 175,
+    "metadata_batch_count": 36,
     "metadata_deferred_video_ids": [],
     "metadata_pending_video_ids": [],
     "pakatube_character_programs": 91,
@@ -641,7 +606,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1793838418.5399797,
+      "metadata_checked_at": 1795579156.879263,
       "summary_translation_status": "stale"
     },
     {
@@ -909,7 +874,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1792771843.0046325
+      "metadata_checked_at": 1795579151.8801384
     },
     {
       "id": "official-special-20251121-title-84cd62525392",
@@ -1048,7 +1013,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1794355609.5226922,
+      "metadata_checked_at": 1795579387.2042701,
       "summary_translation_status": "stale"
     },
     {
@@ -1085,7 +1050,7 @@
       "date": "2026-05-22",
       "video_id": "-vs_1Fz8Vgo",
       "url": "https://www.youtube.com/watch?v=-vs_1Fz8Vgo",
-      "thumbnail": "https://i.ytimg.com/vi/-vs_1Fz8Vgo/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi_webp/-vs_1Fz8Vgo/maxresdefault.webp",
       "duration": 384,
       "cast_status": "character_only",
       "cast": [],
@@ -1102,7 +1067,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1794276785.7911742,
+      "metadata_checked_at": 1795579148.1520352,
       "summary_translation_status": "stale"
     },
     {
@@ -1156,7 +1121,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1793401343.6437726,
+      "metadata_checked_at": 1795579386.7990444,
       "summary_translation_status": "stale"
     },
     {
@@ -1327,7 +1292,7 @@
           "url": "https://www.youtube.com/watch?v=0rKu9PQsHBk"
         }
       ],
-      "metadata_checked_at": 1792773477.8191898,
+      "metadata_checked_at": 1795579148.156434,
       "broadcast_time": "18:45",
       "broadcast_date": "2026-10-17",
       "source_time_text": "1792230314",
@@ -10110,7 +10075,7 @@
         }
       ],
       "media": [],
-      "metadata_checked_at": 1795393383.9925673,
+      "metadata_checked_at": 1795579376.347026,
       "source_time_text": "1795948200"
     },
     {
@@ -10144,7 +10109,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276790.9381442
+      "metadata_checked_at": 1795579152.4071164
     },
     {
       "id": "pakatube-20180723-cZnOzZNlxwU",
@@ -10248,7 +10213,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1793838422.9869761
+      "metadata_checked_at": 1795579280.5323758
     },
     {
       "id": "pakatube-20181012-Z8aJJeahGA4",
@@ -10654,7 +10619,7 @@
       "date": "2019-05-28",
       "video_id": "8Eg5hDpujFs",
       "url": "https://www.youtube.com/watch?v=8Eg5hDpujFs",
-      "thumbnail": "https://i.ytimg.com/vi/8Eg5hDpujFs/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi_webp/8Eg5hDpujFs/maxresdefault.webp",
       "duration": 318,
       "cast_status": "character_only",
       "cast": [],
@@ -10678,7 +10643,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276798.3303344
+      "metadata_checked_at": 1795579280.271422
     },
     {
       "id": "pakatube-20190731-ikJ8IXZ2tlw",
@@ -10785,7 +10750,7 @@
       "date": "2019-12-18",
       "video_id": "DLMaPKHnvaM",
       "url": "https://www.youtube.com/watch?v=DLMaPKHnvaM",
-      "thumbnail": "https://i.ytimg.com/vi/DLMaPKHnvaM/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/DLMaPKHnvaM/maxresdefault.jpg",
       "duration": 192,
       "cast_status": "character_only",
       "cast": [],
@@ -10808,7 +10773,7 @@
           "url": "https://www.youtube.com/watch?v=DLMaPKHnvaM"
         }
       ],
-      "metadata_checked_at": 1794355609.3779027
+      "metadata_checked_at": 1795579382.797588
     },
     {
       "id": "pakatube-20210812-iP-VlHLh6wg",
@@ -10907,7 +10872,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792772273.4826505
+      "metadata_checked_at": 1795579275.8606434
     },
     {
       "id": "pakatube-20211118-4th",
@@ -11146,7 +11111,7 @@
       "date": "2022-06-27",
       "video_id": "-XoUGld7cZE",
       "url": "https://www.youtube.com/watch?v=-XoUGld7cZE",
-      "thumbnail": "https://i.ytimg.com/vi/-XoUGld7cZE/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/-XoUGld7cZE/maxresdefault.jpg",
       "duration": 141,
       "cast_status": "character_only",
       "cast": [],
@@ -11169,7 +11134,7 @@
           "url": "https://www.youtube.com/watch?v=-XoUGld7cZE"
         }
       ],
-      "metadata_checked_at": 1794276784.8844347
+      "metadata_checked_at": 1795579147.8848176
     },
     {
       "id": "pakatube-20220725-mlWk3XLzhdY",
@@ -11400,7 +11365,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792772066.18006,
+      "metadata_checked_at": 1795579280.385626,
       "broadcast_date": "2024-02-15",
       "source_time_text": "1707991209",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -11607,7 +11572,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276800.268315
+      "metadata_checked_at": 1795579378.2310872
     },
     {
       "id": "pakatube-20240708-5",
@@ -11739,7 +11704,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771928.1241798
+      "metadata_checked_at": 1795579385.1916327
     },
     {
       "id": "pakatube-20240922-gang-beasts-2-4",
@@ -11805,7 +11770,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276801.0419838
+      "metadata_checked_at": 1795579378.279117
     },
     {
       "id": "pakatube-20241123-keep-talking-and-nobody-explodes",
@@ -11856,7 +11821,7 @@
       "date": "2024-12-28",
       "video_id": "8-r-tJQZGVE",
       "url": "https://www.youtube.com/watch?v=8-r-tJQZGVE",
-      "thumbnail": "https://i.ytimg.com/vi/8-r-tJQZGVE/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/8-r-tJQZGVE/maxresdefault.jpg",
       "duration": 2265,
       "cast_status": "character_only",
       "cast": [],
@@ -11880,7 +11845,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276796.6248717
+      "metadata_checked_at": 1795579275.614802
     },
     {
       "id": "pakatube-20241229-party-animals-4",
@@ -11913,7 +11878,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771900.4844847
+      "metadata_checked_at": 1795579276.161146
     },
     {
       "id": "pakatube-20250214-mTXKWrDFLWM",
@@ -11964,7 +11929,7 @@
       "date": "2025-02-28",
       "video_id": "6HuEMtJfDmA",
       "url": "https://www.youtube.com/watch?v=6HuEMtJfDmA",
-      "thumbnail": "https://i.ytimg.com/vi/6HuEMtJfDmA/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/6HuEMtJfDmA/maxresdefault.jpg",
       "duration": 3908,
       "cast_status": "character_only",
       "cast": [],
@@ -11988,7 +11953,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276791.8690996
+      "metadata_checked_at": 1795579271.444048
     },
     {
       "id": "pakatube-20250314-0SV5fUyIVDg",
@@ -11997,7 +11962,7 @@
       "date": "2025-03-14",
       "video_id": "0SV5fUyIVDg",
       "url": "https://www.youtube.com/watch?v=0SV5fUyIVDg",
-      "thumbnail": "https://i.ytimg.com/vi/0SV5fUyIVDg/hq720.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/0SV5fUyIVDg/maxresdefault.jpg",
       "duration": 499,
       "cast_status": "character_only",
       "cast": [],
@@ -12021,7 +11986,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1794276785.9733822
+      "metadata_checked_at": 1795579147.9349072
     },
     {
       "id": "pakatube-20250327-nyaaaanvy-5",
@@ -12252,7 +12217,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771845.7719352,
+      "metadata_checked_at": 1795579152.2980497,
       "broadcast_date": "2025-06-28",
       "source_time_text": "1751104806",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -12443,7 +12408,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771818.1827374,
+      "metadata_checked_at": 1795579271.5366106,
       "broadcast_date": "2025-11-25",
       "source_time_text": "1764068406",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -12672,7 +12637,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771805.6093051,
+      "metadata_checked_at": 1795579380.760071,
       "published_time": "19:00",
       "published_date": "2026-03-01",
       "publication_source_url": "https://www.youtube.com/watch?v=evayysKQ-mY",
@@ -12925,7 +12890,7 @@
         }
       ],
       "sessions": [],
-      "metadata_checked_at": 1792771765.9197278,
+      "metadata_checked_at": 1795579152.4305866,
       "broadcast_date": "2026-08-29",
       "source_time_text": "1787997606",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -13262,7 +13227,7 @@
           "url": "https://www.youtube.com/watch?v=EfR9hcHGE5o"
         }
       ],
-      "metadata_checked_at": 1794091748.7156217,
+      "metadata_checked_at": 1795579387.2042766,
       "published_time": "18:00",
       "published_date": "2026-10-22",
       "publication_source_url": "https://www.youtube.com/watch?v=EfR9hcHGE5o",
@@ -13438,7 +13403,7 @@
           "url": "https://www.youtube.com/watch?v=9r9YWhDqIDE"
         }
       ],
-      "metadata_checked_at": 1792772296.0687277,
+      "metadata_checked_at": 1795579280.6257355,
       "broadcast_date": "2021-07-02",
       "source_time_text": "1625220012",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -13572,7 +13537,7 @@
           "url": "https://www.youtube.com/watch?v=Ahx7gD2O1hw"
         }
       ],
-      "metadata_checked_at": 1792772284.671479,
+      "metadata_checked_at": 1795579378.345358,
       "broadcast_date": "2021-08-25",
       "source_time_text": "1629885613",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -13639,7 +13604,7 @@
           "url": "https://www.youtube.com/watch?v=6UTYrO9lFHM"
         }
       ],
-      "metadata_checked_at": 1792772287.3645177,
+      "metadata_checked_at": 1795579271.4080322,
       "broadcast_date": "2021-09-22",
       "source_time_text": "1632304814",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -13706,7 +13671,7 @@
           "url": "https://www.youtube.com/watch?v=7lPxHiqI5i0"
         }
       ],
-      "metadata_checked_at": 1792772288.7221427,
+      "metadata_checked_at": 1795579275.7992632,
       "broadcast_date": "2021-10-15",
       "source_time_text": "1634292014",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -14242,7 +14207,7 @@
           "url": "https://www.youtube.com/watch?v=C_I-AURSOBw"
         }
       ],
-      "metadata_checked_at": 1792772189.2806613,
+      "metadata_checked_at": 1795579382.8460484,
       "broadcast_date": "2022-06-18",
       "source_time_text": "1655546441",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -14309,7 +14274,7 @@
           "url": "https://www.youtube.com/watch?v=4tNdgNujHGE"
         }
       ],
-      "metadata_checked_at": 1792772178.6069582,
+      "metadata_checked_at": 1795579156.8794882,
       "broadcast_date": "2022-07-15",
       "source_time_text": "1657879210",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -15003,7 +14968,7 @@
           "url": "https://www.youtube.com/watch?v=5rbC0ltYmUg"
         }
       ],
-      "metadata_checked_at": 1793838415.8081877,
+      "metadata_checked_at": 1795579156.84725,
       "broadcast_date": "2023-06-16",
       "source_time_text": "1686909609",
       "broadcast_time_zone": "Asia/Tokyo",
@@ -16326,7 +16291,7 @@
       ],
       "media": [],
       "source_title": "「そこそこぱかライブTV Vol.41」1月17日(金)19時公開！そこそこなトークをゆるりとお届け！",
-      "metadata_checked_at": 1792771901.193277,
+      "metadata_checked_at": 1795579156.3098998,
       "broadcast_time": "19:00",
       "broadcast_time_zone": "Asia/Tokyo",
       "broadcast_time_kind": "announced",
@@ -16336,7 +16301,8 @@
       "summary_translation_status": "stale",
       "published_time": "19:00",
       "published_date": "2025-01-17",
-      "publication_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg"
+      "publication_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
+      "source_time_text": "1737108006"
     },
     {
       "id": "sokosoko-paka-live-tv-042",
@@ -17287,7 +17253,7 @@
           "url": "https://www.youtube.com/watch?v=CbCs_zfy4mk"
         }
       ],
-      "metadata_checked_at": 1792775340.8891678,
+      "metadata_checked_at": 1795579382.7770844,
       "broadcast_time": "18:50",
       "broadcast_date": "2026-06-28",
       "source_time_text": "1782640241",
@@ -17393,7 +17359,7 @@
       "video_id": "_OC7JG7D7w0",
       "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
       "thumbnail": "https://i.ytimg.com/vi_webp/_OC7JG7D7w0/maxresdefault.webp",
-      "duration": null,
+      "duration": 3128,
       "cast_status": "verified",
       "cast": [
         {
@@ -17451,9 +17417,12 @@
           "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
         }
       ],
-      "metadata_checked_at": 1793316116.8136792,
+      "metadata_checked_at": 1795579271.7556057,
       "source_time_text": "1793354400",
-      "media": []
+      "media": [],
+      "published_time": "19:00",
+      "published_date": "2026-10-30",
+      "publication_source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0"
     }
   ]
 }

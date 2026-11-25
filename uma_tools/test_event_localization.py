@@ -123,6 +123,14 @@ class EventLocalizationTests(unittest.TestCase):
         self.assertFalse(program_discovery.is_official_program_candidate('Vol.131「カレンブーケドール」【トレセン学園生徒紹介】'))
         self.assertFalse(program_discovery.is_official_program_candidate('[Alexandros] 生演奏 Acoustic ver. (from ぱかライブTV Vol.52)'))
 
+    def test_recent_feed_rejects_entries_from_another_channel(self):
+        channel = program_discovery.pipeline_common.OFFICIAL_CHANNEL_ID
+        xml = f'<feed xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://www.youtube.com/xml/schemas/2015"><entry><yt:videoId>abcdefghijk</yt:videoId><yt:channelId>{channel}</yt:channelId><title>Program</title><published>2026-11-25T01:00:00Z</published></entry><entry><yt:videoId>lmnopqrstuv</yt:videoId><yt:channelId>other</yt:channelId><title>Other</title></entry></feed>'
+        with patch.dict(program_discovery._CHANNEL_FEEDS, {}, clear=True), patch.object(program_discovery.pipeline_common.urllib.request, 'urlopen', return_value=io.BytesIO(xml.encode())):
+            rows = program_discovery.recent_channel_feed('videos')
+        self.assertEqual([row['id'] for row in rows], ['abcdefghijk'])
+        self.assertEqual(rows.errors, [])
+
     def test_changed_source_cannot_reuse_stale_reviewed_translation(self):
         with tempfile.TemporaryDirectory() as folder:
             data = Path(folder)

@@ -149,6 +149,22 @@ class SheetPublicationTests(unittest.TestCase):
         self.assertEqual(len(report["filled"]), 1)
         self.assertEqual(report["review"], [])
 
+    def test_bracketed_day_creates_only_the_identified_single_date_session(self):
+        from auto_setlists import normalized_title
+        from events_pipeline.setlists import apply_sheet
+        from types import SimpleNamespace
+        identities = SimpleNamespace(voice_id=lambda name: None, profile_by_id={}, character_by_id={})
+        event = {'id': 'animax', 'title': 'ANIMAX MUSIX【DAY2】', 'date': '2026-11-21', 'sessions': [], 'sources': []}
+        block = {'title': 'ANIMAX MUSIX DAY2@Hall', 'date': '2026-11-21', 'songs': [{'no': '1', 'name': 'Song', 'performers': ['Guest']}]}
+        self.assertEqual(normalized_title(event['title']), normalized_title(block['title']))
+        self.assertNotEqual(normalized_title('ANIMAX MUSIX【DAY1】'), normalized_title(block['title']))
+        self.assertEqual(len(apply_sheet([event], [block], identities)), 1)
+        self.assertEqual(event['sessions'][0]['songs'], ['Song'])
+        from auto_setlists import split_performers, ALL_CAST_RE
+        names = split_performers('鈴木絵理、東山奈央ほか出演者全員')
+        self.assertEqual(names[:2], ['鈴木絵理', '東山奈央'])
+        self.assertTrue(ALL_CAST_RE.fullmatch(names[-1]))
+
     def test_nonempty_setlist_is_never_replaced(self):
         source = catalog("<table>hand-curated</table>")
         report = compare(sheet(), source)

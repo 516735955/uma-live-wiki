@@ -13,6 +13,16 @@ from knowledge_io import ROOT, read_json, write_json
 STATE = ROOT / 'data/auto_update/runner.json'
 DAY = 24 * 60 * 60
 RETRY = 60 * 60
+
+
+def next_daily_run(finished, github_owner):
+    if not github_owner:
+        return finished + DAY
+    zone = dt.timezone(dt.timedelta(hours=8))
+    tomorrow = dt.datetime.fromtimestamp(finished, zone).date() + dt.timedelta(days=1)
+    return dt.datetime.combine(tomorrow, dt.time(3, 17), zone).timestamp()
+
+
 STEP_TIMEOUTS = {'events': 300, 'programs': 1200, 'catalogs': 120,
                  'event-localization': 300, 'event-images': 300, 'entity-localization': 300}
 # Source order makes new identities available before resolving their relations.
@@ -113,12 +123,20 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
     state = read_json(STATE, {'schema_version': 1, 'steps': {}})
     pending_dependencies = set(state.get('pending_dependencies', []))
     results = []
+    ran, skipped = [], []
     executed = set()
     github_owner = os.environ.get('GITHUB_ACTIONS') == 'true'
     for name, arguments in STEPS:
         if only and name not in only:
             continue
         previous = state['steps'].get(name, {})
+        if name in {'events', 'programs'} and not github_owner and not only and (ROOT/'release.json').exists():
+            state['steps'][name] = {**previous, 'status': 'published', 'changed': False,
+                                    'message': 'Published event sources reused; collection belongs to GitHub event-sync.'}
+            pending_dependencies.discard(name)
+            state['pending_dependencies'] = sorted(pending_dependencies)
+            write_json(STATE, state)
+            continue
         if name == 'setlists' and not github_owner and not only and (ROOT/'release.json').exists():
             export = ROOT/'data/events/赛马娘LIVE歌单导出.csv'
             if export.is_file() and export.stat().st_size > 0:
@@ -150,8 +168,10 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         }
         dependency_changed = name in pending_dependencies or bool(dependencies.get(name, set()) & executed)
         if not force and not dependency_changed and float(previous.get('next_at', 0)) > clock():
+            skipped.append(name)
             continue
         started = clock()
+        ran.append(name)
         before = output_contents(name)
         try:
             # Activity translation belongs to Actions. News and entity
@@ -175,9 +195,14 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         finished = clock()
         changed = output_contents(name) != before
         entry = {'status': 'ok' if ok else 'failed', 'started_at': started,
-                 'finished_at': finished, 'next_at': finished + (DAY if ok else RETRY),
+                 'finished_at': finished, 'next_at': next_daily_run(finished, github_owner) if ok else finished + RETRY,
                  'last_success_at': finished if ok else previous.get('last_success_at'), 'message': message,
                  'changed': changed}
+        if ok and name == 'programs':
+            coverage = read_json(ROOT/'data/events/official_programs.json', {}).get('coverage', {})
+            entry['pending_rechecks'] = len(coverage.get('metadata_recheck_pending', []))
+            if entry['pending_rechecks']:
+                entry['status'] = 'partial'
         state['steps'][name] = entry
         if ok:
             pending_dependencies.discard(name)
@@ -196,6 +221,9 @@ def run_updates(*, force=False, only=None, run=subprocess.run, clock=time.time):
         if changed:
             executed.add(name)
         print(f'[knowledge:{name}] {entry["status"]} {int(finished-started)}s | {message}', flush=True)
+    state['last_run'] = {'executed': ran, 'skipped_until_due': skipped, 'changed': sorted(executed),
+                         'failed': [name for name in ran if state['steps'][name]['status'] == 'failed']}
+    write_json(STATE, state)
     return sum(row['status'] == 'failed' for row in results)
 
 
@@ -208,7 +236,22 @@ def main():
     args = parser.parse_args()
     if args.status:
         import json
-        print(json.dumps(read_json(STATE, {'schema_version': 1, 'steps': {}}), ensure_ascii=False, indent=2))
+        state = read_json(STATE, {'schema_version': 1, 'steps': {}})
+        print(json.dumps(state, ensure_ascii=False, indent=2))
+        counts = {}
+        for row in state.get('steps', {}).values():
+            status = row.get('status', 'unknown')
+            counts[status] = counts.get(status, 0) + 1
+        print('Step summary: ' + json.dumps(counts, ensure_ascii=False))
+        summary = os.environ.get('GITHUB_STEP_SUMMARY')
+        if summary:
+            with open(summary, 'a', encoding='utf-8') as stream:
+                stream.write('### Data collection\n\n')
+                run = state.get('last_run', {})
+                stream.write('Skipped until due: ' + ', '.join(run.get('skipped_until_due', [])) + '\n\n')
+                for name in run.get('executed', state.get('steps', {}).keys()):
+                    row = state['steps'][name]
+                    stream.write(f"- **{name}**: {row.get('status')}; changed={row.get('changed', False)} — {row.get('message', '')}\n")
         return 0
     with update_lock() as acquired:
         if not acquired:

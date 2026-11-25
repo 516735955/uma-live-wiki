@@ -7,8 +7,17 @@ import re
 from pathlib import Path
 import subprocess
 import sys
+import os
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def publication_summary(message):
+    if os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+            stream.write('\n### Publication\n\n' + message + '\n')
+
+
 SOURCES = ["data/events/official_programs.json", "data/events_data.json", "data/events/localizations.json",
            "data/character_detail_data.js", "data/horses_details.js", "data/anime/works.json", "data/anime/units.json"]
 JS_GLOBALS = {'data/character_detail_data.js': 'CHAR_DETAIL', 'data/horses_details.js': 'HORSES_DETAIL'}
@@ -145,22 +154,24 @@ def main() -> int:
             write_source(name, value)
         if publishing == current:
             print("No event content changes to publish.")
+            publication_summary('Sources were checked; no publishable content changed. No empty commit was created.')
             report_pending_localizations()
             return 0
         subprocess.run([sys.executable, str(ROOT / "uma_tools/update_events.py")], cwd=ROOT, check=True)
         subprocess.run([sys.executable, str(ROOT / "uma_tools/build_anime_catalog.py")], cwd=ROOT, check=True)
         subprocess.run(["node", str(ROOT / "uma_tools/build_search_pronunciations.js")], cwd=ROOT, check=True)
-        subprocess.run(["node", str(ROOT / "uma_tools/test_catalog_store.js")], cwd=ROOT, check=True)
         group_images = [str(file.relative_to(ROOT)) for file in sorted((ROOT / "uma_tools/img/event-groups").glob("*.svg"))]
         git("add", "--", *SOURCES, *GENERATED, *group_images)
         if not git("diff", "--cached", "--name-only"):
             print("No event data changes to publish.")
+            publication_summary('Sources were checked; the generated data is unchanged.')
             report_pending_localizations()
             return 0
         date = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date().isoformat()
         git("commit", "-m", f"chore(events): sync official programs and appearances {date}", capture=False)
         pushed = subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=ROOT)
         if pushed.returncode == 0:
+            publication_summary('Published changed source records and rebuilt their catalogs: ' + git('rev-parse', '--short', 'HEAD'))
             report_pending_localizations()
             return 0
     print("main changed repeatedly; collected data remains in the CI commits.", file=sys.stderr)

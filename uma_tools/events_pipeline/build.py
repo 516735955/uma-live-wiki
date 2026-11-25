@@ -36,7 +36,8 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     events = pipeline_events.apply_overrides(events, overrides, identities)
     events = pipeline_events.dedupe_events(pipeline_setlists.merge_numbered_sources(events))
     sheet_blocks = pipeline_setlists.read_blocks(pipeline_common.ROOT)
-    pipeline_setlists.apply_sheet(events, sheet_blocks, identities, eventernote)
+    sheet_report = {}
+    pipeline_setlists.apply_sheet(events, sheet_blocks, identities, eventernote, report=sheet_report)
     event_groups = []
     for event in events:
         event.pop("session_aliases", None)
@@ -149,7 +150,7 @@ def build(programs_override: dict[str, pipeline_common.Any] | None = None, detai
     errors = pipeline_validation.validate(catalog, songs_catalog, creators_catalog, appearances, profiles)
     if errors:
         raise RuntimeError("validation failed:\n- " + "\n- ".join(errors[:30]))
-    return {"catalog": catalog, "songs": songs_catalog, "creators": creators_catalog, "appearances": appearances, "profiles": profiles_doc, "manifest": manifest}
+    return {"catalog": catalog, "songs": songs_catalog, "creators": creators_catalog, "appearances": appearances, "profiles": profiles_doc, "manifest": manifest, "sheet_report": sheet_report}
 
 
 def build_music_only() -> dict[str, pipeline_common.Any]:

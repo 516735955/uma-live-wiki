@@ -68,6 +68,12 @@ def main(argv: list[str] | None = None) -> int:
         pipeline_common.atomic_json(pipeline_common.VOICE_DETAILS_FILE, refreshed_details)
         print(f"voice actor details refreshed: {len(refreshed_details['records'])}")
     publish_catalog(pipeline_common.OUTPUT_FILES, built, pipeline_common.atomic_json)
+    if 'sheet_report' in built:
+        report_file = pipeline_common.EVENTS_DIR / 'sheet_apply_report.json'
+        report = pipeline_common.read_json(report_file) if report_file.exists() else {}
+        report['catalog'] = built['sheet_report']
+        pipeline_common.atomic_json(report_file, report)
+        print(f"Google sheet catalog: {len(report['catalog']['applied'])} applied, {len(report['catalog']['review'])} require review")
     coverage = built["catalog"]["coverage"]
     if args.music_only:
         print(

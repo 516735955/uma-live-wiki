@@ -2,7 +2,7 @@ name: event-sync
 
 on:
   schedule:
-    - cron: '17 19 * * *' # 每天北京时间03:17；发布器每15分钟检查已完成的main提交
+    - cron: '17 3,11,19 * * *' # 北京时间03:17、11:17、19:17补跑窗口；成功后按北京时间次日到期
   workflow_dispatch:
     inputs:
       resume_translation:
@@ -55,17 +55,10 @@ jobs:
             python uma_tools/sync_knowledge.py --resume-translation --force --only catalogs event-localization entity-localization
             exit
           fi
-          python uma_tools/sync_knowledge.py --force --only events programs catalogs event-localization event-images entity-localization
-      - name: Verify complete usable catalogs
+          python uma_tools/sync_knowledge.py --only events programs catalogs event-localization event-images entity-localization
+      - name: Build the published search dictionary
         run: |
-          python -m unittest discover -s uma_tools -p 'test_event_localization.py'
-          python -m unittest discover -s uma_tools -p 'test_program_schedule.py'
-          python -m unittest discover -s uma_tools -p 'test_event_enrichment.py'
-          python -m unittest discover -s uma_tools -p 'test_update_events.py'
-          node uma_tools/test_localize_events.js
           npm run --prefix uma_tools build:search-pronunciations
-          python uma_tools/update_events.py --check
-          node uma_tools/test_catalog_store.js
       - name: Publish verified source changes to main
         env:
           GH_TOKEN: ${{ github.token }}

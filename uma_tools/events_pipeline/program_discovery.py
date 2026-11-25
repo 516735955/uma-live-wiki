@@ -281,8 +281,19 @@ def fetch_video_metadata(video_id: str, max_age: int = METADATA_TTL_PUBLISHED, e
 def discover_channel_feed(feed: str, limit: int) -> list[dict[str, pipeline_common.Any]]:
     from public_video import yt_command
     url = feed if feed.startswith("http") else f"https://www.youtube.com/@UMAMUSUME_official/{feed}"
+    cache = PROGRAM_METADATA_CACHE.parent / 'channel-listings' / (pipeline_common.hashlib.sha256(url.encode()).hexdigest()[:16] + '.json')
+    try:
+        saved = pipeline_common.read_json(cache)
+    except (OSError, ValueError):
+        saved = {}
+    if saved.get('rows') and pipeline_common.time.time() < saved.get('next_at', 0):
+        recent = recent_channel_feed(feed)
+        return DiscoveryRows({str(row['id']): row for row in [*saved['rows'], *recent]}.values(), recent.errors)
     command = yt_command(["--flat-playlist", "--playlist-end", str(limit), "--no-warnings", "--socket-timeout", "12", "--dump-json", url])
-    result = pipeline_common.subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=120)
+    try:
+        result = pipeline_common.subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=120)
+    except (OSError, pipeline_common.subprocess.SubprocessError) as error:
+        result = pipeline_common.subprocess.CompletedProcess(command, 1, stdout='', stderr=str(error))
     rows = []
     for line in result.stdout.splitlines():
         try:
@@ -295,7 +306,41 @@ def discover_channel_feed(feed: str, limit: int) -> list[dict[str, pipeline_comm
     if result.returncode:
         from public_video import error_reason
         errors.append('official channel ' + feed + ': ' + error_reason(pipeline_common.subprocess.CalledProcessError(result.returncode, command, stderr=result.stderr)))
-    return DiscoveryRows(rows, errors)
+    if not rows:
+        rows.extend(recent_channel_feed(feed))
+    if rows:
+        pipeline_common.atomic_json(cache, {'rows': rows, 'next_at': pipeline_common.time.time() + (6 * 3600 if errors else 7 * 86400),
+                                           'listing_warnings': errors})
+    elif saved.get('rows'):
+        return DiscoveryRows(saved['rows'], errors)
+    return DiscoveryRows(rows, errors if not rows else [])
+
+
+def recent_channel_feed(feed):
+    channel = pipeline_common.OFFICIAL_CHANNEL_ID if not feed.startswith('http') else next(
+        (item['channel_id'] for item in EXTERNAL_OFFICIAL_CHANNELS if feed.startswith(item['feed'].rsplit('/', 1)[0] + '/')), '')
+    rows = []
+    try:
+        if not channel:
+            raise ValueError('unknown official channel')
+        if channel not in _CHANNEL_FEEDS:
+            with pipeline_common.urllib.request.urlopen('https://www.youtube.com/feeds/videos.xml?channel_id=' + channel, timeout=15) as response:
+                raw = response.read(2_000_001)
+            if len(raw) > 2_000_000:
+                raise ValueError('official feed exceeds metadata limit')
+            _CHANNEL_FEEDS[channel] = raw
+        tree = _xml.fromstring(_CHANNEL_FEEDS[channel])
+        ns = {'a': 'http://www.w3.org/2005/Atom', 'yt': 'http://www.youtube.com/xml/schemas/2015'}
+        for entry in tree.findall('a:entry', ns):
+            video_id = entry.findtext('yt:videoId', '', ns)
+            if entry.findtext('yt:channelId', '', ns) == channel and pipeline_common.re.fullmatch(r'[\w-]{11}', video_id):
+                rows.append({'id': video_id, 'title': entry.findtext('a:title', '', ns), 'channel_id': channel,
+                             'upload_date': entry.findtext('a:published', '', ns)[:10].replace('-', ''), 'source': 'official_channel_feed'})
+        if not rows:
+            raise ValueError('official channel feed has no valid entries')
+        return DiscoveryRows(rows)
+    except (OSError, ValueError, _xml.ParseError) as error:
+        return DiscoveryRows([], ['official recent feed unavailable: ' + type(error).__name__])
 
 
 class DiscoveryRows(list):
@@ -551,12 +596,26 @@ def official_news_programs() -> list[dict[str, pipeline_common.Any]]:
     def fetch_detail(row: dict[str, pipeline_common.Any]) -> tuple[dict[str, pipeline_common.Any], dict[str, pipeline_common.Any]]:
         if str(row['announce_id']) in archived:
             return row, archived[str(row['announce_id'])]
+        cache = PROGRAM_METADATA_CACHE.parent / 'announcements' / (str(row['announce_id']) + '.json')
         try:
-            data = fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_detail?format=json&announce_id={row['announce_id']}")
-            return row, data.get("detail") or {}
-        except Exception:
-            errors.append('official announcement detail unavailable: ' + str(row['announce_id']))
-            return row, {}
+            saved = pipeline_common.read_json(cache)
+        except (OSError, ValueError):
+            saved = {}
+        if saved.get('detail', {}).get('message') and saved.get('index_update_at') == row.get('update_at') and (
+                row.get('update_at') or pipeline_common.time.time() - saved.get('checked_at', 0) < 7 * 86400):
+            return row, saved['detail']
+        for attempt in range(2):
+            try:
+                data = fetch_json_url(f"https://umamusume.jp/api/ajax/pr_info_detail?format=json&announce_id={row['announce_id']}")
+                detail = data.get('detail') or {}
+                if detail.get('message'):
+                    pipeline_common.atomic_json(cache, {'detail': detail, 'index_update_at': row.get('update_at'), 'checked_at': pipeline_common.time.time()})
+                    return row, detail
+            except (OSError, ValueError):
+                pass
+            if attempt == 0:
+                pipeline_common.time.sleep(1)
+        return row, {}
 
     programs = []
     with pipeline_common.concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
@@ -675,7 +734,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             network_rows.append(row)
     # Persist attempts so unreachable records cannot occupy the same network
     # slots forever. New releases precede historical TTL revalidation.
-    batch_size = min(64, len(network_rows))
+    batch_size = min(12, len(network_rows))
     # New and pending records have priority; older TTL refreshes use the
     # remaining network slots. Fresh cache rows are unlimited and local.
     attempts_file = PROGRAM_METADATA_CACHE.parent / 'metadata-attempts.json'
@@ -683,13 +742,19 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         attempts = pipeline_common.read_json(attempts_file)
     except (OSError, ValueError):
         attempts = {}
+    rechecks_file = PROGRAM_METADATA_CACHE.parent / 'metadata-rechecks.json'
+    try:
+        rechecks = pipeline_common.read_json(rechecks_file).get('records', {})
+    except (OSError, ValueError):
+        rechecks = {}
     deferred_video_ids = []
     due_rows = []
     for row in network_rows:
         interval = 86400 if row['id'] in existing_video_ids else 3600
-        if row['id'] in attempts and pipeline_common.time.time()-attempts[row['id']] < interval:
+        next_attempt = max(attempts.get(row['id'], 0) + interval, rechecks.get(row['id'], {}).get('next_attempt_at', 0))
+        if row['id'] in attempts and pipeline_common.time.time() < next_attempt:
             deferred_video_ids.append(row['id'])
-            if row['id'] in existing_video_ids:
+            if row['id'] in existing_video_ids and row['id'] not in rechecks:
                 metadata_rechecks.append('metadata recheck deferred; accepted archive retained: ' + row['id'])
         else:
             due_rows.append(row)
@@ -950,11 +1015,15 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
         rechecks.pop(video_id, None)
     for video_id, reason in failures.items():
         attempted_at = attempts.get(video_id, 0)
+        previous = rechecks.get(video_id, {})
+        failures_count = max(1, int(previous.get('failures', 0)) + int(attempted_at > previous.get('last_attempt_at', -1)))
+        interval = min(30 * 86400, 86400 * 2 ** min(failures_count - 1, 5)) if video_id in existing_video_ids else min(86400, 3600 * 2 ** min(failures_count - 1, 5))
         rechecks[video_id] = {
             "reason": reason,
             "last_attempt_at": attempted_at,
             "last_success_at": (existing_by_video.get(video_id) or {}).get("metadata_checked_at"),
-            "next_attempt_at": attempted_at + (86400 if video_id in existing_video_ids else 3600),
+            "failures": failures_count,
+            "next_attempt_at": attempted_at + interval,
         }
     pipeline_common.atomic_json(rechecks_file, {"records": rechecks})
     metadata_rechecks = [rechecks[video_id]["reason"] for video_id in sorted(rechecks)]

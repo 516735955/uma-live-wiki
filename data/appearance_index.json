@@ -21320,7 +21320,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -21453,6 +21454,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "eventernote-2026-11-07",
             "live-cd-2026-08-15-winning-live-31",
             "live-numbered-7th-event-2026-06-20"
@@ -21460,7 +21462,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-voltage-cb8dbfb97b",
@@ -21475,6 +21477,18 @@
           "performances": 3
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -21482,6 +21496,18 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 2
         },
@@ -21508,6 +21534,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-beyond-754159999d",
           "name": "Beyond",
           "event_ids": [
@@ -21530,24 +21567,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
+            "eventernote-2026-11-21"
           ],
           "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -37470,7 +37496,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -38179,6 +38206,17 @@
           ],
           "version_ids": [
             "song-sparkle-c840d118da-v-c840d118da"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -46198,7 +46236,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -46336,6 +46375,31 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20",
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -46348,16 +46412,27 @@
           "performances": 2
         },
         {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-6th-event-2025-05-24"
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-228f943b49-v-228f943b49"
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-boc-izm-655025f69f",
@@ -46437,28 +46512,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -46466,6 +46519,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         }
@@ -53356,7 +53420,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -53508,6 +53573,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-cd-2025-08-24-winning-live-26",
             "live-numbered-6th-event-2025-05-24",
             "live-cd-2024-11-10-winning-live-21"
@@ -53515,7 +53581,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 3
+          "performances": 4
         },
         {
           "song_id": "song-legend-changer-fcb0cca1c5",
@@ -53571,6 +53637,17 @@
           ],
           "version_ids": [
             "song-shake-the-world-6a204b97d3-v-6a204b97d3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -67839,7 +67916,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -68313,6 +68391,17 @@
           ],
           "version_ids": [
             "song-we-are-dreamers-77f071fc29-v-77f071fc29"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -75120,7 +75209,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -75430,6 +75520,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2025-08-02-tokyo-idol-festival-2025-day2",
             "live-numbered-6th-event-2025-05-24",
@@ -75438,7 +75529,19 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -75486,6 +75589,30 @@
           "performances": 2
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-uma-summer-d7e35f6a48",
           "name": "UMA Summer",
           "event_ids": [
@@ -75508,17 +75635,6 @@
             "song-2b5335a8e0-v-2b5335a8e0"
           ],
           "performances": 2
-        },
-        {
-          "song_id": "song-blow-my-gale-0d9e0c78df",
-          "name": "BLOW my GALE",
-          "event_ids": [
-            "live-numbered-6th-event-2025-05-24"
-          ],
-          "version_ids": [
-            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
-          ],
-          "performances": 1
         },
         {
           "song_id": "song-endless-dream-eabbcc4d12",
@@ -75565,28 +75681,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -75594,6 +75688,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -75655,7 +75760,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -75731,6 +75837,41 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-next-frontier-5267707c1b",
           "name": "NEXT FRONTIER",
           "event_ids": [
@@ -75742,6 +75883,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -75749,17 +75901,6 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 1
         },
@@ -75786,6 +75927,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
           "name": "winning the soul",
           "event_ids": [
@@ -75793,17 +75945,6 @@
           ],
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
         }
@@ -85587,7 +85728,8 @@
           "session_id": "eventernote-2026-11-21-session-1",
           "session_label": "本场",
           "evidence": [
-            "eventernote"
+            "eventernote",
+            "setlist_performer"
           ]
         },
         {
@@ -85975,6 +86117,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-numbered-7th-event-2026-06-20",
             "live-twinkle-2024-12-15-twinkle-circle",
             "live-twinkle-2024-12-15-twinkle-circle-2",
@@ -85988,7 +86131,21 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 10
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20",
+            "live-twinkle-2024-12-15-twinkle-circle",
+            "live-twinkle-2024-12-15-twinkle-circle-2"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -86014,19 +86171,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-twinkle-2024-12-15-twinkle-circle",
-            "live-twinkle-2024-12-15-twinkle-circle-2"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
           ],
           "performances": 3
         },
@@ -86105,6 +86249,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-unite-01e9fce749",
           "name": "Unite!!",
           "event_ids": [
@@ -86151,6 +86307,17 @@
             "song-461862b933-v-461862b933"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-dramatic-journey-60664c4bb2",
@@ -86263,17 +86430,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -86281,6 +86437,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -125638,6 +125805,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
           "name": "winning the soul",
           "event_ids": [
@@ -137334,6 +137512,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-numbered-7th-event-2026-06-20",
             "live-twinkle-2024-12-15-twinkle-circle",
             "live-twinkle-2024-12-15-twinkle-circle-2",
@@ -137347,7 +137526,21 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 9
+          "performances": 10
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20",
+            "live-twinkle-2024-12-15-twinkle-circle",
+            "live-twinkle-2024-12-15-twinkle-circle-2"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 4
         },
         {
           "song_id": "song-we-are-dreamers-77f071fc29",
@@ -137373,19 +137566,6 @@
           ],
           "version_ids": [
             "song-girls-legend-u-a4a797abe1-v-a4a797abe1"
-          ],
-          "performances": 3
-        },
-        {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-twinkle-2024-12-15-twinkle-circle",
-            "live-twinkle-2024-12-15-twinkle-circle-2"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
           ],
           "performances": 3
         },
@@ -137464,6 +137644,18 @@
           "performances": 2
         },
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-unite-01e9fce749",
           "name": "Unite!!",
           "event_ids": [
@@ -137510,6 +137702,17 @@
             "song-461862b933-v-461862b933"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-dramatic-journey-60664c4bb2",
@@ -137622,17 +137825,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -137640,6 +137832,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -161552,6 +161755,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-29e836f0da",
           "name": "トレセン音頭",
           "event_ids": [
@@ -161718,6 +161932,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-cd-2025-08-24-winning-live-26",
             "live-numbered-6th-event-2025-05-24",
             "live-cd-2024-11-10-winning-live-21"
@@ -161725,7 +161940,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 3
+          "performances": 4
         },
         {
           "song_id": "song-legend-changer-fcb0cca1c5",
@@ -161781,6 +161996,17 @@
           ],
           "version_ids": [
             "song-shake-the-world-6a204b97d3-v-6a204b97d3"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -176620,6 +176846,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "live-numbered-7th-event-2026-06-20",
             "live-other-2025-08-02-tokyo-idol-festival-2025-day2",
             "live-numbered-6th-event-2025-05-24",
@@ -176628,7 +176855,19 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 5
+          "performances": 6
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 2
         },
         {
           "song_id": "song-gaze-on-me-90b0b1d78a",
@@ -176676,6 +176915,30 @@
           "performances": 2
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-uma-summer-d7e35f6a48",
           "name": "UMA Summer",
           "event_ids": [
@@ -176698,17 +176961,6 @@
             "song-2b5335a8e0-v-2b5335a8e0"
           ],
           "performances": 2
-        },
-        {
-          "song_id": "song-blow-my-gale-0d9e0c78df",
-          "name": "BLOW my GALE",
-          "event_ids": [
-            "live-numbered-6th-event-2025-05-24"
-          ],
-          "version_ids": [
-            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
-          ],
-          "performances": 1
         },
         {
           "song_id": "song-endless-dream-eabbcc4d12",
@@ -176744,28 +176996,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -176773,6 +177003,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -179239,6 +179480,31 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20",
+            "live-numbered-6th-event-2025-05-24"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 3
+        },
+        {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -179251,16 +179517,27 @@
           "performances": 2
         },
         {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20",
-            "live-numbered-6th-event-2025-05-24"
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
           ],
           "version_ids": [
-            "song-228f943b49-v-228f943b49"
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
         },
         {
           "song_id": "song-boc-izm-655025f69f",
@@ -179340,28 +179617,6 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
-          ],
-          "performances": 1
-        },
-        {
           "song_id": "song-you-aim-a-5686752029",
           "name": "You! Aim! A!!",
           "event_ids": [
@@ -179369,6 +179624,17 @@
           ],
           "version_ids": [
             "song-you-aim-a-5686752029-v-5686752029"
+          ],
+          "performances": 1
+        },
+        {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         }
@@ -184351,6 +184617,7 @@
           "song_id": "song-228f943b49",
           "name": "うまぴょい伝説",
           "event_ids": [
+            "eventernote-2026-11-21",
             "eventernote-2026-11-07",
             "live-cd-2026-08-15-winning-live-31",
             "live-numbered-7th-event-2026-06-20"
@@ -184358,7 +184625,7 @@
           "version_ids": [
             "song-228f943b49-v-228f943b49"
           ],
-          "performances": 4
+          "performances": 5
         },
         {
           "song_id": "song-voltage-cb8dbfb97b",
@@ -184373,6 +184640,18 @@
           "performances": 3
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 2
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -184380,6 +184659,18 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 2
         },
@@ -184406,6 +184697,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-beyond-754159999d",
           "name": "Beyond",
           "event_ids": [
@@ -184428,24 +184730,13 @@
           "performances": 1
         },
         {
-          "song_id": "song-special-record-c828cf2dc0",
-          "name": "Special Record!",
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
           "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
+            "eventernote-2026-11-21"
           ],
           "version_ids": [
-            "song-special-record-c828cf2dc0-v-c828cf2dc0"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+            "song-departure-3e12ac8044-v-3e12ac8044"
           ],
           "performances": 1
         },
@@ -185055,6 +185346,41 @@
       ],
       "performed_songs": [
         {
+          "song_id": "song-uma-in-america-b359c2cb83",
+          "name": "UMA IN AMERICA",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-228f943b49",
+          "name": "うまぴょい伝説",
+          "event_ids": [
+            "eventernote-2026-11-21",
+            "live-numbered-7th-event-2026-06-20"
+          ],
+          "version_ids": [
+            "song-228f943b49-v-228f943b49"
+          ],
+          "performances": 2
+        },
+        {
+          "song_id": "song-blow-my-gale-0d9e0c78df",
+          "name": "BLOW my GALE",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-next-frontier-5267707c1b",
           "name": "NEXT FRONTIER",
           "event_ids": [
@@ -185066,6 +185392,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-special-record-c828cf2dc0",
+          "name": "Special Record!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-special-record-c828cf2dc0-v-c828cf2dc0"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-u-m-a-new-world-ca9ae685ae",
           "name": "U.M.A. NEW WORLD!!",
           "event_ids": [
@@ -185073,17 +185410,6 @@
           ],
           "version_ids": [
             "song-u-m-a-new-world-ca9ae685ae-v-ca9ae685ae"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-uma-in-america-b359c2cb83",
-          "name": "UMA IN AMERICA",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-uma-in-america-b359c2cb83-v-b359c2cb83"
           ],
           "performances": 1
         },
@@ -185110,6 +185436,17 @@
           "performances": 1
         },
         {
+          "song_id": "song-departure-3e12ac8044",
+          "name": "departure!",
+          "event_ids": [
+            "eventernote-2026-11-21"
+          ],
+          "version_ids": [
+            "song-departure-3e12ac8044-v-3e12ac8044"
+          ],
+          "performances": 1
+        },
+        {
           "song_id": "song-winning-the-soul-7eddcf2b7f",
           "name": "winning the soul",
           "event_ids": [
@@ -185117,17 +185454,6 @@
           ],
           "version_ids": [
             "song-winning-the-soul-7eddcf2b7f-v-7eddcf2b7f"
-          ],
-          "performances": 1
-        },
-        {
-          "song_id": "song-228f943b49",
-          "name": "うまぴょい伝説",
-          "event_ids": [
-            "live-numbered-7th-event-2026-06-20"
-          ],
-          "version_ids": [
-            "song-228f943b49-v-228f943b49"
           ],
           "performances": 1
         }
@@ -188190,6 +188516,6 @@
     }
   },
   "unresolved_cast": [],
-  "generated_at": "2026-11-23T10:45:29+00:00",
-  "build_id": "514a1fec67ea06f98e8a"
+  "generated_at": "2026-11-25T04:03:28+00:00",
+  "build_id": "c21786faa6637ab1e91e"
 }

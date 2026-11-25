@@ -6,6 +6,7 @@ New sessions require one exact public event, date and explicit performer list.
 """
 
 import argparse
+import csv
 import datetime as dt
 import html
 import io
@@ -45,7 +46,9 @@ def normalized_title(value):
     title = TITLE_SPLIT_RE.split(str(value or "").strip(), 1)[0]
     title = REGION_RE.sub(lambda match: '' if re.search(r'東京|大阪|京都|北海道|[都府県区]|ホール|会館|会場|メッセ|アリーナ|ドーム|Hall|Stadium', match.group(0), re.I)
                           and not re.search(r'昼|夜|公演|DAY|部|限定', match.group(0), re.I) else match.group(0), title).strip()
-    return re.sub(r"\s+", "", unicodedata.normalize('NFKC', title)).casefold()
+    title = unicodedata.normalize('NFKC', title)
+    title = re.sub(r'[【\[(]\s*(DAY\s*\d+)\s*[】\])]', r'\1', title, flags=re.I)
+    return re.sub(r"\s+", "", title).casefold()
 
 
 def identity_title(value):
@@ -119,7 +122,8 @@ def title_without_day_suffix(value):
 
 
 def split_performers(value):
-    return [item.strip() for item in PERFORMER_SPLIT_RE.split(str(value)) if item.strip()]
+    value = re.sub(r'(?<=\S)(?:ほか|他)(?=(?:出演者|キャスト)?全[員员]$)', '、', str(value))
+    return [item.strip() for item in PERFORMER_SPLIT_RE.split(value) if item.strip()]
 
 
 def parse_sheet(data):
@@ -391,13 +395,40 @@ def write_json(path, value):
             os.unlink(temporary)
 
 
+def print_status():
+    report = json.loads(REPORT.read_text(encoding='utf-8')) if REPORT.exists() else {}
+    catalog_report = report.get('catalog')
+    if catalog_report is None:
+        published = json.loads((ROOT/'data/events_catalog.json').read_text(encoding='utf-8'))
+        with (ROOT/'data/events/赛马娘LIVE歌单导出.csv').open(encoding='utf-8') as stream:
+            blocks = parse_rows(list(csv.reader(stream)))
+        applied = {(normalized_title(s['setlist_source']['sheet_title']), s.get('date') or e.get('date'))
+                   for e in published['events'] for s in e.get('sessions', [])
+                   if (s.get('setlist_source') or {}).get('sheet_title')}
+        catalog_report = {'blocks': len(blocks), 'applied': [b for b in blocks if (normalized_title(b['title']), b['date']) in applied],
+                          'review': [{'title': b['title'], 'date': b['date'], 'reason': 'not_applied_to_catalog'} for b in blocks if (normalized_title(b['title']), b['date']) not in applied]}
+    summary = f"Google sheet: {catalog_report['blocks']} blocks; {len(catalog_report['applied'])} applied to catalog; {len(catalog_report['review'])} require review."
+    print(summary)
+    for row in catalog_report['review']:
+        print(json.dumps(row, ensure_ascii=False))
+    if os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+            stream.write('### Setlist application\n\n' + summary + '\n\n')
+            for row in catalog_report['review']:
+                stream.write(f"- {row['date']} — {row['title']} — {row['reason']}\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sheet-xlsx", type=Path, help="Use a local workbook instead of downloading")
     parser.add_argument("--live-cat", type=Path, default=LIVE_CAT)
     parser.add_argument("--report", type=Path, default=REPORT)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument('--status', action='store_true', help='summarize actual catalog application without fetching sources')
     args = parser.parse_args()
+    if args.status:
+        print_status()
+        return 0
     catalog = json.loads(args.live_cat.read_text(encoding="utf-8"))
     primary_available = True
     try:

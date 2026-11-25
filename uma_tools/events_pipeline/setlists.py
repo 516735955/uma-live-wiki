@@ -4,7 +4,7 @@ import html
 import re
 import unicodedata
 
-from auto_setlists import ALL_CAST_RE, normalized_title, canonical_match, parse_rows, session_label, song_table
+from auto_setlists import ALL_CAST_RE, normalized_title, canonical_match, canonical_session_label, parse_rows, session_label, song_table
 from . import identities as identity_tools
 from .event_enrichment import default_event_session
 from .song_identity import clean_song, fold_song_key, table_performances, split_song_version
@@ -157,27 +157,36 @@ def matches_single_date(event, date):
             and event.get('schedule_status') != 'cancelled')
 
 
-def apply_sheet(events, blocks, identities, eventernote=None):
+def apply_sheet(events, blocks, identities, eventernote=None, report=None):
     applied = []
+    if report is not None:
+        report.update({'blocks': len(blocks), 'applied': [], 'review': []})
+    def review(block, reason, count):
+        if report is not None:
+            report['review'].append({'title': block['title'], 'date': block['date'], 'reason': reason, 'matches': count})
     for block in blocks:
-        can_create_session = session_label(block['title']) == '本公演' and any(
+        has_credits = any(
             clean_song(song['name']) and song['performers'] for song in block['songs']
         )
+        def can_create_session(event):
+            return has_credits and matches_single_date(event, block['date']) and canonical_session_label(session_label(event['title'])) == canonical_session_label(session_label(block['title']))
         event = canonical_match(block, events)
         if event is None:
             matches = [row for row in events if (any(normalized_title(title) == normalized_title(block['title'])
                                                      for title in [row['title'], *row.get('title_aliases', [])]))
                        and (any(session.get('date') == block['date'] for session in row.get('sessions', []))
-                            or (can_create_session and matches_single_date(row, block['date'])))]
+                            or can_create_session(row))]
             if len(matches) != 1:
+                review(block, 'event_not_found' if not matches else 'ambiguous_event', len(matches))
                 continue
             event = matches[0]
         sessions = [session for session in event.get('sessions', []) if session.get('date') == block['date']]
-        if can_create_session and matches_single_date(event, block['date']):
+        if can_create_session(event):
             sessions = event['sessions'] = [default_event_session(event)]
         if len(sessions) > 1:
-            sessions = [session for session in sessions if session.get('label') == session_label(block['title'])]
+            sessions = [session for session in sessions if canonical_session_label(session.get('label')) == canonical_session_label(session_label(block['title']))]
         if len(sessions) != 1:
+            review(block, 'session_not_found' if not sessions else 'ambiguous_session', len(sessions))
             continue
         session = sessions[0]
         names = list(dict.fromkeys(name for song in block['songs'] if clean_song(song['name']) for name in song['performers'] if not ALL_CAST.fullmatch(name)))
@@ -246,4 +255,6 @@ def apply_sheet(events, blocks, identities, eventernote=None):
             {'kind': 'google_sheet', 'label': 'Google 歌单', 'url': SHEET_URL}]
         event['cast'] = identity_tools.merge_cast_records(item for row in event['sessions'] for item in row.get('cast', []))
         applied.append((event['id'], session['id']))
+        if report is not None:
+            report['applied'].append({'title': block['title'], 'date': block['date'], 'event_id': event['id'], 'session_id': session['id'], 'songs': len(performances)})
     return applied

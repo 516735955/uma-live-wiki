@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T10:45:29+00:00",
+  "generated_at": "2026-11-25T04:03:28+00:00",
   "source_integrity": {
     "live_data.json": {
       "sha256": "e29293f44776ef1dcee0e8b19336ca0c4441af0123642fd920f4aad44e59d36b",
@@ -5329,6 +5329,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5345,6 +5349,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5361,6 +5369,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5377,6 +5389,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5393,6 +5409,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5409,6 +5429,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5425,6 +5449,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         },
@@ -5441,6 +5469,10 @@
             {
               "kind": "eventernote",
               "url": "https://www.eventernote.com/events/466254"
+            },
+            {
+              "kind": "google_sheet",
+              "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
             }
           ]
         }
@@ -5451,8 +5483,23 @@
           "id": "eventernote-2026-11-21-session-1",
           "label": "本场",
           "date": "2026-11-21",
-          "songs": [],
-          "character_ids": [],
+          "songs": [
+            "うまぴょい伝説",
+            "UMA IN AMERICA",
+            "Special Record!",
+            "BLOW my GALE",
+            "departure!"
+          ],
+          "character_ids": [
+            "mejiroramonu",
+            "tosenjordan",
+            "gentildonna",
+            "fenomeno",
+            "epiphaneia",
+            "rosekingdom",
+            "manhattancafe",
+            "daiichiruby"
+          ],
           "cast": [
             {
               "voice_actor_id": "va-0058",
@@ -5467,6 +5514,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5483,6 +5534,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5499,6 +5554,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5515,6 +5574,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5531,6 +5594,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5547,6 +5614,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5563,6 +5634,10 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             },
@@ -5579,11 +5654,212 @@
                 {
                   "kind": "eventernote",
                   "url": "https://www.eventernote.com/events/466254"
+                },
+                {
+                  "kind": "google_sheet",
+                  "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
                 }
               ]
             }
           ],
-          "setlist_status": "none",
+          "setlist_status": "verified",
+          "performances": [
+            {
+              "song": "うまぴょい伝説",
+              "setlist_no": "1",
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0094",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "character_ids": [
+                "mejiroramonu",
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-228f943b49",
+              "version_id": "song-228f943b49-v-228f943b49",
+              "song_title": "うまぴょい伝説",
+              "id": "eventernote-2026-11-21-session-1:song-228f943b49-v-228f943b49"
+            },
+            {
+              "song": "UMA IN AMERICA",
+              "setlist_no": "2",
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-uma-in-america-b359c2cb83",
+              "version_id": "song-uma-in-america-b359c2cb83-v-b359c2cb83",
+              "song_title": "UMA IN AMERICA",
+              "id": "eventernote-2026-11-21-session-1:song-uma-in-america-b359c2cb83-v-b359c2cb83"
+            },
+            {
+              "song": "Special Record!",
+              "setlist_no": "3",
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-special-record-c828cf2dc0",
+              "version_id": "song-special-record-c828cf2dc0-v-c828cf2dc0",
+              "song_title": "Special Record!",
+              "id": "eventernote-2026-11-21-session-1:song-special-record-c828cf2dc0-v-c828cf2dc0"
+            },
+            {
+              "song": "BLOW my GALE",
+              "setlist_no": "4",
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0080",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "character_ids": [
+                "tosenjordan",
+                "gentildonna",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom"
+              ],
+              "guest_performers": [],
+              "full_cast": false,
+              "song_id": "song-blow-my-gale-0d9e0c78df",
+              "version_id": "song-blow-my-gale-0d9e0c78df-v-0d9e0c78df",
+              "song_title": "BLOW my GALE",
+              "id": "eventernote-2026-11-21-session-1:song-blow-my-gale-0d9e0c78df-v-0d9e0c78df"
+            },
+            {
+              "song": "departure!",
+              "setlist_no": "5",
+              "voice_actor_ids": [
+                "va-0036",
+                "va-0058",
+                "va-0080",
+                "va-0094",
+                "va-0130",
+                "va-0146",
+                "va-0147",
+                "va-0167"
+              ],
+              "character_ids": [
+                "tosenjordan",
+                "fenomeno",
+                "epiphaneia",
+                "rosekingdom",
+                "mejiroramonu",
+                "gentildonna",
+                "manhattancafe",
+                "daiichiruby"
+              ],
+              "guest_performers": [
+                "藍井エイル",
+                "いきづらい部！",
+                "綾咲穂音",
+                "遠藤璃菜",
+                "宮野芹",
+                "藤野こころ",
+                "坂野愛羽",
+                "瀬古梨愛",
+                "奥村優季",
+                "天沢朱音",
+                "小戸森穂花",
+                "涼ノ瀬葵音",
+                "伊藤美来",
+                "オーイシマサヨシ(大石昌良)",
+                "七人のカリスマ声優",
+                "小野友樹",
+                "山中真尋",
+                "福原かつみ",
+                "細田健太",
+                "日向朔公",
+                "大河元気",
+                "橋詰知久",
+                "JELEE",
+                "鈴木このみ",
+                "前島亜美",
+                "吉田尚記",
+                "大西亜玖璃",
+                "奥井雅美",
+                "田中有紀",
+                "sajou no hana",
+                "sana(37/sajou no hana)",
+                "茅原実里",
+                "ハコニワリリィ",
+                "Hanon(ハコニワリリィ)",
+                "Kotoha(ハコニワリリィ)",
+                "fripSide",
+                "八木沼悟志",
+                "阿部寿世",
+                "上杉真央(mAO)",
+                "MADKID",
+                "YOU-TA(MADKID)",
+                "KAZUKI(MADKID)",
+                "SHIN(MADKID)",
+                "LIN(MADKID)",
+                "YUKI(MADKID)",
+                "ウタヒメドリーム オールスターズ",
+                "鈴木杏奈",
+                "花耶",
+                "鷲見友美ジェナ",
+                "倉知玲鳳",
+                "小山奈桜",
+                "南條愛乃",
+                "Hearts2Hearts",
+                "天空のシラバス",
+                "陽乃ほのか",
+                "貴野萌",
+                "山根優佳",
+                "善木南帆",
+                "天音ゆかり",
+                "山田奈都美"
+              ],
+              "full_cast": true,
+              "song_id": "song-departure-3e12ac8044",
+              "version_id": "song-departure-3e12ac8044-v-3e12ac8044",
+              "song_title": "departure!",
+              "id": "eventernote-2026-11-21-session-1:song-departure-3e12ac8044-v-3e12ac8044"
+            }
+          ],
+          "setlist_html": "<table class=\"setlist-table\">\n<thead><tr><th>#</th><th>曲名</th><th>出演者</th></tr></thead>\n<tbody>\n<tr><td class=\"setlist-no\">1</td><td class=\"setlist-song\">うまぴょい伝説</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">2</td><td class=\"setlist-song\">UMA IN AMERICA</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">3</td><td class=\"setlist-song\">Special Record!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">4</td><td class=\"setlist-song\">BLOW my GALE</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span></td></tr>\n<tr><td class=\"setlist-no\">5</td><td class=\"setlist-song\">departure!</td><td class=\"setlist-perf\"><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/TosenJordan.png\" alt=\"东瀛佐敦\"><span class=\"perf-name\">东瀛佐敦</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/超常骏骥.png\" alt=\"超常骏骥\"><span class=\"perf-name\">超常骏骥</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/神威启示.png\" alt=\"神威启示\"><span class=\"perf-name\">神威启示</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/玫瑰帝国.png\" alt=\"玫瑰帝国\"><span class=\"perf-name\">玫瑰帝国</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/MejiroRamonu.png\" alt=\"目白高峰\"><span class=\"perf-name\">目白高峰</span></span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/Gentildonna.png\" alt=\"贵妇人\"><span class=\"perf-name\">贵妇人</span></span><span class=\"guest-performer\">藍井エイル</span><span class=\"guest-performer\">いきづらい部！</span><span class=\"guest-performer\">綾咲穂音</span><span class=\"guest-performer\">遠藤璃菜</span><span class=\"guest-performer\">宮野芹</span><span class=\"guest-performer\">藤野こころ</span><span class=\"guest-performer\">坂野愛羽</span><span class=\"guest-performer\">瀬古梨愛</span><span class=\"guest-performer\">奥村優季</span><span class=\"guest-performer\">天沢朱音</span><span class=\"guest-performer\">小戸森穂花</span><span class=\"guest-performer\">涼ノ瀬葵音</span><span class=\"guest-performer\">伊藤美来</span><span class=\"guest-performer\">オーイシマサヨシ(大石昌良)</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/ManhattanCafe.png\" alt=\"曼城茶座\"><span class=\"perf-name\">曼城茶座</span></span><span class=\"guest-performer\">七人のカリスマ声優</span><span class=\"guest-performer\">小野友樹</span><span class=\"guest-performer\">山中真尋</span><span class=\"guest-performer\">福原かつみ</span><span class=\"guest-performer\">細田健太</span><span class=\"guest-performer\">日向朔公</span><span class=\"guest-performer\">大河元気</span><span class=\"guest-performer\">橋詰知久</span><span class=\"guest-performer\">JELEE</span><span class=\"guest-performer\">鈴木このみ</span><span class=\"guest-performer\">前島亜美</span><span class=\"guest-performer\">吉田尚記</span><span class=\"guest-performer\">大西亜玖璃</span><span class=\"guest-performer\">奥井雅美</span><span class=\"guest-performer\">田中有紀</span><span class=\"guest-performer\">sajou no hana</span><span class=\"guest-performer\">sana(37/sajou no hana)</span><span class=\"guest-performer\">茅原実里</span><span class=\"guest-performer\">ハコニワリリィ</span><span class=\"guest-performer\">Hanon(ハコニワリリィ)</span><span class=\"guest-performer\">Kotoha(ハコニワリリィ)</span><span class=\"guest-performer\">fripSide</span><span class=\"guest-performer\">八木沼悟志</span><span class=\"guest-performer\">阿部寿世</span><span class=\"guest-performer\">上杉真央(mAO)</span><span class=\"guest-performer\">MADKID</span><span class=\"guest-performer\">YOU-TA(MADKID)</span><span class=\"guest-performer\">KAZUKI(MADKID)</span><span class=\"guest-performer\">SHIN(MADKID)</span><span class=\"guest-performer\">LIN(MADKID)</span><span class=\"guest-performer\">YUKI(MADKID)</span><span class=\"guest-performer\">ウタヒメドリーム オールスターズ</span><span class=\"guest-performer\">鈴木杏奈</span><span class=\"guest-performer\">花耶</span><span class=\"perf-item\"><img class=\"char-avatar\" src=\"/uma_avatars/DaiichiRuby.png\" alt=\"第一红宝石\"><span class=\"perf-name\">第一红宝石</span></span><span class=\"guest-performer\">鷲見友美ジェナ</span><span class=\"guest-performer\">倉知玲鳳</span><span class=\"guest-performer\">小山奈桜</span><span class=\"guest-performer\">南條愛乃</span><span class=\"guest-performer\">Hearts2Hearts</span><span class=\"guest-performer\">天空のシラバス</span><span class=\"guest-performer\">陽乃ほのか</span><span class=\"guest-performer\">貴野萌</span><span class=\"guest-performer\">山根優佳</span><span class=\"guest-performer\">善木南帆</span><span class=\"guest-performer\">天音ゆかり</span><span class=\"guest-performer\">山田奈都美</span></td></tr>\n</tbody>\n</table>",
+          "setlist_source": {
+            "file": "data/events/赛马娘LIVE歌单导出.csv",
+            "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit",
+            "sheet_title": "東武鉄道 presents ANIMAX MUSIX 2026 supported by Lemino DAY2@横浜アリーナ(神奈川・横浜港北区)"
+          },
           "end_time": "21:00",
           "end_time_estimated": true,
           "time_source": "official_announcement",
@@ -5612,6 +5888,11 @@
           "kind": "official_announcement",
           "label": "2026年7月旧公告日程",
           "url": "https://umamusume.jp/news/detail?id=3374"
+        },
+        {
+          "kind": "google_sheet",
+          "label": "Google 歌单",
+          "url": "https://docs.google.com/spreadsheets/d/1HU5lkpjmz3_tXtJnHLvBcbeUXe_2LliD9AagFdwhDvk/edit"
         }
       ],
       "legacy_url": "",
@@ -5627,7 +5908,7 @@
       "title_aliases": [],
       "id_aliases": [],
       "legacy_aliases": [],
-      "setlist_status": "none",
+      "setlist_status": "verified",
       "venue_raw": "横浜アリーナ",
       "venue_id": "venue-横浜アリ-ナ",
       "venue_zh": "横滨体育馆",
@@ -6402,6 +6683,9 @@
           "broadcast_date": "2026-10-30",
           "broadcast_time_zone": "Asia/Tokyo",
           "time_source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
+          "published_time": "19:00",
+          "published_date": "2026-10-30",
+          "publication_source_url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
           "id_aliases": [],
           "setlist_status": "none"
         }
@@ -6411,7 +6695,7 @@
           "url": "https://www.youtube.com/watch?v=_OC7JG7D7w0",
           "label": "官方视频",
           "video_id": "_OC7JG7D7w0",
-          "duration": null
+          "duration": 3128
         }
       ],
       "sources": [
@@ -19928,7 +20212,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/-vs_1Fz8Vgo/hq720.jpg",
+      "image": "https://i.ytimg.com/vi_webp/-vs_1Fz8Vgo/maxresdefault.webp",
       "summary": "优秀素质、生野狄杜斯、待兼诗歌剧与莱斯莱斯一起享用午餐。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -48919,7 +49203,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/0SV5fUyIVDg/hq720.jpg",
+      "image": "https://i.ytimg.com/vi/0SV5fUyIVDg/maxresdefault.jpg",
       "summary": "唯独爱你通过绘画直播，与观众一边作画一边聊天。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -48993,7 +49277,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/6HuEMtJfDmA/hq720.jpg",
+      "image": "https://i.ytimg.com/vi/6HuEMtJfDmA/maxresdefault.jpg",
       "summary": "四人游玩以虚张声势与推理为关键的桌游《Coyote》。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -50764,6 +51048,7 @@
           "broadcast_time_zone": "Asia/Tokyo",
           "time_precision": "hour",
           "time_source_url": "https://www.youtube.com/watch?v=3vhdJaOqMgg",
+          "source_time_text": "1737108006",
           "broadcast_time_kind": "announced",
           "published_time": "19:00",
           "published_date": "2025-01-17",
@@ -52364,7 +52649,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/8-r-tJQZGVE/hq720.jpg",
+      "image": "https://i.ytimg.com/vi/8-r-tJQZGVE/maxresdefault.jpg",
       "summary": "天津四队的四位赛马娘挑战《Party Animals》。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -133226,7 +133511,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/-XoUGld7cZE/hq720.jpg",
+      "image": "https://i.ytimg.com/vi/-XoUGld7cZE/maxresdefault.jpg",
       "summary": "特别公开黄金船私下度过休息日的模样。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -162742,7 +163027,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/DLMaPKHnvaM/hq720.jpg",
+      "image": "https://i.ytimg.com/vi/DLMaPKHnvaM/maxresdefault.jpg",
       "summary": "机械黄金船继续挑战速度的顶点。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -163024,7 +163309,7 @@
         }
       ],
       "legacy_url": "",
-      "image": "https://i.ytimg.com/vi/8Eg5hDpujFs/hq720.jpg",
+      "image": "https://i.ytimg.com/vi_webp/8Eg5hDpujFs/maxresdefault.webp",
       "summary": "黄金船挑战听前奏猜曲的游戏。",
       "schedule_status": "scheduled",
       "metadata_status": "complete",
@@ -192156,5 +192441,5 @@
       "localization_state": "complete"
     }
   ],
-  "build_id": "514a1fec67ea06f98e8a"
+  "build_id": "c21786faa6637ab1e91e"
 }
