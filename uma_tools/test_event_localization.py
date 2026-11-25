@@ -131,6 +131,12 @@ class EventLocalizationTests(unittest.TestCase):
         self.assertEqual([row['id'] for row in rows], ['abcdefghijk'])
         self.assertEqual(rows.errors, [])
 
+    def test_published_verification_supersedes_an_older_retry_cache(self):
+        retries = {'fresh': {'last_attempt_at': 10}, 'old': {'last_attempt_at': 30}, 'unknown': {'reason': 'retained'}}
+        records = {key: {'metadata_checked_at': 20} for key in retries}
+        program_discovery.discard_verified_rechecks(retries, records)
+        self.assertEqual(set(retries), {'old', 'unknown'})
+
     def test_changed_source_cannot_reuse_stale_reviewed_translation(self):
         with tempfile.TemporaryDirectory() as folder:
             data = Path(folder)

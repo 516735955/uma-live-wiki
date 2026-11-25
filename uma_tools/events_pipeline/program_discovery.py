@@ -343,6 +343,14 @@ def recent_channel_feed(feed):
         return DiscoveryRows([], ['official recent feed unavailable: ' + type(error).__name__])
 
 
+def discard_verified_rechecks(rechecks, records):
+    """A newer accepted verification supersedes an older cached failure."""
+    for video_id, retry in list(rechecks.items()):
+        attempted = retry.get('last_attempt_at')
+        if attempted and (records.get(video_id, {}).get('metadata_checked_at') or 0) > attempted:
+            rechecks.pop(video_id)
+
+
 class DiscoveryRows(list):
     def __init__(self, rows=(), errors=()):
         super().__init__(rows)
@@ -1011,6 +1019,7 @@ def refresh_programs() -> dict[str, pipeline_common.Any]:
             for video_id in existing_video_ids:
                 if pipeline_common.re.search(r"(?<![\w-])" + pipeline_common.re.escape(video_id) + r"(?![\w-])", message):
                     rechecks[video_id] = {"reason": message}
+    discard_verified_rechecks(rechecks, existing_by_video)
     for video_id in fetched_video_ids - set(failures):
         rechecks.pop(video_id, None)
     for video_id, reason in failures.items():
