@@ -2,13 +2,6 @@
   "schema_version": 1,
   "creators": [
     {
-      "id": "creator-8da413e81e",
-      "name": "ラムシーニ",
-      "aliases": [],
-      "type": "person",
-      "affiliations": []
-    },
-    {
       "id": "creator-aira-f4bc4d87cd",
       "name": "Aira",
       "aliases": [],
@@ -155,6 +148,13 @@
     {
       "id": "creator-fox-capture-plan-026b7d1aca",
       "name": "fox capture plan",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-gak-bee25f9566",
+      "name": "GAK",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -711,6 +711,13 @@
       "affiliations": []
     },
     {
+      "id": "creator-19a21d19bf",
+      "name": "わらべうた",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
       "id": "creator-4cac0cc98c",
       "name": "アオワイファイ",
       "aliases": [],
@@ -809,6 +816,13 @@
     {
       "id": "creator-2d70bee353",
       "name": "ヤナガワタカオ",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-8da413e81e",
+      "name": "ラムシーニ",
       "aliases": [],
       "type": "person",
       "affiliations": []
@@ -1032,6 +1046,13 @@
       "affiliations": [
         "Cygames"
       ]
+    },
+    {
+      "id": "creator-aa29e79c74",
+      "name": "作者不詳",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
     },
     {
       "id": "creator-9dd245e820",
@@ -1326,6 +1347,13 @@
     {
       "id": "creator-f06e754dba",
       "name": "安藤紗々",
+      "aliases": [],
+      "type": "person",
+      "affiliations": []
+    },
+    {
+      "id": "creator-60d19fdbe0",
+      "name": "安部大希",
       "aliases": [],
       "type": "person",
       "affiliations": []

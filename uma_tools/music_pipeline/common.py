@@ -79,6 +79,8 @@ SOURCE_STATE_FILE = MUSIC_DIR / "source_status.json"
 
 
 LYRIC_URL = "https://music.163.com/api/song/lyric?id={track_id}&lv=1&kv=1&tv=-1"
+# NetEase returns plain (untimed) lyrics only through lv=-1 for some tracks.
+LYRIC_PLAIN_URL = "https://music.163.com/api/song/lyric?id={track_id}&lv=-1&kv=-1&tv=-1"
 
 
 UTATEN_SEARCH_URL = "https://utaten.com/lyric/search?title={title}"

@@ -42,11 +42,14 @@ def build_documents(
                 "source": "netease_recording_metadata",
                 "source_track_id": source_track,
             }
-            timing_versions[version_id] = {
-                "lines": lines,
-                "source": "netease_recording_metadata",
-                "source_track_id": source_track,
-            }
+            if all(isinstance(line.get("start_ms"), int) for line in lines):
+                timing_versions[version_id] = {
+                    "lines": lines,
+                    "source": "netease_recording_metadata",
+                    "source_track_id": source_track,
+                }
+            else:
+                timing_versions.pop(version_id, None)
     pipeline_credits.normalize_automatic_credit_rows(credits)
     creators["creators"] = pipeline_credits.creator_rows(credits, creators)
     return creators, credits, lyrics, timings

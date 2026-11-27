@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T11:32:00+00:00",
+  "generated_at": "2026-11-27T11:15:10+00:00",
   "coverage": {
     "songs": 1044,
     "versions": 2175,
     "albums": 117,
     "release_tracks": 2256,
     "live_performances": 1275,
-    "credited_songs": 423,
-    "lyric_songs": 248,
-    "credited_versions": 1500,
-    "lyric_versions": 472
+    "credited_songs": 425,
+    "lyric_songs": 256,
+    "credited_versions": 1502,
+    "lyric_versions": 531
   },
   "songs": [
     {
@@ -260,8 +260,8 @@
             "creator-baku-c8c0e30f92",
             "creator-onjuicy-5b418df921"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-rap-24bd84173c-v-24bd84173c",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -3505,8 +3505,8 @@
             "creator-tasuku-dcfa60d865",
             "creator-uz-f1950b3f82"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-beyond-754159999d-v-cc9d6b77c6",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -7585,8 +7585,8 @@
             "creator-788fa8848c",
             "creator-e2c9bbfa59"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-bright-melody-bd728589b5-v-68c659ab36",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -10417,8 +10417,8 @@
             "creator-078370b132",
             "creator-52059300f2"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-dance-2-endless-beat-8c6c92b99d-v-2520e68566",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -22350,8 +22350,8 @@
             "creator-a29705c4eb",
             "creator-uina-f3976c3333"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-dream-jack-5cb0f93900-v-ecf8f3c01d",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -23500,8 +23500,7 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-9be9261917",
-              "institution": "Cygames"
+              "creator_id": "creator-9be9261917"
             },
             {
               "role": "arranger",
@@ -23521,8 +23520,8 @@
             "creator-27a7191e7e",
             "creator-9be9261917"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-endless-dream-eabbcc4d12-v-2b499782e2",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -23775,8 +23774,7 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-9be9261917",
-              "institution": "Cygames"
+              "creator_id": "creator-9be9261917"
             },
             {
               "role": "arranger",
@@ -23796,8 +23794,8 @@
             "creator-27a7191e7e",
             "creator-9be9261917"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-endless-dream-eabbcc4d12-v-9447ee8d1a",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -24163,8 +24161,7 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-9be9261917",
-              "institution": "Cygames"
+              "creator_id": "creator-9be9261917"
             },
             {
               "role": "arranger",
@@ -24184,8 +24181,8 @@
             "creator-27a7191e7e",
             "creator-9be9261917"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-endless-dream-eabbcc4d12-v-b805c956a8",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -42191,14 +42188,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-cf49f62a1e",
-              "institution": "Cygames"
+              "creator_id": "creator-cf49f62a1e"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-cf49f62a1e",
-              "institution": "Cygames"
+              "creator_id": "creator-cf49f62a1e"
             },
             {
               "role": "arranger",
@@ -42210,8 +42205,8 @@
           "creator_ids": [
             "creator-cf49f62a1e"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-gold-triumph-6a153359c1-v-03ac32f0ae",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -49630,8 +49625,8 @@
             "creator-703d309e1a",
             "creator-dcff3731dd"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-l-s-surprise-4127ca305e-v-b6fba41553",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -79634,20 +79629,17 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-c436f537bf",
-              "institution": "Cygames"
+              "creator_id": "creator-c436f537bf"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-c436f537bf",
-              "institution": "Cygames"
+              "creator_id": "creator-c436f537bf"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-cf49f62a1e",
-              "institution": "Cygames"
+              "creator_id": "creator-cf49f62a1e"
             },
             {
               "role": "arranger",
@@ -79660,8 +79652,8 @@
             "creator-c436f537bf",
             "creator-cf49f62a1e"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-shakerock-02a094e64b-v-db86e5c3d6",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -93619,14 +93611,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-c436f537bf",
-              "institution": "Cygames"
+              "creator_id": "creator-c436f537bf"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-c436f537bf",
-              "institution": "Cygames"
+              "creator_id": "creator-c436f537bf"
             },
             {
               "role": "arranger",
@@ -93645,8 +93635,8 @@
             "creator-c436f537bf",
             "creator-cf49f62a1e"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-u-m-a-new-world-ca9ae685ae-v-9d130aecc5",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -94931,14 +94921,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
-              "institution": "Cygames"
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
-              "institution": "Cygames"
+              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
             },
             {
               "role": "arranger",
@@ -94950,8 +94938,8 @@
           "creator_ids": [
             "creator-lucas-nainemoutou-2d8686f23a"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-uma-in-america-b359c2cb83-v-13ec23c511",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -101084,8 +101072,8 @@
             "creator-97a497a21e",
             "creator-shinichi-osawa-8c364b883c"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-unlimited-impact-3293fdf81d-v-abe5de4572",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -102506,8 +102494,8 @@
           "creator_ids": [
             "creator-6d35eb906e"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-voltage-cb8dbfb97b-v-a68572f1f1",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -112248,8 +112236,8 @@
             "creator-kenchang-97bf8cab1c",
             "creator-rockwell-3d5145dc53"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-wild-dirt-1d4de2a661-v-1d4de2a661",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -112261,7 +112249,7 @@
         "creator-kenchang-97bf8cab1c",
         "creator-rockwell-3d5145dc53"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-willow-promise-d0a871ab4e",
@@ -119128,13 +119116,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-apis-7e6674d509",
-              "institution": "TRYTONELABO"
+              "creator_id": "creator-apis-7e6674d509"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-lucas-nainemoutou-2d8686f23a"
+              "creator_id": "creator-lucas-10c25665e4"
             },
             {
               "role": "arranger",
@@ -119144,10 +119131,11 @@
           ],
           "creator_ids": [
             "creator-apis-7e6674d509",
+            "creator-lucas-10c25665e4",
             "creator-lucas-nainemoutou-2d8686f23a"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-66e8f91931-v-12a67d0842",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -130263,14 +130251,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -130282,8 +130268,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-0bbcdb4517",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -135837,14 +135823,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -135856,8 +135840,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-acdf02ebaf",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -136188,14 +136172,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -136207,8 +136189,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-05764e2ee3",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -136497,14 +136479,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -136516,8 +136496,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-0b7aba2575",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -136764,14 +136744,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -136783,8 +136761,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-b1b440015c",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -136975,14 +136953,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -136994,8 +136970,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-633d59cb96",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -137242,14 +137218,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -137261,8 +137235,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-31ab1d487d",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -137312,14 +137286,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -137331,8 +137303,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-429d813290",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -139076,14 +139048,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -139095,8 +139065,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-e8e32294f5",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -152612,14 +152582,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -152631,8 +152599,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-f576c97033",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -152963,14 +152931,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -152982,8 +152948,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-aa2ae6bc00",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -153272,14 +153238,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -153291,8 +153255,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-3f07cfbee3",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -153539,14 +153503,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -153558,8 +153520,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-00d020e131",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -153750,14 +153712,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -153769,8 +153729,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-5ff7c9d283",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -154017,14 +153977,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -154036,8 +153994,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-eddc2b0884",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -154340,14 +154298,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -154359,8 +154315,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-fe2600c490",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -154789,14 +154745,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-eaf94340d3",
-              "institution": "Cygames"
+              "creator_id": "creator-eaf94340d3"
             },
             {
               "role": "arranger",
@@ -154808,8 +154762,8 @@
           "creator_ids": [
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-228f943b49-v-134ebed700",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -163698,8 +163652,8 @@
             "creator-0bd36eaf6e",
             "creator-16e2e72a5f"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-slowly-6ed058ab53-v-beedbb10dd",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -168094,9 +168048,9 @@
             "creator-eaf94340d3",
             "creator-lucas-nainemoutou-2d8686f23a"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-samba-de76f4b524-v-de76f4b524",
+          "has_lyrics": true,
+          "has_timing": true
         },
         {
           "id": "song-samba-de76f4b524-v-9e18a75a52",
@@ -168266,9 +168220,9 @@
             "creator-eaf94340d3",
             "creator-lucas-nainemoutou-2d8686f23a"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-samba-de76f4b524-v-9e18a75a52",
+          "has_lyrics": true,
+          "has_timing": true
         },
         {
           "id": "song-samba-de76f4b524-v-431403595a",
@@ -168338,7 +168292,7 @@
         "creator-eaf94340d3",
         "creator-lucas-nainemoutou-2d8686f23a"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-happy-days-01845306a9",
@@ -168900,8 +168854,7 @@
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-0762b2227d",
-              "institution": "Arte Refact"
+              "creator_id": "creator-0762b2227d"
             },
             {
               "role": "arranger",
@@ -168915,8 +168868,8 @@
             "creator-078370b132",
             "creator-0e5023bc26"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-happy-days-01845306a9-v-629ab795ae",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -176771,8 +176724,8 @@
             "creator-4b1b6e971f",
             "creator-8ba66086c5"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-a89d60e896-v-a89d60e896",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -176784,7 +176737,7 @@
         "creator-4b1b6e971f",
         "creator-8ba66086c5"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-ff24f99f24",
@@ -177637,8 +177590,8 @@
             "creator-8ba66086c5",
             "creator-e2518d6bbc"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-de771d359f-v-1d797699c6",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -189268,8 +189221,8 @@
             "creator-0a12f443ae",
             "creator-14a2ce8737"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-ee92751546-v-6d642a0659",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -198146,10 +198099,24 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-aa29e79c74"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-19a21d19bf"
+            }
+          ],
+          "creator_ids": [
+            "creator-19a21d19bf",
+            "creator-aa29e79c74"
+          ],
+          "lyrics_ref": "song-73e5eac0cb-v-73e5eac0cb",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -198157,8 +198124,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-73e5eac0cb-v-73e5eac0cb",
-      "creator_ids": [],
-      "has_lyrics": false
+      "creator_ids": [
+        "creator-19a21d19bf",
+        "creator-aa29e79c74"
+      ],
+      "has_lyrics": true
     },
     {
       "id": "song-beach-747fea21c9",
@@ -198734,14 +198704,12 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-14a2ce8737",
-              "institution": "Cygames"
+              "creator_id": "creator-14a2ce8737"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-14a2ce8737",
-              "institution": "Cygames"
+              "creator_id": "creator-14a2ce8737"
             },
             {
               "role": "arranger",
@@ -198760,8 +198728,8 @@
             "creator-779504f072",
             "creator-cf49f62a1e"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-3223dc5541-v-8617bf86b3",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -200918,8 +200886,8 @@
           "creator_ids": [
             "creator-c436f537bf"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-e74bdc4483-v-efc36499b1",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -202285,8 +202253,8 @@
             "creator-500b86dc49",
             "creator-9bb69d59ac"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-f4ab00a70a-v-8beae374d4",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -206298,8 +206266,8 @@
             "creator-89616fb5dd",
             "creator-detch-c6c359547d"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-c76d985829-v-0376f4ffa8",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -206385,10 +206353,24 @@
           "release_count": 1,
           "performance_count": 0,
           "instrumental": false,
-          "credits": [],
-          "creator_ids": [],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "credits": [
+            {
+              "role": "lyricist",
+              "role_label": "作词",
+              "creator_id": "creator-aa29e79c74"
+            },
+            {
+              "role": "composer",
+              "role_label": "作曲",
+              "creator_id": "creator-19a21d19bf"
+            }
+          ],
+          "creator_ids": [
+            "creator-19a21d19bf",
+            "creator-aa29e79c74"
+          ],
+          "lyrics_ref": "song-5e40339d93-v-5e40339d93",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -206396,8 +206378,11 @@
       "release_count": 1,
       "performance_count": 0,
       "original_version_id": "song-5e40339d93-v-5e40339d93",
-      "creator_ids": [],
-      "has_lyrics": false
+      "creator_ids": [
+        "creator-19a21d19bf",
+        "creator-aa29e79c74"
+      ],
+      "has_lyrics": true
     },
     {
       "id": "song-482b01a04d",
@@ -223437,8 +223422,8 @@
           "creator_ids": [
             "creator-b115947141"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-405777870e-v-405777870e",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -223449,7 +223434,7 @@
       "creator_ids": [
         "creator-b115947141"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-66f5b252fa",
@@ -224053,8 +224038,8 @@
             "creator-500b86dc49",
             "creator-d4b3e7396f"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-f38143b3b3-v-65a80cd7f1",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -224441,8 +224426,8 @@
             "creator-142f44fbe2",
             "creator-yasushi-2d372dfe42"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-4b30d8d74a-v-4842beda25",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -227139,8 +227124,8 @@
             "creator-eaf94340d3",
             "creator-ymck-7e3f017575"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-phantasia-81aafc5f7e-v-fc6b608d53",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -234120,8 +234105,8 @@
             "creator-500b86dc49",
             "creator-sasuke-haraguchi-b35f958bea"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-b90b0841b4-v-515e354f20",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -238358,8 +238343,8 @@
             "creator-0e5023bc26",
             "creator-500b86dc49"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-496f508d38-v-339cf450c6",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -250483,8 +250468,8 @@
             "creator-amazuti-f3d624083a",
             "creator-gak-amazuti-531b564671"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-3f9e19a4e8-v-3f9e19a4e8",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -250518,22 +250503,22 @@
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-amazuti-f3d624083a"
+              "creator_id": "creator-60d19fdbe0"
             },
             {
               "role": "lyricist",
               "role_label": "作词",
-              "creator_id": "creator-gak-amazuti-531b564671"
+              "creator_id": "creator-gak-bee25f9566"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-amazuti-f3d624083a"
+              "creator_id": "creator-60d19fdbe0"
             },
             {
               "role": "composer",
               "role_label": "作曲",
-              "creator_id": "creator-gak-amazuti-531b564671"
+              "creator_id": "creator-gak-bee25f9566"
             },
             {
               "role": "arranger",
@@ -250542,11 +250527,12 @@
             }
           ],
           "creator_ids": [
-            "creator-amazuti-f3d624083a",
-            "creator-gak-amazuti-531b564671"
+            "creator-60d19fdbe0",
+            "creator-gak-amazuti-531b564671",
+            "creator-gak-bee25f9566"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-3f9e19a4e8-v-f3e639cff3",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -250555,10 +250541,12 @@
       "performance_count": 0,
       "original_version_id": "song-3f9e19a4e8-v-3f9e19a4e8",
       "creator_ids": [
+        "creator-60d19fdbe0",
         "creator-amazuti-f3d624083a",
-        "creator-gak-amazuti-531b564671"
+        "creator-gak-amazuti-531b564671",
+        "creator-gak-bee25f9566"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-run-up-5df7ed5247",
@@ -251582,8 +251570,8 @@
             "creator-24ff9668ab",
             "creator-eaf94340d3"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-aed14a1a3a-v-2954ef1177",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -254784,8 +254772,8 @@
             "creator-85bde3f846",
             "creator-shuhei-takahashi-ab0679e51a"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-2d2a6742e3-v-40ffacab2d",
+          "has_lyrics": true,
           "has_timing": false
         }
       ],
@@ -256349,8 +256337,8 @@
           "creator_ids": [
             "creator-lull-08096c4bf8"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
+          "lyrics_ref": "song-fallin-love-9a20ebe280-v-4189e897bb",
+          "has_lyrics": true,
           "has_timing": false
         },
         {
@@ -258844,9 +258832,9 @@
           "creator_ids": [
             "creator-4b1b6e971f"
           ],
-          "lyrics_ref": "",
-          "has_lyrics": false,
-          "has_timing": false
+          "lyrics_ref": "song-e55b39cb47-v-e55b39cb47",
+          "has_lyrics": true,
+          "has_timing": true
         }
       ],
       "version_count": 1,
@@ -258856,7 +258844,7 @@
       "creator_ids": [
         "creator-4b1b6e971f"
       ],
-      "has_lyrics": false
+      "has_lyrics": true
     },
     {
       "id": "song-a1bbf4d0db",
@@ -261337,5 +261325,5 @@
       "has_lyrics": false
     }
   ],
-  "build_id": "d21a1d0b8046c0af53aa"
+  "build_id": "9c99f5bbd685db96c925"
 }

@@ -6,7 +6,7 @@ from . import lyrics as pipeline_lyrics
 
 
 def track_id(url: str) -> str:
-    match = pipeline_common.re.search(r"[?&]id=(\d+)", str(url or ""))
+    match = pipeline_common.re.search(r"[?&](?:id|track)=(\d+)", str(url or ""))
     return match.group(1) if match else ""
 
 
@@ -90,12 +90,16 @@ def match_recording_version(
 def choose_candidate(recording: dict[str, pipeline_common.Any], fetched: dict[str, dict[str, pipeline_common.Any] | None]) -> tuple[str, list[dict[str, pipeline_common.Any]], list[dict[str, str]]]:
     best_track = ""
     best_lines: list[dict[str, pipeline_common.Any]] = []
+    best_timed = False
     combined_credits: list[dict[str, str]] = []
     seen_credits: set[tuple[str, str]] = set()
     for source_track in recording["tracks"]:
         payload = fetched.get(source_track) or {}
         raw = ((payload.get("lrc") or {}).get("lyric") or "") if isinstance(payload, dict) else ""
         lines, credits = pipeline_lyrics.parse_lyric(raw)
+        timed = bool(lines)
+        if not lines:
+            lines, credits = pipeline_lyrics.parse_plain_lyric(raw)
         expected_artists = [normalized_name(name) for name in recording.get('artists', [])]
         def is_performer_credit(line):
             text = line['text'].strip()
@@ -112,9 +116,10 @@ def choose_candidate(recording: dict[str, pipeline_common.Any], fetched: dict[st
             if key not in seen_credits:
                 combined_credits.append(credit)
                 seen_credits.add(key)
-        if len(lines) > len(best_lines):
+        if len(lines) > len(best_lines) or (len(lines) == len(best_lines) and timed and not best_timed):
             best_track = source_track
             best_lines = lines
+            best_timed = timed
     combined_credits.sort(key=lambda row: (pipeline_common.ROLE_ORDER.get(row["role"], 99), normalized_name(row["name"])))
     return best_track, best_lines, combined_credits
 

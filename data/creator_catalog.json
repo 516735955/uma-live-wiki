@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T11:32:00+00:00",
+  "generated_at": "2026-11-27T11:15:10+00:00",
   "coverage": {
-    "creators": 305,
-    "credited_works": 423,
-    "credited_versions": 1500
+    "creators": 309,
+    "credited_works": 425,
+    "credited_versions": 1502
   },
   "creators": [
     {
@@ -588,7 +588,7 @@
         {
           "creator_id": "creator-lucas-10c25665e4",
           "name": "Lucas",
-          "shared_version_count": 2,
+          "shared_version_count": 3,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -1803,6 +1803,74 @@
       ]
     },
     {
+      "id": "creator-gak-bee25f9566",
+      "name": "GAK",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        },
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-3f9e19a4e8",
+          "title": "繚乱縁舞",
+          "cover": "/album_covers/LACA-25308.jpg",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-3f9e19a4e8-v-f3e639cff3"
+          ],
+          "versions": [
+            {
+              "id": "song-3f9e19a4e8-v-f3e639cff3",
+              "title": "繚乱縁舞 (Game Size)",
+              "version_label": "Game Size",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-gak-amazuti-531b564671",
+          "name": "GAK-amazuti-",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        },
+        {
+          "creator_id": "creator-60d19fdbe0",
+          "name": "安部大希",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        }
+      ]
+    },
+    {
       "id": "creator-gak-amazuti-531b564671",
       "name": "GAK-amazuti-",
       "aliases": [],
@@ -1812,12 +1880,12 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 3
+          "count": 2
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 3
+          "count": 2
         },
         {
           "role": "arranger",
@@ -1886,8 +1954,6 @@
               "title": "繚乱縁舞 (Game Size)",
               "version_label": "Game Size",
               "roles": [
-                "lyricist",
-                "composer",
                 "arranger"
               ]
             }
@@ -1896,9 +1962,27 @@
       ],
       "collaborators": [
         {
+          "creator_id": "creator-gak-bee25f9566",
+          "name": "GAK",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        },
+        {
+          "creator_id": "creator-60d19fdbe0",
+          "name": "安部大希",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        },
+        {
           "creator_id": "creator-amazuti-f3d624083a",
           "name": "安部大希-amazuti-",
-          "shared_version_count": 2,
+          "shared_version_count": 1,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-3f9e19a4e8"
@@ -2705,7 +2789,7 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 4
+          "count": 5
         },
         {
           "role": "arranger",
@@ -2714,7 +2798,7 @@
         }
       ],
       "work_count": 3,
-      "version_count": 5,
+      "version_count": 6,
       "works": [
         {
           "song_id": "song-8f0d72cf0d",
@@ -2753,16 +2837,25 @@
           "title": "ありがとう、神様",
           "cover": "/album_covers/LACM-14742.webp",
           "release_date": "2018-05-09",
-          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 04 Original Soundtrack",
+          "album_name": "TVアニメ『ウマ娘 プリティーダービー』ANIMATION DERBY 02 グロウアップ・シャイン！ (2021 Remastered Version)",
           "roles": [
             "composer",
             "arranger"
           ],
           "version_ids": [
+            "song-66e8f91931-v-12a67d0842",
             "song-66e8f91931-v-66130e0288",
             "song-66e8f91931-v-74d9dc52ea"
           ],
           "versions": [
+            {
+              "id": "song-66e8f91931-v-12a67d0842",
+              "title": "ありがとう、神様 (2021 Remastered Version)",
+              "version_label": "2021 Remastered Version",
+              "roles": [
+                "composer"
+              ]
+            },
             {
               "id": "song-66e8f91931-v-66130e0288",
               "title": "ありがとう、神様 (TV Size)",
@@ -2810,6 +2903,15 @@
         {
           "creator_id": "creator-apis-7e6674d509",
           "name": "Apis",
+          "shared_version_count": 3,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-66e8f91931"
+          ]
+        },
+        {
+          "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
+          "name": "Lucas Nainemoutou",
           "shared_version_count": 2,
           "shared_work_count": 1,
           "shared_song_ids": [
@@ -2832,15 +2934,6 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-8f0d72cf0d"
-          ]
-        },
-        {
-          "creator_id": "creator-lucas-nainemoutou-2d8686f23a",
-          "name": "Lucas Nainemoutou",
-          "shared_version_count": 1,
-          "shared_work_count": 1,
-          "shared_song_ids": [
-            "song-66e8f91931"
           ]
         },
         {
@@ -2898,7 +2991,7 @@
         {
           "role": "composer",
           "label": "作曲",
-          "count": 47
+          "count": 46
         },
         {
           "role": "arranger",
@@ -2941,7 +3034,6 @@
               "title": "ありがとう、神様 (2021 Remastered Version)",
               "version_label": "2021 Remastered Version",
               "roles": [
-                "composer",
                 "arranger"
               ]
             },
@@ -3693,7 +3785,7 @@
         {
           "creator_id": "creator-lucas-10c25665e4",
           "name": "Lucas",
-          "shared_version_count": 1,
+          "shared_version_count": 2,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-66e8f91931"
@@ -9856,6 +9948,82 @@
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-864b1bb2e9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-19a21d19bf",
+      "name": "わらべうた",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 2
+        }
+      ],
+      "work_count": 2,
+      "version_count": 2,
+      "works": [
+        {
+          "song_id": "song-73e5eac0cb",
+          "title": "ニシノフラワーのおべんとうばこのうた♪",
+          "cover": "https://p1.music.126.net/X1P9iu19o_AO6nEEqNOudA==/109951170977687189.jpg",
+          "release_date": "2025-03-05",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 25",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-73e5eac0cb-v-73e5eac0cb"
+          ],
+          "versions": [
+            {
+              "id": "song-73e5eac0cb-v-73e5eac0cb",
+              "title": "ニシノフラワーのおべんとうばこのうた♪",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-5e40339d93",
+          "title": "ライスシャワーのおべんとうばこのうた♪",
+          "cover": "https://p1.music.126.net/X1P9iu19o_AO6nEEqNOudA==/109951170977687189.jpg",
+          "release_date": "2025-03-05",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 25",
+          "roles": [
+            "composer"
+          ],
+          "version_ids": [
+            "song-5e40339d93-v-5e40339d93"
+          ],
+          "versions": [
+            {
+              "id": "song-5e40339d93-v-5e40339d93",
+              "title": "ライスシャワーのおべんとうばこのうた♪",
+              "version_label": "",
+              "roles": [
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-aa29e79c74",
+          "name": "作者不詳",
+          "shared_version_count": 2,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-5e40339d93",
+            "song-73e5eac0cb"
           ]
         }
       ]
@@ -18242,6 +18410,82 @@
       ]
     },
     {
+      "id": "creator-aa29e79c74",
+      "name": "作者不詳",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 2
+        }
+      ],
+      "work_count": 2,
+      "version_count": 2,
+      "works": [
+        {
+          "song_id": "song-73e5eac0cb",
+          "title": "ニシノフラワーのおべんとうばこのうた♪",
+          "cover": "https://p1.music.126.net/X1P9iu19o_AO6nEEqNOudA==/109951170977687189.jpg",
+          "release_date": "2025-03-05",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 25",
+          "roles": [
+            "lyricist"
+          ],
+          "version_ids": [
+            "song-73e5eac0cb-v-73e5eac0cb"
+          ],
+          "versions": [
+            {
+              "id": "song-73e5eac0cb-v-73e5eac0cb",
+              "title": "ニシノフラワーのおべんとうばこのうた♪",
+              "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            }
+          ]
+        },
+        {
+          "song_id": "song-5e40339d93",
+          "title": "ライスシャワーのおべんとうばこのうた♪",
+          "cover": "https://p1.music.126.net/X1P9iu19o_AO6nEEqNOudA==/109951170977687189.jpg",
+          "release_date": "2025-03-05",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 25",
+          "roles": [
+            "lyricist"
+          ],
+          "version_ids": [
+            "song-5e40339d93-v-5e40339d93"
+          ],
+          "versions": [
+            {
+              "id": "song-5e40339d93-v-5e40339d93",
+              "title": "ライスシャワーのおべんとうばこのうた♪",
+              "version_label": "",
+              "roles": [
+                "lyricist"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-19a21d19bf",
+          "name": "わらべうた",
+          "shared_version_count": 2,
+          "shared_work_count": 2,
+          "shared_song_ids": [
+            "song-5e40339d93",
+            "song-73e5eac0cb"
+          ]
+        }
+      ]
+    },
+    {
       "id": "creator-9dd245e820",
       "name": "俊龍",
       "aliases": [],
@@ -26495,8 +26739,8 @@
       ]
     },
     {
-      "id": "creator-amazuti-f3d624083a",
-      "name": "安部大希-amazuti-",
+      "id": "creator-60d19fdbe0",
+      "name": "安部大希",
       "aliases": [],
       "type": "person",
       "affiliations": [],
@@ -26504,16 +26748,16 @@
         {
           "role": "lyricist",
           "label": "作词",
-          "count": 2
+          "count": 1
         },
         {
           "role": "composer",
           "label": "作曲",
-          "count": 2
+          "count": 1
         }
       ],
       "work_count": 1,
-      "version_count": 2,
+      "version_count": 1,
       "works": [
         {
           "song_id": "song-3f9e19a4e8",
@@ -26526,19 +26770,9 @@
             "composer"
           ],
           "version_ids": [
-            "song-3f9e19a4e8-v-3f9e19a4e8",
             "song-3f9e19a4e8-v-f3e639cff3"
           ],
           "versions": [
-            {
-              "id": "song-3f9e19a4e8-v-3f9e19a4e8",
-              "title": "繚乱縁舞",
-              "version_label": "",
-              "roles": [
-                "lyricist",
-                "composer"
-              ]
-            },
             {
               "id": "song-3f9e19a4e8-v-f3e639cff3",
               "title": "繚乱縁舞 (Game Size)",
@@ -26553,9 +26787,77 @@
       ],
       "collaborators": [
         {
+          "creator_id": "creator-gak-bee25f9566",
+          "name": "GAK",
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        },
+        {
           "creator_id": "creator-gak-amazuti-531b564671",
           "name": "GAK-amazuti-",
-          "shared_version_count": 2,
+          "shared_version_count": 1,
+          "shared_work_count": 1,
+          "shared_song_ids": [
+            "song-3f9e19a4e8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creator-amazuti-f3d624083a",
+      "name": "安部大希-amazuti-",
+      "aliases": [],
+      "type": "person",
+      "affiliations": [],
+      "roles": [
+        {
+          "role": "lyricist",
+          "label": "作词",
+          "count": 1
+        },
+        {
+          "role": "composer",
+          "label": "作曲",
+          "count": 1
+        }
+      ],
+      "work_count": 1,
+      "version_count": 1,
+      "works": [
+        {
+          "song_id": "song-3f9e19a4e8",
+          "title": "繚乱縁舞",
+          "cover": "/album_covers/LACA-25308.jpg",
+          "release_date": "2026-11-18",
+          "album_name": "『ウマ娘 プリティーダービー』WINNING LIVE 37",
+          "roles": [
+            "lyricist",
+            "composer"
+          ],
+          "version_ids": [
+            "song-3f9e19a4e8-v-3f9e19a4e8"
+          ],
+          "versions": [
+            {
+              "id": "song-3f9e19a4e8-v-3f9e19a4e8",
+              "title": "繚乱縁舞",
+              "version_label": "",
+              "roles": [
+                "lyricist",
+                "composer"
+              ]
+            }
+          ]
+        }
+      ],
+      "collaborators": [
+        {
+          "creator_id": "creator-gak-amazuti-531b564671",
+          "name": "GAK-amazuti-",
+          "shared_version_count": 1,
           "shared_work_count": 1,
           "shared_song_ids": [
             "song-3f9e19a4e8"
@@ -61385,5 +61687,5 @@
       "collaborators": []
     }
   ],
-  "build_id": "d21a1d0b8046c0af53aa"
+  "build_id": "9c99f5bbd685db96c925"
 }

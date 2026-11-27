@@ -299,7 +299,7 @@ def parse_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[di
             # Rare combined labels are kept out rather than assigning the same
             # person to roles that cannot be separated with confidence.
             continue
-        if pipeline_common.re.match(r"^(?:纯音乐|純音楽|instrumental|off\s*vocal)$", text, pipeline_common.re.I):
+        if pipeline_common.re.match(r"^(?:纯音乐|純音楽|instrumental|off\s*vocal|暂无|Sorry[，,])", text, pipeline_common.re.I):
             continue
         if pipeline_common.NO_LYRIC_RE.match(text):
             continue
@@ -307,6 +307,46 @@ def parse_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[di
             timed.append({"start_ms": max(0, milliseconds(*stamp.groups()) - offset), "text": text})
     timed.sort(key=lambda row: row['start_ms'])
     return timed, credits
+
+
+def parse_plain_lyric(raw: str) -> tuple[list[dict[str, pipeline_common.Any]], list[dict[str, str]]]:
+    """Parse untimed lyrics (NetEase lv=-1) into text-only line rows."""
+    source = str(raw or "").lstrip("\ufeff").replace("\r", "")
+    # A response that still carries timestamps is a malformed LRC file rather
+    # than plain lyrics; treating its credit headers as sung lines creates junk.
+    if pipeline_common.re.search(r"\[\d+:\d+", source):
+        return [], []
+    lines: list[dict[str, pipeline_common.Any]] = []
+    credits: list[dict[str, str]] = []
+    seen_credits: set[tuple[str, str]] = set()
+    for source_line in source.split("\n"):
+        text = source_line.strip()
+        if not text or (text.startswith("[") and text.endswith("]")):
+            continue
+        if pipeline_common.re.search(r"^(?:纯音乐|純音楽|暂无|Sorry[，,])", text, pipeline_common.re.I):
+            continue
+        credit_match = pipeline_common.CREDIT_LINE_RE.match(text)
+        if credit_match:
+            role = pipeline_common.ROLE_LABELS.get(credit_match.group(1).lower(), pipeline_common.ROLE_LABELS.get(credit_match.group(1), ""))
+            for raw_name in pipeline_credits.split_creators(credit_match.group(2)):
+                name, affiliations = pipeline_credits.creator_identity(raw_name)
+                key = (role, pipeline_recordings.normalized_name(name))
+                if not role or not name or key in seen_credits:
+                    continue
+                seen_credits.add(key)
+                credit = {"role": role, "name": name}
+                if affiliations:
+                    credit["affiliation"] = affiliations[0]
+                credits.append(credit)
+            continue
+        if pipeline_common.COMBINED_CREDIT_RE.match(text):
+            continue
+        if pipeline_common.NO_LYRIC_RE.match(text):
+            continue
+        if pipeline_common.re.search(r"纯音乐|純音楽|暂无文本歌词|暂无歌词|暂无歌詞", text):
+            continue
+        lines.append({"text": text})
+    return lines, credits
 
 
 def clean_wiki_lyric_cell(value: str) -> list[str]:

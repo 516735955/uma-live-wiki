@@ -5,8 +5,7 @@ from . import common as pipeline_common
 from knowledge_io import bounded_read
 
 
-def fetch_track(track: str, tries: int = 3) -> tuple[str, dict[str, pipeline_common.Any] | None, str]:
-    url = pipeline_common.LYRIC_URL.format(track_id=pipeline_common.urllib.parse.quote(track))
+def _fetch_lyric(url: str, tries: int) -> tuple[dict[str, pipeline_common.Any] | None, str]:
     last_error = ""
     for attempt in range(tries):
         try:
@@ -15,12 +14,26 @@ def fetch_track(track: str, tries: int = 3) -> tuple[str, dict[str, pipeline_com
                 payload = pipeline_common.json.loads(bounded_read(response, limit=8 * 1024 * 1024).decode("utf-8", errors="replace"))
             if not isinstance(payload, dict) or payload.get('code', 200) != 200:
                 raise ValueError('NetEase business response: ' + str(payload.get('code') if isinstance(payload, dict) else 'invalid payload'))
-            return track, payload, ""
+            return payload, ""
         except (OSError, pipeline_common.urllib.error.URLError, ValueError) as error:
             last_error = str(error)
             if attempt + 1 < tries:
                 pipeline_common.time.sleep(0.4 * (attempt + 1))
-    return track, None, last_error
+    return None, last_error
+
+
+def fetch_track(track: str, tries: int = 3) -> tuple[str, dict[str, pipeline_common.Any] | None, str]:
+    quoted = pipeline_common.urllib.parse.quote(track)
+    payload, error = _fetch_lyric(pipeline_common.LYRIC_URL.format(track_id=quoted), tries)
+    if payload and not (payload.get('lrc') or {}).get('lyric'):
+        # Timed lyrics are absent; some NetEase tracks expose plain lyrics only
+        # on the lv=-1 endpoint, so try it before reporting no lyric.
+        plain, plain_error = _fetch_lyric(pipeline_common.LYRIC_PLAIN_URL.format(track_id=quoted), tries)
+        if plain and (plain.get('lrc') or {}).get('lyric'):
+            payload = {**payload, 'lrc': plain.get('lrc') or {}}
+        elif not error:
+            error = plain_error
+    return track, payload, error
 
 
 def fetch_text(url: str) -> str:

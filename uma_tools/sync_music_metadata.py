@@ -55,6 +55,7 @@ from music_pipeline.lyrics import (
     normalize_lyric_line,
     normalize_lyric_lines,
     parse_lyric,
+    parse_plain_lyric,
     parse_wiki_song,
     stable_lyric_line_id,
     timing_line_positions,

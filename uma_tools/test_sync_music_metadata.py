@@ -230,6 +230,46 @@ class MusicMetadataSyncTest(unittest.TestCase):
             {"role": "arranger", "name": "滝澤俊輔", "affiliation": "TRYTONELABO"},
         ])
 
+    def test_track_id_reads_local_audio_proxy_urls(self):
+        self.assertEqual(SYNC.track_id("/api/audio?track=3451852433"), "3451852433")
+        self.assertEqual(SYNC.track_id("https://example.test/?server=netease&type=url&id=3461009981"), "3461009981")
+        self.assertEqual(SYNC.track_id("/album_covers/LACA-25308.jpg"), "")
+
+    def test_plain_lyrics_are_used_when_no_timestamps_exist(self):
+        raw = "[ti:繚乱縁舞]\n作词 : 安部大希/GAK\n作曲 : 安部大希/GAK\n\n舞い 祈れ 舞い 願え\n勇往邁進\n"
+        lines, credits = SYNC.parse_plain_lyric(raw)
+        self.assertEqual([line["text"] for line in lines], ["舞い 祈れ 舞い 願え", "勇往邁進"])
+        self.assertTrue(all("start_ms" not in line for line in lines))
+        self.assertEqual([(row["role"], row["name"]) for row in credits], [
+            ("lyricist", "安部大希"),
+            ("lyricist", "GAK"),
+            ("composer", "安部大希"),
+            ("composer", "GAK"),
+        ])
+
+    def test_plain_lyric_placeholders_are_ignored(self):
+        lines, _ = SYNC.parse_plain_lyric("纯音乐，请欣赏\nSorry，此歌曲暂无文本歌词。\n")
+        self.assertEqual(lines, [])
+
+    def test_malformed_timed_response_is_not_treated_as_plain_lyrics(self):
+        raw = "[00:00.00-1] 作词: マイクスギヤマ\n[00:00.00-1] 作曲: 東大路憲太\n"
+        lines, credits = SYNC.parse_plain_lyric(raw)
+        self.assertEqual(lines, [])
+        self.assertEqual(credits, [])
+
+    def test_timed_placeholder_line_is_ignored(self):
+        lines, _ = SYNC.parse_lyric("[00:05.00]纯音乐, 请欣赏\n[00:10.00]本当の歌詞\n")
+        self.assertEqual([line["text"] for line in lines], ["本当の歌詞"])
+
+    def test_choose_candidate_falls_back_to_plain_lyrics(self):
+        from music_pipeline.recordings import choose_candidate
+        recording = {"tracks": ["plain"], "artists": []}
+        payload = {"plain": {"lrc": {"lyric": "作词 : Alice\n\n歌の一行目\n歌の二行目"}}}
+        track, lines, credits = choose_candidate(recording, payload)
+        self.assertEqual(track, "plain")
+        self.assertEqual([line["text"] for line in lines], ["歌の一行目", "歌の二行目"])
+        self.assertEqual(credits, [{"role": "lyricist", "name": "Alice"}])
+
 
 if __name__ == "__main__":
     unittest.main()
